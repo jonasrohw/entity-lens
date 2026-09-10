@@ -15,6 +15,17 @@
 
 \author{Anonymous ACL submission}
 
+\newcounter{notecounter}
+\newcommand{\enotesoff}{\long\gdef\enote##1##2{}}
+\newcommand{\enoteson}{\long\gdef\enote##1##2{{
+\stepcounter{notecounter}
+{\large\bf
+\hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
+$>>>$\hspace{1cm}}}}}
+
+\enoteson
+%\enotesoff
+
 \begin{document}
 \maketitle
 
@@ -27,7 +38,7 @@ variation, and show it is substantially predictable from a readout that
 never sees the relation. We estimate a Jacobian lens from
 subject-to-subject differences under a single neutral prompt, at one fixed
 layer for every relation, using no relation template, no objects and no
-(subject,~object) pairs, and measure how highly it ranks the model's own
+(subject,~object) pairs and measure how highly it ranks the model's own
 answer. Across 28 relations of the LRE dataset on Olmo-3-7B this
 relation-agnostic score correlates with LRE faithfulness at
 $\rho = 0.66$ ($p = 1.4\!\times\!10^{-4}$), rising to $0.75$ once object
@@ -122,8 +133,8 @@ the quantity we predict.
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
 
-For an entity $e$ (e.g.\ France) and a set of reference entities $\{i\}$ of
-the same type (e.g.\ Spain, Italy), we take the Jacobian--vector product
+For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
+the same type (e.g., Spain, Italy), we take the Jacobian--vector product
 of the model's map at each reference and average:
 \begin{equation}
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
@@ -223,9 +234,19 @@ a relation are shuffled once and partitioned into three disjoint sets:
 eight in-context examples, eight reference subjects from which $W$ and $b$
 are estimated, and the remainder as scored test subjects.
 
-Faithfulness is then recomputed for all 28 relations under this single
-protocol, replacing the mixture of earlier protocols in our own logs, with
-layer and $\beta$ chosen on a $6\times6$ grid by the mean over the test
+\enote{hs}{in our field, it is not customary to say
+  something like
+``replacing the mixture of earlier protocols in our own
+  logs''. if it is a relatively minor not ``preregistered''
+  change, then it does not have to be declared. if it is
+  major, then it belongs in limitations}
+
+Faithfulness is then recomputed for all 28 relations under this 
+protocol, with
+layer and $\beta$ chosen on a $6\times6$ grid
+\enote{hs}{explain $6\times6$ grid : what are the
+  dimensions, why 6?}
+by the mean over the test
 subjects. The lens uses the same eight reference subjects and scores the
 same test subjects (11--20 per relation, depending on how many remain
 after the in-context and reference sets are removed). Crucially, the
@@ -265,7 +286,7 @@ relationship, which is what we want here, though with $n = 28$ we can
 only rule out a strong one). Partialling $k$ out \emph{raises} the
 correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
 independent predictors of faithfulness, so removing the variance $k$
-explains sharpens rather than weakens the lens signal.
+\enote{hs}{removed: explains} sharpens rather than weakens the lens signal.
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
@@ -407,7 +428,7 @@ from subject differences under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
 out to be faithful.
 
-The reading we favour is that salience is the mechanism rather than a
+The reading we favor is that salience is the mechanism rather than a
 confound: a relation admits a faithful linear operator to the extent that
 its answer is already part of what the subject's representation makes the
 model disposed to say. On that view the wide spread of LRE faithfulness
