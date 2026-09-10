@@ -58,12 +58,19 @@ representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
-Our diagnostic is a Jacobian lens estimated from differences between
-subject representations under a single neutral prompt, shared by every
-relation. It sees no relation template, no objects, and no (subject,~object) pairs; the layer is fixed in advance rather than tuned per
-relation. We then ask how highly this lens ranks the model's own answer to
-the relation. That score correlates with LRE faithfulness across 28
-relations at $\rho = 0.66$.
+Our diagnostic is a \emph{Jacobian lens}: a readout that propagates a
+first-order approximation of the model's own computation from an
+intermediate layer to the output vocabulary. Lenses of this kind have
+recently been used to characterise what a model is internally disposed to
+say \citep{gurnee2026workspace}. Ours differs in what it is applied to:
+rather than a corpus-averaged Jacobian acting on raw activations, we
+evaluate the Jacobian at individual reference entities and apply it to
+\emph{differences} between entity representations, under a single neutral
+prompt shared by every relation. The lens sees no relation template, no
+objects, and no (subject,~object) pairs; the layer is fixed in advance
+rather than tuned per relation. We then ask how highly it ranks the
+model's own answer to the relation. That score correlates with LRE
+faithfulness across 28 relations at $\rho = 0.66$.
 
 We make three contributions. (i)~We introduce a relation-agnostic
 diagnostic of linear decodability and show it predicts LRE faithfulness.
@@ -82,7 +89,30 @@ o \;\approx\; \beta\, W s + b ,
 where $s$ is the hidden state at the subject's final token, $o$ the
 output state, and $W$, $b$ are estimated from a small set of reference
 subjects as the mean Jacobian and mean bias of the model's own map
-\citep{hernandez2024linearity}. \emph{Faithfulness} is the rate at which
+\citep{hernandez2024linearity}.
+
+The scalar $\beta$ corrects a systematic weakness of the first-order
+estimate. A Jacobian taken at a reference subject describes the model's
+map only in a neighbourhood of that subject; extrapolated to a different
+subject it points in roughly the right direction but is too short. This
+matters because the prediction decomposes into a subject-dependent term
+and a constant: expanding $b$ gives
+\begin{equation}
+\beta W s + b \;=\; \operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (s - s_i)\,\right],
+\label{eq:beta}
+\end{equation}
+in which only the second term depends on which subject is being decoded.
+Left unscaled, the shared anchor $\operatorname{mean}_i f(s_i)$ dominates
+and the operator returns much the same object for every subject.
+Setting $\beta > 1$ amplifies the subject-specific contribution relative
+to that anchor, and so does change which object is ranked first.
+\citet{hernandez2024linearity} fit $\beta$ per relation alongside the
+layer; we follow their protocol and select it from
+$\{0.5, 1, 1.5, 2, 3, 5\}$. Eq.~\ref{eq:beta} is also what makes the LRE
+affordable: each test subject costs $n$ Jacobian--vector products rather
+than a materialised $4096 \times 4096$ matrix.
+
+\emph{Faithfulness} is the rate at which
 decoding $\beta W s + b$ over the full vocabulary reproduces the
 \emph{model's own} top-1 prediction -- not the gold object. It is therefore
 a measure of how well an affine map captures what the model
@@ -90,19 +120,48 @@ does. Faithfulness defined this way is
 the quantity we predict.
 
 \section{A relation-agnostic Jacobian lens}
+\label{sec:lens}
 
-For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of the same
-type (e.g., Spain, Italy), we take the Jacobian--vector product of the model's map at each
-reference and average:
+For an entity $e$ (e.g.\ France) and a set of reference entities $\{i\}$ of
+the same type (e.g.\ Spain, Italy), we take the Jacobian--vector product
+of the model's map at each reference and average:
 \begin{equation}
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \label{eq:lens}
 \end{equation}
+Here $J_i$ is the Jacobian of the model's map from the subject's hidden
+state at layer $\ell$ to the final-layer state at the last position,
+evaluated at reference $i$. We never form $J_i$ explicitly: a
+Jacobian--vector product $J_i u$ can be obtained for the cost of a
+constant number of forward and backward passes,\footnote{We use the
+standard double-backward construction: differentiating
+$\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a
+variable, then differentiating the result with respect to $u'$ in the
+direction $u$. This requires \texttt{float32} and eager attention, as
+fused attention kernels are not twice differentiable.} which is what makes
+Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$.
 Each $J_i$ is evaluated under a \emph{neutral} prompt,
 \texttt{"\{\} is known for"}, identical for every relation.
 
-INTUITION
+\paragraph{Why differences.} The quantity we want is not what the model
+says about France, but what is \emph{specific} to France among countries.
+A raw activation $s_e$ is dominated by what all entities of its type share
+-- the type itself, the syntactic role, the prompt -- and a lens applied
+to it returns mostly that shared content. Subtracting a same-type
+reference cancels it, leaving the entity-specific residual, and the
+Jacobian then carries that residual forward to the vocabulary. The lens
+therefore reads what this entity, as opposed to others of its kind, makes
+the model disposed to say.
 
+We note that this differencing is not itself new: it falls directly out
+of the LRE construction. Eq.~\ref{eq:beta} already expresses the LRE as a
+constant plus a sum of $J_i(s - s_i)$ terms, so Eq.~\ref{eq:lens} is that
+same quantity with the subject-independent anchor dropped and
+$\beta = 1$. What is new here is not the algebra
+but the use: we estimate the lens without any relation and ask whether it
+predicts an LRE that was fitted \emph{with} one. This also distinguishes
+our lens from that of \citet{gurnee2026workspace}, which averages a
+Jacobian over a corpus and applies it to raw activations.
 
 We decode $v_e$
 over the full vocabulary and record the rank of $m_e$, the model's own
@@ -117,12 +176,16 @@ Three properties make $A_r$ non-trivial as a predictor. The prompt is
 neutral and shared, so no relation template enters. The differences in
 Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} $-$
 \emph{Spain}, never \emph{France} $-$ \emph{Paris} -- so no
-relation-specific
-(subject,
-object) pair is used in estimation.
-The layer is not relation-specific either.
-It is fixed at 17 for all
-relations.
+relation-specific (subject,~object) pair is used in estimation.
+The layer is not relation-specific either. It is fixed at 17 for all
+relations.\footnote{Layer 17 is roughly half-way through the network,
+the region in which such lenses are usable at all
+\citep{gurnee2026workspace}, and is the modal best layer for the LRE
+itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
+20 and 23). We stress that a single layer is used for \emph{every}
+relation, so this choice cannot manufacture a correlation across
+relations: it can only make the diagnostic uniformly better or uniformly
+worse. Tuning the layer per relation would score higher and mean less.}
 
 
 
@@ -132,9 +195,8 @@ measure faithfulness, so the two quantities are commensurable.
 
 \section{Experimental setup}
 
-\paragraph{Model.} Olmo-3-7B, \texttt{float32} with eager attention
-(the double-backward used for the JVP is not supported by fused
-attention kernels).
+\paragraph{Model.} Olmo-3-7B, in \texttt{float32} with eager attention,
+for the reason given in footnote~1.
 
 \paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
 contains 47 relations. Our prompt presupposes an entity subject, so we
@@ -150,12 +212,25 @@ error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
 
-\paragraph{Measurement.} Faithfulness is recomputed for all 28 relations
-under a single protocol (8 in-context examples, 8 reference subjects, a
-$6\times6$ grid over layer and $\beta$ selected on the mean). The lens uses
-8 reference subjects and up to 20 scored subjects per relation (11--20,
-depending on how many the relation has once in-context and reference
-subjects are removed).
+\paragraph{Measurement.} Both quantities are read off the same prompt, so
+that they are comparable. Following
+\citet{hernandez2024linearity}, a relation is presented to the model
+\emph{in context}: eight (subject, object) examples of that relation are
+concatenated, one per line, and the query subject is appended without its
+object, so that the model's next token is its answer. This is what
+defines ``the model's own prediction'' for both measures. The subjects of
+a relation are shuffled once and partitioned into three disjoint sets:
+eight in-context examples, eight reference subjects from which $W$ and $b$
+are estimated, and the remainder as scored test subjects.
+
+Faithfulness is then recomputed for all 28 relations under this single
+protocol, replacing the mixture of earlier protocols in our own logs, with
+layer and $\beta$ chosen on a $6\times6$ grid by the mean over the test
+subjects. The lens uses the same eight reference subjects and scores the
+same test subjects (11--20 per relation, depending on how many remain
+after the in-context and reference sets are removed). Crucially, the
+in-context prompt is used only to obtain the \emph{target}; the lens
+itself is always computed under the neutral prompt of \S3.
 
 \section{Results}
 
@@ -172,23 +247,43 @@ described in \S\ref{sec:artifact}.}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
-($p = 1.4\!\times\!10^{-4}$; permutation null $0.0003$ over $10^4$
-shuffles).
+($p = 1.4\!\times\!10^{-4}$). With 28 points and a parametric $p$-value
+resting on assumptions we would rather not make, we also test the
+correlation by permutation: we shuffle the lens scores against the
+faithfulness values $10^4$ times, recompute $\rho$ each time, and count
+how often the shuffled $|\rho|$ matches or exceeds the observed one. It
+does so in $0.03\%$ of shuffles, so the association is not an artifact of
+the small sample.
 
 \paragraph{The correlation is not carried by cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
 of subjects per object, ranges from $1.0$ to $189$. High $k$ makes
 faithfulness easier, and indeed $k$ predicts faithfulness on its own
-($\rho = 0.43$, $p = 0.02$). But $k$ is unrelated to the lens score
-($\rho = -0.03$, $p = 0.87$), and partialling it out \emph{raises} the
-correlation to $\rho = 0.744$ ($p = 10^{-5}$).
+($\rho = 0.43$, $p = 0.02$). But $k$ is essentially uncorrelated with the
+lens score ($\rho = -0.03$, $p = 0.87$; that is, no detectable
+relationship, which is what we want here, though with $n = 28$ we can
+only rule out a strong one). Partialling $k$ out \emph{raises} the
+correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
+independent predictors of faithfulness, so removing the variance $k$
+explains sharpens rather than weakens the lens signal.
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
 contexts. This predicts neither faithfulness ($\rho = -0.03$) nor the lens
 score ($\rho = -0.02$), and partialling it out leaves the correlation
-unchanged at $0.658$; with both covariates, $0.746$.
+unchanged at $0.658$; with both covariates (cardinality and answer
+frequency), $0.746$.
+
+\paragraph{How we partial.} All variables here are ordinal, so we work
+throughout on ranks. To partial out a set of covariates we rank-transform
+the lens score, faithfulness and each covariate; regress the ranked lens
+score on the ranked covariates by ordinary least squares with an
+intercept; do the same for ranked faithfulness; and report the Pearson
+correlation of the two residual vectors. This is the standard partial
+Spearman correlation, and it asks how much of the lens--faithfulness
+association survives once everything the covariates can linearly explain
+about either variable has been removed.
 
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain drives the
