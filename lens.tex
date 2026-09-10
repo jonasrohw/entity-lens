@@ -296,16 +296,38 @@ sets. They receive almost identical faithfulness ($0.09$, $0.07$) and
 almost identical lens scores ($-3.69$, $-3.99$), without the lens being
 told which relation it is looking at.
 
-\section{Where the diagnostic fails}
+\section{Where the account degrades}
+\label{sec:residuals}
 
-Two relations sit well above the trend: \textsc{name\_gender}
-(faithfulness $0.67$, lens $-4.67$) and \textsc{person\_university}
-($0.59$, $-4.52$). Both are cases where the model can answer but a neutral
-``known for'' readout has no reason to surface the answer: a first name
-does not evoke a gender word, and few people are chiefly known for their
-university. This is the diagnostic's main systematic weakness -- it
-measures what an entity is \emph{salient} for, which is not always what a
-relation asks for.
+What the lens reads is what an entity is \emph{salient} for. On the
+account proposed here that is not a confound to be excused but the
+mechanism itself: a relation is linearly decodable to the extent that its
+answer is already part of what the subject's representation makes the
+model disposed to say. The relations that deviate from the trend are
+therefore exceptions to the account, not failures of measurement, and it
+is worth asking whether they are unstructured.
+
+They are not. Ordering relations by their residual from the fitted trend,
+both tails are organised by the size of the answer space. The largest
+positive residuals -- faithful despite a low lens score -- are
+\textsc{landmark\_on\_continent} ($+0.30$, $k = 189$),
+\textsc{name\_gender} ($+0.29$, $k = 9.5$) and
+\textsc{person\_native\_language} ($+0.26$, $k = 30.6$). In each, the LRE
+chooses among a handful of possible answers, and can be faithful without
+the answer being salient for any particular subject: no first name is
+chiefly ``known for'' its gender, but there are only two answers to pick
+between. The largest negative residuals -- unfaithful despite the lens --
+are \textsc{person\_father} ($-0.43$), \textsc{person\_mother} ($-0.41$)
+and \textsc{company\_ceo} ($-0.32$), all with $k \approx 1$ and answer
+spaces in the hundreds, where faithfulness is near its floor whatever the
+representation carries.
+
+The account thus holds in the middle of the cardinality range and
+degrades predictably at both ends, in opposite directions. This is the
+same variable whose removal raises the correlation to $0.744$, and it
+gives that number an interpretation: partialling out $k$ removes the
+principal source of deviation from the salience account rather than
+merely a nuisance correlate.
 
 \section{A first-token scoring artifact}
 \label{sec:artifact}
@@ -335,12 +357,30 @@ evaluation on numeric or unit-prefixed answers.
 The study covers one model and 28 relations. The relationship is
 correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
-exploits: an intervention experiment is the natural next step. Seven of the
-28 relations have fewer than ten test items after the in-context and
-reference subjects are removed, so their faithfulness estimates are coarse
-(for three of them, quantized to thirds); a rotating-split protocol would
-sharpen these. Finally, the diagnostic is defined only for relations whose
-subjects are entities, which excludes 19 of the dataset's 47 relations.
+exploits; an intervention experiment is the natural next step.
+
+The account has a scope condition we can state but not yet explain
+(\S\ref{sec:residuals}). It is weakest where the answer space is very
+small, since an LRE can then be faithful by elimination rather than by
+reading anything from the subject, and where the answer space is very
+large and each answer near-unique, since faithfulness is then close to its
+floor regardless. We show that these are the two tails of a single
+variable, but we do not have a principled account of where the boundaries
+lie, and with 28 relations we cannot fit one.
+
+We also probe salience through a single neutral prompt,
+\texttt{"\{\} is known for"}. That phrasing asks what an entity is
+\emph{noted} for, which need not coincide with everything its
+representation carries; attributes such as gender may be well encoded
+without being something a name is ``known for''. A different neutral
+prompt, or an average over several, might track salience more broadly.
+
+Seven of the 28 relations have fewer than ten test items after the
+in-context and reference subjects are removed, so their faithfulness
+estimates are coarse (for three of them, quantized to thirds); a
+rotating-split protocol would sharpen these. Finally, the diagnostic is
+defined only for relations whose subjects are entities, which excludes 19
+of the dataset's 47 relations.
 
 \section{Conclusion}
 
@@ -348,10 +388,17 @@ Whether a relation is linearly decodable from a language model is
 substantially predictable without the relation. A Jacobian lens estimated
 from subject differences under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
-out to be faithful. This locates linear decodability in what a subject's
-representation already carries, and suggests that the wide spread of LRE
-faithfulness across relations is less about the relations than about the
-entities they are asked about.
+out to be faithful.
+
+The reading we favour is that salience is the mechanism rather than a
+confound: a relation admits a faithful linear operator to the extent that
+its answer is already part of what the subject's representation makes the
+model disposed to say. On that view the wide spread of LRE faithfulness
+across relations is less a fact about the relations than about the
+entities they are asked about -- and the exceptions are informative,
+falling at the two ends of the answer-space range where faithfulness can
+be achieved, or prevented, without the subject's representation mattering
+much either way.
 
 \bibliography{custom}
 
