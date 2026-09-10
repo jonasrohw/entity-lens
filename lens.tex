@@ -80,7 +80,7 @@ An LRE for relation $r$ approximates the model's computation as
 o \;\approx\; \beta\, W s + b ,
 \end{equation}
 where $s$ is the hidden state at the subject's final token, $o$ the
-output state, and $W$, $b$ is estimated from a small set of reference
+output state, and $W$, $b$ are estimated from a small set of reference
 subjects as the mean Jacobian and mean bias of the model's own map
 \citep{hernandez2024linearity}. \emph{Faithfulness} is the rate at which
 decoding $\beta W s + b$ over the full vocabulary reproduces the
@@ -125,8 +125,6 @@ It is fixed at 17 for all
 relations.
 
 
-would itself be relation-specific
-information.
 
 Relation-specificity enters in exactly one place: the \emph{target}. The
 model's top-1 is taken under the same 8-shot in-context prompt used to
@@ -148,7 +146,7 @@ fixed a subject-type filter in advance using the dataset's declared
 words (\textit{verb}, \textit{adjective}, \textit{word}) and over abstracts
 (\textit{occupation}, \textit{task}, \textit{characteristic},
 \textit{degree}), for which \texttt{"give is known for"} is a category
-error.
+error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
 
