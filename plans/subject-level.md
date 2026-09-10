@@ -1,5 +1,7 @@
-<!-- shared copy for collaborators.  Working copy: notes/subject-level-plan.md
-     in the project tree; keep the two in sync or delete one. -->
+<!-- edited 2026-09-10 12:22 - stage 1 complete: splits aligned, per-subject outcomes stored, smoke test passes -->
+<!-- edited 2026-09-10 12:03 - plan: move the unit of analysis from the relation to the subject -->
+
+<!-- shared with collaborators as paper/plans/subject-level.md -->
 
 # Plan: the subject as the unit of analysis
 
@@ -194,3 +196,38 @@ Roughly a day of wall-clock on free GPUs.
 - **First-token scoring.**  Check for objects whose first token is a bare
   space (token 220) before scoring
   ([`year-relations.md`](year-relations.md)).
+
+## 10. Progress log
+
+**Stage 1 (prerequisites) complete, 2026-09-10.**
+
+- `analysis/relsplit.py` — one canonical `split(samples, seed)` giving
+  disjoint `(icl, ref, test)`, plus `fingerprint()` over the subject
+  names. Both scripts call it; `--legacy-split` reproduces the paper's
+  numbers.
+- **A second misalignment was found while wiring it, not anticipated
+  above.** The LRE fits on a `ref` set *disjoint* from `test`, but the
+  lens used its first eight *scored* subjects as anchors and skipped
+  self-comparison — so lens subjects fell into two classes with
+  different treatment. The lens now takes the same disjoint `ref` set as
+  anchors. This changes lens scores slightly relative to the paper.
+- `lre_faithfulness.py` now records hit/miss per subject at every grid
+  cell and writes the selected cell's map as `per_subject`.
+- Both write `split_fingerprint`; the analysis asserts equality.
+
+**Smoke test — `pokemon_evolutions`, the smallest usable relation.**
+Fingerprints matched (`81bfbfbdbdaa`), subject sets identical, 28
+subjects, 6 hits. Pilot statistic: **AUC = 0.79** (Mann--Whitney
+p = 0.033); shuffle control returns a null AUC of 0.501 and matches the
+observed value in 4% of 2,000 permutations. One relation proves nothing,
+but the pipeline is correct and the effect is in the predicted direction.
+
+**An unanticipated finding worth acting on.** The same relation scores
+faithfulness **0.39 under the old split and 0.21 under the new one** —
+same relation, same `n_test = 28`, only a different random partition.
+Per-relation faithfulness is far noisier at small `n_test` than the
+paper currently acknowledges: the concern is not confined to the seven
+relations flagged with `†`. Two consequences: the relation-level
+correlation is attenuated by noise in `y` (so the true value is probably
+above 0.658), and the re-run should use `--trials > 1` and average,
+which is what that flag exists for.
