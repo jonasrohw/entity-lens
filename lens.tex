@@ -416,6 +416,19 @@ confidence. The asymmetry that makes the lens interesting anyway is that
 it is computed without the relation, whereas confidence is measured under
 the relation's own prompt.
 
+\paragraph{How large is the effect?} Most of the variation in LRE success
+lies \emph{within} relations, not between them: an analysis of variance on
+the binary outcome puts $74.7\%$ within and $25.3\%$ between, and the
+latent-scale intraclass correlation from a random intercept per relation
+agrees at $29.3\%$ between. The subject-level analysis is therefore
+addressing the larger component rather than a residual.
+
+It explains a modest share of it. Taking per-relation intercepts as the
+baseline, McFadden's pseudo-$R^2$ within relations is $0.047$ for the lens,
+$0.075$ for confidence and $0.095$ for the two together. The effect is
+real and robust but small, and the bulk of within-relation variation in
+LRE success is explained by neither.
+
 \paragraph{The scoring penalizes the lens.} First-token rank scoring
 requires the lens to surface the exact answer token, and penalizes it for
 producing a synonym or a near neighbor. On a control set of 80 famous
@@ -520,10 +533,10 @@ exploits.
 
 The subject-level analysis of \S\ref{sec:subject} carries several
 caveats of its own. Model confidence predicts LRE success better than
-the lens does ($11.5\times$ against $6.7\times$), and although the lens
-contributes independently, we cannot presently say how much of the
-mechanism is confidence; a variance decomposition would bound this and we
-have not run one. Faithfulness there is estimated from a single split per
+the lens does ($11.5\times$ against $6.7\times$), and explains more of the
+within-relation variance ($0.075$ against $0.047$). The lens contributes
+independently of it, but neither explains much: together they account for
+under a tenth of the within-relation variation in LRE success. Faithfulness there is estimated from a single split per
 relation, and a single split is noisy --- one relation scored $0.39$ and
 $0.21$ on two draws at identical test-set size --- so the outcome variable
 is measured with error that attenuates the association. The thirteen
