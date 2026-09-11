@@ -477,11 +477,12 @@ Call this rate the object's \emph{prominence}. Across the 14 relations
 for which it can be measured it ranges from $1.00$
 (\textsc{city\_in\_country}) and $0.50$ (\textsc{country\_capital\_city})
 down to $0.13$ (\textsc{person\_father}), $0.05$
-(\textsc{superhero\_archnemesis}) and $0.02$
+(\textsc{superhero\_archnemesis}) and $0.03$
 (\textsc{person\_mother}). It predicts how often the lens surfaces the
 gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
-$n = 14$). The salience interpretation is thus supported by a measurement
-that is independent of the quantity it explains.
+$n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
+The salience interpretation is thus supported by a measurement that is
+independent of the quantity it explains.
 
 One relation disobeys: \textsc{star\_constellation} has prominence $0.60$
 yet the lens surfaces the constellation for only $5\%$ of its stars. We
@@ -642,8 +643,12 @@ much either way.
 \section{All relations}
 
 Table~\ref{tab:relations} gives faithfulness and the lens score for every
-relation in the study.
+relation in the study. Table~\ref{tab:prominence} gives object prominence
+and the lens's top-five hit rate for the 14 relations on which prominence
+can be measured (Section~\ref{sec:residuals}).
 
 \input{table_relations}
+
+\input{table_prominence}
 
 \end{document}

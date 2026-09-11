@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+relation & prom. & $n$ & gold$\in$lens & $n$ \\
+\midrule
+city\_in\_country & 1.00 & 5 & 0.65 & 17 \\
+person\_plays\_pro\_sport & 0.60 & 40 & 0.35 & 20 \\
+star\_constellation$^{*}$ & 0.60 & 40 & 0.05 & 20 \\
+country\_capital\_city & 0.50 & 8 & 0.56 & 16 \\
+landmark\_in\_country & 0.47 & 40 & 0.25 & 20 \\
+product\_by\_company & 0.33 & 40 & 0.05 & 20 \\
+person\_occupation & 0.30 & 40 & 0.10 & 20 \\
+country\_currency & 0.29 & 14 & 0.00 & 20 \\
+person\_university & 0.28 & 29 & 0.00 & 20 \\
+country\_largest\_city & 0.25 & 8 & 0.25 & 16 \\
+person\_father & 0.13 & 39 & 0.06 & 18 \\
+company\_hq & 0.12 & 40 & 0.00 & 20 \\
+superhero\_archnemesis & 0.05 & 39 & 0.05 & 19 \\
+person\_mother & 0.03 & 40 & 0.00 & 20 \\
+\bottomrule
+\end{tabular}
+\caption{Object prominence, measured by the model's own free
+generation and therefore independently of the lens, against how often
+the lens surfaces the gold object in its top five. Spearman
+$\rho = 0.614$ ($p = 0.019$, $n = 14$).
+$^{*}$the one relation that disobeys (\S\ref{sec:residuals}).}
+\label{tab:prominence}
+\end{table}
