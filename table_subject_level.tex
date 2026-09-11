@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+relation & $n$ & hits & AUC & $p$ \\
+\midrule
+superhero\_person & 63 & 35 & 0.835 & 0.000 \\
+landmark\_in\_country & 100 & 80 & 0.784 & 0.000 \\
+person\_mother & 100 & 11 & 0.766 & 0.004 \\
+product\_by\_company & 100 & 68 & 0.715 & 0.001 \\
+pokemon\_evolutions & 20 & 5 & 0.707 & 0.197 \\
+company\_hq & 100 & 45 & 0.689 & 0.001 \\
+company\_ceo & 100 & 12 & 0.688 & 0.035 \\
+person\_plays\_position\_in\_sport & 100 & 84 & 0.686 & 0.019 \\
+person\_plays\_instrument & 100 & 73 & 0.627 & 0.053 \\
+star\_constellation & 100 & 35 & 0.617 & 0.055 \\
+person\_occupation & 100 & 66 & 0.494 & 0.922 \\
+superhero\_archnemesis & 55 & 18 & 0.467 & 0.700 \\
+person\_university & 29 & 10 & 0.268 & 0.046 \\
+\midrule
+median & 1067 & & \textbf{0.688} & 0.011 \\
+\bottomrule
+\end{tabular}
+\caption{Within-relation discrimination. For each relation, AUC is the
+probability that a subject the LRE reproduces has a higher lens score than one
+it misses; chance is $0.5$. The final row gives the median AUC and the
+Wilcoxon signed-rank test of $\{\mathrm{AUC}_r\}$ against $0.5$.}
+\label{tab:subject}
+\end{table}

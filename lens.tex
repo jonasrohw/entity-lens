@@ -44,10 +44,13 @@ relation-agnostic score correlates with LRE faithfulness at
 $\rho = 0.66$ ($p = 1.4\!\times\!10^{-4}$), rising to $0.75$ once object
 cardinality is partialled out. Neither cardinality nor the model's prior
 over the answer token accounts for the correlation, and the estimate is
-stable under leave-one-domain-out ($0.57$--$0.70$).
-This suggests that
-linear decodability
-may be largely a property of what a subject's representation
+stable under leave-one-domain-out ($0.57$--$0.70$). Moving the unit of
+analysis from the relation to the subject --- which holds prompt, answer
+space and cardinality fixed by construction --- the lens predicts
+\emph{which subjects within a relation} the LRE reproduces, at a median
+AUC of $0.69$ over 1{,}067 subjects in 13 relations, and survives a
+control for the model's own confidence. This suggests that linear
+decodability may be largely a property of what a subject's representation
 already carries, rather than of the relation being decoded.
 \end{abstract}
 
@@ -86,7 +89,9 @@ faithfulness across 28 relations at $\rho = 0.66$.
 We make three contributions. (i)~We introduce a relation-agnostic
 diagnostic of linear decodability and show it predicts LRE faithfulness.
 (ii)~We show the prediction survives controls for object cardinality and
-answer-token frequency, and for holding out entire subject domains.
+answer-token frequency, holding out entire subject domains, and --- moving
+to the subject as the unit of analysis --- a control for the model's own
+confidence.
 (iii)~We document a first-token scoring artifact that silently inflates
 faithfulness to a perfect score on relations with numeric objects, and
 propose a remedy.
@@ -234,26 +239,30 @@ a relation are shuffled once and partitioned into three disjoint sets:
 eight in-context examples, eight reference subjects from which $W$ and $b$
 are estimated, and the remainder as scored test subjects.
 
-\enote{hs}{in our field, it is not customary to say
-  something like
-``replacing the mixture of earlier protocols in our own
-  logs''. if it is a relatively minor not ``preregistered''
-  change, then it does not have to be declared. if it is
-  major, then it belongs in limitations}
+Faithfulness is then recomputed for all 28 relations under this protocol.
+Layer and $\beta$ are chosen on a $6\times6$ grid --- six candidate layers
+for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values of
+$\beta$ ($0.5, 1, 1.5, 2, 3, 5$) --- by the mean over the test subjects.
+\citet{hernandez2024linearity} likewise fit both per relation; the six
+layers span the network at roughly even spacing and the $\beta$ range
+brackets the values they report.
 
-Faithfulness is then recomputed for all 28 relations under this 
-protocol, with
-layer and $\beta$ chosen on a $6\times6$ grid
-\enote{hs}{explain $6\times6$ grid : what are the
-  dimensions, why 6?}
-by the mean over the test
-subjects. The lens uses the same eight reference subjects and scores the
-same test subjects (11--20 per relation, depending on how many remain
-after the in-context and reference sets are removed). Crucially, the
-in-context prompt is used only to obtain the \emph{target}; the lens
-itself is always computed under the neutral prompt of \S3.
+The lens scores 11--20 subjects per relation, depending on how many remain
+once the in-context and reference sets are removed. For the
+relation-level results below, the lens and the LRE sample their splits
+independently, so the particular subjects entering each set differ between
+the two measurements. Both estimates are unbiased for the relation, but
+each carries sampling noise the other does not, which attenuates rather
+than inflates the correlation we report. The subject-level analysis of
+\S\ref{sec:subject} requires the two to score the \emph{same} subjects and
+uses a single shared split throughout.
+
+Crucially, the in-context prompt is used only to obtain the \emph{target};
+the lens itself is always computed under the neutral prompt of
+\S\ref{sec:lens}.
 
 \section{Results}
+\label{sec:results}
 
 \begin{figure}[t]
 \centering
@@ -285,8 +294,8 @@ lens score ($\rho = -0.03$, $p = 0.87$; that is, no detectable
 relationship, which is what we want here, though with $n = 28$ we can
 only rule out a strong one). Partialling $k$ out \emph{raises} the
 correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
-independent predictors of faithfulness, so removing the variance $k$
-\enote{hs}{removed: explains} sharpens rather than weakens the lens signal.
+independent predictors of faithfulness, so removing the variance
+attributable to $k$ sharpens rather than weakens the lens signal.
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
@@ -311,11 +320,111 @@ about either variable has been removed.
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
+\paragraph{The headline does not rest on the flawed scoring.} Re-running
+under the corrected protocol of \S\ref{sec:artifact} --- a single shared
+split and objects restricted to those their first token identifies ---
+gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that survive the
+restriction, against $0.658$ over 28 here.
+
 \paragraph{A within-domain check.} \textsc{person\_father} and
 \textsc{person\_mother} are separate relations over near-identical subject
 sets. They receive almost identical faithfulness ($0.09$, $0.07$) and
 almost identical lens scores ($-3.69$, $-3.99$), without the lens being
 told which relation it is looking at.
+
+\section{From relations to subjects}
+\label{sec:subject}
+
+The evidence so far is 28 aggregate points, and a skeptic may reasonably
+suspect that both measures track some coarse property of a relation rather
+than anything about individual entities. Both quantities are, however,
+defined per subject: whether the LRE reproduces the model's answer for
+that subject, and where the lens ranks it. Asking whether the lens
+predicts \emph{which subjects within a relation} the LRE gets right holds
+the relation, its prompt, its answer space and its cardinality fixed by
+construction --- controlling by design for the covariates \S\ref{sec:results}
+partials out --- and converts the claim from a statement about relations
+into one about entities, which is what the account asserts.
+
+\paragraph{Design.} The unit is a (relation, subject) pair. The outcome is
+whether the LRE's top-1 equals the model's top-1 for that subject; the
+predictor is $-\log_{10}$ of the rank at which the lens places that same
+token. A relation enters if it has at least 20 scored subjects, a
+faithfulness between $0.10$ and $0.90$, and both outcomes present --- a
+relation at floor or ceiling has no within-relation variance to predict.
+Thirteen relations qualify, giving \textbf{1{,}067 subject-level rows}.
+Lens and LRE now take their split from one place and we verify by
+fingerprint that they scored identical subjects.
+
+\paragraph{Statistic.} Within each relation we compute the AUC: the
+probability that a subject the LRE reproduces has a higher lens score than
+one it misses. This is immune to between-relation variation by
+construction. We then test whether $\{\mathrm{AUC}_r\}$ lies above $0.5$
+with a Wilcoxon signed-rank test across relations. A single pooled
+correlation over all 1{,}067 rows would be dominated by between-relation
+differences and would re-answer the question of \S\ref{sec:results}.
+
+\input{table_subject_level}
+
+\paragraph{Result.} Median AUC is $\mathbf{0.688}$, above chance for
+10 of 13 relations, with Wilcoxon $p = 0.011$ (Table~\ref{tab:subject}).
+Permuting outcomes within each relation gives a null median AUC of
+$0.500$, matched in $0$ of $2{,}000$ permutations. Scoring all objects
+rather than only those whose first token identifies them
+(\S\ref{sec:artifact}) gives a median of $0.686$ but $p = 0.084$: the
+significant version comes from correcting the scoring, not from dropping
+relations.
+
+\paragraph{Is it just confidence?}
+\label{par:conf}
+If the model is peaked on a subject, both the LRE and the lens may find it
+easier, and the association would be real but uninformative. We measure
+confidence as the model's top-1 probability at the target position, and
+fit a fixed-effects logistic regression stratified by relation, so that
+only within-relation variation contributes. Predictors are within-relation
+percentile ranks, so a coefficient is the log-odds change across a
+relation's own range.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+model & lens $\beta$ & confidence $\beta$ \\
+\midrule
+lens only & $+1.90$ & --- \\
+lens $+$ top-1 probability & $+1.33$ & $+2.07$ \\
+lens $+$ entropy & $+1.42$ & $-1.56$ \\
+confidence only & --- & $+2.44$ \\
+\bottomrule
+\end{tabular}
+\caption{The lens effect with and without a control for model confidence.
+All coefficients have $p < 10^{-4}$.}
+\label{tab:conf}
+\end{table}
+
+The lens effect survives: an odds ratio of $6.7\times$ across the
+within-relation range alone, $3.8\times$ with confidence partialled out
+--- attenuated by 30\%, still at $p < 10^{-4}$. Entropy agrees, with the
+expected sign reversal.
+
+But confidence is the \emph{stronger} predictor, at $11.5\times$ alone,
+and the two are correlated within relation ($\rho = 0.32$). The honest
+statement is therefore that the lens predicts which subjects the LRE
+reproduces independently of the model's confidence, that confidence
+predicts it better, and that roughly a third of the raw lens effect was
+confidence. The asymmetry that makes the lens interesting anyway is that
+it is computed without the relation, whereas confidence is measured under
+the relation's own prompt.
+
+\paragraph{The scoring penalizes the lens.} First-token rank scoring
+requires the lens to surface the exact answer token, and penalizes it for
+producing a synonym or a near neighbor. On a control set of 80 famous
+people with a single unambiguous occupation each, the lens places
+\textsc{composer} at median rank 3 for composers, but \textsc{writer} at
+rank 244 for writers --- whose readings are \emph{novels}, \emph{prose},
+\emph{poetry}, \emph{literary}, all correct and none of them the scored
+token. The effects we report are therefore lower bounds by an amount we
+can demonstrate but not yet quantify.
 
 \section{Where the account degrades}
 \label{sec:residuals}
@@ -369,9 +478,37 @@ predict the year correctly once the space is consumed. Including the
 uncorrected values would have depressed the reported correlation from
 $0.658$ to $0.427$.
 
-We flag this because the failure is silent: it produces a perfect score
-rather than an obvious error, and it will affect any first-token
-evaluation on numeric or unit-prefixed answers.
+\paragraph{The problem is more general.} Numeric objects are the extreme
+case, but any two objects sharing a first token are indistinguishable to
+a metric that scores only that token: \emph{University of Chicago} and
+\emph{University of Michigan} both reduce to \textsc{University}.
+Measuring the collapse rate --- the fraction of a relation's distinct
+objects that share a first token with another --- \textbf{6 of 40
+relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
+\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%,
+where 29 of 69 objects begin with \textsc{University}).
+
+Restricting each relation to objects whose first token identifies them
+repairs this on the gold side, and is the scoring used in
+\S\ref{sec:subject}. It is only a partial remedy, because faithfulness
+never uses gold: it compares the LRE against the \emph{model's} top-1, so
+what inflates it is the model's own answer being an easy token. In
+\textsc{person\_university}, after filtering, the model still answers
+\textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
+A complete fix would condition on the prediction being distinctive.
+
+The direction of the bias differs by relation. Where the collapse is on
+the gold side it makes faithfulness easier --- 41 distinct fathers all
+counting as \textsc{John} --- so our \textsc{person\_father} figure is an
+upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
+Where the model itself emits the shared token, the collapse manufactures
+agreement that is not retrieval at all.
+
+We flag all of this because the failure is silent: it produces a perfect
+or inflated score rather than an obvious error, and it will affect any
+first-token evaluation whose answers share prefixes --- numeric,
+titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
+(\emph{University of X}).
 
 \section{Limitations}
 \label{sec:limitations}
@@ -381,21 +518,22 @@ correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
 
-The most informative next step is to move the analysis \emph{within}
-relations. Our unit is currently the relation, so the evidence is 28
-aggregate points, and a skeptic may reasonably suspect that both measures
-track some coarse property of a relation rather than anything about
-individual entities. The same two quantities are, however, defined per
-subject: whether the LRE reproduces the model's answer for that subject,
-and where the lens ranks it. If the lens predicts \emph{which subjects
-within a relation} the LRE gets right, that would hold the relation, its
-prompt, its answer space and its cardinality fixed by construction --
-controlling by design for everything we currently partial out -- and would
-raise the evidence from 28 points to several hundred. It would also
-convert the claim from a statement about relations into one about
-entities, which is what the account actually asserts. Should the lens
-predict between relations but not within them, the mechanism is coarser
-than we propose, and that too would be worth knowing.
+The subject-level analysis of \S\ref{sec:subject} carries several
+caveats of its own. Model confidence predicts LRE success better than
+the lens does ($11.5\times$ against $6.7\times$), and although the lens
+contributes independently, we cannot presently say how much of the
+mechanism is confidence; a variance decomposition would bound this and we
+have not run one. Faithfulness there is estimated from a single split per
+relation, and a single split is noisy --- one relation scored $0.39$ and
+$0.21$ on two draws at identical test-set size --- so the outcome variable
+is measured with error that attenuates the association. The thirteen
+qualifying relations all sit in the middle of the cardinality range, where
+the account is expected to work, making this a fair test of the mechanism
+but not of its boundaries. And the inclusion criteria screen on
+faithfulness and test-set size, neither of which catches a relation like
+\textsc{person\_occupation} where two answers cover 65\% of subjects;
+screening on the concentration of the model's answer distribution would
+be better, and would have to be fixed in advance.
 
 The account has a scope condition we can state but not yet explain
 (\S\ref{sec:residuals}). It is weakest where the answer space is very
