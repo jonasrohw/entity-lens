@@ -458,6 +458,44 @@ model disposed to say. The relations that deviate from the trend are
 therefore exceptions to the account, not failures of measurement, and it
 is worth asking whether they are unstructured.
 
+\paragraph{Salience, measured independently of the lens.} The account
+above would be circular if salience were read off the lens, since the
+lens is itself a salience readout. We therefore measure it by the model's
+own free generation. For each test subject we greedily generate 90 tokens
+from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
+facts about \{\}. First,"}, and record whether any distinctive word of the
+gold object appears in either continuation.\footnote{Titles, particles and
+words shared with the subject's own name are excluded, so that
+\emph{The}~Joker is not matched by any occurrence of ``the'' and
+\emph{Johann Georg Kant} is not matched by a passage about Immanuel Kant.
+The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
+makes this model emit a multiple-choice quiz rather than prose, so the
+object is never named.} This is a forward pass under different prompts,
+and involves no Jacobian.
+
+Call this rate the object's \emph{prominence}. Across the 14 relations
+for which it can be measured it ranges from $1.00$
+(\textsc{city\_in\_country}) and $0.50$ (\textsc{country\_capital\_city})
+down to $0.13$ (\textsc{person\_father}), $0.05$
+(\textsc{superhero\_archnemesis}) and $0.02$
+(\textsc{person\_mother}). It predicts how often the lens surfaces the
+gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
+$n = 14$). The salience interpretation is thus supported by a measurement
+that is independent of the quantity it explains.
+
+One relation disobeys: \textsc{star\_constellation} has prominence $0.60$
+yet the lens surfaces the constellation for only $5\%$ of its stars. We
+suspected an artifact, since a Bayer designation contains the
+constellation in the Latin genitive (\emph{Eta Persei} for
+\emph{Perseus}), which our word filter does not remove; but prominence on
+the $19$ subjects without such overlap is $0.63$, slightly higher rather
+than lower, so this explanation fails. What the lens returns for these
+subjects is category vocabulary --- \emph{constellation}, \emph{brightness},
+\emph{stellar} --- rather than the particular constellation, which suggests
+the same first-token scoring problem discussed in
+Section~\ref{sec:artifact}. Excluding the relation would raise the
+correlation to $0.725$; we report the value with it included.
+
 They are not. Ordering relations by their residual from the fitted trend,
 both tails are organized by the size of the answer space. The largest
 positive residuals -- faithful despite a low lens score -- are
