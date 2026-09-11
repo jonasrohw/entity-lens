@@ -103,9 +103,13 @@ An LRE for relation $r$ approximates the model's computation as
 o \;\approx\; \beta\, W s + b ,
 \end{equation}
 where $s$ is the hidden state at the subject's final token, $o$ the
-output state, and $W$, $b$ are estimated from a small set of reference
+output state, and $W$, $b$ are estimated from a small set
+$\{s_i\}$ 
+of reference
 subjects as the mean Jacobian and mean bias of the model's own map
 \citep{hernandez2024linearity}.
+
+\enote{hs}{define what $f$ is below?}
 
 The scalar $\beta$ corrects a systematic weakness of the first-order
 estimate. A Jacobian taken at a reference subject describes the model's
@@ -126,7 +130,7 @@ to that anchor, and so does change which object is ranked first.
 layer; we follow their protocol and select it from
 $\{0.5, 1, 1.5, 2, 3, 5\}$. Eq.~\ref{eq:beta} is also what makes the LRE
 affordable: each test subject costs $n$ Jacobian--vector products rather
-than a materialised $4096 \times 4096$ matrix.
+than a materialized $4096 \times 4096$ matrix.
 
 \emph{Faithfulness} is the rate at which
 decoding $\beta W s + b$ over the full vocabulary reproduces the
@@ -140,7 +144,9 @@ the quantity we predict.
 
 For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
 the same type (e.g., Spain, Italy), we take the Jacobian--vector product
-of the model's map at each reference and average:
+\enote{hs}{i find this confusing. can we simply cut it?:
+``of the model's map''}
+at each reference and average:
 \begin{equation}
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \label{eq:lens}
@@ -169,12 +175,14 @@ Jacobian then carries that residual forward to the vocabulary. The lens
 therefore reads what this entity, as opposed to others of its kind, makes
 the model disposed to say.
 
-We note that this differencing is not itself new: it falls directly out
-of the LRE construction. Eq.~\ref{eq:beta} already expresses the LRE as a
-constant plus a sum of $J_i(s - s_i)$ terms, so Eq.~\ref{eq:lens} is that
+We note that this differencing
+falls directly out of the rewriting of the Jacobian lens
+in Eq.~\ref{eq:beta}, i.e., out of expressing the LRE as a
+constant plus a sum of $J_i(s - s_i)$ terms. Eq.~\ref{eq:lens} is that
 same quantity with the subject-independent anchor dropped and
-$\beta = 1$. What is new here is not the algebra
-but the use: we estimate the lens without any relation and ask whether it
+$\beta = 1$.
+This new way of looking at the Jacobian lens allows
+us to estimate the lens without any relation and ask whether it
 predicts an LRE that was fitted \emph{with} one. This also distinguishes
 our lens from that of \citet{gurnee2026workspace}, which averages a
 Jacobian over a corpus and applies it to raw activations.
@@ -190,8 +198,8 @@ so higher $A_r$ means the lens agrees with the model more.
 
 Three properties make $A_r$ non-trivial as a predictor. The prompt is
 neutral and shared, so no relation template enters. The differences in
-Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} $-$
-\emph{Spain}, never \emph{France} $-$ \emph{Paris} -- so no
+Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} minus
+\emph{Spain}, never \emph{France} minus \emph{Paris} -- so no
 relation-specific (subject,~object) pair is used in estimation.
 The layer is not relation-specific either. It is fixed at 17 for all
 relations.\footnote{Layer 17 is roughly half-way through the network,
@@ -320,7 +328,7 @@ about either variable has been removed.
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
-\paragraph{The headline does not rest on the flawed scoring.} Re-running
+\paragraph{Our findings do not rest on the flawed scoring.} Re-running
 under the corrected protocol of \S\ref{sec:artifact} --- a single shared
 split and objects restricted to those their first token identifies ---
 gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that survive the
