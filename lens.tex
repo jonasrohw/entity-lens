@@ -29,30 +29,71 @@ $>>>$\hspace{1cm}}}}}
 \begin{document}
 \maketitle
 
+
+\enote{hs}{i would like to highlight the new j lens as a
+  contribution. yes, mathematially, it's pretty trivial. at
+  the same time, it's a nice idea and I actually think it
+  has quite a lot of potential beyond this paper. if you
+  agree: sell it as a novelty in the introduction, in
+  analogy to the changes i've made to the abstract. if not: let's discuss}
+
 \begin{abstract}
-Linear relational embeddings (LREs) approximate a language model's
-subject-to-object mapping with an affine function. Their faithfulness
-varies enormously across relations -- near zero for \textsc{person\_father},
-at ceiling for \textsc{country\_capital\_city}. We ask what determines that
-variation, and show it is substantially predictable from a readout that
-never sees the relation. We estimate a Jacobian lens from
-subject-to-subject differences under a single neutral prompt, at one fixed
-layer for every relation, using no relation template, no objects and no
-(subject,~object) pairs and measure how highly it ranks the model's own
-answer. Across 28 relations of the LRE dataset on Olmo-3-7B this
+Linear relational embeddings (LREs) approximate a language
+model's subject-to-object mapping with an affine
+function. Their faithfulness varies enormously across
+relations -- near zero for \textsc{person\_father}, at
+ceiling for \textsc{country\_capital\_city}. We ask what
+determines that variation, and show it is substantially
+predictable from a readout that never sees the relation. We
+estimate a
+novel form of a
+Jacobian lens, the \emph{differential Jacobian lens}:
+instead of predicting tokens the model might output for
+``France'', we instead restrict this set to those tokens
+that are not also part of the output of ``Spain''. We estimate
+the differential Jacobian lens
+from such subject-to-subject differences
+under a single neutral prompt, at one fixed layer for every
+relation, using no relation template and no objects and
+measure how highly it ranks the model's answer for a
+relation (e.g., ``Paris''). Across
+28 relations of the LRE dataset on Olmo-3-7B this
 relation-agnostic score correlates with LRE faithfulness at
-$\rho = 0.66$ ($p = 1.4\!\times\!10^{-4}$), rising to $0.75$ once object
-cardinality is partialled out. Neither cardinality nor the model's prior
-over the answer token accounts for the correlation, and the estimate is
-stable under leave-one-domain-out ($0.57$--$0.70$). Moving the unit of
-analysis from the relation to the subject --- which holds prompt, answer
-space and cardinality fixed by construction --- the lens predicts
-\emph{which subjects within a relation} the LRE reproduces, at a median
-AUC of $0.69$ over 1{,}067 subjects in 13 relations, and survives a
-control for the model's own confidence. This suggests that linear
-decodability may be largely a property of what a subject's representation
-already carries, rather than of the relation being decoded.
+$\rho = 0.66$ ($p = 1.4\!\times\!10^{-4}$).  Neither object
+cardinality (mean number of subjects per object) nor the
+model's prior over the answer token accounts for the
+correlation. Moving the unit of
+analysis from the relation to the subject, the lens predicts \emph{which subjects within a
+relation} the LRE reproduces, at a median AUC of $0.69$ over
+1{,}067 subjects in 13 relations. This suggests that linear
+decodability may be largely a property of what a subject's
+representation already carries, rather than of the relation
+being decoded.
 \end{abstract}
+
+\enote{hs}{removed because the abstract is too long:
+ --- which holds
+prompt, answer space and cardinality fixed by construction
+--- }
+
+\enote{hs}{I'd like to remove this from the abstract because
+  it's not really comprehensible without saying more:
+, and the estimate is stable under
+leave-one-domain-out ($0.57$--$0.70$)}
+
+\enote{hs}{i rewrote some parts to avoid the verb ``to
+  partial''. in the ACL community it's not common and may
+  sound like jargon}
+
+\enote{hs}{the same holds for ``survive''. it's ok, but
+  let's use it sparingly}
+
+\enote{hs}{i removed this to tighten up the abstract:
+, rising to $0.75$ once object
+  cardinality is partialled out.
+, and survives a
+control for the model's own confidence.
+}
 
 \section{Introduction}
 
@@ -88,7 +129,7 @@ faithfulness across 28 relations at $\rho = 0.66$.
 
 We make three contributions. (i)~We introduce a relation-agnostic
 diagnostic of linear decodability and show it predicts LRE faithfulness.
-(ii)~We show the prediction survives controls for object cardinality and
+(ii)~We show the prediction remains valid when we control for object cardinality and
 answer-token frequency, holding out entire subject domains, and --- moving
 to the subject as the unit of analysis --- a control for the model's own
 confidence.
@@ -153,17 +194,24 @@ v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \end{equation}
 Here $J_i$ is the Jacobian of the model's map from the subject's hidden
 state at layer $\ell$ to the final-layer state at the last position,
-evaluated at reference $i$. We never form $J_i$ explicitly: a
-Jacobian--vector product $J_i u$ can be obtained for the cost of a
-constant number of forward and backward passes,\footnote{We use the
+evaluated at reference $i$. We never form $J_i$ explicitly,
+but instead use the standard double-backward construction: a
+Jacobian--vector product $J_i u$ is obtained for the cost of a
+constant number of forward and backward passes, which is what makes
+Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$.
+Each $J_i$ is evaluated under a \emph{neutral} prompt,
+\texttt{"\{\} is known for"}, identical for every relation.
+
+\enote{hs}{please move this footnote to the appendix. we
+  should also find a reference for ``standard
+  double-backward construction''?
+footnote: {We use the
 standard double-backward construction: differentiating
 $\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a
 variable, then differentiating the result with respect to $u'$ in the
 direction $u$. This requires \texttt{float32} and eager attention, as
-fused attention kernels are not twice differentiable.} which is what makes
-Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$.
-Each $J_i$ is evaluated under a \emph{neutral} prompt,
-\texttt{"\{\} is known for"}, identical for every relation.
+fused attention kernels are not twice differentiable.}
+}
 
 \paragraph{Why differences.} The quantity we want is not what the model
 says about France, but what is \emph{specific} to France among countries.
@@ -212,6 +260,13 @@ relations: it can only make the diagnostic uniformly better or uniformly
 worse. Tuning the layer per relation would score higher and mean less.}
 
 
+\enote{hs}{below ``in-context prompt'' is mentioned the
+  first time, but this could be confusing without adding a
+  sentence of explanation. in particular, we need to remind
+  the reader (or tell them for the first time here) that
+  we're working with *two* different prompts: the neutral
+  prompt and the in-context prompt (where the latter is
+  used for in-context and for the actual prediction)}
 
 Relation-specificity enters in exactly one place: the \emph{target}. The
 model's top-1 is taken under the same 8-shot in-context prompt used to
@@ -285,13 +340,17 @@ described in \S\ref{sec:artifact}.}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
-($p = 1.4\!\times\!10^{-4}$). With 28 points and a parametric $p$-value
+($p = 1.4\!\times\!10^{-4}$).
+
+\enote{hs}{this is not usually done in the ACL
+  community. please move this to the appendix:
+With 28 points and a parametric $p$-value
 resting on assumptions we would rather not make, we also test the
 correlation by permutation: we shuffle the lens scores against the
 faithfulness values $10^4$ times, recompute $\rho$ each time, and count
 how often the shuffled $|\rho|$ matches or exceeds the observed one. It
 does so in $0.03\%$ of shuffles, so the association is not an artifact of
-the small sample.
+the small sample.}
 
 \paragraph{The correlation is not carried by cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
@@ -300,38 +359,42 @@ faithfulness easier, and indeed $k$ predicts faithfulness on its own
 ($\rho = 0.43$, $p = 0.02$). But $k$ is essentially uncorrelated with the
 lens score ($\rho = -0.03$, $p = 0.87$; that is, no detectable
 relationship, which is what we want here, though with $n = 28$ we can
-only rule out a strong one). Partialling $k$ out \emph{raises} the
+only rule out a strong one). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
 independent predictors of faithfulness, so removing the variance
-attributable to $k$ sharpens rather than weakens the lens signal.
+attributable to $k$ sharpens rather than weakens the lens
+signal.\footnote{All variables here are ordinal, so we work throughout with
+ranks. To remove the effects of a set of covariates, we
+rank-transform the lens score, faithfulness, and each
+covariate; regress the ranked lens score and ranked
+faithfulness separately on the ranked covariates using
+ordinary least squares with an intercept; and report the
+Pearson correlation between the resulting residual vectors.
+This is the standard partial
+Spearman correlation, and it asks how much of the lens--faithfulness
+association survives once everything the covariates can linearly explain
+about either variable has been removed.}
+
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
 contexts. This predicts neither faithfulness ($\rho = -0.03$) nor the lens
-score ($\rho = -0.02$), and partialling it out leaves the correlation
+score ($\rho = -0.02$), and removing it  leaves the correlation
 unchanged at $0.658$; with both covariates (cardinality and answer
 frequency), $0.746$.
 
-\paragraph{How we partial.} All variables here are ordinal, so we work
-throughout on ranks. To partial out a set of covariates we rank-transform
-the lens score, faithfulness and each covariate; regress the ranked lens
-score on the ranked covariates by ordinary least squares with an
-intercept; do the same for ranked faithfulness; and report the Pearson
-correlation of the two residual vectors. This is the standard partial
-Spearman correlation, and it asks how much of the lens--faithfulness
-association survives once everything the covariates can linearly explain
-about either variable has been removed.
-
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
-\textit{person} subjects, raising the worry that one domain drives the
+\textit{person} subjects, raising the worry that one domain
+(i.e., one subject type)
+drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
 \paragraph{Our findings do not rest on the flawed scoring.} Re-running
 under the corrected protocol of \S\ref{sec:artifact} --- a single shared
 split and objects restricted to those their first token identifies ---
-gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that survive the
+gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
 restriction, against $0.658$ over 28 here.
 
 \paragraph{A within-domain check.} \textsc{person\_father} and
@@ -350,8 +413,9 @@ defined per subject: whether the LRE reproduces the model's answer for
 that subject, and where the lens ranks it. Asking whether the lens
 predicts \emph{which subjects within a relation} the LRE gets right holds
 the relation, its prompt, its answer space and its cardinality fixed by
-construction --- controlling by design for the covariates \S\ref{sec:results}
-partials out --- and converts the claim from a statement about relations
+construction --- controlling by design for the covariates
+investigated in \S\ref{sec:results}
+ --- and converts the claim from a statement about relations
 into one about entities, which is what the account asserts.
 
 \paragraph{Design.} The unit is a (relation, subject) pair. The outcome is
@@ -414,7 +478,7 @@ All coefficients have $p < 10^{-4}$.}
   statistical test is used here}
 
 The lens effect survives: an odds ratio of $6.7\times$ across the
-within-relation range alone, $3.8\times$ with confidence partialled out
+within-relation range alone, $3.8\times$ with confidence removed
 --- attenuated by 30\%, still at $p < 10^{-4}$. Entropy agrees, with the
 expected sign reversal.
 
@@ -518,8 +582,8 @@ representation carries.
 The account thus holds in the middle of the cardinality range and
 degrades predictably at both ends, in opposite directions. This is the
 same variable whose removal raises the correlation to $0.744$, and it
-gives that number an interpretation: partialling out $k$ removes the
-principal source of deviation from the salience account rather than
+gives that number an interpretation: $k$ is the
+principal source of deviation in the salience account rather than
 merely a nuisance correlate.
 
 \section{A first-token scoring artifact}
