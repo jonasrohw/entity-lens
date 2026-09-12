@@ -99,15 +99,17 @@ representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
-Our instrument for showing this is a new one, and we think it is of
-interest beyond the question we apply it to. A \emph{Jacobian lens}
-propagates a first-order approximation of the model's own computation
-from an intermediate layer to the output vocabulary, and lenses of this
-kind have recently been used to characterize what a model is internally
-disposed to say \citep{gurnee2026workspace}. Applied to a raw activation,
-however, such a lens mostly returns what every entity of that type shares
--- the type itself, the syntactic role, the prompt. The entity is buried
-in its own category.
+The instrument we use to show this is new, and we offer it as a
+contribution in its own right. A \emph{Jacobian lens} propagates a
+first-order approximation of the model's own computation from an
+intermediate layer to the output vocabulary; recent work uses one to
+characterize what a model is internally disposed to say, averaging a
+Jacobian over a corpus and applying it to raw activations
+\citep{gurnee2026workspace}. That is the right construction for
+describing a model's dispositions in general. It is the wrong one for
+describing a single entity, because a raw activation is dominated by what
+every entity of its type shares -- the type itself, the syntactic role,
+the prompt -- so the entity is buried in its own category.
 
 We therefore introduce the \emph{differential Jacobian lens}, which
 evaluates the Jacobian at individual reference entities and applies it to
@@ -118,11 +120,12 @@ of its kind, and the Jacobian carries that residual forward to the
 vocabulary. The construction is elementary --- it falls out of rewriting
 the LRE itself (\S\ref{sec:lens}) --- but it changes what the readout is
 \emph{about}, from a category to an individual, and it needs no
-supervision, no relation, and no corpus of contexts. Any question of the
-form \emph{what does this model have loaded about this entity, as opposed
-to its neighbors?} is in its range.
+supervision, no relation and no corpus of contexts. The question it
+answers --- \emph{what is this model ready to say about this entity, as
+against others of its kind?} --- is not specific to relations, and we
+expect the lens to be useful wherever that question arises.
 
-Here we put it to one such question. We estimate the lens under a single
+Here we put it to one such use. We estimate the lens under a single
 neutral prompt shared by every relation, at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
@@ -130,13 +133,13 @@ score correlates with LRE faithfulness across 28 relations at
 $\rho = 0.66$.
 
 We make four contributions. (i)~We introduce the differential Jacobian
-lens, a supervision-free readout of what a model has loaded about an
-individual entity. (ii)~We turn it into a relation-agnostic diagnostic of
-linear decodability and show it predicts LRE faithfulness.
-(iii)~We show the prediction remains valid when we control for object
-cardinality and answer-token frequency, holding out entire subject
-domains, and --- moving to the subject as the unit of analysis --- a
-control for the model's own confidence.
+lens, a supervision-free readout of what a model is disposed to say about
+an individual entity. (ii)~We turn it into a relation-agnostic diagnostic
+of linear decodability and show that it predicts LRE faithfulness.
+(iii)~We show the prediction holds up under controls for object
+cardinality and answer-token frequency, under leave-one-domain-out, and
+--- moving to the subject as the unit of analysis --- under a control for
+the model's own confidence.
 (iv)~We document a first-token scoring artifact that silently inflates
 faithfulness to a perfect score on relations with numeric objects, and
 propose a remedy.
