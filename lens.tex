@@ -30,13 +30,6 @@ $>>>$\hspace{1cm}}}}}
 \maketitle
 
 
-\enote{hs}{i would like to highlight the new j lens as a
-  contribution. yes, mathematially, it's pretty trivial. at
-  the same time, it's a nice idea and I actually think it
-  has quite a lot of potential beyond this paper. if you
-  agree: sell it as a novelty in the introduction, in
-  analogy to the changes i've made to the abstract. if not: let's discuss}
-
 \begin{abstract}
 Linear relational embeddings (LREs) approximate a language
 model's subject-to-object mapping with an affine
@@ -81,13 +74,6 @@ prompt, answer space and cardinality fixed by construction
 , and the estimate is stable under
 leave-one-domain-out ($0.57$--$0.70$)}
 
-\enote{hs}{i rewrote some parts to avoid the verb ``to
-  partial''. in the ACL community it's not common and may
-  sound like jargon}
-
-\enote{hs}{the same holds for ``survive''. it's ok, but
-  let's use it sparingly}
-
 \enote{hs}{i removed this to tighten up the abstract:
 , rising to $0.75$ once object
   cardinality is partialled out.
@@ -113,27 +99,45 @@ representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
-Our diagnostic is a \emph{Jacobian lens}: a readout that propagates a
-first-order approximation of the model's own computation from an
-intermediate layer to the output vocabulary. Lenses of this kind have
-recently been used to characterize what a model is internally disposed to
-say \citep{gurnee2026workspace}. Ours differs in what it is applied to:
-rather than a corpus-averaged Jacobian acting on raw activations, we
-evaluate the Jacobian at individual reference entities and apply it to
-\emph{differences} between entity representations, under a single neutral
-prompt shared by every relation. The lens sees no relation template, no
-objects, and no (subject,~object) pairs; the layer is fixed in advance
-rather than tuned per relation. We then ask how highly it ranks the
-model's own answer to the relation. That score correlates with LRE
-faithfulness across 28 relations at $\rho = 0.66$.
+Our instrument for showing this is a new one, and we think it is of
+interest beyond the question we apply it to. A \emph{Jacobian lens}
+propagates a first-order approximation of the model's own computation
+from an intermediate layer to the output vocabulary, and lenses of this
+kind have recently been used to characterize what a model is internally
+disposed to say \citep{gurnee2026workspace}. Applied to a raw activation,
+however, such a lens mostly returns what every entity of that type shares
+-- the type itself, the syntactic role, the prompt. The entity is buried
+in its own category.
 
-We make three contributions. (i)~We introduce a relation-agnostic
-diagnostic of linear decodability and show it predicts LRE faithfulness.
-(ii)~We show the prediction remains valid when we control for object cardinality and
-answer-token frequency, holding out entire subject domains, and --- moving
-to the subject as the unit of analysis --- a control for the model's own
-confidence.
-(iii)~We document a first-token scoring artifact that silently inflates
+We therefore introduce the \emph{differential Jacobian lens}, which
+evaluates the Jacobian at individual reference entities and applies it to
+\emph{differences} between entity representations:
+\emph{France} minus \emph{Spain} rather than \emph{France} alone. What
+the subtraction leaves is what is specific to this entity among others
+of its kind, and the Jacobian carries that residual forward to the
+vocabulary. The construction is elementary --- it falls out of rewriting
+the LRE itself (\S\ref{sec:lens}) --- but it changes what the readout is
+\emph{about}, from a category to an individual, and it needs no
+supervision, no relation, and no corpus of contexts. Any question of the
+form \emph{what does this model have loaded about this entity, as opposed
+to its neighbors?} is in its range.
+
+Here we put it to one such question. We estimate the lens under a single
+neutral prompt shared by every relation, at one layer fixed in advance,
+and ask how highly it ranks the model's own answer. The lens sees no
+relation template, no objects and no (subject,~object) pairs, yet its
+score correlates with LRE faithfulness across 28 relations at
+$\rho = 0.66$.
+
+We make four contributions. (i)~We introduce the differential Jacobian
+lens, a supervision-free readout of what a model has loaded about an
+individual entity. (ii)~We turn it into a relation-agnostic diagnostic of
+linear decodability and show it predicts LRE faithfulness.
+(iii)~We show the prediction remains valid when we control for object
+cardinality and answer-token frequency, holding out entire subject
+domains, and --- moving to the subject as the unit of analysis --- a
+control for the model's own confidence.
+(iv)~We document a first-token scoring artifact that silently inflates
 faithfulness to a perfect score on relations with numeric objects, and
 propose a remedy.
 
@@ -143,14 +147,19 @@ An LRE for relation $r$ approximates the model's computation as
 \begin{equation}
 o \;\approx\; \beta\, W s + b ,
 \end{equation}
-where $s$ is the hidden state at the subject's final token, $o$ the
-output state, and $W$, $b$ are estimated from a small set
-$\{s_i\}$ 
-of reference
-subjects as the mean Jacobian and mean bias of the model's own map
+where $s$ is the hidden state at the subject's final token and $o$ the
+output state. Write $f$ for the model's own map between the two: $f$
+sends the subject's hidden state at an intermediate layer $\ell$ to the
+final-layer state at the last position, holding the rest of the prompt
+fixed. The LRE is the first-order approximation of $f$, averaged over a
+small set $\{s_i\}$ of reference subjects,
+\begin{equation}
+W = \operatorname{mean}_i J_i , \qquad
+b = \operatorname{mean}_i\!\left[\, f(s_i) - J_i s_i \,\right] ,
+\label{eq:wb}
+\end{equation}
+where $J_i$ is the Jacobian of $f$ at $s_i$
 \citep{hernandez2024linearity}.
-
-\enote{hs}{define what $f$ is below?}
 
 The scalar $\beta$ corrects a systematic weakness of the first-order
 estimate. A Jacobian taken at a reference subject describes the model's
@@ -185,8 +194,6 @@ the quantity we predict.
 
 For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
 the same type (e.g., Spain, Italy), we take the Jacobian--vector product
-\enote{hs}{i find this confusing. can we simply cut it?:
-``of the model's map''}
 at each reference and average:
 \begin{equation}
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
@@ -194,24 +201,14 @@ v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \end{equation}
 Here $J_i$ is the Jacobian of the model's map from the subject's hidden
 state at layer $\ell$ to the final-layer state at the last position,
-evaluated at reference $i$. We never form $J_i$ explicitly,
-but instead use the standard double-backward construction: a
-Jacobian--vector product $J_i u$ is obtained for the cost of a
-constant number of forward and backward passes, which is what makes
-Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$.
+evaluated at reference $i$. We never form $J_i$ explicitly, but obtain
+each Jacobian--vector product $J_i u$ by the standard double-backward
+construction \citep{pearlmutter1994fast}, at the cost of a constant
+number of forward and backward passes; this is what makes
+Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$
+(Appendix~\ref{sec:jvp}).
 Each $J_i$ is evaluated under a \emph{neutral} prompt,
 \texttt{"\{\} is known for"}, identical for every relation.
-
-\enote{hs}{please move this footnote to the appendix. we
-  should also find a reference for ``standard
-  double-backward construction''?
-footnote: {We use the
-standard double-backward construction: differentiating
-$\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a
-variable, then differentiating the result with respect to $u'$ in the
-direction $u$. This requires \texttt{float32} and eager attention, as
-fused attention kernels are not twice differentiable.}
-}
 
 \paragraph{Why differences.} The quantity we want is not what the model
 says about France, but what is \emph{specific} to France among countries.
@@ -260,22 +257,29 @@ relations: it can only make the diagnostic uniformly better or uniformly
 worse. Tuning the layer per relation would score higher and mean less.}
 
 
-\enote{hs}{below ``in-context prompt'' is mentioned the
-  first time, but this could be confusing without adding a
-  sentence of explanation. in particular, we need to remind
-  the reader (or tell them for the first time here) that
-  we're working with *two* different prompts: the neutral
-  prompt and the in-context prompt (where the latter is
-  used for in-context and for the actual prediction)}
+\paragraph{Two prompts.} It is worth being explicit that the experiment
+uses two different prompts, for two different purposes. The
+\emph{neutral prompt}, \texttt{"\{\} is known for"}, names no relation and
+is the same for all 28 relations; it is the only prompt the lens ever
+sees, and it is where the hidden states in Eq.~\ref{eq:lens} are taken.
+The \emph{in-context prompt} is relation-specific: eight (subject,
+object) examples of the relation in question, followed by the query
+subject without its object, so that the model's next token is its answer
+(\S\ref{sec:setup}). It is used for the LRE and for the model's own
+prediction, never for the lens.
 
-Relation-specificity enters in exactly one place: the \emph{target}. The
-model's top-1 is taken under the same 8-shot in-context prompt used to
-measure faithfulness, so the two quantities are commensurable.
+Relation-specificity therefore enters in exactly one place: the
+\emph{target}. What the lens is scored against is the model's top-1 under
+the in-context prompt --- the same quantity faithfulness is defined
+against --- so the two are commensurable, while everything on the lens
+side of the comparison remains relation-agnostic.
 
 \section{Experimental setup}
+\label{sec:setup}
 
 \paragraph{Model.} Olmo-3-7B, in \texttt{float32} with eager attention,
-for the reason given in footnote~1.
+as the Jacobian--vector products require both
+(Appendix~\ref{sec:jvp}).
 
 \paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
 contains 47 relations. Our prompt presupposes an entity subject, so we
@@ -340,17 +344,8 @@ described in \S\ref{sec:artifact}.}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
-($p = 1.4\!\times\!10^{-4}$).
-
-\enote{hs}{this is not usually done in the ACL
-  community. please move this to the appendix:
-With 28 points and a parametric $p$-value
-resting on assumptions we would rather not make, we also test the
-correlation by permutation: we shuffle the lens scores against the
-faithfulness values $10^4$ times, recompute $\rho$ each time, and count
-how often the shuffled $|\rho|$ matches or exceeds the observed one. It
-does so in $0.03\%$ of shuffles, so the association is not an artifact of
-the small sample.}
+($p = 1.4\!\times\!10^{-4}$); a permutation test agrees
+(Appendix~\ref{sec:permutation}).
 
 \paragraph{The correlation is not carried by cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
@@ -372,7 +367,7 @@ ordinary least squares with an intercept; and report the
 Pearson correlation between the resulting residual vectors.
 This is the standard partial
 Spearman correlation, and it asks how much of the lens--faithfulness
-association survives once everything the covariates can linearly explain
+association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 
 
@@ -470,12 +465,13 @@ confidence only & --- & $+2.44$ \\
 \bottomrule
 \end{tabular}
 \caption{The lens effect with and without a control for model confidence.
-All coefficients have $p < 10^{-4}$.}
+Coefficients are from a conditional (fixed-effects) logistic regression
+of the binary LRE outcome, stratified by relation, on within-relation
+percentile ranks of the predictors; $\beta$ is the change in log-odds
+across a relation's own range. Significance is by Wald test; all
+coefficients have $p < 10^{-4}$.}
 \label{tab:conf}
 \end{table}
-
-\enote{hs}{table tab:conf: the caption should say which
-  statistical test is used here}
 
 The lens effect survives: an odds ratio of $6.7\times$ across the
 within-relation range alone, $3.8\times$ with confidence removed
@@ -706,6 +702,30 @@ much either way.
 \bibliography{custom}
 
 \appendix
+
+\section{Jacobian--vector products}
+\label{sec:jvp}
+
+Eq.~\ref{eq:lens} needs $J_i u$, not $J_i$. We obtain it by the standard
+double-backward construction \citep{pearlmutter1994fast}: differentiate
+$\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a free
+variable, then differentiate the result with respect to $u'$ in the
+direction $u$. Each product therefore costs a constant number of forward
+and backward passes rather than the $d_{\text{model}}$ passes a
+materialized Jacobian would need. The construction requires
+\texttt{float32} and eager attention, as the fused attention kernels are
+not twice differentiable.
+
+\section{Permutation test for the main correlation}
+\label{sec:permutation}
+
+The correlation in \S\ref{sec:results} rests on 28 points, and its
+parametric $p$-value assumes more than we would like. We therefore also
+test it by permutation: we shuffle the lens scores against the
+faithfulness values $10^4$ times, recompute $\rho$ each time, and count
+how often the shuffled $|\rho|$ matches or exceeds the observed one. It
+does so in $0.03\%$ of shuffles, so the association is not an artifact of
+the small sample.
 
 \section{All relations}
 
