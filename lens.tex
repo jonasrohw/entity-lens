@@ -36,32 +36,39 @@ model's subject-to-object mapping with an affine
 function. Their faithfulness varies enormously across
 relations -- near zero for \textsc{person\_father}, at
 ceiling for \textsc{country\_capital\_city}. We ask what
-determines that variation, and show it is substantially
+determines that variation and show it is substantially
 predictable from a readout that never sees the relation. We
 estimate a
 novel form of a
 Jacobian lens, the \emph{differential Jacobian lens}:
 instead of predicting tokens the model might output for
 ``France'', we instead restrict this set to those tokens
-that are not also part of the output of ``Spain''. We estimate
+that are not also part of the output of ``Spain''. After estimating
 the differential Jacobian lens
-from such subject-to-subject differences
-under a single neutral prompt, at one fixed layer for every
-relation, using no relation template and no objects and
-measure how highly it ranks the model's answer for a
+from subject-to-subject differences,
+we measure how highly it ranks the model's answer
+-- without any relation-specific
+information in estimation and prediction --
+for a
 relation (e.g., ``Paris''). Across
 28 relations of the LRE dataset on Olmo-3-7B this
 relation-agnostic score correlates with LRE faithfulness at
-$\rho = 0.66$ ($p = 1.4\!\times\!10^{-4}$).  Neither object
-cardinality (mean number of subjects per object) nor the
-model's prior over the answer token accounts for the
-correlation. Moving the unit of
-analysis from the relation to the subject, the lens predicts \emph{which subjects within a
-relation} the LRE reproduces, at a median AUC of $0.69$ over
-1{,}067 subjects in 13 relations. This suggests that linear
+$\rho = 0.66$ ($p <.01$).  This suggests that linear
 decodability may be largely a property of what a subject's
 representation already carries, rather than of the relation
 being decoded.
+After attempting to 
+move 
+the unit of
+analysis from the relation to the subject,
+we conclude that new relation
+datasets and analysis method are needed to address several
+problems in existing datasets, most prominently first-token
+ambiguity (e.g., most predicted universities' first token
+is ``University'') and reference prominence (e.g., the LLM
+primarily associates many
+obscure actor names with a non-actor entity).
+
 \end{abstract}
 
 \section{Introduction}
@@ -82,33 +89,19 @@ representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
-The instrument we use to show this is new, and we offer it as a
-contribution in its own right. A \emph{Jacobian lens} propagates a
-first-order approximation of the model's own computation from an
-intermediate layer to the output vocabulary; recent work uses one to
-characterize what a model is internally disposed to say, averaging a
-Jacobian over a corpus and applying it to raw activations
-\citep{gurnee2026workspace}. That is the right construction for
-describing a model's dispositions in general. It is the wrong one for
-describing a single entity, because a raw activation is dominated by what
-every entity of its type shares -- the type itself, the syntactic role,
-the prompt -- so the entity is buried in its own category.
-
-We therefore introduce the \emph{differential Jacobian lens}, which
+Building on recent work by \citep{gurnee2026workspace},
+we  introduce the \emph{differential Jacobian lens}, which
 evaluates the Jacobian at individual reference entities and applies it to
 \emph{differences} between entity representations:
 \emph{France} minus \emph{Spain} rather than \emph{France} alone. What
 the subtraction leaves is what is specific to this entity among others
 of its kind, and the Jacobian carries that residual forward to the
-vocabulary. The construction is elementary --- it falls out of rewriting
-the LRE itself (\S\ref{sec:lens}) --- but it changes what the readout is
-\emph{about}, from a category to an individual, and it needs no
-supervision, no relation and no corpus of contexts. The question it
-answers --- \emph{what is this model ready to say about this entity, as
-against others of its kind?} --- is not specific to relations, and we
-expect the lens to be useful wherever that question arises.
+vocabulary. The construction changes what the readout is
+about: from a category to an individual. The question it
+answers -- \emph{what is this model ready to say about this entity, as
+against others of its kind?} -- is not specific to relations.
 
-Here we put it to one such use. We estimate the lens under a single
+We estimate  the differential Jacobian lens under a single
 neutral prompt shared by every relation, at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
@@ -119,13 +112,19 @@ We make four contributions. (i)~We introduce the differential Jacobian
 lens, a supervision-free readout of what a model is disposed to say about
 an individual entity. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
-(iii)~We show the prediction holds up under controls for object
-cardinality and answer-token frequency, under leave-one-domain-out, and
---- moving to the subject as the unit of analysis --- under a control for
-the model's own confidence.
-(iv)~We document a first-token scoring artifact that silently inflates
-faithfulness to a perfect score on relations with numeric objects, and
-propose a remedy.
+(iii)~We show the prediction holds up
+under leave-one-domain-out and under controls for object
+cardinality and answer-token frequency.
+(iv)~After attempting to 
+move 
+the unit of
+analysis from the relation to the subject,
+we provide an analysis of several
+problems in existing datasets, most prominently first-token
+ambiguity of objects
+and reference prominence of subjects, that hinder further
+progress on understanding LREs in language models. 
+
 
 \section{Background}
 
@@ -187,7 +186,16 @@ v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \end{equation}
 Here $J_i$ is the Jacobian of the model's map from the subject's hidden
 state at layer $\ell$ to the final-layer state at the last position,
-evaluated at reference $i$. We never form $J_i$ explicitly, but obtain
+evaluated at reference $i$.
+As discussed above, subtracting a same-type
+reference cancels it, leaving the entity-specific residual, and the
+Jacobian then carries that residual forward to the
+vocabulary. Our differential Jacobian
+lens
+therefore reads what this entity, as opposed to others of its kind, makes
+the model disposed to say.
+
+We never form $J_i$ explicitly, but obtain
 each Jacobian--vector product $J_i u$ by the standard double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
 number of forward and backward passes; this is what makes
@@ -195,28 +203,6 @@ Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$
 (Appendix~\ref{sec:jvp}).
 Each $J_i$ is evaluated under a \emph{neutral} prompt,
 \texttt{"\{\} is known for"}, identical for every relation.
-
-\paragraph{Why differences.} The quantity we want is not what the model
-says about France, but what is \emph{specific} to France among countries.
-A raw activation $s_e$ is dominated by what all entities of its type share
--- the type itself, the syntactic role, the prompt -- and a lens applied
-to it returns mostly that shared content. Subtracting a same-type
-reference cancels it, leaving the entity-specific residual, and the
-Jacobian then carries that residual forward to the vocabulary. The lens
-therefore reads what this entity, as opposed to others of its kind, makes
-the model disposed to say.
-
-We note that this differencing
-falls directly out of the rewriting of the Jacobian lens
-in Eq.~\ref{eq:beta}, i.e., out of expressing the LRE as a
-constant plus a sum of $J_i(s - s_i)$ terms. Eq.~\ref{eq:lens} is that
-same quantity with the subject-independent anchor dropped and
-$\beta = 1$.
-This new way of looking at the Jacobian lens allows
-us to estimate the lens without any relation and ask whether it
-predicts an LRE that was fitted \emph{with} one. This also distinguishes
-our lens from that of \citet{gurnee2026workspace}, which averages a
-Jacobian over a corpus and applies it to raw activations.
 
 We decode $v_e$
 over the full vocabulary and record the rank of $m_e$, the model's own
@@ -227,24 +213,18 @@ A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
-Three properties make $A_r$ non-trivial as a predictor. The prompt is
+Three properties make $A_r$ non-trivial as a predictor.
+\enote{hs}{is $A_r$ a predictor? isn't it a ``predictee''?}
+The prompt is
 neutral and shared, so no relation template enters. The differences in
 Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} minus
 \emph{Spain}, never \emph{France} minus \emph{Paris} -- so no
 relation-specific (subject,~object) pair is used in estimation.
 The layer is not relation-specific either. It is fixed at 17 for all
-relations.\footnote{Layer 17 is roughly half-way through the network,
-the region in which such lenses are usable at all
-\citep{gurnee2026workspace}, and is the modal best layer for the LRE
-itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
-20 and 23). We stress that a single layer is used for \emph{every}
-relation, so this choice cannot manufacture a correlation across
-relations: it can only make the diagnostic uniformly better or uniformly
-worse. Tuning the layer per relation would score higher and mean less.}
+relations (Appendix~\ref{sec:layer17}).
 
-
-\paragraph{Two prompts.} It is worth being explicit that the experiment
-uses two different prompts, for two different purposes. The
+\paragraph{Two prompts.} Our experiments
+use two different prompts, for two different purposes. The
 \emph{neutral prompt}, \texttt{"\{\} is known for"}, names no relation and
 is the same for all 28 relations; it is the only prompt the lens ever
 sees, and it is where the hidden states in Eq.~\ref{eq:lens} are taken.
@@ -256,8 +236,8 @@ prediction, never for the lens.
 
 Relation-specificity therefore enters in exactly one place: the
 \emph{target}. What the lens is scored against is the model's top-1 under
-the in-context prompt --- the same quantity faithfulness is defined
-against --- so the two are commensurable, while everything on the lens
+the in-context prompt -- the same quantity faithfulness is defined
+against -- so the two are commensurable, while everything on the lens
 side of the comparison remains relation-agnostic.
 
 \section{Experimental setup}
@@ -293,22 +273,20 @@ eight in-context examples, eight reference subjects from which $W$ and $b$
 are estimated, and the remainder as scored test subjects.
 
 Faithfulness is then recomputed for all 28 relations under this protocol.
-Layer and $\beta$ are chosen on a $6\times6$ grid --- six candidate layers
+Layer and $\beta$ are chosen on a $6\times6$ grid -- six candidate layers
 for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values of
-$\beta$ ($0.5, 1, 1.5, 2, 3, 5$) --- by the mean over the test subjects.
+$\beta$ ($0.5, 1, 1.5, 2, 3, 5$) -- by the mean over the test subjects.
 \citet{hernandez2024linearity} likewise fit both per relation; the six
 layers span the network at roughly even spacing and the $\beta$ range
 brackets the values they report.
 
 The lens scores 11--20 subjects per relation, depending on how many remain
 once the in-context and reference sets are removed. For the
-relation-level results below, the lens and the LRE sample their splits
+results in \S\ref{sec:results}, the lens and the LRE sample their splits
 independently, so the particular subjects entering each set differ between
 the two measurements. Both estimates are unbiased for the relation, but
 each carries sampling noise the other does not, which attenuates rather
-than inflates the correlation we report. The subject-level analysis of
-\S\ref{sec:subject} requires the two to score the \emph{same} subjects and
-uses a single shared split throughout.
+than inflates the correlation we report. 
 
 Crucially, the in-context prompt is used only to obtain the \emph{target};
 the lens itself is always computed under the neutral prompt of
@@ -338,9 +316,7 @@ differ greatly in how many distinct objects they have; $k$, the mean number
 of subjects per object, ranges from $1.0$ to $189$. High $k$ makes
 faithfulness easier, and indeed $k$ predicts faithfulness on its own
 ($\rho = 0.43$, $p = 0.02$). But $k$ is essentially uncorrelated with the
-lens score ($\rho = -0.03$, $p = 0.87$; that is, no detectable
-relationship, which is what we want here, though with $n = 28$ we can
-only rule out a strong one). Removing $k$  \emph{raises} the
+lens score ($\rho = -0.03$). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
 independent predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
@@ -356,14 +332,25 @@ Spearman correlation, and it asks how much of the lens--faithfulness
 association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 
+\enote{hs}{i don't think we need this -- not customary in
+  acl community
+, $p = 0.87$; that is, no detectable
+relationship, which is what we want here, though with $n = 28$ we can
+only rule out a strong one)}
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
 contexts. This predicts neither faithfulness ($\rho = -0.03$) nor the lens
 score ($\rho = -0.02$), and removing it  leaves the correlation
-unchanged at $0.658$; with both covariates (cardinality and answer
-frequency), $0.746$.
+unchanged at $0.658$;
+\enote{hs}{i rewrote the following sentence. prior version
+  in comments below, check for accuracy}
+The correlation is 0.746 with both cardinality and answer
+frequency removed.
+
+%with both covariates (cardinality and answer
+%frequency), $0.746$.
 
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain
@@ -372,12 +359,17 @@ drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
-\paragraph{Our findings do not rest on the flawed scoring.} Re-running
-under the corrected protocol of \S\ref{sec:artifact} --- a single shared
-split and objects restricted to those their first token identifies ---
+\paragraph{Unchanged findings under the scoring protocol in \S\ref{sec:artifact}.}
+Re-running
+under the improved protocol of \S\ref{sec:artifact} -- a single shared
+split and objects restricted to those their first token identifies --
 gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
 restriction, against $0.658$ over 28 here.
 
+\enote{hs}{following paragraph: i'm not sure i understand
+  what the takeaway here is -- why is it a top-priority
+  concern that person-father and person-mother would behave
+  differently? the figure already shows that they are similar?}
 \paragraph{A within-domain check.} \textsc{person\_father} and
 \textsc{person\_mother} are separate relations over near-identical subject
 sets. They receive almost identical faithfulness ($0.09$, $0.07$) and
@@ -386,6 +378,9 @@ told which relation it is looking at.
 
 \section{From relations to subjects}
 \label{sec:subject}
+The subject-level analysis of
+\S\ref{sec:subject} requires the two to score the \emph{same} subjects and
+uses a single shared split throughout.
 
 The evidence so far is 28 aggregate points, and a skeptic may reasonably
 suspect that both measures track some coarse property of a relation rather
@@ -394,16 +389,16 @@ defined per subject: whether the LRE reproduces the model's answer for
 that subject, and where the lens ranks it. Asking whether the lens
 predicts \emph{which subjects within a relation} the LRE gets right holds
 the relation, its prompt, its answer space and its cardinality fixed by
-construction --- controlling by design for the covariates
+construction -- controlling by design for the covariates
 investigated in \S\ref{sec:results}
- --- and converts the claim from a statement about relations
+ -- and converts the claim from a statement about relations
 into one about entities, which is what the account asserts.
 
 \paragraph{Design.} The unit is a (relation, subject) pair. The outcome is
 whether the LRE's top-1 equals the model's top-1 for that subject; the
 predictor is $-\log_{10}$ of the rank at which the lens places that same
 token. A relation enters if it has at least 20 scored subjects, a
-faithfulness between $0.10$ and $0.90$, and both outcomes present --- a
+faithfulness between $0.10$ and $0.90$, and both outcomes present -- a
 relation at floor or ceiling has no within-relation variance to predict.
 Thirteen relations qualify, giving \textbf{1{,}067 subject-level rows}.
 Lens and LRE now take their split from one place and we verify by
@@ -461,7 +456,7 @@ coefficients have $p < 10^{-4}$.}
 
 The lens effect survives: an odds ratio of $6.7\times$ across the
 within-relation range alone, $3.8\times$ with confidence removed
---- attenuated by 30\%, still at $p < 10^{-4}$. Entropy agrees, with the
+-- attenuated by 30\%, still at $p < 10^{-4}$. Entropy agrees, with the
 expected sign reversal.
 
 But confidence is the \emph{stronger} predictor, at $11.5\times$ alone,
@@ -491,7 +486,7 @@ requires the lens to surface the exact answer token, and penalizes it for
 producing a synonym or a near neighbor. On a control set of 80 famous
 people with a single unambiguous occupation each, the lens places
 \textsc{composer} at median rank 3 for composers, but \textsc{writer} at
-rank 244 for writers --- whose readings are \emph{novels}, \emph{prose},
+rank 244 for writers -- whose readings are \emph{novels}, \emph{prose},
 \emph{poetry}, \emph{literary}, all correct and none of them the scored
 token. The effects we report are therefore lower bounds by an amount we
 can demonstrate but not yet quantify.
@@ -540,8 +535,8 @@ constellation in the Latin genitive (\emph{Eta Persei} for
 \emph{Perseus}), which our word filter does not remove; but prominence on
 the $19$ subjects without such overlap is $0.63$, slightly higher rather
 than lower, so this explanation fails. What the lens returns for these
-subjects is category vocabulary --- \emph{constellation}, \emph{brightness},
-\emph{stellar} --- rather than the particular constellation, which suggests
+subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
+\emph{stellar} -- rather than the particular constellation, which suggests
 the same first-token scoring problem discussed in
 Section~\ref{sec:artifact}. Excluding the relation would raise the
 correlation to $0.725$; we report the value with it included.
@@ -591,8 +586,8 @@ $0.658$ to $0.427$.
 case, but any two objects sharing a first token are indistinguishable to
 a metric that scores only that token: \emph{University of Chicago} and
 \emph{University of Michigan} both reduce to \textsc{University}.
-Measuring the collapse rate --- the fraction of a relation's distinct
-objects that share a first token with another --- \textbf{6 of 40
+Measuring the collapse rate -- the fraction of a relation's distinct
+objects that share a first token with another -- \textbf{6 of 40
 relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 \textsc{person\_father} (58\%) and \textsc{person\_university} (45\%,
 where 29 of 69 objects begin with \textsc{University}).
@@ -607,17 +602,53 @@ what inflates it is the model's own answer being an easy token. In
 A complete fix would condition on the prediction being distinctive.
 
 The direction of the bias differs by relation. Where the collapse is on
-the gold side it makes faithfulness easier --- 41 distinct fathers all
-counting as \textsc{John} --- so our \textsc{person\_father} figure is an
+the gold side it makes faithfulness easier -- 41 distinct fathers all
+counting as \textsc{John} -- so our \textsc{person\_father} figure is an
 upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not retrieval at all.
 
 We flag all of this because the failure is silent: it produces a perfect
 or inflated score rather than an obvious error, and it will affect any
-first-token evaluation whose answers share prefixes --- numeric,
+first-token evaluation whose answers share prefixes -- numeric,
 titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
 (\emph{University of X}).
+
+\section{Discussion}
+
+\enote{hs}{this section is a collection of content pieces
+  that need to be integrated into a fluent narrative}
+
+The instrument we use to show this is new, and we offer it as a
+contribution in its own right. A \emph{Jacobian lens} propagates a
+first-order approximation of the model's own computation from an
+intermediate layer to the output vocabulary; recent work uses one to
+characterize what a model is internally disposed to say, averaging a
+Jacobian over a corpus and applying it to raw activations
+\citep{gurnee2026workspace}. That is the right construction for
+describing a model's dispositions in general. It is the wrong one for
+describing a single entity, because a raw activation is dominated by what
+every entity of its type shares -- the type itself, the syntactic role,
+the prompt -- so the entity is buried in its own category.
+
+\paragraph{Why differences.} The quantity we want is not what the model
+says about France, but what is \emph{specific} to France among countries.
+A raw activation $s_e$ is dominated by what all entities of its type share
+-- the type itself, the syntactic role, the prompt -- and a lens applied
+to it returns mostly that shared content. 
+
+We note that this differencing
+falls directly out of the rewriting of the Jacobian lens
+in Eq.~\ref{eq:beta}, i.e., out of expressing the LRE as a
+constant plus a sum of $J_i(s - s_i)$ terms. Eq.~\ref{eq:lens} is that
+same quantity with the subject-independent anchor dropped and
+$\beta = 1$.
+This new way of looking at the Jacobian lens allows
+us to estimate the lens without any relation and ask whether it
+predicts an LRE that was fitted \emph{with} one. This also distinguishes
+our lens from that of \citet{gurnee2026workspace}, which averages a
+Jacobian over a corpus and applies it to raw activations.
+
 
 \section{Limitations}
 \label{sec:limitations}
@@ -633,8 +664,8 @@ the lens does ($11.5\times$ against $6.7\times$), and explains more of the
 within-relation variance ($0.075$ against $0.047$). The lens contributes
 independently of it, but neither explains much: together they account for
 under a tenth of the within-relation variation in LRE success. Faithfulness there is estimated from a single split per
-relation, and a single split is noisy --- one relation scored $0.39$ and
-$0.21$ on two draws at identical test-set size --- so the outcome variable
+relation, and a single split is noisy -- one relation scored $0.39$ and
+$0.21$ on two draws at identical test-set size -- so the outcome variable
 is measured with error that attenuates the association. The thirteen
 qualifying relations all sit in the middle of the cardinality range, where
 the account is expected to work, making this a fair test of the mechanism
@@ -701,6 +732,18 @@ and backward passes rather than the $d_{\text{model}}$ passes a
 materialized Jacobian would need. The construction requires
 \texttt{float32} and eager attention, as the fused attention kernels are
 not twice differentiable.
+
+\section{Layer selection}
+\label{sec:layer17}
+Layer 17 is roughly half-way through the network,
+the region in which such lenses are usable at all
+\citep{gurnee2026workspace}, and is the modal best layer for the LRE
+itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
+20 and 23). We stress that a single layer is used for \emph{every}
+relation, so this choice cannot manufacture a correlation across
+relations: it can only make the diagnostic uniformly better or uniformly
+worse. Tuning the layer per relation would score higher and mean less.
+
 
 \section{Permutation test for the main correlation}
 \label{sec:permutation}
