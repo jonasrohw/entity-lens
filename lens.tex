@@ -470,9 +470,10 @@ merely a nuisance correlate.
 \label{sec:subject}
 Linearity emerges as a phenomenon at the relation level, not
 the fact-level -- it would not make sense to investigate
-linearity for the facts of a relation that is memorized. But
+linearity for the facts of a relation that is not
+represented linearly. But
 once there is evidence for at least partial linearity of a
-relation, we can ask for individual acts how well
+relation, we can ask for individual facts how well
 the differential Jacobian lens predicts the degree to which
 they are
 integrated into the linear structure.
@@ -484,11 +485,13 @@ rank is a moderately good predictor of LRE rank for
 only consider misses ($\rho=.58$). Points with an LRE rank
 of 0 (i.e., a hit, not a miss) are ``censored'': They give
 us no resolution because they fail to distinguish cases
-where the LRE may predicts the correct object perfectly vs
-those where it barely avoids a miss.
+where the LRE predicts the correct object perfectly vs
+those where it barely avoids a miss. So
+misses may be a better diagnostic for assessing the size of
+the correlation.
 
 Our original plan was to develop a fine-grained account of
-how differential Jacobian lens readouts determine the
+how differential Jacobian lens readouts influence the
 linearity of individual facts. However, we found that
 several shortcomings of the experimental setup currently
 used for investigating relations in LMs make this hard. In
@@ -509,12 +512,14 @@ orange regression lines over orange  points.
 \end{figure*}
 
 We conduct our analysis on the three relations that have the
-first overall correlation in the rank-rank analysis: their
+worst overall correlation in the rank-rank analysis: their
 correlations are close to zero or even negative. See
 Figure~\ref{fig:blacksheep}.
 
+\subsection{Semantically weak first tokens}
+
 \textsc{person\_university} exemplifies the problem of 
-\textbf{semantically weak first tokens}. Many universities
+\emph{semantically weak first tokens}. Many universities
 have names of the form ``University of''. So the LM learns
 to predict ``University'' as the target token for many
 persons. The standard setup is to count such a prediction as
@@ -522,35 +527,10 @@ correct. But this is not an effective evaluation:
 The correct generation of ``University'' is not
 a reliable indicator of the factual competence of the LM.
 
-This problem of weak first tokens is pervasive across
-relations in LRE. 
-\textsc{person\_mother}, 
-\textsc{person\_father} and
-\textsc{company\_ceo}
-are largely evaluated on
-first names, many of which occur several times. 
-Many archnemeses for
-\textsc{superhero\_archnemesis}
-also have weak first tokens:
-\enote{hs}{check these against the dataset}
-``\emph{The} Joker'',
-``\emph{Doctor} Doom'',
-``\emph{King} Ghidorah''.
+%Any two objects sharing a first token are indistinguishable to
+%a metric that scores only that token: \emph{University of Chicago} and
+%\emph{University of Michigan} both reduce to \textsc{University}.
 
-Both LRE and the lens work on the token-level, the residual
-stream vector at the last layer, which is focused on
-producing the correct next token and may not represent
-reliable information about the tokens to follow. This
-single-token regime is highly problematic for the standard
-setup because we are effectively investigating a relation in
-which all objects have been shortened to their first
-token. This might be a nonsensical relation even to humans
-and it is clearly different from the intended relations
-whose objects are full entity names.
-
-Any two objects sharing a first token are indistinguishable to
-a metric that scores only that token: \emph{University of Chicago} and
-\emph{University of Michigan} both reduce to \textsc{University}.
 Measuring the collapse rate -- the fraction of a relation's distinct
 objects that share a first token with another -- \textbf{6 of 40
 relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
@@ -581,8 +561,39 @@ titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
 
 
 
+This problem of weak first tokens is pervasive across
+relations in LRE. 
+\textsc{person\_mother}, 
+\textsc{person\_father} and
+\textsc{company\_ceo}
+are largely evaluated on
+first names, many of which occur several times. 
+Many archnemeses for
+\textsc{superhero\_archnemesis}
+also have weak first tokens:
+\enote{hs}{check these against the dataset}
+``\emph{The} Joker'',
+``\emph{Doctor} Doom'',
+``\emph{King} Ghidorah''.
+
+Both LRE and the lens work on the token-level, the residual
+stream vector at the last layer, which is focused on
+producing the correct next token and may not represent
+reliable information about the tokens to follow. This
+single-token regime is highly problematic for the standard
+setup because we are effectively investigating a relation in
+which all objects have been shortened to their first
+token. This might be a nonsensical relation even to humans
+and it is clearly different from the intended relations
+whose objects are full entity names.
+
+
+
+\section{Subject ambiguity}
+
+
 \textsc{person\_occupation} exemplifies the problem of 
-\textbf{subject ambiguity}. An example is Rolf Thommessen
+\emph{subject ambiguity}. An example is Rolf Thommessen
 who is listed as an actor
 in LRE. The highest ranked token given by the lens is
 ``whistlebl''. This indicates that the most prominent entity
