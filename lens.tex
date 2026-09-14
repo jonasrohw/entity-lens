@@ -41,16 +41,18 @@ predictable from a readout that never sees the relation. We
 estimate a
 novel form of a
 Jacobian lens, the \emph{differential Jacobian lens}:
-instead of predicting tokens the model might output for
-``France'', we instead restrict this set to those tokens
-that are not also part of the output of ``Spain''. After estimating
-the differential Jacobian lens
-from subject-to-subject differences,
+instead of model outputs for
+``France'', we instead
+contrastively predict outputs for ``France''
+that are not also outputs for ``Spain''.
+After estimating
+this differential Jacobian lens,
 we measure how highly it ranks the model's answer
--- without any relation-specific
-information in estimation and prediction --
 for a
-relation (e.g., ``Paris''). Across
+relation 
+-- without using any relation-specific
+information in estimation and prediction.
+Across
 28 relations of the LRE dataset on Olmo-3-7B this
 relation-agnostic score correlates with LRE faithfulness at
 $\rho = 0.66$ ($p <.01$).  This suggests that linear
@@ -62,17 +64,18 @@ move
 the unit of
 analysis from the relation to the individual fact,
 we conclude that new relation
-datasets and analysis method are needed to address several
-problems in existing datasets, most prominently first-token
-ambiguity (e.g., most predicted universities' first token
-is ``University'') and reference prominence (e.g., the LLM
-primarily associates many
-obscure actor names with a non-actor entity).
+datasets and analysis methods are needed to address several
+problems in existing datasets, most prominently semantically
+weak first tokens
+(e.g., most predicted universities' first token
+is ``University'') and subject ambiguity (e.g., the LLM
+associates
+obscure actor names with non-actor entities).
 \end{abstract}
 
-\enote{hs}{i've moved content we may to reintegrate to rawmaterial.tex}
+\enote{hs}{i've moved content we may want to reintegrate to rawmaterial.tex}
 
-section{Introduction}
+\section{Introduction}
 
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
