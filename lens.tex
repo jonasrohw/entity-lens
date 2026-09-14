@@ -60,7 +60,7 @@ being decoded.
 After attempting to 
 move 
 the unit of
-analysis from the relation to the subject,
+analysis from the relation to the individual fact,
 we conclude that new relation
 datasets and analysis method are needed to address several
 problems in existing datasets, most prominently first-token
@@ -68,10 +68,11 @@ ambiguity (e.g., most predicted universities' first token
 is ``University'') and reference prominence (e.g., the LLM
 primarily associates many
 obscure actor names with a non-actor entity).
-
 \end{abstract}
 
-\section{Introduction}
+\enote{hs}{i've moved content we may to reintegrate to rawmaterial.tex}
+
+section{Introduction}
 
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
@@ -118,7 +119,7 @@ cardinality and answer-token frequency.
 (iv)~After attempting to 
 move 
 the unit of
-analysis from the relation to the subject,
+analysis from the relation to the individual fact,
 we provide an analysis of several
 problems in existing datasets, most prominently first-token
 ambiguity of objects
@@ -306,27 +307,6 @@ described in \S\ref{sec:artifact}.}
 \label{fig:main}
 \end{figure}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig_rank_rank_mean.pdf}
-\caption{The same association, drawn in the coordinate system used for
-the per-relation subject-level analysis: the lens's mean $\log_{10}$ rank
-of the model's answer against the \emph{LRE's} mean $\log_{10}$ rank of
-that same answer, one point per relation. The logarithm is taken per
-subject and then averaged, so each subject contributes its order of
-magnitude rather than its raw rank. On both axes lower is better, which
-is the reverse of Fig.~\ref{fig:main}, whose $x$ axis is negated so that
-higher is better. Replacing faithfulness with a rank keeps how far the
-LRE was from the model's answer instead of only whether it matched:
-Spearman $\rho = 0.639$ as plotted, and $0.699$ using medians rather than
-means. Medians are not plotted because any relation with faithfulness
-above $0.5$ has a hit as its median subject, which puts 16 of the 25
-relations at exactly $0$. Coverage is 25 relations rather than 28:
-the two numeric-object relations and
-\textsc{person\_band\_lead\_singer} retain too few subjects after
-first-token filtering to leave a test set.}
-\label{fig:rankrank}
-\end{figure}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
@@ -398,134 +378,32 @@ sets. They receive almost identical faithfulness ($0.09$, $0.07$) and
 almost identical lens scores ($-3.69$, $-3.99$), without the lens being
 told which relation it is looking at.
 
-\section{From relations to subjects}
-\label{sec:subject}
-The subject-level analysis of
-\S\ref{sec:subject} requires the two to score the \emph{same} subjects and
-uses a single shared split throughout.
-
-The evidence so far is 28 aggregate points, and a skeptic may reasonably
-suspect that both measures track some coarse property of a relation rather
-than anything about individual entities. Both quantities are, however,
-defined per subject: whether the LRE reproduces the model's answer for
-that subject, and where the lens ranks it. Asking whether the lens
-predicts \emph{which subjects within a relation} the LRE gets right holds
-the relation, its prompt, its answer space and its cardinality fixed by
-construction -- controlling by design for the covariates
-investigated in \S\ref{sec:results}
- -- and converts the claim from a statement about relations
-into one about entities, which is what the account asserts.
-
-\paragraph{Design.} The unit is a (relation, subject) pair. The outcome is
-whether the LRE's top-1 equals the model's top-1 for that subject; the
-predictor is $-\log_{10}$ of the rank at which the lens places that same
-token. A relation enters if it has at least 20 scored subjects, a
-faithfulness between $0.10$ and $0.90$, and both outcomes present -- a
-relation at floor or ceiling has no within-relation variance to predict.
-Thirteen relations qualify, giving \textbf{1{,}067 subject-level rows}.
-Lens and LRE now take their split from one place and we verify by
-fingerprint that they scored identical subjects.
-
-\paragraph{Statistic.} Within each relation we compute the AUC: the
-probability that a subject the LRE reproduces has a higher lens score than
-one it misses. This is immune to between-relation variation by
-construction. We then test whether $\{\mathrm{AUC}_r\}$ lies above $0.5$
-with a Wilcoxon signed-rank test across relations. A single pooled
-correlation over all 1{,}067 rows would be dominated by between-relation
-differences and would re-answer the question of \S\ref{sec:results}.
-
-\input{table_subject_level}
-
-\paragraph{Result.} Median AUC is $\mathbf{0.688}$, above chance for
-10 of 13 relations, with Wilcoxon $p = 0.011$ (Table~\ref{tab:subject}).
-Permuting outcomes within each relation gives a null median AUC of
-$0.500$, matched in $0$ of $2{,}000$ permutations. Scoring all objects
-rather than only those whose first token identifies them
-(\S\ref{sec:artifact}) gives a median of $0.686$ but $p = 0.084$: the
-significant version comes from correcting the scoring, not from dropping
-relations.
-
-\paragraph{Is it just confidence?}
-\label{par:conf}
-If the model is peaked on a subject, both the LRE and the lens may find it
-easier, and the association would be real but uninformative. We measure
-confidence as the model's top-1 probability at the target position, and
-fit a fixed-effects logistic regression stratified by relation, so that
-only within-relation variation contributes. Predictors are within-relation
-percentile ranks, so a coefficient is the log-odds change across a
-relation's own range.
-
-\begin{table}[t]
-\centering\small
-\begin{tabular}{@{}lrr@{}}
-\toprule
-model & lens $\beta$ & confidence $\beta$ \\
-\midrule
-lens only & $+1.90$ & --- \\
-lens $+$ top-1 probability & $+1.33$ & $+2.07$ \\
-lens $+$ entropy & $+1.42$ & $-1.56$ \\
-confidence only & --- & $+2.44$ \\
-\bottomrule
-\end{tabular}
-\caption{The lens effect with and without a control for model confidence.
-Coefficients are from a conditional (fixed-effects) logistic regression
-of the binary LRE outcome, stratified by relation, on within-relation
-percentile ranks of the predictors; $\beta$ is the change in log-odds
-across a relation's own range. Significance is by Wald test; all
-coefficients have $p < 10^{-4}$.}
-\label{tab:conf}
-\end{table}
-
-The lens effect survives: an odds ratio of $6.7\times$ across the
-within-relation range alone, $3.8\times$ with confidence removed
--- attenuated by 30\%, still at $p < 10^{-4}$. Entropy agrees, with the
-expected sign reversal.
-
-But confidence is the \emph{stronger} predictor, at $11.5\times$ alone,
-and the two are correlated within relation ($\rho = 0.32$). The honest
-statement is therefore that the lens predicts which subjects the LRE
-reproduces independently of the model's confidence, that confidence
-predicts it better, and that roughly a third of the raw lens effect was
-confidence. The asymmetry that makes the lens interesting anyway is that
-it is computed without the relation, whereas confidence is measured under
-the relation's own prompt.
-
-\paragraph{How large is the effect?} Most of the variation in LRE success
-lies \emph{within} relations, not between them: an analysis of variance on
-the binary outcome puts $74.7\%$ within and $25.3\%$ between, and the
-latent-scale intraclass correlation from a random intercept per relation
-agrees at $29.3\%$ between. The subject-level analysis is therefore
-addressing the larger component rather than a residual.
-
-It explains a modest share of it. Taking per-relation intercepts as the
-baseline, McFadden's pseudo-$R^2$ within relations is $0.047$ for the lens,
-$0.075$ for confidence and $0.095$ for the two together. The effect is
-real and robust but small, and the bulk of within-relation variation in
-LRE success is explained by neither.
-
-\paragraph{The scoring penalizes the lens.} First-token rank scoring
-requires the lens to surface the exact answer token, and penalizes it for
-producing a synonym or a near neighbor. On a control set of 80 famous
-people with a single unambiguous occupation each, the lens places
-\textsc{composer} at median rank 3 for composers, but \textsc{writer} at
-rank 244 for writers -- whose readings are \emph{novels}, \emph{prose},
-\emph{poetry}, \emph{literary}, all correct and none of them the scored
-token. The effects we report are therefore lower bounds by an amount we
-can demonstrate but not yet quantify.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_product.png}
+\caption{
+  Rank-rank analysis of individual factors for
+ \textsc{product\_company}.
+x-axis: lens $\log_10$ rank. 
+y-axis: LRE $\log_10$ rank.
+Faithfulness: 0.68.
+Grey regression line over all points (n=99, $\rho=.41$).
+Orange regression line over orange  points (misses: n=32, $\rho=.58$).}
+\label{fig:product}
+\end{figure}
 
 \section{Where the account degrades}
 \label{sec:residuals}
 
-What the lens reads is what an entity is \emph{salient} for. On the
-account proposed here that is not a confound to be excused but the
-mechanism itself: a relation is linearly decodable to the extent that its
+What the lens reads is what an entity is \emph{salient} for:
+a relation is linearly decodable to the extent that its
 answer is already part of what the subject's representation makes the
 model disposed to say. The relations that deviate from the trend are
-therefore exceptions to the account, not failures of measurement, and it
-is worth asking whether they are unstructured.
+therefore exceptions to the account. Here, we ask
+whether these relations are unstructured.
 
-\paragraph{Salience, measured independently of the lens.} The account
-above would be circular if salience were read off the lens, since the
+\paragraph{Salience, measured independently of the lens.} our account
+would be circular if salience were read off the lens, since the
 lens is itself a salience readout. We therefore measure it by the model's
 own free generation. For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
@@ -539,7 +417,9 @@ makes this model emit a multiple-choice quiz rather than prose, so the
 object is never named.} This is a forward pass under different prompts,
 and involves no Jacobian.
 
-Call this rate the object's \emph{prominence}. Across the 14 relations
+\input{table_prominence}
+
+We refer to this rate as the object's \emph{prominence}. Across the 14 relations
 for which it can be measured it ranges from $1.00$
 (\textsc{city\_in\_country}) and $0.50$ (\textsc{country\_capital\_city})
 down to $0.13$ (\textsc{person\_father}), $0.05$
@@ -550,7 +430,7 @@ $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
 The salience interpretation is thus supported by a measurement that is
 independent of the quantity it explains.
 
-One relation disobeys: \textsc{star\_constellation} has prominence $0.60$
+One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
 yet the lens surfaces the constellation for only $5\%$ of its stars. We
 suspected an artifact, since a Bayer designation contains the
 constellation in the Latin genitive (\emph{Eta Persei} for
@@ -561,7 +441,7 @@ subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
 \emph{stellar} -- rather than the particular constellation, which suggests
 the same first-token scoring problem discussed in
 Section~\ref{sec:artifact}. Excluding the relation would raise the
-correlation to $0.725$; we report the value with it included.
+correlation to $0.725$.
 
 They are not. Ordering relations by their residual from the fitted trend,
 both tails are organized by the size of the answer space. The largest
@@ -580,32 +460,95 @@ representation carries.
 
 The account thus holds in the middle of the cardinality range and
 degrades predictably at both ends, in opposite directions. This is the
-same variable whose removal raises the correlation to $0.744$, and it
+same variable whose removal raises the correlation to
+$0.744$ (\S\ref{sec:results}), and it
 gives that number an interpretation: $k$ is the
 principal source of deviation in the salience account rather than
 merely a nuisance correlate.
 
-\section{A first-token scoring artifact}
-\label{sec:artifact}
+\section{Fact-level analysis}
+\label{sec:subject}
+Linearity emerges as a phenomenon at the relation level, not
+the fact-level -- it would not make sense to investigate
+linearity for the facts of a relation that is memorized. But
+once there is evidence for at least partial linearity of a
+relation, we can ask for individual acts how well
+the differential Jacobian lens predicts the degree to which
+they are
+integrated into the linear structure.
 
-Both relations with numeric objects
-(\textsc{presidents\_birth\_year}, \textsc{presidents\_election\_year})
-initially scored faithfulness $1.000$. This was spurious. In this
-tokenizer \texttt{" 1743"} segments as \texttt{[\,' ', '174', '3'\,]}:
-digits never merge with a preceding space. First-token scoring therefore
-compared the model's top-1 against a bare space token on both sides, and
-faithfulness $1.000$ meant only that the LRE and the model both emit a
-space.
+We use the setup shown in Figure~\ref{fig:product} to
+investigate fact-level linearity. The figure shows that lens
+rank is a moderately good predictor of LRE rank for
+\textsc{product\_company} ($\rho=.41$), especially if we
+only consider misses ($\rho=.58$). Points with an LRE rank
+of 0 (i.e., a hit, not a miss) are ``censored'': They give
+us no resolution because they fail to distinguish cases
+where the LRE may predicts the correct object perfectly vs
+those where it barely avoids a miss.
 
-The fix is to place the space in the prompt, so that the query ends with
-it and the next token is content. Rescored, the two relations give
-faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
-predict the year correctly once the space is consumed. Including the
-uncorrected values would have depressed the reported correlation from
-$0.658$ to $0.427$.
+Our original plan was to develop a fine-grained account of
+how differential Jacobian lens readouts determine the
+linearity of individual facts. However, we found that
+several shortcomings of the experimental setup currently
+used for investigating relations in LMs make this hard. In
+this section, we analyze these shortcomings and give
+guidance for future relation datasets that may better support
+research on how LMs represent facts.
 
-\paragraph{The problem is more general.} Numeric objects are the extreme
-case, but any two objects sharing a first token are indistinguishable to
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{blacksheep.png}
+\caption{
+  Rank-rank analysis for the three relations with the worst
+  overall corelation between lens rank and LRE rank.
+Grey regression lines over all points, 
+orange regression lines over orange  points.
+}
+\label{fig:blacksheep}
+\end{figure*}
+
+We conduct our analysis on the three relations that have the
+first overall correlation in the rank-rank analysis: their
+correlations are close to zero or even negative. See
+Figure~\ref{fig:blacksheep}.
+
+\textsc{person\_university} exemplifies the problem of 
+\textbf{semantically weak first tokens}. Many universities
+have names of the form ``University of''. So the LM learns
+to predict ``University'' as the target token for many
+persons. The standard setup is to count such a prediction as
+correct. But this is not an effective evaluation:
+The correct generation of ``University'' is not
+a reliable indicator of the factual competence of the LM.
+
+This problem of weak first tokens is pervasive across
+relations in LRE. 
+\textsc{person\_mother}, 
+\textsc{person\_father} and
+\textsc{company\_ceo}
+are largely evaluated on
+first names, many of which occur several times. 
+Many archnemeses for
+\textsc{superhero\_archnemesis}
+also have weak first tokens:
+\enote{hs}{check these against the dataset}
+``\emph{The} Joker'',
+``\emph{Doctor} Doom'',
+``\emph{King} Ghidorah''.
+
+Both LRE and the lens work on the token-level, the residual
+stream vector at the last layer, which is focused on
+producing the correct next token and may not represent
+reliable information about the tokens to follow. This
+single-token regime is highly problematic for the standard
+setup because we are effectively investigating a relation in
+which all objects have been shortened to their first
+token. This might be a nonsensical relation even to humans
+and it is clearly different from the intended relations
+whose objects are full entity names.
+
+Any two objects sharing a first token are indistinguishable to
 a metric that scores only that token: \emph{University of Chicago} and
 \emph{University of Michigan} both reduce to \textsc{University}.
 Measuring the collapse rate -- the fraction of a relation's distinct
@@ -635,6 +578,52 @@ or inflated score rather than an obvious error, and it will affect any
 first-token evaluation whose answers share prefixes -- numeric,
 titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
 (\emph{University of X}).
+
+
+
+\textsc{person\_occupation} exemplifies the problem of 
+\textbf{subject ambiguity}. An example is Rolf Thommessen
+who is listed as an actor
+in LRE. The highest ranked token given by the lens is
+``whistlebl''. This indicates that the most prominent entity
+associated with the last name Thommessen is Advokatfirmaet
+Thommessen, a law firm known for their digital whistleblowing
+tool. One might hope that the first name ``Rolf''
+disambiguates which subject is intended, but apparently this
+is not the case. In general, the last few tokens seem to
+dominate which entity is represented and used by the LM. For
+example, for the actor Barry Sobel the lens top-ranks
+``kosher'', ``Jewish'', ``Rabbi'', correct associations for
+the Brazilian Rabbi Henry Sobel; for the actress Vondell
+Darr, the lens top-ranks ``criminal'', ``murders'',
+``felon'', plausible associations for the wrongfully convicted
+Acacia Lyn-Darr; for the actor Simon Gosejohann, the lens
+top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
+simply uses the string ``Johann'' as the representation.
+While we did not conduct an extensive analysis, it is likely
+that subject ambiguity is a problem for many relations whose
+subjects are persons. Many of those persons share the
+properties that result in Barry Sobel, Vondell Darr
+and Simon Gosejohann being misrepresented by the model.
+
+
+\enote{hs}{move this to the appendix:
+Both relations with numeric objects
+(\textsc{presidents\_birth\_year}, \textsc{presidents\_election\_year})
+initially scored faithfulness $1.000$. This was spurious. In this
+tokenizer \texttt{" 1743"} segments as \texttt{[\,' ', '174', '3'\,]}:
+digits never merge with a preceding space. First-token scoring therefore
+compared the model's top-1 against a bare space token on both sides, and
+faithfulness $1.000$ meant only that the LRE and the model both emit a
+space.
+
+The fix is to place the space in the prompt, so that the query ends with
+it and the next token is content. Rescored, the two relations give
+faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
+predict the year correctly once the space is consumed. Including the
+uncorrected values would have depressed the reported correlation from
+$0.658$ to $0.427$.
+}
 
 \section{Discussion}
 
@@ -680,7 +669,7 @@ correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
 
-The subject-level analysis of \S\ref{sec:subject} carries several
+The fact-level analysis of \S\ref{sec:subject} carries several
 caveats of its own. Model confidence predicts LRE success better than
 the lens does ($11.5\times$ against $6.7\times$), and explains more of the
 within-relation variance ($0.075$ against $0.047$). The lens contributes
@@ -787,6 +776,5 @@ can be measured (Section~\ref{sec:residuals}).
 
 \input{table_relations}
 
-\input{table_prominence}
 
 \end{document}
