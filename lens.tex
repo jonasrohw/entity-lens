@@ -24,7 +24,7 @@
 $>>>$\hspace{1cm}}}}}
 
 \enoteson
-%\enotesoff
+\enotesoff
 
 \begin{document}
 \maketitle
@@ -124,9 +124,11 @@ move
 the unit of
 analysis from the relation to the individual fact,
 we provide an analysis of several
-problems in existing datasets, most prominently first-token
-ambiguity of objects
-and reference prominence of subjects, that hinder further
+problems in existing datasets -- most prominently
+semantically
+weak first tokens
+and subject ambiguity --
+that hinder further
 progress on understanding LREs in language models. 
 
 
@@ -139,8 +141,10 @@ o \;\approx\; \beta\, W s + b ,
 where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
 sends the subject's hidden state at an intermediate layer $\ell$ to the
-final-layer state at the last position, holding the rest of the prompt
-fixed. The LRE is the first-order approximation of $f$, averaged over a
+final-layer state at the last position.
+\enote{hs}{please explain what the purpose of the qualifier
+``, holding the rest of the prompt
+fixed'' at this position is -- maybe we can omit it?} The LRE is the first-order approximation of $f$, averaged over a
 small set $\{s_i\}$ of reference subjects,
 \begin{equation}
 W = \operatorname{mean}_i J_i , \qquad
@@ -167,9 +171,14 @@ Setting $\beta > 1$ amplifies the subject-specific contribution relative
 to that anchor, and so does change which object is ranked first.
 \citet{hernandez2024linearity} fit $\beta$ per relation alongside the
 layer; we follow their protocol and select it from
-$\{0.5, 1, 1.5, 2, 3, 5\}$. Eq.~\ref{eq:beta} is also what makes the LRE
+$\{0.5, 1, 1.5, 2, 3, 5\}$.
+
+\enote{hs}{this is redundant with the reference to Appendix
+  A below and so we can delete it?:
+Eq.~\ref{eq:beta} is also what makes the LRE
 affordable: each test subject costs $n$ Jacobian--vector products rather
-than a materialized $4096 \times 4096$ matrix.
+than a materialized $4096 \times 4096$ matrix.}
+
 
 \emph{Faithfulness} is the rate at which
 decoding $\beta W s + b$ over the full vocabulary reproduces the
@@ -306,10 +315,12 @@ the lens itself is always computed under the neutral prompt of
 relations. The lens sees no relation template, no objects, and no
 (subject, object) pairs, and uses one fixed layer throughout.
 Triangles mark the two relations with numeric objects, rescored as
-described in \S\ref{sec:artifact}.}
+described in Appendix ?.}
 \label{fig:main}
 \end{figure}
 
+\enote{hs}{caption figure fig:main: replace ``?'' with the
+  correct reference to the appendix}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
@@ -364,11 +375,12 @@ drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
-\paragraph{Unchanged findings under the scoring protocol in \S\ref{sec:artifact}.}
-Re-running
-under the improved protocol of \S\ref{sec:artifact} -- a single shared
-split and objects restricted to those their first token identifies --
-gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
+\paragraph{Unchanged findings under an alternative scoring protocol}
+We reran
+the analysis in Figure \ref{fig:main}
+under an alternative protocol:  a single shared
+split and objects restricted to those their first token identifies.
+This gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
 restriction, against $0.658$ over 28 here.
 
 \enote{hs}{following paragraph: i'm not sure i understand
@@ -441,9 +453,7 @@ constellation in the Latin genitive (\emph{Eta Persei} for
 the $19$ subjects without such overlap is $0.63$, slightly higher rather
 than lower, so this explanation fails. What the lens returns for these
 subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
-\emph{stellar} -- rather than the particular constellation, which suggests
-the same first-token scoring problem discussed in
-Section~\ref{sec:artifact}. Excluding the relation would raise the
+\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
 correlation to $0.725$.
 
 They are not. Ordering relations by their residual from the fitted trend,
@@ -629,7 +639,7 @@ $0.658$ to $0.427$.
 
 
 
-\section{Discussion}
+\section{Discussion (just random stuff for now)}
 
 \enote{hs}{this section is a collection of content pieces
   that need to be integrated into a fluent narrative}
