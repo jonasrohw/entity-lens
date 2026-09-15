@@ -375,13 +375,16 @@ drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
-\paragraph{Unchanged findings under an alternative scoring protocol}
+\paragraph{Unchanged findings under an alternative scoring protocol.}
 We reran
 the analysis in Figure \ref{fig:main}
 under an alternative protocol:  a single shared
 split and objects restricted to those their first token identifies.
 This gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
 restriction, against $0.658$ over 28 here.
+\enote{hs}{add here: why 25 relations? what does ``meeting
+  the restriction'' mean?}
+
 
 \enote{hs}{following paragraph: i'm not sure i understand
   what the takeaway here is -- why is it a top-priority
@@ -417,7 +420,7 @@ model disposed to say. The relations that deviate from the trend are
 therefore exceptions to the account. Here, we ask
 whether these relations are unstructured.
 
-\paragraph{Salience, measured independently of the lens.} our account
+\paragraph{Salience, measured independently of the lens.} Our account
 would be circular if salience were read off the lens, since the
 lens is itself a salience readout. We therefore measure it by the model's
 own free generation. For each test subject we greedily generate 90 tokens
@@ -456,9 +459,14 @@ subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
 \emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
 correlation to $0.725$.
 
+We now return to our question whether
+relations that deviate from the overall trend (the lens does
+not predict linearity well) are unstructured.
 They are not. Ordering relations by their residual from the fitted trend,
 both tails are organized by the size of the answer space. The largest
 positive residuals -- faithful despite a low lens score -- are
+\enote{hs}{something got lost in my reediting -- where are
+  these numbers from again?}
 \textsc{landmark\_on\_continent} ($+0.30$, $k = 189$),
 \textsc{name\_gender} ($+0.29$, $k = 9.5$) and
 \textsc{person\_native\_language} ($+0.26$, $k = 30.6$). In each, the LRE
@@ -504,7 +512,8 @@ misses may be a better diagnostic for assessing the size of
 the correlation.
 
 Our original plan was to develop a fine-grained account of
-how differential Jacobian lens readouts influence the
+what differential Jacobian lens readouts
+predict about the
 linearity of individual facts. However, we found that
 several shortcomings of the experimental setup currently
 used for investigating relations in LMs make this hard. In
@@ -551,8 +560,8 @@ relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 where 29 of 69 objects begin with \textsc{University}).
 
 Restricting each relation to objects whose first token identifies them
-repairs this on the gold side, and is the scoring used in
-\S\ref{sec:subject}. It is only a partial remedy, because faithfulness
+repairs this on the gold side.
+It is only a partial remedy, because faithfulness
 never uses gold: it compares the LRE against the \emph{model's} top-1, so
 what inflates it is the model's own answer being an easy token. In
 \textsc{person\_university}, after filtering, the model still answers
@@ -574,7 +583,7 @@ titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
 
 
 
-Both LRE and the lens work on the token-level, the residual
+Both LRE and the lens work on the token level, the residual
 stream vector at the last layer, which is focused on
 producing the correct next token and may not represent
 reliable information about the tokens to follow. This
@@ -587,7 +596,7 @@ whose objects are full entity names.
 
 
 
-\section{Subject ambiguity}
+\subsection{Subject ambiguity}
 
 
 \textsc{person\_occupation} exemplifies the problem of 
@@ -595,18 +604,19 @@ whose objects are full entity names.
 who is listed as an actor
 in LRE. The highest ranked token given by the lens is
 ``whistlebl''. This indicates that the most prominent entity
-associated with the last name Thommessen is Advokatfirmaet
+associated with the last name Thommessen
+by Olmo-3-7B
+is Advokatfirmaet
 Thommessen, a law firm known for their digital whistleblowing
 tool. One might hope that the first name ``Rolf''
 disambiguates which subject is intended, but apparently this
 is not the case. In general, the last few tokens seem to
-dominate which entity is represented and used by the LM. For
-example, for the actor Barry Sobel the lens top-ranks
+dominate which entity is represented and used by the LM. For the actor Barry Sobel the lens top-ranks
 ``kosher'', ``Jewish'', ``Rabbi'', correct associations for
-the Brazilian Rabbi Henry Sobel; for the actress Vondell
+the Brazilian Rabbi Henry Sobel. For the actress Vondell
 Darr, the lens top-ranks ``criminal'', ``murders'',
 ``felon'', plausible associations for the wrongfully convicted
-Acacia Lyn-Darr; for the actor Simon Gosejohann, the lens
+Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
 top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
 simply uses the string ``Johann'' as the representation.
 While we did not conduct an extensive analysis, it is likely
@@ -615,9 +625,27 @@ subjects are persons. Many of those persons share the
 properties that result in Barry Sobel, Vondell Darr
 and Simon Gosejohann being misrepresented by the model.
 
-In summary, these three relations have these problems
-and these problems seem to occur throughout the dataset.
-WHAT NEEDS TO BE DONE.
+\subsection{Towards better fact datasets}
+TO BE EXPANDED Our analysis of the three relations with the worst correlation
+identifies several properties of how LMs process relations
+that complicate solid experimentation and rigorous characterization
+of internal representations.
+
+TO BE EXPANDED What needs to be done:
+\begin{itemize}
+\item Datasets without
+  semantically weak first token problem
+  \item Methodology that can be used even for relations that
+    necessarily have a semantically weak first token problem
+    (person-father)
+\item Datasets without
+  subject ambiguity problem
+  (may not be possible since different models resolve
+  ambiguity differently)
+  \item Methodology for determining the prominent reference
+    that a subject has for a model
+\end{itemize}
+
 
 \enote{hs}{move this to the appendix:
 Both relations with numeric objects
@@ -683,22 +711,6 @@ correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
 
-The fact-level analysis of \S\ref{sec:subject} carries several
-caveats of its own. Model confidence predicts LRE success better than
-the lens does ($11.5\times$ against $6.7\times$), and explains more of the
-within-relation variance ($0.075$ against $0.047$). The lens contributes
-independently of it, but neither explains much: together they account for
-under a tenth of the within-relation variation in LRE success. Faithfulness there is estimated from a single split per
-relation, and a single split is noisy -- one relation scored $0.39$ and
-$0.21$ on two draws at identical test-set size -- so the outcome variable
-is measured with error that attenuates the association. The thirteen
-qualifying relations all sit in the middle of the cardinality range, where
-the account is expected to work, making this a fair test of the mechanism
-but not of its boundaries. And the inclusion criteria screen on
-faithfulness and test-set size, neither of which catches a relation like
-\textsc{person\_occupation} where two answers cover 65\% of subjects;
-screening on the concentration of the model's answer distribution would
-be better, and would have to be fixed in advance.
 
 The account has a scope condition we can state but not yet explain
 (\S\ref{sec:residuals}). It is weakest where the answer space is very
@@ -719,7 +731,9 @@ prompt, or an average over several, might track salience more broadly.
 Seven of the 28 relations have fewer than ten test items after the
 in-context and reference subjects are removed, so their faithfulness
 estimates are coarse (for three of them, quantized to thirds); a
-rotating-split protocol would sharpen these. Finally, the diagnostic is
+rotating-split protocol would sharpen these.
+
+Finally, the diagnostic is
 defined only for relations whose subjects are entities, which excludes 19
 of the dataset's 47 relations.
 

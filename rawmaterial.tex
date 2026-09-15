@@ -151,3 +151,21 @@ rank 244 for writers -- whose readings are \emph{novels}, \emph{prose},
 \emph{poetry}, \emph{literary}, all correct and none of them the scored
 token. The effects we report are therefore lower bounds by an amount we
 can demonstrate but not yet quantify.
+
+
+The fact-level analysis of \S\ref{sec:subject} carries several
+caveats of its own. Model confidence predicts LRE success better than
+the lens does ($11.5\times$ against $6.7\times$), and explains more of the
+within-relation variance ($0.075$ against $0.047$). The lens contributes
+independently of it, but neither explains much: together they account for
+under a tenth of the within-relation variation in LRE success. Faithfulness there is estimated from a single split per
+relation, and a single split is noisy -- one relation scored $0.39$ and
+$0.21$ on two draws at identical test-set size -- so the outcome variable
+is measured with error that attenuates the association. The thirteen
+qualifying relations all sit in the middle of the cardinality range, where
+the account is expected to work, making this a fair test of the mechanism
+but not of its boundaries. And the inclusion criteria screen on
+faithfulness and test-set size, neither of which catches a relation like
+\textsc{person\_occupation} where two answers cover 65\% of subjects;
+screening on the concentration of the model's answer distribution would
+be better, and would have to be fixed in advance.
