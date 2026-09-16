@@ -1,0 +1,91 @@
+# ICLR 2027 submission
+
+The submission manuscript is `lens.tex`; the compiled file is
+`iclr2027_submission.pdf`. The official anonymous review style is active.
+
+```sh
+cd paper
+make check
+```
+
+Requires GNU Make, Python 3, a TeX Live installation with `latexmk`, pdfLaTeX
+and BibTeX, and Poppler (`pdfinfo`, `pdffonts`, `pdftotext`). Intermediate
+files go in `build/`. `make figures` regenerates the three vector figures
+using `uv` and the locked environment in `../code/`, without loading a model.
+The figure PDFs are included, so a normal LaTeX build does not need Python
+scientific packages. The original ACL files and historical figures are retained
+for reference; they are not used by this manuscript.
+
+## Official template provenance
+
+Downloaded on 2026-09-16 from the archive linked by the
+[ICLR 2027 author guidelines](https://iclr.cc/Conferences/2027/AuthorGuidelines):
+[official style archive](https://media.iclr.cc/Conferences/ICLR2027/iclr-2027-style-files.zip).
+All seven files from the archive are included unchanged. Their hashes are in
+`ICLR2027_TEMPLATE_SHA256SUMS`; `make check` verifies them.
+
+Archive SHA-256:
+`0d940dfa9398ae99a18f24a85a8a683f367204b6af6d17d2899e60a67102529e`.
+
+## Verified properties
+
+- Nine pages of main text; statements and references follow, then appendices.
+- Official ICLR 2027 review header, line numbers, and anonymous title block.
+- US Letter pages, embedded fonts, and empty PDF author metadata.
+- No missing citations/references, duplicate labels, overfull boxes, or visible
+  draft placeholders. Figure labels were visually inspected.
+- The official bibliography style is used. Table captions appear above tables.
+- All 33 tests in `code/tests/test_reproduction.py` passed. The main, partial,
+  shared-split, and fact-level correlations agree with the retained results.
+  The reported regression residuals were also reproduced. This verifies the
+  retained CPU analyses; it is not a rerun of the original GPU measurements.
+
+The script checks mechanical properties, not scientific correctness or every
+possible way an author could be identified. Harmless underfull-page
+diagnostics may occur with the official layout; no geometry or font-size
+overrides were introduced to force the page count.
+
+## Changes beyond the template
+
+The wide ACL table was converted to one column without changing its numbers.
+The missing numeric-token appendix was restored from the draft's existing
+editorial note and linked from the figure and table. Visible unfinished prose
+was completed using the draft's stated methodological directions; no new
+experimental results were added.
+
+The bias is now written as `b_beta = mean_i[f(s_i) - beta J_i s_i]`, matching
+the implemented estimator `mean_i[f(s_i) + beta J_i(s - s_i)]`. The previous
+equations were inconsistent for beta other than one. The text now acknowledges
+in-sample hyperparameter selection and the lack of a layer-sensitivity study,
+instead of asserting unbiasedness or invariance of correlations to layer choice.
+The relation identifier and rank-axis notation were corrected. The clipped
+fact-level figures were reconstructed from the retained matched measurements.
+
+## Items requiring the authors before submission
+
+**This is a mechanically checked manuscript, not certification of a completed
+or fully compliant OpenReview submission.**
+
+1. Complete `ai_use.tex` with the full history of AI assistance and the authors'
+   actual verification practices. It currently describes only the assistance
+   known from this conversion. The same disclosure must be provided in
+   OpenReview; see the [2027 AI policy](https://iclr.cc/Conferences/2027/AIPolicyForAuthors).
+   No assertion that the authors reviewed all AI-assisted work has been invented.
+2. Review and approve the scientific claims, revised equation, methodological
+   qualifications, ethics statement, and editorial changes. Author-only notes
+   remain disabled in the TeX source and do not appear in the PDF.
+3. Complete OpenReview author information, conflicts, reciprocal-reviewer
+   registration or applicable exemptions, submission quotas, and required
+   policy acknowledgments. Confirm originality and absence of a prohibited
+   simultaneous submission. These cannot be established from this repository.
+4. Register the genuine abstract and complete author list by **September 18,
+   2026, 23:59 AoE**, and upload the paper by **September 25, 2026, 23:59 AoE**.
+   The [official dates](https://iclr.cc/Conferences/2027/Dates) and author guide
+   control; recheck for updates before uploading.
+5. Upload `iclr2027_submission.pdf` as the paper. If code is supplied separately,
+   prepare an anonymous supplement: the full repository contains identifying
+   provenance paths, editorial material, and Git history. Do not upload the
+   repository verbatim as an anonymous supplement.
+
+No submission has been uploaded to OpenReview. The pre-existing local deletion
+of `lens.pdf` was left untouched; the ICLR PDF uses its own filename.

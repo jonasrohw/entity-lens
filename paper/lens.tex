@@ -1,5 +1,5 @@
-\documentclass[11pt]{article}
-\usepackage[review]{acl}
+\documentclass{article}
+\usepackage{iclr2027_conference}
 
 \usepackage{times}
 \usepackage{latexsym}
@@ -10,10 +10,14 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{url}
+\hypersetup{hidelinks,pdftitle={Predicting Linear Relational Decodability Without the Relation},
+  pdfauthor={},pdfsubject={},pdfkeywords={}}
 
 \title{Predicting Linear Relational Decodability\\Without the Relation}
 
-\author{Anonymous ACL submission}
+\author{Anonymous authors}
 
 \newcounter{notecounter}
 \newcommand{\enotesoff}{\long\gdef\enote##1##2{}}
@@ -93,7 +97,7 @@ representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
-Building on recent work by \citep{gurnee2026workspace},
+Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{differential Jacobian lens}, which
 evaluates the Jacobian at individual reference entities and applies it to
 \emph{differences} between entity representations:
@@ -136,7 +140,7 @@ progress on understanding LREs in language models.
 
 An LRE for relation $r$ approximates the model's computation as
 \begin{equation}
-o \;\approx\; \beta\, W s + b ,
+o \;\approx\; \beta\, W s + b_\beta ,
 \end{equation}
 where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
@@ -144,14 +148,16 @@ sends the subject's hidden state at an intermediate layer $\ell$ to the
 final-layer state at the last position.
 \enote{hs}{please explain what the purpose of the qualifier
 ``, holding the rest of the prompt
-fixed'' at this position is -- maybe we can omit it?} The LRE is the first-order approximation of $f$, averaged over a
-small set $\{s_i\}$ of reference subjects,
+fixed'' at this position is -- maybe we can omit it?} We average local
+first-order approximations of $f$ over a small set $\{s_i\}$ of reference
+subjects and scale their subject-dependent terms by $\beta$:
 \begin{equation}
 W = \operatorname{mean}_i J_i , \qquad
-b = \operatorname{mean}_i\!\left[\, f(s_i) - J_i s_i \,\right] ,
+b_\beta = \operatorname{mean}_i\!\left[\, f(s_i) - \beta J_i s_i \,\right] ,
 \label{eq:wb}
 \end{equation}
-where $J_i$ is the Jacobian of $f$ at $s_i$
+where $J_i$ is the Jacobian of $f$ at $s_i$. At $\beta=1$, this is the
+averaged first-order approximation
 \citep{hernandez2024linearity}.
 
 The scalar $\beta$ corrects a systematic weakness of the first-order
@@ -159,9 +165,9 @@ estimate. A Jacobian taken at a reference subject describes the model's
 map only in a neighborhood of that subject; extrapolated to a different
 subject it points in roughly the right direction but is too short. This
 matters because the prediction decomposes into a subject-dependent term
-and a constant: expanding $b$ gives
+and a constant: expanding $b_\beta$ gives
 \begin{equation}
-\beta W s + b \;=\; \operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (s - s_i)\,\right],
+\beta W s + b_\beta \;=\; \operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (s - s_i)\,\right],
 \label{eq:beta}
 \end{equation}
 in which only the second term depends on which subject is being decoded.
@@ -181,7 +187,7 @@ than a materialized $4096 \times 4096$ matrix.}
 
 
 \emph{Faithfulness} is the rate at which
-decoding $\beta W s + b$ over the full vocabulary reproduces the
+decoding $\beta W s + b_\beta$ over the full vocabulary reproduces the
 \emph{model's own} top-1 prediction -- not the gold object. It is therefore
 a measure of how well an affine map captures what the model
 does. Faithfulness defined this way is
@@ -282,7 +288,7 @@ concatenated, one per line, and the query subject is appended without its
 object, so that the model's next token is its answer. This is what
 defines ``the model's own prediction'' for both measures. The subjects of
 a relation are shuffled once and partitioned into three disjoint sets:
-eight in-context examples, eight reference subjects from which $W$ and $b$
+eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
 are estimated, and the remainder as scored test subjects.
 
 Faithfulness is then recomputed for all 28 relations under this protocol.
@@ -297,9 +303,10 @@ The lens scores 11--20 subjects per relation, depending on how many remain
 once the in-context and reference sets are removed. For the
 results in \S\ref{sec:results}, the lens and the LRE sample their splits
 independently, so the particular subjects entering each set differ between
-the two measurements. Both estimates are unbiased for the relation, but
-each carries sampling noise the other does not, which attenuates rather
-than inflates the correlation we report. 
+the two measurements. Independent splits introduce sampling variation into
+this comparison. Because the LRE hyperparameters are selected on the scored
+subjects, its reported faithfulness is an in-sample estimate; these results
+do not establish performance on a separate held-out evaluation set.
 
 Crucially, the in-context prompt is used only to obtain the \emph{target};
 the lens itself is always computed under the neutral prompt of
@@ -310,12 +317,12 @@ the lens itself is always computed under the neutral prompt of
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_lens_vs_faith.pdf}
+\includegraphics[width=0.8\linewidth]{fig_iclr_agreement.pdf}
 \caption{LRE faithfulness against the relation-agnostic lens score, 28
 relations. The lens sees no relation template, no objects, and no
 (subject, object) pairs, and uses one fixed layer throughout.
 Triangles mark the two relations with numeric objects, rescored as
-described in Appendix ?.}
+described in Appendix~\ref{sec:numeric-objects}.}
 \label{fig:main}
 \end{figure}
 
@@ -398,12 +405,12 @@ told which relation it is looking at.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_product.png}
+\includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
 \caption{
-  Rank-rank analysis of individual factors for
- \textsc{product\_company}.
-x-axis: lens $\log_10$ rank. 
-y-axis: LRE $\log_10$ rank.
+  Rank-rank analysis of individual facts for
+ \textsc{product\_by\_company}.
+x-axis: lens $\log_{10}(\mathrm{rank}+1)$.
+y-axis: LRE $\log_{10}(\mathrm{rank}+1)$; ranks are zero-based.
 Faithfulness: 0.68.
 Grey regression line over all points (n=99, $\rho=.41$).
 Orange regression line over orange  points (misses: n=32, $\rho=.58$).}
@@ -502,7 +509,7 @@ integrated into the linear structure.
 We use the setup shown in Figure~\ref{fig:product} to
 investigate fact-level linearity. The figure shows that lens
 rank is a moderately good predictor of LRE rank for
-\textsc{product\_company} ($\rho=.41$), especially if we
+\textsc{product\_by\_company} ($\rho=.41$), especially if we
 only consider misses ($\rho=.58$). Points with an LRE rank
 of 0 (i.e., a hit, not a miss) are ``censored'': They give
 us no resolution because they fail to distinguish cases
@@ -521,17 +528,17 @@ this section, we analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\begin{figure*}[t]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{blacksheep.png}
+\includegraphics[width=\linewidth]{fig_iclr_outliers.pdf}
 \caption{
   Rank-rank analysis for the three relations with the worst
-  overall corelation between lens rank and LRE rank.
+  overall correlation between lens rank and LRE rank.
 Grey regression lines over all points, 
 orange regression lines over orange  points.
 }
 \label{fig:blacksheep}
-\end{figure*}
+\end{figure}
 
 We conduct our analysis on the three relations that have the
 worst overall correlation in the rank-rank analysis: their
@@ -626,48 +633,26 @@ properties that result in Barry Sobel, Vondell Darr
 and Simon Gosejohann being misrepresented by the model.
 
 \subsection{Towards better fact datasets}
-TO BE EXPANDED Our analysis of the three relations with the worst correlation
-identifies several properties of how LMs process relations
-that complicate solid experimentation and rigorous characterization
-of internal representations.
+Our analysis motivates two requirements for future evaluations. First,
+answer scoring should distinguish complete objects rather than credit a shared,
+semantically weak first token. Filtering for identifying first tokens provides
+one diagnostic, but excludes some relations and does not ensure that the model's
+own prediction is distinctive. Evaluation methods that score complete answers
+are therefore needed for relations with unavoidable prefix overlap.
 
-TO BE EXPANDED What needs to be done:
-\begin{itemize}
-\item Datasets without
-  semantically weak first token problem
-  \item Methodology that can be used even for relations that
-    necessarily have a semantically weak first token problem
-    (person-father)
-\item Datasets without
-  subject ambiguity problem
-  (may not be possible since different models resolve
-  ambiguity differently)
-  \item Methodology for determining the prominent reference
-    that a subject has for a model
-\end{itemize}
-
-
-\enote{hs}{move this to the appendix:
-Both relations with numeric objects
-(\textsc{presidents\_birth\_year}, \textsc{presidents\_election\_year})
-initially scored faithfulness $1.000$. This was spurious. In this
-tokenizer \texttt{" 1743"} segments as \texttt{[\,' ', '174', '3'\,]}:
-digits never merge with a preceding space. First-token scoring therefore
-compared the model's top-1 against a bare space token on both sides, and
-faithfulness $1.000$ meant only that the LRE and the model both emit a
-space.
-
-The fix is to place the space in the prompt, so that the query ends with
-it and the next token is content. Rescored, the two relations give
-faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
-predict the year correctly once the space is consumed. Including the
-uncorrected values would have depressed the reported correlation from
-$0.658$ to $0.427$.
-}
+Second, a subject name should refer to the intended entity for the model under
+study. Dataset construction alone may not ensure this, because different models
+can resolve the same name differently. Evaluations should examine the entity
+that a model associates with each subject, document ambiguity, and distinguish
+errors of subject identification from errors in relational decoding. These are
+methodological directions motivated by the observed failures, rather than
+solutions evaluated in this study.
 
 
 
-\section{Discussion (just random stuff for now)}
+
+
+\section{Discussion}
 
 \enote{hs}{this section is a collection of content pieces
   that need to be integrated into a fluent narrative}
@@ -755,8 +740,32 @@ falling at the two ends of the answer-space range where faithfulness can
 be achieved, or prevented, without the subject's representation mattering
 much either way.
 
+\label{sec:main-end}
+\clearpage
+
+\section*{AI use statement}
+\input{ai_use}
+
+\section*{Ethics statement}
+This work studies model behavior using existing relation datasets. Model
+predictions and the associations reported in the subject-ambiguity analysis
+should not be interpreted as verified attributes of the named individuals.
+First-token collisions and mistaken entity identification illustrate risks of
+using such readouts to make factual claims about people. The experiments are
+intended to diagnose these limitations, not to support individual profiling.
+
+\section*{Reproducibility statement}
+Section~\ref{sec:setup} describes the model, relation selection, prompts,
+data partitions, and hyperparameter grid. Equations~\ref{eq:wb}--\ref{eq:lens}
+define the estimators; Appendices~\ref{sec:jvp}, \ref{sec:layer17},
+\ref{sec:permutation}, and~\ref{sec:numeric-objects} document the
+Jacobian--vector products, layer choice, permutation test, and numeric-token
+correction. Table~\ref{tab:relations} reports the relation-level results.
+
+\bibliographystyle{iclr2027_conference}
 \bibliography{custom}
 
+\clearpage
 \appendix
 
 \section{Jacobian--vector products}
@@ -778,10 +787,10 @@ Layer 17 is roughly half-way through the network,
 the region in which such lenses are usable at all
 \citep{gurnee2026workspace}, and is the modal best layer for the LRE
 itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
-20 and 23). We stress that a single layer is used for \emph{every}
-relation, so this choice cannot manufacture a correlation across
-relations: it can only make the diagnostic uniformly better or uniformly
-worse. Tuning the layer per relation would score higher and mean less.
+20 and 23). A single layer is used for \emph{every}
+relation, without per-relation tuning. However, this does not establish robustness to
+the layer choice: changing the layer can affect relations differently.
+A systematic sensitivity analysis is left to future work.
 
 
 \section{Permutation test for the main correlation}
@@ -794,6 +803,25 @@ faithfulness values $10^4$ times, recompute $\rho$ each time, and count
 how often the shuffled $|\rho|$ matches or exceeds the observed one. It
 does so in $0.03\%$ of shuffles, so the association is not an artifact of
 the small sample.
+
+\section{Numeric-object tokenization correction}
+\label{sec:numeric-objects}
+
+Both relations with numeric objects
+(\textsc{presidents\_birth\_year}, \textsc{presidents\_election\_year})
+initially scored faithfulness $1.000$. This was spurious. In this
+tokenizer \texttt{" 1743"} segments as \texttt{[\,' ', '174', '3'\,]}:
+digits never merge with a preceding space. First-token scoring therefore
+compared the model's top-1 against a bare space token on both sides, and
+faithfulness $1.000$ meant only that the LRE and the model both emit a
+space.
+
+The fix is to place the space in the prompt, so that the query ends with
+it and the next token is content. Rescored, the two relations give
+faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
+predict the year correctly once the space is consumed. Including the
+uncorrected values would have depressed the reported correlation from
+$0.658$ to $0.427$.
 
 \section{All relations}
 
