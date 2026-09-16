@@ -1,0 +1,154 @@
+"""Recompute the paper statistics from the retained CPU-readable result snapshots."""
+
+import json
+
+import numpy as np
+from scipy import stats
+
+from jlens.config import ROOT
+
+
+def load(path):
+    return json.loads((ROOT / path).read_text())
+
+
+def partial_spearman(x, y, *controls):
+    """Pearson correlation of rank residuals after regressing out controls."""
+    a, b = stats.rankdata(x), stats.rankdata(y)
+    design = np.column_stack([np.ones(len(a)), *(stats.rankdata(c) for c in controls)])
+    a -= design @ np.linalg.lstsq(design, a, rcond=None)[0]
+    b -= design @ np.linalg.lstsq(design, b, rcond=None)[0]
+    return stats.pearsonr(a, b)
+
+
+def relation_data():
+    return {
+        path.stem: json.loads(path.read_text())
+        for path in (ROOT / "data/relations").rglob("*.json")
+    }
+
+
+def fact_points(relation, lens, rank_dir):
+    """Join subject ranks only when both measurements use the same split."""
+    lens_result = load(f"results/{lens}")[relation]
+    rank_result = load(f"results/{rank_dir}/subject_ranks_{relation}.json")
+    if not rank_result.get("split_fingerprint") or rank_result[
+        "split_fingerprint"
+    ] != lens_result.get("split_fingerprint"):
+        raise ValueError(f"{relation}: split fingerprints differ or are missing")
+    ranks = {row["subject"]: row["rank_diff"] for row in lens_result["rows"]}
+    return np.array(
+        [
+            (np.log10(ranks[subject] + 1), np.log10(value["rank"] + 1))
+            for subject, value in rank_result["ranks"].items()
+            if subject in ranks
+        ]
+    ).reshape(-1, 2)
+
+
+def main():
+    figure = load("results/paper_figure_data.json")
+    rels = figure["rels"]
+    x = -np.array(figure["lens"])
+    y = np.array(figure["faith"])
+    data = relation_data()
+    k = np.array(
+        [
+            len(data[relation]["samples"])
+            / len({sample["object"] for sample in data[relation]["samples"]})
+            for relation in rels
+        ]
+    )
+    prior = load("results/answer_prior.json")
+    frequency = np.array([prior[relation]["prior_modeltop1"] for relation in rels])
+    rho = stats.spearmanr(x, y)
+    rng = np.random.default_rng(17)
+    null = sum(
+        abs(stats.spearmanr(rng.permutation(x), y).statistic) >= abs(rho.statistic)
+        for _ in range(10000)
+    )
+    domains = [data[relation]["properties"]["domain_name"] for relation in rels]
+    leave_out = [
+        stats.spearmanr(
+            x[[i for i, domain in enumerate(domains) if domain != excluded]],
+            y[[i for i, domain in enumerate(domains) if domain != excluded]],
+        ).statistic
+        for excluded in sorted(set(domains))
+    ]
+
+    print(f"Main ({len(rels)} relations): rho={rho.statistic:.3f}, p={rho.pvalue:.2e}")
+    logit_path = ROOT / "results/logit_lens.json"
+    if logit_path.exists():
+        baseline = json.loads(logit_path.read_text())
+        if set(baseline) != set(rels):
+            raise ValueError("logit-lens result does not cover the same 28 relations")
+        logit_scores = np.array(
+            [-baseline[relation]["agg"]["median_lograng"] for relation in rels]
+        )
+        logit = stats.spearmanr(logit_scores, y)
+        print(
+            f"Logit-lens baseline ({len(rels)} relations): "
+            f"rho={logit.statistic:.3f}, p={logit.pvalue:.2e}"
+        )
+    print(f"Permutation: {null}/10000 exceed |rho|")
+    print(
+        f"Cardinality: k/faith rho={stats.spearmanr(k, y).statistic:.3f}; "
+        f"k/lens rho={stats.spearmanr(k, x).statistic:.3f}; "
+        f"partial rho={partial_spearman(x, y, k).statistic:.3f}"
+    )
+    print(
+        f"Answer prior: prior/faith rho={stats.spearmanr(frequency, y).statistic:.3f}; "
+        f"prior/lens rho={stats.spearmanr(frequency, x).statistic:.3f}; "
+        f"partial rho={partial_spearman(x, y, frequency).statistic:.3f}; "
+        f"partial with k={partial_spearman(x, y, k, frequency).statistic:.3f}"
+    )
+    print(
+        f"Leave-one-domain-out: {min(leave_out):.3f}..{max(leave_out):.3f}, "
+        f"median {np.median(leave_out):.3f}"
+    )
+
+    lens = load("results/shared_split/jacobian_lens.json")
+    faith = {
+        p.stem.removeprefix("faithfulness_"): json.loads(p.read_text())
+        for p in (ROOT / "results/shared_split").glob("faithfulness_*.json")
+    }
+    alternative = [relation for relation in lens if relation in faith]
+    alt = stats.spearmanr(
+        [-lens[relation]["agg"]["diff"]["median_lograng"] for relation in alternative],
+        [faith[relation]["best_faith"] for relation in alternative],
+    )
+    print(
+        f"Shared split, identifying first tokens ({len(alternative)} relations): "
+        f"rho={alt.statistic:.3f}, p={alt.pvalue:.2e}"
+    )
+
+    prominence = load("results/prominence_statistics.json")
+    prom = stats.spearmanr(
+        [row["prom"] for row in prominence],
+        [row["gold_lens"] for row in prominence],
+    )
+    print(
+        f"Prominence ({len(prominence)} relations): "
+        f"rho={prom.statistic:.3f}, p={prom.pvalue:.3f}"
+    )
+
+    for relation in (
+        "product_by_company",
+        "superhero_archnemesis",
+        "person_occupation",
+        "person_university",
+    ):
+        points = fact_points(
+            relation, "shared_split/jacobian_lens.json", "shared_split"
+        )
+        misses = points[points[:, 1] > 0]
+        all_rho = stats.spearmanr(points[:, 0], points[:, 1]).statistic
+        miss_rho = stats.spearmanr(misses[:, 0], misses[:, 1]).statistic
+        print(
+            f"{relation}: n={len(points)}, misses={len(misses)}, "
+            f"rho={all_rho:.3f}, misses rho={miss_rho:.3f}"
+        )
+
+
+if __name__ == "__main__":
+    main()

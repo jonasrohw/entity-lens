@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jlens"
+version = "0.1.0"
+description = "Reproducible Jacobian-lens and linear relational embedding experiments"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "numpy>=2.1,<3",
+    "scipy>=1.14,<2",
+    "matplotlib>=3.9,<4",
+]
+
+[project.optional-dependencies]
+gpu = ["torch>=2.13,<3", "transformers>=5.14,<6"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+jlens = "jlens.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jlens"]
+
+[tool.hatch.build.targets.sdist]
+include = ["jlens/", "tests/", "docs/", "data/", "results/", "README.md", "pyproject.toml", "uv.lock", ".python-version", ".gitignore", ".gitlab-ci.yml"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
