@@ -147,11 +147,12 @@ def main():
                 n_ref=N_REFERENCES,
                 n_test=args.n_test,
             )
-        subjects = [x["subject"] for x in test_samples]
-        anchor_names = [x["subject"] for x in references]  # disjoint from `subs`
-        split_fingerprint = splits.split_fingerprint(
-            demonstrations, references, test_samples
-        )
+        if not args.legacy_split:
+            subjects = [x["subject"] for x in test_samples]
+            anchor_names = [x["subject"] for x in references]  # disjoint from `subs`
+            split_fingerprint = splits.split_fingerprint(
+                demonstrations, references, test_samples
+            )
         if len(subjects) < 2:
             print(
                 f"!! {relation}: too few samples after filtering "
