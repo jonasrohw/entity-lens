@@ -132,6 +132,7 @@ def main():
     unembedding = model.lm_head.weight.detach()
     lm_bias = getattr(model.lm_head, "bias", None)
     lm_bias = lm_bias.detach() if lm_bias is not None else None
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
     trials = np.zeros((args.trials, len(layers), len(betas)))
     subject_outcomes = {}
     split_fp = None
@@ -255,7 +256,7 @@ def main():
             for beta_index, b in enumerate(betas):
                 predicted_hidden = base.unsqueeze(0) + b * jacobian_products
                 pred = final_logits(
-                    predicted_hidden, norm, unembedding, lm_bias
+                    predicted_hidden, norm, unembedding, lm_bias, softcap
                 ).argmax(-1)
                 hits = [
                     int(int(p) == model_top_tokens[x["subject"]])

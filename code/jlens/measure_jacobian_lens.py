@@ -107,12 +107,13 @@ def main():
     unembedding = model.lm_head.weight.detach().float()
     lm_bias = getattr(model.lm_head, "bias", None)
     lm_bias = lm_bias.detach().float() if lm_bias is not None else None
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
 
     final_block = resolve_blocks(model)[-1]
     intervention = HiddenStateIntervention(model, final_block=final_block)
 
     def rank_of(v, tid):
-        lg = final_logits(v, norm, unembedding, lm_bias)
+        lg = final_logits(v, norm, unembedding, lm_bias, softcap)
         return int((lg > lg[tid]).sum()), [
             tokenizer.decode([int(i)]).strip() for i in lg.topk(5).indices
         ]

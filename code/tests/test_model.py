@@ -115,6 +115,72 @@ def _tiny_gptj_model():
     return GPTJForCausalLM(config)
 
 
+def _tiny_gemma4_model():
+    """RMSNorm final norm w/ final-logit softcap, hybrid sliding/full attention.
+
+    Also exercises per-layer embeddings (PLE) and QK-norm, both real Gemma 4
+    features, at minimal size — kept small so the tiny model stays cheap, not
+    to skip these code paths.
+    """
+    from transformers import Gemma4ForCausalLM, Gemma4TextConfig
+
+    torch.manual_seed(17)
+    config = Gemma4TextConfig(
+        vocab_size=128,
+        hidden_size=8,
+        intermediate_size=16,
+        num_hidden_layers=2,
+        num_attention_heads=2,
+        num_key_value_heads=2,
+        head_dim=4,
+        max_position_embeddings=512,
+        sliding_window=4,
+        vocab_size_per_layer_input=128,
+        hidden_size_per_layer_input=4,
+        final_logit_softcapping=30.0,
+    )
+    config._attn_implementation = "eager"
+    return Gemma4ForCausalLM(config)
+
+
+def _tiny_gemma4_unified_model():
+    """Nested ``model.model.language_model.layers``/``.norm`` layout.
+
+    ``google/gemma-4-12B`` (and every other plain ``google/gemma-4-*`` repo,
+    confirmed by downloading its ``config.json``) ships the multimodal
+    ``Gemma4UnifiedForConditionalGeneration`` architecture even for text-only
+    use — there is no separate plain-text checkpoint. That class nests the
+    text decoder as ``model.model.language_model`` rather than
+    ``model.model`` directly, and reads ``final_logit_softcapping`` via
+    ``config.get_text_config()`` rather than as a direct attribute (see
+    ``Gemma4UnifiedForConditionalGeneration.forward`` in
+    ``modeling_gemma4_unified.py``). ``vision_config``/``audio_config`` are
+    left ``None`` here to keep the tiny model text-only and cheap.
+    """
+    from transformers import Gemma4UnifiedConfig, Gemma4UnifiedForConditionalGeneration
+
+    torch.manual_seed(17)
+    text_config = dict(
+        vocab_size=128,
+        hidden_size=8,
+        intermediate_size=16,
+        num_hidden_layers=2,
+        num_attention_heads=2,
+        num_key_value_heads=2,
+        head_dim=4,
+        max_position_embeddings=512,
+        sliding_window=4,
+        vocab_size_per_layer_input=128,
+        hidden_size_per_layer_input=0,
+        final_logit_softcapping=30.0,
+    )
+    config = Gemma4UnifiedConfig(
+        text_config=text_config, vision_config=None, audio_config=None
+    )
+    config.get_text_config()._attn_implementation = "eager"
+    return Gemma4UnifiedForConditionalGeneration(config)
+
+
 def _exercise_tiny_pipeline(monkeypatch, tmp_path, transformers, load_model):
     """Run the complete sweep, rank scorer, and lens against a tiny random model.
 
@@ -246,13 +312,49 @@ def test_measurements_agree_on_tiny_gptj(monkeypatch, tmp_path):
     )
 
 
-@pytest.mark.parametrize("build_model", [_tiny_olmo_model, _tiny_gptj_model])
+def test_measurements_agree_on_tiny_gemma4(monkeypatch, tmp_path):
+    """RMSNorm final norm w/ final-logit softcap, hybrid sliding/full attention.
+
+    Exercises the ``final_logits`` softcap dispatch added for Gemma 4, on top
+    of the Llama-style ``model.layers``/``model.norm`` path it already shares
+    with OLMo (confirmed to need no changes to ``resolve_blocks``/
+    ``resolve_final_norm``).
+    """
+    transformers = pytest.importorskip("transformers")
+    _tiny_gemma4_model()  # fail fast with a clear error if Gemma4 isn't available
+    _exercise_tiny_pipeline(
+        monkeypatch, tmp_path, transformers, lambda *a, **k: _tiny_gemma4_model()
+    )
+
+
+def test_measurements_agree_on_tiny_gemma4_unified(monkeypatch, tmp_path):
+    """Nested ``model.model.language_model`` layout, the shape real Gemma 4
+    checkpoints actually ship (see ``_tiny_gemma4_unified_model``).
+
+    Exercises the third ``resolve_blocks``/``resolve_final_norm`` branch and
+    the ``config.get_text_config()``-based softcap lookup added for it.
+    """
+    transformers = pytest.importorskip("transformers")
+    _tiny_gemma4_unified_model()  # fail fast if Gemma4Unified isn't available
+    _exercise_tiny_pipeline(
+        monkeypatch,
+        tmp_path,
+        transformers,
+        lambda *a, **k: _tiny_gemma4_unified_model(),
+    )
+
+
+@pytest.mark.parametrize(
+    "build_model",
+    [_tiny_olmo_model, _tiny_gptj_model, _tiny_gemma4_model, _tiny_gemma4_unified_model],
+)
 def test_final_logits_matches_real_forward_pass(build_model):
     """The manual norm+unembed reimplementation must match the model's own logits.
 
     No JVP or intervention involved: this isolates ``final_logits`` itself
-    (RMSNorm vs. LayerNorm dispatch, optional lm_head bias) from everything
-    else in the pipeline, on both a Llama-style and a GPT-2-style model.
+    (RMSNorm vs. LayerNorm dispatch, optional lm_head bias, optional Gemma
+    final-logit softcap) from everything else in the pipeline, across a
+    Llama-style, a GPT-2-style, and a softcapped-RMSNorm-style model.
     """
     pytest.importorskip("transformers")
     model = build_model().eval()
@@ -264,12 +366,14 @@ def test_final_logits_matches_real_forward_pass(build_model):
     unembedding = model.lm_head.weight.detach().float()
     lm_bias = getattr(model.lm_head, "bias", None)
     lm_bias = lm_bias.detach().float() if lm_bias is not None else None
-    reconstructed = final_logits(raw_final, norm, unembedding, lm_bias)
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
+    reconstructed = final_logits(raw_final, norm, unembedding, lm_bias, softcap)
     torch.testing.assert_close(
         reconstructed, output.logits[0, -1, :].float(), rtol=1e-4, atol=1e-4
     )
-    expected_layers = getattr(model.config, "num_hidden_layers", None) or getattr(
-        model.config, "n_layer", None
+    text_config = model.config.get_text_config()
+    expected_layers = getattr(text_config, "num_hidden_layers", None) or getattr(
+        text_config, "n_layer", None
     )
     assert len(resolve_blocks(model)) == expected_layers
 

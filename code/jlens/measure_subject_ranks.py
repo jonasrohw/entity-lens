@@ -106,6 +106,7 @@ def main():
     unembedding = model.lm_head.weight.detach()
     lm_bias = getattr(model.lm_head, "bias", None)
     lm_bias = lm_bias.detach() if lm_bias is not None else None
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
 
     context = "".join(
         template.format(x["subject"]) + " " + x["object"] + "\n" for x in demonstrations
@@ -167,7 +168,7 @@ def main():
                 cache[reference_subject][1],
             )
         predicted_hidden = base + selected_beta * (acc / len(references))
-        logits = final_logits(predicted_hidden, norm, unembedding, lm_bias)
+        logits = final_logits(predicted_hidden, norm, unembedding, lm_bias, softcap)
         t = model_top_tokens[sub]
         rows[sub] = {
             "rank": int((logits > logits[t]).sum()),

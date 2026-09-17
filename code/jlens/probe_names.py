@@ -68,6 +68,7 @@ def main():
     unembedding = model.lm_head.weight.detach().float()
     lm_bias = getattr(model.lm_head, "bias", None)
     lm_bias = lm_bias.detach().float() if lm_bias is not None else None
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
     intervention = HiddenStateIntervention(model, final_block=resolve_blocks(model)[-1])
     handle = resolve_blocks(model)[args.layer - 1].register_forward_hook(
         intervention.hook
@@ -87,7 +88,7 @@ def main():
                 raise ValueError(f"{name}: no reference subjects available")
             # Preserve the original accumulation order.
             vector = sum(products[1:], products[0]) / len(products)
-            logits = final_logits(vector, norm, unembedding, lm_bias)
+            logits = final_logits(vector, norm, unembedding, lm_bias, softcap)
             tokens = [
                 tokenizer.decode([int(index)]).strip()
                 for index in logits.topk(8).indices

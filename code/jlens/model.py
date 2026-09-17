@@ -3,9 +3,14 @@
 This module is imported only by GPU commands. Layer numbers refer to the
 Transformers hidden-state tuple: state 17 is the output of transformer block 16.
 
-Supports two block/final-norm layouts: Llama-style (``model.model.layers``,
-RMSNorm at ``model.model.norm``, e.g. OLMo) and GPT-2-style (``model.transformer.h``,
-LayerNorm at ``model.transformer.ln_f``, e.g. GPT-J).
+Supports three block/final-norm layouts: Llama-style (``model.model.layers``,
+RMSNorm at ``model.model.norm``, e.g. OLMo, Gemma4ForCausalLM), GPT-2-style
+(``model.transformer.h``, LayerNorm at ``model.transformer.ln_f``, e.g.
+GPT-J), and the nested multimodal-wrapper style
+(``model.model.language_model.layers`` / ``.norm``, e.g.
+``Gemma4UnifiedForConditionalGeneration`` — the class ``AutoModelForCausalLM``
+actually resolves a plain ``google/gemma-4-*`` checkpoint id to, since those
+repos ship the unified text+vision+audio config even for text-only use).
 """
 
 import torch
@@ -17,6 +22,10 @@ def resolve_blocks(model):
         return model.model.layers
     if hasattr(model, "transformer") and hasattr(model.transformer, "h"):
         return model.transformer.h
+    if hasattr(model, "model") and hasattr(model.model, "language_model"):
+        language_model = model.model.language_model
+        if hasattr(language_model, "layers"):
+            return language_model.layers
     raise ValueError(f"Unrecognized transformer block layout: {type(model).__name__}")
 
 
@@ -26,16 +35,26 @@ def resolve_final_norm(model):
         return model.model.norm
     if hasattr(model, "transformer") and hasattr(model.transformer, "ln_f"):
         return model.transformer.ln_f
+    if hasattr(model, "model") and hasattr(model.model, "language_model"):
+        language_model = model.model.language_model
+        if hasattr(language_model, "norm"):
+            return language_model.norm
     raise ValueError(f"Unrecognized final-norm layout: {type(model).__name__}")
 
 
-def final_logits(hidden, norm, unembedding, lm_bias=None):
+def final_logits(hidden, norm, unembedding, lm_bias=None, softcap=None):
     """Apply a final-norm module, then the unembedding, over the last dimension.
 
     ``hidden`` may be a single vector or a batch; only its last axis is
     normalized. Dispatches on the norm module's shape: RMSNorm (e.g.
-    Llama/OLMo) has a weight only and no mean-centering; LayerNorm (e.g.
-    GPT-2/GPT-J) mean-centers and has both a weight and a bias.
+    Llama/OLMo/Gemma) has a weight only and no mean-centering; LayerNorm
+    (e.g. GPT-2/GPT-J) mean-centers and has both a weight and a bias.
+
+    ``softcap`` applies Gemma-style final-logit softcapping,
+    ``cap * tanh(logits / cap)``, after the unembedding matmul and any
+    ``lm_bias`` — matching ``model.config.final_logit_softcapping`` and the
+    order used by ``Gemma4ForCausalLM.forward``. ``None`` (the default, and
+    the value on OLMo/GPT-J configs) skips this step entirely.
     """
     weight = norm.weight.detach()
     bias = getattr(norm, "bias", None)
@@ -54,6 +73,8 @@ def final_logits(hidden, norm, unembedding, lm_bias=None):
     logits = normed.float() @ unembedding.T
     if lm_bias is not None:
         logits = logits + lm_bias
+    if softcap is not None:
+        logits = softcap * torch.tanh(logits / softcap)
     return logits
 
 
