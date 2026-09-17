@@ -7,7 +7,19 @@ The model is `allenai/Olmo-3-1025-7B`. The Jacobian lens uses hidden-state index
 transformer block 16 in Transformers' hidden-state tuple.
 
 The differential lens averages `J_i (s - s_i)` over reference subjects. The
-affine form also adds each reference output `f(s_i)`. LRE faithfulness is the
+affine form also adds each reference output `f(s_i)`.
+
+Three baselines drop one or both of the lens's two ingredients, at the same
+layer, neutral prompt, reference subjects, and target tokens:
+
+| Readout | Jacobian | Difference | Command |
+| --- | --- | --- | --- |
+| `mean_i J_i (s - s_i)` | yes | yes | `measure-jacobian-lens` |
+| `mean_i J_i s` | yes | no | `measure-jacobian-lens-raw` |
+| `s - mean_i s_i` | no | yes | `measure-logit-lens-diff` |
+| `s` | no | no | `measure-logit-lens` |
+
+LRE faithfulness is the
 fraction of subjects for which the LRE's top vocabulary token equals the full
 model's top vocabulary token under the relation's in-context prompt. It does
 not measure accuracy against a restricted object list.
@@ -63,7 +75,8 @@ JSON field names are intentionally unchanged from the source snapshots:
 
 | Field | Meaning |
 | --- | --- |
-| `rank_diff`, `rank_lre`, `rank_logit`, `rank` | Zero-based vocabulary rank; rank 0 is top-1 |
+| `rank_diff`, `rank_lre`, `rank_logit`, `rank_logit_diff`, `rank_raw`, `rank` | Zero-based vocabulary rank; rank 0 is top-1 |
+| `n_references` | Reference subjects averaged for a row, after skipping self-comparisons |
 | `median_lograng` | Historical spelling for median `log10(rank + 1)` |
 | `best_faith`, `best_layer`, `best_beta` | Best LRE grid-cell faithfulness and its parameters |
 | `per_subject` | Binary LRE/full-model agreement for each subject |

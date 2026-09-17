@@ -9,7 +9,7 @@ from jlens.workflow import measurement_plan
 def test_plan_keeps_paper_protocols_and_year_corrections(tmp_path):
     relations = sorted(path.stem for path in (ROOT / "data/relations").glob("*.json"))
     stages = measurement_plan(tmp_path, relations)
-    assert len(stages) == 94
+    assert len(stages) == 96
     assert len({path for path, _, _ in stages}) == len(stages)
     for artifact, command, arguments in stages:
         assert artifact.is_relative_to(tmp_path)

@@ -57,6 +57,8 @@ GPU that logical device refers to.
 | `measure-jacobian-lens --rels NAME,NAME` | Differential and affine lens scores |
 | `measure-subject-ranks --relation NAME` | Recompute ranks at an existing selected LRE cell |
 | `measure-logit-lens` | Layer-17 direct logit-lens baseline matched to stored subjects and model answers |
+| `measure-logit-lens-diff` | Same, but on the reference-subtracted state: the lens without its Jacobian |
+| `measure-jacobian-lens-raw` | Averaged Jacobian applied to the raw activation: the lens without its difference |
 | `measure-answer-prior` | Neutral-context answer-token log-probability control |
 | `measure-prominence` | Greedy generation from two prose prompts |
 | `probe-names "Barry Sobel" "Sobel"` | Inspect neutral-prompt lens associations for arbitrary names |
@@ -68,8 +70,10 @@ targets. The runner supplies these flags separately for the appropriate stages.
 
 The subject-rank scorer requires matching shared splits and the stored
 faithfulness files specified by `--faith-dir`. Its `--no-distinct-first-token`
-option selects the unfiltered comparison. The logit-lens baseline requires the
-main and corrected-year Jacobian-lens files under the selected root's `results/`.
+option selects the unfiltered comparison. All three baselines require the
+main and corrected-year Jacobian-lens files under the selected root's `results/`;
+they rebuild the legacy split and refuse to score a relation whose template,
+layer, subjects, or model answers differ from those files.
 
 `--model-correct` is an advanced cached-screen protocol. Neither its screen
 files nor the original screening producer were included in the source

@@ -77,18 +77,26 @@ def main():
     ]
 
     print(f"Main ({len(rels)} relations): rho={rho.statistic:.3f}, p={rho.pvalue:.2e}")
-    logit_path = ROOT / "results/logit_lens.json"
-    if logit_path.exists():
-        baseline = json.loads(logit_path.read_text())
+    # The ablation baselines: the lens without its Jacobian, without its
+    # difference, and without either. Each is reported only once measured.
+    for label, filename in [
+        ("Logit-lens baseline", "logit_lens.json"),
+        ("Differential logit-lens baseline", "logit_lens_diff.json"),
+        ("Raw Jacobian-lens baseline", "jacobian_lens_raw.json"),
+    ]:
+        path = ROOT / "results" / filename
+        if not path.exists():
+            continue
+        baseline = json.loads(path.read_text())
         if set(baseline) != set(rels):
-            raise ValueError("logit-lens result does not cover the same 28 relations")
-        logit_scores = np.array(
+            raise ValueError(f"{filename} does not cover the same 28 relations")
+        scores = np.array(
             [-baseline[relation]["agg"]["median_lograng"] for relation in rels]
         )
-        logit = stats.spearmanr(logit_scores, y)
+        result = stats.spearmanr(scores, y)
         print(
-            f"Logit-lens baseline ({len(rels)} relations): "
-            f"rho={logit.statistic:.3f}, p={logit.pvalue:.2e}"
+            f"{label} ({len(rels)} relations): "
+            f"rho={result.statistic:.3f}, p={result.pvalue:.2e}"
         )
     print(f"Permutation: {null}/10000 exceed |rho|")
     print(

@@ -138,8 +138,11 @@ def measurement_plan(
                 ],
             )
         )
+    # The three ablation baselines read the two Jacobian-lens files above.
     for filename, command in [
         ("logit_lens.json", "measure-logit-lens"),
+        ("logit_lens_diff.json", "measure-logit-lens-diff"),
+        ("jacobian_lens_raw.json", "measure-jacobian-lens-raw"),
         ("answer_prior.json", "measure-answer-prior"),
         ("prominence.json", "measure-prominence"),
         ("prominence_statistics.json", "prominence-statistics"),

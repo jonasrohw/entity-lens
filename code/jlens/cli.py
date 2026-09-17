@@ -59,6 +59,14 @@ COMMANDS = {
         "measure_logit_lens",
         "Score the matched logit-lens baseline (GPU)",
     ),
+    "measure-logit-lens-diff": (
+        "measure_logit_lens_diff",
+        "Score the differential logit-lens baseline, no Jacobian (GPU)",
+    ),
+    "measure-jacobian-lens-raw": (
+        "measure_jacobian_lens_raw",
+        "Score the standard Jacobian lens on raw activations, no difference (GPU)",
+    ),
     "measure-answer-prior": (
         "measure_answer_prior",
         "Measure neutral answer-token priors (GPU)",
