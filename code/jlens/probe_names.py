@@ -1,9 +1,9 @@
-"""Inspect surname associations with the layer-17 differential Jacobian lens."""
+"""Inspect surname associations with the configured differential Jacobian lens."""
 
 import argparse
 
 from jlens import splits
-from jlens.config import MODEL_ID, NEUTRAL_PROMPT, ROOT
+from jlens.config import LENS_LAYER, MODEL_ID, NEUTRAL_PROMPT, ROOT
 from jlens.io import read_json
 
 
@@ -29,7 +29,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("names", nargs="+", help="quote names containing spaces")
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--layer", type=int, default=17)
+    parser.add_argument("--layer", type=int, default=LENS_LAYER)
     return parser.parse_args()
 
 

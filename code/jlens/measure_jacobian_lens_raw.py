@@ -15,7 +15,14 @@ and target tokens are matched to `results/jacobian_lens.json`.
 import argparse
 
 from jlens import matched_baseline
-from jlens.config import MODEL_ID, NEUTRAL_PROMPT, OUTPUT_DIR, ROOT, YEAR_RELATIONS
+from jlens.config import (
+    LENS_LAYER,
+    MODEL_ID,
+    NEUTRAL_PROMPT,
+    OUTPUT_DIR,
+    ROOT,
+    YEAR_RELATIONS,
+)
 from jlens.io import write_json
 
 
@@ -23,7 +30,7 @@ def parse_args():
     """Parse this measurement's command-line options."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(OUTPUT_DIR / "jacobian_lens_raw.json"))
-    parser.add_argument("--layer", type=int, default=17)
+    parser.add_argument("--layer", type=int, default=LENS_LAYER)
     parser.add_argument("--device", default="cuda:0")
     return parser.parse_args()
 

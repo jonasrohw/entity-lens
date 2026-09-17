@@ -1,15 +1,38 @@
 """Portable CPU reproduction and resumable GPU measurement workflows."""
 
 import argparse
+import queue
 import shlex
 import shutil
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from jlens.config import OUTPUT_DIR, ROOT, YEAR_RELATIONS
 from jlens.figure_data import build_figure_data
 from jlens.io import read_json, write_json
+
+# Stages within the same group have no file dependency on one another and can
+# run concurrently across GPUs; a group only starts once every earlier group
+# has finished, so stages that read another stage's output stay correct.
+# See jlens/figure_data.py, jlens/prominence_statistics.py, and the
+# "ablation baselines" comment in measurement_plan() for the read chain this
+# encodes.
+STAGE_GROUP = {
+    "measure-faithfulness": 0,
+    "measure-jacobian-lens": 0,
+    "measure-logit-lens": 1,
+    "measure-logit-lens-diff": 1,
+    "measure-jacobian-lens-raw": 1,
+    "measure-answer-prior": 1,
+    "measure-prominence": 1,
+    "prominence-statistics": 2,
+    "build-figure-data": 3,
+    "measure-subject-ranks": 4,
+}
+# Commands that load a model and accept --device; the rest are CPU-only.
+GPU_COMMANDS = STAGE_GROUP.keys() - {"prominence-statistics", "build-figure-data"}
 
 
 def command_line(
@@ -210,16 +233,86 @@ def measurement_plan(
     return stages
 
 
+def _pending_stages(
+    stages: list[tuple[Path, str, list[str]]], run_root: Path, completed: set[str]
+) -> list[tuple[Path, str, list[str]]]:
+    """Drop stages already recorded as complete (or legitimately skipped)."""
+    pending = []
+    for artifact, command, arguments in stages:
+        stage = str(artifact.relative_to(run_root))
+        # A SKIPPED file is a completed faithfulness stage with too few samples.
+        relation = artifact.stem.removeprefix("faithfulness_").removeprefix(
+            "subject_ranks_"
+        )
+        skipped = artifact.parent / f"SKIPPED_{relation}.json"
+        if (stage in completed and artifact.exists()) or (
+            artifact.parent.name == "shared_split" and skipped.exists()
+        ):
+            print(f"Already complete: {artifact.name}")
+            continue
+        pending.append((artifact, command, arguments))
+    return pending
+
+
+def _run_group(
+    run_root: Path,
+    output_dir: Path,
+    pending: list[tuple[Path, str, list[str]]],
+    num_gpus: int,
+    completed: set[str],
+    completion_path: Path,
+) -> None:
+    """Run one dependency-free group of stages, up to num_gpus at a time."""
+    devices: queue.Queue[str] = queue.Queue()
+    for index in range(num_gpus):
+        devices.put(f"cuda:{index}")
+
+    def run_one(item: tuple[Path, str, list[str]]) -> str:
+        artifact, command, arguments = item
+        device = devices.get() if command in GPU_COMMANDS else None
+        try:
+            stage_arguments = [*arguments, "--device", device] if device else arguments
+            run_command(run_root, output_dir, command, *stage_arguments)
+        finally:
+            if device is not None:
+                devices.put(device)
+        return str(artifact.relative_to(run_root))
+
+    with ThreadPoolExecutor(max_workers=num_gpus) as pool:
+        futures = {pool.submit(run_one, item): item for item in pending}
+        first_error: Exception | None = None
+        for future in as_completed(futures):
+            artifact, _, _ = futures[future]
+            try:
+                stage = future.result()
+            except Exception as error:  # noqa: BLE001 - surfaced after the group drains
+                first_error = first_error or error
+                print(f"Failed: {artifact.name}: {error}", file=sys.stderr)
+                continue
+            completed.add(stage)
+            write_json(completion_path, sorted(completed))
+        if first_error is not None:
+            raise first_error
+
+
 def rerun() -> None:
     """Rerun both paper protocols into an isolated directory; resume completed stages."""
     parser = argparse.ArgumentParser(description=rerun.__doc__)
     parser.add_argument("--run-dir", type=Path, default=ROOT / "rerun")
+    parser.add_argument(
+        "--num-gpus",
+        type=int,
+        default=4,
+        help="run this many independent stages at once, on cuda:0..cuda:N-1",
+    )
     parser.add_argument(
         "--dry-run",
         action="store_true",
         help="print commands without creating files or loading models",
     )
     args = parser.parse_args()
+    if args.num_gpus < 1:
+        parser.error("--num-gpus must be at least 1")
     run_root = args.run_dir.resolve()
     if run_root == ROOT or ROOT.is_relative_to(run_root):
         parser.error("--run-dir must be separate from the retained repository")
@@ -243,24 +336,29 @@ def rerun() -> None:
             shutil.copytree(source_data, destination)
     completion_path = run_root / "completed_stages.json"
     completed = set(read_json(completion_path)) if completion_path.exists() else set()
-    for artifact, command, arguments in measurement_plan(run_root, relations):
-        stage = str(artifact.relative_to(run_root))
-        # A SKIPPED file is a completed faithfulness stage with too few samples.
-        relation = artifact.stem.removeprefix("faithfulness_").removeprefix(
-            "subject_ranks_"
-        )
-        skipped = artifact.parent / f"SKIPPED_{relation}.json"
-        if (stage in completed and artifact.exists()) or (
-            artifact.parent.name == "shared_split" and skipped.exists()
-        ):
-            print(f"Already complete: {artifact.name}")
+    stages_by_group: dict[int, list[tuple[Path, str, list[str]]]] = {}
+    for stage in measurement_plan(run_root, relations):
+        stages_by_group.setdefault(STAGE_GROUP[stage[1]], []).append(stage)
+    for group in sorted(stages_by_group):
+        pending = _pending_stages(stages_by_group[group], run_root, completed)
+        if not pending:
             continue
         if args.dry_run:
-            print(shlex.join(command_line(run_root, output_dir, command, *arguments)))
+            for index, (artifact, command, arguments) in enumerate(pending):
+                stage_arguments = (
+                    [*arguments, "--device", f"cuda:{index % args.num_gpus}"]
+                    if command in GPU_COMMANDS
+                    else arguments
+                )
+                print(
+                    shlex.join(
+                        command_line(run_root, output_dir, command, *stage_arguments)
+                    )
+                )
         else:
-            run_command(run_root, output_dir, command, *arguments)
-            completed.add(stage)
-            write_json(completion_path, sorted(completed))
+            _run_group(
+                run_root, output_dir, pending, args.num_gpus, completed, completion_path
+            )
     if args.dry_run:
         print(
             shlex.join(

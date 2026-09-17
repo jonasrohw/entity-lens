@@ -1,8 +1,8 @@
 """Relation-agnostic logit-lens baseline for the paper's 28 relations.
 
-At the neutral prompt and fixed layer 17, apply the model's final RMS norm
-and unembedding directly to the subject's hidden state. Score the rank of
-the same model-answer token used by the differential Jacobian lens.
+At the neutral prompt and the configured lens layer, apply the model's final
+RMS norm and unembedding directly to the subject's hidden state. Score the
+rank of the same model-answer token used by the differential Jacobian lens.
 """
 
 import argparse
@@ -12,9 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-from jlens.config import NEUTRAL_PROMPT, OUTPUT_DIR, ROOT
-
-MODEL = "allenai/Olmo-3-1025-7B"
+from jlens.config import LENS_LAYER, MODEL_ID, NEUTRAL_PROMPT, OUTPUT_DIR, ROOT
 
 YEARS = {"presidents_birth_year", "presidents_election_year"}
 
@@ -23,7 +21,7 @@ def parse_args():
     """Parse this measurement's command-line options."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(OUTPUT_DIR / "logit_lens.json"))
-    parser.add_argument("--layer", type=int, default=17)
+    parser.add_argument("--layer", type=int, default=LENS_LAYER)
     parser.add_argument("--device", default="cuda:0")
     return parser.parse_args()
 
@@ -37,10 +35,10 @@ def main():
     main_ref = json.loads((ROOT / "results/jacobian_lens.json").read_text())
     year_ref = json.loads((ROOT / "results/jacobian_lens_years.json").read_text())
     relations = sorted(r for r in main_ref if not r.startswith("_"))
-    tokenizer = AutoTokenizer.from_pretrained(MODEL)
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     model = (
         AutoModelForCausalLM.from_pretrained(
-            MODEL, dtype=torch.float32, attn_implementation="eager"
+            MODEL_ID, dtype=torch.float32, attn_implementation="eager"
         )
         .to(args.device)
         .eval()
