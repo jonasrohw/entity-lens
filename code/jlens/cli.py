@@ -95,6 +95,9 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument(
         "--output-dir", type=Path, help="derived artifacts (default: ROOT/generated)"
     )
+    parser.add_argument(
+        "--model", help="Transformers model id (default: allenai/Olmo-3-1025-7B)"
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
     for command, (_, description) in COMMANDS.items():
         subparsers.add_parser(
@@ -110,6 +113,8 @@ def main(argv: list[str] | None = None) -> None:
         os.environ["JLENS_ROOT"] = str(args.root.resolve())
     if args.output_dir is not None:
         os.environ["JLENS_OUTPUT_DIR"] = str(args.output_dir.resolve())
+    if args.model is not None:
+        os.environ["JLENS_MODEL"] = args.model
     module_name, _ = COMMANDS[args.command]
     previous_argv = sys.argv
     sys.argv = [f"jlens {args.command}", *remaining]

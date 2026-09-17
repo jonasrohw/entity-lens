@@ -39,7 +39,12 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import HiddenStateIntervention
+    from jlens.model import (
+        HiddenStateIntervention,
+        final_logits,
+        resolve_blocks,
+        resolve_final_norm,
+    )
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     model = (
@@ -59,11 +64,14 @@ def main():
         name: subject_state(model, tokenizer, name, args.device, args.layer)
         for name in dict.fromkeys(anchors + args.names)
     }
-    norm_weight = model.model.norm.weight.detach()
+    norm = resolve_final_norm(model)
     unembedding = model.lm_head.weight.detach().float()
-    epsilon = float(getattr(model.model.norm, "variance_epsilon", 1e-5))
-    intervention = HiddenStateIntervention(model)
-    handle = model.model.layers[args.layer - 1].register_forward_hook(intervention.hook)
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach().float() if lm_bias is not None else None
+    intervention = HiddenStateIntervention(model, final_block=resolve_blocks(model)[-1])
+    handle = resolve_blocks(model)[args.layer - 1].register_forward_hook(
+        intervention.hook
+    )
     try:
         for name in args.names:
             products = [
@@ -79,8 +87,7 @@ def main():
                 raise ValueError(f"{name}: no reference subjects available")
             # Preserve the original accumulation order.
             vector = sum(products[1:], products[0]) / len(products)
-            vector = vector / torch.sqrt(vector.pow(2).mean() + epsilon)
-            logits = (norm_weight * vector) @ unembedding.T
+            logits = final_logits(vector, norm, unembedding, lm_bias)
             tokens = [
                 tokenizer.decode([int(index)]).strip()
                 for index in logits.topk(8).indices
