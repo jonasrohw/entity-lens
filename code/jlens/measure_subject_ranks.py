@@ -46,7 +46,12 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import HiddenStateIntervention
+    from jlens.model import (
+        HiddenStateIntervention,
+        final_logits,
+        resolve_blocks,
+        resolve_final_norm,
+    )
 
     device = args.device
 
@@ -95,11 +100,12 @@ def main():
     for p in model.parameters():
         p.requires_grad_(False)
 
-    intervention = HiddenStateIntervention(model)
+    intervention = HiddenStateIntervention(model, final_block=resolve_blocks(model)[-1])
 
-    norm_epsilon = float(getattr(model.model.norm, "variance_epsilon", 1e-5))
-    norm_weight = model.model.norm.weight.detach()
+    norm = resolve_final_norm(model)
     unembedding = model.lm_head.weight.detach()
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach() if lm_bias is not None else None
 
     context = "".join(
         template.format(x["subject"]) + " " + x["object"] + "\n" for x in demonstrations
@@ -132,7 +138,7 @@ def main():
             )
             model_top_tokens[sub] = int(out.logits[0, -1].argmax())
 
-    handle = model.model.layers[selected_layer - 1].register_forward_hook(
+    handle = resolve_blocks(model)[selected_layer - 1].register_forward_hook(
         intervention.hook
     )
     with torch.no_grad():
@@ -161,10 +167,7 @@ def main():
                 cache[reference_subject][1],
             )
         predicted_hidden = base + selected_beta * (acc / len(references))
-        v = predicted_hidden * torch.rsqrt(
-            predicted_hidden.pow(2).mean(-1, keepdim=True) + norm_epsilon
-        )
-        logits = (norm_weight * v) @ unembedding.T
+        logits = final_logits(predicted_hidden, norm, unembedding, lm_bias)
         t = model_top_tokens[sub]
         rows[sub] = {
             "rank": int((logits > logits[t]).sum()),

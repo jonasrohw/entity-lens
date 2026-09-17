@@ -25,10 +25,10 @@ from pathlib import Path
 import numpy as np
 
 from jlens import splits
-from jlens.config import MODEL_ID, NEUTRAL_PROMPT, OUTPUT_DIR, ROOT
+from jlens.config import LENS_LAYER, MODEL_ID, NEUTRAL_PROMPT, OUTPUT_DIR, ROOT
 from jlens.io import read_json, write_json
 
-LAYER = 17
+LAYER = LENS_LAYER
 N_REFERENCES = 8
 N_SUBJECTS = 20
 N_ICL = 8
@@ -79,7 +79,13 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import HiddenStateIntervention
+    from jlens.model import (
+        HiddenStateIntervention,
+        final_logits,
+        forward_capturing_final_block,
+        resolve_blocks,
+        resolve_final_norm,
+    )
 
     rels = (
         args.rels.split(",")
@@ -97,15 +103,16 @@ def main():
     )
     for p in model.parameters():
         p.requires_grad_(False)
-    norm_epsilon = float(getattr(model.model.norm, "variance_epsilon", 1e-5))
-    norm_weight = model.model.norm.weight.detach()
+    norm = resolve_final_norm(model)
     unembedding = model.lm_head.weight.detach().float()
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach().float() if lm_bias is not None else None
 
-    intervention = HiddenStateIntervention(model)
+    final_block = resolve_blocks(model)[-1]
+    intervention = HiddenStateIntervention(model, final_block=final_block)
 
     def rank_of(v, tid):
-        v = v / torch.sqrt(v.pow(2).mean() + norm_epsilon)
-        lg = (norm_weight * v) @ unembedding.T
+        lg = final_logits(v, norm, unembedding, lm_bias)
         return int((lg > lg[tid]).sum()), [
             tokenizer.decode([int(i)]).strip() for i in lg.topk(5).indices
         ]
@@ -187,14 +194,18 @@ def main():
                 subject_position = min(
                     len(tokenizer(p[:i]).input_ids) - 1, input_ids.shape[1] - 1
                 )
-                o = model(input_ids=input_ids, output_hidden_states=True)
+                o, raw_final = forward_capturing_final_block(
+                    model, final_block, input_ids, output_hidden_states=True
+                )
                 cache[subject] = (
                     input_ids,
                     subject_position,
                     o.hidden_states[layer][0, subject_position, :].detach().clone(),
-                    o.hidden_states[-1][0, -1, :].detach().clone(),
+                    raw_final.detach().clone(),
                 )
-        handle = model.model.layers[layer - 1].register_forward_hook(intervention.hook)
+        handle = resolve_blocks(model)[layer - 1].register_forward_hook(
+            intervention.hook
+        )
         anchors = anchor_names
         rows = []
         for subject in subjects:

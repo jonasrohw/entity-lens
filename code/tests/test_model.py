@@ -6,7 +6,32 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from jlens.model import HiddenStateIntervention  # noqa: E402
+from jlens.model import (  # noqa: E402
+    HiddenStateIntervention,
+    final_logits,
+    forward_capturing_final_block,
+    resolve_blocks,
+    resolve_final_norm,
+)
+
+
+class TokenBatch(dict):
+    def to(self, device):
+        return TokenBatch({key: value.to(device) for key, value in self.items()})
+
+
+class CharacterTokenizer:
+    def encode(self, text, add_special_tokens=False):
+        return [ord(character) % 127 + 1 for character in text]
+
+    def __call__(self, text, return_tensors=None):
+        tokens = self.encode(text)
+        if return_tensors:
+            return TokenBatch(input_ids=torch.tensor([tokens]))
+        return SimpleNamespace(input_ids=tokens)
+
+    def decode(self, ids):
+        return "".join(chr(index - 1) if index else "?" for index in ids)
 
 
 class TinyModel(torch.nn.Module):
@@ -52,44 +77,52 @@ def test_tuple_hook_preserves_additional_outputs():
     torch.testing.assert_close(result[0][0, 0], intervention.hidden)
 
 
-def test_measurements_agree_on_tiny_olmo(monkeypatch, tmp_path):
-    """Exercise the complete sweep, rank scorer, and lens without model downloads."""
-    transformers = pytest.importorskip("transformers")
+def _tiny_olmo_model():
+    """RMSNorm final norm, sequential attention/MLP blocks (Llama-style)."""
     from transformers import Olmo3Config, Olmo3ForCausalLM
 
+    torch.manual_seed(17)
+    config = Olmo3Config(
+        vocab_size=128,
+        hidden_size=8,
+        intermediate_size=16,
+        num_hidden_layers=2,
+        num_attention_heads=2,
+        num_key_value_heads=2,
+        max_position_embeddings=512,
+    )
+    config._attn_implementation = "eager"
+    return Olmo3ForCausalLM(config)
+
+
+def _tiny_gptj_model():
+    """LayerNorm final norm (weight and bias), parallel attention/MLP blocks."""
+    from transformers import GPTJConfig, GPTJForCausalLM
+
+    torch.manual_seed(17)
+    config = GPTJConfig(
+        vocab_size=128,
+        n_embd=8,
+        n_inner=16,
+        n_layer=2,
+        n_head=2,
+        rotary_dim=2,
+        n_positions=512,
+        bos_token_id=None,
+        eos_token_id=None,
+    )
+    config._attn_implementation = "eager"
+    return GPTJForCausalLM(config)
+
+
+def _exercise_tiny_pipeline(monkeypatch, tmp_path, transformers, load_model):
+    """Run the complete sweep, rank scorer, and lens against a tiny random model.
+
+    Shared across architectures so both the Llama-style (RMSNorm) and
+    GPT-2-style (LayerNorm) final-norm paths get the same end-to-end check.
+    """
     from jlens import measure_faithfulness, measure_jacobian_lens, measure_subject_ranks
     from jlens.io import read_json, write_json
-
-    class TokenBatch(dict):
-        def to(self, device):
-            return TokenBatch({key: value.to(device) for key, value in self.items()})
-
-    class CharacterTokenizer:
-        def encode(self, text, add_special_tokens=False):
-            return [ord(character) % 127 + 1 for character in text]
-
-        def __call__(self, text, return_tensors=None):
-            tokens = self.encode(text)
-            if return_tensors:
-                return TokenBatch(input_ids=torch.tensor([tokens]))
-            return SimpleNamespace(input_ids=tokens)
-
-        def decode(self, ids):
-            return "".join(chr(index - 1) if index else "?" for index in ids)
-
-    def load_model(*args, **kwargs):
-        torch.manual_seed(17)
-        config = Olmo3Config(
-            vocab_size=128,
-            hidden_size=8,
-            intermediate_size=16,
-            num_hidden_layers=2,
-            num_attention_heads=2,
-            num_key_value_heads=2,
-            max_position_embeddings=512,
-        )
-        config._attn_implementation = "eager"
-        return Olmo3ForCausalLM(config)
 
     monkeypatch.setattr(
         transformers.AutoTokenizer,
@@ -187,3 +220,75 @@ def test_measurements_agree_on_tiny_olmo(monkeypatch, tmp_path):
         int(row["rank"] == 0) == faithfulness["per_subject"][subject]
         for subject, row in ranks["ranks"].items()
     )
+
+
+def test_measurements_agree_on_tiny_olmo(monkeypatch, tmp_path):
+    """RMSNorm final norm, sequential attention/MLP blocks (Llama-style)."""
+    transformers = pytest.importorskip("transformers")
+    _tiny_olmo_model()  # fail fast with a clear error if Olmo3 isn't available
+    _exercise_tiny_pipeline(
+        monkeypatch, tmp_path, transformers, lambda *a, **k: _tiny_olmo_model()
+    )
+
+
+def test_measurements_agree_on_tiny_gptj(monkeypatch, tmp_path):
+    """LayerNorm final norm (weight and bias), parallel attention/MLP blocks.
+
+    Exercises the ``resolve_blocks``/``resolve_final_norm``/``final_logits``
+    dispatch added for GPT-J: ``transformer.h`` / ``transformer.ln_f`` instead
+    of ``model.layers`` / ``model.norm``, and a biased LayerNorm instead of
+    RMSNorm.
+    """
+    transformers = pytest.importorskip("transformers")
+    _tiny_gptj_model()  # fail fast with a clear error if GPT-J isn't available
+    _exercise_tiny_pipeline(
+        monkeypatch, tmp_path, transformers, lambda *a, **k: _tiny_gptj_model()
+    )
+
+
+@pytest.mark.parametrize("build_model", [_tiny_olmo_model, _tiny_gptj_model])
+def test_final_logits_matches_real_forward_pass(build_model):
+    """The manual norm+unembed reimplementation must match the model's own logits.
+
+    No JVP or intervention involved: this isolates ``final_logits`` itself
+    (RMSNorm vs. LayerNorm dispatch, optional lm_head bias) from everything
+    else in the pipeline, on both a Llama-style and a GPT-2-style model.
+    """
+    pytest.importorskip("transformers")
+    model = build_model().eval()
+    input_ids = torch.tensor([[3, 5, 7, 9]])
+    final_block = resolve_blocks(model)[-1]
+    with torch.no_grad():
+        output, raw_final = forward_capturing_final_block(model, final_block, input_ids)
+    norm = resolve_final_norm(model)
+    unembedding = model.lm_head.weight.detach().float()
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach().float() if lm_bias is not None else None
+    reconstructed = final_logits(raw_final, norm, unembedding, lm_bias)
+    torch.testing.assert_close(
+        reconstructed, output.logits[0, -1, :].float(), rtol=1e-4, atol=1e-4
+    )
+    expected_layers = getattr(model.config, "num_hidden_layers", None) or getattr(
+        model.config, "n_layer", None
+    )
+    assert len(resolve_blocks(model)) == expected_layers
+
+
+def test_hidden_states_last_entry_is_post_norm_not_raw(build_model=_tiny_olmo_model):
+    """Regression guard for the bug `forward_capturing_final_block` works around.
+
+    If a future transformers version reverts to returning the raw (pre-norm)
+    block output as `hidden_states[-1]`, this documents why the workaround
+    exists so it can be safely removed rather than silently left as dead
+    weight. If this assertion starts failing, `HiddenStateIntervention`'s
+    `final_block=None` fallback path is safe to use unconditionally again.
+    """
+    pytest.importorskip("transformers")
+    model = build_model().eval()
+    input_ids = torch.tensor([[3, 5, 7, 9]])
+    final_block = resolve_blocks(model)[-1]
+    with torch.no_grad():
+        output, raw_final = forward_capturing_final_block(
+            model, final_block, input_ids, output_hidden_states=True
+        )
+    assert not torch.allclose(output.hidden_states[-1][0, -1, :], raw_final)

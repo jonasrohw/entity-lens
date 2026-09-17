@@ -1,4 +1,4 @@
-"""Measure LRE faithfulness on OLMo-3-7B using a layer-by-beta sweep.
+"""Measure LRE faithfulness on the configured model using a layer-by-beta sweep.
 
 Faithfulness is agreement with the full model's top-1 token over the entire
 vocabulary. For each test subject, compute mean_i[f(s_i) + beta J_i(s - s_i)]
@@ -14,7 +14,7 @@ import random
 import numpy as np
 
 from jlens import splits
-from jlens.config import MODEL_ID, OUTPUT_DIR, ROOT
+from jlens.config import LRE_LAYERS, MODEL_ID, OUTPUT_DIR, ROOT
 from jlens.io import read_json, write_json
 
 
@@ -59,7 +59,7 @@ def parse_args():
     parser.add_argument("--n-test", type=int, default=100)
     parser.add_argument("--n-icl", type=int, default=8)
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--layers", default="5,11,14,17,20,23")
+    parser.add_argument("--layers", default=LRE_LAYERS)
     parser.add_argument("--trials", type=int, default=1)
     parser.add_argument("--dtype", default="float32", choices=["float32", "bfloat16"])
     return parser.parse_args()
@@ -71,7 +71,12 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import HiddenStateIntervention
+    from jlens.model import (
+        HiddenStateIntervention,
+        final_logits,
+        resolve_blocks,
+        resolve_final_norm,
+    )
 
     device = args.device
     relation_data = read_json(f"{args.data_dir}/{args.relation}.json")
@@ -121,11 +126,12 @@ def main():
 
     layers = [int(x) for x in args.layers.split(",")]
     betas = [0.5, 1.0, 1.5, 2.0, 3.0, 5.0]
-    intervention = HiddenStateIntervention(model)
+    intervention = HiddenStateIntervention(model, final_block=resolve_blocks(model)[-1])
 
-    norm_epsilon = float(getattr(model.model.norm, "variance_epsilon", 1e-5))
-    norm_weight = model.model.norm.weight.detach()
+    norm = resolve_final_norm(model)
     unembedding = model.lm_head.weight.detach()
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach() if lm_bias is not None else None
     trials = np.zeros((args.trials, len(layers), len(betas)))
     subject_outcomes = {}
     split_fp = None
@@ -216,7 +222,7 @@ def main():
         for layer_index, layer in enumerate(layers):
             if handle is not None:
                 handle.remove()
-            handle = model.model.layers[layer - 1].register_forward_hook(
+            handle = resolve_blocks(model)[layer - 1].register_forward_hook(
                 intervention.hook
             )
             with torch.no_grad():
@@ -248,10 +254,9 @@ def main():
             jacobian_products = torch.stack(jacobian_products)
             for beta_index, b in enumerate(betas):
                 predicted_hidden = base.unsqueeze(0) + b * jacobian_products
-                v = predicted_hidden * torch.rsqrt(
-                    predicted_hidden.pow(2).mean(-1, keepdim=True) + norm_epsilon
-                )
-                pred = ((norm_weight * v) @ unembedding.T).argmax(-1)
+                pred = final_logits(
+                    predicted_hidden, norm, unembedding, lm_bias
+                ).argmax(-1)
                 hits = [
                     int(int(p) == model_top_tokens[x["subject"]])
                     for p, x in zip(pred, test_samples)
