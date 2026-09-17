@@ -19,17 +19,13 @@ rank 0 reproduces the stored per-subject hits.
 import argparse
 import glob
 
-import matplotlib
-
-from jlens.config import OUTPUT_DIR, ROOT
-from jlens.io import read_json, write_json
-
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-INK, HIT, MISS, MUTED = "#1a1a1a", "#3b6ea5", "#c2603f", "#9a9a9a"
+from jlens import plotstyle as style
+from jlens.config import OUTPUT_DIR, ROOT
+from jlens.io import read_json, write_json
 
 
 def load_rank_panels(lens_path, rank_dir):
@@ -102,24 +98,22 @@ def main():
 
     lens_path = args.lens or f"{ROOT}/results/shared_split/jacobian_lens.json"
     rank_dir = args.rank_dir or f"{ROOT}/results/shared_split"
-    output_path = f"{OUTPUT_DIR}/subject_ranks{args.tag}.pdf"
-    json_path = f"{OUTPUT_DIR}/subject_ranks{args.tag}.json"
+    output_stem = f"{OUTPUT_DIR}/subject_ranks{args.tag}"
+    json_path = f"{output_stem}.json"
 
     D = load_rank_panels(lens_path, rank_dir)
-    ncol = 5
+    # Four columns at the text width: the sheet is then placed at
+    # \linewidth without scaling, so the 7pt in it is 7pt on the page.
+    ncol = 4
     nrow = int(np.ceil(len(D) / ncol))
-    plt.rcParams.update(
-        {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "DejaVu Serif"],
-            "font.size": 6.2,
-            "axes.linewidth": 0.5,
-            "xtick.major.width": 0.5,
-            "ytick.major.width": 0.5,
-        }
-    )
+    style.use_paper_style()
     fig, axes = plt.subplots(
-        nrow, ncol, figsize=(11, 2.25 * nrow), dpi=300, sharex=True, sharey=True
+        nrow,
+        ncol,
+        figsize=(style.FULL_WIDTH, 1.55 * nrow),
+        layout="constrained",
+        sharex=True,
+        sharey=True,
     )
     axes = np.atleast_2d(axes).ravel()
 
@@ -129,29 +123,36 @@ def main():
         ax.scatter(
             d["x"][hit],
             d["y"][hit],
-            s=7,
-            facecolor=(MUTED if degen else HIT),
-            edgecolor="white",
+            s=5,
+            facecolor=(style.DEGENERATE if degen else style.HIT),
+            edgecolor=style.EDGE,
             linewidth=0.25,
-            alpha=0.9,
             zorder=3,
+            label="LRE reproduced the answer (rank 0)",
         )
         ax.scatter(
             d["x"][~hit],
             d["y"][~hit],
-            s=7,
-            facecolor=(MUTED if degen else MISS),
-            edgecolor="white",
+            s=5,
+            facecolor=(style.DEGENERATE if degen else style.MISS),
+            edgecolor=style.EDGE,
             linewidth=0.25,
-            alpha=0.9,
-            zorder=3,
+            zorder=4,
+            label="LRE missed it",
         )
         if (~hit).sum() >= 3:
             xs = np.linspace(d["x"].min(), d["x"].max(), 30)
             # solid: all points -- but note this fit is pulled by the mass of
             # zeros, so it partly traces the censoring floor
             b, a_ = np.polyfit(d["x"], d["y"], 1)
-            ax.plot(xs, a_ + b * xs, lw=0.8, color=MUTED, zorder=1, alpha=0.9)
+            ax.plot(
+                xs,
+                a_ + b * xs,
+                lw=0.8,
+                color=style.FIT,
+                zorder=1,
+                label="fit, all subjects",
+            )
             # dashed: misses only -- the graded claim, uncensored
             if not np.isnan(d["rho_m"]):
                 bm, am = np.polyfit(d["x"][~hit], d["y"][~hit], 1)
@@ -159,58 +160,49 @@ def main():
                     xs,
                     am + bm * xs,
                     lw=0.8,
-                    color=MISS,
+                    color=style.FIT_MISS,
                     zorder=2,
-                    alpha=0.85,
                     dashes=(3, 2),
+                    label="fit, misses only",
                 )
         ax.tick_params(length=2, pad=1.5)
-        for s in ("top", "right"):
-            ax.spines[s].set_visible(False)
-        ax.text(
-            0,
-            1.19,
-            d["rel"].replace("_", " "),
-            transform=ax.transAxes,
-            fontsize=6.6,
-            color=INK,
-            va="bottom",
-        )
+        style.deemphasise(ax, degen)
+        # Three short lines, not one long one: at four panels to the text
+        # width a single stat line runs into its neighbour.
+        counts = rf"$n = {d['n']}$;  faith {d['faith']:.2f}"
         if degen:
-            sub = f"n={d['n']}   faith {d['faith']:.2f}   every LRE rank 0"
+            sub = "every LRE rank 0"
         else:
             mm = (
                 ""
                 if np.isnan(d["rho_m"])
-                else f"   misses only {d['rho_m']:+.2f} (n={d['n_miss']})"
+                else rf";  $\rho_{{\mathrm{{miss}}}} = {d['rho_m']:+.2f}$"
             )
-            sub = f"n={d['n']}   faith {d['faith']:.2f}   rho {d['rho']:+.2f}{mm}"
-        ax.text(
-            0,
-            1.03,
-            sub,
-            transform=ax.transAxes,
-            fontsize=5.4,
-            color=(MUTED if degen else INK),
-            va="bottom",
+            sub = rf"$\rho = {d['rho']:+.2f}${mm}"
+        ax.set_title(
+            "\n".join([d["rel"].replace("_", " "), counts, sub]),
+            fontsize=style.TINY_PT - 0.5,
+            color=(style.DEGENERATE if degen else style.INK),
+            linespacing=1.3,
         )
     for ax in axes[len(D) :]:
         ax.set_visible(False)
-    for ax in axes[max(0, len(D) - ncol) : len(D)]:
-        ax.set_xlabel("lens $\\log_{10}$ rank", fontsize=6)
+    style.label_bottom_row(axes, ncol, len(D), "lens $\\log_{10}$ rank")
     for i in range(0, len(D), ncol):
-        axes[i].set_ylabel("LRE $\\log_{10}$ rank", fontsize=6)
+        axes[i].set_ylabel("LRE $\\log_{10}$ rank", fontsize=style.TINY_PT)
 
-    fig.suptitle(
-        "Per-subject analogue of Figure 1: the lens's rank of the "
-        "model's answer against the LRE's rank of the same answer. "
-        "Blue = LRE reproduced it (rank 0, a censoring floor). "
-        "Solid line fits all points; dashed fits the misses only.",
-        fontsize=8,
-        y=0.998,
+    handles, labels = style.collect_handles(axes[: len(D)])
+    fig.legend(
+        handles,
+        labels,
+        loc="outside lower center",
+        ncol=4,
+        fontsize=style.TINY_PT,
+        columnspacing=1.4,
+        handlelength=1.8,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.975], h_pad=2.8)
-    fig.savefig(output_path, bbox_inches="tight")
+    output_path = style.save(fig, output_stem)
+    plt.close(fig)
 
     rhos = np.array([d["rho"] for d in D if not np.isnan(d["rho"])])
     summ = {

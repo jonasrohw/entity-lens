@@ -5,22 +5,18 @@ but are excluded from inferential summaries."""
 
 import os
 
-import matplotlib
-
-from jlens.config import OUTPUT_DIR, ROOT
-from jlens.io import read_json, write_json
-
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
+from jlens import plotstyle as style
+from jlens.config import OUTPUT_DIR, ROOT
+from jlens.io import read_json, write_json
+
 lens_path = f"{ROOT}/results/shared_split/jacobian_lens.json"
 FAITH = f"{ROOT}/results/shared_split"
-output_path = f"{OUTPUT_DIR}/subject_outcomes.pdf"
-json_path = f"{OUTPUT_DIR}/subject_outcomes.json"
-
-INK, HIT, MISS, MUTED = "#1a1a1a", "#3b6ea5", "#c2603f", "#9a9a9a"
+output_stem = f"{OUTPUT_DIR}/subject_outcomes"
+json_path = f"{output_stem}.json"
 
 
 def load_outcome_panels():
@@ -78,27 +74,28 @@ def load_outcome_panels():
 def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     D = load_outcome_panels()
-    ncol = 5
+    # Four columns at the text width, so the sheet needs no scaling on the
+    # page and the point sizes in it are the point sizes of the body text.
+    ncol = 4
     nrow = int(np.ceil(len(D) / ncol))
-    plt.rcParams.update(
-        {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "DejaVu Serif"],
-            "font.size": 6.2,
-            "axes.linewidth": 0.5,
-            "xtick.major.width": 0.5,
-            "ytick.major.width": 0.5,
-        }
-    )
+    style.use_paper_style()
     fig, axes = plt.subplots(
-        nrow, ncol, figsize=(11, 2.05 * nrow), dpi=300, sharex=True
+        nrow,
+        ncol,
+        figsize=(style.FULL_WIDTH, 1.45 * nrow),
+        layout="constrained",
+        sharex=True,
     )
     axes = np.atleast_2d(axes).ravel()
     rng = np.random.default_rng(0)
 
     for ax, d in zip(axes, D):
         degen = np.isnan(d["auc"])
-        for val, colour, lab in ((0, MISS, "miss"), (1, HIT, "hit")):
+        # Hits first, so the shared legend reads hit before miss.
+        for val, colour, lab in (
+            (1, style.HIT, "LRE reproduced the answer"),
+            (0, style.MISS, "LRE missed it"),
+        ):
             m = d["y"] == val
             if not m.any():
                 continue
@@ -106,63 +103,58 @@ def main():
             ax.scatter(
                 d["x"][m],
                 jit,
-                s=7,
-                facecolor=(MUTED if degen else colour),
-                edgecolor="white",
+                s=5,
+                facecolor=(style.DEGENERATE if degen else colour),
+                edgecolor=style.EDGE,
                 linewidth=0.25,
-                alpha=0.85,
                 zorder=3,
+                label=lab,
             )
             ax.plot(
                 [np.median(d["x"][m])] * 2,
                 [val - 0.30, val + 0.30],
-                color=(MUTED if degen else colour),
+                color=(style.DEGENERATE if degen else colour),
                 lw=1.4,
                 zorder=4,
+                label="group median" if val == 1 else None,
             )
         ax.set_ylim(-0.5, 1.5)
         ax.set_yticks([0, 1])
         ax.set_yticklabels(["miss", "hit"])
         ax.tick_params(length=2, pad=1.5)
-        for s in ("top", "right"):
-            ax.spines[s].set_visible(False)
-        sub = f"n={d['n']}   faith {d['faith']:.2f}   " + (
+        style.deemphasise(ax, degen)
+        # Three short lines, not one long one: at four panels to the text
+        # width a single stat line runs into its neighbour.
+        counts = rf"$n = {d['n']}$;  faith {d['faith']:.2f}"
+        sub = (
             "no variance to measure"
             if degen
-            else f"AUC {d['auc']:.2f}  (p={d['p']:.3f})"
+            else rf"AUC {d['auc']:.2f}  ($p = {d['p']:.3f}$)"
         )
-        ax.text(
-            0,
-            1.20,
-            d["rel"].replace("_", " "),
-            transform=ax.transAxes,
-            fontsize=6.6,
-            color=INK,
-            va="bottom",
-        )
-        ax.text(
-            0,
-            1.04,
-            sub,
-            transform=ax.transAxes,
-            fontsize=5.4,
-            color=(MUTED if degen else INK),
-            va="bottom",
+        ax.set_title(
+            "\n".join([d["rel"].replace("_", " "), counts, sub]),
+            fontsize=style.TINY_PT - 0.5,
+            color=(style.DEGENERATE if degen else style.INK),
+            linespacing=1.3,
         )
     for ax in axes[len(D) :]:
         ax.set_visible(False)
-    for ax in axes[max(0, len(D) - ncol) : len(D)]:
-        ax.set_xlabel("lens $\\log_{10}$ rank of the model's answer", fontsize=6)
+    # Short label: the full "rank of the model's answer" does not fit the
+    # column width four times over, and the caption carries the gloss.
+    style.label_bottom_row(axes, ncol, len(D), "lens $\\log_{10}$ rank")
 
-    fig.suptitle(
-        "Subject-level separation within each relation: "
-        "lens rank of the model's answer, split by whether the LRE "
-        "reproduced it",
-        fontsize=8,
-        y=0.998,
+    handles, labels = style.collect_handles(axes[: len(D)])
+    fig.legend(
+        handles,
+        labels,
+        loc="outside lower center",
+        ncol=3,
+        fontsize=style.TINY_PT,
+        columnspacing=1.4,
+        handlelength=1.8,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.975], h_pad=2.6)
-    fig.savefig(output_path, bbox_inches="tight")
+    output_path = style.save(fig, output_stem)
+    plt.close(fig)
     print(f"wrote {output_path}  ({len(D)} panels)")
 
     # Persist the table.  Without this the numbers exist only in the figure

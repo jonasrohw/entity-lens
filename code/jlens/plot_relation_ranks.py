@@ -19,15 +19,13 @@ Requires `jlens/measure_subject_ranks.py` to have run.
 import argparse
 import glob
 
-import matplotlib
-
-from jlens.config import OUTPUT_DIR, ROOT
-from jlens.io import read_json, write_json
-
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
+
+from jlens import plotstyle as style
+from jlens.config import OUTPUT_DIR, ROOT
+from jlens.io import read_json, write_json
 
 
 def main():
@@ -54,9 +52,8 @@ def main():
 
     lens_path = args.lens or f"{ROOT}/results/shared_split/jacobian_lens.json"
     rank_dir = args.rank_dir or f"{ROOT}/results/shared_split"
-    output_path = f"{OUTPUT_DIR}/relation_ranks_{args.stat}{args.tag}.pdf"
-    json_path = f"{OUTPUT_DIR}/relation_ranks_{args.stat}{args.tag}.json"
-    INK, ACCENT, MUTED = "#1a1a1a", "#3b6ea5", "#8a8a8a"
+    output_stem = f"{OUTPUT_DIR}/relation_ranks_{args.stat}{args.tag}"
+    json_path = f"{output_stem}.json"
 
     lens_results = read_json(lens_path)
     rows = []
@@ -92,27 +89,28 @@ def main():
     y = np.array([r["y"] for r in rows])
     rho, p = stats.spearmanr(x, y)
 
-    plt.rcParams.update(
-        {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "DejaVu Serif"],
-            "font.size": 7.4,
-            "axes.linewidth": 0.6,
-            "xtick.major.width": 0.6,
-            "ytick.major.width": 0.6,
-        }
-    )
-    fig, ax = plt.subplots(figsize=(3.15, 2.6), dpi=400)
+    style.use_paper_style()
+    fig, ax = plt.subplots(figsize=(style.BODY_WIDTH, 2.85), layout="constrained")
     b, a_ = np.polyfit(x, y, 1)
     xs_ = np.linspace(x.min() - 0.15, x.max() + 0.15, 50)
-    ax.plot(xs_, a_ + b * xs_, lw=0.9, color=MUTED, zorder=1, alpha=0.9)
-    ax.scatter(x, y, s=17, facecolor=ACCENT, edgecolor="white", linewidth=0.5, zorder=3)
+    ax.plot(xs_, a_ + b * xs_, lw=1.0, color=style.FIT, zorder=1)
+    ax.scatter(
+        x,
+        y,
+        s=20,
+        facecolor=style.INK,
+        edgecolor=style.EDGE,
+        linewidth=0.5,
+        zorder=3,
+    )
 
     # Offsets are in data units and the two aggregations have different y
     # ranges, so they are given as fractions of the axis span.
     LABEL = {
         "person_father": (-0.06, -0.10, "right"),
-        "country_capital_city": (-0.04, 0.09, "right"),
+        # Leftmost point of the cloud: a right-aligned label would run off
+        # the axes, so this one is set to the right of its point.
+        "country_capital_city": (0.04, 0.09, "left"),
         "superhero_person": (0.04, 0.07, "left"),
         "person_occupation": (-0.05, 0.10, "right"),
     }
@@ -122,35 +120,31 @@ def main():
         if r["rel"] in LABEL:
             fx, fy, ha = LABEL[r["rel"]]
             ax.annotate(
-                r["rel"].replace("_", "\\_"),
+                r["rel"].replace("_", " "),
                 (r["x"], r["y"]),
                 (r["x"] + fx * xr, r["y"] + fy * yr),
                 ha=ha,
-                fontsize=5.8,
-                color=INK,
+                fontsize=style.TINY_PT,
+                color=style.INK,
                 arrowprops=dict(
-                    arrowstyle="-", lw=0.4, color=MUTED, shrinkA=0, shrinkB=2
+                    arrowstyle="-", lw=0.4, color=style.MUTED, shrinkA=0, shrinkB=2
                 ),
             )
     ax.margins(x=0.16, y=0.14)
-    ax.set_xlabel(
-        f"lens: {args.stat} $\\log_{{10}}$ rank of the model's answer", fontsize=7
-    )
-    ax.set_ylabel(f"LRE: {args.stat} $\\log_{{10}}$ rank", fontsize=7)
+    ax.set_xlabel(f"lens: {args.stat} $\\log_{{10}}$ rank of the model's answer")
+    ax.set_ylabel(f"LRE: {args.stat} $\\log_{{10}}$ rank")
     ax.text(
         0.02,
         0.97,
         f"$\\rho = {rho:.3f}$",
         transform=ax.transAxes,
-        fontsize=7,
+        fontsize=style.SCRIPT_PT,
         va="top",
-        color=INK,
+        color=style.INK,
     )
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    ax.grid(alpha=0.12, lw=0.5)
-    fig.tight_layout()
-    fig.savefig(output_path, bbox_inches="tight")
+    ax.grid(True, zorder=0)
+    output_path = style.save(fig, output_stem, png=True)
+    plt.close(fig)
 
     write_json(
         json_path,
