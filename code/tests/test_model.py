@@ -346,7 +346,12 @@ def test_measurements_agree_on_tiny_gemma4_unified(monkeypatch, tmp_path):
 
 @pytest.mark.parametrize(
     "build_model",
-    [_tiny_olmo_model, _tiny_gptj_model, _tiny_gemma4_model, _tiny_gemma4_unified_model],
+    [
+        _tiny_olmo_model,
+        _tiny_gptj_model,
+        _tiny_gemma4_model,
+        _tiny_gemma4_unified_model,
+    ],
 )
 def test_final_logits_matches_real_forward_pass(build_model):
     """The manual norm+unembed reimplementation must match the model's own logits.
