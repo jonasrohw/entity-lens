@@ -103,10 +103,7 @@ o \;\approx\; \beta\, W s + b_\beta ,
 where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
 sends the subject's hidden state at an intermediate layer $\ell$ to the
-final-layer state at the last position.
-\enote{hs}{please explain what the purpose of the qualifier
-``, holding the rest of the prompt
-fixed'' at this position is -- maybe we can omit it?} We average local
+final-layer state at the last position. We average local
 first-order approximations of $f$ over a small set $\{s_i\}$ of reference
 subjects and scale their subject-dependent terms by $\beta$:
 \begin{equation}
@@ -137,11 +134,6 @@ to that anchor, and so does change which object is ranked first.
 layer; we follow their protocol and select it from
 $\{0.5, 1, 1.5, 2, 3, 5\}$.
 
-\enote{hs}{this is redundant with the reference to Appendix
-  A below and so we can delete it?:
-Eq.~\ref{eq:beta} is also what makes the LRE
-affordable: each test subject costs $n$ Jacobian--vector products rather
-than a materialized $4096 \times 4096$ matrix.}
 
 
 \emph{Faithfulness} is the rate at which
@@ -161,9 +153,8 @@ at each reference and average:
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \label{eq:lens}
 \end{equation}
-Here $J_i$ is the Jacobian of the model's map from the subject's hidden
-state at layer $\ell$ to the final-layer state at the last position,
-evaluated at reference $i$.
+Here $J_i$ is the Jacobian of $f$ at reference $i$, the same map as in
+Eq.~\ref{eq:wb}.
 As discussed above, subtracting a same-type
 reference cancels it, leaving the entity-specific residual, and the
 Jacobian then carries that residual forward to the
@@ -190,8 +181,7 @@ A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
-Three properties make $A_r$ non-trivial as a predictor.
-\enote{hs}{is $A_r$ a predictor? isn't it a ``predictee''?}
+Three properties make $A_r$ a non-trivial predictor of faithfulness.
 The prompt is
 neutral and shared, so no relation template enters. The differences in
 Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} minus
@@ -284,9 +274,6 @@ described in Appendix~\ref{sec:numeric-objects}.}
 \label{fig:main}
 \end{figure}
 
-\enote{hs}{caption figure fig:main: replace ``?'' with the
-  correct reference to the appendix}
-
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
 ($p = 1.4\!\times\!10^{-4}$); a permutation test agrees
@@ -313,25 +300,13 @@ Spearman correlation, and it asks how much of the lens--faithfulness
 association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 
-\enote{hs}{i don't think we need this -- not customary in
-  acl community
-, $p = 0.87$; that is, no detectable
-relationship, which is what we want here, though with $n = 28$ we can
-only rule out a strong one)}
-
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
 contexts. This predicts neither faithfulness ($\rho = -0.03$) nor the lens
-score ($\rho = -0.02$), and removing it  leaves the correlation
-unchanged at $0.658$;
-\enote{hs}{i rewrote the following sentence. prior version
-  in comments below, check for accuracy}
-The correlation is 0.746 with both cardinality and answer
-frequency removed.
-
-%with both covariates (cardinality and answer
-%frequency), $0.746$.
+score ($\rho = -0.02$), and removing it leaves the correlation
+unchanged at $0.658$. The correlation is $0.746$ with both cardinality
+and answer frequency removed.
 
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain
@@ -345,21 +320,17 @@ We reran
 the analysis in Figure \ref{fig:main}
 under an alternative protocol:  a single shared
 split and objects restricted to those their first token identifies.
-This gives $\rho = 0.644$ ($p = 0.0005$) over the 25 relations that meet the
-restriction, against $0.658$ over 28 here.
-\enote{hs}{add here: why 25 relations? what does ``meeting
-  the restriction'' mean?}
+A relation meets the restriction if, after discarding every object whose
+first token it shares with another object of the same relation, enough
+subjects remain to form a split: eight in-context examples, eight
+reference subjects and at least one test subject. Three relations fall
+below that threshold and are dropped -- the two with numeric objects,
+whose years collapse onto shared leading digits, and
+\textsc{person\_band\_lead\_singer}. Over the remaining 25 the alternative
+protocol gives $\rho = 0.644$ ($p = 0.0005$), against $0.658$ over 28
+here. We return to first-token collapse, and to why restricting the gold
+objects is only a partial remedy, in \S\ref{sec:subject}.
 
-
-\enote{hs}{following paragraph: i'm not sure i understand
-  what the takeaway here is -- why is it a top-priority
-  concern that person-father and person-mother would behave
-  differently? the figure already shows that they are similar?}
-\paragraph{A within-domain check.} \textsc{person\_father} and
-\textsc{person\_mother} are separate relations over near-identical subject
-sets. They receive almost identical faithfulness ($0.09$, $0.07$) and
-almost identical lens scores ($-3.69$, $-3.99$), without the lens being
-told which relation it is looking at.
 
 \begin{figure}[t]
 \centering
@@ -428,11 +399,12 @@ correlation to $0.725$.
 We now return to our question whether
 relations that deviate from the overall trend (the lens does
 not predict linearity well) are unstructured.
-They are not. Ordering relations by their residual from the fitted trend,
-both tails are organized by the size of the answer space. The largest
-positive residuals -- faithful despite a low lens score -- are
-\enote{hs}{something got lost in my reediting -- where are
-  these numbers from again?}
+They are not. Order the relations by their residual from the least-squares
+fit of faithfulness on the lens score in Figure~\ref{fig:main}; a residual
+is in units of faithfulness, so $+0.30$ means thirty points more faithful
+than the lens score predicts. Both tails are then organized by the size of
+the answer space. The largest positive residuals -- faithful despite a low
+lens score -- are
 \textsc{landmark\_on\_continent} ($+0.30$, $k = 189$),
 \textsc{name\_gender} ($+0.29$, $k = 9.5$) and
 \textsc{person\_native\_language} ($+0.26$, $k = 30.6$). In each, the LRE
@@ -731,7 +703,11 @@ correction. Table~\ref{tab:relations} reports the relation-level results.
 \section{Jacobian--vector products}
 \label{sec:jvp}
 
-Eq.~\ref{eq:lens} needs $J_i u$, not $J_i$. We obtain it by the standard
+Neither the operator nor the lens ever needs $J_i$ itself, only products
+$J_i u$: for the lens this is explicit in Eq.~\ref{eq:lens}, and for the
+LRE it is what the expansion in Eq.~\ref{eq:beta} buys, since it turns
+$W = \operatorname{mean}_i J_i$ into a sum of such products. We obtain
+each one by the standard
 double-backward construction \citep{pearlmutter1994fast}: differentiate
 $\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a free
 variable, then differentiate the result with respect to $u'$ in the
