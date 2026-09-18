@@ -10,7 +10,7 @@ Run commands as `uv run jlens COMMAND`. Use
 | --- | --- |
 | `reproduce` | Check rebuilt Figure 1 inputs, then generate statistics, both tables, and paper figures |
 | `reproduce --supplementary` | Also generate subject panels, aggregate rank plots, and outlier reports |
-| `statistics` | Print the paper's numerical results |
+| `statistics` | Print correlations and baselines, including the affine lens with its zeroth-order term restored |
 | `build-figure-data` | Reconstruct Figure 1's JSON; accepts `--output` |
 | `table-relations` | Write relation table LaTeX to stdout |
 | `table-prominence` | Write prominence table LaTeX to stdout |
@@ -67,6 +67,12 @@ The faithfulness and Jacobian-lens commands default to the **shared** split.
 Use `--legacy-split` for the main paper protocol. `--distinct-first-token`
 filters ambiguous object prefixes. `--trailing-space` corrects numeric-object
 targets. The runner supplies these flags separately for the appropriate stages.
+
+The affine (+zeroth-order) Jacobian-lens baseline is always measured alongside
+the differential lens, using the same forward passes and Jacobian products.
+`rerun` and `reproduce` include its correlation, p-value, and change from the
+differential correlation in the console output and `generated/statistics.txt`.
+Existing runs already containing `agg.lre` can regenerate this report on CPU.
 
 The subject-rank scorer requires matching shared splits and the stored
 faithfulness files specified by `--faith-dir`. Its `--no-distinct-first-token`

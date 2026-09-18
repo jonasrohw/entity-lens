@@ -14,7 +14,7 @@ quantities are commensurable.
 
 Two lens forms, same cost:
   diff : v = mean_i J_i (s_e - s_i)                  pure difference readout
-  lre  : v = mean_i [ f(s_i) + J_i (s_e - s_i) ]     the actual LRE form
+  lre  : v = mean_i [ f(s_i) + J_i (s_e - s_i) ]     affine (+zeroth-order) baseline
 """
 
 import argparse
@@ -264,7 +264,7 @@ def main():
         )
         print(
             f"{relation:26s} n={len(subjects):<3} diff: med_rank={aggregate['diff']['median_rank']:>9.0f} "
-            f"a@1={aggregate['diff']['agree_at1']:.2f} | lre: med_rank={aggregate['lre']['median_rank']:>9.0f} "
+            f"a@1={aggregate['diff']['agree_at1']:.2f} | affine (+zeroth-order): med_rank={aggregate['lre']['median_rank']:>9.0f} "
             f"a@1={aggregate['lre']['agree_at1']:.2f}",
             flush=True,
         )

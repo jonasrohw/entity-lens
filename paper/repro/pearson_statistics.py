@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "code"))
 
 from jlens.config import ROOT, YEAR_RELATIONS
 from jlens.figure_data import build_figure_data
-from jlens.paper_statistics import fact_points, load, relation_data
+from jlens.paper_statistics import affine_lens_scores, fact_points, load, relation_data
 
 
 def partial_pearson(x, y, *controls):
@@ -58,6 +58,11 @@ def main():
     print("\n## Relation-level results")
     table()
     row("Main: lens score vs faithfulness", x, y)
+    row(
+        "Affine Jacobian-lens baseline (+zeroth-order term) vs faithfulness",
+        affine_lens_scores(rels),
+        y,
+    )
     for label, filename in [
         ("Logit-lens baseline vs faithfulness", "logit_lens.json"),
         ("Differential logit-lens baseline vs faithfulness", "logit_lens_diff.json"),

@@ -7,7 +7,14 @@ The model is `allenai/Olmo-3-1025-7B`. The Jacobian lens uses hidden-state index
 transformer block 16 in Transformers' hidden-state tuple.
 
 The differential lens averages `J_i (s - s_i)` over reference subjects. The
-affine form also adds each reference output `f(s_i)`.
+affine baseline restores the zeroth-order Taylor term by adding each reference
+output `f(s_i)`: `mean_i [f(s_i) + J_i (s - s_i)]`, with beta fixed at 1.
+Both forms are measured together by `measure-jacobian-lens`; the affine scores
+use the historical `lre` aggregate and `rank_lre` / `top_lre` row fields.
+This is a neutral-prompt baseline, separate from relation-specific LRE faithfulness.
+`statistics` reports its Spearman correlation, p-value, and change from the
+differential lens for both the main and shared-split protocols. Main-protocol
+scores use the same corrected year measurements as the differential lens.
 
 Three baselines drop one or both of the lens's two ingredients, at the same
 layer, neutral prompt, reference subjects, and target tokens:

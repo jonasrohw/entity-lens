@@ -25,7 +25,7 @@ Artifacts are written to `generated/`:
 
 | Artifact | Contents |
 | --- | --- |
-| `statistics.txt` | Correlations, controls, permutation test, and fact-level counts |
+| `statistics.txt` | Correlations and baselines (including the restored zeroth-order term), controls, permutation test, and fact-level counts |
 | `paper_figure_data.json` | Reconstructed input, checked against the retained snapshot |
 | `table_relations.tex` | All 28 relations, with corrected numeric-object scores |
 | `table_prominence.tex` | Object-prominence analysis for 14 relations |

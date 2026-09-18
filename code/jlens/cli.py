@@ -53,7 +53,7 @@ COMMANDS = {
     ),
     "measure-jacobian-lens": (
         "measure_jacobian_lens",
-        "Score the differential Jacobian lens (GPU)",
+        "Score the differential and affine (+zeroth-order) Jacobian lenses (GPU)",
     ),
     "measure-subject-ranks": (
         "measure_subject_ranks",

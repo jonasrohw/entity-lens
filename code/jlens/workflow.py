@@ -161,7 +161,8 @@ def measurement_plan(
                 ],
             )
         )
-    # The three ablation baselines read the two Jacobian-lens files above.
+    # The affine (+zeroth-order) baseline is already saved by measure-jacobian-lens.
+    # The three separately measured ablations read those two lens files above.
     for filename, command in [
         ("logit_lens.json", "measure-logit-lens"),
         ("logit_lens_diff.json", "measure-logit-lens-diff"),

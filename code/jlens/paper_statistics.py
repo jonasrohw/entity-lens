@@ -5,7 +5,7 @@ import json
 import numpy as np
 from scipy import stats
 
-from jlens.config import ROOT
+from jlens.config import ROOT, YEAR_RELATIONS
 
 
 def load(path):
@@ -26,6 +26,30 @@ def relation_data():
         path.stem: json.loads(path.read_text())
         for path in (ROOT / "data/relations").rglob("*.json")
     }
+
+
+def affine_lens_scores(relations):
+    """Read the zeroth-order-restored lens with the main protocol's year fixes."""
+    lens = load("results/jacobian_lens.json")
+    years = load("results/jacobian_lens_years.json")
+    return np.array(
+        [
+            -(years if relation in YEAR_RELATIONS else lens)[relation]["agg"]["lre"][
+                "median_lograng"
+            ]
+            for relation in relations
+        ]
+    )
+
+
+def report_affine_baseline(scores, faithfulness, differential_rho, *, prefix=""):
+    result = stats.spearmanr(scores, faithfulness)
+    print(
+        f"{prefix}Affine Jacobian-lens baseline (+zeroth-order term) "
+        f"({len(scores)} relations): rho={result.statistic:.3f}, "
+        f"p={result.pvalue:.2e}, "
+        f"delta_rho={result.statistic - differential_rho:+.3f}"
+    )
 
 
 def fact_points(relation, lens, rank_dir):
@@ -77,6 +101,7 @@ def main():
     ]
 
     print(f"Main ({len(rels)} relations): rho={rho.statistic:.3f}, p={rho.pvalue:.2e}")
+    report_affine_baseline(affine_lens_scores(rels), y, rho.statistic)
     # The ablation baselines: the lens without its Jacobian, without its
     # difference, and without either. Each is reported only once measured.
     for label, filename in [
@@ -128,6 +153,12 @@ def main():
     print(
         f"Shared split, identifying first tokens ({len(alternative)} relations): "
         f"rho={alt.statistic:.3f}, p={alt.pvalue:.2e}"
+    )
+    report_affine_baseline(
+        [-lens[relation]["agg"]["lre"]["median_lograng"] for relation in alternative],
+        [faith[relation]["best_faith"] for relation in alternative],
+        alt.statistic,
+        prefix="Shared split, ",
     )
 
     prominence = load("results/prominence_statistics.json")
