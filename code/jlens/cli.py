@@ -7,6 +7,10 @@ import sys
 from pathlib import Path
 
 COMMANDS = {
+    "corpus-conditionals": (
+        "corpus_conditionals",
+        "Count directional corpus co-occurrence and correlate with LRE scores",
+    ),
     "reproduce": (
         "workflow",
         "Regenerate paper statistics, tables, and figures on CPU",
@@ -133,6 +137,11 @@ def main(argv: list[str] | None = None) -> None:
         else:
             module.main()
     except ModuleNotFoundError as error:
+        if error.name in {"ahocorasick", "orjson", "zstandard"}:
+            parser.exit(
+                2,
+                "Corpus dependencies are missing. Run: uv sync --extra corpus --inexact\n",
+            )
         if error.name in {"torch", "transformers"}:
             parser.exit(2, "GPU dependencies are missing. Run: uv sync --extra gpu\n")
         raise

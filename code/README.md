@@ -72,6 +72,21 @@ See the [command reference](docs/commands.md),
 The historical JSON field names are preserved so the retained measurements
 remain unchanged; their meaning is documented in the methods guide.
 
+## Corpus conditional probabilities
+
+Measure `P(object | subject)` and `P(subject | object)` in the full published
+training split and correlate both with retained LRE faithfulness:
+
+```sh
+uv sync --locked --extra corpus --inexact
+uv run --no-sync jlens corpus-conditionals --workers 64
+```
+
+The scan streams compressed shards in parallel, checkpoints completed work, and
+writes counts, per-stage results, and Pearson/Spearman correlations under
+`generated/corpus_conditionals/`. See the [method and run guide](docs/corpus-conditionals.md)
+for corpus scope, matching rules, partial smoke runs, and resume/report options.
+
 ## Rerun the model measurements
 
 Use a CUDA machine with enough memory for a 7B model in float32 plus
