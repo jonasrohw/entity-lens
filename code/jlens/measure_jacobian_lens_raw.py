@@ -13,6 +13,7 @@ and target tokens are matched to `results/jacobian_lens.json`.
 """
 
 import argparse
+import os
 
 from jlens import matched_baseline
 from jlens.config import (
@@ -23,13 +24,14 @@ from jlens.config import (
     ROOT,
     YEAR_RELATIONS,
 )
-from jlens.io import write_json
+from jlens.io import read_json, write_json
 
 
 def parse_args():
     """Parse this measurement's command-line options."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(OUTPUT_DIR / "jacobian_lens_raw.json"))
+    parser.add_argument("--rels", default="", help="comma-list; merges into --out")
     parser.add_argument("--layer", type=int, default=LENS_LAYER)
     parser.add_argument("--device", default="cuda:0")
     return parser.parse_args()
@@ -44,6 +46,12 @@ def main():
     from jlens.model import HiddenStateIntervention, resolve_blocks
 
     references = matched_baseline.load_references(ROOT)
+    if args.rels:
+        selected = args.rels.split(",")
+        missing = [relation for relation in selected if relation not in references]
+        if missing:
+            raise ValueError(f"no reference result for: {', '.join(missing)}")
+        references = {relation: references[relation] for relation in selected}
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     model = (
         AutoModelForCausalLM.from_pretrained(
@@ -56,9 +64,12 @@ def main():
         parameter.requires_grad_(False)
     rank_of = matched_baseline.make_decoder(model, tokenizer)
     blocks = resolve_blocks(model)
+    # `rank_of` expects a pre-norm vector, so the Jacobian must be taken of the
+    # final block's own output, not of the post-norm `hidden_states[-1]`; see
+    # BUG-final-norm-twice.md.
     intervention = HiddenStateIntervention(model, final_block=blocks[-1])
 
-    output = {}
+    output = read_json(args.out) if (args.rels and os.path.exists(args.out)) else {}
     for relation, reference in references.items():
         template, context, subjects, anchors = matched_baseline.matched_split(
             relation, reference, args.layer, ROOT
