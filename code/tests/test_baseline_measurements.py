@@ -99,6 +99,7 @@ class TinyCausalLM(torch.nn.Module):
         super().__init__()
         self.model = Backbone(vocabulary, width, depth)
         self.lm_head = torch.nn.Linear(width, vocabulary, bias=False)
+        self.config = SimpleNamespace(get_text_config=lambda: SimpleNamespace())
 
     def forward(self, input_ids, output_hidden_states=False):
         states = self.model.embed_tokens(input_ids)

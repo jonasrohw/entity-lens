@@ -32,6 +32,8 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
+    from jlens.model import final_logits, resolve_final_norm
+
     main_ref = json.loads((ROOT / "results/jacobian_lens.json").read_text())
     year_ref = json.loads((ROOT / "results/jacobian_lens_years.json").read_text())
     relations = sorted(r for r in main_ref if not r.startswith("_"))
@@ -45,14 +47,14 @@ def main():
     )
     for parameter in model.parameters():
         parameter.requires_grad_(False)
-    norm_weight = model.model.norm.weight.detach().float()
+    norm = resolve_final_norm(model)
     unembed = model.lm_head.weight.detach().float()
-    norm_epsilon = float(getattr(model.model.norm, "variance_epsilon", 1e-5))
+    lm_bias = getattr(model.lm_head, "bias", None)
+    lm_bias = lm_bias.detach().float() if lm_bias is not None else None
+    softcap = getattr(model.config.get_text_config(), "final_logit_softcapping", None)
 
     def rank_of(hidden, token_id):
-        vector = hidden.float()
-        vector = vector / torch.sqrt(vector.pow(2).mean() + norm_epsilon)
-        logits = (norm_weight * vector) @ unembed.T
+        logits = final_logits(hidden, norm, unembed, lm_bias, softcap)
         rank = int((logits > logits[token_id]).sum())
         top = [tokenizer.decode([int(i)]).strip() for i in logits.topk(5).indices]
         return rank, top

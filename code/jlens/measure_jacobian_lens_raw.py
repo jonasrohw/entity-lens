@@ -41,7 +41,7 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import HiddenStateIntervention
+    from jlens.model import HiddenStateIntervention, resolve_blocks
 
     references = matched_baseline.load_references(ROOT)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -55,7 +55,8 @@ def main():
     for parameter in model.parameters():
         parameter.requires_grad_(False)
     rank_of = matched_baseline.make_decoder(model, tokenizer)
-    intervention = HiddenStateIntervention(model)
+    blocks = resolve_blocks(model)
+    intervention = HiddenStateIntervention(model, final_block=blocks[-1])
 
     output = {}
     for relation, reference in references.items():
@@ -69,9 +70,7 @@ def main():
         cache = matched_baseline.subject_states(
             model, tokenizer, args.device, subjects, args.layer, NEUTRAL_PROMPT
         )
-        handle = model.model.layers[args.layer - 1].register_forward_hook(
-            intervention.hook
-        )
+        handle = blocks[args.layer - 1].register_forward_hook(intervention.hook)
         rows = []
         for subject in subjects:
             total = None
