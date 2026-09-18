@@ -34,49 +34,7 @@ $>>>$\hspace{1cm}}}}}
 \maketitle
 
 
-\begin{abstract}
-Linear relational embeddings (LREs) approximate a language
-model's subject-to-object mapping with an affine
-function. Their faithfulness varies enormously across
-relations -- near zero for \textsc{person\_father}, at
-ceiling for \textsc{country\_capital\_city}. We ask what
-determines that variation and show it is substantially
-predictable from a readout that never sees the relation. We
-estimate a
-novel form of a
-Jacobian lens, the \emph{differential Jacobian lens}:
-instead of model outputs for
-``France'', we instead
-contrastively predict outputs for ``France''
-that are not also outputs for ``Spain''.
-After estimating
-this differential Jacobian lens,
-we measure how highly it ranks the model's answer
-for a
-relation 
--- without using any relation-specific
-information in estimation and prediction.
-Across
-28 relations of the LRE dataset on Olmo-3-7B this
-relation-agnostic score correlates with LRE faithfulness at
-$\rho = 0.66$ ($p <.01$).  This suggests that linear
-decodability may be largely a property of what a subject's
-representation already carries, rather than of the relation
-being decoded.
-After attempting to 
-move 
-the unit of
-analysis from the relation to the individual fact,
-we conclude that new relation
-datasets and analysis methods are needed to address several
-problems in existing datasets, most prominently semantically
-weak first tokens
-(e.g., most predicted universities' first token
-is ``University'') and subject ambiguity (e.g., the LLM
-associates
-obscure actor names with non-actor entities).
-\end{abstract}
-
+\input{abstract}
 \enote{hs}{i've moved content we may want to reintegrate to rawmaterial.tex}
 
 \section{Introduction}
