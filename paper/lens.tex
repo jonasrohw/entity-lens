@@ -136,6 +136,7 @@ $\{0.5, 1, 1.5, 2, 3, 5\}$.
 
 
 
+
 \emph{Faithfulness} is the rate at which
 decoding $\beta W s + b_\beta$ over the full vocabulary reproduces the
 \emph{model's own} top-1 prediction -- not the gold object. It is therefore
@@ -143,12 +144,27 @@ a measure of how well an affine map captures what the model
 does. Faithfulness defined this way is
 the quantity we predict.
 
+\enote{hs}{
+$\operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (u - s_i)\,\right]$
+- $\operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (v - s_i)\,\right]$
+=
+$\operatorname{mean}_i\!\left[ \beta J_i (u - s_i)
+- \beta J_i (v - s_i)
+  \,\right]$
+=
+$\operatorname{mean}_i\!\left[ \beta J_i (u - v)
+  \,\right]$
+
+}
+  
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
 
 For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
 the same type (e.g., Spain, Italy), we take the Jacobian--vector product
 at each reference and average:
+\enote{hs}{why are we switching here from 
+ $\operatorname{mean}_i$ to $\frac{1}{n}$?}
 \begin{equation}
 v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
 \label{eq:lens}
@@ -223,7 +239,7 @@ fixed a subject-type filter in advance using the dataset's declared
 \textit{product}, \textit{star}). Excluded are relations over words as
 words (\textit{verb}, \textit{adjective}, \textit{word}) and over abstracts
 (\textit{occupation}, \textit{task}, \textit{characteristic},
-\textit{degree}), for which \texttt{"give is known for"} is a category
+\textit{degree}), for which \texttt{"\{\} is known for"} is a category
 error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
@@ -336,16 +352,17 @@ objects is only a partial remedy, in \S\ref{sec:subject}.
 \centering
 \includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
 \caption{
-  Rank-rank analysis of individual facts for
- \textsc{product\_by\_company}.
-x-axis: lens $\log_{10}(\mathrm{rank}+1)$.
-y-axis: LRE $\log_{10}(\mathrm{rank}+1)$; ranks are zero-based.
-Faithfulness: 0.68.
-Green solid regression line over all points (n=99, $\rho=.41$).
-Orange dashed regression line over the orange points, the subjects the
-LRE missed (n=32, $\rho=.58$).}
+In this  rank-rank analysis of individual facts for
+ \textsc{product\_by\_company}, lens rank and LRE rank are
+ moderately highly correlated: $\rho=.41$ for all points,
+ $\rho=.58$ for misses.
+This is not the case in general: see Figure~\ref{fig:blacksheep}.
+Ranks are zero-based.
+}
 \label{fig:product}
 \end{figure}
+
+\enote{hs}{explain star constellation?}
 
 \section{Where the account degrades}
 \label{sec:residuals}
@@ -353,9 +370,8 @@ LRE missed (n=32, $\rho=.58$).}
 What the lens reads is what an entity is \emph{salient} for:
 a relation is linearly decodable to the extent that its
 answer is already part of what the subject's representation makes the
-model disposed to say. The relations that deviate from the trend are
-therefore exceptions to the account. Here, we ask
-whether these relations are unstructured.
+model disposed to say. Here, we analyze the relations that
+deviate from the trend.
 
 \paragraph{Salience, measured independently of the lens.} Our account
 would be circular if salience were read off the lens, since the
@@ -368,7 +384,7 @@ words shared with the subject's own name are excluded, so that
 \emph{The}~Joker is not matched by any occurrence of ``the'' and
 \emph{Johann Georg Kant} is not matched by a passage about Immanuel Kant.
 The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
-makes this model emit a multiple-choice quiz rather than prose, so the
+makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
 object is never named.} This is a forward pass under different prompts,
 and involves no Jacobian.
 
