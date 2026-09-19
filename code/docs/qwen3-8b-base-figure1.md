@@ -155,3 +155,5 @@ print("Pearson:", pearsonr(x, y))
 keep = np.array([int(row["n_lre"]) >= 4 for row in rows])
 print("Sensitivity, n =", keep.sum(), spearmanr(x[keep], y[keep]))
 ```
+
+Die [Detailauswertung für `company_ceo`](qwen3-8b-base-company-ceo-predictions.md) enthält alle 100 LRE- und alle 20 Lens-Ausgaben sowie eine Erklärung der Tabellenwerte.

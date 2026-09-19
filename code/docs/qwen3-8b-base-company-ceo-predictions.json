@@ -1,0 +1,3478 @@
+{
+  "model_id": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "protocol": "main",
+  "relation": "company_ceo",
+  "dtype": "float32",
+  "host": "rho1",
+  "torch": "2.14.0+cu130",
+  "lre_layer": 16,
+  "lre_beta": 5.0,
+  "lens_layer": 19,
+  "split_fingerprint": "284343630b31",
+  "prompt_template": "{}'s CEO is",
+  "lre_demonstrations": [
+    {
+      "subject": "Meta",
+      "object": "Mark Zuckerberg"
+    },
+    {
+      "subject": "Orly Airport",
+      "object": "Régis Lacote"
+    },
+    {
+      "subject": "Bell Resources",
+      "object": "Mark Avery"
+    },
+    {
+      "subject": "SoftBank Group",
+      "object": "Masayoshi Son"
+    },
+    {
+      "subject": "Mastercard",
+      "object": "Ajaypal Singh Banga"
+    },
+    {
+      "subject": "Vertex Pharmaceuticals",
+      "object": "Reshma Kewalramani"
+    },
+    {
+      "subject": "AT&T",
+      "object": "John Stankey"
+    },
+    {
+      "subject": "Ferrari S.p.A.",
+      "object": "Benedetto Vigna"
+    }
+  ],
+  "lre_references": [
+    {
+      "subject": "Nike",
+      "object": "John Donahoe"
+    },
+    {
+      "subject": "O2 Czech Republic",
+      "object": "Jindřich Fremuth"
+    },
+    {
+      "subject": "Food and Agriculture Organization",
+      "object": "Mohammed Shia' Al Sudani"
+    },
+    {
+      "subject": "Central Japan Railway Company",
+      "object": "Shin Kaneko"
+    },
+    {
+      "subject": "ČEZ Group",
+      "object": "Daniel Beneš"
+    },
+    {
+      "subject": "Honda",
+      "object": "Takahiro Hachigō"
+    },
+    {
+      "subject": "Deutsche Post AG",
+      "object": "Frank Appel"
+    },
+    {
+      "subject": "Naturschutzbund Deutschland",
+      "object": "Susanne Baumann"
+    }
+  ],
+  "validation": {
+    "n_test": 100,
+    "faithfulness": 0.02,
+    "all_original_hits_reproduced": true,
+    "all_audited_targets_reproduced": true,
+    "model_gold_first_token_accuracy": 0.49,
+    "numerical_checks": {
+      "logits_max_abs_error": 0.0,
+      "batched_scalar_max_abs_error": 0.000244140625,
+      "finite_difference_relative_error": 0.0001398266904288903
+    }
+  },
+  "source_sha256": {
+    "results/five_model_sweep/qwen3_8b_base/main/company_ceo.json": "4e6465fc95ac900443b8b71446d9c801126a15c3c2806a1cdcde3e06cb524c02",
+    "data/relations/company_ceo.json": "c75f9b31c872b85601b7163b2c7a8f11c439f2852a876d5a126401d57ea3a81b",
+    "jlens/model_sweep.py": "94f7dd7312c70690186d6339fc67818c8413fc775a37e67d52781f03d5f46304",
+    "generated/qwen3_company_ceo/export_predictions.py": "cd5d313d899d9f0f33546033c55837f5fc1db85e84f40b41685cd28d4a85db06"
+  },
+  "lre_rows": [
+    {
+      "subject": "Tesco",
+      "dataset_object": "Ken Murph",
+      "gold_first_token_id": 14259,
+      "gold_first_token": " Ken",
+      "model_top1_id": 20238,
+      "model_top1": " Dave",
+      "lre_top1_id": 13775,
+      "lre_top1": " Ren",
+      "lre_top5_ids": [
+        13775,
+        43592,
+        619,
+        24807,
+        28729
+      ],
+      "lre_top5": [
+        " Ren",
+        " Adrian",
+        " J",
+        " Hans",
+        " Mari"
+      ],
+      "lre_target_rank_zero_based": 330,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Czech Airlines",
+      "dataset_object": "Petr Kudela",
+      "gold_first_token_id": 95776,
+      "gold_first_token": " Petr",
+      "model_top1_id": 4350,
+      "model_top1": " Jan",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        730,
+        619,
+        328,
+        8011
+      ],
+      "lre_top5": [
+        " R",
+        " K",
+        " J",
+        " S",
+        " Nor"
+      ],
+      "lre_target_rank_zero_based": 23,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Johnson & Johnson",
+      "dataset_object": "Alex Gorsky",
+      "gold_first_token_id": 8515,
+      "gold_first_token": " Alex",
+      "model_top1_id": 8515,
+      "model_top1": " Alex",
+      "lre_top1_id": 8397,
+      "lre_top1": " Robert",
+      "lre_top5_ids": [
+        8397,
+        4389,
+        18095,
+        28417,
+        11108
+      ],
+      "lre_top5": [
+        " Robert",
+        " Mark",
+        " Stephen",
+        " Craig",
+        " Thomas"
+      ],
+      "lre_target_rank_zero_based": 442,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "U.S. Steel",
+      "dataset_object": "David Burritt",
+      "gold_first_token_id": 6798,
+      "gold_first_token": " David",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 15392,
+      "lre_top1": " Gi",
+      "lre_top5_ids": [
+        15392,
+        619,
+        11565,
+        431,
+        328
+      ],
+      "lre_top5": [
+        " Gi",
+        " J",
+        " Martin",
+        " R",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 30,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "University of Leeds",
+      "dataset_object": "Alan Langlands",
+      "gold_first_token_id": 25282,
+      "gold_first_token": " Alan",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        619,
+        11565,
+        6798,
+        48902
+      ],
+      "lre_top5": [
+        " R",
+        " J",
+        " Martin",
+        " David",
+        " Stefan"
+      ],
+      "lre_target_rank_zero_based": 3,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Kering",
+      "dataset_object": "François-Henri Pinault",
+      "gold_first_token_id": 84707,
+      "gold_first_token": " François",
+      "model_top1_id": 84707,
+      "model_top1": " François",
+      "lre_top1_id": 66854,
+      "lre_top1": " Philippe",
+      "lre_top5_ids": [
+        66854,
+        19243,
+        88599,
+        59123,
+        57770
+      ],
+      "lre_top5": [
+        " Philippe",
+        " Fab",
+        " Francesco",
+        " Thi",
+        " Carlo"
+      ],
+      "lre_target_rank_zero_based": 5,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "thyssenkrupp AG",
+      "dataset_object": "Ulrich Lehner",
+      "gold_first_token_id": 16582,
+      "gold_first_token": " Ul",
+      "model_top1_id": 89487,
+      "model_top1": " Matthias",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        350,
+        328,
+        28729
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " T",
+        " S",
+        " Mari"
+      ],
+      "lre_target_rank_zero_based": 57,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Seagate Technology",
+      "dataset_object": "Stephen J. Luczo",
+      "gold_first_token_id": 18095,
+      "gold_first_token": " Stephen",
+      "model_top1_id": 8596,
+      "model_top1": " Bill",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        730,
+        619,
+        350,
+        3757
+      ],
+      "lre_top5": [
+        " Martin",
+        " K",
+        " J",
+        " T",
+        " John"
+      ],
+      "lre_target_rank_zero_based": 77,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Yle",
+      "dataset_object": "Merja Ylä-Anttila",
+      "gold_first_token_id": 8755,
+      "gold_first_token": " Mer",
+      "model_top1_id": 619,
+      "model_top1": " J",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        28729,
+        431,
+        472,
+        11044
+      ],
+      "lre_top5": [
+        " J",
+        " Mari",
+        " R",
+        " H",
+        " Peter"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "UBS",
+      "dataset_object": "Sergio Ermotti",
+      "gold_first_token_id": 65194,
+      "gold_first_token": " Sergio",
+      "model_top1_id": 39804,
+      "model_top1": " Ralph",
+      "lre_top1_id": 43592,
+      "lre_top1": " Adrian",
+      "lre_top5_ids": [
+        43592,
+        41346,
+        83178,
+        68320,
+        23381
+      ],
+      "lre_top5": [
+        " Adrian",
+        " Erik",
+        " Luca",
+        " Stef",
+        " Mario"
+      ],
+      "lre_target_rank_zero_based": 187,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "ConocoPhillips",
+      "dataset_object": "Ryan Lance",
+      "gold_first_token_id": 13646,
+      "gold_first_token": " Ryan",
+      "model_top1_id": 11387,
+      "model_top1": " Jim",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        43592,
+        619,
+        11387,
+        4350
+      ],
+      "lre_top5": [
+        " Martin",
+        " Adrian",
+        " J",
+        " Jim",
+        " Jan"
+      ],
+      "lre_target_rank_zero_based": 3,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Cisco Systems",
+      "dataset_object": "Chuck Robbins",
+      "gold_first_token_id": 33249,
+      "gold_first_token": " Chuck",
+      "model_top1_id": 33249,
+      "model_top1": " Chuck",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        619,
+        4389,
+        4350,
+        386
+      ],
+      "lre_top5": [
+        " Martin",
+        " J",
+        " Mark",
+        " Jan",
+        " M"
+      ],
+      "lre_target_rank_zero_based": 853,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "SAP",
+      "dataset_object": "Jennifer Morgan",
+      "gold_first_token_id": 29650,
+      "gold_first_token": " Jennifer",
+      "model_top1_id": 8876,
+      "model_top1": " Christian",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        70038,
+        8876,
+        28729,
+        43592
+      ],
+      "lre_top5": [
+        " Mark",
+        " Urs",
+        " Christian",
+        " Mari",
+        " Adrian"
+      ],
+      "lre_target_rank_zero_based": 2,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Valeo",
+      "dataset_object": "Jacques Aschenbroich",
+      "gold_first_token_id": 63750,
+      "gold_first_token": " Jacques",
+      "model_top1_id": 59123,
+      "model_top1": " Thi",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        8876,
+        48871,
+        23381,
+        431
+      ],
+      "lre_top5": [
+        " J",
+        " Christian",
+        " Marcel",
+        " Mario",
+        " R"
+      ],
+      "lre_target_rank_zero_based": 8,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Goldman Sachs & Co. (US)",
+      "dataset_object": "David M. Solomon",
+      "gold_first_token_id": 6798,
+      "gold_first_token": " David",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        619,
+        328,
+        730,
+        472
+      ],
+      "lre_top5": [
+        " R",
+        " J",
+        " S",
+        " K",
+        " H"
+      ],
+      "lre_target_rank_zero_based": 31,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Sanofi",
+      "dataset_object": "Olivier Brandicourt",
+      "gold_first_token_id": 77018,
+      "gold_first_token": " Olivier",
+      "model_top1_id": 6898,
+      "model_top1": " Paul",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        19685,
+        2869,
+        43592,
+        350
+      ],
+      "lre_top5": [
+        " J",
+        " Jean",
+        " Fr",
+        " Adrian",
+        " T"
+      ],
+      "lre_target_rank_zero_based": 88,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "PepsiCo",
+      "dataset_object": "Ramon Laguarta",
+      "gold_first_token_id": 15152,
+      "gold_first_token": " Ram",
+      "model_top1_id": 15152,
+      "model_top1": " Ram",
+      "lre_top1_id": 2869,
+      "lre_top1": " Fr",
+      "lre_top5_ids": [
+        2869,
+        4892,
+        18095,
+        43592,
+        6798
+      ],
+      "lre_top5": [
+        " Fr",
+        " Rob",
+        " Stephen",
+        " Adrian",
+        " David"
+      ],
+      "lre_target_rank_zero_based": 148,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Warner Music Group",
+      "dataset_object": "Stephen Cooper",
+      "gold_first_token_id": 18095,
+      "gold_first_token": " Stephen",
+      "model_top1_id": 58991,
+      "model_top1": " Edgar",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        328,
+        11565,
+        4389,
+        4350
+      ],
+      "lre_top5": [
+        " J",
+        " S",
+        " Martin",
+        " Mark",
+        " Jan"
+      ],
+      "lre_target_rank_zero_based": 177,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "The Home Depot",
+      "dataset_object": "Craig Menear",
+      "gold_first_token_id": 28417,
+      "gold_first_token": " Craig",
+      "model_top1_id": 28417,
+      "model_top1": " Craig",
+      "lre_top1_id": 3757,
+      "lre_top1": " John",
+      "lre_top5_ids": [
+        3757,
+        68320,
+        506,
+        619,
+        41346
+      ],
+      "lre_top5": [
+        " John",
+        " Stef",
+        " O",
+        " J",
+        " Erik"
+      ],
+      "lre_target_rank_zero_based": 230,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "GMV Innovating Solutions",
+      "dataset_object": "Jesús Serrano Martínez",
+      "gold_first_token_id": 142115,
+      "gold_first_token": " Jesús",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        730,
+        7937,
+        468,
+        28729
+      ],
+      "lre_top5": [
+        " R",
+        " K",
+        " Michael",
+        " E",
+        " Mari"
+      ],
+      "lre_target_rank_zero_based": 36,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Abbott Laboratories",
+      "dataset_object": "Robert B. Ford",
+      "gold_first_token_id": 8397,
+      "gold_first_token": " Robert",
+      "model_top1_id": 8397,
+      "model_top1": " Robert",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        431,
+        619,
+        11108,
+        4350
+      ],
+      "lre_top5": [
+        " Martin",
+        " R",
+        " J",
+        " Thomas",
+        " Jan"
+      ],
+      "lre_target_rank_zero_based": 5,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "České dráhy",
+      "dataset_object": "Michal Krapinec",
+      "gold_first_token_id": 5271,
+      "gold_first_token": " Mich",
+      "model_top1_id": 4350,
+      "model_top1": " Jan",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        730,
+        431,
+        328,
+        472
+      ],
+      "lre_top5": [
+        " J",
+        " K",
+        " R",
+        " S",
+        " H"
+      ],
+      "lre_target_rank_zero_based": 23,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Heineken",
+      "dataset_object": "Freddy Heineken",
+      "gold_first_token_id": 95782,
+      "gold_first_token": " Freddy",
+      "model_top1_id": 1644,
+      "model_top1": " Ar",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        24807,
+        19243,
+        15392
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " Hans",
+        " Fab",
+        " Gi"
+      ],
+      "lre_target_rank_zero_based": 60,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Raytheon Company",
+      "dataset_object": "Thomas Kennedy",
+      "gold_first_token_id": 11108,
+      "gold_first_token": " Thomas",
+      "model_top1_id": 11108,
+      "model_top1": " Thomas",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        619,
+        730,
+        431,
+        4389
+      ],
+      "lre_top5": [
+        " Martin",
+        " J",
+        " K",
+        " R",
+        " Mark"
+      ],
+      "lre_target_rank_zero_based": 24,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Alphabet",
+      "dataset_object": "Sundar Pichai",
+      "gold_first_token_id": 36802,
+      "gold_first_token": " Sund",
+      "model_top1_id": 36802,
+      "model_top1": " Sund",
+      "lre_top1_id": 42360,
+      "lre_top1": " Lauren",
+      "lre_top5_ids": [
+        42360,
+        69525,
+        41563,
+        82258,
+        9542
+      ],
+      "lre_top5": [
+        " Lauren",
+        " Deborah",
+        " Catherine",
+        " Carolyn",
+        " Vir"
+      ],
+      "lre_target_rank_zero_based": 166,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Bertelsmann",
+      "dataset_object": "Thomas Rabe",
+      "gold_first_token_id": 11108,
+      "gold_first_token": " Thomas",
+      "model_top1_id": 11108,
+      "model_top1": " Thomas",
+      "lre_top1_id": 68320,
+      "lre_top1": " Stef",
+      "lre_top5_ids": [
+        68320,
+        81097,
+        24807,
+        619,
+        48902
+      ],
+      "lre_top5": [
+        " Stef",
+        " Klaus",
+        " Hans",
+        " J",
+        " Stefan"
+      ],
+      "lre_target_rank_zero_based": 16,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Klinikum Ernst von Bergmann",
+      "dataset_object": "Dorothea Fischer",
+      "gold_first_token_id": 422,
+      "gold_first_token": " D",
+      "model_top1_id": 2926,
+      "model_top1": " Dr",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        619,
+        730,
+        7937,
+        386
+      ],
+      "lre_top5": [
+        " R",
+        " J",
+        " K",
+        " Michael",
+        " M"
+      ],
+      "lre_target_rank_zero_based": 119,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "GlaxoSmithKline",
+      "dataset_object": "Emma Walmsley",
+      "gold_first_token_id": 34935,
+      "gold_first_token": " Emma",
+      "model_top1_id": 34935,
+      "model_top1": " Emma",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        4350,
+        11565,
+        431,
+        83178
+      ],
+      "lre_top5": [
+        " J",
+        " Jan",
+        " Martin",
+        " R",
+        " Luca"
+      ],
+      "lre_target_rank_zero_based": 193,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Activision Blizzard",
+      "dataset_object": "Bobby Kotick",
+      "gold_first_token_id": 37381,
+      "gold_first_token": " Bobby",
+      "model_top1_id": 37381,
+      "model_top1": " Bobby",
+      "lre_top1_id": 8397,
+      "lre_top1": " Robert",
+      "lre_top5_ids": [
+        8397,
+        619,
+        4389,
+        3757,
+        328
+      ],
+      "lre_top5": [
+        " Robert",
+        " J",
+        " Mark",
+        " John",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 466,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Toyota",
+      "dataset_object": "Akio Toyoda",
+      "gold_first_token_id": 16358,
+      "gold_first_token": " Ak",
+      "model_top1_id": 16358,
+      "model_top1": " Ak",
+      "lre_top1_id": 83178,
+      "lre_top1": " Luca",
+      "lre_top5_ids": [
+        83178,
+        35432,
+        8459,
+        619,
+        506
+      ],
+      "lre_top5": [
+        " Luca",
+        " Freder",
+        " Prof",
+        " J",
+        " O"
+      ],
+      "lre_target_rank_zero_based": 61,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "DuPont",
+      "dataset_object": "Charles O. Holliday",
+      "gold_first_token_id": 14927,
+      "gold_first_token": " Charles",
+      "model_top1_id": 46585,
+      "model_top1": " Ellen",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        44406,
+        28729,
+        30246,
+        7937
+      ],
+      "lre_top5": [
+        " Martin",
+        " Michel",
+        " Mari",
+        " Oliver",
+        " Michael"
+      ],
+      "lre_target_rank_zero_based": 1503,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Intel",
+      "dataset_object": "Bob Swan",
+      "gold_first_token_id": 14261,
+      "gold_first_token": " Bob",
+      "model_top1_id": 7135,
+      "model_top1": " Pat",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        13775,
+        15205,
+        2926,
+        34181
+      ],
+      "lre_top5": [
+        " Mark",
+        " Ren",
+        " Stan",
+        " Dr",
+        " Marco"
+      ],
+      "lre_target_rank_zero_based": 247,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Capgemini",
+      "dataset_object": "Paul Hermelin",
+      "gold_first_token_id": 6898,
+      "gold_first_token": " Paul",
+      "model_top1_id": 12990,
+      "model_top1": " Arm",
+      "lre_top1_id": 66854,
+      "lre_top1": " Philippe",
+      "lre_top5_ids": [
+        66854,
+        431,
+        8876,
+        70038,
+        59123
+      ],
+      "lre_top5": [
+        " Philippe",
+        " R",
+        " Christian",
+        " Urs",
+        " Thi"
+      ],
+      "lre_target_rank_zero_based": 1881,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "British Airways",
+      "dataset_object": "Álex Cruz",
+      "gold_first_token_id": 42812,
+      "gold_first_token": " Á",
+      "model_top1_id": 8515,
+      "model_top1": " Alex",
+      "lre_top1_id": 43592,
+      "lre_top1": " Adrian",
+      "lre_top5_ids": [
+        43592,
+        431,
+        83178,
+        7937,
+        41346
+      ],
+      "lre_top5": [
+        " Adrian",
+        " R",
+        " Luca",
+        " Michael",
+        " Erik"
+      ],
+      "lre_target_rank_zero_based": 276,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Airbus",
+      "dataset_object": "Guillaume Faury",
+      "gold_first_token_id": 4570,
+      "gold_first_token": " Gu",
+      "model_top1_id": 4570,
+      "model_top1": " Gu",
+      "lre_top1_id": 19243,
+      "lre_top1": " Fab",
+      "lre_top5_ids": [
+        19243,
+        43592,
+        35432,
+        83178,
+        70038
+      ],
+      "lre_top5": [
+        " Fab",
+        " Adrian",
+        " Freder",
+        " Luca",
+        " Urs"
+      ],
+      "lre_target_rank_zero_based": 7,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Accenture",
+      "dataset_object": "Julie Sweet",
+      "gold_first_token_id": 41187,
+      "gold_first_token": " Julie",
+      "model_top1_id": 41187,
+      "model_top1": " Julie",
+      "lre_top1_id": 70038,
+      "lre_top1": " Urs",
+      "lre_top5_ids": [
+        70038,
+        4389,
+        431,
+        18880,
+        2869
+      ],
+      "lre_top5": [
+        " Urs",
+        " Mark",
+        " R",
+        " Marc",
+        " Fr"
+      ],
+      "lre_target_rank_zero_based": 394,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Colgate-Palmolive Company",
+      "dataset_object": "Ian M. Cook",
+      "gold_first_token_id": 28235,
+      "gold_first_token": " Ian",
+      "model_top1_id": 6898,
+      "model_top1": " Paul",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        619,
+        431,
+        730,
+        4350
+      ],
+      "lre_top5": [
+        " Martin",
+        " J",
+        " R",
+        " K",
+        " Jan"
+      ],
+      "lre_target_rank_zero_based": 166,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Carrefour Group",
+      "dataset_object": "Alexandre Bompard",
+      "gold_first_token_id": 89054,
+      "gold_first_token": " Alexandre",
+      "model_top1_id": 89054,
+      "model_top1": " Alexandre",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        66854,
+        19685,
+        431,
+        730
+      ],
+      "lre_top5": [
+        " J",
+        " Philippe",
+        " Jean",
+        " R",
+        " K"
+      ],
+      "lre_target_rank_zero_based": 288,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Opera Software",
+      "dataset_object": "Jon Stephenson von Tetzchner",
+      "gold_first_token_id": 12285,
+      "gold_first_token": " Jon",
+      "model_top1_id": 12285,
+      "model_top1": " Jon",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        730,
+        28729,
+        350,
+        328
+      ],
+      "lre_top5": [
+        " J",
+        " K",
+        " Mari",
+        " T",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 38,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "AC Sparta Prague",
+      "dataset_object": "Daniel Křetínský",
+      "gold_first_token_id": 15118,
+      "gold_first_token": " Daniel",
+      "model_top1_id": 38755,
+      "model_top1": " Milan",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        730,
+        14268,
+        434
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " K",
+        " Mir",
+        " F"
+      ],
+      "lre_target_rank_zero_based": 10,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "ArcelorMittal",
+      "dataset_object": "Aditya Mittal",
+      "gold_first_token_id": 2410,
+      "gold_first_token": " Ad",
+      "model_top1_id": 47662,
+      "model_top1": " Lak",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        7937,
+        97441,
+        431,
+        18095
+      ],
+      "lre_top5": [
+        " J",
+        " Michael",
+        " Josef",
+        " R",
+        " Stephen"
+      ],
+      "lre_target_rank_zero_based": 173,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Hewlett-Packard",
+      "dataset_object": "Meg Whitman",
+      "gold_first_token_id": 27343,
+      "gold_first_token": " Meg",
+      "model_top1_id": 27343,
+      "model_top1": " Meg",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        43592,
+        34181,
+        11565,
+        13775
+      ],
+      "lre_top5": [
+        " Mark",
+        " Adrian",
+        " Marco",
+        " Martin",
+        " Ren"
+      ],
+      "lre_target_rank_zero_based": 747,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Nokia",
+      "dataset_object": "Pekka Lundmark",
+      "gold_first_token_id": 393,
+      "gold_first_token": " P",
+      "model_top1_id": 393,
+      "model_top1": " P",
+      "lre_top1_id": 34181,
+      "lre_top1": " Marco",
+      "lre_top5_ids": [
+        34181,
+        24807,
+        57770,
+        59123,
+        619
+      ],
+      "lre_top5": [
+        " Marco",
+        " Hans",
+        " Carlo",
+        " Thi",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 150,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Vodafone",
+      "dataset_object": "Nick Read",
+      "gold_first_token_id": 14991,
+      "gold_first_token": " Nick",
+      "model_top1_id": 14991,
+      "model_top1": " Nick",
+      "lre_top1_id": 13775,
+      "lre_top1": " Ren",
+      "lre_top5_ids": [
+        13775,
+        619,
+        68320,
+        43592,
+        88599
+      ],
+      "lre_top5": [
+        " Ren",
+        " J",
+        " Stef",
+        " Adrian",
+        " Francesco"
+      ],
+      "lre_target_rank_zero_based": 622,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Valve Corporation",
+      "dataset_object": "Gabe Newell",
+      "gold_first_token_id": 479,
+      "gold_first_token": " G",
+      "model_top1_id": 479,
+      "model_top1": " G",
+      "lre_top1_id": 350,
+      "lre_top1": " T",
+      "lre_top5_ids": [
+        350,
+        386,
+        4389,
+        431,
+        619
+      ],
+      "lre_top5": [
+        " T",
+        " M",
+        " Mark",
+        " R",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 9,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Sony",
+      "dataset_object": "Ken'ichiro Yoshida",
+      "gold_first_token_id": 14259,
+      "gold_first_token": " Ken",
+      "model_top1_id": 14259,
+      "model_top1": " Ken",
+      "lre_top1_id": 13775,
+      "lre_top1": " Ren",
+      "lre_top5_ids": [
+        13775,
+        35432,
+        2869,
+        4350,
+        43592
+      ],
+      "lre_top5": [
+        " Ren",
+        " Freder",
+        " Fr",
+        " Jan",
+        " Adrian"
+      ],
+      "lre_target_rank_zero_based": 602,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Audi",
+      "dataset_object": "Markus Duesmann",
+      "gold_first_token_id": 75840,
+      "gold_first_token": " Markus",
+      "model_top1_id": 75840,
+      "model_top1": " Markus",
+      "lre_top1_id": 34181,
+      "lre_top1": " Marco",
+      "lre_top5_ids": [
+        34181,
+        75840,
+        83178,
+        1260,
+        11108
+      ],
+      "lre_top5": [
+        " Marco",
+        " Markus",
+        " Luca",
+        " He",
+        " Thomas"
+      ],
+      "lre_target_rank_zero_based": 1,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Southwest Airlines",
+      "dataset_object": "Bob Jordan",
+      "gold_first_token_id": 14261,
+      "gold_first_token": " Bob",
+      "model_top1_id": 23826,
+      "model_top1": " Gary",
+      "lre_top1_id": 7937,
+      "lre_top1": " Michael",
+      "lre_top5_ids": [
+        7937,
+        350,
+        1863,
+        8364,
+        328
+      ],
+      "lre_top5": [
+        " Michael",
+        " T",
+        " Z",
+        " Tom",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 58,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Électricité de France",
+      "dataset_object": "Jean-Bernard Lévy",
+      "gold_first_token_id": 19685,
+      "gold_first_token": " Jean",
+      "model_top1_id": 34307,
+      "model_top1": " Vincent",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        43592,
+        73210,
+        647,
+        13775
+      ],
+      "lre_top5": [
+        " J",
+        " Adrian",
+        " Henri",
+        " V",
+        " Ren"
+      ],
+      "lre_target_rank_zero_based": 68,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Qantas",
+      "dataset_object": "Alan Joyce",
+      "gold_first_token_id": 25282,
+      "gold_first_token": " Alan",
+      "model_top1_id": 25282,
+      "model_top1": " Alan",
+      "lre_top1_id": 43592,
+      "lre_top1": " Adrian",
+      "lre_top5_ids": [
+        43592,
+        619,
+        7937,
+        11044,
+        30246
+      ],
+      "lre_top5": [
+        " Adrian",
+        " J",
+        " Michael",
+        " Peter",
+        " Oliver"
+      ],
+      "lre_target_rank_zero_based": 108,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Bristol-Myers Squibb",
+      "dataset_object": "Giovanni Caforio",
+      "gold_first_token_id": 75852,
+      "gold_first_token": " Giovanni",
+      "model_top1_id": 75852,
+      "model_top1": " Giovanni",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        11108,
+        4389,
+        8397,
+        6798
+      ],
+      "lre_top5": [
+        " Martin",
+        " Thomas",
+        " Mark",
+        " Robert",
+        " David"
+      ],
+      "lre_target_rank_zero_based": 143,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "FC Bayern Munich",
+      "dataset_object": "Herbert Hainer",
+      "gold_first_token_id": 57363,
+      "gold_first_token": " Herbert",
+      "model_top1_id": 34031,
+      "model_top1": " Karl",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        350,
+        50062,
+        4389,
+        431
+      ],
+      "lre_top5": [
+        " J",
+        " T",
+        " Andreas",
+        " Mark",
+        " R"
+      ],
+      "lre_target_rank_zero_based": 176,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Gilead Sciences",
+      "dataset_object": "Daniel O'Day",
+      "gold_first_token_id": 15118,
+      "gold_first_token": " Daniel",
+      "model_top1_id": 3757,
+      "model_top1": " John",
+      "lre_top1_id": 4350,
+      "lre_top1": " Jan",
+      "lre_top5_ids": [
+        4350,
+        4389,
+        11565,
+        350,
+        619
+      ],
+      "lre_top5": [
+        " Jan",
+        " Mark",
+        " Martin",
+        " T",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 13,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "STMicroelectronics",
+      "dataset_object": "Jean-Marc Chéry",
+      "gold_first_token_id": 19685,
+      "gold_first_token": " Jean",
+      "model_top1_id": 19685,
+      "model_top1": " Jean",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        619,
+        4350,
+        11108,
+        328
+      ],
+      "lre_top5": [
+        " R",
+        " J",
+        " Jan",
+        " Thomas",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 28,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Nintendo",
+      "dataset_object": "Shuntaro Furukawa",
+      "gold_first_token_id": 1417,
+      "gold_first_token": " Sh",
+      "model_top1_id": 62467,
+      "model_top1": " Tat",
+      "lre_top1_id": 2869,
+      "lre_top1": " Fr",
+      "lre_top5_ids": [
+        2869,
+        2926,
+        8364,
+        6798,
+        809
+      ],
+      "lre_top5": [
+        " Fr",
+        " Dr",
+        " Tom",
+        " David",
+        " Y"
+      ],
+      "lre_target_rank_zero_based": 49,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Aspen Institute",
+      "dataset_object": "Daniel R. Porterfield",
+      "gold_first_token_id": 15118,
+      "gold_first_token": " Daniel",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 7937,
+      "lre_top1": " Michael",
+      "lre_top5_ids": [
+        7937,
+        8397,
+        386,
+        468,
+        4389
+      ],
+      "lre_top5": [
+        " Michael",
+        " Robert",
+        " M",
+        " E",
+        " Mark"
+      ],
+      "lre_target_rank_zero_based": 11,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "PayPal",
+      "dataset_object": "Dan Schulman",
+      "gold_first_token_id": 11563,
+      "gold_first_token": " Dan",
+      "model_top1_id": 11563,
+      "model_top1": " Dan",
+      "lre_top1_id": 8364,
+      "lre_top1": " Tom",
+      "lre_top5_ids": [
+        8364,
+        386,
+        7937,
+        350,
+        23826
+      ],
+      "lre_top5": [
+        " Tom",
+        " M",
+        " Michael",
+        " T",
+        " Gary"
+      ],
+      "lre_target_rank_zero_based": 481,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Merck & Co.",
+      "dataset_object": "Kenneth Frazier",
+      "gold_first_token_id": 48398,
+      "gold_first_token": " Kenneth",
+      "model_top1_id": 48398,
+      "model_top1": " Kenneth",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        472,
+        730,
+        619,
+        350
+      ],
+      "lre_top5": [
+        " R",
+        " H",
+        " K",
+        " J",
+        " T"
+      ],
+      "lre_target_rank_zero_based": 622,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Rheinmetall AG",
+      "dataset_object": "Armin Papperger",
+      "gold_first_token_id": 1644,
+      "gold_first_token": " Ar",
+      "model_top1_id": 431,
+      "model_top1": " R",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        350,
+        328,
+        28729
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " T",
+        " S",
+        " Mari"
+      ],
+      "lre_target_rank_zero_based": 1,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Shell",
+      "dataset_object": "Wael Sawan",
+      "gold_first_token_id": 467,
+      "gold_first_token": " W",
+      "model_top1_id": 7355,
+      "model_top1": " Ben",
+      "lre_top1_id": 43592,
+      "lre_top1": " Adrian",
+      "lre_top5_ids": [
+        43592,
+        619,
+        13775,
+        19243,
+        11565
+      ],
+      "lre_top5": [
+        " Adrian",
+        " J",
+        " Ren",
+        " Fab",
+        " Martin"
+      ],
+      "lre_target_rank_zero_based": 348,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Airbus Group",
+      "dataset_object": "Guillaume Faury",
+      "gold_first_token_id": 4570,
+      "gold_first_token": " Gu",
+      "model_top1_id": 4570,
+      "model_top1": " Gu",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        19243,
+        23381,
+        4350,
+        97441
+      ],
+      "lre_top5": [
+        " J",
+        " Fab",
+        " Mario",
+        " Jan",
+        " Josef"
+      ],
+      "lre_target_rank_zero_based": 87,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "McDonald’s",
+      "dataset_object": "Chris Kempczinski",
+      "gold_first_token_id": 11266,
+      "gold_first_token": " Chris",
+      "model_top1_id": 11266,
+      "model_top1": " Chris",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        350,
+        468,
+        431,
+        9270
+      ],
+      "lre_top5": [
+        " J",
+        " T",
+        " E",
+        " R",
+        " Frank"
+      ],
+      "lre_target_rank_zero_based": 107,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "University of Gothenburg",
+      "dataset_object": "Pam Fredman",
+      "gold_first_token_id": 43413,
+      "gold_first_token": " Pam",
+      "model_top1_id": 4350,
+      "model_top1": " Jan",
+      "lre_top1_id": 472,
+      "lre_top1": " H",
+      "lre_top5_ids": [
+        472,
+        431,
+        28729,
+        619,
+        730
+      ],
+      "lre_top5": [
+        " H",
+        " R",
+        " Mari",
+        " J",
+        " K"
+      ],
+      "lre_target_rank_zero_based": 15,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Paramount Global",
+      "dataset_object": "Robert Bakish",
+      "gold_first_token_id": 8397,
+      "gold_first_token": " Robert",
+      "model_top1_id": 14261,
+      "model_top1": " Bob",
+      "lre_top1_id": 38755,
+      "lre_top1": " Milan",
+      "lre_top5_ids": [
+        38755,
+        11565,
+        48871,
+        619,
+        431
+      ],
+      "lre_top5": [
+        " Milan",
+        " Martin",
+        " Marcel",
+        " J",
+        " R"
+      ],
+      "lre_target_rank_zero_based": 204,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Biogen",
+      "dataset_object": "Michel Vounatsos",
+      "gold_first_token_id": 44406,
+      "gold_first_token": " Michel",
+      "model_top1_id": 44406,
+      "model_top1": " Michel",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        4350,
+        619,
+        18880,
+        34181
+      ],
+      "lre_top5": [
+        " Mark",
+        " Jan",
+        " J",
+        " Marc",
+        " Marco"
+      ],
+      "lre_target_rank_zero_based": 43,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Aeroflot",
+      "dataset_object": "Sergei Alexandrovsky",
+      "gold_first_token_id": 83998,
+      "gold_first_token": " Sergei",
+      "model_top1_id": 20042,
+      "model_top1": " Alexander",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        328,
+        431,
+        647,
+        506
+      ],
+      "lre_top5": [
+        " J",
+        " S",
+        " R",
+        " V",
+        " O"
+      ],
+      "lre_target_rank_zero_based": 470,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "East Japan Railway Company",
+      "dataset_object": "Yūji Fukasawa",
+      "gold_first_token_id": 809,
+      "gold_first_token": " Y",
+      "model_top1_id": 350,
+      "model_top1": " T",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        472,
+        431,
+        730,
+        4350
+      ],
+      "lre_top5": [
+        " J",
+        " H",
+        " R",
+        " K",
+        " Jan"
+      ],
+      "lre_target_rank_zero_based": 5,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "NVIDIA",
+      "dataset_object": "Jensen Huang",
+      "gold_first_token_id": 64009,
+      "gold_first_token": " Jensen",
+      "model_top1_id": 64009,
+      "model_top1": " Jensen",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        34181,
+        15037,
+        43592,
+        39324
+      ],
+      "lre_top5": [
+        " Mark",
+        " Marco",
+        " Adam",
+        " Adrian",
+        " Mak"
+      ],
+      "lre_target_rank_zero_based": 34,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Institut de chimie",
+      "dataset_object": "Jacques Maddaluno",
+      "gold_first_token_id": 63750,
+      "gold_first_token": " Jacques",
+      "model_top1_id": 19685,
+      "model_top1": " Jean",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        328,
+        619,
+        350,
+        8011
+      ],
+      "lre_top5": [
+        " R",
+        " S",
+        " J",
+        " T",
+        " Nor"
+      ],
+      "lre_target_rank_zero_based": 18,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "SpaceX",
+      "dataset_object": "Elon Musk",
+      "gold_first_token_id": 68539,
+      "gold_first_token": " Elon",
+      "model_top1_id": 68539,
+      "model_top1": " Elon",
+      "lre_top1_id": 68539,
+      "lre_top1": " Elon",
+      "lre_top5_ids": [
+        68539,
+        35432,
+        9354,
+        16046,
+        19243
+      ],
+      "lre_top5": [
+        " Elon",
+        " Freder",
+        " Tim",
+        " Greg",
+        " Fab"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "BNP Paribas",
+      "dataset_object": "Jean-Laurent Bonnafé",
+      "gold_first_token_id": 19685,
+      "gold_first_token": " Jean",
+      "model_top1_id": 19685,
+      "model_top1": " Jean",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        19685,
+        66854,
+        506,
+        431
+      ],
+      "lre_top5": [
+        " J",
+        " Jean",
+        " Philippe",
+        " O",
+        " R"
+      ],
+      "lre_target_rank_zero_based": 1,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Hyundai Motor Company",
+      "dataset_object": "Chung Eui-sun",
+      "gold_first_token_id": 87325,
+      "gold_first_token": " Chung",
+      "model_top1_id": 468,
+      "model_top1": " E",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        4350,
+        350,
+        472,
+        328
+      ],
+      "lre_top5": [
+        " J",
+        " Jan",
+        " T",
+        " H",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 16,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Hasbro",
+      "dataset_object": "Brian Goldner",
+      "gold_first_token_id": 17083,
+      "gold_first_token": " Brian",
+      "model_top1_id": 17083,
+      "model_top1": " Brian",
+      "lre_top1_id": 9270,
+      "lre_top1": " Frank",
+      "lre_top5_ids": [
+        9270,
+        8397,
+        7937,
+        6798,
+        11108
+      ],
+      "lre_top5": [
+        " Frank",
+        " Robert",
+        " Michael",
+        " David",
+        " Thomas"
+      ],
+      "lre_target_rank_zero_based": 182,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Toulouse-Blagnac",
+      "dataset_object": "Philippe Crébassa",
+      "gold_first_token_id": 66854,
+      "gold_first_token": " Philippe",
+      "model_top1_id": 19685,
+      "model_top1": " Jean",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        479,
+        434,
+        66854,
+        547
+      ],
+      "lre_top5": [
+        " R",
+        " G",
+        " F",
+        " Philippe",
+        " U"
+      ],
+      "lre_target_rank_zero_based": 22,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Orange",
+      "dataset_object": "Christel Heydemann",
+      "gold_first_token_id": 3686,
+      "gold_first_token": " Christ",
+      "model_top1_id": 794,
+      "model_top1": " St",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        13775,
+        431,
+        59123,
+        647
+      ],
+      "lre_top5": [
+        " J",
+        " Ren",
+        " R",
+        " Thi",
+        " V"
+      ],
+      "lre_target_rank_zero_based": 109,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Radio Free Europe/Radio Liberty",
+      "dataset_object": "Jamie Fly",
+      "gold_first_token_id": 35757,
+      "gold_first_token": " Jamie",
+      "model_top1_id": 7937,
+      "model_top1": " Michael",
+      "lre_top1_id": 28729,
+      "lre_top1": " Mari",
+      "lre_top5_ids": [
+        28729,
+        48871,
+        431,
+        6798,
+        8397
+      ],
+      "lre_top5": [
+        " Mari",
+        " Marcel",
+        " R",
+        " David",
+        " Robert"
+      ],
+      "lre_target_rank_zero_based": 9,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Simon & Schuster",
+      "dataset_object": "Richard E. Snyder",
+      "gold_first_token_id": 11867,
+      "gold_first_token": " Richard",
+      "model_top1_id": 23269,
+      "model_top1": " Jonathan",
+      "lre_top1_id": 7937,
+      "lre_top1": " Michael",
+      "lre_top5_ids": [
+        7937,
+        8397,
+        328,
+        11565,
+        431
+      ],
+      "lre_top5": [
+        " Michael",
+        " Robert",
+        " S",
+        " Martin",
+        " R"
+      ],
+      "lre_target_rank_zero_based": 67,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Microsoft",
+      "dataset_object": "Satya Nadella",
+      "gold_first_token_id": 13177,
+      "gold_first_token": " Sat",
+      "model_top1_id": 13177,
+      "model_top1": " Sat",
+      "lre_top1_id": 9066,
+      "lre_top1": " Jes",
+      "lre_top5_ids": [
+        9066,
+        4389,
+        43592,
+        83929,
+        73676
+      ],
+      "lre_top5": [
+        " Jes",
+        " Mark",
+        " Adrian",
+        " Dirk",
+        " Kad"
+      ],
+      "lre_target_rank_zero_based": 74,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Ford Motor Company",
+      "dataset_object": "Jim Farley",
+      "gold_first_token_id": 11387,
+      "gold_first_token": " Jim",
+      "model_top1_id": 11387,
+      "model_top1": " Jim",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        12156,
+        4350,
+        7355,
+        11387
+      ],
+      "lre_top5": [
+        " J",
+        " CEO",
+        " Jan",
+        " Ben",
+        " Jim"
+      ],
+      "lre_target_rank_zero_based": 4,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Yum! Brands",
+      "dataset_object": "Greg Creed",
+      "gold_first_token_id": 16046,
+      "gold_first_token": " Greg",
+      "model_top1_id": 16046,
+      "model_top1": " Greg",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        6798,
+        24986,
+        730,
+        619
+      ],
+      "lre_top5": [
+        " R",
+        " David",
+        " Christopher",
+        " K",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 59,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Berkshire Hathaway",
+      "dataset_object": "Warren Buffett",
+      "gold_first_token_id": 25631,
+      "gold_first_token": " Warren",
+      "model_top1_id": 25631,
+      "model_top1": " Warren",
+      "lre_top1_id": 6798,
+      "lre_top1": " David",
+      "lre_top5_ids": [
+        6798,
+        15118,
+        31508,
+        4389,
+        8364
+      ],
+      "lre_top5": [
+        " David",
+        " Daniel",
+        " Doug",
+        " Mark",
+        " Tom"
+      ],
+      "lre_target_rank_zero_based": 16,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Salesforce",
+      "dataset_object": "Marc Benioff",
+      "gold_first_token_id": 18880,
+      "gold_first_token": " Marc",
+      "model_top1_id": 18880,
+      "model_top1": " Marc",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        16046,
+        18880,
+        43592,
+        23826
+      ],
+      "lre_top5": [
+        " Mark",
+        " Greg",
+        " Marc",
+        " Adrian",
+        " Gary"
+      ],
+      "lre_target_rank_zero_based": 2,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Broderbund",
+      "dataset_object": "Doug Carlston",
+      "gold_first_token_id": 31508,
+      "gold_first_token": " Doug",
+      "model_top1_id": 4389,
+      "model_top1": " Mark",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        328,
+        8011,
+        468,
+        11565
+      ],
+      "lre_top5": [
+        " R",
+        " S",
+        " Nor",
+        " E",
+        " Martin"
+      ],
+      "lre_target_rank_zero_based": 144,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "IBM",
+      "dataset_object": "Arvind Krishna",
+      "gold_first_token_id": 1644,
+      "gold_first_token": " Ar",
+      "model_top1_id": 1644,
+      "model_top1": " Ar",
+      "lre_top1_id": 4389,
+      "lre_top1": " Mark",
+      "lre_top5_ids": [
+        4389,
+        27360,
+        20603,
+        4350,
+        8397
+      ],
+      "lre_top5": [
+        " Mark",
+        " Rot",
+        " Sab",
+        " Jan",
+        " Robert"
+      ],
+      "lre_target_rank_zero_based": 151,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Deutsche Telekom",
+      "dataset_object": "Timotheus Höttges",
+      "gold_first_token_id": 9354,
+      "gold_first_token": " Tim",
+      "model_top1_id": 9354,
+      "model_top1": " Tim",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        13775,
+        431,
+        34181,
+        59123
+      ],
+      "lre_top5": [
+        " J",
+        " Ren",
+        " R",
+        " Marco",
+        " Thi"
+      ],
+      "lre_target_rank_zero_based": 534,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Cloudflare",
+      "dataset_object": "Matthew Prince",
+      "gold_first_token_id": 18939,
+      "gold_first_token": " Matthew",
+      "model_top1_id": 18939,
+      "model_top1": " Matthew",
+      "lre_top1_id": 11108,
+      "lre_top1": " Thomas",
+      "lre_top5_ids": [
+        11108,
+        3757,
+        386,
+        6798,
+        18477
+      ],
+      "lre_top5": [
+        " Thomas",
+        " John",
+        " M",
+        " David",
+        " Jason"
+      ],
+      "lre_target_rank_zero_based": 89,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Energetický a průmyslový holding",
+      "dataset_object": "Daniel Křetínský",
+      "gold_first_token_id": 15118,
+      "gold_first_token": " Daniel",
+      "model_top1_id": 4350,
+      "model_top1": " Jan",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        730,
+        619,
+        328,
+        7937
+      ],
+      "lre_top5": [
+        " R",
+        " K",
+        " J",
+        " S",
+        " Michael"
+      ],
+      "lre_target_rank_zero_based": 20,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "DR",
+      "dataset_object": "Maria Rørbye Rønn",
+      "gold_first_token_id": 23016,
+      "gold_first_token": " Maria",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 730,
+      "lre_top1": " K",
+      "lre_top5_ids": [
+        730,
+        619,
+        431,
+        7937,
+        386
+      ],
+      "lre_top5": [
+        " K",
+        " J",
+        " R",
+        " Michael",
+        " M"
+      ],
+      "lre_target_rank_zero_based": 11,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Chevron Corporation",
+      "dataset_object": "Mike Wirth",
+      "gold_first_token_id": 11268,
+      "gold_first_token": " Mike",
+      "model_top1_id": 11268,
+      "model_top1": " Mike",
+      "lre_top1_id": 350,
+      "lre_top1": " T",
+      "lre_top5_ids": [
+        350,
+        11565,
+        4389,
+        431,
+        619
+      ],
+      "lre_top5": [
+        " T",
+        " Martin",
+        " Mark",
+        " R",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 73,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Eli Lilly and Company",
+      "dataset_object": "David A. Ricks",
+      "gold_first_token_id": 6798,
+      "gold_first_token": " David",
+      "model_top1_id": 6798,
+      "model_top1": " David",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        4350,
+        350,
+        431,
+        619
+      ],
+      "lre_top5": [
+        " Martin",
+        " Jan",
+        " T",
+        " R",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 19,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Electrolux",
+      "dataset_object": "Jonas Samuelson",
+      "gold_first_token_id": 68086,
+      "gold_first_token": " Jonas",
+      "model_top1_id": 11044,
+      "model_top1": " Peter",
+      "lre_top1_id": 24807,
+      "lre_top1": " Hans",
+      "lre_top5_ids": [
+        24807,
+        468,
+        81097,
+        8876,
+        11044
+      ],
+      "lre_top5": [
+        " Hans",
+        " E",
+        " Klaus",
+        " Christian",
+        " Peter"
+      ],
+      "lre_target_rank_zero_based": 4,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Dell Inc.",
+      "dataset_object": "Michael Dell",
+      "gold_first_token_id": 7937,
+      "gold_first_token": " Michael",
+      "model_top1_id": 7937,
+      "model_top1": " Michael",
+      "lre_top1_id": 431,
+      "lre_top1": " R",
+      "lre_top5_ids": [
+        431,
+        472,
+        619,
+        730,
+        350
+      ],
+      "lre_top5": [
+        " R",
+        " H",
+        " J",
+        " K",
+        " T"
+      ],
+      "lre_target_rank_zero_based": 6,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Yandex",
+      "dataset_object": "Arkady Volozh",
+      "gold_first_token_id": 22017,
+      "gold_first_token": " Ark",
+      "model_top1_id": 358,
+      "model_top1": " I",
+      "lre_top1_id": 13775,
+      "lre_top1": " Ren",
+      "lre_top5_ids": [
+        13775,
+        647,
+        431,
+        59123,
+        328
+      ],
+      "lre_top5": [
+        " Ren",
+        " V",
+        " R",
+        " Thi",
+        " S"
+      ],
+      "lre_target_rank_zero_based": 29,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Humana",
+      "dataset_object": "Bruce Broussard",
+      "gold_first_token_id": 23845,
+      "gold_first_token": " Bruce",
+      "model_top1_id": 23845,
+      "model_top1": " Bruce",
+      "lre_top1_id": 8397,
+      "lre_top1": " Robert",
+      "lre_top5_ids": [
+        8397,
+        7937,
+        431,
+        11565,
+        619
+      ],
+      "lre_top5": [
+        " Robert",
+        " Michael",
+        " R",
+        " Martin",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 101,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "FC Viktoria Köln",
+      "dataset_object": "Axel Freisewinkel",
+      "gold_first_token_id": 86679,
+      "gold_first_token": " Axel",
+      "model_top1_id": 50062,
+      "model_top1": " Andreas",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        1260,
+        328,
+        472
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " He",
+        " S",
+        " H"
+      ],
+      "lre_target_rank_zero_based": 31,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Verizon",
+      "dataset_object": "Hans Vestberg",
+      "gold_first_token_id": 24807,
+      "gold_first_token": " Hans",
+      "model_top1_id": 24807,
+      "model_top1": " Hans",
+      "lre_top1_id": 11565,
+      "lre_top1": " Martin",
+      "lre_top5_ids": [
+        11565,
+        13775,
+        11108,
+        18095,
+        619
+      ],
+      "lre_top5": [
+        " Martin",
+        " Ren",
+        " Thomas",
+        " Stephen",
+        " J"
+      ],
+      "lre_target_rank_zero_based": 116,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "BT Group",
+      "dataset_object": "Philip Jansen",
+      "gold_first_token_id": 25179,
+      "gold_first_token": " Philip",
+      "model_top1_id": 63395,
+      "model_top1": " Gavin",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        43592,
+        4350,
+        38755,
+        12156
+      ],
+      "lre_top5": [
+        " J",
+        " Adrian",
+        " Jan",
+        " Milan",
+        " CEO"
+      ],
+      "lre_target_rank_zero_based": 914,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Infineon Technologies",
+      "dataset_object": "Jochen Hanebeck",
+      "gold_first_token_id": 619,
+      "gold_first_token": " J",
+      "model_top1_id": 46069,
+      "model_top1": " Rein",
+      "lre_top1_id": 619,
+      "lre_top1": " J",
+      "lre_top5_ids": [
+        619,
+        431,
+        11108,
+        11565,
+        468
+      ],
+      "lre_top5": [
+        " J",
+        " R",
+        " Thomas",
+        " Martin",
+        " E"
+      ],
+      "lre_target_rank_zero_based": 79,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "Peterson Institute for International Economics",
+      "dataset_object": "C. Fred Bergsten",
+      "gold_first_token_id": 356,
+      "gold_first_token": " C",
+      "model_top1_id": 23845,
+      "model_top1": " Bruce",
+      "lre_top1_id": 328,
+      "lre_top1": " S",
+      "lre_top5_ids": [
+        328,
+        6798,
+        468,
+        28729,
+        41346
+      ],
+      "lre_top5": [
+        " S",
+        " David",
+        " E",
+        " Mari",
+        " Erik"
+      ],
+      "lre_target_rank_zero_based": 543,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Publicis",
+      "dataset_object": "Maurice Lévy",
+      "gold_first_token_id": 67429,
+      "gold_first_token": " Maurice",
+      "model_top1_id": 27586,
+      "model_top1": " Arthur",
+      "lre_top1_id": 66854,
+      "lre_top1": " Philippe",
+      "lre_top5_ids": [
+        66854,
+        70038,
+        57770,
+        88599,
+        41346
+      ],
+      "lre_top5": [
+        " Philippe",
+        " Urs",
+        " Carlo",
+        " Francesco",
+        " Erik"
+      ],
+      "lre_target_rank_zero_based": 547,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    }
+  ],
+  "lens": {
+    "n": 20,
+    "layer": 19,
+    "template": "{}'s CEO is",
+    "agg": {
+      "diff": {
+        "median_rank": 23565.5,
+        "median_lograng": 4.3479383130131595,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 8660.5,
+        "median_lograng": 3.93199742100278,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "BASF",
+        "model_top1_id": 11565,
+        "model_top1": "Martin",
+        "n_references": 7,
+        "rank_diff": 51977,
+        "top_diff": [
+          "chemical",
+          "chemicals",
+          "化学",
+          "化学品",
+          "Chemical"
+        ],
+        "rank_lre": 6550,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6550,
+          "0.5": 6465,
+          "1.5": 6651,
+          "2.0": 6774,
+          "3.0": 7043,
+          "5.0": 7820
+        }
+      },
+      {
+        "subject": "ArcelorMittal",
+        "model_top1_id": 47662,
+        "model_top1": "Lak",
+        "n_references": 7,
+        "rank_diff": 36490,
+        "top_diff": [
+          "钢铁",
+          "钢材",
+          "steel",
+          "钢厂",
+          "steel"
+        ],
+        "rank_lre": 19948,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19948,
+          "0.5": 20436,
+          "1.5": 19405,
+          "2.0": 18912,
+          "3.0": 17949,
+          "5.0": 16290
+        }
+      },
+      {
+        "subject": "Nederlandse Spoorwegen",
+        "model_top1_id": 730,
+        "model_top1": "K",
+        "n_references": 7,
+        "rank_diff": 58756,
+        "top_diff": [
+          "Rail",
+          "运输",
+          "铁路",
+          "乘客",
+          "列车"
+        ],
+        "rank_lre": 814,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 814,
+          "0.5": 808,
+          "1.5": 810,
+          "2.0": 823,
+          "3.0": 829,
+          "5.0": 904
+        }
+      },
+      {
+        "subject": "Aspen Institute",
+        "model_top1_id": 6798,
+        "model_top1": "David",
+        "n_references": 7,
+        "rank_diff": 13976,
+        "top_diff": [
+          "philanth",
+          "socially",
+          "social",
+          "nonprofits",
+          "humanitarian"
+        ],
+        "rank_lre": 10042,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10042,
+          "0.5": 10602,
+          "1.5": 9558,
+          "2.0": 9173,
+          "3.0": 8448,
+          "5.0": 7560
+        }
+      },
+      {
+        "subject": "Institut de chimie",
+        "model_top1_id": 19685,
+        "model_top1": "Jean",
+        "n_references": 7,
+        "rank_diff": 1498,
+        "top_diff": [
+          "scientific",
+          "Chemistry",
+          "chemistry",
+          "科学家",
+          "自然科学"
+        ],
+        "rank_lre": 12290,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12290,
+          "0.5": 13952,
+          "1.5": 10815,
+          "2.0": 9513,
+          "3.0": 7432,
+          "5.0": 4568
+        }
+      },
+      {
+        "subject": "Procter & Gamble",
+        "model_top1_id": 6798,
+        "model_top1": "David",
+        "n_references": 7,
+        "rank_diff": 119643,
+        "top_diff": [
+          "洗衣",
+          "家庭",
+          "奶粉",
+          "Coca",
+          "shampoo"
+        ],
+        "rank_lre": 10647,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10647,
+          "0.5": 10361,
+          "1.5": 10975,
+          "2.0": 11350,
+          "3.0": 12158,
+          "5.0": 14084
+        }
+      },
+      {
+        "subject": "Seagate Technology",
+        "model_top1_id": 8596,
+        "model_top1": "Bill",
+        "n_references": 7,
+        "rank_diff": 15743,
+        "top_diff": [
+          "aerospace",
+          "Garmin",
+          "Lockheed",
+          "Motorola",
+          "NASA"
+        ],
+        "rank_lre": 5538,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5538,
+          "0.5": 5689,
+          "1.5": 5381,
+          "2.0": 5265,
+          "3.0": 5038,
+          "5.0": 4742
+        }
+      },
+      {
+        "subject": "Deutsche Post AG",
+        "model_top1_id": 9270,
+        "model_top1": "Frank",
+        "n_references": 7,
+        "rank_diff": 8456,
+        "top_diff": [
+          "Deutsche",
+          "Siemens",
+          "欧元",
+          "Renault",
+          "Ernst"
+        ],
+        "rank_lre": 7279,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7279,
+          "0.5": 7833,
+          "1.5": 6776,
+          "2.0": 6317,
+          "3.0": 5499,
+          "5.0": 4225
+        }
+      },
+      {
+        "subject": "Bell Resources",
+        "model_top1_id": 3757,
+        "model_top1": "John",
+        "n_references": 8,
+        "rank_diff": 15889,
+        "top_diff": [
+          "Petroleum",
+          "油田",
+          "开采",
+          "Mineral",
+          "油气"
+        ],
+        "rank_lre": 3994,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3994,
+          "0.5": 4185,
+          "1.5": 3797,
+          "2.0": 3660,
+          "3.0": 3450,
+          "5.0": 3181
+        }
+      },
+      {
+        "subject": "Cloudflare",
+        "model_top1_id": 18939,
+        "model_top1": "Matthew",
+        "n_references": 8,
+        "rank_diff": 86433,
+        "top_diff": [
+          "网络安全",
+          "黑客",
+          ".cloudflare",
+          "Geek",
+          "Lightning"
+        ],
+        "rank_lre": 20758,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20758,
+          "0.5": 20715,
+          "1.5": 20882,
+          "2.0": 21024,
+          "3.0": 21208,
+          "5.0": 21611
+        }
+      },
+      {
+        "subject": "Comcast",
+        "model_top1_id": 17083,
+        "model_top1": "Brian",
+        "n_references": 8,
+        "rank_diff": 79434,
+        "top_diff": [
+          "Comcast",
+          "侵犯",
+          "Cable",
+          "电视",
+          "电费"
+        ],
+        "rank_lre": 15765,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 15765,
+          "0.5": 15615,
+          "1.5": 15866,
+          "2.0": 15965,
+          "3.0": 16248,
+          "5.0": 16806
+        }
+      },
+      {
+        "subject": "Infineon Technologies",
+        "model_top1_id": 46069,
+        "model_top1": "Rein",
+        "n_references": 8,
+        "rank_diff": 2773,
+        "top_diff": [
+          "Electronics",
+          "semiconductor",
+          "Semiconductor",
+          "electronics",
+          "aerospace"
+        ],
+        "rank_lre": 6735,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6735,
+          "0.5": 7311,
+          "1.5": 6281,
+          "2.0": 5809,
+          "3.0": 5127,
+          "5.0": 4025
+        }
+      },
+      {
+        "subject": "Boeing",
+        "model_top1_id": 6798,
+        "model_top1": "David",
+        "n_references": 8,
+        "rank_diff": 92254,
+        "top_diff": [
+          "Boeing",
+          "aircraft",
+          "aerospace",
+          "飞机",
+          "aviation"
+        ],
+        "rank_lre": 10582,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "producing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10582,
+          "0.5": 10191,
+          "1.5": 11002,
+          "2.0": 11459,
+          "3.0": 12347,
+          "5.0": 14187
+        }
+      },
+      {
+        "subject": "Kroger",
+        "model_top1_id": 74943,
+        "model_top1": "Rodney",
+        "n_references": 8,
+        "rank_diff": 12521,
+        "top_diff": [
+          "grocery",
+          "Grocery",
+          "超市",
+          "groceries",
+          "supermarket"
+        ],
+        "rank_lre": 25796,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 25796,
+          "0.5": 26758,
+          "1.5": 24862,
+          "2.0": 23915,
+          "3.0": 22089,
+          "5.0": 18826
+        }
+      },
+      {
+        "subject": "Southwest Airlines",
+        "model_top1_id": 23826,
+        "model_top1": "Gary",
+        "n_references": 8,
+        "rank_diff": 74296,
+        "top_diff": [
+          "Airlines",
+          "飞行员",
+          "employee",
+          "飞行",
+          "airline"
+        ],
+        "rank_lre": 13331,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13331,
+          "0.5": 13312,
+          "1.5": 13379,
+          "2.0": 13415,
+          "3.0": 13610,
+          "5.0": 14135
+        }
+      },
+      {
+        "subject": "Qantas",
+        "model_top1_id": 25282,
+        "model_top1": "Alan",
+        "n_references": 8,
+        "rank_diff": 106029,
+        "top_diff": [
+          "航空",
+          "airline",
+          "飞行",
+          "飞机",
+          "flight"
+        ],
+        "rank_lre": 13843,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13843,
+          "0.5": 13419,
+          "1.5": 14296,
+          "2.0": 14745,
+          "3.0": 15660,
+          "5.0": 17370
+        }
+      },
+      {
+        "subject": "Caterpillar Inc.",
+        "model_top1_id": 11387,
+        "model_top1": "Jim",
+        "n_references": 8,
+        "rank_diff": 31242,
+        "top_diff": [
+          "aerospace",
+          "Boeing",
+          "工程机械",
+          "employee",
+          "Aerospace"
+        ],
+        "rank_lre": 5947,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5947,
+          "0.5": 6017,
+          "1.5": 5912,
+          "2.0": 5870,
+          "3.0": 5812,
+          "5.0": 5718
+        }
+      },
+      {
+        "subject": "Koninklijke Philips NV",
+        "model_top1_id": 2869,
+        "model_top1": "Fr",
+        "n_references": 8,
+        "rank_diff": 3316,
+        "top_diff": [
+          "Renault",
+          "欧元",
+          "Nokia",
+          "Tesla",
+          "Tesla"
+        ],
+        "rank_lre": 3527,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3527,
+          "0.5": 3847,
+          "1.5": 3244,
+          "2.0": 2981,
+          "3.0": 2542,
+          "5.0": 1902
+        }
+      },
+      {
+        "subject": "Škoda Transportation",
+        "model_top1_id": 4350,
+        "model_top1": "Jan",
+        "n_references": 8,
+        "rank_diff": 7670,
+        "top_diff": [
+          "Vehicle",
+          "vehicle",
+          "Truck",
+          "Trucks",
+          "Rail"
+        ],
+        "rank_lre": 4806,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4806,
+          "0.5": 5179,
+          "1.5": 4437,
+          "2.0": 4166,
+          "3.0": 3756,
+          "5.0": 3168
+        }
+      },
+      {
+        "subject": "Meta Platforms",
+        "model_top1_id": 4389,
+        "model_top1": "Mark",
+        "n_references": 8,
+        "rank_diff": 12471,
+        "top_diff": [
+          "Facebook",
+          "Oculus",
+          "Zuckerberg",
+          "Snapchat",
+          "LinkedIn"
+        ],
+        "rank_lre": 3961,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3961,
+          "0.5": 4345,
+          "1.5": 3620,
+          "2.0": 3313,
+          "3.0": 2868,
+          "5.0": 2290
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 9012.0,
+          "median_lograng": 3.951121491101561,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 8660.5,
+          "median_lograng": 3.93199742100278,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 8167.0,
+          "median_lograng": 3.9057249736234585,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7973.5,
+          "median_lograng": 3.8967340176712035,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 7237.5,
+          "median_lograng": 3.8594917400490942,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 6639.0,
+          "median_lograng": 3.817949667304446,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  }
+}
