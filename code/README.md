@@ -79,13 +79,16 @@ training split and correlate both with retained LRE faithfulness:
 
 ```sh
 uv sync --locked --extra corpus --inexact
-uv run --no-sync jlens corpus-conditionals --workers 64
+uv run --no-sync jlens corpus-conditionals --workers 64 \
+  --faith-dir results/olmo/results/main
 ```
 
 The scan streams compressed shards in parallel, checkpoints completed work, and
 writes counts, per-stage results, and Pearson/Spearman correlations under
 `generated/corpus_conditionals/`. See the [method and run guide](docs/corpus-conditionals.md)
-for corpus scope, matching rules, partial smoke runs, and resume/report options.
+for corpus scope, matching rules, partial smoke runs, and resume/report options,
+and the [measured results](docs/corpus-conditionals-results.md) for the 2026-09-18
+full-corpus run and its relation to Merullo et al. (2025).
 
 ## Rerun the model measurements
 

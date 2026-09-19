@@ -5,14 +5,18 @@ subject/object strings in all 28 relation datasets, and reports Pearson and
 Spearman correlations with the retained LRE scores. No model or GPU is needed.
 It writes sufficient statistics, not a copy of the filtered corpus.
 
+Measured numbers from the full-corpus run are reported in
+[corpus-conditionals-results.md](corpus-conditionals-results.md).
+
 ## Run
 
 From `code/`:
 
 ```bash
 uv sync --locked --extra corpus --inexact
-uv run --no-sync jlens corpus-conditionals --plan
-uv run --no-sync jlens corpus-conditionals --workers 64
+uv run --no-sync jlens corpus-conditionals --plan --faith-dir results/olmo/results/main
+uv run --no-sync jlens corpus-conditionals --workers 64 \
+  --faith-dir results/olmo/results/main
 ```
 
 The default corpus directory is
@@ -34,6 +38,7 @@ For a long run, use a persistent session, for example:
 ```bash
 tmux new-session -s corpus-conditionals
 uv run --no-sync jlens corpus-conditionals --workers 64 \
+  --faith-dir results/olmo/results/main \
   > generated/corpus-conditionals.log 2>&1
 ```
 
@@ -115,10 +120,16 @@ explanation of what information is represented.
 
 ## LRE matching and correlation
 
-The default target is `best_faith` in `results/main/faithfulness_*.json`, with
+The default target is `best_faith` in `ROOT/results/main/faithfulness_*.json`, with
 corrected `_ts` year runs preferred over their originals, matching the existing
 paper reproduction. `--faith-dir` and `--lre-field` select another directory and
-numeric field. These are this repository's **faithfulness** scores, not the
+numeric field. Per-model results live under `results/<model>/results/`, so the
+default path does not exist in this checkout: pass `--faith-dir` explicitly
+(`results/olmo/results/main` for the OLMo corpus). Prefer `--faith-dir` over
+`jlens --root` here — `--root` also moves `data/relations`, which is part of the
+checkpoint fingerprint and would force a full rescan. The LRE directory is
+validated before scanning starts, but a scan takes hours; a results tree moved
+*during* a run still fails at the report step, so rerun with `--report-only`. These are this repository's **faithfulness** scores, not the
 added paper's causality scores. Best hyperparameters were selected in the retained
 experiment; the corpus analysis does not remove that selection bias.
 
@@ -145,7 +156,9 @@ Reuse counts without rereading corpus text, for example:
 ```bash
 uv run --no-sync jlens corpus-conditionals --report-only --min-count 100
 uv run --no-sync jlens corpus-conditionals --report-only \
-  --faith-dir results/shared_split
+  --faith-dir results/olmo/results/main
+uv run --no-sync jlens corpus-conditionals --report-only \
+  --faith-dir results/olmo/results/shared_split
 ```
 
 These commands overwrite reports but retain the full count checkpoint. Copy
