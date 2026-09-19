@@ -1,33 +1,44 @@
 # ICLR 2027 submission
 
-The submission manuscript is `lens.tex`; the compiled file is
-`iclr2027_submission.pdf`. The official anonymous review style is active.
+The submission manuscript is `lens.tex`; the compiled file is `lens.pdf`. The
+official anonymous review style is active. Build it directly:
 
 ```sh
 cd paper
-make check
+latexmk -pdf lens.tex
 ```
 
-Requires GNU Make, Python 3, a TeX Live installation with `latexmk`, pdfLaTeX
-and BibTeX, and Poppler (`pdfinfo`, `pdffonts`, `pdftotext`). Intermediate
-files go in `build/`. `make figures` regenerates the three vector figures
-using `uv` and the locked environment in `../code/`, without loading a model.
-The figure PDFs are included, so a normal LaTeX build does not need Python
-scientific packages. The original ACL files and historical figures are retained
-for reference; they are not used by this manuscript.
+Requires a TeX Live installation with `latexmk`, pdfLaTeX and BibTeX. The
+figure PDFs are committed, so a normal LaTeX build does not need Python or any
+scientific packages. To regenerate the three vector figures without loading a
+model, use the locked environment in `../code/`:
+
+```sh
+cd ../code && uv sync --locked && uv run python ../paper/repro/make_iclr_figures.py
+```
+
+`rawmaterial.tex` is a scratch file of unused draft material, not part of the
+manuscript; `lens.tex` does not input it.
 
 ## Official template provenance
 
-Downloaded on 2026-09-16 from the archive linked by the
+The style files (`iclr2027_conference.sty`, `iclr2027_conference.bst`, plus the
+bundled `fancyhdr.sty` and `natbib.sty`) were downloaded unchanged on 2026-09-16
+from the archive linked by the
 [ICLR 2027 author guidelines](https://iclr.cc/Conferences/2027/AuthorGuidelines):
 [official style archive](https://media.iclr.cc/Conferences/ICLR2027/iclr-2027-style-files.zip).
-All seven files from the archive are included unchanged. Their hashes are in
-`ICLR2027_TEMPLATE_SHA256SUMS`; `make check` verifies them.
 
 Archive SHA-256:
 `0d940dfa9398ae99a18f24a85a8a683f367204b6af6d17d2899e60a67102529e`.
 
+The archive's example manuscript and its bibliography, along with the earlier
+ACL template files and superseded figures, were removed from this branch; they
+remain on the `acl` branch if they are ever needed again.
+
 ## Verified properties
+
+Recorded from the last mechanical check of the manuscript. The checker script
+itself has been removed; re-verify by inspection before uploading.
 
 - Nine pages of main text; statements and references follow, then appendices.
 - Official ICLR 2027 review header, line numbers, and anonymous title block.
@@ -40,7 +51,7 @@ Archive SHA-256:
   The reported regression residuals were also reproduced. This verifies the
   retained CPU analyses; it is not a rerun of the original GPU measurements.
 
-The script checks mechanical properties, not scientific correctness or every
+That check covered mechanical properties, not scientific correctness or every
 possible way an author could be identified. Harmless underfull-page
 diagnostics may occur with the official layout; no geometry or font-size
 overrides were introduced to force the page count.
@@ -82,10 +93,9 @@ or fully compliant OpenReview submission.**
    2026, 23:59 AoE**, and upload the paper by **September 25, 2026, 23:59 AoE**.
    The [official dates](https://iclr.cc/Conferences/2027/Dates) and author guide
    control; recheck for updates before uploading.
-5. Upload `iclr2027_submission.pdf` as the paper. If code is supplied separately,
-   prepare an anonymous supplement: the full repository contains identifying
-   provenance paths, editorial material, and Git history. Do not upload the
-   repository verbatim as an anonymous supplement.
+5. Upload `lens.pdf` as the paper. If code is supplied separately, prepare an
+   anonymous supplement: the full repository contains identifying provenance
+   paths, editorial material, and Git history. Do not upload the repository
+   verbatim as an anonymous supplement.
 
-No submission has been uploaded to OpenReview. The pre-existing local deletion
-of `lens.pdf` was left untouched; the ICLR PDF uses its own filename.
+No submission has been uploaded to OpenReview.
