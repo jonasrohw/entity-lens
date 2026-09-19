@@ -290,6 +290,11 @@ described in Appendix~\ref{sec:numeric-objects}.}
 \label{fig:main}
 \end{figure}
 
+\enote{hs}{fig:main: ideally, all relation points that are
+  part of the discussion (e.g., second half of section6)
+  should be labeled, the same way that country capital and
+  personmother/father are}
+
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.658$
 ($p = 1.4\!\times\!10^{-4}$); a permutation test agrees
@@ -364,14 +369,13 @@ Ranks are zero-based.
 
 \enote{hs}{explain star constellation?}
 
-\section{Where the account degrades}
-\label{sec:residuals}
+\input{table_prominence}
 
-What the lens reads is what an entity is \emph{salient} for:
-a relation is linearly decodable to the extent that its
-answer is already part of what the subject's representation makes the
-model disposed to say. Here, we analyze the relations that
-deviate from the trend.
+
+\section{new section?}
+
+\enote{hs}{why was salience part of the section ``where the
+  account degrades''? should we find a better home?}
 
 \paragraph{Salience, measured independently of the lens.} Our account
 would be circular if salience were read off the lens, since the
@@ -387,8 +391,6 @@ The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
 makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
 object is never named.} This is a forward pass under different prompts,
 and involves no Jacobian.
-
-\input{table_prominence}
 
 We refer to this rate as the object's \emph{prominence}. Across the 14 relations
 for which it can be measured it ranges from $1.00$
@@ -411,6 +413,18 @@ than lower, so this explanation fails. What the lens returns for these
 subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
 \emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
 correlation to $0.725$.
+
+\enote{hs}{do we still need this?
+What the lens reads is what an entity is \emph{salient} for:
+a relation is linearly decodable to the extent that its
+answer is already part of what the subject's representation makes the
+model disposed to say. }
+
+
+
+\section{Object cardinality}
+\label{sec:residuals}
+The correlation in Figure~\ref{fig:main} 
 
 We now return to our question whether
 relations that deviate from the overall trend (the lens does
@@ -444,7 +458,7 @@ merely a nuisance correlate.
 \section{Fact-level analysis}
 \label{sec:subject}
 Linearity emerges as a phenomenon at the relation level, not
-the fact-level -- it would not make sense to investigate
+the fact level -- it would not make sense to investigate
 linearity for the facts of a relation that is not
 represented linearly. But
 once there is evidence for at least partial linearity of a
@@ -511,13 +525,13 @@ a reliable indicator of the factual competence of the LM.
 Measuring the collapse rate -- the fraction of a relation's distinct
 objects that share a first token with another -- \textbf{6 of 40
 relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
-\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%,
-where 29 of 69 objects begin with \textsc{University}).
+\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
+29 of 69 objects begin with \textsc{University}).
 
 Restricting each relation to objects whose first token identifies them
 repairs this on the gold side.
 It is only a partial remedy, because faithfulness
-never uses gold: it compares the LRE against the \emph{model's} top-1, so
+compares the LRE against the \emph{model's} top-1 (not gold), so
 what inflates it is the model's own answer being an easy token. In
 \textsc{person\_university}, after filtering, the model still answers
 \textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
@@ -566,7 +580,7 @@ Thommessen, a law firm known for their digital whistleblowing
 tool. One might hope that the first name ``Rolf''
 disambiguates which subject is intended, but apparently this
 is not the case. In general, the last few tokens seem to
-dominate which entity is represented and used by the LM. For the actor Barry Sobel the lens top-ranks
+dominate which entity is represented and used by the LM. For the actor Barry Sobel, the lens top-ranks
 ``kosher'', ``Jewish'', ``Rabbi'', correct associations for
 the Brazilian Rabbi Henry Sobel. For the actress Vondell
 Darr, the lens top-ranks ``criminal'', ``murders'',
