@@ -7,6 +7,14 @@ import sys
 from pathlib import Path
 
 COMMANDS = {
+    "wiki-corpus": (
+        "wiki_corpus",
+        "Prepare the Geva/Gerstner Wikipedia paragraph index and retrieve subjects",
+    ),
+    "geva-baseline": (
+        "geva_baseline",
+        "Measure Wikipedia attribute rate and its correlation with LRE faithfulness",
+    ),
     "corpus-conditionals": (
         "corpus_conditionals",
         "Count directional corpus co-occurrence and correlate with LRE scores",

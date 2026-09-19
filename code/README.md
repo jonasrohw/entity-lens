@@ -90,6 +90,20 @@ for corpus scope, matching rules, partial smoke runs, and resume/report options,
 and the [measured results](docs/corpus-conditionals-results.md) for the 2026-09-18
 full-corpus run and its relation to Merullo et al. (2025).
 
+## Wikipedia attributes baseline
+
+The full-Wikipedia Geva/Gerstner baseline has been run on the 28 OLMo relations
+(513 evaluation rows). Attribute rate versus LRE faithfulness gives Spearman
+**ρ = −0.408**; the separately defined Wikipedia frequency-rank extension gives
+**ρ = +0.240**. See the [results and validation](docs/geva-baseline-results.md)
+and [method and full rerun instructions](docs/geva-baseline.md).
+
+Recompute the retained correlations and plots on CPU:
+
+```sh
+uv run jlens geva-baseline report --plot-dir generated/geva_baseline
+```
+
 ## Rerun the model measurements
 
 Use a CUDA machine with enough memory for a 7B model in float32 plus
