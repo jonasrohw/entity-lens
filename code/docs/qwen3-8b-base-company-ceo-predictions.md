@@ -5,7 +5,7 @@ mit dem ersten Antworttoken des vollständigen Modells überein.
 Die differentielle Lens erreicht **0 von 20 Top-1- und Top-10-Treffern**.
 Der mediane gespeicherte Lens-Rang ist 23.565,5 (nullbasiert).
 
-Im [Figure-1-Writeup](qwen3-8b-base-figure1.md) bedeutet die Zeile:
+Im [ursprünglichen Figure-1-Writeup mit 28 Relationen](qwen3-8b-base-figure1-28-relations.md) bedeutet die Zeile:
 
 | Größe | Wert | Bedeutung |
 | --- | ---: | --- |
@@ -17,6 +17,9 @@ Im [Figure-1-Writeup](qwen3-8b-base-figure1.md) bedeutet die Zeile:
 | y − ŷ | −0,592951 | LRE liegt 59,30 Prozentpunkte unter der Geraden |
 
 **Die 0,612951 sind keine gemessene Modell- oder LRE-Genauigkeit.**
+Der [neu gefittete 26-Relationen-Bericht](qwen3-8b-base-figure1.md) ergibt
+für `company_ceo` ŷ = 0,544567 und Δ = −0,524567. Die gemessene
+LRE-Faithfulness bleibt unverändert bei 0,02.
 Die LRE extrahiert hier die Modellantworten nur selten; auch die Lens platziert
 das Zieltoken weit hinten. Das vollständige Modell selbst trifft auf den
 100 LRE-Testzeilen in 49 Fällen das erste Token der im Datensatz gespeicherten

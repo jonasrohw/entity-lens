@@ -72,6 +72,34 @@ See the [command reference](docs/commands.md),
 The historical JSON field names are preserved so the retained measurements
 remain unchanged; their meaning is documented in the methods guide.
 
+## Qwen3 8B Base: 26-relation outliers
+
+The [updated Figure-1 analysis](docs/qwen3-8b-base-figure1.md) excludes only
+`presidents_birth_year` and `presidents_election_year`, retaining `name_gender`.
+The OLS line and all residuals are refitted on the remaining **26 relations**.
+Qwen's Spearman correlation increases from **0.060390 to 0.298768**
+(two-sided p = 0.138179); the OLS slope increases from **0.046492 to 0.095745**.
+
+The largest positive residuals are `name_gender` (+53.24 percentage points),
+`name_religion` (+42.94), and `landmark_on_continent` (+36.30). The largest
+negative residuals are `company_ceo` (−52.46), `person_mother` (−44.44), and
+`superhero_person` (−43.84). Faithfulness is a success rate against the model's
+first answer token: `0.02` means 2% agreement, not a 2% error rate.
+
+The report includes all 26 points ranked by absolute residual, changes from the
+old fit, unrounded CSVs, and a plot comparing Qwen and OLMo on the same relation
+set. The current OLMo snapshot gives **ρ = 0.782758** on these 26 relations.
+`name_gender` and `name_religion` have the largest cross-model residual
+differences; these identify follow-up candidates rather than establish a causal
+explanation. `name_gender` still has only three LRE test examples.
+
+The [original 28-relation report](docs/qwen3-8b-base-figure1-28-relations.md)
+and its CSV remain available. Reproduce the new fit, tables, and figures on CPU:
+
+```sh
+uv run python ../paper/repro/qwen3_26_relations.py
+```
+
 ## Corpus conditional probabilities
 
 Measure `P(object | subject)` and `P(subject | object)` in the full published
