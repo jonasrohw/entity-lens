@@ -74,6 +74,14 @@ remain unchanged; their meaning is documented in the methods guide.
 
 ## Qwen3 8B Base: 26-relation outliers
 
+The [raw J-lens experiment](docs/qwen3-8b-base-raw-jlens.md) drops reference-state
+subtraction, using `mean_i J_i h_subject`. At the original subject position,
+Spearman ρ is **0.294661** (versus 0.298768 with subtraction), and `-Semit`
+remains the top prediction for 10/16 country-language subjects. At the final
+`for` position, raw ρ is **0.364819** (p = 0.066881), but no target reaches the
+top 10. The report includes both positions, all 26 relation points, and raw
+country-language predictions. Subtraction alone does not explain the artifact.
+
 The [final-prompt-position experiment](docs/last-position-lre-correlation.md)
 moves the lens input and Jacobian intervention to `for` in `{subject} is known for`,
 keeping the LRE scores, targets, layers and reference subjects fixed. Across the

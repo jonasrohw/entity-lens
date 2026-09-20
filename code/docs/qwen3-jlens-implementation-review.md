@@ -232,6 +232,14 @@ scientific results is included in this review.
 
 ## Follow-up: final prompt position
 
+The [raw J-lens follow-up](qwen3-8b-base-raw-jlens.md) also removes subtraction
+entirely, testing `mean_i J_i h_subject`. At the original subject position,
+ρ = 0.294661 and the repeated `-Semit` predictions persist. For Germany, the
+Peru-reference contribution norm is 7173.538 without subtraction versus 7170.070
+with subtraction. Thus subtraction is not necessary for the artifact: applying
+the reference Jacobians to the large position-0 subject state still produces it
+in this experiment.
+
 The [26-relation position ablation](last-position-lre-correlation.md) now tests
 caching and intervening at `for`, keeping the original prompt and LRE scores.
 Qwen's norm outliers and repeated `-Semit` predictions disappear, but its
