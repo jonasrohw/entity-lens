@@ -1,5 +1,11 @@
 # Qwen3 8B Base: konkrete Vorhersagen für `country_language`
 
+**Nachtrag zur Interpretation:** Die [Implementierungsprüfung](qwen3-jlens-implementation-review.md)
+führt die wiederkehrenden `-Semit`-Ausgaben auf die Mischung sehr großer
+Qwen-Zustände an Tokenposition 0 mit deutlich kleineren Zuständen an späteren
+Positionen zurück. Die folgenden gespeicherten Ausgaben sind reproduzierbar,
+aber als Maß semantischer Salienz durch diesen Positionseffekt beeinträchtigt.
+
 Stand: 20. September 2026; `main`-Protokoll. Diese Tabelle verwendet dieselbe
 Darstellung wie die [CEO-Auswertung](qwen3-8b-base-company-ceo-predictions.md).
 

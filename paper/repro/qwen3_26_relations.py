@@ -209,6 +209,13 @@ def main():
     lines = [
         "# Qwen3 8B Base: Figure 1 mit 26 Relationen",
         "",
+        "**Nachtrag zur Interpretation:** Die [Implementierungsprüfung](qwen3-jlens-implementation-review.md)",
+        "zeigt einen Positionseffekt in Qwens differentieller Lens: Die Mischung",
+        "sehr großer Zustände an Tokenposition 0 mit kleineren späteren Zuständen",
+        "erzeugt die wiederkehrenden `-Semit`-Ausgaben bei Länderrelationen.",
+        "Die folgenden historischen Zahlen bleiben unverändert; ihr Ausschluss",
+        "der beiden Jahresrelationen behebt diesen separaten Effekt nicht.",
+        "",
         "Stand: 20. September 2026. Modell: `Qwen/Qwen3-8B-Base`, Revision",
         "`49e3418fbbbca6ecbdf9608b4d22e5a407081db4`; `main`-Protokoll.",
         "",

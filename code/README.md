@@ -74,6 +74,15 @@ remain unchanged; their meaning is documented in the methods guide.
 
 ## Qwen3 8B Base: 26-relation outliers
 
+**Review finding (20 September):** the original Qwen differential lens can mix
+large first-token activations with much smaller later-token states. This produces
+the repeated `-Semit` / `(Initialized` outputs in the country relations and
+compromises their interpretation as semantic-salience scores. The
+[implementation review](docs/qwen3-jlens-implementation-review.md) includes
+independent derivative checks, reference/prefix controls, an OLMo comparison,
+and a separate fixed normalization bug. The historical scores below are retained;
+removing the year relations does not remove this positional artifact.
+
 The [updated Figure-1 analysis](docs/qwen3-8b-base-figure1.md) excludes only
 `presidents_birth_year` and `presidents_election_year`, retaining `name_gender`.
 The OLS line and all residuals are refitted on the remaining **26 relations**.
