@@ -72,6 +72,21 @@ See the [command reference](docs/commands.md),
 The historical JSON field names are preserved so the retained measurements
 remain unchanged; their meaning is documented in the methods guide.
 
+## Qwen: bug diagnosis and ordinary model predictions
+
+The [consolidated bug diagnosis](docs/qwen3-8b-base-bug-diagnosis.md) brings together
+the implementation checks, the separate normalization fix, positional controls,
+raw/differential comparisons, and the exact token-score decomposition for Germany.
+It includes the newly published per-reference scores, coordinate ablations,
+JVP tensors, and reproduction scripts, with links to all earlier analyses.
+
+[Ordinary Qwen predictions](docs/qwen3-8b-base-neutral-prompt-predictions.md) show
+the next-token probabilities and 48-token greedy continuations for all 16 prompts
+`{country} is known for`. Every prompt predicts ` its` first (51.67–74.15%);
+the six inspected artifact tokens occur in neither the next top 10 nor the
+generated continuations. This separates the lens artifact from the remaining
+question of whether the neutral prompt is suitable for the measurement.
+
 ## Qwen3 8B Base: 26-relation outliers
 
 The [raw J-lens experiment](docs/qwen3-8b-base-raw-jlens.md) drops reference-state

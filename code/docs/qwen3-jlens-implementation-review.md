@@ -3,6 +3,12 @@
 Review date: 20 September 2026. Main checkpoint: `Qwen/Qwen3-8B-Base` at
 `49e3418fbbbca6ecbdf9608b4d22e5a407081db4`, float32, eager attention, state 19.
 
+The [consolidated diagnosis](qwen3-8b-base-bug-diagnosis.md) includes all follow-up
+experiments, the new Germany token-score decomposition and coordinate controls,
+and [ordinary Qwen predictions](qwen3-8b-base-neutral-prompt-predictions.md) for
+all 16 neutral country prompts. It distinguishes the tested implementation
+properties from the open question of prompt suitability.
+
 **The repeated `-Semit`, `(Initialized`, and related outputs are a real artifact
 of the current measurement setup. They are not caused by an incorrect Jacobian
 product, an off-by-one subject index, or decoding the wrong vocabulary IDs.**
