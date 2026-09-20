@@ -371,14 +371,23 @@ Ranks are zero-based.
 \section{What the lens reads}
 \label{sec:salience}
 
-What the lens reads is what an entity is \emph{salient} for: a relation
-is linearly decodable to the extent that its answer is already part of
-what the subject's representation makes the model disposed to say.
+Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
+than tested. Readouts of this kind are normally taken to surface what a
+model is internally disposed to say \citep{gurnee2026workspace}, and we
+have read $v_e$ the same way: as what the subject's representation makes
+available, before any relation has been named. The account of
+Figure~\ref{fig:main} rests on that reading. If it is right, a relation
+should be linearly decodable to the extent that its answer is already
+part of what the subject evokes -- to the extent, that is, that the
+object is \emph{salient} for the subject.
 
-\paragraph{Salience, measured independently of the lens.} Our account
-would be circular if salience were read off the lens, since the
-lens is itself a salience readout. We therefore measure it by the model's
-own free generation. For each test subject we greedily generate 90 tokens
+This section is a sanity check on that assumption rather than a further
+application of it.
+
+\paragraph{Salience, measured independently of the lens.} The check has
+to be external. Reading salience off the lens would be circular, since
+the lens is the readout under test. We therefore measure it by the
+model's own free generation. For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
 gold object appears in either continuation.\footnote{Titles, particles and
@@ -398,8 +407,8 @@ down to $0.13$ (\textsc{person\_father}), $0.05$
 (\textsc{person\_mother}). It predicts how often the lens surfaces the
 gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
 $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
-The salience interpretation is thus supported by a measurement that is
-independent of the quantity it explains.
+The check passes: what the lens surfaces is predicted by a measurement of
+salience that never consults the lens.
 
 One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
 yet the lens surfaces the constellation for only $5\%$ of its stars. We
