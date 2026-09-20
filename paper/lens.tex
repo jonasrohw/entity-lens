@@ -144,40 +144,35 @@ a measure of how well an affine map captures what the model
 does. Faithfulness defined this way is
 the quantity we predict.
 
-\enote{hs}{
-$\operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (u - s_i)\,\right]$
-- $\operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (v - s_i)\,\right]$
-=
-$\operatorname{mean}_i\!\left[ \beta J_i (u - s_i)
-- \beta J_i (v - s_i)
-  \,\right]$
-=
-$\operatorname{mean}_i\!\left[ \beta J_i (u - v)
-  \,\right]$
-
-}
-  
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
 
 For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
 the same type (e.g., Spain, Italy), we take the Jacobian--vector product
 at each reference and average:
-\enote{hs}{why are we switching here from 
- $\operatorname{mean}_i$ to $\frac{1}{n}$?}
 \begin{equation}
-v_e \;=\; \frac{1}{n}\sum_{i} J_i \,(s_e - s_i).
+v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i).
 \label{eq:lens}
 \end{equation}
 Here $J_i$ is the Jacobian of $f$ at reference $i$, the same map as in
 Eq.~\ref{eq:wb}.
-As discussed above, subtracting a same-type
-reference cancels it, leaving the entity-specific residual, and the
-Jacobian then carries that residual forward to the
-vocabulary. Our differential Jacobian
-lens
-therefore reads what this entity, as opposed to others of its kind, makes
-the model disposed to say.
+
+What differencing removes is precisely the anchor. For any two entities
+$e$ and $e'$, the subject-independent term $\operatorname{mean}_i f(s_i)$
+in Eq.~\ref{eq:beta} cancels:
+\begin{equation}
+\bigl(\beta W s_e + b_\beta\bigr) - \bigl(\beta W s_{e'} + b_\beta\bigr)
+\;=\; \beta \operatorname{mean}_i J_i\,(s_e - s_{e'})
+\;=\; \beta\,(v_e - v_{e'}),
+\label{eq:cancel}
+\end{equation}
+so the operator and the lens induce the same map on differences between
+subjects, up to $\beta$. The lens itself is the same construction applied
+once rather than twice: it is Eq.~\ref{eq:beta} with the anchor dropped
+and $\beta = 1$. Either way what survives is the entity-specific residual,
+which the Jacobian carries forward to the vocabulary, so our differential
+Jacobian lens reads what this entity, as opposed to others of its kind,
+makes the model disposed to say.
 
 We never form $J_i$ explicitly, but obtain
 each Jacobian--vector product $J_i u$ by the standard double-backward
@@ -370,15 +365,15 @@ Ranks are zero-based.
 \label{fig:product}
 \end{figure}
 
-\enote{hs}{explain star constellation?}
-
 \input{table_prominence}
 
 
-\section{new section?}
+\section{What the lens reads}
+\label{sec:salience}
 
-\enote{hs}{why was salience part of the section ``where the
-  account degrades''? should we find a better home?}
+What the lens reads is what an entity is \emph{salient} for: a relation
+is linearly decodable to the extent that its answer is already part of
+what the subject's representation makes the model disposed to say.
 
 \paragraph{Salience, measured independently of the lens.} Our account
 would be circular if salience were read off the lens, since the
@@ -416,14 +411,6 @@ than lower, so this explanation fails. What the lens returns for these
 subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
 \emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
 correlation to $0.725$.
-
-\enote{hs}{do we still need this?
-What the lens reads is what an entity is \emph{salient} for:
-a relation is linearly decodable to the extent that its
-answer is already part of what the subject's representation makes the
-model disposed to say. }
-
-
 
 \section{Object cardinality}
 \label{sec:residuals}
