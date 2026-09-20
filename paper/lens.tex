@@ -514,14 +514,22 @@ Figure~\ref{fig:blacksheep}.
 
 \subsection{Semantically weak first tokens}
 
-\textsc{person\_university} exemplifies the problem of 
+\textsc{person\_university}
+and
+(\textsc{superhero\_archnemesis})
+exemplify the problem of 
 \emph{semantically weak first tokens}. Many universities
-have names of the form ``University of''. So the LM learns
-to predict ``University'' as the target token for many
-persons. The standard setup is to count such a prediction as
+have names of the form ``University of''.
+Several archnemeses start with ``The'', ``Doctor'', ``King''
+and ``Lady''.
+So the LM learns
+to predict the common prefix as the target token for many
+persons.
+The standard setup is to count such a prediction as
 correct. But this is not an effective evaluation:
 The correct generation of ``University'' is not
 a reliable indicator of the factual competence of the LM.
+
 
 %Any two objects sharing a first token are indistinguishable to
 %a metric that scores only that token: \emph{University of Chicago} and
