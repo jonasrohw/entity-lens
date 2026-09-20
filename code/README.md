@@ -74,6 +74,17 @@ remain unchanged; their meaning is documented in the methods guide.
 
 ## Qwen3 8B Base: 26-relation outliers
 
+The [final-prompt-position experiment](docs/last-position-lre-correlation.md)
+moves the lens input and Jacobian intervention to `for` in `{subject} is known for`,
+keeping the LRE scores, targets, layers and reference subjects fixed. Across the
+same 26 relations, Spearman ρ changes from **0.298768 to −0.067077** for Qwen
+(new p = 0.744746), and from **0.782758 to 0.645912** for OLMo
+(new p = 0.000365077). Qwen's extreme norm disparity and repeated `-Semit`
+predictions disappear, but target rankings worsen: **0/491 targets are in the
+top 10**. The report includes all relation points, refitted residuals, a plot,
+per-subject evidence and reproduction scripts. This ablation does not replace
+the historical results below.
+
 **Review finding (20 September):** the original Qwen differential lens can mix
 large first-token activations with much smaller later-token states. This produces
 the repeated `-Semit` / `(Initialized` outputs in the country relations and

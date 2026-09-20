@@ -230,6 +230,17 @@ Qwen and OLMo with the choice frozen. Do not choose the prefix by maximizing
 the resulting correlation. No automatic prefix change or replacement of old
 scientific results is included in this review.
 
+## Follow-up: final prompt position
+
+The [26-relation position ablation](last-position-lre-correlation.md) now tests
+caching and intervening at `for`, keeping the original prompt and LRE scores.
+Qwen's norm outliers and repeated `-Semit` predictions disappear, but its
+correlation changes from ρ = 0.298768 to −0.067077 and none of the 491 targets
+is in the top 10. OLMo changes from ρ = 0.782758 to 0.645912, also with much
+worse absolute target ranks. This tests a different representation from the
+newline-prefix controls above; removing the observed artifact is insufficient
+to recover a useful Qwen lens.
+
 ## Evidence and reproduction
 
 - [Full numerical evidence and test summary](qwen3-jlens-implementation-review.json).
