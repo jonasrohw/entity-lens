@@ -1,0 +1,874 @@
+{
+  "model_id": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "protocol": "main",
+  "relation": "country_language",
+  "dtype": "float32",
+  "host": "beta",
+  "torch": "2.14.0+cu130",
+  "lre_layer": 19,
+  "lre_beta": 5.0,
+  "lens_layer": 19,
+  "split_fingerprint": "d9cfbee9a332",
+  "prompt_template": "People in {} speak",
+  "lre_demonstrations": [
+    {
+      "subject": "Argentina",
+      "object": "Spanish"
+    },
+    {
+      "subject": "Peru",
+      "object": "Spanish"
+    },
+    {
+      "subject": "Australia",
+      "object": "English"
+    },
+    {
+      "subject": "China",
+      "object": "Mandarin Chinese"
+    },
+    {
+      "subject": "Turkey",
+      "object": "Turkish"
+    },
+    {
+      "subject": "France",
+      "object": "French"
+    },
+    {
+      "subject": "United States",
+      "object": "English"
+    },
+    {
+      "subject": "Venezuela",
+      "object": "Spanish"
+    }
+  ],
+  "lre_references": [
+    {
+      "subject": "South Korea",
+      "object": "Korean"
+    },
+    {
+      "subject": "Saudi Arabia",
+      "object": "Arabic"
+    },
+    {
+      "subject": "Spain",
+      "object": "Spanish"
+    },
+    {
+      "subject": "Pakistan",
+      "object": "Urdu"
+    },
+    {
+      "subject": "Mexico",
+      "object": "Spanish"
+    },
+    {
+      "subject": "Russia",
+      "object": "Russian"
+    },
+    {
+      "subject": "Japan",
+      "object": "Japanese"
+    },
+    {
+      "subject": "Italy",
+      "object": "Italian"
+    }
+  ],
+  "validation": {
+    "n_test": 8,
+    "faithfulness": 0.75,
+    "all_original_hits_reproduced": true,
+    "all_audited_targets_reproduced": true,
+    "model_gold_first_token_accuracy": 1.0,
+    "numerical_checks": {
+      "logits_max_abs_error": 0.0,
+      "batched_scalar_max_abs_error": 0.0002651214599609375,
+      "finite_difference_relative_error": 0.00013679452240467072
+    }
+  },
+  "source_sha256": {
+    "results/five_model_sweep/qwen3_8b_base/main/country_language.json": "74a6540459cac0f4b255cb91cc91091df16eefa49d6b453bb33fdeba370a2cf0",
+    "data/relations/country_language.json": "0996525735107934f0d2e467e6fac7d2c785c42e8300ccb41ae6e9b5dfde2b76",
+    "jlens/model_sweep.py": "94f7dd7312c70690186d6339fc67818c8413fc775a37e67d52781f03d5f46304",
+    "generated/qwen3_country_language/export_predictions.py": "1584c53f3750b9c8b321aa323ff2aeb1e6022d1ba7f94d14d3e5a1dd7394fa89"
+  },
+  "lre_rows": [
+    {
+      "subject": "Germany",
+      "dataset_object": "German",
+      "gold_first_token_id": 5938,
+      "gold_first_token": " German",
+      "model_top1_id": 5938,
+      "model_top1": " German",
+      "lre_top1_id": 5938,
+      "lre_top1": " German",
+      "lre_top5_ids": [
+        5938,
+        15154,
+        11766,
+        8585,
+        14811
+      ],
+      "lre_top5": [
+        " German",
+        " Spanish",
+        " Standard",
+        " French",
+        " Italian"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "Chile",
+      "dataset_object": "Spanish",
+      "gold_first_token_id": 15154,
+      "gold_first_token": " Spanish",
+      "model_top1_id": 15154,
+      "model_top1": " Spanish",
+      "lre_top1_id": 15154,
+      "lre_top1": " Spanish",
+      "lre_top5_ids": [
+        15154,
+        198,
+        220,
+        42188,
+        8522
+      ],
+      "lre_top5": [
+        " Spanish",
+        "\n",
+        " ",
+        " Portuguese",
+        " Russian"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "India",
+      "dataset_object": "Hindi",
+      "gold_first_token_id": 43980,
+      "gold_first_token": " Hindi",
+      "model_top1_id": 43980,
+      "model_top1": " Hindi",
+      "lre_top1_id": 5257,
+      "lre_top1": " various",
+      "lre_top5_ids": [
+        5257,
+        3807,
+        5248,
+        2155,
+        2987
+      ],
+      "lre_top5": [
+        " various",
+        " several",
+        " multiple",
+        " different",
+        " either"
+      ],
+      "lre_target_rank_zero_based": 12,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Egypt",
+      "dataset_object": "Arabic",
+      "gold_first_token_id": 34117,
+      "gold_first_token": " Arabic",
+      "model_top1_id": 34117,
+      "model_top1": " Arabic",
+      "lre_top1_id": 34117,
+      "lre_top1": " Arabic",
+      "lre_top5_ids": [
+        34117,
+        11766,
+        18265,
+        32489,
+        5297
+      ],
+      "lre_top5": [
+        " Arabic",
+        " Standard",
+        " Modern",
+        " Egyptian",
+        " standard"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "Brazil",
+      "dataset_object": "Portuguese",
+      "gold_first_token_id": 42188,
+      "gold_first_token": " Portuguese",
+      "model_top1_id": 42188,
+      "model_top1": " Portuguese",
+      "lre_top1_id": 15154,
+      "lre_top1": " Spanish",
+      "lre_top5_ids": [
+        15154,
+        42188,
+        14811,
+        220,
+        198
+      ],
+      "lre_top5": [
+        " Spanish",
+        " Portuguese",
+        " Italian",
+        " ",
+        "\n"
+      ],
+      "lre_target_rank_zero_based": 1,
+      "lre_matches_model": 0,
+      "lre_matches_gold_first_token": 0
+    },
+    {
+      "subject": "Colombia",
+      "dataset_object": "Spanish",
+      "gold_first_token_id": 15154,
+      "gold_first_token": " Spanish",
+      "model_top1_id": 15154,
+      "model_top1": " Spanish",
+      "lre_top1_id": 15154,
+      "lre_top1": " Spanish",
+      "lre_top5_ids": [
+        15154,
+        14811,
+        220,
+        198,
+        6364
+      ],
+      "lre_top5": [
+        " Spanish",
+        " Italian",
+        " ",
+        "\n",
+        " English"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "Canada",
+      "dataset_object": "English",
+      "gold_first_token_id": 6364,
+      "gold_first_token": " English",
+      "model_top1_id": 6364,
+      "model_top1": " English",
+      "lre_top1_id": 6364,
+      "lre_top1": " English",
+      "lre_top5_ids": [
+        6364,
+        2987,
+        2176,
+        8585,
+        1378
+      ],
+      "lre_top5": [
+        " English",
+        " either",
+        " both",
+        " French",
+        " two"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    },
+    {
+      "subject": "Nigeria",
+      "dataset_object": "English",
+      "gold_first_token_id": 6364,
+      "gold_first_token": " English",
+      "model_top1_id": 6364,
+      "model_top1": " English",
+      "lre_top1_id": 6364,
+      "lre_top1": " English",
+      "lre_top5_ids": [
+        6364,
+        1378,
+        2987,
+        2176,
+        3807
+      ],
+      "lre_top5": [
+        " English",
+        " two",
+        " either",
+        " both",
+        " several"
+      ],
+      "lre_target_rank_zero_based": 0,
+      "lre_matches_model": 1,
+      "lre_matches_gold_first_token": 1
+    }
+  ],
+  "lens": {
+    "n": 16,
+    "layer": 19,
+    "template": "People in {} speak",
+    "agg": {
+      "diff": {
+        "median_rank": 75290.5,
+        "median_lograng": 4.87666242518875,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0625
+      },
+      "lre": {
+        "median_rank": 6279.5,
+        "median_lograng": 3.7979760179193764,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Australia",
+        "model_top1_id": 6364,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 77082,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 265,
+        "top_lre": [
+          "its",
+          "(",
+          ":",
+          "...",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 265,
+          "0.5": 206,
+          "1.5": 806,
+          "2.0": 2060,
+          "3.0": 7294,
+          "5.0": 22786
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 15154,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 148524,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 22121,
+        "top_lre": [
+          "(",
+          "its",
+          ":",
+          "...",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 22121,
+          "0.5": 7754,
+          "1.5": 49326,
+          "2.0": 89546,
+          "3.0": 124953,
+          "5.0": 140367
+        }
+      },
+      {
+        "subject": "Egypt",
+        "model_top1_id": 34117,
+        "model_top1": "Arabic",
+        "n_references": 7,
+        "rank_diff": 76767,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 6222,
+        "top_lre": [
+          "(",
+          "its",
+          ":",
+          "...",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 6222,
+          "0.5": 6455,
+          "1.5": 8127,
+          "2.0": 11650,
+          "3.0": 22098,
+          "5.0": 39207
+        }
+      },
+      {
+        "subject": "Peru",
+        "model_top1_id": 15154,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 1961,
+        "top_diff": [
+          "Peru",
+          "Guatemala",
+          "Honduras",
+          "Montana",
+          "Oregon"
+        ],
+        "rank_lre": 2035,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2035,
+          "0.5": 2179,
+          "1.5": 1885,
+          "2.0": 1746,
+          "3.0": 1501,
+          "5.0": 1111
+        }
+      },
+      {
+        "subject": "Japan",
+        "model_top1_id": 10769,
+        "model_top1": "Japanese",
+        "n_references": 7,
+        "rank_diff": 137902,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 16023,
+        "top_lre": [
+          "(",
+          "its",
+          "...",
+          ":",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 16023,
+          "0.5": 7317,
+          "1.5": 30880,
+          "2.0": 54128,
+          "3.0": 93911,
+          "5.0": 118249
+        }
+      },
+      {
+        "subject": "United States",
+        "model_top1_id": 6364,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 35520,
+        "top_diff": [
+          "Democr",
+          "Equality",
+          "Baltimore",
+          "Attorney",
+          "Liberals"
+        ],
+        "rank_lre": 541,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 541,
+          "0.5": 562,
+          "1.5": 516,
+          "2.0": 504,
+          "3.0": 472,
+          "5.0": 408
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 82771,
+        "model_top1": "Mandarin",
+        "n_references": 7,
+        "rank_diff": 80402,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "搜狐首页",
+          "StringWriter"
+        ],
+        "rank_lre": 5078,
+        "top_lre": [
+          "its",
+          "(",
+          ":",
+          ":",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5078,
+          "0.5": 5175,
+          "1.5": 6676,
+          "2.0": 9607,
+          "3.0": 18990,
+          "5.0": 37058
+        }
+      },
+      {
+        "subject": "Brazil",
+        "model_top1_id": 42188,
+        "model_top1": "Portuguese",
+        "n_references": 7,
+        "rank_diff": 95053,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "搜狐首页",
+          "StringWriter"
+        ],
+        "rank_lre": 12683,
+        "top_lre": [
+          "(",
+          "its",
+          "...",
+          ":",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 12683,
+          "0.5": 11362,
+          "1.5": 16582,
+          "2.0": 23563,
+          "3.0": 39974,
+          "5.0": 64113
+        }
+      },
+      {
+        "subject": "Venezuela",
+        "model_top1_id": 15154,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 8303,
+        "top_diff": [
+          "Venezuela",
+          "Venezuelan",
+          "Maduro",
+          "Venezuel",
+          "venez"
+        ],
+        "rank_lre": 1323,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1323,
+          "0.5": 1436,
+          "1.5": 1229,
+          "2.0": 1138,
+          "3.0": 972,
+          "5.0": 712
+        }
+      },
+      {
+        "subject": "India",
+        "model_top1_id": 43980,
+        "model_top1": "Hindi",
+        "n_references": 8,
+        "rank_diff": 38539,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 7335,
+        "top_lre": [
+          "its",
+          "(",
+          "being",
+          ":",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7335,
+          "0.5": 11883,
+          "1.5": 5734,
+          "2.0": 5679,
+          "3.0": 7568,
+          "5.0": 13436
+        }
+      },
+      {
+        "subject": "Chile",
+        "model_top1_id": 15154,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 11129,
+        "top_diff": [
+          "Chile",
+          "Chili",
+          "Monterey",
+          "Oregon",
+          "iod"
+        ],
+        "rank_lre": 1435,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1435,
+          "0.5": 1497,
+          "1.5": 1393,
+          "2.0": 1342,
+          "3.0": 1246,
+          "5.0": 1123
+        }
+      },
+      {
+        "subject": "Saudi Arabia",
+        "model_top1_id": 34117,
+        "model_top1": "Arabic",
+        "n_references": 8,
+        "rank_diff": 100,
+        "top_diff": [
+          "Saudi",
+          "Riyadh",
+          "Saudi",
+          "Saudis",
+          "沙特"
+        ],
+        "rank_lre": 5456,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5456,
+          "0.5": 6247,
+          "1.5": 4724,
+          "2.0": 4065,
+          "3.0": 2952,
+          "5.0": 1544
+        }
+      },
+      {
+        "subject": "Germany",
+        "model_top1_id": 5938,
+        "model_top1": "German",
+        "n_references": 8,
+        "rank_diff": 136572,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 20885,
+        "top_lre": [
+          "its",
+          "(",
+          ":",
+          "being",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20885,
+          "0.5": 12844,
+          "1.5": 33145,
+          "2.0": 53253,
+          "3.0": 91783,
+          "5.0": 116707
+        }
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 15154,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 148355,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "搜狐首页",
+          "StringWriter"
+        ],
+        "rank_lre": 14290,
+        "top_lre": [
+          "its",
+          "(",
+          ":",
+          "being",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14290,
+          "0.5": 4432,
+          "1.5": 31768,
+          "2.0": 62264,
+          "3.0": 112685,
+          "5.0": 136441
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 8522,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 73814,
+        "top_diff": [
+          "-Semit",
+          "(Initialized",
+          "iNdEx",
+          "StringWriter",
+          "搜狐首页"
+        ],
+        "rank_lre": 6337,
+        "top_lre": [
+          "its",
+          "(",
+          "being",
+          ":",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6337,
+          "0.5": 7255,
+          "1.5": 7172,
+          "2.0": 9350,
+          "3.0": 16823,
+          "5.0": 32273
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 16134,
+        "model_top1": "Korean",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Korea",
+          "Seoul",
+          "Koreans",
+          "Samsung",
+          "Hyundai"
+        ],
+        "rank_lre": 7264,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7264,
+          "0.5": 8589,
+          "1.5": 6003,
+          "2.0": 4908,
+          "3.0": 3172,
+          "5.0": 1199
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 6351.0,
+          "median_lograng": 3.802852271291629,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 6279.5,
+          "median_lograng": 3.7979760179193764,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 6339.5,
+          "median_lograng": 3.8015110299023576,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7514.5,
+          "median_lograng": 3.862603196353761,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 12195.5,
+          "median_lograng": 4.052483882457751,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 27529.5,
+          "median_lograng": 4.433269973498911,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  }
+}

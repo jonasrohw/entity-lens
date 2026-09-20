@@ -100,6 +100,14 @@ and its CSV remain available. Reproduce the new fit, tables, and figures on CPU:
 uv run python ../paper/repro/qwen3_26_relations.py
 ```
 
+Concrete prediction tables are available for
+[`company_ceo`](docs/qwen3-8b-base-company-ceo-predictions.md) and
+[`country_language`](docs/qwen3-8b-base-country-language-predictions.md).
+For `country_language`, the selected LRE reproduces 6/8 model targets;
+the differential lens has 0/16 top-1 and 1/16 top-10 matches.
+The report includes every prediction, the five countries shared between the
+two test sets, and a JSON snapshot with token IDs and validation results.
+
 ## Corpus conditional probabilities
 
 Measure `P(object | subject)` and `P(subject | object)` in the full published
