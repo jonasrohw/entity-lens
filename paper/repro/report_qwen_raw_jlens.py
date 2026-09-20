@@ -240,22 +240,33 @@ def main():
                 f"| {r['relation']} | {r['n']} | {r['diff_x']:.6f} | {r['raw_x']:.6f} | {r['faithfulness']:.6f} | {r['raw_y_hat']:.6f} | {r['raw_residual']:+.6f} |"
             )
         text.append("")
-    text += [
-        "## Country-language raw predictions\n",
-        "The target is the model's first answer token under the unchanged relation-specific ICL prompt.\n",
-        "| Subject | Target | Subject-position raw top 1 | Target rank | Final-position raw top 1 | Target rank |",
-        "| --- | --- | --- | ---: | --- | ---: |",
-    ]
-    country = next(d for d in measurements if d["relation"] == "country_language")
-    for a, b in zip(
-        country["positions"]["subject"]["modes"]["raw"]["rows"],
-        country["positions"]["last"]["modes"]["raw"]["rows"],
-        strict=True,
-    ):
-        safe = lambda s: s.replace("|", "\\|").replace("\n", "\\n")
-        text.append(
-            f"| {a['subject']} | {safe(a['target'])} | {safe(a['top_tokens'][0])} | {a['rank']} | {safe(b['top_tokens'][0])} | {b['rank']} |"
-        )
+    for relation, label in [
+        ("country_language", "Country-language"),
+        ("country_capital_city", "Country-capital"),
+    ]:
+        text += [
+            f"## {label} raw predictions\n",
+            "The target is the model's first answer token under the unchanged relation-specific ICL prompt.\n",
+        ]
+        if relation == "country_capital_city":
+            text += [
+                "The [detailed country-capital report](qwen3-8b-base-country-capital-predictions.md) compares raw and differential top-five predictions at both positions for all 16 countries. It includes target ranks, token IDs, state norms, and downloadable per-reference contributions.\n",
+            ]
+        text += [
+            "| Subject | Target | Subject-position raw top 1 | Target rank | Final-position raw top 1 | Target rank |",
+            "| --- | --- | --- | ---: | --- | ---: |",
+        ]
+        country = next(d for d in measurements if d["relation"] == relation)
+        for a, b in zip(
+            country["positions"]["subject"]["modes"]["raw"]["rows"],
+            country["positions"]["last"]["modes"]["raw"]["rows"],
+            strict=True,
+        ):
+            safe = lambda s: s.replace("|", "\\|").replace("\n", "\\n")
+            text.append(
+                f"| {a['subject']} | {safe(a['target'])} | {safe(a['top_tokens'][0])} | {a['rank']} | {safe(b['top_tokens'][0])} | {b['rank']} |"
+            )
+        text.append("")
     text += [
         "\n## Validation and reproduction\n",
         f"- Differential controls: {validation['baseline_exact_ranks']}/{validation['baseline_rank_comparisons']} ranks match the preceding position experiment exactly; maximum rank difference {validation['baseline_max_rank_error']}, maximum relation-score difference {validation['baseline_max_x_error']:.9g}.",

@@ -134,6 +134,32 @@ The target is the model's first answer token under the unchanged relation-specif
 | Russia | Russian | -Semit | 76984 | their | 36611 |
 | South Korea | Korean | Koreans | 4 | Mach | 35017 |
 
+## Country-capital raw predictions
+
+The target is the model's first answer token under the unchanged relation-specific ICL prompt.
+
+The [detailed country-capital report](qwen3-8b-base-country-capital-predictions.md) compares raw and differential top-five predictions at both positions for all 16 countries. It includes target ranks, token IDs, state norms, and downloadable per-reference contributions.
+
+| Subject | Target | Subject-position raw top 1 | Target rank | Final-position raw top 1 | Target rank |
+| --- | --- | --- | ---: | --- | ---: |
+| Australia | Canberra | -Semit | 26064 | Mach | 77996 |
+| Argentina | Buenos | -Semit | 56842 | Mach | 33841 |
+| Egypt | Cairo | -Semit | 15051 | sights | 96622 |
+| Peru | Lima | Peru | 2 | adventure | 13638 |
+| Japan | Tokyo | -Semit | 98534 | Mach | 20715 |
+| United States | Washington | 美方 | 54 | their | 19086 |
+| China | Beijing | -Semit | 79295 | her | 32703 |
+| Brazil | Bras | -Semit | 147247 | what | 52624 |
+| Venezuela | Car | Venezuela | 22925 | relaxed | 2404 |
+| India | New | -Semit | 135676 | her | 15597 |
+| Chile | Santiago | Chile | 4 | growing | 3337 |
+| Saudi Arabia | Riyadh | Saudi | 2 | Mach | 17597 |
+| Germany | Berlin | -Semit | 124913 | Mach | 11706 |
+| Spain | Madrid | -Semit | 93412 | Mach | 9376 |
+| Russia | Moscow | -Semit | 10160 | their | 24372 |
+| South Korea | Seoul | Koreans | 2 | Mach | 31051 |
+
+
 ## Validation and reproduction
 
 - Differential controls: 982/982 ranks match the preceding position experiment exactly; maximum rank difference 0, maximum relation-score difference 0.

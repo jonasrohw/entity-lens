@@ -82,6 +82,13 @@ remains the top prediction for 10/16 country-language subjects. At the final
 top 10. The report includes both positions, all 26 relation points, and raw
 country-language predictions. Subtraction alone does not explain the artifact.
 
+The [country-capital prediction tables](docs/qwen3-8b-base-country-capital-predictions.md)
+show raw and differential top-five tokens and target ranks for all 16 countries
+at both positions. CSV/JSON downloads include exact token IDs, input-state norms,
+and all 240 included reference contributions. At the subject position, removing
+subtraction increases top-10 hits from 2/16 to 4/16; `-Semit` remains top-1 for
+the same ten countries.
+
 The [final-prompt-position experiment](docs/last-position-lre-correlation.md)
 moves the lens input and Jacobian intervention to `for` in `{subject} is known for`,
 keeping the LRE scores, targets, layers and reference subjects fixed. Across the
