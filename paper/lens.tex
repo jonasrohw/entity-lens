@@ -129,6 +129,7 @@ DISCUSS \cite{10.1162/TACL.a.746}
 DISCUSS \cite{DBLP:journals/corr/abs-2605-12426}
 
 \section{Background}
+\label{sec:background}
 
 An LRE for relation $r$ approximates the model's computation as
 \begin{equation}
@@ -203,9 +204,31 @@ difference between entities rather than to a state. What it reads is
 therefore what distinguishes $e$ from other entities of its kind, not
 what $e$ shares with them.
 
-\paragraph{Why differencing.} Differencing removes the anchor. For any
-two entities $e$ and $e'$, the subject-independent term
-$\operatorname{mean}_i f(s_i)$ of Eq.~\ref{eq:beta} cancels:
+\paragraph{Why differences, and why same-type references.} The quantity
+we want is not what the model says about France, but what is
+\emph{specific} to France among countries. A raw state $s_e$ is dominated
+by what every entity of its type shares -- the type itself, the syntactic
+role, the prompt -- so a lens applied to $s_e$ returns mostly that shared
+content and the entity is buried in its own category. Subtracting
+reference entities is what removes it, and the reference set is what
+fixes the meaning of ``shared'': because $s_1,\dots,s_n$ are entities of
+the same type as $e$, what cancels in $s_e - s_i$ is the type. The two
+choices in Eq.~\ref{eq:lens} are therefore one decision and not two.
+
+\paragraph{Why the anchor is dropped.} Eq.~\ref{eq:beta} splits an LRE's
+prediction into the subject-independent term
+$\operatorname{mean}_i f(s_i)$ and a subject-dependent remainder. The
+first is the same vector for every entity, so it can carry nothing that
+tells one entity from another; it is what makes an unscaled operator
+return much the same object for every subject (\S\ref{sec:background}).
+A readout whose purpose is discrimination therefore has no use for it,
+and Eq.~\ref{eq:lens} is Eq.~\ref{eq:beta} with it dropped and
+$\beta = 1$.
+
+\paragraph{A check on that choice.} Dropping a constant is a decision
+about what to read, not a theorem, but the two constructions do agree on
+exactly the part that discriminates. For any two entities $e$ and $e'$
+the anchor cancels:
 \begin{equation}
 \bigl(\beta W s_e + b_\beta\bigr) - \bigl(\beta W s_{e'} + b_\beta\bigr)
 \;=\; \beta \operatorname{mean}_i J_i\,(s_e - s_{e'})
@@ -213,9 +236,9 @@ $\operatorname{mean}_i f(s_i)$ of Eq.~\ref{eq:beta} cancels:
 \label{eq:cancel}
 \end{equation}
 so an LRE and the lens induce the same map on differences between
-subjects, up to $\beta$. Eq.~\ref{eq:lens} is Eq.~\ref{eq:beta} with that
-anchor dropped and $\beta=1$. This algebraic relationship is what
-motivated the construction; the two are not the same object, because the
+subjects, up to $\beta$: whatever the anchor contributes, it is not what
+the operator uses to tell subjects apart. This is a relationship between
+the two constructions rather than an identity between them, since the
 Jacobians in Eq.~\ref{eq:lens} are taken under the neutral prompt and
 those in Eq.~\ref{eq:beta} under the relation's in-context prompt.
 
@@ -667,27 +690,12 @@ characterize what a model is internally disposed to say, averaging a
 Jacobian over a corpus and applying it to raw activations
 \citep{gurnee2026workspace}. That is the right construction for
 describing a model's dispositions in general. It is the wrong one for
-describing a single entity, because a raw activation is dominated by what
-every entity of its type shares -- the type itself, the syntactic role,
-the prompt -- so the entity is buried in its own category.
-
-\paragraph{Why differences.} The quantity we want is not what the model
-says about France, but what is \emph{specific} to France among countries.
-A raw activation $s_e$ is dominated by what all entities of its type share
--- the type itself, the syntactic role, the prompt -- and a lens applied
-to it returns mostly that shared content. 
-
-We note that this differencing
-falls directly out of the rewriting of the Jacobian lens
-in Eq.~\ref{eq:beta}, i.e., out of expressing the LRE as a
-constant plus a sum of $J_i(s - s_i)$ terms. Eq.~\ref{eq:lens} is that
-same quantity with the subject-independent anchor dropped and
-$\beta = 1$.
-This new way of looking at the Jacobian lens allows
-us to estimate the lens without any relation and ask whether it
-predicts an LRE that was fitted \emph{with} one. This also distinguishes
-our lens from that of \citet{gurnee2026workspace}, which averages a
-Jacobian over a corpus and applies it to raw activations.
+describing a single entity, for the reason given in \S\ref{sec:lens}:
+applied to a raw state it returns what every entity of the type shares,
+and the entity is buried in its own category. Differencing against
+same-type references is what recovers it, and it is also what lets us
+estimate the lens without any relation and then ask whether it predicts
+an LRE that was fitted \emph{with} one.
 
 
 \section{Limitations}
