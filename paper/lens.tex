@@ -56,7 +56,7 @@ LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
 Building on recent work by \citet{gurnee2026workspace},
-we  introduce the \emph{differential Jacobian lens}, which
+we  introduce the \emph{contrastive Jacobian lens}, which
 evaluates the Jacobian at individual reference entities and applies it to
 \emph{differences} between entity representations:
 \emph{France} minus \emph{Spain} rather than \emph{France} alone. What
@@ -67,14 +67,14 @@ about: from a category to an individual. The question it
 answers -- \emph{what is this model ready to say about this entity, as
 against others of its kind?} -- is not specific to relations.
 
-We estimate  the differential Jacobian lens under a single
+We estimate  the contrastive Jacobian lens under a single
 neutral prompt shared by every relation, at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = 0.66$.
 
-We make four contributions. (i)~We introduce the differential Jacobian
+We make four contributions. (i)~We introduce the contrastive Jacobian
 lens, a supervision-free readout of what a model is disposed to say about
 an individual entity. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
@@ -116,7 +116,7 @@ relational linearity research.
 
 \citet{geva-etal-2023-dissecting} proposes subject
 enrichment as a key mechanism for factual recall. We can
-interpret our differential Jacobian lens as a probe of
+interpret our contrastive Jacobian lens as a probe of
 subject enrichment.
 Crucially, we connect in this paper two different lines of
 research on the representation of relations in transformer
@@ -220,7 +220,7 @@ can carry nothing that tells one entity from another; it is what makes an
 unscaled operator return much the same object for every subject
 (\S\ref{sec:background}). A readout whose purpose is discrimination has
 no use for it, so we keep only the remainder. This gives the
-\emph{differential Jacobian lens} of $e$,
+\emph{contrastive Jacobian lens} of $e$,
 \begin{equation}
 v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
 \label{eq:lens}
@@ -531,7 +531,7 @@ linearity for the facts of a relation that is not
 represented linearly. But
 once there is evidence for at least partial linearity of a
 relation, we can ask for individual facts how well
-the differential Jacobian lens predicts the degree to which
+the contrastive Jacobian lens predicts the degree to which
 they are
 integrated into the linear structure.
 
@@ -548,7 +548,7 @@ misses may be a better diagnostic for assessing the size of
 the correlation.
 
 Our original plan was to develop a fine-grained account of
-what differential Jacobian lens readouts
+what contrastive Jacobian lens readouts
 predict about the
 linearity of individual facts. However, we found that
 several shortcomings of the experimental setup currently
