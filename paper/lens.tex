@@ -181,76 +181,70 @@ the quantity we predict.
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
 
-For an entity $e$ (e.g., France) and a set of reference entities $\{i\}$ of
-the same type (e.g., Spain, Italy), we take the Jacobian--vector product
-at each reference and average:
+\paragraph{Definition.} Let $e$ be an entity and $s_e$ the model's hidden
+state at the final token of its name, taken at layer $\ell=17$ under the
+\emph{neutral prompt} \texttt{"\{\} is known for"} -- a prompt that names
+no relation and is identical for every relation in the study. Let
+$s_1,\dots,s_n$ be the states of $n=8$ \emph{reference entities} of the
+same type as $e$ (\emph{France} against \emph{Spain}, \emph{Italy},
+\dots), obtained the same way. Let $f$ be the model's own map from a
+state at layer $\ell$ to the final-layer state at the last position, and
+$J_i$ its Jacobian at $s_i$. The \emph{differential Jacobian lens} of $e$
+is
 \begin{equation}
-v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i).
+v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
 \label{eq:lens}
 \end{equation}
-Here $J_i$ is the Jacobian of $f$ at reference $i$, the same map as in
-Eq.~\ref{eq:wb}.
+a vector in the final-layer residual stream, which we read out through
+the model's own output head as a ranking over the vocabulary.
 
-What differencing removes is precisely the anchor. For any two entities
-$e$ and $e'$, the subject-independent term $\operatorname{mean}_i f(s_i)$
-in Eq.~\ref{eq:beta} cancels:
+It is \emph{differential} because each Jacobian is applied to a
+difference between entities rather than to a state. What it reads is
+therefore what distinguishes $e$ from other entities of its kind, not
+what $e$ shares with them.
+
+\paragraph{Why differencing.} Differencing removes the anchor. For any
+two entities $e$ and $e'$, the subject-independent term
+$\operatorname{mean}_i f(s_i)$ of Eq.~\ref{eq:beta} cancels:
 \begin{equation}
 \bigl(\beta W s_e + b_\beta\bigr) - \bigl(\beta W s_{e'} + b_\beta\bigr)
 \;=\; \beta \operatorname{mean}_i J_i\,(s_e - s_{e'})
 \;=\; \beta\,(v_e - v_{e'}),
 \label{eq:cancel}
 \end{equation}
-so the operator and the lens induce the same map on differences between
-subjects, up to $\beta$. The lens itself is the same construction applied
-once rather than twice: it is Eq.~\ref{eq:beta} with the anchor dropped
-and $\beta = 1$. Either way what survives is the entity-specific residual,
-which the Jacobian carries forward to the vocabulary, so our differential
-Jacobian lens reads what this entity, as opposed to others of its kind,
-makes the model disposed to say.
+so an LRE and the lens induce the same map on differences between
+subjects, up to $\beta$. Eq.~\ref{eq:lens} is Eq.~\ref{eq:beta} with that
+anchor dropped and $\beta=1$. This algebraic relationship is what
+motivated the construction; the two are not the same object, because the
+Jacobians in Eq.~\ref{eq:lens} are taken under the neutral prompt and
+those in Eq.~\ref{eq:beta} under the relation's in-context prompt.
 
-We never form $J_i$ explicitly, but obtain
-each Jacobian--vector product $J_i u$ by the standard double-backward
+\paragraph{Computation.} We never form $J_i$ explicitly, but obtain each
+Jacobian--vector product $J_i u$ by the standard double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
 number of forward and backward passes; this is what makes
-Eq.~\ref{eq:lens} affordable at $d_{\text{model}} = 4096$
+Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
 (Appendix~\ref{sec:jvp}).
-Each $J_i$ is evaluated under a \emph{neutral} prompt,
-\texttt{"\{\} is known for"}, identical for every relation.
 
-We decode $v_e$
-over the full vocabulary and record the rank of $m_e$, the model's own
-top-1 answer for relation $r$. Writing
-$\mathrm{rk}_{v_e}(m_e)$ for that rank, the diagnostic for a relation is
+\paragraph{The relation score.} We decode $v_e$ over the full vocabulary
+and record the rank of $m_e$, the model's own top-1 answer for relation
+$r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
+Writing $\mathrm{rk}_{v_e}(m_e)$ for that rank, the diagnostic for a
+relation is
 \begin{equation}
 A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
-Three properties make $A_r$ a non-trivial predictor of faithfulness.
-The prompt is
-neutral and shared, so no relation template enters. The differences in
-Eq.~\ref{eq:lens} are subject-minus-subject -- \emph{France} minus
-\emph{Spain}, never \emph{France} minus \emph{Paris} -- so no
-relation-specific (subject,~object) pair is used in estimation.
-The layer is not relation-specific either. It is fixed at 17 for all
-relations (Appendix~\ref{sec:layer17}).
-
-\paragraph{Two prompts.} Our experiments
-use two different prompts, for two different purposes. The
-\emph{neutral prompt}, \texttt{"\{\} is known for"}, names no relation and
-is the same for all 28 relations; it is the only prompt the lens ever
-sees, and it is where the hidden states in Eq.~\ref{eq:lens} are taken.
-The \emph{in-context prompt} is relation-specific: eight (subject,
-object) examples of the relation in question, followed by the query
-subject without its object, so that the model's next token is its answer
-(\S\ref{sec:setup}). It is used for the LRE and for the model's own
-prediction, never for the lens.
-
-Relation-specificity therefore enters in exactly one place: the
-\emph{target}. What the lens is scored against is the model's top-1 under
-the in-context prompt -- the same quantity faithfulness is defined
-against -- so the two are commensurable, while everything on the lens
-side of the comparison remains relation-agnostic.
+\paragraph{What makes $A_r$ relation-agnostic.} Nothing on the lens side
+of Eq.~\ref{eq:lens} is specific to $r$: the prompt is neutral and shared,
+the layer is fixed at 17 for all relations
+(Appendix~\ref{sec:layer17}), and the differences are
+subject-minus-subject -- \emph{France} minus \emph{Spain}, never
+\emph{France} minus \emph{Paris} -- so no (subject,~object) pair of the
+relation is used in estimation. Relation-specificity enters in exactly
+one place, the \emph{target} $m_e$, which is also the quantity
+faithfulness is defined against; that is what makes the two commensurable.
 
 \section{Experimental setup}
 \label{sec:setup}
