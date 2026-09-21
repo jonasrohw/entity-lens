@@ -182,48 +182,53 @@ the quantity we predict.
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
 
-\paragraph{Definition.} Let $e$ be an entity and $s_e$ the model's hidden
+\paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
 state at the final token of its name, taken at layer $\ell=17$ under the
 \emph{neutral prompt} \texttt{"\{\} is known for"} -- a prompt that names
-no relation and is identical for every relation in the study. Let
-$s_1,\dots,s_n$ be the states of $n=8$ \emph{reference entities} of the
-same type as $e$ (\emph{France} against \emph{Spain}, \emph{Italy},
-\dots), obtained the same way. Let $f$ be the model's own map from a
-state at layer $\ell$ to the final-layer state at the last position, and
-$J_i$ its Jacobian at $s_i$. The \emph{differential Jacobian lens} of $e$
-is
+no relation and is identical for every relation in the study. Let $f$ be
+the model's own map from a state at layer $\ell$ to the final-layer state
+at the last position, and $J_i$ its Jacobian at a reference state $s_i$.
+
+A \emph{Jacobian lens} propagates a first-order approximation of $f$ to
+the output vocabulary. Given a set of references, the averaged
+first-order approximation of $f$ at $s_e$ is Eq.~\ref{eq:beta} with
+$\beta=1$: an anchor $\operatorname{mean}_i f(s_i)$ plus a remainder
+$\operatorname{mean}_i J_i (s_e - s_i)$. Our construction makes two
+changes to this, and they are the whole of it.
+
+\paragraph{(i) A type-specific reference set.} We take
+$s_1,\dots,s_n$ to be the states of $n=8$ entities of the \emph{same type}
+as $e$ -- \emph{France} against \emph{Spain}, \emph{Italy}, \dots --
+obtained the same way as $s_e$, rather than a sample of whatever the
+model has seen.
+
+This is the substantive choice, and it is what separates the
+construction from a Jacobian lens that averages over a corpus and applies
+the result to a raw state \citep{gurnee2026workspace}. The difference is
+not that one construction takes derivatives and the other does not: a
+Jacobian is a derivative either way. It is what $e$ is contrasted with.
+A corpus-averaged lens contrasts $e$ with language at large, so what it
+sets aside is whatever is generally true, and a raw state is then
+dominated by what every entity of its type shares -- the type itself,
+the syntactic role, the prompt -- leaving the entity buried in its own
+category. References of the same type move the comparison class: what
+$s_e - s_i$ sets aside is the type, and what survives is what
+distinguishes this entity from others of its kind.
+
+\paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
+second depends on which entity is being read. The anchor
+$\operatorname{mean}_i f(s_i)$ is the same vector for every $e$, so it
+can carry nothing that tells one entity from another; it is what makes an
+unscaled operator return much the same object for every subject
+(\S\ref{sec:background}). A readout whose purpose is discrimination has
+no use for it, so we keep only the remainder. This gives the
+\emph{differential Jacobian lens} of $e$,
 \begin{equation}
 v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
 \label{eq:lens}
 \end{equation}
 a vector in the final-layer residual stream, which we read out through
 the model's own output head as a ranking over the vocabulary.
-
-It is \emph{differential} because each Jacobian is applied to a
-difference between entities rather than to a state. What it reads is
-therefore what distinguishes $e$ from other entities of its kind, not
-what $e$ shares with them.
-
-\paragraph{Why differences, and why same-type references.} The quantity
-we want is not what the model says about France, but what is
-\emph{specific} to France among countries. A raw state $s_e$ is dominated
-by what every entity of its type shares -- the type itself, the syntactic
-role, the prompt -- so a lens applied to $s_e$ returns mostly that shared
-content and the entity is buried in its own category. Subtracting
-reference entities is what removes it, and the reference set is what
-fixes the meaning of ``shared'': because $s_1,\dots,s_n$ are entities of
-the same type as $e$, what cancels in $s_e - s_i$ is the type. The two
-choices in Eq.~\ref{eq:lens} are therefore one decision and not two.
-
-\paragraph{Why the anchor is dropped.} Eq.~\ref{eq:beta} splits an LRE's
-prediction into the subject-independent term
-$\operatorname{mean}_i f(s_i)$ and a subject-dependent remainder. The
-first is the same vector for every entity, so it can carry nothing that
-tells one entity from another; it is what makes an unscaled operator
-return much the same object for every subject (\S\ref{sec:background}).
-A readout whose purpose is discrimination therefore has no use for it,
-and Eq.~\ref{eq:lens} is Eq.~\ref{eq:beta} with it dropped and
-$\beta = 1$.
 
 \paragraph{A check on that choice.} Dropping a constant is a decision
 about what to read, not a theorem, but the two constructions do agree on
@@ -683,19 +688,11 @@ solutions evaluated in this study.
   that need to be integrated into a fluent narrative}
 
 The instrument we use to show this is new, and we offer it as a
-contribution in its own right. A \emph{Jacobian lens} propagates a
-first-order approximation of the model's own computation from an
-intermediate layer to the output vocabulary; recent work uses one to
-characterize what a model is internally disposed to say, averaging a
-Jacobian over a corpus and applying it to raw activations
-\citep{gurnee2026workspace}. That is the right construction for
-describing a model's dispositions in general. It is the wrong one for
-describing a single entity, for the reason given in \S\ref{sec:lens}:
-applied to a raw state it returns what every entity of the type shares,
-and the entity is buried in its own category. Differencing against
-same-type references is what recovers it, and it is also what lets us
-estimate the lens without any relation and then ask whether it predicts
-an LRE that was fitted \emph{with} one.
+contribution in its own right. Fixing the comparison class to entities of
+the same type (\S\ref{sec:lens}) is what makes a Jacobian lens report an
+individual rather than its category; it is also what lets us estimate the
+lens without any relation and then ask whether it predicts an LRE that
+was fitted \emph{with} one.
 
 
 \section{Limitations}
