@@ -705,6 +705,97 @@ solutions evaluated in this study.
 
 
 
+\section{What the operator's two terms carry}
+\label{sec:swap}
+
+\S\ref{sec:lens} split an LRE into a subject-independent anchor
+$\operatorname{mean}_i f(s_i)$ and a subject-dependent remainder
+$T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$, and dropped the
+first. This section asks what each term actually carries, by recombining
+them across relations. It is an intervention rather than a correlation:
+if the anchor carries the relation, then pairing it with a \emph{foreign}
+subject term should still produce this relation's object.
+
+\paragraph{Setup.} We use relation pairs over shared subjects, so that
+only the term being swapped differs: \textsc{country\_capital\_city} and
+\textsc{country\_largest\_city} over 12 countries, and
+\textsc{person\_plays\_position\_in\_sport} and
+\textsc{person\_plays\_pro\_sport} over 24 athletes. Each subject is read
+with the remaining subjects as references, and in-context demonstrations
+are drawn from outside the shared set, so no reference or test subject
+appears in any prompt. We set $\beta = 3$ throughout and report how often
+the decoded top-1 is the relation's gold object.
+
+\paragraph{The subject term is interchangeable.} Giving an anchor the
+\emph{other} relation's subject term barely changes the answer
+(Table~\ref{tab:swap}, column~3): the capital anchor still names capitals
+11 times in 12 with the largest-city subject term, and the position
+anchor still names positions 20 times in 24 with the sport subject term.
+The anchor decides, not the subject term. This holds across prompts with
+nothing in common: a subject term estimated under \texttt{"The official
+currency of \{\} is the"} still yields capitals 9 times in 12 under the
+capital anchor.
+
+\paragraph{The lens can replace the subject term.} Substituting $v_e$ ---
+estimated under the neutral prompt, with no relation anywhere --- for
+$T_r(e)$ recovers much of the operator (column~4). On the two person
+relations it matches it: 20 against 19 for position, 21 against 22 for
+sport. The lens alone never names a sport at all, so what it supplies is
+the subject and what the anchor supplies is the relation.
+
+\paragraph{Controls.} Two nulls establish that something is composed
+rather than read off the anchor. The \emph{anchor alone} is the $\beta
+\to 0$ limit; the \emph{wrong donor} pairs an anchor with a different
+subject's lens vector. For the two city relations both score
+\textbf{zero} at every $\beta$ we tried, so every hit is attributable to
+the correct subject's vector. For the person relations the anchor alone
+is not negligible --- 7 and 8, roughly the majority class --- but the
+wrong donor scores \emph{below} it, and the correct lens gains 15 and 18
+subjects while losing none (McNemar $p = 6.1\times10^{-5}$ and
+$7.6\times10^{-6}$).
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+& & \multicolumn{2}{c}{subject term} & \multicolumn{2}{c}{controls} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
+\midrule
+\textsc{country\_capital\_city} & 12 & 11 & 11 & 6 & 0 \\
+\textsc{country\_largest\_city} & 12 & 10 & 9 & 5 & 0 \\
+\textsc{person\_plays\_position} & 24 & 19 & 20 & 20 & 5 \\
+\textsc{person\_plays\_pro\_sport} & 24 & 22 & 18 & 21 & 3 \\
+\bottomrule
+\end{tabular}
+\caption{Recombining an LRE's anchor with different subject terms, at
+$\beta = 3$. Counts are how often the decoded top-1 is the relation's
+gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
+the paired relation's subject term; \emph{lens} uses $v_e$, which never
+sees a relation. A foreign subject term, and often the relation-agnostic
+lens, does as well as the operator's own.}
+\label{tab:swap}
+\end{table}
+
+\enote{claude}{Work still to be done before this section is submittable.
+(i)~$\beta$ is fixed at 3 here, but that value was chosen by inspecting
+these same subjects; \S\ref{sec:lens}'s own argument is that a global
+$\beta$ should be selected on held-out relations, and we have evidence
+that such selection does not pay. Either select $\beta$ on held-out
+subjects or state plainly that it is fixed a priori and report the
+sensitivity. (ii)~Four relations of 28, chosen for having both shared
+subjects \emph{and} strong operators --- a doubly selected subset that
+should be named as such. (iii)~Two relations we tried do not support the
+analysis and are omitted: \textsc{country\_currency}, whose correct lens
+scores below its own controls, and \textsc{person\_father} /
+\textsc{person\_mother}, the ideal design (748 shared subjects, both
+answers person names) whose operators are too weak at faithfulness
+$0.06$ and $0.12$. Decide whether to report these as negative results.
+(iv)~No confidence intervals on the counts. (v)~The composition at large
+$\beta$ lets the subject term's own relation show through; the $\beta$
+range over which the anchor dominates has not been characterized.}
+
 \section{Discussion}
 
 \enote{hs}{this section is a collection of content pieces
