@@ -1,3 +1,60 @@
+                  @article{DBLP:journals/corr/abs-2605-12426,
+		    author       = {Shauli Ravfogel and
+		                      Gilad Yehudai and
+				                        Joan Bruna and
+							                  Alberto Bietti},
+									    title        = {Geometric Factual Recall in Transformers},
+									      journal      = {CoRR},
+									        volume       = {abs/2605.12426},
+										  year         = {2026},
+										    url          = {https://doi.org/10.48550/arXiv.2605.12426},
+										      doi          = {10.48550/ARXIV.2605.12426},
+										        eprinttype   = {arXiv},
+											  eprint       = {2605.12426},
+											    timestamp    = {Mon, 08 Jun 2026 15:23:24 +0200},
+											      biburl       = {https://dblp.org/rec/journals/corr/abs-2605-12426.bib},
+											        bibsource    = {dblp computer science bibliography, https://dblp.org}
+												}
+												
+
+
+@article{10.1162/TACL.a.746,
+    author = {Gottesman, Daniela and Gilaie-Dotan, Alon and Cohen, Ido and Gur-Arieh, Yoav and Mosbach, Marius and Yoran, Ori and Geva, Mor},
+    title = {LMEnt: A Suite for Analyzing Knowledge in Language Models from Pretraining Data to Representations},
+    journal = {Transactions of the Association for Computational Linguistics},
+    volume = {14},
+    pages = {1654-1691},
+    year = {2026},
+    month = {07},
+    abstract = {Language models (LMs) increasingly drive real-world applications that require world knowledge. However, the internal processes through which models turn data into representations of knowledge and beliefs about the world are poorly understood. To facilitate such studies, we present LMEnt, a suite including (1) a knowledge-rich pretraining corpus, fully annotated with entity mentions based on Wikipedia, (2) an entity-based retrieval method over pretraining data that outperforms existing tools by as much as 80.4\%, and (3) 12 pretrained LMs with up to 1B parameters and 4K intermediate checkpoints, with comparable performance to popular open-source models on knowledge tasks. Together, these resources provide a controlled environment for analyzing connections between entity mentions in pretraining data and downstream performance. We show the utility of LMEnt by studying knowledge acquisition over training, finding that entity co-occurrence and mention forms—which are difficult to study with existing tools—affect learning trends. Moreover, as LMs form stronger associations between entities, their facts are harder to edit in-context, whereas inconsistencies in model predictions over training are indicative of editing success. We release LMEnt to support studies of knowledge in LMs, including knowledge representations, plasticity, editing, attribution, hallucinations, and learning dynamics.huggingface.co/LMEntgithub.com/LMEnt},
+    issn = {2307-387X},
+    doi = {10.1162/TACL.a.746},
+    url = {https://doi.org/10.1162/TACL.a.746},
+    eprint = {https://direct.mit.edu/tacl/article-pdf/doi/10.1162/TACL.a.746/2612499/tacl.a.746.pdf},
+}
+
+
+
+
+
+@inproceedings{DBLP:conf/icml/PaccanaroH00,
+  author       = {Alberto Paccanaro and
+                    Geoffrey E. Hinton},
+		      editor       = {Pat Langley},
+		        title        = {Learning Distributed Representations by Mapping Concepts and Relations
+			                  into a Linear Space},
+					    booktitle    = {Proceedings of the Seventeenth International Conference on Machine
+					                      Learning {(ICML} 2000), Stanford University, Stanford, CA, USA, June
+							                        29 - July 2, 2000},
+										  pages        = {711--718},
+										    publisher    = {Morgan Kaufmann},
+										      year         = {2000},
+										        timestamp    = {Sun, 21 Feb 2010 20:54:50 +0100},
+											  biburl       = {https://dblp.org/rec/conf/icml/PaccanaroH00.bib},
+											    bibsource    = {dblp computer science bibliography, https://dblp.org}
+											    }
+											    
+
 @inproceedings{hernandez2024linearity,
     title = {Linearity of Relation Decoding in Transformer Language Models},
     author = {Hernandez, Evan and Sharma, Arnab Sen and Haklay, Tal and
@@ -57,3 +114,23 @@
     year = {2025},
     url = {https://arxiv.org/abs/2504.12459}
 }
+
+@inproceedings{geva-etal-2023-dissecting,
+    title = "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+        author = "Geva, Mor  and
+	      Bastings, Jasmijn  and
+	            Filippova, Katja  and
+		          Globerson, Amir",
+			      editor = "Bouamor, Houda  and
+			            Pino, Juan  and
+				          Bali, Kalika",
+					      booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+					          month = dec,
+						      year = "2023",
+						          address = "Singapore",
+							      publisher = "Association for Computational Linguistics",
+							          url = "https://aclanthology.org/2023.emnlp-main.751/",
+								      doi = "10.18653/v1/2023.emnlp-main.751",
+								          pages = "12216--12235",
+									      abstract = "Transformer-based language models (LMs) are known to capture factual knowledge in their parameters. While previous work looked into where factual associations are stored, only little is known about how they are retrieved internally during inference. We investigate this question through the lens of information flow. Given a subject-relation query, we study how the model aggregates information about the subject and relation to predict the correct attribute. With interventions on attention edges, we first identify two critical points where information propagates to the prediction: one from the relation positions followed by another from the subject positions. Next, by analyzing the information at these points, we unveil a three-step internal mechanism for attribute extraction. First, the representation at the last-subject position goes through an enrichment process, driven by the early MLP sublayers, to encode many subject-related attributes. Second, information from the relation propagates to the prediction. Third, the prediction representation `queries'' the enriched subject to extract the attribute. Perhaps surprisingly, this extraction is typically done via attention heads, which often encode subject-attribute mappings in their parameters. Overall, our findings introduce a comprehensive view of how factual associations are stored and extracted internally in LMs, facilitating future research on knowledge localization and editing."
+									      }
