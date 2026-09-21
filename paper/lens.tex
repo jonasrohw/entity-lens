@@ -214,12 +214,27 @@ category. Same-type references make the comparison class the entity's own
 kind.
 
 \paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
-second depends on which entity is being read. The anchor
-$\operatorname{mean}_i f(s_i)$ is the same vector for every $e$, so it
-can carry nothing that tells one entity from another; it is what makes an
-unscaled operator return much the same object for every subject
-(\S\ref{sec:background}). A readout whose purpose is discrimination has
-no use for it, so we keep only the remainder. This gives the
+second depends on which entity is being read. Dropping the anchor is not
+a matter of discarding something uninformative: it is the readout the
+reference entities themselves receive, and in an operator it is what
+supplies the relation. On \textsc{country\_capital\_city}, removing it
+from the fitted operator turns \emph{Madrid} and \emph{Ottawa} into
+\emph{Spain} and \emph{Canada} -- the subject in place of the object,
+which is a failure for the operator and the goal for a readout meant to
+report what an entity evokes.
+
+Keeping it would instead mean choosing how to weigh it against the
+remainder, which is what $\beta$ does in Eq.~\ref{eq:beta}. A single
+$\beta$ shared by every relation would be a legitimate option, adding
+nothing relation-specific; it is simply not a profitable one. In sample
+such a $\beta$ slightly outperforms dropping the anchor, but the curve is
+flat across a wide range of $\beta$ and the advantage does not survive
+selection: choosing $\beta$ on 15 relations and evaluating on the
+remaining 10, across 2{,}000 random splits, beats the anchor-free readout
+in only $30\%$ of them. We therefore drop the anchor, which leaves a
+readout with no hyperparameter at all -- the decoder normalizes, so once
+the anchor is gone, scaling cannot change a ranking and $\beta$ has
+nothing left to do. This gives the
 \emph{contrastive Jacobian lens} of $e$,
 \begin{equation}
 v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
