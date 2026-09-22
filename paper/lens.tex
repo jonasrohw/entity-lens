@@ -72,7 +72,7 @@ neutral prompt shared by every relation, at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
-$\rho = 0.66$.
+$\rho = 0.77$.
 
 We make four contributions. (i)~We introduce the contrastive Jacobian
 lens, a supervision-free readout of what a model is disposed to say about
@@ -394,17 +394,18 @@ described in Appendix~\ref{sec:numeric-objects}.}
   i think not: we need two labels pointing to two different points}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
-predicts LRE faithfulness at Spearman $\rho = 0.658$
-($p = 1.4\!\times\!10^{-4}$); a permutation test agrees
+predicts LRE faithfulness at Spearman $\rho = 0.771$
+($p = 1.6\!\times\!10^{-6}$); a permutation test agrees
 (Appendix~\ref{sec:permutation}).
 
 \paragraph{The correlation is not carried by cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
-of subjects per object, ranges from $1.0$ to $189$. High $k$ makes
-faithfulness easier, and indeed $k$ predicts faithfulness on its own
-($\rho = 0.43$, $p = 0.02$). But $k$ is essentially uncorrelated with the
+of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
+faithfulness easier, and $k$ is indeed associated with faithfulness on
+its own, though only weakly
+($\rho = 0.36$, $p = 0.06$). But $k$ is essentially uncorrelated with the
 lens score ($\rho = -0.03$). Removing $k$  \emph{raises} the
-correlation to $\rho = 0.744$ ($p = 10^{-5}$): $k$ and the lens are
+correlation to $\rho = 0.840$ ($p = 2\!\times\!10^{-8}$): $k$ and the lens are
 independent predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
 signal.\footnote{All variables here are ordinal, so we work throughout with
@@ -422,9 +423,9 @@ about either variable has been removed.}
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
-contexts. This predicts neither faithfulness ($\rho = -0.03$) nor the lens
-score ($\rho = -0.02$), and removing it leaves the correlation
-unchanged at $0.658$. The correlation is $0.746$ with both cardinality
+contexts. This predicts neither faithfulness ($\rho = -0.02$) nor the lens
+score ($\rho = -0.01$), and removing it leaves the correlation
+unchanged at $0.771$. The correlation is $0.841$ with both cardinality
 and answer frequency removed.
 
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
@@ -446,7 +447,7 @@ reference subjects and at least one test subject. Three relations fall
 below that threshold and are dropped -- the two with numeric objects,
 whose years collapse onto shared leading digits, and
 \textsc{person\_band\_lead\_singer}. Over the remaining 25 the alternative
-protocol gives $\rho = 0.644$ ($p = 0.0005$), against $0.658$ over 28
+protocol gives $\rho = 0.624$ ($p = 0.0009$), against $0.771$ over 28
 here. We return to first-token collapse, and to why restricting the gold
 objects is only a partial remedy, in \S\ref{sec:subject}.
 
