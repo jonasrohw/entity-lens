@@ -210,14 +210,15 @@ tokens. The final form of the contrastive Jacobian lens is then:
 \end{equation}
 Note that CJL takes into account the difference between $s$ and
 the reference point $s_i$ -- as it should be  if we want
-to approximate $f(s)$ using the first derivative. This is
-also the main motivation for introducing this alternative
+to approximate $f(s)$ using the first derivative. This
+difference formalization is
+also the main motivation for introducing our alternative
 lens. We are not interested in what the model associates
 with an entity like ``Russia'' in general (e.g.,
 ``Europe''). Instead we are interested in what the model
 associates with ``Russia'', but not with other reference
 entities like ``Spain'' and ``Italy''. Examples of such
-contrastive associations are ``vodka'' and ``Kremlin''.
+contrastive associations or ``Russia'' are ``vodka'' and ``Kremlin''.
 The basic idea we will investigate is that such top-ranked contrastive associations
 give rise to linearity.
 
@@ -238,13 +239,13 @@ etc.
 The non-contrastive
 standard Jacobian lens applied to an input $s$ outputs anything the model is likely
 to say in a context in which $s$ occurs, including features
-it shares with other entities of its type.
+it shares with other same-type entities.
 The contrastive
 Jacobian lens is trained to output only what differentiates
-$s$ from other entities of the same type.
+$s$ from other same-type type.
 
 \paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
-Jacobian--vector product $J_i u$ by the standard double-backward
+Jacobian--vector product $J_i u$ by the double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
 number of forward and backward passes; this is what makes
 Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
@@ -253,10 +254,10 @@ Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
 \paragraph{The relation score.} We decode $\mbox{CJP}(s)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
-Writing $\mathrm{rk}_{v_e}(m_e)$ for that rank, the diagnostic for a
+Writing $\mathrm{rk}_{\mbox{CJL}(e)}(m_e)$ for that rank, the diagnostic for a
 relation is
 \begin{equation}
-A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{CJL}(e)}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
@@ -411,20 +412,6 @@ here. We return to first-token collapse, and to why restricting the gold
 objects is only a partial remedy, in \S\ref{sec:subject}.
 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
-\caption{
-In this  rank-rank analysis of individual facts for
- \textsc{product\_by\_company}, lens rank and LRE rank are
- moderately highly correlated: $\rho=.41$ for all points,
- $\rho=.58$ for misses.
-This is not the case in general: see Figure~\ref{fig:blacksheep}.
-Ranks are zero-based.
-}
-\label{fig:product}
-\end{figure}
-
 \input{table_prominence}
 
 
@@ -434,19 +421,17 @@ Ranks are zero-based.
 Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
 than tested. Readouts of this kind are normally taken to surface what a
 model is internally disposed to say \citep{gurnee2026workspace}, and we
-have read $v_e$ the same way: as what the subject's representation makes
+have read $\mbox{CJL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
 part of what the subject evokes -- to the extent, that is, that the
 object is \emph{salient} for the subject.
+This section performs a sanity check on that assumption.
 
-This section is a sanity check on that assumption rather than a further
-application of it.
-
-\paragraph{Salience, measured independently of the lens.} The check has
-to be external. Reading salience off the lens would be circular, since
-the lens is the readout under test. We therefore measure it by the
+\paragraph{Salience, measured independently of the lens.} As
+a check that
+is external to the lens, we measure salience by the
 model's own free generation. For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
@@ -470,16 +455,6 @@ $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
 The check passes: what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
 
-One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
-yet the lens surfaces the constellation for only $5\%$ of its stars. We
-suspected an artifact, since a Bayer designation contains the
-constellation in the Latin genitive (\emph{Eta Persei} for
-\emph{Perseus}), which our word filter does not remove; but prominence on
-the $19$ subjects without such overlap is $0.63$, slightly higher rather
-than lower, so this explanation fails. What the lens returns for these
-subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
-\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
-correlation to $0.725$.
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -515,8 +490,8 @@ Our account thus holds in the middle of the cardinality range and
 degrades at both ends, in opposite directions. Cardinality is the
 same variable whose removal raises the correlation to
 $0.744$ (\S\ref{sec:results}). Our analysis in this section
-gives that number an interpretation: $k$ is the
-principal source of deviation in the salience account rather than
+gives that number an interpretation: $k$ is a
+source of deviation in the salience account rather than
 merely a nuisance correlate.
 
 \section{Fact-level analysis}
@@ -531,8 +506,21 @@ the contrastive Jacobian lens predicts the degree to which
 they are
 integrated into the linear structure.
 
-We use the setup shown in Figure~\ref{fig:product} to
-investigate fact-level linearity. The figure shows that lens
+To analyze relations at the fact level, we compute the
+$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
+rank.
+
+
+In this  rank-rank analysis of individual facts for
+ \textsc{product\_by\_company}, lens rank and LRE rank are
+ moderately highly correlated: $\rho=.41$ for all points,
+ $\rho=.58$ for misses.
+This is not the case in general.
+Ranks are zero-based.
+
+
+We use this rank-rank setup to
+investigate fact-level linearity. The analysis shows that lens
 rank is a moderately good predictor of LRE rank for
 \textsc{product\_by\_company} ($\rho=.41$), especially if we
 only consider misses ($\rho=.58$). Points with an LRE rank
@@ -553,23 +541,10 @@ this section, we analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig_iclr_outliers.pdf}
-\caption{
-  Rank-rank analysis for the three relations with the worst
-  overall correlation between lens rank and LRE rank.
-Green solid regression lines over all points,
-orange dashed regression lines over the orange points, the subjects the
-LRE missed.  All three panels share both scales.
-}
-\label{fig:blacksheep}
-\end{figure}
 
 We conduct our analysis on the three relations that have the
 worst overall correlation in the rank-rank analysis: their
-correlations are close to zero or even negative. See
-Figure~\ref{fig:blacksheep}.
+correlations are close to zero or even negative.
 
 \subsection{Semantically weak first tokens}
 
@@ -637,7 +612,19 @@ whose objects are full entity names.
 
 
 
-\subsection{Subject ambiguity}
+\subsection{Reference competition}
+\label{sec:competition}
+
+One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
+yet the lens surfaces the constellation for only $5\%$ of its stars. We
+suspected an artifact, since a Bayer designation contains the
+constellation in the Latin genitive (\emph{Eta Persei} for
+\emph{Perseus}), which our word filter does not remove; but prominence on
+the $19$ subjects without such overlap is $0.63$, slightly higher rather
+than lower, so this explanation fails. What the lens returns for these
+subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
+\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
+correlation to $0.725$.
 
 
 \textsc{person\_occupation} exemplifies the problem of 
@@ -704,7 +691,7 @@ the anchor is gone, scaling cannot change a ranking and $\beta$ has
 nothing left to do. This gives the
 \emph{contrastive Jacobian lens} of $e$,
 \begin{equation}
-v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
+\mbox{CJL}(e) \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
 \label{eq:lens}
 \end{equation}
 a vector in the final-layer residual stream, which we read out through
@@ -746,7 +733,7 @@ nothing in common: a subject term estimated under \texttt{"The official
 currency of \{\} is the"} still yields capitals 9 times in 12 under the
 capital anchor.
 
-\paragraph{The lens can replace the subject term.} Substituting $v_e$ ---
+\paragraph{The lens can replace the subject term.} Substituting $\mbox{CJL}(s)$ ---
 estimated under the neutral prompt, with no relation anywhere --- for
 $T_r(e)$ recovers much of the operator (column~4). On the two person
 relations it matches it: 20 against 19 for position, 21 against 22 for
@@ -771,7 +758,7 @@ $7.6\times10^{-6}$).
 \toprule
 & & \multicolumn{2}{c}{subject term} & \multicolumn{2}{c}{controls} \\
 \cmidrule(lr){3-4}\cmidrule(lr){5-6}
-relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $n$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{country\_capital\_city} & 12 & 11 & 11 & 6 & 0 \\
 \textsc{country\_largest\_city} & 12 & 10 & 9 & 5 & 0 \\
@@ -782,7 +769,7 @@ relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
 \caption{Recombining an LRE's anchor with different subject terms, at
 $\beta = 3$. Counts are how often the decoded top-1 is the relation's
 gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
-the paired relation's subject term; \emph{lens} uses $v_e$, which never
+the paired relation's subject term; \emph{lens} uses $\mbox{CJL}(s)$, which never
 sees a relation. A foreign subject term, and often the relation-agnostic
 lens, does as well as the operator's own.}
 \label{tab:swap}
@@ -959,7 +946,7 @@ $\beta \in \{3, 5, 10\}$.
 \small
 \begin{tabular}{llrrrr}
 \toprule
-relation & $\beta$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $\beta$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{capital\_city} ($n=12$) & 3 & 11 & 11 & 6 & 0 \\
                                 & 5 & 11 & 10 & 8 & 0 \\
