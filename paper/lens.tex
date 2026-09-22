@@ -159,7 +159,6 @@ matters because the prediction decomposes into a subject-dependent term
 and a constant: expanding $b_\beta$ gives
 \begin{equation}
 \beta W s + b_\beta \;=\; \operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (s - s_i)\,\right],
-\label{eq:beta}
 \end{equation}
 in which only the second term depends on which subject is being decoded.
 Left unscaled, the shared anchor $\operatorname{mean}_i f(s_i)$ dominates
@@ -208,6 +207,7 @@ scaling does not change the output distribution over
 tokens. The final form of the contrastive Jacobian lens is then:
 \begin{equation}
 \mbox{CJL}(s) = \operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
+\label{eq:cjl}
 \end{equation}
 Note that CJL takes into account the difference between $s$ and
 the reference point $s_i$ -- as it should  if we want
@@ -430,6 +430,7 @@ part of what the subject evokes -- to the extent, that is, that the
 object is \emph{salient} for the subject.
 This section performs a sanity check on that assumption.
 
+
 \paragraph{Salience, measured independently of the lens.} As
 a check that
 is external to the lens, we measure salience by the
@@ -560,6 +561,7 @@ properties that result in Barry Sobel, Vondell Darr
 and Simon Gosejohann being misrepresented by the model.
 
 
+
 The relation \textsc{star\_constellation} also suffers from
 reference competition due to the complex unusual names of
 many stars. For example, the most prominent associations of
@@ -650,16 +652,16 @@ An LRE affine map consists of
 an \emph{anchor}
 (the subject-independent anchor
 $\operatorname{mean}_i f(s_i)$) and
-a \emph{subject term)
+a \emph{subject term}
 (the subject-dependent remainder
 $T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$); see
 (\S\ref{sec:lens}). We defined the contrastive Jacobian lens
 as analogous to the subject term:
 $T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$).
-
-, and dropped the
-first. This section asks what each term actually carries, by recombining
-them across relations. It is an intervention rather than a correlation:
+ This section asks what information each term actually
+ carries, by recombining
+ anchors with different subject terms.
+It is an intervention rather than a correlation:
 if the anchor carries the relation, then pairing it with a \emph{foreign}
 subject term should still produce this relation's object.
 
@@ -732,28 +734,6 @@ lens, does as well as the operator's own.}
 \label{tab:swap}
 \end{table}
 
-
-\enote{hs}{add a discussion here of why we drop the anchor
-  Keeping it would instead mean choosing how to weigh it against the
-remainder, which is what $\beta$ does in Eq.~\ref{eq:beta}. A single
-$\beta$ shared by every relation would be a legitimate option, adding
-nothing relation-specific; it is simply not a profitable one. In sample
-such a $\beta$ slightly outperforms dropping the anchor, but the curve is
-flat across a wide range of $\beta$ and the advantage does not survive
-selection: choosing $\beta$ on 15 relations and evaluating on the
-remaining 10, across 2{,}000 random splits, beats the anchor-free readout
-in only $30\%$ of them. We therefore drop the anchor, which leaves a
-readout with no hyperparameter at all -- the decoder normalizes, so once
-the anchor is gone, scaling cannot change a ranking and $\beta$ has
-nothing left to do. This gives the
-\emph{contrastive Jacobian lens} of $e$,
-\begin{equation}
-\mbox{CJL}(e) \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
-\label{eq:lens}
-\end{equation}
-a vector in the final-layer residual stream, which we read out through
-the model's own output head as a ranking over the vocabulary.
-}
 
 
 
@@ -981,6 +961,32 @@ and the lens's top-five hit rate for the 14 relations on which prominence
 can be measured (Section~\ref{sec:residuals}).
 
 \input{table_relations}
+
+
+\section{The anchored contrastive Jacobian lens}
+Here we report on an experiment with an ``anchored''
+contrastive Jacobian lens -- in contrast to the non-anchored
+Jacobian lens defined in Eq.~\ref{eq:cjl}.
+Keeping the anchor means
+that we have choose how to weight anchor and subject term --
+which is what $\beta$ does in Eq.~\ref{eq:beta}.
+
+In sample
+such a $\beta$ slightly outperforms dropping the anchor, but the curve is
+flat across a wide range of $\beta$ and the advantage does not survive
+selection: choosing $\beta$ on 15 relations and evaluating on the
+remaining 10, across 2{,}000 random splits, beats the anchor-free readout
+in only $30\%$ of them. We therefore drop the anchor, which leaves a
+readout with no hyperparameter at all -- the decoder normalizes, so once
+the anchor is gone, scaling cannot change a ranking and $\beta$ has
+nothing left to do. This gives the
+\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cjl}.
+
+In summary, a single
+$\beta$ shared by every relation would be a legitimate option, adding
+nothing relation-specific, but it turns out to have no
+advantage compared to the simpler form we adopted.
+
 
 
 \end{document}
