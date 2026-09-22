@@ -236,21 +236,12 @@ the subject, e.g., other countries if the subject is a
 country, other landmarks if the subject is a landmark
 etc.
 The non-contrastive
-standard Jacobian lens 
-is dominated by what every entity of its type shares -- the type itself,
-the syntactic role, the prompt -- and the entity is buried in its own
-category. Same-type references make the comparison class the entity's own
-kind.
-
-
-
-Eq.~\ref{eq:affine} also states the net difference from a standard
-Jacobian lens, which is $J_\ell h_\ell$ with $J_\ell$ averaged over a
-corpus and no constant term. Ours differs in two respects, and neither is
-the removal of anything: the Jacobian is averaged over same-type
-references rather than a corpus, and the readout is offset by $-c$. Read
-against the LRE we drop a term; read against the Jacobian lens we add
-one.
+standard Jacobian lens applied to an input $s$ outputs anything the model is likely
+to say in a context in which $s$ occurs, including features
+it shares with other entities of its type.
+The contrastive
+Jacobian lens is trained to output only what differentiates
+$s$ from other entities of the same type.
 
 Eq.~\ref{eq:affine} also locates the lens inside the operator. Comparing
 with Eq.~\ref{eq:beta}, an LRE whose Jacobians are taken at the same
