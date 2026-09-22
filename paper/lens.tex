@@ -191,7 +191,7 @@ output positions. The Jacobian lens also does not use the
 ``anchor'', the zero-order term of the Taylor expansion; so it
 is simply $W = \operatorname{mean}_i J_i$.
 
-We derive our \emph{constrastive Jacobian lens} from
+We derive our \emph{contrastive Jacobian lens} from
 Eq.~\ref{eq:beta}, restated as:
 \begin{equation}
   f(s) \approx
@@ -200,7 +200,7 @@ Eq.~\ref{eq:beta}, restated as:
 + \beta\operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
 \end{equation}
 Following \citet{gurnee2026workspace}, we also drop the anchor
-term; see discussion in 
+term $\operatorname{mean}_i\!\left[\,f(s_i)\right]$; see discussion in 
 \S\ref{sec:swap}.
 This also means that we do not need $\beta$ since the
 scaling does not change the output distribution over
@@ -208,8 +208,8 @@ tokens. The final form of the contrastive Jacobian lens is then:
 \begin{equation}
 \mbox{CJL}(s) = \operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
 \end{equation}
-because the difference between $s$ and
-the reference point $s_i$ should be taken into account if we want
+Note that CJL takes into account the difference between $s$ and
+the reference point $s_i$ -- as it should be  if we want
 to approximate $f(s)$ using the first derivative. This is
 also the main motivation for introducing this alternative
 lens. We are not interested in what the model associates
