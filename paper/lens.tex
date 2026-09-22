@@ -469,16 +469,6 @@ $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
 The check passes: what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
 
-One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
-yet the lens surfaces the constellation for only $5\%$ of its stars. We
-suspected an artifact, since a Bayer designation contains the
-constellation in the Latin genitive (\emph{Eta Persei} for
-\emph{Perseus}), which our word filter does not remove; but prominence on
-the $19$ subjects without such overlap is $0.63$, slightly higher rather
-than lower, so this explanation fails. What the lens returns for these
-subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
-\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
-correlation to $0.725$.
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -637,6 +627,18 @@ whose objects are full entity names.
 
 
 \subsection{Subject ambiguity}
+
+
+One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
+yet the lens surfaces the constellation for only $5\%$ of its stars. We
+suspected an artifact, since a Bayer designation contains the
+constellation in the Latin genitive (\emph{Eta Persei} for
+\emph{Perseus}), which our word filter does not remove; but prominence on
+the $19$ subjects without such overlap is $0.63$, slightly higher rather
+than lower, so this explanation fails. What the lens returns for these
+subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
+\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
+correlation to $0.725$.
 
 
 \textsc{person\_occupation} exemplifies the problem of 
