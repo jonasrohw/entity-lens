@@ -226,6 +226,11 @@ relations, we need a prompt that evokes factual associations
 and a reference set that contrasts an entity with entities
 of the same type. 
 
+As the prompt we adopt 
+\texttt{"\{\} is known for"}. This a neutral prompt, i.e.,
+it is not customized for any specific factual relations. We
+use it for all our  experiments unless otherwise stated.
+
 \paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
 state at the final token of its name, taken at a fixed layer $\ell$ under a
 \emph{neutral prompt}
@@ -233,7 +238,6 @@ that names
 no relation and is identical for every relation in the
 study.
 In this paper, we use $\ell=17$ and the prompt
-\texttt{"\{\} is known for"}.
 
 \paragraph{(i) A type-specific reference set.} We take
 $s_1,\dots,s_n$ to be the states of $n=8$ entities of the \emph{same type}
