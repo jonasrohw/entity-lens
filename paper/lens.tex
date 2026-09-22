@@ -181,6 +181,15 @@ the quantity we predict.
 
 \section{A relation-agnostic Jacobian lens}
 \label{sec:lens}
+\citet{gurnee2026workspace}'s Jacobian lens is broadly
+similar to LRE.  But
+instead of a relation-specific prompt and a focused target
+position (the object),
+it computes the average 
+$W = \operatorname{mean}_i J_i$ over many diverse prompts and many
+output positions. The Jacobian lens also does not use the
+``bias'', the zeroth-order term of the Taylor expansion. 
+
 
 \paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
 state at the final token of its name, taken at a fixed layer $\ell$ under a
