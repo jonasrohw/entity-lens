@@ -254,10 +254,10 @@ Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
 \paragraph{The relation score.} We decode $\mbox{CJP}(s)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
-Writing $\mathrm{rk}_{v_e}(m_e)$ for that rank, the diagnostic for a
+Writing $\mathrm{rk}_{\mbox{CJL}(e)}(m_e)$ for that rank, the diagnostic for a
 relation is
 \begin{equation}
-A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{CJL}(e)}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
@@ -435,19 +435,17 @@ Ranks are zero-based.
 Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
 than tested. Readouts of this kind are normally taken to surface what a
 model is internally disposed to say \citep{gurnee2026workspace}, and we
-have read $v_e$ the same way: as what the subject's representation makes
+have read $\mbox{CJL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
 part of what the subject evokes -- to the extent, that is, that the
 object is \emph{salient} for the subject.
+This section performs a sanity check on that assumption.
 
-This section is a sanity check on that assumption rather than a further
-application of it.
-
-\paragraph{Salience, measured independently of the lens.} The check has
-to be external. Reading salience off the lens would be circular, since
-the lens is the readout under test. We therefore measure it by the
+\paragraph{Salience, measured independently of the lens.} As
+a check that
+is external to the lens, we measure salience by the
 model's own free generation. For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
@@ -705,7 +703,7 @@ the anchor is gone, scaling cannot change a ranking and $\beta$ has
 nothing left to do. This gives the
 \emph{contrastive Jacobian lens} of $e$,
 \begin{equation}
-v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
+\mbox{CJL}(e) \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
 \label{eq:lens}
 \end{equation}
 a vector in the final-layer residual stream, which we read out through
@@ -747,7 +745,7 @@ nothing in common: a subject term estimated under \texttt{"The official
 currency of \{\} is the"} still yields capitals 9 times in 12 under the
 capital anchor.
 
-\paragraph{The lens can replace the subject term.} Substituting $v_e$ ---
+\paragraph{The lens can replace the subject term.} Substituting $\mbox{CJL}(s)$ ---
 estimated under the neutral prompt, with no relation anywhere --- for
 $T_r(e)$ recovers much of the operator (column~4). On the two person
 relations it matches it: 20 against 19 for position, 21 against 22 for
@@ -772,7 +770,7 @@ $7.6\times10^{-6}$).
 \toprule
 & & \multicolumn{2}{c}{subject term} & \multicolumn{2}{c}{controls} \\
 \cmidrule(lr){3-4}\cmidrule(lr){5-6}
-relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $n$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{country\_capital\_city} & 12 & 11 & 11 & 6 & 0 \\
 \textsc{country\_largest\_city} & 12 & 10 & 9 & 5 & 0 \\
@@ -783,7 +781,7 @@ relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
 \caption{Recombining an LRE's anchor with different subject terms, at
 $\beta = 3$. Counts are how often the decoded top-1 is the relation's
 gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
-the paired relation's subject term; \emph{lens} uses $v_e$, which never
+the paired relation's subject term; \emph{lens} uses $\mbox{CJL}(s)$, which never
 sees a relation. A foreign subject term, and often the relation-agnostic
 lens, does as well as the operator's own.}
 \label{tab:swap}
@@ -960,7 +958,7 @@ $\beta \in \{3, 5, 10\}$.
 \small
 \begin{tabular}{llrrrr}
 \toprule
-relation & $\beta$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $\beta$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{capital\_city} ($n=12$) & 3 & 11 & 11 & 6 & 0 \\
                                 & 5 & 11 & 10 & 8 & 0 \\
