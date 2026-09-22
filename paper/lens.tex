@@ -221,8 +221,14 @@ category. Same-type references make the comparison class the entity's own
 kind.
 
 \paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
-second depends on which entity is being read. Dropping the anchor is not
-a matter of discarding something uninformative: it is the readout the
+second depends on which entity is being read. The anchor here is
+inherited from the LRE, not from the Jacobian lens: the latter has no
+such term, being $J_\ell$ applied directly to an activation
+\citep{gurnee2026workspace}. This change is therefore a departure from
+Eq.~\ref{eq:beta} rather than from prior lens work.
+
+Dropping the anchor is not a matter of discarding something
+uninformative: it is the readout the
 reference entities themselves receive, and in an operator it is what
 supplies the relation. On \textsc{country\_capital\_city}, removing it
 from the fitted operator turns \emph{Madrid} and \emph{Ottawa} into
@@ -265,6 +271,14 @@ and unembedding, so a translation changes the ranking -- but it is the
 same translation for every entity, and what varies with $e$ is $W s_e$.
 Differences between entities are free of it altogether:
 $v_e - v_{e'} = W(s_e - s_{e'})$.
+
+Eq.~\ref{eq:affine} also states the net difference from a standard
+Jacobian lens, which is $J_\ell h_\ell$ with $J_\ell$ averaged over a
+corpus and no constant term. Ours differs in two respects, and neither is
+the removal of anything: the Jacobian is averaged over same-type
+references rather than a corpus, and the readout is offset by $-c$. Read
+against the LRE we drop a term; read against the Jacobian lens we add
+one.
 
 Eq.~\ref{eq:affine} also locates the lens inside the operator. Comparing
 with Eq.~\ref{eq:beta}, an LRE whose Jacobians are taken at the same
