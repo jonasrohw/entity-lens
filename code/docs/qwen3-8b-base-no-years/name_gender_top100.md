@@ -1,5 +1,7 @@
 # Qwen3 8B Base: top 100 J-lens predictions for `name_gender`
 
+[Also available: the same examples with the earlier `Facts about {name}:` prompt](name_gender_facts_about_top100.md).
+
 **100 ranked predictions for each of all 11 saved examples (1,100 entries).** Sofia occurs twice because the saved evaluation includes that name twice. Each table contains vocabulary tokens ranked by the differential J-lens, not a generated sequence.
 
 [CSV: all 1,100 predictions](name_gender_top100.csv) · [JSON: predictions, scores, and provenance](name_gender_top100.json) · [Top-five summary and interpretation](name_gender_predictions.md)

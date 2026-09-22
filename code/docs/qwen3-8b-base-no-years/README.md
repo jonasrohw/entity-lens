@@ -6,6 +6,8 @@
 
 [Inspect the top 100 `name_gender` J-lens predictions per example](name_gender_top100.md) · [Top-five summary](name_gender_predictions.md).
 
+[Compare the same examples with the earlier `Facts about {name}:` prompt](name_gender_facts_about_top100.md).
+
 The Figure 1 comparison uses the latest newline-prompt measurements for
 `Qwen/Qwen3-8B-Base`, main protocol, fixed lens state 19. Only
 `presidents_birth_year` and `presidents_election_year` are excluded. All saved
