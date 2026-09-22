@@ -188,7 +188,8 @@ position (the object),
 it computes the average 
 $W = \operatorname{mean}_i J_i$ over many diverse prompts and many
 output positions. The Jacobian lens also does not use the
-``bias'', the zeroth-order term of the Taylor expansion. 
+``bias'', the zero-order term of the Taylor expansion; so it
+is simply $W = \operatorname{mean}_i J_i$.
 
 
 \paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
