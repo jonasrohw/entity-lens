@@ -251,25 +251,6 @@ the syntactic role, the prompt -- and the entity is buried in its own
 category. Same-type references make the comparison class the entity's own
 kind.
 
-Keeping it would instead mean choosing how to weigh it against the
-remainder, which is what $\beta$ does in Eq.~\ref{eq:beta}. A single
-$\beta$ shared by every relation would be a legitimate option, adding
-nothing relation-specific; it is simply not a profitable one. In sample
-such a $\beta$ slightly outperforms dropping the anchor, but the curve is
-flat across a wide range of $\beta$ and the advantage does not survive
-selection: choosing $\beta$ on 15 relations and evaluating on the
-remaining 10, across 2{,}000 random splits, beats the anchor-free readout
-in only $30\%$ of them. We therefore drop the anchor, which leaves a
-readout with no hyperparameter at all -- the decoder normalizes, so once
-the anchor is gone, scaling cannot change a ranking and $\beta$ has
-nothing left to do. This gives the
-\emph{contrastive Jacobian lens} of $e$,
-\begin{equation}
-v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
-\label{eq:lens}
-\end{equation}
-a vector in the final-layer residual stream, which we read out through
-the model's own output head as a ranking over the vocabulary.
 
 \paragraph{What Eq.~\ref{eq:lens} is.} Each $J_i$ is linear, so the lens
 is affine in $s_e$:
@@ -748,7 +729,27 @@ solutions evaluated in this study.
 \section{What the operator's two terms carry}
 \label{sec:swap}
 
-\enote{hs}{add a discussion here of why we drop the anchor}
+\enote{hs}{add a discussion here of why we drop the anchor
+  Keeping it would instead mean choosing how to weigh it against the
+remainder, which is what $\beta$ does in Eq.~\ref{eq:beta}. A single
+$\beta$ shared by every relation would be a legitimate option, adding
+nothing relation-specific; it is simply not a profitable one. In sample
+such a $\beta$ slightly outperforms dropping the anchor, but the curve is
+flat across a wide range of $\beta$ and the advantage does not survive
+selection: choosing $\beta$ on 15 relations and evaluating on the
+remaining 10, across 2{,}000 random splits, beats the anchor-free readout
+in only $30\%$ of them. We therefore drop the anchor, which leaves a
+readout with no hyperparameter at all -- the decoder normalizes, so once
+the anchor is gone, scaling cannot change a ranking and $\beta$ has
+nothing left to do. This gives the
+\emph{contrastive Jacobian lens} of $e$,
+\begin{equation}
+v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
+\label{eq:lens}
+\end{equation}
+a vector in the final-layer residual stream, which we read out through
+the model's own output head as a ranking over the vocabulary.
+}
 
 \S\ref{sec:lens} split an LRE into a subject-independent anchor
 $\operatorname{mean}_i f(s_i)$ and a subject-dependent remainder
