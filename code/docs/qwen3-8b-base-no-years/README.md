@@ -20,8 +20,11 @@ differential representation score, `−median(log10(rank_diff + 1))`, where the
 saved ranks are zero-based and higher scores mean better target-token ranks.
 The vertical axis is retained LRE model-top-1 faithfulness, not gold-answer
 accuracy. The green line is an ordinary least-squares fit to the 26 plotted
-points, matching Figure 1's convention. Selected points have direct labels;
-the CSV identifies every point.
+points, matching Figure 1's convention. All 13 relations with an absolute
+vertical residual of at least 0.20 faithfulness units have direct name labels
+and leader lines. This is a descriptive labeling rule, not a statistical
+outlier test, and it does not remove or modify any points. The larger figure
+uses 10-point names with white backgrounds; the CSV identifies every point.
 
 The frozen CSV is an exact subset of
 `code/results/all_model_newline/relation_scores.csv`, selecting
