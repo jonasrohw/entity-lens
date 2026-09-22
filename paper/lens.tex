@@ -222,8 +222,8 @@ The basic idea we will investigate is that such top-ranked contrastive associati
 give rise to linearity.
 
 To instantiate the contrastive Jacobian lens for factual
-relations, we need a prompt that evokes factual associations
-and a reference set that contrasts an entity with entities
+relations, we need (i) a prompt that evokes factual associations
+and (ii) a reference set that contrasts an entity with entities
 of the same type. 
 
 As the prompt we adopt 
@@ -231,26 +231,12 @@ As the prompt we adopt
 it is not customized for any specific factual relations. We
 use it for all our  experiments unless otherwise stated.
 
-\paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
-state at the final token of its name, taken at a fixed layer $\ell$ under a
-\emph{neutral prompt}
-that names
-no relation and is identical for every relation in the
-study.
-In this paper, we use $\ell=17$ and the prompt
-
-\paragraph{(i) A type-specific reference set.} We take
-$s_1,\dots,s_n$ to be the states of $n=8$ entities of the \emph{same type}
-as $e$ -- \emph{France} against \emph{Spain}, \emph{Italy}, \dots --
-obtained the same way as $s_e$, rather than a sample of whatever the
-model has seen.
-
-This is the substantive choice, and it is what separates the construction
-from a Jacobian lens that averages over a corpus and applies the result to
-a raw state \citep{gurnee2026workspace}. The difference is not that one
-construction takes derivatives and the other does not: a Jacobian is a
-derivative either way. It is what $e$ is compared against. A
-corpus-averaged lens compares $e$ with language at large, so a raw state
+As the reference set, we use entities of the same type as
+the subject, e.g., other countries if the subject is a
+country, other landmarks if the subject is a landmark
+etc.
+The non-contrastive
+standard Jacobian lens 
 is dominated by what every entity of its type shares -- the type itself,
 the syntactic role, the prompt -- and the entity is buried in its own
 category. Same-type references make the comparison class the entity's own
