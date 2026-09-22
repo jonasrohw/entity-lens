@@ -1,0 +1,787 @@
+{
+  "name": "cities_continent",
+  "prompt_templates": [
+    "The continent containing the city of {} is"
+  ],
+  "properties": {
+    "domain_name": "cities"
+  },
+  "samples": [
+    {
+      "subject": "Seville",
+      "object": "Europe",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Kyoto",
+      "object": "Asia",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Asuncion",
+      "object": "South America",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Stockholm",
+      "object": "Europe",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Kingston",
+      "object": "North America",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Montevideo",
+      "object": "South America",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Fes",
+      "object": "Africa",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Helsinki",
+      "object": "Europe",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Seoul",
+      "object": "Asia",
+      "split": "references"
+    },
+    {
+      "subject": "Brisbane",
+      "object": "Oceania",
+      "split": "references"
+    },
+    {
+      "subject": "London",
+      "object": "Europe",
+      "split": "references"
+    },
+    {
+      "subject": "Lahore",
+      "object": "Asia",
+      "split": "references"
+    },
+    {
+      "subject": "Wuhan",
+      "object": "Asia",
+      "split": "references"
+    },
+    {
+      "subject": "Madrid",
+      "object": "Europe",
+      "split": "references"
+    },
+    {
+      "subject": "Gaborone",
+      "object": "Africa",
+      "split": "references"
+    },
+    {
+      "subject": "Lagos",
+      "object": "Africa",
+      "split": "references"
+    },
+    {
+      "subject": "Krakow",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Surabaya",
+      "object": "Asia",
+      "split": "validation"
+    },
+    {
+      "subject": "Lusaka",
+      "object": "Africa",
+      "split": "validation"
+    },
+    {
+      "subject": "Hamburg",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Kampala",
+      "object": "Africa",
+      "split": "validation"
+    },
+    {
+      "subject": "Edinburgh",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Marseille",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Johannesburg",
+      "object": "Africa",
+      "split": "validation"
+    },
+    {
+      "subject": "Jakarta",
+      "object": "Asia",
+      "split": "validation"
+    },
+    {
+      "subject": "Lyon",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Windhoek",
+      "object": "Africa",
+      "split": "validation"
+    },
+    {
+      "subject": "Valparaiso",
+      "object": "South America",
+      "split": "validation"
+    },
+    {
+      "subject": "Antananarivo",
+      "object": "Africa",
+      "split": "validation"
+    },
+    {
+      "subject": "Medellin",
+      "object": "South America",
+      "split": "validation"
+    },
+    {
+      "subject": "Budapest",
+      "object": "Europe",
+      "split": "validation"
+    },
+    {
+      "subject": "Chennai",
+      "object": "Asia",
+      "split": "validation"
+    },
+    {
+      "subject": "Kuala Lumpur",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Milan",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Arequipa",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "San Jose",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Osaka",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Hyderabad",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Addis Ababa",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Mumbai",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Boston",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Dhaka",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Bogota",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "San Francisco",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Riyadh",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Edmonton",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Houston",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Prague",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Shanghai",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Ibadan",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Nagoya",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Mombasa",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Miami",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Manchester",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Jeddah",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Cape Town",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Colombo",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Florence",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Geneva",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Kigali",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Canberra",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Busan",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Accra",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Dakar",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Beijing",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Marrakesh",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Manila",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Luanda",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Douala",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Rome",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Guangzhou",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Guayaquil",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Cali",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Tijuana",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Seattle",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Kumasi",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Bridgetown",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Sydney",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Kinshasa",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Port Louis",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Tegucigalpa",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Guadalajara",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Suva",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Philadelphia",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Barcelona",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Naples",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Rosario",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Adelaide",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Nairobi",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Daegu",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Calgary",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Curitiba",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Cancun",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Brussels",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Port Moresby",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Frankfurt",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Monterrey",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "New Delhi",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Rio de Janeiro",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Valencia",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Santiago",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Zurich",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Dublin",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Shenzhen",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Pretoria",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Toronto",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "La Paz",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Karachi",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Chicago",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Vienna",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Durban",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Dar es Salaam",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Warsaw",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Maputo",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Hanoi",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Ho Chi Minh City",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Munich",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Kathmandu",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Melbourne",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Incheon",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Quito",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Islamabad",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Santo Domingo",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Fortaleza",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Lima",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Los Angeles",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Chengdu",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Chiang Mai",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Kolkata",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Bengaluru",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Amsterdam",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Birmingham",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Montreal",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Buenos Aires",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Berlin",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Tokyo",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Wellington",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Havana",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Puebla",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Ottawa",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Bangkok",
+      "object": "Asia",
+      "split": "test"
+    },
+    {
+      "subject": "Athens",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Auckland",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Perth",
+      "object": "Oceania",
+      "split": "test"
+    },
+    {
+      "subject": "Vancouver",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Harare",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Belo Horizonte",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Lisbon",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Paris",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Sao Paulo",
+      "object": "South America",
+      "split": "test"
+    },
+    {
+      "subject": "Casablanca",
+      "object": "Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Nassau",
+      "object": "North America",
+      "split": "test"
+    },
+    {
+      "subject": "Copenhagen",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Porto",
+      "object": "Europe",
+      "split": "test"
+    },
+    {
+      "subject": "Oslo",
+      "object": "Europe",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

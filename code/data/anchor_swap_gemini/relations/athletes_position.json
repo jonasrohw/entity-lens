@@ -1,0 +1,787 @@
+{
+  "name": "athletes_position",
+  "prompt_templates": [
+    "The main playing position of {} is"
+  ],
+  "properties": {
+    "domain_name": "athletes"
+  },
+  "samples": [
+    {
+      "subject": "Randy Johnson",
+      "object": "pitcher",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Ed Reed",
+      "object": "safety",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Allan Border",
+      "object": "batter",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Cy Young",
+      "object": "pitcher",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Maurice Richard",
+      "object": "right wing",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Adam Gilchrist",
+      "object": "wicket-keeper",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Gianluigi Buffon",
+      "object": "goalkeeper",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Lou Gehrig",
+      "object": "first baseman",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Oliver Kahn",
+      "object": "goalkeeper",
+      "split": "references"
+    },
+    {
+      "subject": "Richie McCaw",
+      "object": "flanker",
+      "split": "references"
+    },
+    {
+      "subject": "Yao Ming",
+      "object": "center",
+      "split": "references"
+    },
+    {
+      "subject": "Sue Bird",
+      "object": "point guard",
+      "split": "references"
+    },
+    {
+      "subject": "Morten Andersen",
+      "object": "placekicker",
+      "split": "references"
+    },
+    {
+      "subject": "Shaquille O'Neal",
+      "object": "center",
+      "split": "references"
+    },
+    {
+      "subject": "Christine Sinclair",
+      "object": "forward",
+      "split": "references"
+    },
+    {
+      "subject": "Franz Beckenbauer",
+      "object": "sweeper",
+      "split": "references"
+    },
+    {
+      "subject": "Ray Bourque",
+      "object": "defenceman",
+      "split": "validation"
+    },
+    {
+      "subject": "Reggie White",
+      "object": "defensive end",
+      "split": "validation"
+    },
+    {
+      "subject": "Thierry Henry",
+      "object": "forward",
+      "split": "validation"
+    },
+    {
+      "subject": "Tamika Catchings",
+      "object": "small forward",
+      "split": "validation"
+    },
+    {
+      "subject": "Mia Hamm",
+      "object": "forward",
+      "split": "validation"
+    },
+    {
+      "subject": "Lisa Leslie",
+      "object": "center",
+      "split": "validation"
+    },
+    {
+      "subject": "John Stockton",
+      "object": "point guard",
+      "split": "validation"
+    },
+    {
+      "subject": "Lev Yashin",
+      "object": "goalkeeper",
+      "split": "validation"
+    },
+    {
+      "subject": "Ray Lewis",
+      "object": "linebacker",
+      "split": "validation"
+    },
+    {
+      "subject": "Gary Payton",
+      "object": "point guard",
+      "split": "validation"
+    },
+    {
+      "subject": "Andrea Pirlo",
+      "object": "midfielder",
+      "split": "validation"
+    },
+    {
+      "subject": "Sergio Santos",
+      "object": "libero",
+      "split": "validation"
+    },
+    {
+      "subject": "Emmitt Smith",
+      "object": "running back",
+      "split": "validation"
+    },
+    {
+      "subject": "Glenn McGrath",
+      "object": "bowler",
+      "split": "validation"
+    },
+    {
+      "subject": "Jaromir Jagr",
+      "object": "right wing",
+      "split": "validation"
+    },
+    {
+      "subject": "Dirk Nowitzki",
+      "object": "power forward",
+      "split": "validation"
+    },
+    {
+      "subject": "Adam Vinatieri",
+      "object": "placekicker",
+      "split": "test"
+    },
+    {
+      "subject": "Tim Duncan",
+      "object": "power forward",
+      "split": "test"
+    },
+    {
+      "subject": "Andrea Giani",
+      "object": "middle blocker",
+      "split": "test"
+    },
+    {
+      "subject": "Bobby Orr",
+      "object": "defenceman",
+      "split": "test"
+    },
+    {
+      "subject": "Abby Wambach",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Reggie Miller",
+      "object": "shooting guard",
+      "split": "test"
+    },
+    {
+      "subject": "Bobby Moore",
+      "object": "centre-back",
+      "split": "test"
+    },
+    {
+      "subject": "Dan Marino",
+      "object": "quarterback",
+      "split": "test"
+    },
+    {
+      "subject": "Brian O'Driscoll",
+      "object": "centre",
+      "split": "test"
+    },
+    {
+      "subject": "Penny Taylor",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Shane Warne",
+      "object": "bowler",
+      "split": "test"
+    },
+    {
+      "subject": "Sadaharu Oh",
+      "object": "first baseman",
+      "split": "test"
+    },
+    {
+      "subject": "Michael Jordan",
+      "object": "shooting guard",
+      "split": "test"
+    },
+    {
+      "subject": "Peter Forsberg",
+      "object": "centre",
+      "split": "test"
+    },
+    {
+      "subject": "George Gregan",
+      "object": "scrum-half",
+      "split": "test"
+    },
+    {
+      "subject": "Mariano Rivera",
+      "object": "pitcher",
+      "split": "test"
+    },
+    {
+      "subject": "Joe Montana",
+      "object": "quarterback",
+      "split": "test"
+    },
+    {
+      "subject": "Paolo Maldini",
+      "object": "defender",
+      "split": "test"
+    },
+    {
+      "subject": "Troy Polamalu",
+      "object": "safety",
+      "split": "test"
+    },
+    {
+      "subject": "Marco van Basten",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "John Eales",
+      "object": "lock",
+      "split": "test"
+    },
+    {
+      "subject": "Cammi Granato",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Kobe Bryant",
+      "object": "shooting guard",
+      "split": "test"
+    },
+    {
+      "subject": "Dino Zoff",
+      "object": "goalkeeper",
+      "split": "test"
+    },
+    {
+      "subject": "Dikembe Mutombo",
+      "object": "center",
+      "split": "test"
+    },
+    {
+      "subject": "Ken Griffey Jr.",
+      "object": "outfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Teemu Selanne",
+      "object": "right wing",
+      "split": "test"
+    },
+    {
+      "subject": "Fabio Cannavaro",
+      "object": "defender",
+      "split": "test"
+    },
+    {
+      "subject": "Nikola Grbic",
+      "object": "setter",
+      "split": "test"
+    },
+    {
+      "subject": "Peter Schmeichel",
+      "object": "goalkeeper",
+      "split": "test"
+    },
+    {
+      "subject": "Franco Baresi",
+      "object": "sweeper",
+      "split": "test"
+    },
+    {
+      "subject": "Roberto Carlos",
+      "object": "left-back",
+      "split": "test"
+    },
+    {
+      "subject": "Hope Solo",
+      "object": "goalkeeper",
+      "split": "test"
+    },
+    {
+      "subject": "Sun Wen",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Tony Gonzalez",
+      "object": "tight end",
+      "split": "test"
+    },
+    {
+      "subject": "Cafu",
+      "object": "right-back",
+      "split": "test"
+    },
+    {
+      "subject": "Peyton Manning",
+      "object": "quarterback",
+      "split": "test"
+    },
+    {
+      "subject": "Karl Malone",
+      "object": "power forward",
+      "split": "test"
+    },
+    {
+      "subject": "Champ Bailey",
+      "object": "cornerback",
+      "split": "test"
+    },
+    {
+      "subject": "Imran Khan",
+      "object": "all-rounder",
+      "split": "test"
+    },
+    {
+      "subject": "Jhulan Goswami",
+      "object": "bowler",
+      "split": "test"
+    },
+    {
+      "subject": "Serge Blanco",
+      "object": "fullback",
+      "split": "test"
+    },
+    {
+      "subject": "Martin Johnson",
+      "object": "lock",
+      "split": "test"
+    },
+    {
+      "subject": "Nadine Angerer",
+      "object": "goalkeeper",
+      "split": "test"
+    },
+    {
+      "subject": "Muttiah Muralitharan",
+      "object": "bowler",
+      "split": "test"
+    },
+    {
+      "subject": "Jonny Wilkinson",
+      "object": "fly-half",
+      "split": "test"
+    },
+    {
+      "subject": "Bruce Smith",
+      "object": "defensive end",
+      "split": "test"
+    },
+    {
+      "subject": "Brett Favre",
+      "object": "quarterback",
+      "split": "test"
+    },
+    {
+      "subject": "Nicklas Lidström",
+      "object": "defenceman",
+      "split": "test"
+    },
+    {
+      "subject": "Wayne Gretzky",
+      "object": "centre",
+      "split": "test"
+    },
+    {
+      "subject": "Michel Platini",
+      "object": "midfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Bryan Habana",
+      "object": "wing",
+      "split": "test"
+    },
+    {
+      "subject": "Kareem Abdul-Jabbar",
+      "object": "center",
+      "split": "test"
+    },
+    {
+      "subject": "Pedro Martinez",
+      "object": "pitcher",
+      "split": "test"
+    },
+    {
+      "subject": "Dominik Hašek",
+      "object": "goaltender",
+      "split": "test"
+    },
+    {
+      "subject": "Ekaterina Gamova",
+      "object": "opposite hitter",
+      "split": "test"
+    },
+    {
+      "subject": "Pelé",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Anthony Munoz",
+      "object": "offensive tackle",
+      "split": "test"
+    },
+    {
+      "subject": "Denis Potvin",
+      "object": "defenceman",
+      "split": "test"
+    },
+    {
+      "subject": "Hayley Wickenheiser",
+      "object": "centre",
+      "split": "test"
+    },
+    {
+      "subject": "Maggie Alphonsi",
+      "object": "flanker",
+      "split": "test"
+    },
+    {
+      "subject": "Lauren Jackson",
+      "object": "power forward",
+      "split": "test"
+    },
+    {
+      "subject": "Iker Casillas",
+      "object": "goalkeeper",
+      "split": "test"
+    },
+    {
+      "subject": "Barry Bonds",
+      "object": "outfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Mario Lemieux",
+      "object": "centre",
+      "split": "test"
+    },
+    {
+      "subject": "Jerry Rice",
+      "object": "wide receiver",
+      "split": "test"
+    },
+    {
+      "subject": "Patrick Roy",
+      "object": "goaltender",
+      "split": "test"
+    },
+    {
+      "subject": "Greg Maddux",
+      "object": "pitcher",
+      "split": "test"
+    },
+    {
+      "subject": "Brian Lara",
+      "object": "batsman",
+      "split": "test"
+    },
+    {
+      "subject": "Hank Aaron",
+      "object": "right fielder",
+      "split": "test"
+    },
+    {
+      "subject": "Ozzie Smith",
+      "object": "shortstop",
+      "split": "test"
+    },
+    {
+      "subject": "Mike Singletary",
+      "object": "linebacker",
+      "split": "test"
+    },
+    {
+      "subject": "Carli Lloyd",
+      "object": "midfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Johnny Bench",
+      "object": "catcher",
+      "split": "test"
+    },
+    {
+      "subject": "Mireya Luis",
+      "object": "outside hitter",
+      "split": "test"
+    },
+    {
+      "subject": "Charles Barkley",
+      "object": "power forward",
+      "split": "test"
+    },
+    {
+      "subject": "Brooks Robinson",
+      "object": "third baseman",
+      "split": "test"
+    },
+    {
+      "subject": "Babe Ruth",
+      "object": "outfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Marta",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Zinedine Zidane",
+      "object": "attacking midfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Sandy Koufax",
+      "object": "pitcher",
+      "split": "test"
+    },
+    {
+      "subject": "Ronaldo Nazário",
+      "object": "striker",
+      "split": "test"
+    },
+    {
+      "subject": "Barry Sanders",
+      "object": "running back",
+      "split": "test"
+    },
+    {
+      "subject": "Lawrence Taylor",
+      "object": "linebacker",
+      "split": "test"
+    },
+    {
+      "subject": "Scottie Pippen",
+      "object": "small forward",
+      "split": "test"
+    },
+    {
+      "subject": "Patrick Ewing",
+      "object": "center",
+      "split": "test"
+    },
+    {
+      "subject": "Dan Carter",
+      "object": "fly-half",
+      "split": "test"
+    },
+    {
+      "subject": "Shannon Sharpe",
+      "object": "tight end",
+      "split": "test"
+    },
+    {
+      "subject": "Wasim Akram",
+      "object": "bowler",
+      "split": "test"
+    },
+    {
+      "subject": "Cynthia Cooper-Dyke",
+      "object": "shooting guard",
+      "split": "test"
+    },
+    {
+      "subject": "Ricky Ponting",
+      "object": "batter",
+      "split": "test"
+    },
+    {
+      "subject": "Kumar Sangakkara",
+      "object": "wicket-keeper",
+      "split": "test"
+    },
+    {
+      "subject": "Sachin Tendulkar",
+      "object": "batsman",
+      "split": "test"
+    },
+    {
+      "subject": "Derek Jeter",
+      "object": "shortstop",
+      "split": "test"
+    },
+    {
+      "subject": "Marshall Faulk",
+      "object": "running back",
+      "split": "test"
+    },
+    {
+      "subject": "Walter Payton",
+      "object": "running back",
+      "split": "test"
+    },
+    {
+      "subject": "Steve Nash",
+      "object": "point guard",
+      "split": "test"
+    },
+    {
+      "subject": "Hakeem Olajuwon",
+      "object": "center",
+      "split": "test"
+    },
+    {
+      "subject": "Sheryl Swoopes",
+      "object": "forward",
+      "split": "test"
+    },
+    {
+      "subject": "Pavel Bure",
+      "object": "right wing",
+      "split": "test"
+    },
+    {
+      "subject": "Yogi Berra",
+      "object": "catcher",
+      "split": "test"
+    },
+    {
+      "subject": "Vladislav Tretiak",
+      "object": "goaltender",
+      "split": "test"
+    },
+    {
+      "subject": "Larry Bird",
+      "object": "small forward",
+      "split": "test"
+    },
+    {
+      "subject": "Birgit Prinz",
+      "object": "striker",
+      "split": "test"
+    },
+    {
+      "subject": "Lang Ping",
+      "object": "outside hitter",
+      "split": "test"
+    },
+    {
+      "subject": "Gordie Howe",
+      "object": "right wing",
+      "split": "test"
+    },
+    {
+      "subject": "Sean Fitzpatrick",
+      "object": "hooker",
+      "split": "test"
+    },
+    {
+      "subject": "Manon Rheaume",
+      "object": "goaltender",
+      "split": "test"
+    },
+    {
+      "subject": "Randy Moss",
+      "object": "wide receiver",
+      "split": "test"
+    },
+    {
+      "subject": "Martin Brodeur",
+      "object": "goaltender",
+      "split": "test"
+    },
+    {
+      "subject": "Karch Kiraly",
+      "object": "outside hitter",
+      "split": "test"
+    },
+    {
+      "subject": "Jonah Lomu",
+      "object": "wing",
+      "split": "test"
+    },
+    {
+      "subject": "Cal Ripken Jr.",
+      "object": "shortstop",
+      "split": "test"
+    },
+    {
+      "subject": "Homare Sawa",
+      "object": "midfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Mithali Raj",
+      "object": "batter",
+      "split": "test"
+    },
+    {
+      "subject": "Mike Piazza",
+      "object": "catcher",
+      "split": "test"
+    },
+    {
+      "subject": "Magic Johnson",
+      "object": "point guard",
+      "split": "test"
+    },
+    {
+      "subject": "Jacques Kallis",
+      "object": "all-rounder",
+      "split": "test"
+    },
+    {
+      "subject": "Diego Maradona",
+      "object": "attacking midfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Os du Randt",
+      "object": "prop",
+      "split": "test"
+    },
+    {
+      "subject": "Ryne Sandberg",
+      "object": "second baseman",
+      "split": "test"
+    },
+    {
+      "subject": "Ichiro Suzuki",
+      "object": "outfielder",
+      "split": "test"
+    },
+    {
+      "subject": "Nolan Ryan",
+      "object": "pitcher",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

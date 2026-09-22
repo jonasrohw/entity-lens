@@ -1,0 +1,2906 @@
+{
+  "spec": {
+    "relations": [
+      "country",
+      "city"
+    ],
+    "templates": [
+      "The country containing {} is",
+      "The city containing {} is"
+    ],
+    "instruction": "Famous individual human-made landmarks located unambiguously within a city/town. Mix continents, landmark types, eras; no more than one third Europe. Exclude subject names containing the answer country/city or demonym, geographic regions, natural landmarks, boundary-crossing sites, disputed territories. City should be the actual municipality, not nearby tourism hub."
+  },
+  "accepted": [
+    {
+      "subject": "Taj Mahal",
+      "object_a": "India",
+      "object_b": "Agra",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Taj_Mahal",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The Taj Mahal is an iconic mausoleum unambiguously located in Agra, India."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms the Taj Mahal is an ivory-white marble mausoleum located in Agra, India."
+      },
+      "source_html_sha256": "d2374ac21e1fa588eaa6aba3a11648d98abd0a11ef4b29b03556b2938c94ff87",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/5ee8b1208a41e7db478c740d.json"
+    },
+    {
+      "subject": "Lotus Temple",
+      "object_a": "India",
+      "object_b": "New Delhi",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Lotus_Temple",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The Lotus Temple is a famous Bahá'í House of Worship located in New Delhi, India."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source explicitly mentions the Baháʼí House of Worship, New Delhi, located in Delhi, India."
+      },
+      "source_html_sha256": "2b7c58ae005f93ea1d0a4cd1cee9e57b5a2b01754ae2566e0f90bf58881a4ad7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0295df5f7860b72fe139909e.json"
+    },
+    {
+      "subject": "Hawa Mahal",
+      "object_a": "India",
+      "object_b": "Jaipur",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Hawa_Mahal",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Hawa Mahal is a famous palace located in Jaipur, India."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Hawa Mahal is a palace located in the city of Jaipur, India."
+      },
+      "source_html_sha256": "e68bd2839128e8ef489b9a9b2c0599925f3ae652e96c3157bf5c9e0026fd6e52",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a9559e34a98dd30aa2fded77.json"
+    },
+    {
+      "subject": "Victoria Memorial",
+      "object_a": "India",
+      "object_b": "Kolkata",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Victoria_Memorial,_Kolkata",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Victoria Memorial is a prominent landmark and museum located in Kolkata, India."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Victoria Memorial is a monument located in Kolkata (Calcutta), India."
+      },
+      "source_html_sha256": "5ee339f7d3a55f4794a19ef1cbc9aabe6a06f84bd9f2a3beeed2416220779ce5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d1740781d78d45aeca69cebd.json"
+    },
+    {
+      "subject": "Petronas Towers",
+      "object_a": "Malaysia",
+      "object_b": "Kuala Lumpur",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Petronas_Towers",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The Petronas Towers are iconic twin skyscrapers located in Kuala Lumpur, Malaysia."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms the Petronas Towers are skyscrapers located in Kuala Lumpur, Malaysia."
+      },
+      "source_html_sha256": "7fc37c01934df94ba4f24c3372d90e9bb1a92bffcf9c612a3fbc142834b932b2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/430c2a54d1eaac3352d40dd0.json"
+    },
+    {
+      "subject": "Angkor Wat",
+      "object_a": "Cambodia",
+      "object_b": "Siem Reap",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Angkor_Wat",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Angkor Wat is a famous temple complex located in the municipality of Siem Reap, Cambodia."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Angkor Wat is a temple complex located in Siem Reap, Cambodia."
+      },
+      "source_html_sha256": "3b7fe2c556762097fc0495f5f599b6b68026cbf46a8583253b1e00bb2d2c048d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0b1d2cc0174cbba10ada41bb.json"
+    },
+    {
+      "subject": "Forbidden City",
+      "object_a": "China",
+      "object_b": "Beijing",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Forbidden_City",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The Forbidden City is a famous imperial palace complex located in Beijing, China."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms the Forbidden City is an imperial palace complex located in Beijing, China."
+      },
+      "source_html_sha256": "35d784253848c913427c1c2977bff305d5b5059afcebba2ae8083ce164cc2a7f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0b3f18f79567b8b48664b4d1.json"
+    },
+    {
+      "subject": "Summer Palace",
+      "object_a": "China",
+      "object_b": "Beijing",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Summer_Palace",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The Summer Palace is a renowned imperial garden and palace located in Beijing, China."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms the Summer Palace is an ensemble of gardens and palaces located in Beijing, China."
+      },
+      "source_html_sha256": "4690f0753576c7af168cb151a647ad6ee9e9e32bc1a812689bf722a0a0c239a2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/311a4a2e337183c5f2beeeef.json"
+    },
+    {
+      "subject": "Temple of Heaven",
+      "object_a": "China",
+      "object_b": "Beijing",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Temple_of_Heaven",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The Temple of Heaven is an imperial complex of religious buildings located in Beijing, China."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms the Temple of Heaven is an imperial complex located in Dongcheng District, Beijing, China."
+      },
+      "source_html_sha256": "7844f77aa94cf2d5ad2a9d5ec474a1e81006510735d09acce6ea3b1597926be5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/48bef26e171377624538dba2.json"
+    },
+    {
+      "subject": "Terracotta Army",
+      "object_a": "China",
+      "object_b": "Xi'an",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Terracotta_Army",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The Terracotta Army site and museum is located within Lintong District in Xi'an, China."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms the Terracotta Army is located in Lintong District, Xi'an, China."
+      },
+      "source_html_sha256": "00e8fb0c2a7a73e3b9db060e9a76bfce0b2a5955a883916e764529de5eeb40c4",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ce3d48e71a1932c285ec54d4.json"
+    },
+    {
+      "subject": "Oriental Pearl Tower",
+      "object_a": "China",
+      "object_b": "Shanghai",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Oriental_Pearl_Tower",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The Oriental Pearl Tower is a prominent TV tower located in Shanghai, China."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms the Oriental Pearl Tower is located in Lujiazui, Shanghai, China."
+      },
+      "source_html_sha256": "87550492c6441b2e5c65c0a5760ddf3834bd062cb6d7c5ff6166a9ab1fe1ed27",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c864af6819de7ede632808ad.json"
+    },
+    {
+      "subject": "Potala Palace",
+      "object_a": "China",
+      "object_b": "Lhasa",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Potala_Palace",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The Potala Palace is an iconic fortress palace located in Lhasa, China."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms the Potala Palace is located in Lhasa, Tibet Autonomous Region, China."
+      },
+      "source_html_sha256": "d2014c2bfb8df52c4e36137ac96e8e33aa560f1e99b6eee04ca2226529d36ecb",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ea619351f5bac655d1aeef5f.json"
+    },
+    {
+      "subject": "Senso-ji",
+      "object_a": "Japan",
+      "object_b": "Tokyo",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Sens%C5%8D-ji",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Sensō-ji is an ancient Buddhist temple located in Tokyo, Japan."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Sensō-ji is a Buddhist temple located in Asakusa, Tokyo, Japan."
+      },
+      "source_html_sha256": "9197dfdeef45167e18849f52dd8be52f50437a0254557947232a54baa8b2d424",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e2421c36abfceb7b1f22a0fa.json"
+    },
+    {
+      "subject": "Fushimi Inari-taisha",
+      "object_a": "Japan",
+      "object_b": "Kyoto",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Fushimi Inari-taisha is a famous Shinto shrine located in Kyoto, Japan."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Fushimi Inari-taisha is a Shinto shrine located in Fushimi-ku, Kyoto, Japan."
+      },
+      "source_html_sha256": "dbe7316f037ca2c936463b19fca3d7f1be2c425c58051b196454c85a2be05c1c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c94e9758b22a71f1f8342f97.json"
+    },
+    {
+      "subject": "Kinkaku-ji",
+      "object_a": "Japan",
+      "object_b": "Kyoto",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Kinkaku-ji",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Kinkaku-ji (Temple of the Golden Pavilion) is a Zen Buddhist temple located in Kyoto, Japan."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Kinkaku-ji is a Zen Buddhist temple located in Kyoto, Japan."
+      },
+      "source_html_sha256": "3443f8013cf73c9fb85b71b1770e4c31302bc28d6e4d00599641944aad077b31",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b9db205b87914ad598011356.json"
+    },
+    {
+      "subject": "Gyeongbokgung",
+      "object_a": "South Korea",
+      "object_b": "Seoul",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Gyeongbokgung",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Gyeongbokgung is a major royal palace located in Seoul, South Korea."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms that Gyeongbokgung is a former royal palace located in Seoul, South Korea."
+      },
+      "source_html_sha256": "5ed9789ec6d8f5e4afe878911c53255d1c83597e155a17d49973cbcb4e585d2d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/892ce24451b941c6db813f07.json"
+    },
+    {
+      "subject": "Shwedagon Pagoda",
+      "object_a": "Myanmar",
+      "object_b": "Yangon",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "The Shwedagon Pagoda is a famous gilded pagoda located in Yangon, Myanmar."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms that the Shwedagon Pagoda is a gilded stupa located in the municipality of Yangon, Myanmar."
+      },
+      "source_html_sha256": "bd42c188897f212ff46a8999cdd72d46dfd43faf36dd6848330703160dec2cc3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b7dd73ce09287bf4057fc077.json"
+    },
+    {
+      "subject": "Burj Khalifa",
+      "object_a": "United Arab Emirates",
+      "object_b": "Dubai",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "The Burj Khalifa is a skyscraper unambiguously located in Dubai, United Arab Emirates."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms that Burj Khalifa is a skyscraper located in Dubai, United Arab Emirates."
+      },
+      "source_html_sha256": "b7cdfc9a27fa728987ea7ea6e499c3f3a6be391f596ca8b9ac73a2ebb81c7c98",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/98e2b1d784e6645910cc8690.json"
+    },
+    {
+      "subject": "Museum of the Future",
+      "object_a": "United Arab Emirates",
+      "object_b": "Dubai",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Museum_of_the_Future",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "The Museum of the Future is a prominent museum landmark located in Dubai, United Arab Emirates."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms that the Museum of the Future is located in Dubai, United Arab Emirates."
+      },
+      "source_html_sha256": "e51fc83b08b8a8415f033582e3d41385f07f43e692de0a1c3a6466af8ec001e4",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/eb9210dcbb7c039b0af6b3fd.json"
+    },
+    {
+      "subject": "Sheikh Zayed Grand Mosque",
+      "object_a": "United Arab Emirates",
+      "object_b": "Abu Dhabi",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "The Sheikh Zayed Grand Mosque is a major mosque located in Abu Dhabi, United Arab Emirates."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms that the Sheikh Zayed Grand Mosque is located in Abu Dhabi, United Arab Emirates."
+      },
+      "source_html_sha256": "f35c66c0a62884505ab8b9d5b700b34eed3b203a11e964480e91d96a5575e390",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b4b5b574c39e54053885d7c7.json"
+    },
+    {
+      "subject": "Kingdom Centre",
+      "object_a": "Saudi Arabia",
+      "object_b": "Riyadh",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Kingdom_Centre",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "The Kingdom Centre is a landmark skyscraper located in Riyadh, Saudi Arabia."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms that the Kingdom Centre is a skyscraper located in Riyadh, Saudi Arabia."
+      },
+      "source_html_sha256": "bbe3887a177c200e87d2f3d6220be1b4222f5aeb3c663f16b84a8139a4fa0907",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1ce431dbdd67613c09309f2e.json"
+    },
+    {
+      "subject": "Abraj Al Bait",
+      "object_a": "Saudi Arabia",
+      "object_b": "Mecca",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Abraj_Al_Bait",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Abraj Al Bait is a prominent skyscraper complex located in Mecca, Saudi Arabia."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms that the complex formerly known as Abraj Al Bait is located in Mecca, Saudi Arabia."
+      },
+      "source_html_sha256": "663e1b6b46e78f181dbc12f874e6aa0c6e4c222e0bd183356b3dd4b584049894",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/df5ff66e88aeae435d4187c4.json"
+    },
+    {
+      "subject": "Masjid al-Haram",
+      "object_a": "Saudi Arabia",
+      "object_b": "Mecca",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Masjid_al-Haram",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Masjid al-Haram is the Great Mosque located in Mecca, Saudi Arabia."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms that Masjid al-Haram is a mosque located in Mecca, Saudi Arabia."
+      },
+      "source_html_sha256": "d281ae7d9e72fd06b3b8adcb9a2888f92965b0c6eea98eada093927da7a55905",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ee852dc96bcab802d910a8e3.json"
+    },
+    {
+      "subject": "Azadi Tower",
+      "object_a": "Iran",
+      "object_b": "Tehran",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Azadi_Tower",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "The Azadi Tower is a landmark monument located in Tehran, Iran."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms that Azadi Tower is a monument located in Tehran, Iran."
+      },
+      "source_html_sha256": "7cf4ab93e4831cd9adbb8734abf18a2491ae2f52936dc9d04ebc896518ef9ed2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1c1f75e0ac8ea26ec8036935.json"
+    },
+    {
+      "subject": "Golestan Palace",
+      "object_a": "Iran",
+      "object_b": "Tehran",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Golestan_Palace",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Golestan Palace is a historic royal complex located in Tehran, Iran."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms that Golestan Palace is a royal complex located in Tehran, Iran."
+      },
+      "source_html_sha256": "9dead5f01fdaea0d22c8ee826a2ab94a9bf2b8555d84c77ba1493ac10354160b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/18928f02020779deb28dadf1.json"
+    },
+    {
+      "subject": "Naqsh-e Jahan Square",
+      "object_a": "Iran",
+      "object_b": "Isfahan",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Naqsh-e_Jahan_Square",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Naqsh-e Jahan Square is a historic public square located in Isfahan, Iran."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms that Naqsh-e Jahan Square is located in Isfahan, Iran."
+      },
+      "source_html_sha256": "a8d2c55f4689508cdc34a527cee8c6cbdd28c8813a906139e8fccef9f6bbac7a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4e71de2ec30820384790ccf1.json"
+    },
+    {
+      "subject": "Topkapi Palace",
+      "object_a": "Turkey",
+      "object_b": "Istanbul",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Topkapi_Palace",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Topkapi Palace is a historic Ottoman palace located in Istanbul, Turkey."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms that Topkapi Palace is located in Istanbul, Turkey."
+      },
+      "source_html_sha256": "e1c053b63c7803c4f0e00335859ca227b03e51ff31c824248917ee12dfbae6d1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/20d7c8d91b2764e7598f5bc5.json"
+    },
+    {
+      "subject": "Mosque of Muhammad Ali",
+      "object_a": "Egypt",
+      "object_b": "Cairo",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Mosque_of_Muhammad_Ali",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "The Mosque of Muhammad Ali is located in the Citadel of Cairo, Egypt."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms that the Mosque of Muhammad Ali is located in Cairo, Egypt."
+      },
+      "source_html_sha256": "fc16cc5b96a5977dec2600eace676ed2a37697f9d4c89bea5197b971eec509ec",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/006457e573e905febd7fe389.json"
+    },
+    {
+      "subject": "Al-Azhar Mosque",
+      "object_a": "Egypt",
+      "object_b": "Cairo",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Al-Azhar_Mosque",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Al-Azhar Mosque is a famous historic mosque located in Cairo, Egypt."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms that Al-Azhar Mosque is located in Cairo, Egypt."
+      },
+      "source_html_sha256": "a6edbd6c9cb7498d44fd7ea2f993e5773d204d43be74de94f8f1994bae2d40f3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f135f8a9022dad5d8e7b5b89.json"
+    },
+    {
+      "subject": "Mosque-Madrasa of Sultan Hassan",
+      "object_a": "Egypt",
+      "object_b": "Cairo",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Mosque-Madrasa_of_Sultan_Hassan",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "The Mosque-Madrasa of Sultan Hassan is a prominent monumental mosque located in Cairo, Egypt."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms that the Mosque-Madrasa of Sultan Hassan is located in Cairo, Egypt."
+      },
+      "source_html_sha256": "062390cb516dec1b699253c136a6f21e030114252150beecdea106c88fc86c4a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2e58c343c3a00ad153862cfd.json"
+    },
+    {
+      "subject": "Hassan II Mosque",
+      "object_a": "Morocco",
+      "object_b": "Casablanca",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Hassan II Mosque is a famous landmark located in Casablanca, Morocco."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Hassan II Mosque is located in Casablanca, Morocco."
+      },
+      "source_html_sha256": "8a02b8af3e9b9469f821b2e3fcfb0435bc01f7e956fb184ffcd6f57c5b5766ce",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d0780381d3be1d32f782f5cc.json"
+    },
+    {
+      "subject": "Koutoubia Mosque",
+      "object_a": "Morocco",
+      "object_b": "Marrakesh",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Koutoubia_Mosque",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Koutoubia Mosque is a famous landmark located in Marrakesh, Morocco."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Koutoubia Mosque is located in Marrakesh, Morocco."
+      },
+      "source_html_sha256": "514b913ab22c3e7e6bf3061052af66c6a2e8b246a47b6cd8608d2cb121d39208",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/da3d09c3c8d88b92b5aa9e6c.json"
+    },
+    {
+      "subject": "Bab Bou Jeloud",
+      "object_a": "Morocco",
+      "object_b": "Fez",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Bab_Bou_Jeloud",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Bab Bou Jeloud is a famous historic gate located in Fez, Morocco."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Bab Bou Jeloud is located in Fez, Morocco."
+      },
+      "source_html_sha256": "07e37c0a64f3dbcd81621f0cb145c49e1da2af08675e19c1770af652f128911e",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e0d4185d67d586171ee095bb.json"
+    },
+    {
+      "subject": "Voortrekker Monument",
+      "object_a": "South Africa",
+      "object_b": "Pretoria",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Voortrekker_Monument",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Voortrekker Monument is a famous monument located in Pretoria, South Africa."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Voortrekker Monument is located in Pretoria, South Africa."
+      },
+      "source_html_sha256": "c6bd37b042ad5d8f1ae1c60b8f224abe6d0050647107d96a101e75d3699379b5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/863b6d53fe0c9f7bce77e969.json"
+    },
+    {
+      "subject": "Carlton Centre",
+      "object_a": "South Africa",
+      "object_b": "Johannesburg",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Carlton_Centre",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Carlton Centre is a famous skyscraper located in Johannesburg, South Africa."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Carlton Centre is located in Johannesburg, South Africa."
+      },
+      "source_html_sha256": "0dcbdccb95f67159761c2cbe555b62beeb8e5d2bcd1606321b2ffd97d2ce9fa0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/98e593519250cd40429254c4.json"
+    },
+    {
+      "subject": "Basilica of Our Lady of Peace",
+      "object_a": "Ivory Coast",
+      "object_b": "Yamoussoukro",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_Peace",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Basilica of Our Lady of Peace is a famous landmark located in Yamoussoukro, Ivory Coast."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Basilica of Our Lady of Peace is located in Yamoussoukro, Ivory Coast."
+      },
+      "source_html_sha256": "9d2814696d7e83411f5002bbb40fa2ba26f456cb19260c883c1a595f2851fc29",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9eb954b14533b5c8b7e7a05d.json"
+    },
+    {
+      "subject": "Space Needle",
+      "object_a": "United States",
+      "object_b": "Seattle",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Space_Needle",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Space Needle is a famous observation tower located in Seattle, United States."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Space Needle is located in Seattle, United States."
+      },
+      "source_html_sha256": "728241db1c496f043b46b89825fc7ec8d767d5330f036a6daa51164d82ae5454",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/5466ac504cb8a293771afc0c.json"
+    },
+    {
+      "subject": "Gateway Arch",
+      "object_a": "United States",
+      "object_b": "St. Louis",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Gateway_Arch",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Gateway Arch is a famous monument located in St. Louis, United States."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Gateway Arch is located in St. Louis, United States."
+      },
+      "source_html_sha256": "5080776a8513c2e1bef9258248cafdfd5828bf076cfba8c85369830f45efd9c2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c5d96dfaf967789bda188aec.json"
+    },
+    {
+      "subject": "Chrysler Building",
+      "object_a": "United States",
+      "object_b": "New York City",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Chrysler_Building",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Chrysler Building is a famous skyscraper located in New York City, United States."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Chrysler Building is located in New York City, United States."
+      },
+      "source_html_sha256": "559d79e5b82e7b9505b5b1576fb2e59f239c2782da665f8ed1e932b133e65eb4",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/78455a80733250045fd63310.json"
+    },
+    {
+      "subject": "Willis Tower",
+      "object_a": "United States",
+      "object_b": "Chicago",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Willis_Tower",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Willis Tower is a famous skyscraper located in Chicago, United States."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Willis Tower is located in Chicago, United States."
+      },
+      "source_html_sha256": "4999c8e66762616af1769357f8160c688ac3aa9730fb508e907d2a8f9e571065",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f3d4a934815e5051acc3bc8d.json"
+    },
+    {
+      "subject": "Cloud Gate",
+      "object_a": "United States",
+      "object_b": "Chicago",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Cloud_Gate",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Cloud Gate is a famous sculpture located in Chicago, United States."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Cloud Gate is located in Chicago, United States."
+      },
+      "source_html_sha256": "fbfb2ad6d1aacf8c8d0a429c2f4775e2c2f1dad9fcb7926adc8c8a640f33aa68",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/be490b7ea244408f35286645.json"
+    },
+    {
+      "subject": "Alamo Mission",
+      "object_a": "United States",
+      "object_b": "San Antonio",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Alamo_Mission",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Alamo Mission is a historic mission and fortress compound located in San Antonio, United States."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that the Alamo Mission is located in San Antonio, United States."
+      },
+      "source_html_sha256": "8a77027d7b11a0fe460ca94ee4e41b0737479a213f0f1f2f1d066348321a00c8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/64eb248ed1a9dbd3a2789411.json"
+    },
+    {
+      "subject": "Casa Loma",
+      "object_a": "Canada",
+      "object_b": "Toronto",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Casa_Loma",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Casa Loma is a Gothic Revival style mansion located in Toronto, Canada."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Casa Loma is located in Toronto, Canada."
+      },
+      "source_html_sha256": "2a6b8a7a25f418da117632d320576f350f106e65cf9d79abe39f648a40840133",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e4086a0d9fb6fb2234362d4f.json"
+    },
+    {
+      "subject": "Habitat 67",
+      "object_a": "Canada",
+      "object_b": "Montreal",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Habitat_67",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Habitat 67 is a landmark housing complex located in Montreal, Canada."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Habitat 67 is located in Montreal, Canada."
+      },
+      "source_html_sha256": "e59db3f8336e334a2b9ba9c974a9e9e613c1057a456206333534e59e93c3802a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d426a6a3f18013d949db87de.json"
+    },
+    {
+      "subject": "Chapultepec Castle",
+      "object_a": "Mexico",
+      "object_b": "Mexico City",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Chapultepec_Castle",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Chapultepec Castle is a historic castle located in Mexico City, Mexico."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Chapultepec Castle is located in Mexico City, Mexico."
+      },
+      "source_html_sha256": "1b76eaa849870d616420b7f1d6874d8e89cb4c87abcc16ee402064663467aeaf",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f67d7a69021d907db3ac8fdd.json"
+    },
+    {
+      "subject": "Christ the Redeemer",
+      "object_a": "Brazil",
+      "object_b": "Rio de Janeiro",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Christ the Redeemer is a famous statue located in Rio de Janeiro, Brazil."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The evidence explicitly confirms that Christ the Redeemer is located in Rio de Janeiro, Brazil."
+      },
+      "source_html_sha256": "d2e3c2cdf49fe7a297f23ffb2037bff75053694b1069e544c0c72785eebadd60",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2e33294aa45428b47757fa59.json"
+    },
+    {
+      "subject": "Maracana Stadium",
+      "object_a": "Brazil",
+      "object_b": "Rio de Janeiro",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Maracan%C3%A3_Stadium",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Maracana Stadium is a famous stadium located in Rio de Janeiro, Brazil."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Maracanã Stadium is located in Rio de Janeiro, Brazil."
+      },
+      "source_html_sha256": "78786e55557d79f2e5db6d02853de31c765fdcf61e5a6adde44be59a103aff8c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f0b9ace0585b56d5963b528b.json"
+    },
+    {
+      "subject": "Copacabana Palace",
+      "object_a": "Brazil",
+      "object_b": "Rio de Janeiro",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Copacabana_Palace",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Copacabana Palace is a famous luxury hotel located in Rio de Janeiro, Brazil."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Copacabana Palace is located in Rio de Janeiro, Brazil."
+      },
+      "source_html_sha256": "bb0244fdf4ca3c484e85dd64ae26fd77e271bf4b744f7ebd8966a416a0eb463d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f21da2f7950c114b5772476e.json"
+    },
+    {
+      "subject": "Teatro Amazonas",
+      "object_a": "Brazil",
+      "object_b": "Manaus",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Teatro_Amazonas",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Teatro Amazonas is a famous opera house located in Manaus, Brazil."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Teatro Amazonas is an opera house located in Manaus, Brazil."
+      },
+      "source_html_sha256": "74414aa2153f0f64adec8644bc96624f1af96a7528d58f0e4596906fa295ee50",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4ffe606ec464b2238cc8a064.json"
+    },
+    {
+      "subject": "Casa Rosada",
+      "object_a": "Argentina",
+      "object_b": "Buenos Aires",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Casa_Rosada",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Casa Rosada is the executive mansion of the President of Argentina located in Buenos Aires, Argentina."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Casa Rosada is located in Buenos Aires, Argentina."
+      },
+      "source_html_sha256": "f912189f2beba3cadf22c06fd3a55b70f59f36caa0121fa2301ac4bc13f0a693",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fdd9d2e706c4adbfcbe38555.json"
+    },
+    {
+      "subject": "Teatro Colon",
+      "object_a": "Argentina",
+      "object_b": "Buenos Aires",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Teatro_Col%C3%B3n",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Teatro Colon is a famous opera house located in Buenos Aires, Argentina."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Teatro Colón is an opera house located in Buenos Aires, Argentina."
+      },
+      "source_html_sha256": "7915027280c6926b63e82422df4114a38dece5b829a9c08267a2cd917b5e59a7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/26502602ef1a30d4890e7437.json"
+    },
+    {
+      "subject": "Palacio de La Moneda",
+      "object_a": "Chile",
+      "object_b": "Santiago",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Palacio_de_La_Moneda",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Palacio de La Moneda is the presidential palace located in Santiago, Chile."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Palacio de La Moneda is located in Santiago, Chile."
+      },
+      "source_html_sha256": "adfc9601bb7152b35d4881baa3e60b29538ada6c608deab8fcf5a73061325482",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/de3133dc2a3e2afa97406ddc.json"
+    },
+    {
+      "subject": "Palacio Salvo",
+      "object_a": "Uruguay",
+      "object_b": "Montevideo",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Palacio_Salvo",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Palacio Salvo is a landmark building located in Montevideo, Uruguay."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Palacio Salvo is located in Montevideo, Uruguay."
+      },
+      "source_html_sha256": "a490ee752ca240620dde690483f4f0d7b127692e8c2639338eef685e6ce2ee01",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c483dcd3aba69d589bacdccb.json"
+    },
+    {
+      "subject": "Sky Tower",
+      "object_a": "New Zealand",
+      "object_b": "Auckland",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Sky_Tower_(Auckland)",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Sky Tower is a prominent telecommunications and observation tower located in Auckland, New Zealand."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms the Sky Tower is located in Auckland, New Zealand."
+      },
+      "source_html_sha256": "a94e872ce9b8944e77f2217a9d010bcc1bdd7b71cf68c743af74bffc19a15b82",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c286e884cff800192cfc0ce5.json"
+    },
+    {
+      "subject": "Beehive",
+      "object_a": "New Zealand",
+      "object_b": "Wellington",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Beehive_(building)",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Beehive is the executive wing of the New Zealand Parliament Buildings located in Wellington, New Zealand."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms the Beehive is located in Wellington, New Zealand."
+      },
+      "source_html_sha256": "025ff0145ddefe430c20ba910b19f4c0588275a8896f5383938aeac95eea2251",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a4169660395fce1d3917368f.json"
+    },
+    {
+      "subject": "Shrine of Remembrance",
+      "object_a": "Australia",
+      "object_b": "Melbourne",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Shrine_of_Remembrance",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Shrine of Remembrance is a famous war memorial located in Melbourne, Australia."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms the Shrine of Remembrance is located in Melbourne, Australia."
+      },
+      "source_html_sha256": "5386d432abcf6d6914a69fb5d7759ffb6cca29394e090630428abeefdea80f06",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d671705b3992f33d5c07e89f.json"
+    },
+    {
+      "subject": "Royal Exhibition Building",
+      "object_a": "Australia",
+      "object_b": "Melbourne",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Royal_Exhibition_Building",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Royal Exhibition Building is a World Heritage-listed landmark located in Melbourne, Australia."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms the Royal Exhibition Building is located in Melbourne, Australia."
+      },
+      "source_html_sha256": "385a9fafc1aced4ae0b12c728d967ab3ecb24b7aa1573a1518e6a4307f272e73",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7fa2c41d7e68d75b7aebcaff.json"
+    },
+    {
+      "subject": "Eiffel Tower",
+      "object_a": "France",
+      "object_b": "Paris",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Eiffel Tower is a famous wrought-iron lattice tower located in Paris, France."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms the Eiffel Tower is located in Paris, France."
+      },
+      "source_html_sha256": "2e38cccf8eec93a0e126f06eb077a36c4ac4b9239dac6988ba75de981e733b22",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3cec8c6458c48bcb9968f350.json"
+    },
+    {
+      "subject": "Arc de Triomphe",
+      "object_a": "France",
+      "object_b": "Paris",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Arc_de_Triomphe",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Arc de Triomphe is a famous triumphal arch located in Paris, France."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms the Arc de Triomphe is located in Paris, France."
+      },
+      "source_html_sha256": "df9265260e9dcd8d652bf13563b2772e7b633e068f8716326d67d7a723353aaa",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/740bcd959cfa3e94e166a158.json"
+    },
+    {
+      "subject": "Louvre Pyramid",
+      "object_a": "France",
+      "object_b": "Paris",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Louvre_Pyramid",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Louvre Pyramid is a famous glass and metal pyramid structure located in Paris, France."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms the Louvre Pyramid is located in Paris, France."
+      },
+      "source_html_sha256": "3815d602d27e271738e6379972ab01825dd0bfcb0c8d82f3be61cc3c14ac887d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d67f0ba81860d61f36280c07.json"
+    },
+    {
+      "subject": "Colosseum",
+      "object_a": "Italy",
+      "object_b": "Rome",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Colosseum",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Colosseum is a famous ancient amphitheatre located in Rome, Italy."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms the Colosseum is located in Rome, Italy."
+      },
+      "source_html_sha256": "9c2c0bb25f5e8f65331e384daafbd57d221be7d765faaeba60fb309db16160a7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2d49219a8f89c5338970345b.json"
+    },
+    {
+      "subject": "Trevi Fountain",
+      "object_a": "Italy",
+      "object_b": "Rome",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Trevi_Fountain",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The Trevi Fountain is a famous landmark unambiguously located in Rome, Italy."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms the Trevi Fountain is located in Rome, Italy."
+      },
+      "source_html_sha256": "eeec59d4f76177dcf3a84583c73f1e9a66c74e0438918f30ee185b2ee8443f21",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e89b454a87cb86411cb3ccd4.json"
+    },
+    {
+      "subject": "Mole Antonelliana",
+      "object_a": "Italy",
+      "object_b": "Turin",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Mole_Antonelliana",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The Mole Antonelliana is a major landmark located in Turin, Italy."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The Mole Antonelliana is confirmed by the source to be a landmark located in Turin, Italy."
+      },
+      "source_html_sha256": "86b35de36ed51688977e8e3f63fdcca8a91112faa058af7738e7422eaec22fde",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/753e055dc99a0cab6e294bc8.json"
+    },
+    {
+      "subject": "Doge's Palace",
+      "object_a": "Italy",
+      "object_b": "Venice",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Doge%27s_Palace",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Doge's Palace is a famous historical landmark located in Venice, Italy."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Doge's Palace is confirmed by the source to be a landmark located in Venice, Italy."
+      },
+      "source_html_sha256": "b32576b7f8b57fc9b125c25c149bf4ef4c93dca27b740062a6fc8a45cd5db610",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4861c58a9a2a0fa9193327a1.json"
+    },
+    {
+      "subject": "Rialto Bridge",
+      "object_a": "Italy",
+      "object_b": "Venice",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Rialto_Bridge",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The Rialto Bridge is a famous bridge across the Grand Canal in Venice, Italy."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Rialto Bridge is confirmed by the source to be a landmark crossing the Grand Canal in Venice, Italy."
+      },
+      "source_html_sha256": "6350f6f7de11dac9bd79dc46b46f047f4349576818a3a281dbede739ae5523a8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c0282324bee355add5f2cb21.json"
+    },
+    {
+      "subject": "Sagrada Familia",
+      "object_a": "Spain",
+      "object_b": "Barcelona",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The Sagrada Família is a famous basilica located in Barcelona, Spain."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Sagrada Família is confirmed by the source to be located in Barcelona, Spain."
+      },
+      "source_html_sha256": "2cb815d749d3f5080855a79cabf1e0fac8efc73f9e1b0f6b6910918752b2e30f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d7d8e13f9cdb2389358fc882.json"
+    },
+    {
+      "subject": "Park Guell",
+      "object_a": "Spain",
+      "object_b": "Barcelona",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Park_G%C3%BCell",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Park Güell is a famous public park and landmark in Barcelona, Spain."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Park Güell is confirmed by the source to be located in Barcelona, Spain."
+      },
+      "source_html_sha256": "6520be1f9887307713dbb94cd60f1944f6b1bb3b0e3c8e6400e4a29166a20acf",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0ac6892f88b727c5b2e03515.json"
+    },
+    {
+      "subject": "Casa Batllo",
+      "object_a": "Spain",
+      "object_b": "Barcelona",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Casa_Batll%C3%B3",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Casa Batlló is a famous building designed by Antoni Gaudí in Barcelona, Spain."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Casa Batlló is confirmed by the source to be located in Barcelona, Spain."
+      },
+      "source_html_sha256": "08375980717b45bdf92c99e68d02750c584cf09e160558cd31daf824f17e9819",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e093a57b50dc1cc2fbe50610.json"
+    },
+    {
+      "subject": "Alhambra",
+      "object_a": "Spain",
+      "object_b": "Granada",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Alhambra",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The Alhambra is a famous palace and fortress complex in Granada, Spain."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The Alhambra is confirmed by the source to be located in Granada, Spain."
+      },
+      "source_html_sha256": "1e6a97ac549a72b05ce98fe5a53ab401972660dfe3be66a7220eb1f694d09cad",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d513cb5a3320ea32e3067292.json"
+    },
+    {
+      "subject": "Belem Tower",
+      "object_a": "Portugal",
+      "object_b": "Lisbon",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Belém Tower is a famous 16th-century fortification located in Lisbon, Portugal."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Belém Tower is confirmed by the source to be located in Lisbon, Portugal."
+      },
+      "source_html_sha256": "9f5faf47a106cccae1cfff3d2d2a2a7fce523c0fabfb4de09b316418936c9847",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9b04d877a979c3f8900b8f11.json"
+    },
+    {
+      "subject": "Jeronimos Monastery",
+      "object_a": "Portugal",
+      "object_b": "Lisbon",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Jer%C3%B3nimos_Monastery",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Jerónimos Monastery is a famous former monastery located in Lisbon, Portugal."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Jerónimos Monastery is confirmed by the source to be located in the municipality of Lisbon, Portugal."
+      },
+      "source_html_sha256": "e5b6f77a823a5640112a144d6f540d20b311228c42dc45cba84de2db1f117cca",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/bbdffb50cd777fca1112e0c3.json"
+    },
+    {
+      "subject": "Pena Palace",
+      "object_a": "Portugal",
+      "object_b": "Sintra",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Pena_Palace",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Pena Palace is a famous Romanticist castle located in Sintra, Portugal."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Pena Palace is confirmed by the source to be located in the municipality/town of Sintra, Portugal."
+      },
+      "source_html_sha256": "b307e1c7d83b6dd875143b85632ed04259f4921fb7b32fb73a6fddce170e4abf",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c6cb68bd4148b609cc92ef4b.json"
+    },
+    {
+      "subject": "Big Ben",
+      "object_a": "United Kingdom",
+      "object_b": "London",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Big_Ben",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Big Ben is a world-famous clock tower landmark located in London, United Kingdom."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Big Ben is confirmed by the source to be located in London, United Kingdom."
+      },
+      "source_html_sha256": "07ba897080c1e00409d8033e5682a8ae526b884935115156f23eb598beef56c2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/47c1ee1120fab8bc8bedba29.json"
+    },
+    {
+      "subject": "Buckingham Palace",
+      "object_a": "United Kingdom",
+      "object_b": "London",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Buckingham Palace is the official London residence of the British monarch in London, United Kingdom."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Buckingham Palace is confirmed by the source to be located in London, United Kingdom."
+      },
+      "source_html_sha256": "c99b25316df8a75e828569b1b00b2093b41eceea48f662b8d7502c4cf8743c77",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/16678ad702dd79ad034514a2.json"
+    },
+    {
+      "subject": "The Shard",
+      "object_a": "United Kingdom",
+      "object_b": "London",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/The_Shard",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The Shard is a prominent skyscraper located in London, United Kingdom."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The Shard is confirmed by the source to be located in London, United Kingdom."
+      },
+      "source_html_sha256": "5d4d01c5509908a7789751207748924faf3d855be052ebe7c249592ad90d85ed",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/39f10731f4f93486667bbca5.json"
+    },
+    {
+      "subject": "Brandenburg Gate",
+      "object_a": "Germany",
+      "object_b": "Berlin",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Brandenburg Gate is a famous 18th-century neoclassical monument in Berlin, Germany."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The Brandenburg Gate is confirmed by the source to be located in Berlin, Germany."
+      },
+      "source_html_sha256": "a1d0bab1c1946b02ff267a11587948192c1c5e0ff297f42bfec5b5b296786552",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c2e50d5757d352691bd0a077.json"
+    },
+    {
+      "subject": "Atomium",
+      "object_a": "Belgium",
+      "object_b": "Brussels",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Atomium",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The Atomium is a famous landmark building located in Brussels, Belgium."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Atomium is confirmed by the source to be located in Brussels, Belgium."
+      },
+      "source_html_sha256": "b40acf10f631b346483d37c23f28be3d4c86bf732e6da8bf7551e843c994b505",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/78a7f406d31748cd305e1718.json"
+    },
+    {
+      "subject": "Flatiron Building",
+      "object_a": "United States",
+      "object_b": "New York",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Flatiron_Building",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "The Flatiron Building is a famous historic skyscraper in New York, United States."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The Flatiron Building is confirmed by the source to be located in New York City (New York), United States."
+      },
+      "source_html_sha256": "5ece5827a5ac87bcc57d65901b65a6f2f5a2c325195f5ec8369acdc36407248b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/dc898340cf67519bb79e7c8d.json"
+    },
+    {
+      "subject": "Rockefeller Center",
+      "object_a": "United States",
+      "object_b": "New York",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Rockefeller_Center",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Rockefeller Center is a famous complex of commercial buildings in New York, United States."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Rockefeller Center is located in New York City, United States."
+      },
+      "source_html_sha256": "e5c7c954d0a38e5ba802ca50396ad31475bbcddfb6677eb7a3b8586a555d3fd8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/231c991c9100dbdaf0c455f2.json"
+    },
+    {
+      "subject": "Grand Central Terminal",
+      "object_a": "United States",
+      "object_b": "New York",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Grand_Central_Terminal",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Grand Central Terminal is a famous historic train station in New York, United States."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Grand Central Terminal is located in New York City, United States."
+      },
+      "source_html_sha256": "57ca092ca4092575fbdcbb34f71b887b1c60c16d3ce89a358ff2edddee071cdb",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f3ad8f1e2888f273f6f230cb.json"
+    },
+    {
+      "subject": "Solomon R. Guggenheim Museum",
+      "object_a": "United States",
+      "object_b": "New York",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Solomon_R._Guggenheim_Museum",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "The Solomon R. Guggenheim Museum is a renowned art museum located in New York, United States."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms the Solomon R. Guggenheim Museum is located in New York City, United States."
+      },
+      "source_html_sha256": "df6b8af23dee38f62580013ec5b4b8d54b3ad9a248b95e10e55851e99b2bb7e9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/50694ca9c490057caf5a5e7f.json"
+    },
+    {
+      "subject": "Tribune Tower",
+      "object_a": "United States",
+      "object_b": "Chicago",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Tribune_Tower",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Tribune Tower is a famous neo-Gothic skyscraper located in Chicago, United States."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Tribune Tower is located in Chicago, United States."
+      },
+      "source_html_sha256": "442515f94575e429a685d2205ab56533790ad32b963ad204f66cd22d2647fc33",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ce544d663a2e9ada3ebe3779.json"
+    },
+    {
+      "subject": "Palace of Fine Arts",
+      "object_a": "United States",
+      "object_b": "San Francisco",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Palace_of_Fine_Arts",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "The Palace of Fine Arts is a monumental structure located in San Francisco, United States."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms the Palace of Fine Arts is located in San Francisco, United States."
+      },
+      "source_html_sha256": "ff821016b75aebb84f9f5e774cc90404a4f6dfbcdcca16cccd1884d243d12ce6",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/38bfbc0d2b537a48d6654352.json"
+    },
+    {
+      "subject": "Coit Tower",
+      "object_a": "United States",
+      "object_b": "San Francisco",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Coit_Tower",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Coit Tower is an iconic tower located in San Francisco, United States."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Coit Tower is located in San Francisco, United States."
+      },
+      "source_html_sha256": "f5a16fb800b7cc6aadc00aa2dca8d3cabdb4d6aa81475beed11b06c959312ee8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/74ec826a5d9615c5e7dd9cdf.json"
+    },
+    {
+      "subject": "Faneuil Hall",
+      "object_a": "United States",
+      "object_b": "Boston",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Faneuil_Hall",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Faneuil Hall is a historic marketplace and meeting hall in Boston, United States."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Faneuil Hall is located in Boston, United States."
+      },
+      "source_html_sha256": "2094b34a1bbeb51742e72f7859afe631959a80d6579914301b80799b649d8d5d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ad89c6ec7cdc424016d34b4c.json"
+    },
+    {
+      "subject": "Independence Hall",
+      "object_a": "United States",
+      "object_b": "Philadelphia",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Independence_Hall",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Independence Hall is a historic building located in Philadelphia, United States."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms Independence Hall is located in Philadelphia, United States."
+      },
+      "source_html_sha256": "8f2d4b04292788fed2db93f5bed4c6dad7aa1deb6f59c066149f5fed2e58ea6b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/685a4b70d4d4428138f6d402.json"
+    },
+    {
+      "subject": "Hospicio Cabanas",
+      "object_a": "Mexico",
+      "object_b": "Guadalajara",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Hospicio_Caba%C3%B1as",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Hospicio Cabañas is a famous historic hospital complex located in Guadalajara, Mexico."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Hospicio Cabañas is located in Guadalajara, Mexico."
+      },
+      "source_html_sha256": "cd81ae5435241e7e68e56c26ede1ab12577e40b60bcd13689390af9edc008725",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c667bb3f0f3e980a1993c4c5.json"
+    },
+    {
+      "subject": "Palacio Barolo",
+      "object_a": "Argentina",
+      "object_b": "Buenos Aires",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Palacio_Barolo",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Palacio Barolo is a landmark office building located in Buenos Aires, Argentina."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Palacio Barolo is located in Buenos Aires, Argentina."
+      },
+      "source_html_sha256": "8c0eca4c64688f7b7cd656b9726ce0ff04f9182b8bbfbda3f8e284b48858904f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b8ca3599942a90fc33c9ac87.json"
+    },
+    {
+      "subject": "Teatro Solis",
+      "object_a": "Uruguay",
+      "object_b": "Montevideo",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Sol%C3%ADs_Theatre",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Teatro Solís is a prominent historical theatre located in Montevideo, Uruguay."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Teatro Solís is located in Montevideo, Uruguay."
+      },
+      "source_html_sha256": "373a52bd6b7c024e775ec6dbdfd9287be8db4093ad75a139ff69e9f5c08a3458",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c4d0ee862734561cfcab238a.json"
+    },
+    {
+      "subject": "Palacio Taranco",
+      "object_a": "Uruguay",
+      "object_b": "Montevideo",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Palacio_Taranco",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Palacio Taranco is a historic landmark palace located in Montevideo, Uruguay."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Palacio Taranco is located in Montevideo, Uruguay."
+      },
+      "source_html_sha256": "03c3c7e8b6c85e7be2c16103ecf6952443a0a7c67cc7a1657bf093e7422aa2dd",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f804ccfd882e2f21cb895b69.json"
+    },
+    {
+      "subject": "Palacio de Carondelet",
+      "object_a": "Ecuador",
+      "object_b": "Quito",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Carondelet_Palace",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Palacio de Carondelet is the presidential palace located in Quito, Ecuador."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Palacio de Carondelet is located in Quito, Ecuador."
+      },
+      "source_html_sha256": "2d77cf8d4e6a2a483aeac595144870ee2bd3bf0d8b62d1974437672050a2fd12",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e741dff916126fef58c39001.json"
+    },
+    {
+      "subject": "Quinta da Boa Vista",
+      "object_a": "Brazil",
+      "object_b": "Rio de Janeiro",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Quinta_da_Boa_Vista",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Quinta da Boa Vista is a famous public park and former royal residence situated in Rio de Janeiro, Brazil."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Quinta da Boa Vista is located in Rio de Janeiro, Brazil."
+      },
+      "source_html_sha256": "e8d555dc64412532243594a1083b365e96d0e145e4eca4e0752680504ad4727b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e831380c78313b6e2cb7f8a0.json"
+    },
+    {
+      "subject": "Charminar",
+      "object_a": "India",
+      "object_b": "Hyderabad",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Charminar",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Charminar is a famous historic monument and mosque located in Hyderabad, India."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Charminar is located in Hyderabad, India."
+      },
+      "source_html_sha256": "2e1cd50bb9456ef1f8577d00043a0f198a8d24225b0ea0fe17037d7c59f503ac",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3a1dc1becdd8b8988d442a08.json"
+    },
+    {
+      "subject": "Gol Gumbaz",
+      "object_a": "India",
+      "object_b": "Vijayapura",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Gol_Gumbaz",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Gol Gumbaz is the famous 17th-century mausoleum located in Vijayapura (Bijapur), India."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Gol Gumbaz is located in Bijapur (Vijayapura), Karnataka, India."
+      },
+      "source_html_sha256": "11778b088d0aacceb8fafeb956e6c6fab7c71c6bbe98087d380ae9846f3ee087",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/86749c39f9a09ec39cd0cde3.json"
+    },
+    {
+      "subject": "Bara Imambara",
+      "object_a": "India",
+      "object_b": "Lucknow",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Bara_Imambara",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Bara Imambara is a prominent historical complex located in Lucknow, India."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Bara Imambara is located in Lucknow, Uttar Pradesh, India."
+      },
+      "source_html_sha256": "7ef67f9da86c6c64e5876b9e5d4766c55e1096d6e3fcca818f0424ec559e474c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/bde88cf8beb545f75446d55e.json"
+    },
+    {
+      "subject": "Brihadisvara Temple",
+      "object_a": "India",
+      "object_b": "Thanjavur",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Brihadisvara_Temple",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Brihadisvara Temple is a famous UNESCO World Heritage Chola Hindu temple located in Thanjavur, India."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Brihadisvara Temple is located in Thanjavur, Tamil Nadu, India."
+      },
+      "source_html_sha256": "08648e15862996307b1972c7890d3560acaed0f6c732793995ff0fa9660b3eea",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f28066b3a325a5778b7ea54a.json"
+    },
+    {
+      "subject": "Humayun's Tomb",
+      "object_a": "India",
+      "object_b": "Delhi",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Humayun%27s_Tomb",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Humayun's Tomb is a prominent UNESCO World Heritage Mughal landmark located in Delhi, India."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Humayun's Tomb is located in Delhi, India."
+      },
+      "source_html_sha256": "9828d140742824836fabb8dc15e9be6cf6b3beb56ec30bfe9ff4d0e270150dc1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ff1fa84ecd0b8319409ca00e.json"
+    },
+    {
+      "subject": "Great Wild Goose Pagoda",
+      "object_a": "China",
+      "object_b": "Xi'an",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Giant_Wild_Goose_Pagoda",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Great Wild Goose Pagoda is a monumental Tang-dynasty pagoda located in Xi'an, China."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Giant Wild Goose Pagoda is located in Xi'an, Shaanxi, China."
+      },
+      "source_html_sha256": "76dc2e7126f2c1a43e409233d1c0c73932cce2cf15ac716427779b7f43f52f92",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/14800808072ff9fc9f017804.json"
+    },
+    {
+      "subject": "Small Wild Goose Pagoda",
+      "object_a": "China",
+      "object_b": "Xi'an",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Small_Wild_Goose_Pagoda",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Small Wild Goose Pagoda is a famous Tang-dynasty Buddhist pagoda located in Xi'an, China."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Small Wild Goose Pagoda is located in Xi'an, Shaanxi, China."
+      },
+      "source_html_sha256": "c7ba2908e57bbc1a14aa9195abf3ed56b2d2a65ba30cecf4e55475e3b5904ee5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a032f257cf16cd5ca66b5c96.json"
+    },
+    {
+      "subject": "Yellow Crane Tower",
+      "object_a": "China",
+      "object_b": "Wuhan",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Yellow_Crane_Tower",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Yellow Crane Tower is a famous historic Chinese tower located in Wuhan, China."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Yellow Crane Tower is located in Wuhan, China."
+      },
+      "source_html_sha256": "7cb2504935ecd6f77fd2ad20bb7e64b10cb06a4fa2cf020cdd621e484ca14848",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6f8ce5af5fb5925dd23bdbdc.json"
+    },
+    {
+      "subject": "Jin Mao Tower",
+      "object_a": "China",
+      "object_b": "Shanghai",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Jin_Mao_Tower",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Jin Mao Tower is a well-known skyscraper landmark located in Shanghai, China."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms Jin Mao Tower is located in Shanghai, China."
+      },
+      "source_html_sha256": "7be7eb782a04d2fb611f99a144cde27e42acae0c2b1fabea64657a0a4547340a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c512f9445a47d1590a323e36.json"
+    },
+    {
+      "subject": "Todai-ji",
+      "object_a": "Japan",
+      "object_b": "Nara",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/T%C5%8Ddai-ji",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Todai-ji is a famous historic Buddhist temple complex located in Nara, Japan."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Tōdai-ji is located in Nara, Japan."
+      },
+      "source_html_sha256": "74508db6c32c8130a278bf21480d0178eba3b071aa118b9e459d5a57e9688651",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9417273db3f858ca0446c3e0.json"
+    },
+    {
+      "subject": "Horyu-ji",
+      "object_a": "Japan",
+      "object_b": "Ikaruga",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dry%C5%AB-ji",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Horyu-ji is a celebrated ancient Buddhist temple located in the municipality of Ikaruga, Japan."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Hōryū-ji is located in Ikaruga, Nara Prefecture, Japan."
+      },
+      "source_html_sha256": "408e1c6cc8df27f2a6cf44f9b64cce40b34dbc17f7288151239b5a85a9677ada",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/88134f2c83664153c13c4821.json"
+    },
+    {
+      "subject": "Kiyomizu-dera",
+      "object_a": "Japan",
+      "object_b": "Kyoto",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Kiyomizu-dera",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Kiyomizu-dera is an iconic Buddhist temple located in Kyoto, Japan."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms Kiyomizu-dera is located in Kyoto, Japan."
+      },
+      "source_html_sha256": "6e175e2f3093a151534a7add0401059256d6454a8a06003d8ac2ca6b59b4cf60",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1edf933a0dabc46ee93d63ed.json"
+    },
+    {
+      "subject": "Sanjusangen-do",
+      "object_a": "Japan",
+      "object_b": "Kyoto",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Sanj%C5%ABsangen-d%C5%8D",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Sanjusangen-do is a famous Buddhist temple located in Kyoto, Japan."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Sanjūsangen-dō is located in Kyoto, Japan."
+      },
+      "source_html_sha256": "9be8f9e07bcb0c6303baba46025b3e50d825a4cc658dc2f5af839a7248a57ac9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/aae8a51d0fd90fd8ac1441e8.json"
+    },
+    {
+      "subject": "Lotte World Tower",
+      "object_a": "South Korea",
+      "object_b": "Seoul",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Lotte_World_Tower",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Lotte World Tower is a major skyscraper located in Seoul, South Korea."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Lotte World Tower is located in Seoul, South Korea."
+      },
+      "source_html_sha256": "fbe179f701968deb12bdd793241aaaad4f0cdac3ef1d2d6b6f226d35a8775e47",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a65d596778f6f4e900be965d.json"
+    },
+    {
+      "subject": "Changdeokgung",
+      "object_a": "South Korea",
+      "object_b": "Seoul",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Changdeokgung",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Changdeokgung is a famous Joseon-era palace complex located in Seoul, South Korea."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Changdeokgung is located in Seoul, South Korea."
+      },
+      "source_html_sha256": "ff96073f3d7a27d4436ee4936855126a4679d2e7a5d0a1759ed3ea18d708e03d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2fd2c1d950fc210f1246e895.json"
+    },
+    {
+      "subject": "Deoksugung",
+      "object_a": "South Korea",
+      "object_b": "Seoul",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Deoksugung",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Deoksugung is a historic walled palace complex located in Seoul, South Korea."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Deoksugung is located in Seoul, South Korea."
+      },
+      "source_html_sha256": "d193bca7c3de482f776705be8583d729df33291f05ac3c9a80d1ab266bbb4bec",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9690e883360a6b69ae3dec60.json"
+    },
+    {
+      "subject": "Bulguksa",
+      "object_a": "South Korea",
+      "object_b": "Gyeongju",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Bulguksa",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Bulguksa is a renowned Buddhist temple complex located in Gyeongju, South Korea."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Bulguksa is located in Gyeongju, South Korea."
+      },
+      "source_html_sha256": "abdc8f488a3bda9be3b56dc83c5748e59cd11b78b25ebc1b63bce2276235722b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c95558a17c447d75c98f3a39.json"
+    },
+    {
+      "subject": "Wat Arun",
+      "object_a": "Thailand",
+      "object_b": "Bangkok",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Wat_Arun",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Wat Arun is a famous Buddhist temple located along the Chao Phraya River in Bangkok, Thailand."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Wat Arun is verified by the evidence as a landmark located in Bangkok, Thailand."
+      },
+      "source_html_sha256": "d78366e008bd9ad245619a634cc99c0b4e33a7ce2b67d41a78d80c2eeb3083e0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2dc4db89dd1b2ad7de7f2fba.json"
+    },
+    {
+      "subject": "Milad Tower",
+      "object_a": "Iran",
+      "object_b": "Tehran",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Milad_Tower",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Milad Tower is a prominent telecommunication and observation tower located in Tehran, Iran."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Milad Tower is verified by the evidence as a landmark located in Tehran, Iran."
+      },
+      "source_html_sha256": "90c4ec4cbe2371c3b955671cc45b64179b71d8d397da814dbf0620b482f78179",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a2ac3b6a2c1ad83ef5b10a9d.json"
+    },
+    {
+      "subject": "Tabiat Bridge",
+      "object_a": "Iran",
+      "object_b": "Tehran",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Tabiat_Bridge",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Tabiat Bridge is an acclaimed pedestrian overpass bridge located in Tehran, Iran."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Tabiat Bridge is verified by the evidence as a bridge/landmark located in Tehran, Iran."
+      },
+      "source_html_sha256": "4ab1bd84388dee1bbfaed59b5df83ade138db9ae87fa5b68580974fe70010061",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/199b0af0cce40165c5b77993.json"
+    },
+    {
+      "subject": "Si-o-se-pol",
+      "object_a": "Iran",
+      "object_b": "Isfahan",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Si-o-se-pol",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Si-o-se-pol is a famous Safavid-era bridge located in Isfahan, Iran."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Si-o-se-pol is verified by the evidence as a historic bridge in Isfahan, Iran."
+      },
+      "source_html_sha256": "e0bb748c0d6a3a29596caab6f621a9f246fdb0ca3c0cdd33a4d4f5ebca9386c5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a69906ff419f59ef8c574ee6.json"
+    },
+    {
+      "subject": "Khaju Bridge",
+      "object_a": "Iran",
+      "object_b": "Isfahan",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Khaju_Bridge",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Khaju Bridge is a notable historical bridge located in Isfahan, Iran."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Khaju Bridge is verified by the evidence as a historic bridge in Isfahan, Iran."
+      },
+      "source_html_sha256": "d604369e21c67b00909aad2ee0e9ecfe9c6e2280fb35bbf0d3e79b8295951d47",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ee29a5f7f13ce6e19ad5de0d.json"
+    },
+    {
+      "subject": "Sultan Ahmed Mosque",
+      "object_a": "Turkey",
+      "object_b": "Istanbul",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Sultan_Ahmed_Mosque",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Sultan Ahmed Mosque (Blue Mosque) is an iconic historic mosque located in Istanbul, Turkey."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Sultan Ahmed Mosque is verified by the evidence as a landmark located in Istanbul, Turkey."
+      },
+      "source_html_sha256": "e1307f0d00e473ba831150a83ee38a4ec4840f962849d64c0a33363c017b3624",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/5e744ad05150e9816cafaa17.json"
+    },
+    {
+      "subject": "Hagia Sophia",
+      "object_a": "Turkey",
+      "object_b": "Istanbul",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Hagia Sophia is a major historic landmark located in Istanbul, Turkey."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Hagia Sophia is verified by the evidence as a landmark located in Istanbul, Turkey."
+      },
+      "source_html_sha256": "23fd315b34243d0c0dae9244dcf4237a9f311a566858c592a68cd56bb19f6d63",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fb4d8afd682803fa38659b7c.json"
+    },
+    {
+      "subject": "Galata Tower",
+      "object_a": "Turkey",
+      "object_b": "Istanbul",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Galata_Tower",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Galata Tower is a famous medieval stone tower located in Istanbul, Turkey."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Galata Tower is verified by the evidence as a landmark located in Istanbul, Turkey."
+      },
+      "source_html_sha256": "5d5442930b549633406e892c3f49c4447f9a79876df3de6eb9acd0ff890634df",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0bf0d4113b6a1bab889d45ee.json"
+    },
+    {
+      "subject": "Dolmabahce Palace",
+      "object_a": "Turkey",
+      "object_b": "Istanbul",
+      "region": "Middle East",
+      "source_url": "https://en.wikipedia.org/wiki/Dolmabah%C3%A7e_Palace",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Dolmabahce Palace is an Ottoman imperial palace located in Istanbul, Turkey."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Dolmabahce Palace is verified by the evidence as an imperial palace located in Istanbul, Turkey."
+      },
+      "source_html_sha256": "8d5aba8b36f37eb0329600dbd053fc9f402845d661bd72cc5e926cfcd1be33b5",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/5de83c2f7df29c9e04e966ed.json"
+    },
+    {
+      "subject": "Kasbah of the Udayas",
+      "object_a": "Morocco",
+      "object_b": "Rabat",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Kasbah_of_the_Udayas",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Kasbah of the Udayas is an ancient fortified landmark located in Rabat, Morocco."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Kasbah of the Udayas is verified by the evidence as a kasbah/landmark located in Rabat, Morocco."
+      },
+      "source_html_sha256": "6626fb2ebe5412444718c76a52ddef03f26e9c62217964bd60f2c103ce67e445",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/26907f1461dc914ddee1a933.json"
+    },
+    {
+      "subject": "Menara Gardens",
+      "object_a": "Morocco",
+      "object_b": "Marrakesh",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Menara_gardens",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Menara Gardens is a historic botanical garden and basin located in Marrakesh, Morocco."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Menara Gardens is verified by the evidence as a historic garden located in Marrakesh, Morocco."
+      },
+      "source_html_sha256": "6f9fa631314750b4023239652e05ff1d0b7f92b7874446c89dcc94eb213e5c13",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3fe967fdf5d5f627b923f878.json"
+    },
+    {
+      "subject": "El Badi Palace",
+      "object_a": "Morocco",
+      "object_b": "Marrakesh",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/El_Badi_Palace",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "El Badi Palace is a ruined 16th-century Saadian palace located in Marrakesh, Morocco."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "El Badi Palace is verified by the evidence as a palace located in Marrakesh, Morocco."
+      },
+      "source_html_sha256": "2a33b2645da490eaff6813e672b3a1d0447162802861057e0eac01ddea398be3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f3133fc1a240395cbf8c95d6.json"
+    },
+    {
+      "subject": "Bahia Palace",
+      "object_a": "Morocco",
+      "object_b": "Marrakesh",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Bahia_Palace",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Bahia Palace is a prominent 19th-century palace complex located in Marrakesh, Morocco."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Bahia Palace is verified by the evidence as a palace located in Marrakesh, Morocco."
+      },
+      "source_html_sha256": "996cd3a5439ee93c42cbe83ecc190b1382603af2813e8590b83c4c3bc56c5483",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6425835976e55b868525f1d4.json"
+    },
+    {
+      "subject": "Baron Empain Palace",
+      "object_a": "Egypt",
+      "object_b": "Cairo",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Baron_Empain_Palace",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Baron Empain Palace is a famous landmark located unambiguously in Cairo, Egypt."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Baron Empain Palace is verified by the evidence as a historic mansion/palace located in Cairo, Egypt."
+      },
+      "source_html_sha256": "b91c76789e89f356728967f9698dbe3efdb6f18cdaa4fa3f6f31bde3a5c2c1ad",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9f9179e67af6d57cc23ba0e7.json"
+    },
+    {
+      "subject": "Ponte City Apartments",
+      "object_a": "South Africa",
+      "object_b": "Johannesburg",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Ponte_City_Apartments",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Ponte City Apartments is a famous residential skyscraper located unambiguously in Johannesburg, South Africa."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Ponte City Apartments is verified by the evidence as a residential skyscraper located in Johannesburg, South Africa."
+      },
+      "source_html_sha256": "db8bb39afe27199973c3a50bc4489b6b1715eceb90fa152fe12fed0e07459d7f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ef24950e26a0287797a05c41.json"
+    },
+    {
+      "subject": "Castle of Good Hope",
+      "object_a": "South Africa",
+      "object_b": "Cape Town",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Castle_of_Good_Hope",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Castle of Good Hope is a prominent historic fortress located in Cape Town, South Africa."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Castle of Good Hope is verified by the evidence as a historic fort located in Cape Town, South Africa."
+      },
+      "source_html_sha256": "01847234d8fdad9ddd669ac715f39613556470bc06f190beab6dcea6a2c72e9f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/18712253c4c9d298a7dfc080.json"
+    },
+    {
+      "subject": "Union Buildings",
+      "object_a": "South Africa",
+      "object_b": "Pretoria",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Union_Buildings",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Union Buildings is the official seat of the South African government located in Pretoria, South Africa."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms the Union Buildings are located in Pretoria, South Africa."
+      },
+      "source_html_sha256": "ec41067edeeecc152b2836019a1789e876bbcbf3dfe7c2dd6b0a7301b9a22ac0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/cf7748b76073525bf21d1264.json"
+    },
+    {
+      "subject": "Story Bridge",
+      "object_a": "Australia",
+      "object_b": "Brisbane",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Story_Bridge",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Story Bridge is a famous heritage-listed cantilever bridge located in Brisbane, Australia."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms the Story Bridge is located in Brisbane, Queensland, Australia."
+      },
+      "source_html_sha256": "e3908286a90f3b22284161eb9e69e59688ed50435fbfafa25b96c9dd52a3c058",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4250958f2df68ede43af7279.json"
+    },
+    {
+      "subject": "Eureka Tower",
+      "object_a": "Australia",
+      "object_b": "Melbourne",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Eureka_Tower",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Eureka Tower is a prominent skyscraper located in Melbourne, Australia."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source explicitly states Eureka Tower is located in Southbank, Melbourne, Victoria, Australia."
+      },
+      "source_html_sha256": "86c2a24b84236eced4cb1a3ee04a929c56bd57da5ae472aba4f4fc9a52a4963a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e687aaa85bf04ad70fc14317.json"
+    },
+    {
+      "subject": "Parthenon",
+      "object_a": "Greece",
+      "object_b": "Athens",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Parthenon",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The Parthenon is an iconic ancient temple located in Athens, Greece."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms the Parthenon is located on the Acropolis in Athens, Greece."
+      },
+      "source_html_sha256": "d02e3c91d1b4d75eadbfd362f708cd8aad7d4fd7468c2a95e6c681988e47240f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b6245525a00a7eeb6623320a.json"
+    },
+    {
+      "subject": "Erechtheion",
+      "object_a": "Greece",
+      "object_b": "Athens",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Erechtheion",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The Erechtheion is an ancient Greek temple on the Acropolis of Athens, Greece."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms the Erechtheion is located on the Acropolis in Athens, Greece."
+      },
+      "source_html_sha256": "aa7dfd506a5f15ff1e79c8bb431f8bcc544d7c55104587e23978e83517d0bc32",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/8df3e2a742c6e795b7d062d8.json"
+    },
+    {
+      "subject": "Saint Basil's Cathedral",
+      "object_a": "Russia",
+      "object_b": "Moscow",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Saint Basil's Cathedral is a world-famous landmark located in Moscow, Russia."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Saint Basil's Cathedral is located on Red Square in Moscow, Russia."
+      },
+      "source_html_sha256": "fe71f453f7c5282b15666ceda7cbb3b41c98d614f1c3995d2e802865e0882df0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fae34dac343c5e24573eef53.json"
+    },
+    {
+      "subject": "Bolshoi Theatre",
+      "object_a": "Russia",
+      "object_b": "Moscow",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Bolshoi_Theatre",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Bolshoi Theatre is a historic landmark theatre located in Moscow, Russia."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms the Bolshoi Theatre is located in Moscow, Russia."
+      },
+      "source_html_sha256": "5dea36cbf72d03329b5917221100d021889526595d9ca2e77cdc6319aee4d143",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b09c8a112839e3ce764b2a2c.json"
+    },
+    {
+      "subject": "Winter Palace",
+      "object_a": "Russia",
+      "object_b": "Saint Petersburg",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Winter_Palace",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Winter Palace is an iconic landmark palace located in Saint Petersburg, Russia."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms the Winter Palace is located in Saint Petersburg, Russia."
+      },
+      "source_html_sha256": "db423a396669e5165344599a101c1fe2ae1e55c124e8c1b25860790d0c56c6c3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4d329466f7c25ed60afdb54b.json"
+    },
+    {
+      "subject": "Church of the Savior on Spilled Blood",
+      "object_a": "Russia",
+      "object_b": "Saint Petersburg",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Church_of_the_Savior_on_Spilled_Blood",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Church of the Savior on Spilled Blood is a famous church located in Saint Petersburg, Russia."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms the Church of the Savior on Spilled Blood is located in Saint Petersburg, Russia."
+      },
+      "source_html_sha256": "f49e54fd69de203d809a89899bb5035b90beab0a6f36c3490c3b2bcf116c195d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/41663ab9afdb477eaf8d8d43.json"
+    },
+    {
+      "subject": "St. Stephen's Basilica",
+      "object_a": "Hungary",
+      "object_b": "Budapest",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/St._Stephen%27s_Basilica",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "St. Stephen's Basilica is a prominent basilica located in Budapest, Hungary."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms St. Stephen's Basilica is located in Budapest, Hungary."
+      },
+      "source_html_sha256": "494a9f34ab641d7d8fbd305aef9a96a41be0b366908073a3787a5a31b63dd9af",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7338c718f6b559abd799405b.json"
+    },
+    {
+      "subject": "Fisherman's Bastion",
+      "object_a": "Hungary",
+      "object_b": "Budapest",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Fisherman%27s_Bastion",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Fisherman's Bastion is a famous monument located in Budapest, Hungary."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Fisherman's Bastion is located in Budapest, Hungary."
+      },
+      "source_html_sha256": "c4aaa9b1fb33750c94003b034618396897e04fef71a1938e6932059244e48b56",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/5ea7e1fc2cf8349538746c6a.json"
+    },
+    {
+      "subject": "Charles Bridge",
+      "object_a": "Czech Republic",
+      "object_b": "Prague",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Charles_Bridge",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Charles Bridge is a famous medieval stone bridge located in Prague, Czech Republic."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Charles Bridge crosses the Vltava river in Prague, Czech Republic."
+      },
+      "source_html_sha256": "19959b8fc9a777b44d78b227adfb7333fa58c243e2501166ae146d872f315d55",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ca50f9d8aa2d5f898b2c5905.json"
+    },
+    {
+      "subject": "St. Vitus Cathedral",
+      "object_a": "Czech Republic",
+      "object_b": "Prague",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/St._Vitus_Cathedral",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "St. Vitus Cathedral is a prominent cathedral located within Prague Castle in Prague, Czech Republic."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms St. Vitus Cathedral is located in Prague, Czech Republic."
+      },
+      "source_html_sha256": "3deed447d45bec11f4d808800a7ae85a23ad822a591fe47e970541ad7f475064",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/cfa728d38f7fe5261c1cd8f4.json"
+    },
+    {
+      "subject": "Palace of Culture and Science",
+      "object_a": "Poland",
+      "object_b": "Warsaw",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Palace_of_Culture_and_Science",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Palace of Culture and Science is a prominent landmark high-rise located in Warsaw, Poland."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms the Palace of Culture and Science is located in Warsaw, Poland."
+      },
+      "source_html_sha256": "bcf9305628e8c2369959dec9702bd58e2449a892c76c0aba564e087743efb08d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/466d0453569bd6257cfd78e9.json"
+    },
+    {
+      "subject": "Palace of the Parliament",
+      "object_a": "Romania",
+      "object_b": "Bucharest",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Palace_of_the_Parliament",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Palace of the Parliament is a monumental landmark building located in Bucharest, Romania."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms the Palace of the Parliament is located in Bucharest, Romania."
+      },
+      "source_html_sha256": "6becb28ebedc8830032321f71598d94b79b162714cf7b1e2f7cec7004e6fa6d2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/be2f4d3340bbe81216d737fa.json"
+    },
+    {
+      "subject": "Torre Glories",
+      "object_a": "Spain",
+      "object_b": "Barcelona",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Torre_Gl%C3%B2ries",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Torre Glories is a well-known skyscraper located in Barcelona, Spain."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Torre Glòries is located in Barcelona, Spain."
+      },
+      "source_html_sha256": "3800a2cd77800987535c700bb53314221b06a10df8d72e17e3ef27cdb8e261bd",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/67ecfaaca93b359bed1f401f.json"
+    },
+    {
+      "subject": "Pantheon",
+      "object_a": "Italy",
+      "object_b": "Rome",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "The Pantheon is an iconic ancient Roman building located in Rome, Italy."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms the Pantheon is located in Rome, Italy."
+      },
+      "source_html_sha256": "e4080a6e7d659631f785428df0dee16ede5ea258f26102e83a857e96735fdc52",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/94fd4daa66656375523f8547.json"
+    },
+    {
+      "subject": "Castel Sant'Angelo",
+      "object_a": "Italy",
+      "object_b": "Rome",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Castel_Sant%27Angelo",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Castel Sant'Angelo is a prominent historic fortress located in Rome, Italy."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Castel Sant'Angelo is located in Rome, Italy."
+      },
+      "source_html_sha256": "eb9872e04b2e5528b993a48af576e919e3ca461c808f659efbe8aa5a5b9c79e9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/83a1cddbdc96bec2e2c4ae0b.json"
+    },
+    {
+      "subject": "Ponte Vecchio",
+      "object_a": "Italy",
+      "object_b": "Florence",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Ponte_Vecchio",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Ponte Vecchio is a famous medieval stone closed-spandrel arch bridge located in Florence, Italy."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Ponte Vecchio is located in Florence, Italy."
+      },
+      "source_html_sha256": "1c3ae68e593079adad1190f1fd0010b08acc36129556f055f421eda84649a3e6",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/87f3b9e3b65b3b74a0caef7b.json"
+    },
+    {
+      "subject": "Sainte-Chapelle",
+      "object_a": "France",
+      "object_b": "Paris",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Sainte-Chapelle",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Sainte-Chapelle is a famous royal Gothic chapel located in Paris, France."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Sainte-Chapelle is located in Paris, France."
+      },
+      "source_html_sha256": "3abe9320fea9cb5c8d6f037eeda791f8246b51532e295e547272af3fe803af2a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d6f7e3965142a6ac1c51e2fc.json"
+    },
+    {
+      "subject": "Palais Garnier",
+      "object_a": "France",
+      "object_b": "Paris",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Palais_Garnier",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Palais Garnier is an iconic historic opera house located in Paris, France."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms the Palais Garnier is located in Paris, France."
+      },
+      "source_html_sha256": "6c15590339646b9ded1a4a21503e0131b69d2265019b694725b4bd5e3949a437",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0ae3b876bd6ebcefb69ff73c.json"
+    },
+    {
+      "subject": "Reichstag Building",
+      "object_a": "Germany",
+      "object_b": "Berlin",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Reichstag_building",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Reichstag Building is a historic parliament building located in Berlin, Germany."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms the Reichstag building is located in Berlin, Germany."
+      },
+      "source_html_sha256": "4259473b48be8c197574f43e22fead135c625bbb0b453bff1cf601e9c4ffaa2d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/ad7dcf3e23fc109fcb385e96.json"
+    },
+    {
+      "subject": "Elbphilharmonie",
+      "object_a": "Germany",
+      "object_b": "Hamburg",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Elbphilharmonie",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Elbphilharmonie is a renowned concert hall located in Hamburg, Germany."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms the Elbphilharmonie is located in Hamburg, Germany."
+      },
+      "source_html_sha256": "68ee9063f7ad8ce46d5d64ffddc688881c38cedf706d0eeaa215b3364b7aa67d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1ff56db127493b28685d4c09.json"
+    }
+  ],
+  "exclusions": [
+    {
+      "subject": "Qutb Minar",
+      "object_a": "India",
+      "object_b": "New Delhi",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Qutb_Minar",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Qutb Minar is a historic minaret located in New Delhi, India."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "uncertain",
+        "reason": "The evidence locates Qutb Minar in Mehrauli, South Delhi / Delhi, but does not support the specific city answer New Delhi."
+      },
+      "source_html_sha256": "2f81f6dbfe1b72d2cac7ee6d99779d412305671e3a322aac3b64d299841a54ef",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/45c033451a95803fa607a152.json"
+    },
+    {
+      "subject": "Karnak",
+      "object_a": "Egypt",
+      "object_b": "Luxor",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Karnak",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "The Karnak temple complex is located in the city of Luxor, Egypt."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "reject",
+        "reason": "The source specifies that Karnak is located in the village of El-Karnak, 2.5 km north of Luxor, making Luxor a nearby hub rather than the exact municipality."
+      },
+      "source_html_sha256": "22e906ee639f49564c5fe11fbc95267843b025b9c8491fc62b5fd398f5978a66",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6f54915a1048c83c9e9496c6.json"
+    },
+    {
+      "subject": "Palacio San Martin",
+      "object_a": "Argentina",
+      "object_b": "Buenos Aires",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Palacio_San_Mart%C3%ADn",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Palacio San Martín is a landmark palace located in Buenos Aires, Argentina."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "uncertain",
+        "reason": "Evidence is missing due to an HTTP 404 error fetching the source text."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a9b138e6c1c6b8e5985644a1.json"
+    },
+    {
+      "subject": "Medhane Alem Cathedral",
+      "object_a": "Ethiopia",
+      "object_b": "Addis Ababa",
+      "region": "Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Medhane_Alem_Cathedral",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Medhane Alem Cathedral (Bole Medhane Alem) is a prominent cathedral located in Addis Ababa, Ethiopia."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP 404 error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1e8b118a34f5ff1718104f1e.json"
+    }
+  ],
+  "candidate_sha256": "3d0641e57b8a94ac9e369761cf85c30cdf4c6de6fd97a83d901ded815559d3bb"
+}

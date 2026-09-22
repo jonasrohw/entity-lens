@@ -1,0 +1,727 @@
+{
+  "name": "countries_currency",
+  "prompt_templates": [
+    "The currency unit used in {} is"
+  ],
+  "properties": {
+    "domain_name": "countries"
+  },
+  "samples": [
+    {
+      "subject": "Palau",
+      "object": "Dollar",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Lithuania",
+      "object": "Euro",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Iraq",
+      "object": "Dinar",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Greece",
+      "object": "Euro",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Kuwait",
+      "object": "Dinar",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Maldives",
+      "object": "Rufiyaa",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Japan",
+      "object": "Yen",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Armenia",
+      "object": "Dram",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Denmark",
+      "object": "Krone",
+      "split": "references"
+    },
+    {
+      "subject": "Guatemala",
+      "object": "Quetzal",
+      "split": "references"
+    },
+    {
+      "subject": "Eritrea",
+      "object": "Nakfa",
+      "split": "references"
+    },
+    {
+      "subject": "Estonia",
+      "object": "Euro",
+      "split": "references"
+    },
+    {
+      "subject": "Colombia",
+      "object": "Peso",
+      "split": "references"
+    },
+    {
+      "subject": "Bangladesh",
+      "object": "Taka",
+      "split": "references"
+    },
+    {
+      "subject": "Poland",
+      "object": "Zloty",
+      "split": "references"
+    },
+    {
+      "subject": "Vietnam",
+      "object": "Dong",
+      "split": "references"
+    },
+    {
+      "subject": "Argentina",
+      "object": "Peso",
+      "split": "validation"
+    },
+    {
+      "subject": "Ecuador",
+      "object": "Dollar",
+      "split": "validation"
+    },
+    {
+      "subject": "Brazil",
+      "object": "Real",
+      "split": "validation"
+    },
+    {
+      "subject": "Liechtenstein",
+      "object": "Franc",
+      "split": "validation"
+    },
+    {
+      "subject": "Democratic Republic of the Congo",
+      "object": "Franc",
+      "split": "validation"
+    },
+    {
+      "subject": "Mauritania",
+      "object": "Ouguiya",
+      "split": "validation"
+    },
+    {
+      "subject": "Jordan",
+      "object": "Dinar",
+      "split": "validation"
+    },
+    {
+      "subject": "Latvia",
+      "object": "Euro",
+      "split": "validation"
+    },
+    {
+      "subject": "Czech Republic",
+      "object": "Koruna",
+      "split": "validation"
+    },
+    {
+      "subject": "Belgium",
+      "object": "Euro",
+      "split": "validation"
+    },
+    {
+      "subject": "Chad",
+      "object": "Franc",
+      "split": "validation"
+    },
+    {
+      "subject": "Spain",
+      "object": "Euro",
+      "split": "validation"
+    },
+    {
+      "subject": "Georgia",
+      "object": "Lari",
+      "split": "validation"
+    },
+    {
+      "subject": "Kyrgyzstan",
+      "object": "Som",
+      "split": "validation"
+    },
+    {
+      "subject": "Hungary",
+      "object": "Forint",
+      "split": "validation"
+    },
+    {
+      "subject": "Ethiopia",
+      "object": "Birr",
+      "split": "validation"
+    },
+    {
+      "subject": "Libya",
+      "object": "Dinar",
+      "split": "test"
+    },
+    {
+      "subject": "Rwanda",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Saudi Arabia",
+      "object": "Riyal",
+      "split": "test"
+    },
+    {
+      "subject": "Malawi",
+      "object": "Kwacha",
+      "split": "test"
+    },
+    {
+      "subject": "Iceland",
+      "object": "Krona",
+      "split": "test"
+    },
+    {
+      "subject": "Senegal",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Thailand",
+      "object": "Baht",
+      "split": "test"
+    },
+    {
+      "subject": "Lebanon",
+      "object": "Pound",
+      "split": "test"
+    },
+    {
+      "subject": "Egypt",
+      "object": "Pound",
+      "split": "test"
+    },
+    {
+      "subject": "Mali",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Laos",
+      "object": "Kip",
+      "split": "test"
+    },
+    {
+      "subject": "Moldova",
+      "object": "Leu",
+      "split": "test"
+    },
+    {
+      "subject": "Oman",
+      "object": "Rial",
+      "split": "test"
+    },
+    {
+      "subject": "New Zealand",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Mozambique",
+      "object": "Metical",
+      "split": "test"
+    },
+    {
+      "subject": "Comoros",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Guinea",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "France",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Barbados",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Solomon Islands",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Dominican Republic",
+      "object": "Peso",
+      "split": "test"
+    },
+    {
+      "subject": "Bahamas",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Australia",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Gabon",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Guyana",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "North Korea",
+      "object": "Won",
+      "split": "test"
+    },
+    {
+      "subject": "Austria",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Cyprus",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Cape Verde",
+      "object": "Escudo",
+      "split": "test"
+    },
+    {
+      "subject": "Central African Republic",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Samoa",
+      "object": "Tala",
+      "split": "test"
+    },
+    {
+      "subject": "Jamaica",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Cameroon",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Serbia",
+      "object": "Dinar",
+      "split": "test"
+    },
+    {
+      "subject": "Madagascar",
+      "object": "Ariary",
+      "split": "test"
+    },
+    {
+      "subject": "United Arab Emirates",
+      "object": "Dirham",
+      "split": "test"
+    },
+    {
+      "subject": "Niger",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Belize",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Belarus",
+      "object": "Ruble",
+      "split": "test"
+    },
+    {
+      "subject": "Croatia",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "South Korea",
+      "object": "Won",
+      "split": "test"
+    },
+    {
+      "subject": "Portugal",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Kenya",
+      "object": "Shilling",
+      "split": "test"
+    },
+    {
+      "subject": "Guinea-Bissau",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Suriname",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Iran",
+      "object": "Rial",
+      "split": "test"
+    },
+    {
+      "subject": "Albania",
+      "object": "Lek",
+      "split": "test"
+    },
+    {
+      "subject": "Burkina Faso",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Mexico",
+      "object": "Peso",
+      "split": "test"
+    },
+    {
+      "subject": "Switzerland",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Republic of the Congo",
+      "object": "Franc",
+      "split": "test"
+    },
+    {
+      "subject": "Mongolia",
+      "object": "Tugrik",
+      "split": "test"
+    },
+    {
+      "subject": "Antigua and Barbuda",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Grenada",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Qatar",
+      "object": "Riyal",
+      "split": "test"
+    },
+    {
+      "subject": "Slovenia",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Micronesia",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Haiti",
+      "object": "Gourde",
+      "split": "test"
+    },
+    {
+      "subject": "Uganda",
+      "object": "Shilling",
+      "split": "test"
+    },
+    {
+      "subject": "Nepal",
+      "object": "Rupee",
+      "split": "test"
+    },
+    {
+      "subject": "Honduras",
+      "object": "Lempira",
+      "split": "test"
+    },
+    {
+      "subject": "Bahrain",
+      "object": "Dinar",
+      "split": "test"
+    },
+    {
+      "subject": "Pakistan",
+      "object": "Rupee",
+      "split": "test"
+    },
+    {
+      "subject": "Seychelles",
+      "object": "Rupee",
+      "split": "test"
+    },
+    {
+      "subject": "Philippines",
+      "object": "Peso",
+      "split": "test"
+    },
+    {
+      "subject": "Morocco",
+      "object": "Dirham",
+      "split": "test"
+    },
+    {
+      "subject": "Azerbaijan",
+      "object": "Manat",
+      "split": "test"
+    },
+    {
+      "subject": "Botswana",
+      "object": "Pula",
+      "split": "test"
+    },
+    {
+      "subject": "Norway",
+      "object": "Krone",
+      "split": "test"
+    },
+    {
+      "subject": "China",
+      "object": "Yuan",
+      "split": "test"
+    },
+    {
+      "subject": "Germany",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Russia",
+      "object": "Ruble",
+      "split": "test"
+    },
+    {
+      "subject": "Italy",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Uruguay",
+      "object": "Peso",
+      "split": "test"
+    },
+    {
+      "subject": "Dominica",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "United Kingdom",
+      "object": "Pound",
+      "split": "test"
+    },
+    {
+      "subject": "Kazakhstan",
+      "object": "Tenge",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Kitts and Nevis",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Vincent and the Grenadines",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Turkey",
+      "object": "Lira",
+      "split": "test"
+    },
+    {
+      "subject": "Peru",
+      "object": "Sol",
+      "split": "test"
+    },
+    {
+      "subject": "Gambia",
+      "object": "Dalasi",
+      "split": "test"
+    },
+    {
+      "subject": "Canada",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Brunei",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Papua New Guinea",
+      "object": "Kina",
+      "split": "test"
+    },
+    {
+      "subject": "Slovakia",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Lucia",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Tunisia",
+      "object": "Dinar",
+      "split": "test"
+    },
+    {
+      "subject": "Fiji",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "United States",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "North Macedonia",
+      "object": "Denar",
+      "split": "test"
+    },
+    {
+      "subject": "Sweden",
+      "object": "Krona",
+      "split": "test"
+    },
+    {
+      "subject": "Angola",
+      "object": "Kwanza",
+      "split": "test"
+    },
+    {
+      "subject": "Ghana",
+      "object": "Cedi",
+      "split": "test"
+    },
+    {
+      "subject": "India",
+      "object": "Rupee",
+      "split": "test"
+    },
+    {
+      "subject": "Ireland",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Costa Rica",
+      "object": "Colon",
+      "split": "test"
+    },
+    {
+      "subject": "Andorra",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Romania",
+      "object": "Leu",
+      "split": "test"
+    },
+    {
+      "subject": "Finland",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Montenegro",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Afghanistan",
+      "object": "Afghani",
+      "split": "test"
+    },
+    {
+      "subject": "Zambia",
+      "object": "Kwacha",
+      "split": "test"
+    },
+    {
+      "subject": "Paraguay",
+      "object": "Guarani",
+      "split": "test"
+    },
+    {
+      "subject": "Bosnia and Herzegovina",
+      "object": "Mark",
+      "split": "test"
+    },
+    {
+      "subject": "Malta",
+      "object": "Euro",
+      "split": "test"
+    },
+    {
+      "subject": "Indonesia",
+      "object": "Rupiah",
+      "split": "test"
+    },
+    {
+      "subject": "Algeria",
+      "object": "Dinar",
+      "split": "test"
+    },
+    {
+      "subject": "Mauritius",
+      "object": "Rupee",
+      "split": "test"
+    },
+    {
+      "subject": "Marshall Islands",
+      "object": "Dollar",
+      "split": "test"
+    },
+    {
+      "subject": "Nigeria",
+      "object": "Naira",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

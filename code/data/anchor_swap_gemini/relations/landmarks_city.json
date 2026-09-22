@@ -1,0 +1,752 @@
+{
+  "name": "landmarks_city",
+  "prompt_templates": [
+    "The city containing {} is"
+  ],
+  "properties": {
+    "domain_name": "landmarks"
+  },
+  "samples": [
+    {
+      "subject": "Solomon R. Guggenheim Museum",
+      "object": "New York",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Shwedagon Pagoda",
+      "object": "Yangon",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Petronas Towers",
+      "object": "Kuala Lumpur",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "St. Vitus Cathedral",
+      "object": "Prague",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Gateway Arch",
+      "object": "St. Louis",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Coit Tower",
+      "object": "San Francisco",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Museum of the Future",
+      "object": "Dubai",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Alamo Mission",
+      "object": "San Antonio",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Chrysler Building",
+      "object": "New York City",
+      "split": "references"
+    },
+    {
+      "subject": "Cloud Gate",
+      "object": "Chicago",
+      "split": "references"
+    },
+    {
+      "subject": "Jeronimos Monastery",
+      "object": "Lisbon",
+      "split": "references"
+    },
+    {
+      "subject": "Park Guell",
+      "object": "Barcelona",
+      "split": "references"
+    },
+    {
+      "subject": "Mosque of Muhammad Ali",
+      "object": "Cairo",
+      "split": "references"
+    },
+    {
+      "subject": "Topkapi Palace",
+      "object": "Istanbul",
+      "split": "references"
+    },
+    {
+      "subject": "Palacio de Carondelet",
+      "object": "Quito",
+      "split": "references"
+    },
+    {
+      "subject": "Voortrekker Monument",
+      "object": "Pretoria",
+      "split": "references"
+    },
+    {
+      "subject": "Bahia Palace",
+      "object": "Marrakesh",
+      "split": "validation"
+    },
+    {
+      "subject": "Deoksugung",
+      "object": "Seoul",
+      "split": "validation"
+    },
+    {
+      "subject": "Fushimi Inari-taisha",
+      "object": "Kyoto",
+      "split": "validation"
+    },
+    {
+      "subject": "Reichstag Building",
+      "object": "Berlin",
+      "split": "validation"
+    },
+    {
+      "subject": "Galata Tower",
+      "object": "Istanbul",
+      "split": "validation"
+    },
+    {
+      "subject": "Hawa Mahal",
+      "object": "Jaipur",
+      "split": "validation"
+    },
+    {
+      "subject": "Kasbah of the Udayas",
+      "object": "Rabat",
+      "split": "validation"
+    },
+    {
+      "subject": "Maracana Stadium",
+      "object": "Rio de Janeiro",
+      "split": "validation"
+    },
+    {
+      "subject": "Oriental Pearl Tower",
+      "object": "Shanghai",
+      "split": "validation"
+    },
+    {
+      "subject": "Mosque-Madrasa of Sultan Hassan",
+      "object": "Cairo",
+      "split": "validation"
+    },
+    {
+      "subject": "Small Wild Goose Pagoda",
+      "object": "Xi'an",
+      "split": "validation"
+    },
+    {
+      "subject": "Story Bridge",
+      "object": "Brisbane",
+      "split": "validation"
+    },
+    {
+      "subject": "Todai-ji",
+      "object": "Nara",
+      "split": "validation"
+    },
+    {
+      "subject": "Brihadisvara Temple",
+      "object": "Thanjavur",
+      "split": "validation"
+    },
+    {
+      "subject": "Kiyomizu-dera",
+      "object": "Kyoto",
+      "split": "validation"
+    },
+    {
+      "subject": "Sanjusangen-do",
+      "object": "Kyoto",
+      "split": "validation"
+    },
+    {
+      "subject": "Ponte City Apartments",
+      "object": "Johannesburg",
+      "split": "test"
+    },
+    {
+      "subject": "Great Wild Goose Pagoda",
+      "object": "Xi'an",
+      "split": "test"
+    },
+    {
+      "subject": "Gyeongbokgung",
+      "object": "Seoul",
+      "split": "test"
+    },
+    {
+      "subject": "Changdeokgung",
+      "object": "Seoul",
+      "split": "test"
+    },
+    {
+      "subject": "Forbidden City",
+      "object": "Beijing",
+      "split": "test"
+    },
+    {
+      "subject": "Kingdom Centre",
+      "object": "Riyadh",
+      "split": "test"
+    },
+    {
+      "subject": "Louvre Pyramid",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Barolo",
+      "object": "Buenos Aires",
+      "split": "test"
+    },
+    {
+      "subject": "Erechtheion",
+      "object": "Athens",
+      "split": "test"
+    },
+    {
+      "subject": "Sainte-Chapelle",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Hassan II Mosque",
+      "object": "Casablanca",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Rosada",
+      "object": "Buenos Aires",
+      "split": "test"
+    },
+    {
+      "subject": "St. Stephen's Basilica",
+      "object": "Budapest",
+      "split": "test"
+    },
+    {
+      "subject": "Khaju Bridge",
+      "object": "Isfahan",
+      "split": "test"
+    },
+    {
+      "subject": "Sheikh Zayed Grand Mosque",
+      "object": "Abu Dhabi",
+      "split": "test"
+    },
+    {
+      "subject": "Church of the Savior on Spilled Blood",
+      "object": "Saint Petersburg",
+      "split": "test"
+    },
+    {
+      "subject": "Quinta da Boa Vista",
+      "object": "Rio de Janeiro",
+      "split": "test"
+    },
+    {
+      "subject": "Faneuil Hall",
+      "object": "Boston",
+      "split": "test"
+    },
+    {
+      "subject": "Shrine of Remembrance",
+      "object": "Melbourne",
+      "split": "test"
+    },
+    {
+      "subject": "Charles Bridge",
+      "object": "Prague",
+      "split": "test"
+    },
+    {
+      "subject": "Koutoubia Mosque",
+      "object": "Marrakesh",
+      "split": "test"
+    },
+    {
+      "subject": "Colosseum",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Wat Arun",
+      "object": "Bangkok",
+      "split": "test"
+    },
+    {
+      "subject": "Azadi Tower",
+      "object": "Tehran",
+      "split": "test"
+    },
+    {
+      "subject": "Summer Palace",
+      "object": "Beijing",
+      "split": "test"
+    },
+    {
+      "subject": "Elbphilharmonie",
+      "object": "Hamburg",
+      "split": "test"
+    },
+    {
+      "subject": "Burj Khalifa",
+      "object": "Dubai",
+      "split": "test"
+    },
+    {
+      "subject": "Angkor Wat",
+      "object": "Siem Reap",
+      "split": "test"
+    },
+    {
+      "subject": "Victoria Memorial",
+      "object": "Kolkata",
+      "split": "test"
+    },
+    {
+      "subject": "Lotte World Tower",
+      "object": "Seoul",
+      "split": "test"
+    },
+    {
+      "subject": "Yellow Crane Tower",
+      "object": "Wuhan",
+      "split": "test"
+    },
+    {
+      "subject": "Al-Azhar Mosque",
+      "object": "Cairo",
+      "split": "test"
+    },
+    {
+      "subject": "Temple of Heaven",
+      "object": "Beijing",
+      "split": "test"
+    },
+    {
+      "subject": "Palais Garnier",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Space Needle",
+      "object": "Seattle",
+      "split": "test"
+    },
+    {
+      "subject": "Bara Imambara",
+      "object": "Lucknow",
+      "split": "test"
+    },
+    {
+      "subject": "Castel Sant'Angelo",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Charminar",
+      "object": "Hyderabad",
+      "split": "test"
+    },
+    {
+      "subject": "The Shard",
+      "object": "London",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Basil's Cathedral",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Dolmabahce Palace",
+      "object": "Istanbul",
+      "split": "test"
+    },
+    {
+      "subject": "Big Ben",
+      "object": "London",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Taranco",
+      "object": "Montevideo",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Solis",
+      "object": "Montevideo",
+      "split": "test"
+    },
+    {
+      "subject": "Trevi Fountain",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Royal Exhibition Building",
+      "object": "Melbourne",
+      "split": "test"
+    },
+    {
+      "subject": "Rockefeller Center",
+      "object": "New York",
+      "split": "test"
+    },
+    {
+      "subject": "Castle of Good Hope",
+      "object": "Cape Town",
+      "split": "test"
+    },
+    {
+      "subject": "Willis Tower",
+      "object": "Chicago",
+      "split": "test"
+    },
+    {
+      "subject": "Milad Tower",
+      "object": "Tehran",
+      "split": "test"
+    },
+    {
+      "subject": "Doge's Palace",
+      "object": "Venice",
+      "split": "test"
+    },
+    {
+      "subject": "Sultan Ahmed Mosque",
+      "object": "Istanbul",
+      "split": "test"
+    },
+    {
+      "subject": "Taj Mahal",
+      "object": "Agra",
+      "split": "test"
+    },
+    {
+      "subject": "Gol Gumbaz",
+      "object": "Vijayapura",
+      "split": "test"
+    },
+    {
+      "subject": "Eureka Tower",
+      "object": "Melbourne",
+      "split": "test"
+    },
+    {
+      "subject": "Sagrada Familia",
+      "object": "Barcelona",
+      "split": "test"
+    },
+    {
+      "subject": "Fisherman's Bastion",
+      "object": "Budapest",
+      "split": "test"
+    },
+    {
+      "subject": "Habitat 67",
+      "object": "Montreal",
+      "split": "test"
+    },
+    {
+      "subject": "Grand Central Terminal",
+      "object": "New York",
+      "split": "test"
+    },
+    {
+      "subject": "Hagia Sophia",
+      "object": "Istanbul",
+      "split": "test"
+    },
+    {
+      "subject": "Eiffel Tower",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Abraj Al Bait",
+      "object": "Mecca",
+      "split": "test"
+    },
+    {
+      "subject": "Rialto Bridge",
+      "object": "Venice",
+      "split": "test"
+    },
+    {
+      "subject": "Si-o-se-pol",
+      "object": "Isfahan",
+      "split": "test"
+    },
+    {
+      "subject": "Belem Tower",
+      "object": "Lisbon",
+      "split": "test"
+    },
+    {
+      "subject": "Christ the Redeemer",
+      "object": "Rio de Janeiro",
+      "split": "test"
+    },
+    {
+      "subject": "Horyu-ji",
+      "object": "Ikaruga",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of Fine Arts",
+      "object": "San Francisco",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Colon",
+      "object": "Buenos Aires",
+      "split": "test"
+    },
+    {
+      "subject": "Ponte Vecchio",
+      "object": "Florence",
+      "split": "test"
+    },
+    {
+      "subject": "Beehive",
+      "object": "Wellington",
+      "split": "test"
+    },
+    {
+      "subject": "Chapultepec Castle",
+      "object": "Mexico City",
+      "split": "test"
+    },
+    {
+      "subject": "Tribune Tower",
+      "object": "Chicago",
+      "split": "test"
+    },
+    {
+      "subject": "Terracotta Army",
+      "object": "Xi'an",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Amazonas",
+      "object": "Manaus",
+      "split": "test"
+    },
+    {
+      "subject": "Senso-ji",
+      "object": "Tokyo",
+      "split": "test"
+    },
+    {
+      "subject": "Golestan Palace",
+      "object": "Tehran",
+      "split": "test"
+    },
+    {
+      "subject": "Naqsh-e Jahan Square",
+      "object": "Isfahan",
+      "split": "test"
+    },
+    {
+      "subject": "Basilica of Our Lady of Peace",
+      "object": "Yamoussoukro",
+      "split": "test"
+    },
+    {
+      "subject": "Tabiat Bridge",
+      "object": "Tehran",
+      "split": "test"
+    },
+    {
+      "subject": "Buckingham Palace",
+      "object": "London",
+      "split": "test"
+    },
+    {
+      "subject": "Humayun's Tomb",
+      "object": "Delhi",
+      "split": "test"
+    },
+    {
+      "subject": "Pena Palace",
+      "object": "Sintra",
+      "split": "test"
+    },
+    {
+      "subject": "Bulguksa",
+      "object": "Gyeongju",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of Culture and Science",
+      "object": "Warsaw",
+      "split": "test"
+    },
+    {
+      "subject": "Torre Glories",
+      "object": "Barcelona",
+      "split": "test"
+    },
+    {
+      "subject": "Alhambra",
+      "object": "Granada",
+      "split": "test"
+    },
+    {
+      "subject": "Sky Tower",
+      "object": "Auckland",
+      "split": "test"
+    },
+    {
+      "subject": "Jin Mao Tower",
+      "object": "Shanghai",
+      "split": "test"
+    },
+    {
+      "subject": "Potala Palace",
+      "object": "Lhasa",
+      "split": "test"
+    },
+    {
+      "subject": "Hospicio Cabanas",
+      "object": "Guadalajara",
+      "split": "test"
+    },
+    {
+      "subject": "Parthenon",
+      "object": "Athens",
+      "split": "test"
+    },
+    {
+      "subject": "Winter Palace",
+      "object": "Saint Petersburg",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of the Parliament",
+      "object": "Bucharest",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Batllo",
+      "object": "Barcelona",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Loma",
+      "object": "Toronto",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio de La Moneda",
+      "object": "Santiago",
+      "split": "test"
+    },
+    {
+      "subject": "Mole Antonelliana",
+      "object": "Turin",
+      "split": "test"
+    },
+    {
+      "subject": "Carlton Centre",
+      "object": "Johannesburg",
+      "split": "test"
+    },
+    {
+      "subject": "Kinkaku-ji",
+      "object": "Kyoto",
+      "split": "test"
+    },
+    {
+      "subject": "Flatiron Building",
+      "object": "New York",
+      "split": "test"
+    },
+    {
+      "subject": "Arc de Triomphe",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Bolshoi Theatre",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Masjid al-Haram",
+      "object": "Mecca",
+      "split": "test"
+    },
+    {
+      "subject": "Union Buildings",
+      "object": "Pretoria",
+      "split": "test"
+    },
+    {
+      "subject": "Atomium",
+      "object": "Brussels",
+      "split": "test"
+    },
+    {
+      "subject": "Brandenburg Gate",
+      "object": "Berlin",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Salvo",
+      "object": "Montevideo",
+      "split": "test"
+    },
+    {
+      "subject": "Independence Hall",
+      "object": "Philadelphia",
+      "split": "test"
+    },
+    {
+      "subject": "Menara Gardens",
+      "object": "Marrakesh",
+      "split": "test"
+    },
+    {
+      "subject": "Bab Bou Jeloud",
+      "object": "Fez",
+      "split": "test"
+    },
+    {
+      "subject": "Lotus Temple",
+      "object": "New Delhi",
+      "split": "test"
+    },
+    {
+      "subject": "Pantheon",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Baron Empain Palace",
+      "object": "Cairo",
+      "split": "test"
+    },
+    {
+      "subject": "El Badi Palace",
+      "object": "Marrakesh",
+      "split": "test"
+    },
+    {
+      "subject": "Copacabana Palace",
+      "object": "Rio de Janeiro",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

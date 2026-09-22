@@ -1,0 +1,1963 @@
+{
+  "spec": {
+    "relations": [
+      "director",
+      "composer"
+    ],
+    "templates": [
+      "The director of the film {} is",
+      "The composer of the original score for the film {} is"
+    ],
+    "instruction": "Famous films released before 2020, with one director and one clearly credited original-score composer. Exclude co-directors, co-composers, compilation soundtracks, ambiguous remake titles. Mix decades, genres, countries; at least one quarter non-Hollywood. Use full person names. Titles must identify the film unambiguously without added metadata."
+  },
+  "accepted": [
+    {
+      "subject": "Spirited Away",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Spirited Away (2001) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "Princess Mononoke",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Princess_Mononoke",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Princess Mononoke (1997) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "My Neighbor Totoro",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/My_Neighbor_Totoro",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "My Neighbor Totoro (1988) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "Seven Samurai",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Seven_Samurai",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Seven Samurai (1954) is directed by Akira Kurosawa and scored by Fumio Hayasaka."
+      }
+    },
+    {
+      "subject": "Rashomon",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Rashomon",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Rashomon (1950) is directed by Akira Kurosawa and scored by Fumio Hayasaka."
+      }
+    },
+    {
+      "subject": "Ran",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Toru Takemitsu",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Ran_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Ran (1985) is directed by Akira Kurosawa and scored by Toru Takemitsu."
+      }
+    },
+    {
+      "subject": "Hana-bi",
+      "object_a": "Takeshi Kitano",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Hana-bi",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Hana-bi (1997) is directed by Takeshi Kitano and scored by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "Merry Christmas, Mr. Lawrence",
+      "object_a": "Nagisa Oshima",
+      "object_b": "Ryuichi Sakamoto",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Merry_Christmas,_Mr._Lawrence",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Merry Christmas, Mr. Lawrence (1983) is directed by Nagisa Oshima and scored by Ryuichi Sakamoto."
+      }
+    },
+    {
+      "subject": "The Good, the Bad and the Ugly",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The Good, the Bad and the Ugly (1966) is directed by Sergio Leone and scored by Ennio Morricone."
+      }
+    },
+    {
+      "subject": "Once Upon a Time in the West",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_the_West",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Once Upon a Time in the West (1968) is directed by Sergio Leone and scored by Ennio Morricone."
+      }
+    },
+    {
+      "subject": "8½",
+      "object_a": "Federico Fellini",
+      "object_b": "Nino Rota",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/8%C2%BD",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "8½ (1963) is directed by Federico Fellini and scored by Nino Rota."
+      }
+    },
+    {
+      "subject": "La Dolce Vita",
+      "object_a": "Federico Fellini",
+      "object_b": "Nino Rota",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/La_Dolce_Vita",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "La Dolce Vita (1960) is directed by Federico Fellini and scored by Nino Rota."
+      }
+    },
+    {
+      "subject": "Life Is Beautiful",
+      "object_a": "Roberto Benigni",
+      "object_b": "Nicola Piovani",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Life_Is_Beautiful",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Life Is Beautiful (1997) is directed by Roberto Benigni and scored by Nicola Piovani."
+      }
+    },
+    {
+      "subject": "Amélie",
+      "object_a": "Jean-Pierre Jeunet",
+      "object_b": "Yann Tiersen",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Am%C3%A9lie",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Amélie (2001) is directed by Jean-Pierre Jeunet and scored by Yann Tiersen."
+      }
+    },
+    {
+      "subject": "The Umbrellas of Cherbourg",
+      "object_a": "Jacques Demy",
+      "object_b": "Michel Legrand",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Umbrellas_of_Cherbourg",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Umbrellas of Cherbourg (1964) is directed by Jacques Demy and scored by Michel Legrand."
+      }
+    },
+    {
+      "subject": "The 400 Blows",
+      "object_a": "François Truffaut",
+      "object_b": "Jean Constantin",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_400_Blows",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The 400 Blows (1959) is directed by François Truffaut and scored by Jean Constantin."
+      }
+    },
+    {
+      "subject": "Contempt",
+      "object_a": "Jean-Luc Godard",
+      "object_b": "Georges Delerue",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Contempt_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Contempt (1963) is directed by Jean-Luc Godard and scored by Georges Delerue."
+      }
+    },
+    {
+      "subject": "The Fifth Element",
+      "object_a": "Luc Besson",
+      "object_b": "Eric Serra",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Fifth_Element",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "The Fifth Element (1997) is directed by Luc Besson and scored by Eric Serra."
+      }
+    },
+    {
+      "subject": "Léon: The Professional",
+      "object_a": "Luc Besson",
+      "object_b": "Eric Serra",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/L%C3%A9on:_The_Professional",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Léon: The Professional (1994) is directed by Luc Besson and scored by Eric Serra."
+      }
+    },
+    {
+      "subject": "Das Boot",
+      "object_a": "Wolfgang Petersen",
+      "object_b": "Klaus Doldinger",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Das_Boot",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Das Boot (1981) is directed by Wolfgang Petersen and scored by Klaus Doldinger."
+      }
+    },
+    {
+      "subject": "Metropolis",
+      "object_a": "Fritz Lang",
+      "object_b": "Gottfried Huppertz",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Metropolis_(1927_film)",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Metropolis (1927) is directed by Fritz Lang and scored by Gottfried Huppertz."
+      }
+    },
+    {
+      "subject": "Good Bye, Lenin!",
+      "object_a": "Wolfgang Becker",
+      "object_b": "Yann Tiersen",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Good_Bye,_Lenin!",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Good Bye, Lenin! (2003) is directed by Wolfgang Becker and scored by Yann Tiersen."
+      }
+    },
+    {
+      "subject": "Three Colours: Blue",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_Blue",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Three Colours: Blue (1993) is directed by Krzysztof Kieślowski and scored by Zbigniew Preisner."
+      }
+    },
+    {
+      "subject": "The Double Life of Véronique",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Double_Life_of_V%C3%A9ronique",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "The Double Life of Véronique (1991) is directed by Krzysztof Kieślowski and scored by Zbigniew Preisner."
+      }
+    },
+    {
+      "subject": "The Pianist",
+      "object_a": "Roman Polanski",
+      "object_b": "Wojciech Kilar",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pianist_(2002_film)",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "The Pianist (2002) is directed by Roman Polanski and scored by Wojciech Kilar."
+      }
+    },
+    {
+      "subject": "The Handmaiden",
+      "object_a": "Park Chan-wook",
+      "object_b": "Cho Young-wuk",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/The_Handmaiden",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "The Handmaiden (2016) is directed by Park Chan-wook and scored by Cho Young-wuk."
+      }
+    },
+    {
+      "subject": "Parasite",
+      "object_a": "Bong Joon-ho",
+      "object_b": "Jung Jae-il",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Parasite_(film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Parasite (2019) is directed by Bong Joon-ho and scored by Jung Jae-il."
+      }
+    },
+    {
+      "subject": "Memories of Murder",
+      "object_a": "Bong Joon-ho",
+      "object_b": "Taro Iwashiro",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Memories_of_Murder",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Memories of Murder (2003) is directed by Bong Joon-ho and scored by Taro Iwashiro."
+      }
+    },
+    {
+      "subject": "House of Flying Daggers",
+      "object_a": "Zhang Yimou",
+      "object_b": "Shigeru Umebayashi",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/House_of_Flying_Daggers",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "House of Flying Daggers (2004) is directed by Zhang Yimou and scored by Shigeru Umebayashi."
+      }
+    },
+    {
+      "subject": "Crouching Tiger, Hidden Dragon",
+      "object_a": "Ang Lee",
+      "object_b": "Tan Dun",
+      "region": "Taiwan",
+      "source_url": "https://en.wikipedia.org/wiki/Crouching_Tiger,_Hidden_Dragon",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Crouching Tiger, Hidden Dragon (2000) is directed by Ang Lee and scored by Tan Dun."
+      }
+    },
+    {
+      "subject": "Lagaan",
+      "object_a": "Ashutosh Gowariker",
+      "object_b": "A. R. Rahman",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Lagaan",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Lagaan was directed by Ashutosh Gowariker with an original score by A. R. Rahman."
+      }
+    },
+    {
+      "subject": "Pather Panchali",
+      "object_a": "Satyajit Ray",
+      "object_b": "Ravi Shankar",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Pather_Panchali",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Pather Panchali was directed by Satyajit Ray with music composed by Ravi Shankar."
+      }
+    },
+    {
+      "subject": "Roja",
+      "object_a": "Mani Ratnam",
+      "object_b": "A. R. Rahman",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Roja_(film)",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Roja was directed by Mani Ratnam with an original score by A. R. Rahman."
+      }
+    },
+    {
+      "subject": "Pan's Labyrinth",
+      "object_a": "Guillermo del Toro",
+      "object_b": "Javier Navarrete",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Pan%27s_Labyrinth",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Pan's Labyrinth was directed by Guillermo del Toro with an original score by Javier Navarrete."
+      }
+    },
+    {
+      "subject": "Talk to Her",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Talk_to_Her",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Talk to Her was directed by Pedro Almodóvar with an original score by Alberto Iglesias."
+      }
+    },
+    {
+      "subject": "Volver",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Volver",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Volver was directed by Pedro Almodóvar with an original score by Alberto Iglesias."
+      }
+    },
+    {
+      "subject": "The Motorcycle Diaries",
+      "object_a": "Walter Salles",
+      "object_b": "Gustavo Santaolalla",
+      "region": "Argentina",
+      "source_url": "https://en.wikipedia.org/wiki/The_Motorcycle_Diaries_(film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The Motorcycle Diaries was directed by Walter Salles with an original score by Gustavo Santaolalla."
+      }
+    },
+    {
+      "subject": "Lawrence of Arabia",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Lawrence of Arabia was directed by David Lean with an original score by Maurice Jarre."
+      }
+    },
+    {
+      "subject": "The Bridge on the River Kwai",
+      "object_a": "David Lean",
+      "object_b": "Malcolm Arnold",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Bridge_on_the_River_Kwai",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The Bridge on the River Kwai was directed by David Lean with an original score by Malcolm Arnold."
+      }
+    },
+    {
+      "subject": "Chariots of Fire",
+      "object_a": "Hugh Hudson",
+      "object_b": "Vangelis",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Chariots_of_Fire",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Chariots of Fire was directed by Hugh Hudson with an original score by Vangelis."
+      }
+    },
+    {
+      "subject": "The King's Speech",
+      "object_a": "Tom Hooper",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_King%27s_Speech",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The King's Speech was directed by Tom Hooper with an original score by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "The Queen",
+      "object_a": "Stephen Frears",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Queen_(2006_film)",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The Queen was directed by Stephen Frears with an original score by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "Goldfinger",
+      "object_a": "Guy Hamilton",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Goldfinger_(film)",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Goldfinger was directed by Guy Hamilton with an original score by John Barry."
+      }
+    },
+    {
+      "subject": "Vertigo",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Vertigo was directed by Alfred Hitchcock with an original score by Bernard Herrmann."
+      }
+    },
+    {
+      "subject": "North by Northwest",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/North_by_Northwest",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "North by Northwest was directed by Alfred Hitchcock with an original score by Bernard Herrmann."
+      }
+    },
+    {
+      "subject": "Rear Window",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Franz Waxman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Rear_Window",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Rear Window was directed by Alfred Hitchcock with an original score by Franz Waxman."
+      }
+    },
+    {
+      "subject": "Jaws",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Jaws_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Jaws was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Jurassic Park",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Jurassic Park was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Schindler's List",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Schindler%27s_List",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Schindler's List was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Raiders of the Lost Ark",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Raiders of the Lost Ark was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "E.T. the Extra-Terrestrial",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "E.T. the Extra-Terrestrial was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "The Empire Strikes Back",
+      "object_a": "Irvin Kershner",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Empire_Strikes_Back",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "The Empire Strikes Back was directed by Irvin Kershner with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Back to the Future",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Back to the Future was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      }
+    },
+    {
+      "subject": "Forrest Gump",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Forrest_Gump",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Forrest Gump was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      }
+    },
+    {
+      "subject": "Cast Away",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Cast_Away",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Cast Away was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      }
+    },
+    {
+      "subject": "The Terminator",
+      "object_a": "James Cameron",
+      "object_b": "Brad Fiedel",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Terminator",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Terminator was directed by James Cameron with an original score by Brad Fiedel."
+      }
+    },
+    {
+      "subject": "Terminator 2: Judgment Day",
+      "object_a": "James Cameron",
+      "object_b": "Brad Fiedel",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Terminator_2:_Judgment_Day",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Terminator 2: Judgment Day was directed by James Cameron with an original score by Brad Fiedel."
+      }
+    },
+    {
+      "subject": "Titanic",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Titanic was directed by James Cameron with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "Avatar",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Avatar was directed by James Cameron with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "Braveheart",
+      "object_a": "Mel Gibson",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Braveheart",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Braveheart was directed by Mel Gibson with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "Apollo 13",
+      "object_a": "Ron Howard",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Apollo_13_(film)",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Apollo 13 was directed by Ron Howard with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "Inception",
+      "object_a": "Christopher Nolan",
+      "object_b": "Hans Zimmer",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Inception",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Inception was directed by Christopher Nolan with an original score by Hans Zimmer."
+      }
+    },
+    {
+      "subject": "Interstellar",
+      "object_a": "Christopher Nolan",
+      "object_b": "Hans Zimmer",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Interstellar_(film)",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Interstellar (2014) was directed by Christopher Nolan with an original score composed by Hans Zimmer."
+      }
+    },
+    {
+      "subject": "The Silence of the Lambs",
+      "object_a": "Jonathan Demme",
+      "object_b": "Howard Shore",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The Silence of the Lambs (1991) was directed by Jonathan Demme with an original score composed by Howard Shore."
+      }
+    },
+    {
+      "subject": "The Lord of the Rings: The Fellowship of the Ring",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Fellowship of the Ring (2001) was directed by Peter Jackson with an original score composed by Howard Shore."
+      }
+    },
+    {
+      "subject": "The Sixth Sense",
+      "object_a": "M. Night Shyamalan",
+      "object_b": "James Newton Howard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Sixth_Sense",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The Sixth Sense (1999) was directed by M. Night Shyamalan with an original score composed by James Newton Howard."
+      }
+    },
+    {
+      "subject": "Blade Runner",
+      "object_a": "Ridley Scott",
+      "object_b": "Vangelis",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Blade_Runner",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Blade Runner (1982) was directed by Ridley Scott with an original score composed by Vangelis."
+      }
+    },
+    {
+      "subject": "Alien",
+      "object_a": "Ridley Scott",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Alien_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Alien (1979) was directed by Ridley Scott with an original score composed by Jerry Goldsmith."
+      }
+    },
+    {
+      "subject": "Chinatown",
+      "object_a": "Roman Polanski",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Chinatown_(1974_film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Chinatown (1974) was directed by Roman Polanski with an original score composed by Jerry Goldsmith."
+      }
+    },
+    {
+      "subject": "Basic Instinct",
+      "object_a": "Paul Verhoeven",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Basic_Instinct",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Basic Instinct (1992) was directed by Paul Verhoeven with an original score composed by Jerry Goldsmith."
+      }
+    },
+    {
+      "subject": "The Shape of Water",
+      "object_a": "Guillermo del Toro",
+      "object_b": "Alexandre Desplat",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Shape_of_Water",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The Shape of Water (2017) was directed by Guillermo del Toro with an original score composed by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "The Grand Budapest Hotel",
+      "object_a": "Wes Anderson",
+      "object_b": "Alexandre Desplat",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Grand_Budapest_Hotel",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The Grand Budapest Hotel (2014) was directed by Wes Anderson with an original score composed by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "Edward Scissorhands",
+      "object_a": "Tim Burton",
+      "object_b": "Danny Elfman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Edward_Scissorhands",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Edward Scissorhands (1990) was directed by Tim Burton with an original score composed by Danny Elfman."
+      }
+    },
+    {
+      "subject": "Beetlejuice",
+      "object_a": "Tim Burton",
+      "object_b": "Danny Elfman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Beetlejuice",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Beetlejuice (1988) was directed by Tim Burton with an original score composed by Danny Elfman."
+      }
+    },
+    {
+      "subject": "Dances with Wolves",
+      "object_a": "Kevin Costner",
+      "object_b": "John Barry",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Dances_with_Wolves",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Dances with Wolves (1990) was directed by Kevin Costner with an original score composed by John Barry."
+      }
+    },
+    {
+      "subject": "Casablanca",
+      "object_a": "Michael Curtiz",
+      "object_b": "Max Steiner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Casablanca (1942) was directed by Michael Curtiz with an original score composed by Max Steiner."
+      }
+    },
+    {
+      "subject": "Gone with the Wind",
+      "object_a": "Victor Fleming",
+      "object_b": "Max Steiner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Gone with the Wind (1939) was directed by Victor Fleming with an original score composed by Max Steiner."
+      }
+    },
+    {
+      "subject": "Howl's Moving Castle",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Howl's Moving Castle (2004) was directed by Hayao Miyazaki with an original score composed by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "The Tale of the Princess Kaguya",
+      "object_a": "Isao Takahata",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tale_of_the_Princess_Kaguya_(film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "The Tale of the Princess Kaguya (2013) was directed by Isao Takahata with an original score composed by Joe Hisaishi."
+      }
+    },
+    {
+      "subject": "Grave of the Fireflies",
+      "object_a": "Isao Takahata",
+      "object_b": "Michio Mamiya",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Grave_of_the_Fireflies",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Grave of the Fireflies (1988) was directed by Isao Takahata with an original score composed by Michio Mamiya."
+      }
+    },
+    {
+      "subject": "Kagemusha",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Shin'ichirō Ikebe",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Kagemusha",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Kagemusha (1980) was directed by Akira Kurosawa with an original score composed by Shin'ichirō Ikebe."
+      }
+    },
+    {
+      "subject": "Yojimbo",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Masaru Sato",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Yojimbo",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Yojimbo (1961) was directed by Akira Kurosawa with an original score composed by Masaru Sato."
+      }
+    },
+    {
+      "subject": "Ikiru",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Ikiru",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Ikiru (1952) was directed by Akira Kurosawa with an original score composed by Fumio Hayasaka."
+      }
+    },
+    {
+      "subject": "Throne of Blood",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Masaru Sato",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Throne_of_Blood",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Throne of Blood (1957) was directed by Akira Kurosawa with an original score composed by Masaru Sato."
+      }
+    },
+    {
+      "subject": "A Fistful of Dollars",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/A_Fistful_of_Dollars",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "A Fistful of Dollars (1964) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      }
+    },
+    {
+      "subject": "For a Few Dollars More",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/For_a_Few_Dollars_More",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "For a Few Dollars More (1965) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      }
+    },
+    {
+      "subject": "Once Upon a Time in America",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_America",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Once Upon a Time in America (1984) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      }
+    },
+    {
+      "subject": "Stalker",
+      "object_a": "Andrei Tarkovsky",
+      "object_b": "Eduard Artemyev",
+      "region": "Soviet Union",
+      "source_url": "https://en.wikipedia.org/wiki/Stalker_(1979_film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Stalker (1979) was directed by Andrei Tarkovsky with an original score composed by Eduard Artemyev."
+      }
+    },
+    {
+      "subject": "Three Colours: Red",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_Red",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Three Colours: Red (1994) was directed by Krzysztof Kieślowski with an original score composed by Zbigniew Preisner."
+      }
+    },
+    {
+      "subject": "Three Colours: White",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_White",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Three Colours: White (1994) was directed by Krzysztof Kieślowski with an original score composed by Zbigniew Preisner."
+      }
+    },
+    {
+      "subject": "The Artist",
+      "object_a": "Michel Hazanavicius",
+      "object_b": "Ludovic Bource",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Artist_(film)",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "The Artist (2011) was directed by Michel Hazanavicius with an original score composed by Ludovic Bource."
+      }
+    },
+    {
+      "subject": "A Prophet",
+      "object_a": "Jacques Audiard",
+      "object_b": "Alexandre Desplat",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/A_Prophet",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "A Prophet (2009) was directed by Jacques Audiard with an original score composed by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "The Tin Drum",
+      "object_a": "Volker Schlöndorff",
+      "object_b": "Maurice Jarre",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tin_Drum_(film)",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The Tin Drum (1979) was directed solely by Volker Schlöndorff with an original score by Maurice Jarre."
+      }
+    },
+    {
+      "subject": "Wings of Desire",
+      "object_a": "Wim Wenders",
+      "object_b": "Jürgen Knieper",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Wings_of_Desire",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Wings of Desire (1987) was directed by Wim Wenders with an original score composed by Jürgen Knieper."
+      }
+    },
+    {
+      "subject": "Raise the Red Lantern",
+      "object_a": "Zhang Yimou",
+      "object_b": "Zhao Jiping",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/Raise_the_Red_Lantern",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Raise the Red Lantern (1991) was directed by Zhang Yimou and scored by Zhao Jiping."
+      }
+    },
+    {
+      "subject": "Farewell My Concubine",
+      "object_a": "Chen Kaige",
+      "object_b": "Zhao Jiping",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/Farewell_My_Concubine_(film)",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Farewell My Concubine (1993) was directed by Chen Kaige and scored by Zhao Jiping."
+      }
+    },
+    {
+      "subject": "All About My Mother",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/All_About_My_Mother",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "All About My Mother (1999) was directed by Pedro Almodóvar and scored by Alberto Iglesias."
+      }
+    },
+    {
+      "subject": "The Skin I Live In",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/The_Skin_I_Live_In",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The Skin I Live In (2011) was directed by Pedro Almodóvar and scored by Alberto Iglesias."
+      }
+    },
+    {
+      "subject": "Lady Vengeance",
+      "object_a": "Park Chan-wook",
+      "object_b": "Choi Seung-hyun",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Lady_Vengeance",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Lady Vengeance (2005) was directed by Park Chan-wook with score composed by Choi Seung-hyun."
+      }
+    },
+    {
+      "subject": "Doctor Zhivago",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Doctor_Zhivago_(film)",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Doctor Zhivago (1965) was directed by David Lean with an acclaimed original score by Maurice Jarre."
+      }
+    },
+    {
+      "subject": "A Passage to India",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/A_Passage_to_India_(film)",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "A Passage to India (1984) was directed by David Lean with an original score by Maurice Jarre."
+      }
+    },
+    {
+      "subject": "The Third Man",
+      "object_a": "Carol Reed",
+      "object_b": "Anton Karas",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Third_Man",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The Third Man (1949) was directed by Carol Reed with the iconic zither score composed and performed by Anton Karas."
+      }
+    },
+    {
+      "subject": "The English Patient",
+      "object_a": "Anthony Minghella",
+      "object_b": "Gabriel Yared",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_English_Patient_(film)",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The English Patient (1996) was directed by Anthony Minghella with an original score by Gabriel Yared."
+      }
+    },
+    {
+      "subject": "The Remains of the Day",
+      "object_a": "James Ivory",
+      "object_b": "Richard Robbins",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Remains_of_the_Day_(film)",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Remains of the Day (1993) was directed by James Ivory and scored by Richard Robbins."
+      }
+    },
+    {
+      "subject": "Howards End",
+      "object_a": "James Ivory",
+      "object_b": "Richard Robbins",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Howards_End_(film)",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Howards End (1992) was directed by James Ivory and scored by Richard Robbins."
+      }
+    },
+    {
+      "subject": "Slumdog Millionaire",
+      "object_a": "Danny Boyle",
+      "object_b": "A. R. Rahman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Slumdog Millionaire (2008) was directed by Danny Boyle with an Oscar-winning original score by A. R. Rahman."
+      }
+    },
+    {
+      "subject": "127 Hours",
+      "object_a": "Danny Boyle",
+      "object_b": "A. R. Rahman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/127_Hours",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "127 Hours (2010) was directed by Danny Boyle with an original score by A. R. Rahman."
+      }
+    },
+    {
+      "subject": "28 Days Later",
+      "object_a": "Danny Boyle",
+      "object_b": "John Murphy",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/28_Days_Later",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "28 Days Later (2002) was directed by Danny Boyle with original music composed by John Murphy."
+      }
+    },
+    {
+      "subject": "Skyfall",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Skyfall",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Skyfall (2012) was directed by Sam Mendes with an original score by Thomas Newman."
+      }
+    },
+    {
+      "subject": "Spectre",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Spectre_(2015_film)",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Spectre (2015) was directed by Sam Mendes with an original score by Thomas Newman."
+      }
+    },
+    {
+      "subject": "1917",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/1917_(2019_film)",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "1917 (2019) was directed by Sam Mendes with an original score by Thomas Newman."
+      }
+    },
+    {
+      "subject": "The Imitation Game",
+      "object_a": "Morten Tyldum",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Imitation_Game",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "The Imitation Game (2014) was directed by Morten Tyldum with an original score by Alexandre Desplat."
+      }
+    },
+    {
+      "subject": "The Theory of Everything",
+      "object_a": "James Marsh",
+      "object_b": "Jóhann Jóhannsson",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Theory_of_Everything_(2014_film)",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "The Theory of Everything (2014) was directed by James Marsh with an original score by Jóhann Jóhannsson."
+      }
+    },
+    {
+      "subject": "The Piano",
+      "object_a": "Jane Campion",
+      "object_b": "Michael Nyman",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Piano",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Piano (1993) was directed by Jane Campion with an original score by Michael Nyman."
+      }
+    },
+    {
+      "subject": "The Lord of the Rings: The Two Towers",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Two Towers (2002) was directed by Peter Jackson with an original score by Howard Shore."
+      }
+    },
+    {
+      "subject": "The Lord of the Rings: The Return of the King",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Return of the King (2003) was directed by Peter Jackson with an original score by Howard Shore."
+      }
+    },
+    {
+      "subject": "Dead Ringers",
+      "object_a": "David Cronenberg",
+      "object_b": "Howard Shore",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Dead_Ringers_(film)",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Dead Ringers (1988) was directed by David Cronenberg with an original score by Howard Shore."
+      }
+    },
+    {
+      "subject": "Eastern Promises",
+      "object_a": "David Cronenberg",
+      "object_b": "Howard Shore",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Eastern_Promises",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Eastern Promises (2007) was directed by David Cronenberg with an original score by Howard Shore."
+      }
+    },
+    {
+      "subject": "Incendies",
+      "object_a": "Denis Villeneuve",
+      "object_b": "Grégoire Hetzel",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Incendies",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Incendies (2010) was directed by Denis Villeneuve with an original score by Grégoire Hetzel."
+      }
+    },
+    {
+      "subject": "Mad Max: Fury Road",
+      "object_a": "George Miller",
+      "object_b": "Tom Holkenborg",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Mad_Max:_Fury_Road",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Mad Max: Fury Road (2015) was directed by George Miller with an original score by Tom Holkenborg."
+      }
+    },
+    {
+      "subject": "Babe",
+      "object_a": "Chris Noonan",
+      "object_b": "Nigel Westlake",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Babe_(film)",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Babe (1995) was directed by Chris Noonan with an original score composed by Nigel Westlake."
+      }
+    },
+    {
+      "subject": "The Cook, the Thief, His Wife & Her Lover",
+      "object_a": "Peter Greenaway",
+      "object_b": "Michael Nyman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Cook,_the_Thief,_His_Wife_%26_Her_Lover",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Cook, the Thief, His Wife & Her Lover (1989) was directed by Peter Greenaway with an original score by Michael Nyman."
+      }
+    },
+    {
+      "subject": "The Draughtsman's Contract",
+      "object_a": "Peter Greenaway",
+      "object_b": "Michael Nyman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Draughtsman%27s_Contract",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The Draughtsman's Contract (1982) was directed by Peter Greenaway with an original score by Michael Nyman."
+      }
+    },
+    {
+      "subject": "The Lion in Winter",
+      "object_a": "Anthony Harvey",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lion_in_Winter_(1968_film)",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The Lion in Winter (1968) was directed by Anthony Harvey with an original score by John Barry."
+      }
+    },
+    {
+      "subject": "Diamonds Are Forever",
+      "object_a": "Guy Hamilton",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Diamonds_Are_Forever_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Diamonds Are Forever (1971) was directed by Guy Hamilton with an original score by John Barry."
+      }
+    },
+    {
+      "subject": "You Only Live Twice",
+      "object_a": "Lewis Gilbert",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/You_Only_Live_Twice_(film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "You Only Live Twice (1967) was directed by Lewis Gilbert with an original score by John Barry."
+      }
+    },
+    {
+      "subject": "The Spy Who Loved Me",
+      "object_a": "Lewis Gilbert",
+      "object_b": "Marvin Hamlisch",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Spy_Who_Loved_Me_(film)",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The Spy Who Loved Me (1977) was directed by Lewis Gilbert with an original score by Marvin Hamlisch."
+      }
+    },
+    {
+      "subject": "GoldenEye",
+      "object_a": "Martin Campbell",
+      "object_b": "Éric Serra",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/GoldenEye",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "GoldenEye (1995) was directed by Martin Campbell with an original score by Éric Serra."
+      }
+    },
+    {
+      "subject": "Harry Potter and the Philosopher's Stone",
+      "object_a": "Chris Columbus",
+      "object_b": "John Williams",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Harry Potter and the Philosopher's Stone (2001) was directed by Chris Columbus with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Taxi Driver",
+      "object_a": "Martin Scorsese",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Taxi_Driver",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Taxi Driver (1976) was directed by Martin Scorsese with an original score by Bernard Herrmann."
+      }
+    },
+    {
+      "subject": "The Godfather",
+      "object_a": "Francis Ford Coppola",
+      "object_b": "Nino Rota",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Godfather",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The Godfather (1972) was directed by Francis Ford Coppola with an original score by Nino Rota."
+      }
+    },
+    {
+      "subject": "Saving Private Ryan",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Saving_Private_Ryan",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Saving Private Ryan (1998) was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Close Encounters of the Third Kind",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Close Encounters of the Third Kind (1977) was directed by Steven Spielberg with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Home Alone",
+      "object_a": "Chris Columbus",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Home_Alone",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Home Alone (1990) was directed by Chris Columbus with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Superman",
+      "object_a": "Richard Donner",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Superman_(1978_film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Superman (1978) was directed by Richard Donner with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Return of the Jedi",
+      "object_a": "Richard Marquand",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Return_of_the_Jedi",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Return of the Jedi (1983) was directed by Richard Marquand with an original score by John Williams."
+      }
+    },
+    {
+      "subject": "Patton",
+      "object_a": "Franklin J. Schaffner",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Patton_(film)",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Patton (1970) was directed by Franklin J. Schaffner with an original score by Jerry Goldsmith."
+      }
+    },
+    {
+      "subject": "L.A. Confidential",
+      "object_a": "Curtis Hanson",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/L.A._Confidential_(film)",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "L.A. Confidential (1997) was directed by Curtis Hanson with an original score by Jerry Goldsmith."
+      }
+    },
+    {
+      "subject": "Die Hard",
+      "object_a": "John McTiernan",
+      "object_b": "Michael Kamen",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Die_Hard",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Die Hard (1988) was directed by John McTiernan with an original score by Michael Kamen."
+      }
+    },
+    {
+      "subject": "Predator",
+      "object_a": "John McTiernan",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Predator_(film)",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Predator (1987) was directed by John McTiernan with an original score by Alan Silvestri."
+      }
+    },
+    {
+      "subject": "The Abyss",
+      "object_a": "James Cameron",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Abyss",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Abyss (1989) was directed by James Cameron with an original score by Alan Silvestri."
+      }
+    },
+    {
+      "subject": "Aliens",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Aliens_(film)",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Aliens (1986) was directed by James Cameron with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "A Beautiful Mind",
+      "object_a": "Ron Howard",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/A_Beautiful_Mind_(film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "A Beautiful Mind (2001) was directed by Ron Howard with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "Glory",
+      "object_a": "Edward Zwick",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Glory_(1989_film)",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Glory (1989) was directed by Edward Zwick with an original score by James Horner."
+      }
+    },
+    {
+      "subject": "The Untouchables",
+      "object_a": "Brian De Palma",
+      "object_b": "Ennio Morricone",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Untouchables_(film)",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "The Untouchables (1987) was directed by Brian De Palma with an original score by Ennio Morricone."
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "row": {
+        "subject": "The Others",
+        "object_a": "Alejandro Amenábar",
+        "object_b": "Alejandro Amenábar",
+        "region": "Spain",
+        "source_url": "https://en.wikipedia.org/wiki/The_Others_(2001_film)"
+      },
+      "reason": "duplicate subject or identical answers"
+    },
+    {
+      "row": {
+        "subject": "Oldboy",
+        "object_a": "Park Chan-wook",
+        "object_b": "Cho Young-wuk",
+        "region": "South Korea",
+        "source_url": "https://en.wikipedia.org/wiki/Oldboy_(2003_film)"
+      },
+      "reason": {
+        "index": 25,
+        "verdict": "reject",
+        "reason": "Oldboy has an ambiguous remake title (2003 vs 2013) and features a score co-composed with Shim Hyun-jung, Choi Seung-hyun, and Lee Ji-soo."
+      }
+    },
+    {
+      "row": {
+        "subject": "Hero",
+        "object_a": "Zhang Yimou",
+        "object_b": "Tan Dun",
+        "region": "China",
+        "source_url": "https://en.wikipedia.org/wiki/Hero_(2002_film)"
+      },
+      "reason": {
+        "index": 29,
+        "verdict": "reject",
+        "reason": "The title 'Hero' is ambiguous without metadata, referring to multiple notable films such as the 1992 film by Stephen Frears and the 2002 film by Zhang Yimou."
+      }
+    },
+    {
+      "row": {
+        "subject": "RoboCop",
+        "object_a": "Paul Verhoeven",
+        "object_b": "Basil Poledouris",
+        "region": "United States",
+        "source_url": "https://en.wikipedia.org/wiki/RoboCop"
+      },
+      "reason": {
+        "index": 8,
+        "verdict": "reject",
+        "reason": "RoboCop shares its title identically with the 2014 remake, creating title ambiguity without metadata."
+      }
+    },
+    {
+      "row": {
+        "subject": "The Battle of Algiers",
+        "object_a": "Gillo Pontecorvo",
+        "object_b": "Ennio Morricone",
+        "region": "Italy",
+        "source_url": "https://en.wikipedia.org/wiki/The_Battle_of_Algiers"
+      },
+      "reason": {
+        "index": 26,
+        "verdict": "reject",
+        "reason": "The Battle of Algiers (1966) score was co-composed by Ennio Morricone and director Gillo Pontecorvo, violating the single composer specification."
+      }
+    },
+    {
+      "row": {
+        "subject": "Thirst",
+        "object_a": "Park Chan-wook",
+        "object_b": "Cho Young-wuk",
+        "region": "South Korea",
+        "source_url": "https://en.wikipedia.org/wiki/Thirst_(2009_film)"
+      },
+      "reason": {
+        "index": 7,
+        "verdict": "reject",
+        "reason": "The title 'Thirst' is ambiguous without metadata, as it shares its title with notable films from 1949 (Ingmar Bergman) and 1979 (Rod Hardy)."
+      }
+    },
+    {
+      "row": {
+        "subject": "The Host",
+        "object_a": "Bong Joon-ho",
+        "object_b": "Lee Byung-woo",
+        "region": "South Korea",
+        "source_url": "https://en.wikipedia.org/wiki/The_Host_(2006_film)"
+      },
+      "reason": {
+        "index": 8,
+        "verdict": "reject",
+        "reason": "The title 'The Host' is ambiguous without year/metadata, referring equally to Bong Joon-ho's 2006 film and Andrew Niccol's 2013 film."
+      }
+    },
+    {
+      "row": {
+        "subject": "Mother",
+        "object_a": "Bong Joon-ho",
+        "object_b": "Lee Byung-woo",
+        "region": "South Korea",
+        "source_url": "https://en.wikipedia.org/wiki/Mother_(2009_film)"
+      },
+      "reason": {
+        "index": 9,
+        "verdict": "reject",
+        "reason": "The title 'Mother' is ambiguous without metadata, referring to films from 1926 (Pudovkin), 1996 (Albert Brooks), and 2009 (Bong Joon-ho)."
+      }
+    },
+    {
+      "row": {
+        "subject": "Dunkirk",
+        "object_a": "Christopher Nolan",
+        "object_b": "Hans Zimmer",
+        "region": "United Kingdom",
+        "source_url": "https://en.wikipedia.org/wiki/Dunkirk_(2017_film)"
+      },
+      "reason": {
+        "index": 24,
+        "verdict": "reject",
+        "reason": "The title 'Dunkirk' is ambiguous without metadata, as it refers to both Leslie Norman's notable 1958 film and Christopher Nolan's 2017 film."
+      }
+    },
+    {
+      "row": {
+        "subject": "The Fly",
+        "object_a": "David Cronenberg",
+        "object_b": "Howard Shore",
+        "region": "Canada",
+        "source_url": "https://en.wikipedia.org/wiki/The_Fly_(1986_film)"
+      },
+      "reason": {
+        "index": 28,
+        "verdict": "reject",
+        "reason": "'The Fly' is an ambiguous remake title, sharing its exact title with the famous 1958 original film directed by Kurt Neumann."
+      }
+    },
+    {
+      "row": {
+        "subject": "Casino Royale",
+        "object_a": "Martin Campbell",
+        "object_b": "David Arnold",
+        "region": "United Kingdom",
+        "source_url": "https://en.wikipedia.org/wiki/Casino_Royale_(2006_film)"
+      },
+      "reason": {
+        "index": 8,
+        "verdict": "reject",
+        "reason": "Ambiguous remake title: 'Casino Royale' refers to both the 1967 film and the 2006 film."
+      }
+    },
+    {
+      "row": {
+        "subject": "Psycho",
+        "object_a": "Alfred Hitchcock",
+        "object_b": "Bernard Herrmann",
+        "region": "United States",
+        "source_url": "https://en.wikipedia.org/wiki/Psycho_(1960_film)"
+      },
+      "reason": {
+        "index": 11,
+        "verdict": "reject",
+        "reason": "Ambiguous remake title: 'Psycho' refers to both Alfred Hitchcock's 1960 film and Gus Van Sant's 1998 film."
+      }
+    },
+    {
+      "row": {
+        "subject": "The Omen",
+        "object_a": "Richard Donner",
+        "object_b": "Jerry Goldsmith",
+        "region": "United States",
+        "source_url": "https://en.wikipedia.org/wiki/The_Omen"
+      },
+      "reason": {
+        "index": 19,
+        "verdict": "reject",
+        "reason": "Ambiguous remake title: 'The Omen' refers to both the 1976 original film and the 2006 remake."
+      }
+    },
+    {
+      "row": {
+        "subject": "Planet of the Apes",
+        "object_a": "Franklin J. Schaffner",
+        "object_b": "Jerry Goldsmith",
+        "region": "United States",
+        "source_url": "https://en.wikipedia.org/wiki/Planet_of_the_Apes_(1968_film)"
+      },
+      "reason": {
+        "index": 20,
+        "verdict": "reject",
+        "reason": "Ambiguous remake title: 'Planet of the Apes' refers to both the 1968 film and the 2001 remake."
+      }
+    },
+    {
+      "row": {
+        "subject": "Scarface",
+        "object_a": "Brian De Palma",
+        "object_b": "Giorgio Moroder",
+        "region": "United States",
+        "source_url": "https://en.wikipedia.org/wiki/Scarface_(1983_film)"
+      },
+      "reason": {
+        "index": 30,
+        "verdict": "reject",
+        "reason": "Ambiguous remake title: 'Scarface' refers to both the 1932 film and the 1983 remake."
+      }
+    }
+  ]
+}

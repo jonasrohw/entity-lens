@@ -1,0 +1,2773 @@
+{
+  "spec": {
+    "relations": [
+      "director",
+      "composer"
+    ],
+    "templates": [
+      "The director of the film {} is",
+      "The composer of the original score for the film {} is"
+    ],
+    "instruction": "Famous films released before 2020, with one director and one clearly credited original-score composer. Exclude co-directors, co-composers, compilation soundtracks, ambiguous remake titles. Mix decades, genres, countries; at least one quarter non-Hollywood. Use full person names. Titles must identify the film unambiguously without added metadata."
+  },
+  "accepted": [
+    {
+      "subject": "Spirited Away",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Spirited Away (2001) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Hayao Miyazaki directed the film and Joe Hisaishi composed the music."
+      },
+      "source_html_sha256": "8e1f03b0536519257eec2bdf16ee735e43f7c591c228ff03f3018b3352ffdf32",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/60dd3bb220da1e93cc60f34f.json"
+    },
+    {
+      "subject": "Princess Mononoke",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Princess_Mononoke",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Princess Mononoke (1997) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Hayao Miyazaki directed the film and Joe Hisaishi composed the music."
+      },
+      "source_html_sha256": "855431b36d08eb3e7d333b84de877d59af898d49b0f66b870a91487585b14a0d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/de5b343d5908cfc9999007ea.json"
+    },
+    {
+      "subject": "My Neighbor Totoro",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/My_Neighbor_Totoro",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "My Neighbor Totoro (1988) is directed by Hayao Miyazaki and scored by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Hayao Miyazaki directed the film and Joe Hisaishi composed the music."
+      },
+      "source_html_sha256": "98aa2264ba711be71301b9318880c198dfa1a44eb763e66932490a6c585950aa",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c247643025a1f517bcfce89b.json"
+    },
+    {
+      "subject": "Seven Samurai",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Seven_Samurai",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Seven Samurai (1954) is directed by Akira Kurosawa and scored by Fumio Hayasaka."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Akira Kurosawa directed the film and Fumio Hayasaka composed the music."
+      },
+      "source_html_sha256": "c06c2f4437f65a081163bd5a5042ba8f9eee66bdab0b28eb98b6a7298386ead6",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2870a37ab7420e9917119f2c.json"
+    },
+    {
+      "subject": "Rashomon",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Rashomon",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Rashomon (1950) is directed by Akira Kurosawa and scored by Fumio Hayasaka."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Akira Kurosawa directed the film and Fumio Hayasaka composed the music."
+      },
+      "source_html_sha256": "01c49da7a60206e9f26a092fd9882eae9f09f319a8404ec23c3acf06a5dcf760",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d0da53c951587eadc70775db.json"
+    },
+    {
+      "subject": "Ran",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Toru Takemitsu",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Ran_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Ran (1985) is directed by Akira Kurosawa and scored by Toru Takemitsu."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Akira Kurosawa directed the film and Toru Takemitsu composed the music."
+      },
+      "source_html_sha256": "61a80e18993d00b2167634819607601e890ed9f8da67b5c72b26c89a267cc894",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a67f5a51c17ddc202e959d7a.json"
+    },
+    {
+      "subject": "Hana-bi",
+      "object_a": "Takeshi Kitano",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Hana-bi",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Hana-bi (1997) is directed by Takeshi Kitano and scored by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Takeshi Kitano directed the film and Joe Hisaishi composed the music."
+      },
+      "source_html_sha256": "33d0295ae9551bacf5529545369bfab939a989b12a6b6c17a1c09cecf01c1e43",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3f8ec36036ad848a960efb30.json"
+    },
+    {
+      "subject": "Merry Christmas, Mr. Lawrence",
+      "object_a": "Nagisa Oshima",
+      "object_b": "Ryuichi Sakamoto",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Merry_Christmas,_Mr._Lawrence",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Merry Christmas, Mr. Lawrence (1983) is directed by Nagisa Oshima and scored by Ryuichi Sakamoto."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms Nagisa Oshima directed the film and Ryuichi Sakamoto composed the music."
+      },
+      "source_html_sha256": "d35c55132d57a2d2be808a8e0354f1ffcbc3b694ae414166df4dc4d0072012e3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/aa21af0ea3233ee98262a7be.json"
+    },
+    {
+      "subject": "The Good, the Bad and the Ugly",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The Good, the Bad and the Ugly (1966) is directed by Sergio Leone and scored by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Sergio Leone directed the film and Ennio Morricone composed the music."
+      },
+      "source_html_sha256": "a6dba8660d7e1f37a77ffc89528df7f3a954dff2764efc848dfb7794f40d0b59",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2c002a56fe2411692af82a3f.json"
+    },
+    {
+      "subject": "Once Upon a Time in the West",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_the_West",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Once Upon a Time in the West (1968) is directed by Sergio Leone and scored by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Sergio Leone directed the film and Ennio Morricone composed the music."
+      },
+      "source_html_sha256": "a2dd3ccb78daac4adfa6d1dd48de157763979307cc58d504b3451cd5c8608846",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/406aab0c7b156053d392e7e3.json"
+    },
+    {
+      "subject": "8½",
+      "object_a": "Federico Fellini",
+      "object_b": "Nino Rota",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/8%C2%BD",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "8½ (1963) is directed by Federico Fellini and scored by Nino Rota."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms Federico Fellini directed the film and Nino Rota composed the music."
+      },
+      "source_html_sha256": "4d10e64f0ca03aefc6320c8bd54b520dc64f5410fa8fd226b8b85519d76a0275",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2ce36eb76932a6530e2e507d.json"
+    },
+    {
+      "subject": "La Dolce Vita",
+      "object_a": "Federico Fellini",
+      "object_b": "Nino Rota",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/La_Dolce_Vita",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "La Dolce Vita (1960) is directed by Federico Fellini and scored by Nino Rota."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Federico Fellini directed the film and Nino Rota composed the music."
+      },
+      "source_html_sha256": "34409d1dadbe701c99b8fa866fb5ff118a27d9ae1e9b05b49b76fe138dc05a45",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/bd3835fd310adfcd1a7330a4.json"
+    },
+    {
+      "subject": "Life Is Beautiful",
+      "object_a": "Roberto Benigni",
+      "object_b": "Nicola Piovani",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Life_Is_Beautiful",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Life Is Beautiful (1997) is directed by Roberto Benigni and scored by Nicola Piovani."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Roberto Benigni directed the film and Nicola Piovani composed the music."
+      },
+      "source_html_sha256": "36094b55e248d87e6ac6faf16575b5e771e234c595f6b6458752f167d2fe4357",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fcffce1477b945ff75346858.json"
+    },
+    {
+      "subject": "Amélie",
+      "object_a": "Jean-Pierre Jeunet",
+      "object_b": "Yann Tiersen",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Am%C3%A9lie",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Amélie (2001) is directed by Jean-Pierre Jeunet and scored by Yann Tiersen."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Jean-Pierre Jeunet directed the film and Yann Tiersen composed the music."
+      },
+      "source_html_sha256": "411418bf8220a6badb119f09958ecb5e14c6e5389e990bdfbfafa5dad9ddab3d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c1d3bb405be0786fedc21370.json"
+    },
+    {
+      "subject": "The Umbrellas of Cherbourg",
+      "object_a": "Jacques Demy",
+      "object_b": "Michel Legrand",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Umbrellas_of_Cherbourg",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Umbrellas of Cherbourg (1964) is directed by Jacques Demy and scored by Michel Legrand."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Jacques Demy directed the film and Michel Legrand composed the music."
+      },
+      "source_html_sha256": "c9938fb3d0e9fc5445f2caa1ba6362249044c001ae95b8cf6869de09050b8500",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/63ac3e5e9d37d6d979bdd49f.json"
+    },
+    {
+      "subject": "The 400 Blows",
+      "object_a": "François Truffaut",
+      "object_b": "Jean Constantin",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_400_Blows",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The 400 Blows (1959) is directed by François Truffaut and scored by Jean Constantin."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms François Truffaut directed the film and Jean Constantin composed the music."
+      },
+      "source_html_sha256": "60ce645e79b1ff0d021ea8a35b276650aea58b4be1b3d7bf0f515de8bc55cde2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4a905141b36bba9d5252ed64.json"
+    },
+    {
+      "subject": "The Fifth Element",
+      "object_a": "Luc Besson",
+      "object_b": "Eric Serra",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Fifth_Element",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "The Fifth Element (1997) is directed by Luc Besson and scored by Eric Serra."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Luc Besson as the sole director and Éric Serra as the composer."
+      },
+      "source_html_sha256": "8d453bc06f888c74a9f87c3d93fea0adb63d3dd6c17295cb7ee6b1c14ab0fb9b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0c939042bba3733adaac4799.json"
+    },
+    {
+      "subject": "Léon: The Professional",
+      "object_a": "Luc Besson",
+      "object_b": "Eric Serra",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/L%C3%A9on:_The_Professional",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Léon: The Professional (1994) is directed by Luc Besson and scored by Eric Serra."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Luc Besson as the sole director and Éric Serra as the composer."
+      },
+      "source_html_sha256": "d0d77392ae211d927667149edc950d08ce55dfb83398c226a51f664271fab3c8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1c4ea0ca2ade4407e1a21eac.json"
+    },
+    {
+      "subject": "Das Boot",
+      "object_a": "Wolfgang Petersen",
+      "object_b": "Klaus Doldinger",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Das_Boot",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Das Boot (1981) is directed by Wolfgang Petersen and scored by Klaus Doldinger."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Wolfgang Petersen as the director and Klaus Doldinger as the composer."
+      },
+      "source_html_sha256": "4c4d4325c8199886a1e80afe3433d616e7040f2c977e1ef4d9facf4d5fc4a9cd",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/58382921d00c56219d8b5bc4.json"
+    },
+    {
+      "subject": "Metropolis",
+      "object_a": "Fritz Lang",
+      "object_b": "Gottfried Huppertz",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Metropolis_(1927_film)",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Metropolis (1927) is directed by Fritz Lang and scored by Gottfried Huppertz."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Fritz Lang as the director and Gottfried Huppertz as the composer."
+      },
+      "source_html_sha256": "fd7c1a557e08717dabaccde99d5183fa03f9ffde48c19c579de34a2d4cf68729",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a9301d9c395f2df1dfed088f.json"
+    },
+    {
+      "subject": "Three Colours: Blue",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_Blue",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Three Colours: Blue (1993) is directed by Krzysztof Kieślowski and scored by Zbigniew Preisner."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Krzysztof Kieőlowski as the director and Zbigniew Preisner as the composer."
+      },
+      "source_html_sha256": "1c27f5d9982fc20b8b5e6af8974f30f6c906ab288eeac3f5de8ef0b7b33d7ba3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a2f5031f72f26f84086b2b36.json"
+    },
+    {
+      "subject": "The Double Life of Véronique",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Double_Life_of_V%C3%A9ronique",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "The Double Life of Véronique (1991) is directed by Krzysztof Kieślowski and scored by Zbigniew Preisner."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms Krzysztof Kieőlowski as the director and Zbigniew Preisner as the composer."
+      },
+      "source_html_sha256": "c6a8a28e56f8acf49ced4dc38ccf0d611263cdb020217b6b67804b9738d03a0f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b5fb620ec0b9fb0b94533ae2.json"
+    },
+    {
+      "subject": "The Pianist",
+      "object_a": "Roman Polanski",
+      "object_b": "Wojciech Kilar",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pianist_(2002_film)",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "The Pianist (2002) is directed by Roman Polanski and scored by Wojciech Kilar."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Roman Polanski as the director and Wojciech Kilar as the composer."
+      },
+      "source_html_sha256": "90ac698d52c6fde4532807ada4969da5f1bc5ed536416e4d0b1b0223837ae5dd",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/592b094d63e7182d21691fbc.json"
+    },
+    {
+      "subject": "The Handmaiden",
+      "object_a": "Park Chan-wook",
+      "object_b": "Cho Young-wuk",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/The_Handmaiden",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "The Handmaiden (2016) is directed by Park Chan-wook and scored by Cho Young-wuk."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Park Chan-wook as the director and Jo Yeong-wuk (Cho Young-wuk) as the composer."
+      },
+      "source_html_sha256": "2d3899140fc65efb2148fcf03a957de4dcf47de26cc1bf4b113e7df70cad868d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e14099c5207ace567e9de8e2.json"
+    },
+    {
+      "subject": "Memories of Murder",
+      "object_a": "Bong Joon-ho",
+      "object_b": "Taro Iwashiro",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Memories_of_Murder",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Memories of Murder (2003) is directed by Bong Joon-ho and scored by Taro Iwashiro."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Bong Joon Ho as the director and Taro Iwashiro as the composer."
+      },
+      "source_html_sha256": "89285e7988d7bfe6c5dd4df7d0360596255e1d32fd43c0fc491e47a743175926",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fef3891f6672185d2efb17fe.json"
+    },
+    {
+      "subject": "House of Flying Daggers",
+      "object_a": "Zhang Yimou",
+      "object_b": "Shigeru Umebayashi",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/House_of_Flying_Daggers",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "House of Flying Daggers (2004) is directed by Zhang Yimou and scored by Shigeru Umebayashi."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Zhang Yimou as the director and Shigeru Umebayashi as the composer."
+      },
+      "source_html_sha256": "e6357888ab1bccddd6f9d2e1baa1ffa3a66facbc19bb6fe1bd6530f586265d30",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4b1f11e4b438ba7ef58d460b.json"
+    },
+    {
+      "subject": "Crouching Tiger, Hidden Dragon",
+      "object_a": "Ang Lee",
+      "object_b": "Tan Dun",
+      "region": "Taiwan",
+      "source_url": "https://en.wikipedia.org/wiki/Crouching_Tiger,_Hidden_Dragon",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Crouching Tiger, Hidden Dragon (2000) is directed by Ang Lee and scored by Tan Dun."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Ang Lee as the director and Tan Dun as the composer."
+      },
+      "source_html_sha256": "8ef4468c74be0f04886e61ad3ead38167f94c62cb1fe9cd5a10a2da4bf08cf62",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/cbf742da8abc0989940407b2.json"
+    },
+    {
+      "subject": "Lagaan",
+      "object_a": "Ashutosh Gowariker",
+      "object_b": "A. R. Rahman",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Lagaan",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Lagaan was directed by Ashutosh Gowariker with an original score by A. R. Rahman."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Ashutosh Gowariker as the director and A. R. Rahman as the composer."
+      },
+      "source_html_sha256": "514077b46a19101a964aa27c1b2016ad56feaf636fd57f06447aab47899fc4f7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e6f1e1d28d90cef72d21aa50.json"
+    },
+    {
+      "subject": "Pather Panchali",
+      "object_a": "Satyajit Ray",
+      "object_b": "Ravi Shankar",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Pather_Panchali",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Pather Panchali was directed by Satyajit Ray with music composed by Ravi Shankar."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Satyajit Ray as the director and Ravi Shankar as the composer."
+      },
+      "source_html_sha256": "a879eeed5bcb0f0bc06186ac388ca31b49b177f2295e0d1163a57ce0587eee23",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c115a60b61f917e09dfa0dd9.json"
+    },
+    {
+      "subject": "Roja",
+      "object_a": "Mani Ratnam",
+      "object_b": "A. R. Rahman",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Roja_(film)",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Roja was directed by Mani Ratnam with an original score by A. R. Rahman."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Directed by Mani Ratnam with original score composed by A. R. Rahman, supported by the source."
+      },
+      "source_html_sha256": "1ef147732dd1e584038bdd2b699484118753b2190b9ea737c7acc06ee160a8b4",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/742c2c6083f5d11eb8b0b87e.json"
+    },
+    {
+      "subject": "Pan's Labyrinth",
+      "object_a": "Guillermo del Toro",
+      "object_b": "Javier Navarrete",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Pan%27s_Labyrinth",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Pan's Labyrinth was directed by Guillermo del Toro with an original score by Javier Navarrete."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Directed by Guillermo del Toro with music composed by Javier Navarrete, supported by the source."
+      },
+      "source_html_sha256": "b5721fdc3828a25d5883d08bededc3e0a00a0434f45804c558eb061e855412f7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/904767c404108d09272d67b6.json"
+    },
+    {
+      "subject": "Talk to Her",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Talk_to_Her",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Talk to Her was directed by Pedro Almodóvar with an original score by Alberto Iglesias."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Directed by Pedro Almodóvar with music composed by Alberto Iglesias, supported by the source."
+      },
+      "source_html_sha256": "f0104d3b9cbe86d7360f34edef6e99087779bdd88507b49a9d3cc458ce36bdda",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1a85631b7e45a6b932f98d90.json"
+    },
+    {
+      "subject": "Volver",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Volver",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Volver was directed by Pedro Almodóvar with an original score by Alberto Iglesias."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Directed by Pedro Almodóvar with music composed by Alberto Iglesias, supported by the source."
+      },
+      "source_html_sha256": "6cc93dd7167ec496a13ec5fdd15a43fd436c575f083def5e7bf7e946ab727936",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1dd5448bd0e491b6305968cf.json"
+    },
+    {
+      "subject": "The Motorcycle Diaries",
+      "object_a": "Walter Salles",
+      "object_b": "Gustavo Santaolalla",
+      "region": "Argentina",
+      "source_url": "https://en.wikipedia.org/wiki/The_Motorcycle_Diaries_(film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The Motorcycle Diaries was directed by Walter Salles with an original score by Gustavo Santaolalla."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Directed by Walter Salles with music composed by Gustavo Santaolalla, supported by the source."
+      },
+      "source_html_sha256": "8fae3cbd574c0691b4db7c8f7d0cfb9019766aade528fa58efec9083ed58372e",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3aa9a652aaf449b940c31fc8.json"
+    },
+    {
+      "subject": "Lawrence of Arabia",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Lawrence of Arabia was directed by David Lean with an original score by Maurice Jarre."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Directed by David Lean with music by Maurice Jarre, supported by the source."
+      },
+      "source_html_sha256": "171d621ecd0c00e74514a9fe026fea83c2787031772c20c031450668290b4777",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/84aada3cdd8d712fcac4ba08.json"
+    },
+    {
+      "subject": "The Bridge on the River Kwai",
+      "object_a": "David Lean",
+      "object_b": "Malcolm Arnold",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Bridge_on_the_River_Kwai",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The Bridge on the River Kwai was directed by David Lean with an original score by Malcolm Arnold."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Directed by David Lean with score composed by Malcolm Arnold, supported by the source."
+      },
+      "source_html_sha256": "a525a8e3a1c397fe28d5ebc165e7316242d34a8c8460ea5e87666db9aef8547a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2eee2f09d3746c4cb130c03b.json"
+    },
+    {
+      "subject": "Chariots of Fire",
+      "object_a": "Hugh Hudson",
+      "object_b": "Vangelis",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Chariots_of_Fire",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Chariots of Fire was directed by Hugh Hudson with an original score by Vangelis."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Directed by Hugh Hudson with score composed by Vangelis, supported by the source."
+      },
+      "source_html_sha256": "3acffb4c434d1a40100961884c1c6c4deb416797e30a9797dc611e42eab70485",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e6d80b5797fd596770679501.json"
+    },
+    {
+      "subject": "The King's Speech",
+      "object_a": "Tom Hooper",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_King%27s_Speech",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The King's Speech was directed by Tom Hooper with an original score by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Directed by Tom Hooper with music composed by Alexandre Desplat, supported by the source."
+      },
+      "source_html_sha256": "3adbc487f2e518adb9fb580aa2a0756714d49c7b071ec413918450ced20ccc0d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/95bc39317395df5633bb08eb.json"
+    },
+    {
+      "subject": "The Queen",
+      "object_a": "Stephen Frears",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Queen_(2006_film)",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The Queen was directed by Stephen Frears with an original score by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Directed by Stephen Frears with music composed by Alexandre Desplat, supported by the source."
+      },
+      "source_html_sha256": "8fe785349376d34e82b8a5a77db4e33746b0103cafb75ba8aca647cb3b35680d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0d89bf1f29678d3ff9e67259.json"
+    },
+    {
+      "subject": "Goldfinger",
+      "object_a": "Guy Hamilton",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Goldfinger_(film)",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Goldfinger was directed by Guy Hamilton with an original score by John Barry."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Directed by Guy Hamilton with music composed by John Barry, supported by the source."
+      },
+      "source_html_sha256": "67733eb93f3832cbce4c6a2c4d7295f8ce13c8f10c35c0dcb8289fc69fa3b778",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e9457437ef0493ead2123941.json"
+    },
+    {
+      "subject": "Vertigo",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Vertigo was directed by Alfred Hitchcock with an original score by Bernard Herrmann."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Directed by Alfred Hitchcock with score composed by Bernard Herrmann, supported by the source."
+      },
+      "source_html_sha256": "a011faeacc98bd6d6fd7ebc10d9f81c1f77dd3009e1cfbbefc8d8db1713b421e",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e1e7b35af8f7e8c026c65d7e.json"
+    },
+    {
+      "subject": "North by Northwest",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/North_by_Northwest",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "North by Northwest was directed by Alfred Hitchcock with an original score by Bernard Herrmann."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Directed by Alfred Hitchcock with score composed by Bernard Herrmann, supported by the source."
+      },
+      "source_html_sha256": "49ede72dbdc590fb60d22b0a89c8e8653a5a4402ece2f4f56c9aed0dd262fefb",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/dba67cbb0a9d2a19cb6442b0.json"
+    },
+    {
+      "subject": "Rear Window",
+      "object_a": "Alfred Hitchcock",
+      "object_b": "Franz Waxman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Rear_Window",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Rear Window was directed by Alfred Hitchcock with an original score by Franz Waxman."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Directed by Alfred Hitchcock with music composed by Franz Waxman, supported by the source."
+      },
+      "source_html_sha256": "48c4f781c9e699e1e38e15bc8a5809f0dacd1d7698675b62c19796d80a2eb671",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b01a3a5341887caeba973d74.json"
+    },
+    {
+      "subject": "Jaws",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Jaws_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Jaws was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Directed by Steven Spielberg with music composed by John Williams, supported by the source."
+      },
+      "source_html_sha256": "6a390f8b825111ad4d3a1da2d30a03bba84ae595a3942c93a29d992979493fe1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/897c9fb6e11f5a21958ab2cc.json"
+    },
+    {
+      "subject": "Jurassic Park",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Jurassic Park was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Directed by Steven Spielberg with original score composed by John Williams, supported by the source."
+      },
+      "source_html_sha256": "efc2b06b28b708b52aa53c416ed9de12d1923d5eab1c73406f23060c03e148bf",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/783be01d3d3df51d813492eb.json"
+    },
+    {
+      "subject": "Schindler's List",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Schindler%27s_List",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Schindler's List was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Steven Spielberg directed the film and John Williams composed the score."
+      },
+      "source_html_sha256": "216acc68db97aae8afed99286f4e83b0b7d7850643c25a548df625a837f68913",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/59ce447e3f69cc48bab053a7.json"
+    },
+    {
+      "subject": "Raiders of the Lost Ark",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Raiders of the Lost Ark was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Steven Spielberg directed the film and John Williams composed the score."
+      },
+      "source_html_sha256": "7b4ef7ef5514bea9517bfd55f27ebb91e40ab3d03587ea6691d491a9f7e9ce42",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/357e19e02357404afa9d23e8.json"
+    },
+    {
+      "subject": "E.T. the Extra-Terrestrial",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "E.T. the Extra-Terrestrial was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Steven Spielberg directed the film and John Williams composed the score."
+      },
+      "source_html_sha256": "d384316a9d5b2c214189d78227b99f416884498723045b73097e2e578ea9508a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e4b54ac7181b7d82c5299af5.json"
+    },
+    {
+      "subject": "The Empire Strikes Back",
+      "object_a": "Irvin Kershner",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Empire_Strikes_Back",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "The Empire Strikes Back was directed by Irvin Kershner with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Irvin Kershner directed the film and John Williams composed the score."
+      },
+      "source_html_sha256": "eeb2a9fd5a4a982c557ff39d930480310ee113b91c6a4ae670b1ab707870175c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c8f084ec213f7cea6cbf3cf8.json"
+    },
+    {
+      "subject": "Back to the Future",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Back to the Future was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Robert Zemeckis directed the film and Alan Silvestri composed the score."
+      },
+      "source_html_sha256": "3ec19634e2a5d2e14a8855bf328ee87fb8aa2920862f249d304193a7c0fc41c1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/092c546d4383d4090958058e.json"
+    },
+    {
+      "subject": "Forrest Gump",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Forrest_Gump",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Forrest Gump was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Robert Zemeckis directed the film and Alan Silvestri composed the score."
+      },
+      "source_html_sha256": "6f239ac4d5d71558fe872522a1754b990b9f597bdd0b975facb1d44da9335688",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/63de094e6295c5027f634b30.json"
+    },
+    {
+      "subject": "Cast Away",
+      "object_a": "Robert Zemeckis",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Cast_Away",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Cast Away was directed by Robert Zemeckis with an original score by Alan Silvestri."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Robert Zemeckis directed the film and Alan Silvestri composed the score."
+      },
+      "source_html_sha256": "efe25551c6dbd1eab0542c1af5000388fd19fc1b91d0e374997e3e5d5d6197fa",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1aa2d4b849fff6ed6fedeb01.json"
+    },
+    {
+      "subject": "The Terminator",
+      "object_a": "James Cameron",
+      "object_b": "Brad Fiedel",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Terminator",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Terminator was directed by James Cameron with an original score by Brad Fiedel."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron directed the film and Brad Fiedel composed the score."
+      },
+      "source_html_sha256": "1e7e20c12675348d0eaaa891ff423ea8cc8e4490061c359448430699f28907ba",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6ecaabc5591d4bf62d4f8dfb.json"
+    },
+    {
+      "subject": "Terminator 2: Judgment Day",
+      "object_a": "James Cameron",
+      "object_b": "Brad Fiedel",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Terminator_2:_Judgment_Day",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Terminator 2: Judgment Day was directed by James Cameron with an original score by Brad Fiedel."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron directed the film and Brad Fiedel composed the score."
+      },
+      "source_html_sha256": "c4803523f2ad3310286af1f6f3a5078f88465c36c0be89dde720757f5ff899b1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/cd39da8ea43443ab57be1a13.json"
+    },
+    {
+      "subject": "Titanic",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Titanic was directed by James Cameron with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron directed the film and James Horner composed the score."
+      },
+      "source_html_sha256": "68e57298683a80dc75e4c61b3fd0786788f5e3c53615daa267dd85c3423a6fa1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4d1daac8eba0be72c3913352.json"
+    },
+    {
+      "subject": "Avatar",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Avatar was directed by James Cameron with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron directed the film and James Horner composed the score."
+      },
+      "source_html_sha256": "f269a3b5b4aac55941efef25bcb739af51d8c007a63b0787f3874749596a55f8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b4b77307b174cdd857dd86be.json"
+    },
+    {
+      "subject": "Apollo 13",
+      "object_a": "Ron Howard",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Apollo_13_(film)",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Apollo 13 was directed by Ron Howard with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Ron Howard directed the film and James Horner composed the score."
+      },
+      "source_html_sha256": "cc256d640df9def191d471bafd07f9687294d8190b01e933f8b38e2891a9cfd2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/2aab8dc0d2d55bf21d594f68.json"
+    },
+    {
+      "subject": "Inception",
+      "object_a": "Christopher Nolan",
+      "object_b": "Hans Zimmer",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Inception",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Inception was directed by Christopher Nolan with an original score by Hans Zimmer."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Christopher Nolan directed the film and Hans Zimmer composed the score."
+      },
+      "source_html_sha256": "e9511afa4b170389b5396be26c92761af8bd8db4ec084a2727676c4ba38b1975",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/eda8df84c61de5d05c34818d.json"
+    },
+    {
+      "subject": "Interstellar",
+      "object_a": "Christopher Nolan",
+      "object_b": "Hans Zimmer",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Interstellar_(film)",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Interstellar (2014) was directed by Christopher Nolan with an original score composed by Hans Zimmer."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Christopher Nolan directed the film and Hans Zimmer composed the score."
+      },
+      "source_html_sha256": "137ff2e5f0d608784d9e473bcb01b5f76cd2cb25548ee550a05b6b89d9482415",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/0841c79e3a6b9f6b074d3e30.json"
+    },
+    {
+      "subject": "The Silence of the Lambs",
+      "object_a": "Jonathan Demme",
+      "object_b": "Howard Shore",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The Silence of the Lambs (1991) was directed by Jonathan Demme with an original score composed by Howard Shore."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Jonathan Demme directed the film and Howard Shore composed the score."
+      },
+      "source_html_sha256": "aa46e0f3818bf461a0597c8eac691ffa6c8c0e3390441f4663fd668df4674fa2",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f2f326bf39fd6ea6b1e0f8c2.json"
+    },
+    {
+      "subject": "The Lord of the Rings: The Fellowship of the Ring",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Fellowship of the Ring (2001) was directed by Peter Jackson with an original score composed by Howard Shore."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Peter Jackson as the director and Howard Shore as the composer for the 2001 film."
+      },
+      "source_html_sha256": "f651fe0ac5baeb7fe3bc2b4e1ab6c00a01aad4a8bcb844004c3e7b7573485832",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b44486e0e8d383b30a3a3471.json"
+    },
+    {
+      "subject": "The Sixth Sense",
+      "object_a": "M. Night Shyamalan",
+      "object_b": "James Newton Howard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Sixth_Sense",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The Sixth Sense (1999) was directed by M. Night Shyamalan with an original score composed by James Newton Howard."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms M. Night Shyamalan as director and James Newton Howard as composer for the 1999 film."
+      },
+      "source_html_sha256": "f9ed5a85fa5fa17aa4c997f8e24641034bdbb5f3751969191eeb3a4ddb231ad0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/63467937ee6e5a9dee3a2f19.json"
+    },
+    {
+      "subject": "Blade Runner",
+      "object_a": "Ridley Scott",
+      "object_b": "Vangelis",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Blade_Runner",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Blade Runner (1982) was directed by Ridley Scott with an original score composed by Vangelis."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Ridley Scott as director and Vangelis as composer for the 1982 film."
+      },
+      "source_html_sha256": "8d65bdb872f256040286ee7bd0ead62c7a9347e386c183e523c1caed4c7774a6",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/61f9be0c4b61239ba540215e.json"
+    },
+    {
+      "subject": "Alien",
+      "object_a": "Ridley Scott",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Alien_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Alien (1979) was directed by Ridley Scott with an original score composed by Jerry Goldsmith."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Ridley Scott as director and Jerry Goldsmith as composer for the 1979 film."
+      },
+      "source_html_sha256": "afc4a4e7d37c33257aeef96177cf62edb97df861f9de48f8f8febdcc8c6d1d70",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e4fdfa33a63fba7a3c7d705e.json"
+    },
+    {
+      "subject": "Chinatown",
+      "object_a": "Roman Polanski",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Chinatown_(1974_film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Chinatown (1974) was directed by Roman Polanski with an original score composed by Jerry Goldsmith."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Roman Polanski as director and Jerry Goldsmith as composer for the 1974 film."
+      },
+      "source_html_sha256": "f983da05ab332e9815e7d28fa4ee540ff6a1163f08b9bc3e5f2d47ea6a9bda1d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3031a908902a0db39dc8df05.json"
+    },
+    {
+      "subject": "Basic Instinct",
+      "object_a": "Paul Verhoeven",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Basic_Instinct",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Basic Instinct (1992) was directed by Paul Verhoeven with an original score composed by Jerry Goldsmith."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Paul Verhoeven as director and Jerry Goldsmith as composer for the 1992 film."
+      },
+      "source_html_sha256": "65b3e271f0427fdd8f951677659598175f7015a0df08453c64601f06bdac8d6f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7b41724842120d564a3559d7.json"
+    },
+    {
+      "subject": "The Shape of Water",
+      "object_a": "Guillermo del Toro",
+      "object_b": "Alexandre Desplat",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Shape_of_Water",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The Shape of Water (2017) was directed by Guillermo del Toro with an original score composed by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source confirms Guillermo del Toro as director and Alexandre Desplat as composer for the 2017 film."
+      },
+      "source_html_sha256": "c4647a79d3069ed9ecb060e1244fe2ca811f6acf47da6930b4311dc45f7c0676",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7560bb4c3a79d0c5a2d5092a.json"
+    },
+    {
+      "subject": "The Grand Budapest Hotel",
+      "object_a": "Wes Anderson",
+      "object_b": "Alexandre Desplat",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Grand_Budapest_Hotel",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The Grand Budapest Hotel (2014) was directed by Wes Anderson with an original score composed by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms Wes Anderson as director and Alexandre Desplat as composer for the 2014 film."
+      },
+      "source_html_sha256": "12ea524f521144e91247cb96b9d9fada497c6b8a4f5d333c15b8b51472e01e5a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/590b3d3afd2db6fbb6a2f53f.json"
+    },
+    {
+      "subject": "Edward Scissorhands",
+      "object_a": "Tim Burton",
+      "object_b": "Danny Elfman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Edward_Scissorhands",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Edward Scissorhands (1990) was directed by Tim Burton with an original score composed by Danny Elfman."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Tim Burton as director and Danny Elfman as composer for the 1990 film."
+      },
+      "source_html_sha256": "312af5e254017e85adba217f30abac586bd836ed96159ed41683a0fdd0d07732",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a9d3cc67ffed4ad0a3988274.json"
+    },
+    {
+      "subject": "Beetlejuice",
+      "object_a": "Tim Burton",
+      "object_b": "Danny Elfman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Beetlejuice",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Beetlejuice (1988) was directed by Tim Burton with an original score composed by Danny Elfman."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Tim Burton as director and Danny Elfman as composer for the 1988 film."
+      },
+      "source_html_sha256": "ad221a5cd4722122215a5e61af74bd85132298cfdf758f5f295649f2f1a3febf",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/da63677b154042adb492eb07.json"
+    },
+    {
+      "subject": "Dances with Wolves",
+      "object_a": "Kevin Costner",
+      "object_b": "John Barry",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Dances_with_Wolves",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Dances with Wolves (1990) was directed by Kevin Costner with an original score composed by John Barry."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms Kevin Costner as director and John Barry as composer for the 1990 film."
+      },
+      "source_html_sha256": "7ac3fac79d34f4e2e4b6426b97c741b38863b88f15f019b51d2e9284aad714ba",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9c5189ba6966b969807db014.json"
+    },
+    {
+      "subject": "Gone with the Wind",
+      "object_a": "Victor Fleming",
+      "object_b": "Max Steiner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Gone with the Wind (1939) was directed by Victor Fleming with an original score composed by Max Steiner."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Victor Fleming as director and Max Steiner as composer for the 1939 film."
+      },
+      "source_html_sha256": "d0368b3a36c8febdfa9d6a54e5ee4389b3c2f33c670f1b6f03a18f97b052f547",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/71a2a3ec44d0d91766d44ac5.json"
+    },
+    {
+      "subject": "Howl's Moving Castle",
+      "object_a": "Hayao Miyazaki",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Howl's Moving Castle (2004) was directed by Hayao Miyazaki with an original score composed by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Hayao Miyazaki as director and Joe Hisaishi as composer for the 2004 film."
+      },
+      "source_html_sha256": "dbe1503db3ce2791bde14ea348168bd26add8fa3ee60f691da6037eedf7c18a1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/e8981eb68d4cd89ca7c95106.json"
+    },
+    {
+      "subject": "The Tale of the Princess Kaguya",
+      "object_a": "Isao Takahata",
+      "object_b": "Joe Hisaishi",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tale_of_the_Princess_Kaguya_(film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "The Tale of the Princess Kaguya (2013) was directed by Isao Takahata with an original score composed by Joe Hisaishi."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Isao Takahata as director and Joe Hisaishi as composer for the 2013 film."
+      },
+      "source_html_sha256": "363a340235d30462733d033a07062e817738190da04d6d57fa838a010a978561",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a50589cf8be30edf88e40797.json"
+    },
+    {
+      "subject": "Grave of the Fireflies",
+      "object_a": "Isao Takahata",
+      "object_b": "Michio Mamiya",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Grave_of_the_Fireflies",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Grave of the Fireflies (1988) was directed by Isao Takahata with an original score composed by Michio Mamiya."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Isao Takahata as director and Michio Mamiya as composer for the 1988 film."
+      },
+      "source_html_sha256": "3d35c3074e1f43bd990c9ad86af4bea01be7ff6b14fd1654eb2b52e0cdf386e8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b429f01e7b336d009938b6e0.json"
+    },
+    {
+      "subject": "Kagemusha",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Shin'ichirō Ikebe",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Kagemusha",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Kagemusha (1980) was directed by Akira Kurosawa with an original score composed by Shin'ichirō Ikebe."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Akira Kurosawa as the director and Shin'ichirō Ikebe as the sole composer for Kagemusha."
+      },
+      "source_html_sha256": "642f4bdc084363d26a662dcab77ac9c30b783f646af4267de90ea12d7f3d20bd",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b0f21270708f1645c6a10ed7.json"
+    },
+    {
+      "subject": "Yojimbo",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Masaru Sato",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Yojimbo",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Yojimbo (1961) was directed by Akira Kurosawa with an original score composed by Masaru Sato."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Akira Kurosawa as the director and Masaru Sato as the sole composer for Yojimbo."
+      },
+      "source_html_sha256": "57435342046f9f76767d39fe6f1767b7dfc6e03c27d9e762a0090a8178d3d225",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b6647476a0ff4a846d6217cf.json"
+    },
+    {
+      "subject": "A Fistful of Dollars",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/A_Fistful_of_Dollars",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "A Fistful of Dollars (1964) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Sergio Leone as the director and Ennio Morricone as the sole composer for A Fistful of Dollars."
+      },
+      "source_html_sha256": "160b2edc253ea41fe3afeb570610dfed7c18fb6ef5e232fb3a64b97b46a51719",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c0d339d7afb079af647b3a7f.json"
+    },
+    {
+      "subject": "For a Few Dollars More",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/For_a_Few_Dollars_More",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "For a Few Dollars More (1965) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Sergio Leone as the director and Ennio Morricone as the sole composer for For a Few Dollars More."
+      },
+      "source_html_sha256": "7742ea2c831c3ac180c01a0c8f677139c853378a81bcedb35a2adfc2bf8a7de9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/51018a2d80aca2cfcc435f36.json"
+    },
+    {
+      "subject": "Once Upon a Time in America",
+      "object_a": "Sergio Leone",
+      "object_b": "Ennio Morricone",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_America",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Once Upon a Time in America (1984) was directed by Sergio Leone with an original score composed by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Sergio Leone as the director and Ennio Morricone as the sole composer for Once Upon a Time in America."
+      },
+      "source_html_sha256": "9e693e5e2ea373a66beadb8891b9269f8772322cb0fcb5d45ab41a4e1fbb8ced",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a7a9412e92a50e171bb106bc.json"
+    },
+    {
+      "subject": "Stalker",
+      "object_a": "Andrei Tarkovsky",
+      "object_b": "Eduard Artemyev",
+      "region": "Soviet Union",
+      "source_url": "https://en.wikipedia.org/wiki/Stalker_(1979_film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Stalker (1979) was directed by Andrei Tarkovsky with an original score composed by Eduard Artemyev."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Andrei Tarkovsky as the director and Eduard Artemyev as the sole composer for Stalker."
+      },
+      "source_html_sha256": "e51bf16e2915ff6087020d98790d11857d51c73d721177bcd0c19084b085035e",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4ef8e943e8ebdccdbdd05375.json"
+    },
+    {
+      "subject": "Three Colours: Red",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_Red",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Three Colours: Red (1994) was directed by Krzysztof Kieślowski with an original score composed by Zbigniew Preisner."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Krzysztof Kieślowski as the director and Zbigniew Preisner as the sole composer for Three Colours: Red."
+      },
+      "source_html_sha256": "50d01f874e8fc80e2aec481bcd96c6665efdd4932bf43aa371d390f8b0fa20c0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d43f7030df0ee5bb739c93a9.json"
+    },
+    {
+      "subject": "Three Colours: White",
+      "object_a": "Krzysztof Kieślowski",
+      "object_b": "Zbigniew Preisner",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Colours:_White",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Three Colours: White (1994) was directed by Krzysztof Kieślowski with an original score composed by Zbigniew Preisner."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Krzysztof Kieślowski as the director and Zbigniew Preisner as the sole composer for Three Colours: White."
+      },
+      "source_html_sha256": "5faee8b79c25d10332977f104bc8ba7925aefd22b4353703eb7a708c1a7a60d8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/19d04cd32795ce272922989a.json"
+    },
+    {
+      "subject": "The Tin Drum",
+      "object_a": "Volker Schlöndorff",
+      "object_b": "Maurice Jarre",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tin_Drum_(film)",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The Tin Drum (1979) was directed solely by Volker Schlöndorff with an original score by Maurice Jarre."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Volker Schlöndorff as the director and Maurice Jarre as the sole composer for The Tin Drum."
+      },
+      "source_html_sha256": "9703b06b9196050410ef7e11ef6d24800ebb06ec9932ef0e093cc352064d95e9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fadf591a9ff61dc91501ae56.json"
+    },
+    {
+      "subject": "Wings of Desire",
+      "object_a": "Wim Wenders",
+      "object_b": "Jürgen Knieper",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Wings_of_Desire",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Wings of Desire (1987) was directed by Wim Wenders with an original score composed by Jürgen Knieper."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Wim Wenders as the director and Jürgen Knieper as the sole composer for Wings of Desire."
+      },
+      "source_html_sha256": "1f858ed1a0a64fc1c2c1c4b4911498c92f73fcc4a50ff4d118663427baaa79e8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/bc6cd63e61e3f895362eeda6.json"
+    },
+    {
+      "subject": "Farewell My Concubine",
+      "object_a": "Chen Kaige",
+      "object_b": "Zhao Jiping",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/Farewell_My_Concubine_(film)",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Farewell My Concubine (1993) was directed by Chen Kaige and scored by Zhao Jiping."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms Chen Kaige as the director and Zhao Jiping as the sole composer for Farewell My Concubine."
+      },
+      "source_html_sha256": "6f88d9e1b6cbb41fcf3cdf16608f93cbfe44035629f12acd44db06b65df7e9d7",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/90fc0e81ab8a5feb7dfcce2d.json"
+    },
+    {
+      "subject": "All About My Mother",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/All_About_My_Mother",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "All About My Mother (1999) was directed by Pedro Almodóvar and scored by Alberto Iglesias."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Pedro Almodóvar as the sole director and Alberto Iglesias as the composer for the 1999 film."
+      },
+      "source_html_sha256": "a60327ac6857809c5ea015eb1d4697a67a7e40301e701bf52f57975fbb13197d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/f4d068f3b3b9637f28c51610.json"
+    },
+    {
+      "subject": "The Skin I Live In",
+      "object_a": "Pedro Almodóvar",
+      "object_b": "Alberto Iglesias",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/The_Skin_I_Live_In",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The Skin I Live In (2011) was directed by Pedro Almodóvar and scored by Alberto Iglesias."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Pedro Almodóvar as the sole director and Alberto Iglesias as the composer for the 2011 film."
+      },
+      "source_html_sha256": "8fae3c6869b3a15ba4ae68d63a1a374fbbfe38d7600e34589f21a18e8e8253f3",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a384f2f945d90feca155ecec.json"
+    },
+    {
+      "subject": "Doctor Zhivago",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Doctor_Zhivago_(film)",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Doctor Zhivago (1965) was directed by David Lean with an acclaimed original score by Maurice Jarre."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms David Lean as the director and Maurice Jarre as the composer for the 1965 film."
+      },
+      "source_html_sha256": "3c4e2ad262a59f2b44e210b13a75dcb8e92bcbb18a18910132e57b79d6c040a0",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1cf030a34c0ab7a67d66a769.json"
+    },
+    {
+      "subject": "The Third Man",
+      "object_a": "Carol Reed",
+      "object_b": "Anton Karas",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Third_Man",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The Third Man (1949) was directed by Carol Reed with the iconic zither score composed and performed by Anton Karas."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Carol Reed as the director and Anton Karas as the composer for the 1949 film."
+      },
+      "source_html_sha256": "cc4bd57531da9ced883528083191a510c5d650113b8b79e93f13d32e01333fad",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b66b997e19f444bea4f0fc26.json"
+    },
+    {
+      "subject": "The Remains of the Day",
+      "object_a": "James Ivory",
+      "object_b": "Richard Robbins",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Remains_of_the_Day_(film)",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The Remains of the Day (1993) was directed by James Ivory and scored by Richard Robbins."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The source confirms James Ivory as the director and Richard Robbins as the composer for the 1993 film."
+      },
+      "source_html_sha256": "cc8ca43b54c696714f19287ff796683072b975ad13e2e0ed347a6a023d27ca35",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6e9b670f0787a5f36e0fd817.json"
+    },
+    {
+      "subject": "Howards End",
+      "object_a": "James Ivory",
+      "object_b": "Richard Robbins",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Howards_End_(film)",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Howards End (1992) was directed by James Ivory and scored by Richard Robbins."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms James Ivory as the director and Richard Robbins as the original score composer for the 1992 film."
+      },
+      "source_html_sha256": "eed8579269717c3130c9c3fe6b9c80b2e8a53f8ac22dbf82f048c02973d6cf31",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fde35805098a91eb46584cc7.json"
+    },
+    {
+      "subject": "127 Hours",
+      "object_a": "Danny Boyle",
+      "object_b": "A. R. Rahman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/127_Hours",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "127 Hours (2010) was directed by Danny Boyle with an original score by A. R. Rahman."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms Danny Boyle as the director and A. R. Rahman as the composer for the 2010 film."
+      },
+      "source_html_sha256": "ac0a70dbe3fae3a4edb6082a0c6f525b2e3596ddabba741544b7eb25f6182f7f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c77564415a757e771b5b99a4.json"
+    },
+    {
+      "subject": "28 Days Later",
+      "object_a": "Danny Boyle",
+      "object_b": "John Murphy",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/28_Days_Later",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "28 Days Later (2002) was directed by Danny Boyle with original music composed by John Murphy."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms Danny Boyle as the director and John Murphy as the original score composer for the 2002 film."
+      },
+      "source_html_sha256": "291da4d943ef61254ce054a0b07fe3082242e54944fe2829bd8393b841ade1db",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6308dc7b91bad7554eb3eaea.json"
+    },
+    {
+      "subject": "Skyfall",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Skyfall",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Skyfall (2012) was directed by Sam Mendes with an original score by Thomas Newman."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Sam Mendes as the director and Thomas Newman as the composer for the 2012 film."
+      },
+      "source_html_sha256": "82c1ca8e342e7fdc7f5b977ad929f84231640c9382aebfe6029bfc67bcacf649",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6c6359788c2901485cba36f8.json"
+    },
+    {
+      "subject": "Spectre",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Spectre_(2015_film)",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Spectre (2015) was directed by Sam Mendes with an original score by Thomas Newman."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Sam Mendes as the director and Thomas Newman as the composer for the 2015 film."
+      },
+      "source_html_sha256": "0dca8d9d6e3f96a4d657e5e01a4b82f932253157fc844df8ebddaa892c9a9b24",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a1e9ece314b15047b3e3f111.json"
+    },
+    {
+      "subject": "1917",
+      "object_a": "Sam Mendes",
+      "object_b": "Thomas Newman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/1917_(2019_film)",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "1917 (2019) was directed by Sam Mendes with an original score by Thomas Newman."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Sam Mendes as the director and Thomas Newman as the composer for the 2019 film."
+      },
+      "source_html_sha256": "6e4e4d6a9c4fc7fb9f7d4258ee41ab58bb0052760bf871ae3a9c0fa50594f3c9",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fe54e8b69ed1b456d7891427.json"
+    },
+    {
+      "subject": "The Imitation Game",
+      "object_a": "Morten Tyldum",
+      "object_b": "Alexandre Desplat",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Imitation_Game",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "The Imitation Game (2014) was directed by Morten Tyldum with an original score by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Morten Tyldum as the director and Alexandre Desplat as the composer for the 2014 film."
+      },
+      "source_html_sha256": "36166d35e905142e4de0b79d514b1f2fa0a5e15ef5806fd607405bfbdebe7b40",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7415b043bf4b67e69aabc734.json"
+    },
+    {
+      "subject": "The Theory of Everything",
+      "object_a": "James Marsh",
+      "object_b": "Jóhann Jóhannsson",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Theory_of_Everything_(2014_film)",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "The Theory of Everything (2014) was directed by James Marsh with an original score by Jóhann Jóhannsson."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms James Marsh directed and Jóhann Jóhannsson composed the original score for The Theory of Everything (2014)."
+      },
+      "source_html_sha256": "11c0dbfd7af9e9ccd645d89709b53b2b6a3477b9413dcef363e1f6646f2bc65f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/d67addd10fe10c2c6d470981.json"
+    },
+    {
+      "subject": "The Piano",
+      "object_a": "Jane Campion",
+      "object_b": "Michael Nyman",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Piano",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Piano (1993) was directed by Jane Campion with an original score by Michael Nyman."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Jane Campion directed and Michael Nyman composed the original score for The Piano (1993)."
+      },
+      "source_html_sha256": "4432957e5a7925adc25efb28cab94d09d754961100aaff971c0ec404e61bdc49",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/fbb7999637eeeb58833efb10.json"
+    },
+    {
+      "subject": "The Lord of the Rings: The Two Towers",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Two Towers (2002) was directed by Peter Jackson with an original score by Howard Shore."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Peter Jackson directed and Howard Shore composed the score for The Lord of the Rings: The Two Towers (2002)."
+      },
+      "source_html_sha256": "7a7e54db7286120580652376f7d524e31f46535ea76be16aa7f84f1367b52f72",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9f246ea0d8b5104ae4ac04f6.json"
+    },
+    {
+      "subject": "The Lord of the Rings: The Return of the King",
+      "object_a": "Peter Jackson",
+      "object_b": "Howard Shore",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "The Lord of the Rings: The Return of the King (2003) was directed by Peter Jackson with an original score by Howard Shore."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Peter Jackson directed and Howard Shore composed the score for The Lord of the Rings: The Return of the King (2003)."
+      },
+      "source_html_sha256": "95e9af84402069c76d88089e06fb9e3ea09fd0972c6aeb25207489f4f64c4544",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/69c00c032b82e9e06ad30640.json"
+    },
+    {
+      "subject": "Dead Ringers",
+      "object_a": "David Cronenberg",
+      "object_b": "Howard Shore",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Dead_Ringers_(film)",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Dead Ringers (1988) was directed by David Cronenberg with an original score by Howard Shore."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms David Cronenberg directed and Howard Shore composed the score for Dead Ringers (1988)."
+      },
+      "source_html_sha256": "a6b563aaf01d9564f02f92f77a39f7377ed4df74bbbb42fe6180ec19dd7d926d",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1b6a6e111562cf155fa3100d.json"
+    },
+    {
+      "subject": "Eastern Promises",
+      "object_a": "David Cronenberg",
+      "object_b": "Howard Shore",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Eastern_Promises",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Eastern Promises (2007) was directed by David Cronenberg with an original score by Howard Shore."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms David Cronenberg directed and Howard Shore composed the score for Eastern Promises (2007)."
+      },
+      "source_html_sha256": "5456cfcc4891c0e267f06fde12eb22a4e173adda59f0c31c878fc3dc2833d4eb",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/48f62b6b846e550e0b91a8bd.json"
+    },
+    {
+      "subject": "Babe",
+      "object_a": "Chris Noonan",
+      "object_b": "Nigel Westlake",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Babe_(film)",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Babe (1995) was directed by Chris Noonan with an original score composed by Nigel Westlake."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "The source confirms Chris Noonan directed and Nigel Westlake composed the score for Babe (1995)."
+      },
+      "source_html_sha256": "b3270d4d4e9c8beef855059bfa449c08a2eb34fd854d170db83f4300f758963c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/975fd931ae265b32fab1d576.json"
+    },
+    {
+      "subject": "The Cook, the Thief, His Wife & Her Lover",
+      "object_a": "Peter Greenaway",
+      "object_b": "Michael Nyman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Cook,_the_Thief,_His_Wife_%26_Her_Lover",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The Cook, the Thief, His Wife & Her Lover (1989) was directed by Peter Greenaway with an original score by Michael Nyman."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Peter Greenaway directed and Michael Nyman composed the score for The Cook, the Thief, His Wife & Her Lover (1989)."
+      },
+      "source_html_sha256": "e1e393bb0330a1d6f3ccea65baaac412c48ad5d4ef15734dbaa4239acb1fac37",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3799e10c79f6e5c2a7d071d9.json"
+    },
+    {
+      "subject": "The Draughtsman's Contract",
+      "object_a": "Peter Greenaway",
+      "object_b": "Michael Nyman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Draughtsman%27s_Contract",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The Draughtsman's Contract (1982) was directed by Peter Greenaway with an original score by Michael Nyman."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms Peter Greenaway directed and Michael Nyman composed the score for The Draughtsman's Contract (1982)."
+      },
+      "source_html_sha256": "6275631b1b5706f7f8e2238371b0a50c3653b94ead5356365ef70818a44e2bcc",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a9543d2fde06231559da2d8a.json"
+    },
+    {
+      "subject": "Diamonds Are Forever",
+      "object_a": "Guy Hamilton",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Diamonds_Are_Forever_(film)",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Diamonds Are Forever (1971) was directed by Guy Hamilton with an original score by John Barry."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms Guy Hamilton directed and John Barry composed the score for Diamonds Are Forever (1971)."
+      },
+      "source_html_sha256": "0ca73d1b703af16241a827613990cf9fcbff7cf6236c48e60a248dd130ddf750",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/dbf3f566f300b34832c62e53.json"
+    },
+    {
+      "subject": "You Only Live Twice",
+      "object_a": "Lewis Gilbert",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/You_Only_Live_Twice_(film)",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "You Only Live Twice (1967) was directed by Lewis Gilbert with an original score by John Barry."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms Lewis Gilbert directed and John Barry composed the score for You Only Live Twice (1967)."
+      },
+      "source_html_sha256": "a0f92e57d39f5f2a58fb5bd6877b2f9f53a3df8edbf9b5e0f8340966c88b667f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/8201b5e54a7821016b4cfdf5.json"
+    },
+    {
+      "subject": "The Spy Who Loved Me",
+      "object_a": "Lewis Gilbert",
+      "object_b": "Marvin Hamlisch",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Spy_Who_Loved_Me_(film)",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "The Spy Who Loved Me (1977) was directed by Lewis Gilbert with an original score by Marvin Hamlisch."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Lewis Gilbert directed and Marvin Hamlisch composed the score for The Spy Who Loved Me (1977)."
+      },
+      "source_html_sha256": "cef37a391359a21dcb49f89ce0ae8c460f72037de673a5d5a6925c5937db8222",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/8452085ca21ccca8cfeeb2bc.json"
+    },
+    {
+      "subject": "GoldenEye",
+      "object_a": "Martin Campbell",
+      "object_b": "Éric Serra",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/GoldenEye",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "GoldenEye (1995) was directed by Martin Campbell with an original score by Éric Serra."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Martin Campbell directed and Éric Serra composed the score for GoldenEye (1995)."
+      },
+      "source_html_sha256": "396c444e805aae0677a8714374c659143b07041f604ffc37ffce4c889fdccdce",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/1d7f6ff13e90a2a53936d23e.json"
+    },
+    {
+      "subject": "Harry Potter and the Philosopher's Stone",
+      "object_a": "Chris Columbus",
+      "object_b": "John Williams",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Harry Potter and the Philosopher's Stone (2001) was directed by Chris Columbus with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source confirms Chris Columbus as the director and John Williams as the composer."
+      },
+      "source_html_sha256": "a800af63ba8fca9d9a05002f6ff56800f1701a41a5166fea37ad879eaedc6d93",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/4c05a2eb4af1a680e3dbd095.json"
+    },
+    {
+      "subject": "Taxi Driver",
+      "object_a": "Martin Scorsese",
+      "object_b": "Bernard Herrmann",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Taxi_Driver",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Taxi Driver (1976) was directed by Martin Scorsese with an original score by Bernard Herrmann."
+      },
+      "source_audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "The source confirms Martin Scorsese as the director and Bernard Herrmann as the composer."
+      },
+      "source_html_sha256": "f16ce39767ae4307fa3b3857d646395ca6cf2c65629dc9e200a18c0207923da8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/68064bbf07e42b8076e44f01.json"
+    },
+    {
+      "subject": "The Godfather",
+      "object_a": "Francis Ford Coppola",
+      "object_b": "Nino Rota",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Godfather",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The Godfather (1972) was directed by Francis Ford Coppola with an original score by Nino Rota."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "The source confirms Francis Ford Coppola as the director and Nino Rota as the composer."
+      },
+      "source_html_sha256": "5c735b77fc4f3c8c1acc01e9f2f74dab31b0b2f7083c76161f5c9ca1c66b80ef",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c8c79c1a9c3b38955dfd77e5.json"
+    },
+    {
+      "subject": "Saving Private Ryan",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Saving_Private_Ryan",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Saving Private Ryan (1998) was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "The source confirms Steven Spielberg as the director and John Williams as the composer."
+      },
+      "source_html_sha256": "a28907446b0379d543a09db06541b4d11a1e61970e81cdaf1abdd1cfadf09ae6",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/77e39c2bf59e9a48381dedcd.json"
+    },
+    {
+      "subject": "Close Encounters of the Third Kind",
+      "object_a": "Steven Spielberg",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Close Encounters of the Third Kind (1977) was directed by Steven Spielberg with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The source confirms Steven Spielberg as the director and John Williams as the composer."
+      },
+      "source_html_sha256": "a9d44dee3dfcbe8bd153fa2249fa0ec18d5f7fff85c2758dbcdd67123803f940",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c68085f81f6731e487cd0634.json"
+    },
+    {
+      "subject": "Home Alone",
+      "object_a": "Chris Columbus",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Home_Alone",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Home Alone (1990) was directed by Chris Columbus with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "The source confirms Chris Columbus as the director and John Williams as the composer."
+      },
+      "source_html_sha256": "f3f0facfabb39603506fca3cbf9357898ce4a7c2f0d12dd880dc02e0245bce82",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/62bef455e19a849a9eaf9e44.json"
+    },
+    {
+      "subject": "L.A. Confidential",
+      "object_a": "Curtis Hanson",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/L.A._Confidential_(film)",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "L.A. Confidential (1997) was directed by Curtis Hanson with an original score by Jerry Goldsmith."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "The source confirms Curtis Hanson as the director and Jerry Goldsmith as the composer."
+      },
+      "source_html_sha256": "d2a3a3d3d46e89b4b584bebd1e16362f22ea56efea99e006db080077ca90564f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/cb57753103bd1c90eda77dcc.json"
+    },
+    {
+      "subject": "Die Hard",
+      "object_a": "John McTiernan",
+      "object_b": "Michael Kamen",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Die_Hard",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Die Hard (1988) was directed by John McTiernan with an original score by Michael Kamen."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "The source confirms John McTiernan as the director and Michael Kamen as the composer."
+      },
+      "source_html_sha256": "d70200daa8a300c42ac66d3a7fdf61fb73c174f66a4d0828814c3c07f127fe5f",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/72acf068837bea32468d4a9e.json"
+    },
+    {
+      "subject": "Predator",
+      "object_a": "John McTiernan",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Predator_(film)",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Predator (1987) was directed by John McTiernan with an original score by Alan Silvestri."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "The source confirms John McTiernan as the director and Alan Silvestri as the composer."
+      },
+      "source_html_sha256": "89fb26b2b1900bad24ba1113675289a1ec70d819271b1cf149ad498f4e062b00",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/08374fd85d2fdde60bb8fd76.json"
+    },
+    {
+      "subject": "The Abyss",
+      "object_a": "James Cameron",
+      "object_b": "Alan Silvestri",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Abyss",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "The Abyss (1989) was directed by James Cameron with an original score by Alan Silvestri."
+      },
+      "source_audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron as the director and Alan Silvestri as the composer."
+      },
+      "source_html_sha256": "353bc990561aab397d53f238f568926aba23007d00b511fc4af386d778879bbe",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/01b80c78da273c7225c173fc.json"
+    },
+    {
+      "subject": "Aliens",
+      "object_a": "James Cameron",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Aliens_(film)",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Aliens (1986) was directed by James Cameron with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The source confirms James Cameron as the director and James Horner as the composer."
+      },
+      "source_html_sha256": "3936b0df2b2fe5c617dd6667bfd30e786045d2f75fa67f4c71e2790dd2174645",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/31dffccf9fea582142402422.json"
+    },
+    {
+      "subject": "A Beautiful Mind",
+      "object_a": "Ron Howard",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/A_Beautiful_Mind_(film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "A Beautiful Mind (2001) was directed by Ron Howard with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "The source confirms Ron Howard as the director and James Horner as the composer."
+      },
+      "source_html_sha256": "2ed0dff46926a97b052b8933f3e6c110c74bc30f22df4273cbf7659b064bd75a",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/c8a0329f99bb8ea1c428d2ed.json"
+    },
+    {
+      "subject": "Glory",
+      "object_a": "Edward Zwick",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Glory_(1989_film)",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Glory (1989) was directed by Edward Zwick with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "The source confirms Edward Zwick as the director and James Horner as the composer."
+      },
+      "source_html_sha256": "a24a691a5237b7788b6d427279f338e5e084c90f9699c57f116c2b3f659f1abb",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/57afa82999646ba38dbe4f8e.json"
+    },
+    {
+      "subject": "The Untouchables",
+      "object_a": "Brian De Palma",
+      "object_b": "Ennio Morricone",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/The_Untouchables_(film)",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "The Untouchables (1987) was directed by Brian De Palma with an original score by Ennio Morricone."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "The source explicitly confirms that The Untouchables was directed by Brian De Palma and its score was composed by Ennio Morricone."
+      },
+      "source_html_sha256": "9b3f816a6cbddcd20f409897a2a01ac3a4c5012fd54b5095a3962e3dfc98c084",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/8f928b2258b7993ffe77a273.json"
+    }
+  ],
+  "exclusions": [
+    {
+      "subject": "Contempt",
+      "object_a": "Jean-Luc Godard",
+      "object_b": "Georges Delerue",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Contempt_(film)",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Contempt (1963) is directed by Jean-Luc Godard and scored by Georges Delerue."
+      },
+      "source_audit": {
+        "index": 0,
+        "verdict": "reject",
+        "reason": "The source lists multiple credited composers (Georges Delerue for France/US and Piero Piccioni for Italy/Spain), violating the single composer specification."
+      },
+      "source_html_sha256": "9dc67921b6662538c8499813e362e1f292f1943f99def40fdbda642fa1a875c1",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/815dd9a62ac720c715ba432b.json"
+    },
+    {
+      "subject": "Good Bye, Lenin!",
+      "object_a": "Wolfgang Becker",
+      "object_b": "Yann Tiersen",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Good_Bye,_Lenin!",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Good Bye, Lenin! (2003) is directed by Wolfgang Becker and scored by Yann Tiersen."
+      },
+      "source_audit": {
+        "index": 5,
+        "verdict": "reject",
+        "reason": "The source lists co-composers (Yann Tiersen, Claire Pichet, and Antonello Marafioti), violating the single composer specification."
+      },
+      "source_html_sha256": "9d366f554324ae9a0881c97b0313706daa15dc1a1ebd2e9293a4bb7d7935ab0c",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9f1449b5ec2fae3f61ac1f75.json"
+    },
+    {
+      "subject": "Parasite",
+      "object_a": "Bong Joon-ho",
+      "object_b": "Jung Jae-il",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Parasite_(film)",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Parasite (2019) is directed by Bong Joon-ho and scored by Jung Jae-il."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "uncertain",
+        "reason": "The provided source is a disambiguation page lacking evidence for the film's director and composer."
+      },
+      "source_html_sha256": "003efc3a4a84ab46ccc96d0ab5c441c75ccac50d5a99df088eced8da732b360b",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/302b6334ee0b7d3d5fcc03fb.json"
+    },
+    {
+      "subject": "Braveheart",
+      "object_a": "Mel Gibson",
+      "object_b": "James Horner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Braveheart",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Braveheart was directed by Mel Gibson with an original score by James Horner."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "uncertain",
+        "reason": "The source evidence is missing due to an HTTP 429 error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a13d20b98bb1df933f215dc6.json"
+    },
+    {
+      "subject": "Casablanca",
+      "object_a": "Michael Curtiz",
+      "object_b": "Max Steiner",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Casablanca (1942) was directed by Michael Curtiz with an original score composed by Max Steiner."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP 429 fetch error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/b313633426c0056e3abc15f4.json"
+    },
+    {
+      "subject": "Ikiru",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Fumio Hayasaka",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Ikiru",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Ikiru (1952) was directed by Akira Kurosawa with an original score composed by Fumio Hayasaka."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/a6bbcfff984b3e3548b7aa62.json"
+    },
+    {
+      "subject": "Throne of Blood",
+      "object_a": "Akira Kurosawa",
+      "object_b": "Masaru Sato",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Throne_of_Blood",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Throne of Blood (1957) was directed by Akira Kurosawa with an original score composed by Masaru Sato."
+      },
+      "source_audit": {
+        "index": 3,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/95cb1ac766ecb0ccf89b996d.json"
+    },
+    {
+      "subject": "The Artist",
+      "object_a": "Michel Hazanavicius",
+      "object_b": "Ludovic Bource",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/The_Artist_(film)",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "The Artist (2011) was directed by Michel Hazanavicius with an original score composed by Ludovic Bource."
+      },
+      "source_audit": {
+        "index": 10,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/083a13b1172c270edc311308.json"
+    },
+    {
+      "subject": "A Prophet",
+      "object_a": "Jacques Audiard",
+      "object_b": "Alexandre Desplat",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/A_Prophet",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "A Prophet (2009) was directed by Jacques Audiard with an original score composed by Alexandre Desplat."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/dec6a72e540a244860ca8a0d.json"
+    },
+    {
+      "subject": "Raise the Red Lantern",
+      "object_a": "Zhang Yimou",
+      "object_b": "Zhao Jiping",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/Raise_the_Red_Lantern",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Raise the Red Lantern (1991) was directed by Zhang Yimou and scored by Zhao Jiping."
+      },
+      "source_audit": {
+        "index": 14,
+        "verdict": "reject",
+        "reason": "The source credits two co-composers (Zhao Jiping and Naoki Tachikawa), violating the requirement for a single credited original-score composer."
+      },
+      "source_html_sha256": "a4692dd7d11702b70d08fa4f89a2763af1bfd3029f3dd53e9d4e201a48afed30",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/afa9126f383a8d42f7827140.json"
+    },
+    {
+      "subject": "Lady Vengeance",
+      "object_a": "Park Chan-wook",
+      "object_b": "Choi Seung-hyun",
+      "region": "South Korea",
+      "source_url": "https://en.wikipedia.org/wiki/Lady_Vengeance",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Lady Vengeance (2005) was directed by Park Chan-wook with score composed by Choi Seung-hyun."
+      },
+      "source_audit": {
+        "index": 2,
+        "verdict": "reject",
+        "reason": "The source lists both Jo Yeong-wook and Choi Seung-hyun as composers, violating the requirement to exclude co-composers."
+      },
+      "source_html_sha256": "1ce047a222801ba667154791a74efc1ee274748373cc852e1bbfd41ed32cf044",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/3bcef1b203b93e1eeee1882e.json"
+    },
+    {
+      "subject": "A Passage to India",
+      "object_a": "David Lean",
+      "object_b": "Maurice Jarre",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/A_Passage_to_India_(film)",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "A Passage to India (1984) was directed by David Lean with an original score by Maurice Jarre."
+      },
+      "source_audit": {
+        "index": 4,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP 429 error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/85640f38d852a6476f6e69a0.json"
+    },
+    {
+      "subject": "The English Patient",
+      "object_a": "Anthony Minghella",
+      "object_b": "Gabriel Yared",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_English_Patient_(film)",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "The English Patient (1996) was directed by Anthony Minghella with an original score by Gabriel Yared."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP 429 error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6334309501d90494f733ec4d.json"
+    },
+    {
+      "subject": "Slumdog Millionaire",
+      "object_a": "Danny Boyle",
+      "object_b": "A. R. Rahman",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Slumdog Millionaire (2008) was directed by Danny Boyle with an Oscar-winning original score by A. R. Rahman."
+      },
+      "source_audit": {
+        "index": 9,
+        "verdict": "reject",
+        "reason": "The source states Loveleen Tandan is credited as co-director alongside Danny Boyle, violating the rule excluding co-directors."
+      },
+      "source_html_sha256": "c58ab326add9b4a5974ece0a948f14695f4f75e51b39783da7e1a3c4498b53f8",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9bb426587d5a6aa7f77b940e.json"
+    },
+    {
+      "subject": "Incendies",
+      "object_a": "Denis Villeneuve",
+      "object_b": "Grégoire Hetzel",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Incendies",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Incendies (2010) was directed by Denis Villeneuve with an original score by Grégoire Hetzel."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "uncertain",
+        "reason": "The source text could not be retrieved due to an HTTP 429 error, so evidence is missing."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7ab64f53c6e639f2c5a6c0fd.json"
+    },
+    {
+      "subject": "Mad Max: Fury Road",
+      "object_a": "George Miller",
+      "object_b": "Tom Holkenborg",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Mad_Max:_Fury_Road",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Mad Max: Fury Road (2015) was directed by George Miller with an original score by Tom Holkenborg."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "uncertain",
+        "reason": "The source credits the music to Junkie XL rather than supporting the full real name Tom Holkenborg directly."
+      },
+      "source_html_sha256": "11a7eddee05cc5cfc304ee8c8dd045e549cfedcc262250fe62fd94dc9a1f1913",
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/77c42a64f27116b1ee22b017.json"
+    },
+    {
+      "subject": "The Lion in Winter",
+      "object_a": "Anthony Harvey",
+      "object_b": "John Barry",
+      "region": "United Kingdom",
+      "source_url": "https://en.wikipedia.org/wiki/The_Lion_in_Winter_(1968_film)",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "The Lion in Winter (1968) was directed by Anthony Harvey with an original score by John Barry."
+      },
+      "source_audit": {
+        "index": 11,
+        "verdict": "uncertain",
+        "reason": "The source text could not be retrieved due to an HTTP 429 error, so evidence is missing."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/7532ff515e1e9028302c8793.json"
+    },
+    {
+      "subject": "Superman",
+      "object_a": "Richard Donner",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Superman_(1978_film)",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Superman (1978) was directed by Richard Donner with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 6,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/6ea7e0ce51a7fe4719b4a9f2.json"
+    },
+    {
+      "subject": "Return of the Jedi",
+      "object_a": "Richard Marquand",
+      "object_b": "John Williams",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Return_of_the_Jedi",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Return of the Jedi (1983) was directed by Richard Marquand with an original score by John Williams."
+      },
+      "source_audit": {
+        "index": 7,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/9f756e1526dc9f1451214e37.json"
+    },
+    {
+      "subject": "Patton",
+      "object_a": "Franklin J. Schaffner",
+      "object_b": "Jerry Goldsmith",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Patton_(film)",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Patton (1970) was directed by Franklin J. Schaffner with an original score by Jerry Goldsmith."
+      },
+      "source_audit": {
+        "index": 8,
+        "verdict": "uncertain",
+        "reason": "Source evidence is missing due to an HTTP error."
+      },
+      "source_html_sha256": null,
+      "source_evidence_file": "generated/anchor_swap_gemini/sources/393dcb7e8ef4a6d6125b4cb8.json"
+    }
+  ],
+  "candidate_sha256": "257660b586f7fb30e89dd3daaad447fc53c5af13e8d982e088cb7e6ce1c0356a"
+}

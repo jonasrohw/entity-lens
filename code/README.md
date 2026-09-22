@@ -240,3 +240,12 @@ GitLab CI runs lint, formatting, CPU tests, artifact reproduction, and packaging
 Retained data and results are tracked; environments, caches, generated figures,
 and reruns are ignored. Change tests when intentionally changing a scientific
 protocol, and preserve the original snapshots for comparison.
+
+## Larger same-subject anchor/term swap experiment
+
+A Gemini-generated, source-checked corpus adds 1,672 triples across six domains,
+with 644 subjects held out from fitting and tuning. Swapping another relation's
+subject term lowers equal-domain first-token faithfulness from 57.4% to 34.1%
+(23.3-point loss; paired 95% CI 20.9–25.6), while still outperforming wrong-subject
+controls. See the [full results and examples](docs/anchor-swap-gemini-results.md)
+and [dataset with frozen splits](data/anchor_swap_gemini/README.md).

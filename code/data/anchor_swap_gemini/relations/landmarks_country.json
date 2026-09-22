@@ -1,0 +1,752 @@
+{
+  "name": "landmarks_country",
+  "prompt_templates": [
+    "The country containing {} is"
+  ],
+  "properties": {
+    "domain_name": "landmarks"
+  },
+  "samples": [
+    {
+      "subject": "Solomon R. Guggenheim Museum",
+      "object": "United States",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Shwedagon Pagoda",
+      "object": "Myanmar",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Petronas Towers",
+      "object": "Malaysia",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "St. Vitus Cathedral",
+      "object": "Czech Republic",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Gateway Arch",
+      "object": "United States",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Coit Tower",
+      "object": "United States",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Museum of the Future",
+      "object": "United Arab Emirates",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Alamo Mission",
+      "object": "United States",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Chrysler Building",
+      "object": "United States",
+      "split": "references"
+    },
+    {
+      "subject": "Cloud Gate",
+      "object": "United States",
+      "split": "references"
+    },
+    {
+      "subject": "Jeronimos Monastery",
+      "object": "Portugal",
+      "split": "references"
+    },
+    {
+      "subject": "Park Guell",
+      "object": "Spain",
+      "split": "references"
+    },
+    {
+      "subject": "Mosque of Muhammad Ali",
+      "object": "Egypt",
+      "split": "references"
+    },
+    {
+      "subject": "Topkapi Palace",
+      "object": "Turkey",
+      "split": "references"
+    },
+    {
+      "subject": "Palacio de Carondelet",
+      "object": "Ecuador",
+      "split": "references"
+    },
+    {
+      "subject": "Voortrekker Monument",
+      "object": "South Africa",
+      "split": "references"
+    },
+    {
+      "subject": "Bahia Palace",
+      "object": "Morocco",
+      "split": "validation"
+    },
+    {
+      "subject": "Deoksugung",
+      "object": "South Korea",
+      "split": "validation"
+    },
+    {
+      "subject": "Fushimi Inari-taisha",
+      "object": "Japan",
+      "split": "validation"
+    },
+    {
+      "subject": "Reichstag Building",
+      "object": "Germany",
+      "split": "validation"
+    },
+    {
+      "subject": "Galata Tower",
+      "object": "Turkey",
+      "split": "validation"
+    },
+    {
+      "subject": "Hawa Mahal",
+      "object": "India",
+      "split": "validation"
+    },
+    {
+      "subject": "Kasbah of the Udayas",
+      "object": "Morocco",
+      "split": "validation"
+    },
+    {
+      "subject": "Maracana Stadium",
+      "object": "Brazil",
+      "split": "validation"
+    },
+    {
+      "subject": "Oriental Pearl Tower",
+      "object": "China",
+      "split": "validation"
+    },
+    {
+      "subject": "Mosque-Madrasa of Sultan Hassan",
+      "object": "Egypt",
+      "split": "validation"
+    },
+    {
+      "subject": "Small Wild Goose Pagoda",
+      "object": "China",
+      "split": "validation"
+    },
+    {
+      "subject": "Story Bridge",
+      "object": "Australia",
+      "split": "validation"
+    },
+    {
+      "subject": "Todai-ji",
+      "object": "Japan",
+      "split": "validation"
+    },
+    {
+      "subject": "Brihadisvara Temple",
+      "object": "India",
+      "split": "validation"
+    },
+    {
+      "subject": "Kiyomizu-dera",
+      "object": "Japan",
+      "split": "validation"
+    },
+    {
+      "subject": "Sanjusangen-do",
+      "object": "Japan",
+      "split": "validation"
+    },
+    {
+      "subject": "Ponte City Apartments",
+      "object": "South Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Great Wild Goose Pagoda",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Gyeongbokgung",
+      "object": "South Korea",
+      "split": "test"
+    },
+    {
+      "subject": "Changdeokgung",
+      "object": "South Korea",
+      "split": "test"
+    },
+    {
+      "subject": "Forbidden City",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Kingdom Centre",
+      "object": "Saudi Arabia",
+      "split": "test"
+    },
+    {
+      "subject": "Louvre Pyramid",
+      "object": "France",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Barolo",
+      "object": "Argentina",
+      "split": "test"
+    },
+    {
+      "subject": "Erechtheion",
+      "object": "Greece",
+      "split": "test"
+    },
+    {
+      "subject": "Sainte-Chapelle",
+      "object": "France",
+      "split": "test"
+    },
+    {
+      "subject": "Hassan II Mosque",
+      "object": "Morocco",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Rosada",
+      "object": "Argentina",
+      "split": "test"
+    },
+    {
+      "subject": "St. Stephen's Basilica",
+      "object": "Hungary",
+      "split": "test"
+    },
+    {
+      "subject": "Khaju Bridge",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Sheikh Zayed Grand Mosque",
+      "object": "United Arab Emirates",
+      "split": "test"
+    },
+    {
+      "subject": "Church of the Savior on Spilled Blood",
+      "object": "Russia",
+      "split": "test"
+    },
+    {
+      "subject": "Quinta da Boa Vista",
+      "object": "Brazil",
+      "split": "test"
+    },
+    {
+      "subject": "Faneuil Hall",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Shrine of Remembrance",
+      "object": "Australia",
+      "split": "test"
+    },
+    {
+      "subject": "Charles Bridge",
+      "object": "Czech Republic",
+      "split": "test"
+    },
+    {
+      "subject": "Koutoubia Mosque",
+      "object": "Morocco",
+      "split": "test"
+    },
+    {
+      "subject": "Colosseum",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Wat Arun",
+      "object": "Thailand",
+      "split": "test"
+    },
+    {
+      "subject": "Azadi Tower",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Summer Palace",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Elbphilharmonie",
+      "object": "Germany",
+      "split": "test"
+    },
+    {
+      "subject": "Burj Khalifa",
+      "object": "United Arab Emirates",
+      "split": "test"
+    },
+    {
+      "subject": "Angkor Wat",
+      "object": "Cambodia",
+      "split": "test"
+    },
+    {
+      "subject": "Victoria Memorial",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Lotte World Tower",
+      "object": "South Korea",
+      "split": "test"
+    },
+    {
+      "subject": "Yellow Crane Tower",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Al-Azhar Mosque",
+      "object": "Egypt",
+      "split": "test"
+    },
+    {
+      "subject": "Temple of Heaven",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Palais Garnier",
+      "object": "France",
+      "split": "test"
+    },
+    {
+      "subject": "Space Needle",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Bara Imambara",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Castel Sant'Angelo",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Charminar",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "The Shard",
+      "object": "United Kingdom",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Basil's Cathedral",
+      "object": "Russia",
+      "split": "test"
+    },
+    {
+      "subject": "Dolmabahce Palace",
+      "object": "Turkey",
+      "split": "test"
+    },
+    {
+      "subject": "Big Ben",
+      "object": "United Kingdom",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Taranco",
+      "object": "Uruguay",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Solis",
+      "object": "Uruguay",
+      "split": "test"
+    },
+    {
+      "subject": "Trevi Fountain",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Royal Exhibition Building",
+      "object": "Australia",
+      "split": "test"
+    },
+    {
+      "subject": "Rockefeller Center",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Castle of Good Hope",
+      "object": "South Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Willis Tower",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Milad Tower",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Doge's Palace",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Sultan Ahmed Mosque",
+      "object": "Turkey",
+      "split": "test"
+    },
+    {
+      "subject": "Taj Mahal",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Gol Gumbaz",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Eureka Tower",
+      "object": "Australia",
+      "split": "test"
+    },
+    {
+      "subject": "Sagrada Familia",
+      "object": "Spain",
+      "split": "test"
+    },
+    {
+      "subject": "Fisherman's Bastion",
+      "object": "Hungary",
+      "split": "test"
+    },
+    {
+      "subject": "Habitat 67",
+      "object": "Canada",
+      "split": "test"
+    },
+    {
+      "subject": "Grand Central Terminal",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Hagia Sophia",
+      "object": "Turkey",
+      "split": "test"
+    },
+    {
+      "subject": "Eiffel Tower",
+      "object": "France",
+      "split": "test"
+    },
+    {
+      "subject": "Abraj Al Bait",
+      "object": "Saudi Arabia",
+      "split": "test"
+    },
+    {
+      "subject": "Rialto Bridge",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Si-o-se-pol",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Belem Tower",
+      "object": "Portugal",
+      "split": "test"
+    },
+    {
+      "subject": "Christ the Redeemer",
+      "object": "Brazil",
+      "split": "test"
+    },
+    {
+      "subject": "Horyu-ji",
+      "object": "Japan",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of Fine Arts",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Colon",
+      "object": "Argentina",
+      "split": "test"
+    },
+    {
+      "subject": "Ponte Vecchio",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Beehive",
+      "object": "New Zealand",
+      "split": "test"
+    },
+    {
+      "subject": "Chapultepec Castle",
+      "object": "Mexico",
+      "split": "test"
+    },
+    {
+      "subject": "Tribune Tower",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Terracotta Army",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Teatro Amazonas",
+      "object": "Brazil",
+      "split": "test"
+    },
+    {
+      "subject": "Senso-ji",
+      "object": "Japan",
+      "split": "test"
+    },
+    {
+      "subject": "Golestan Palace",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Naqsh-e Jahan Square",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Basilica of Our Lady of Peace",
+      "object": "Ivory Coast",
+      "split": "test"
+    },
+    {
+      "subject": "Tabiat Bridge",
+      "object": "Iran",
+      "split": "test"
+    },
+    {
+      "subject": "Buckingham Palace",
+      "object": "United Kingdom",
+      "split": "test"
+    },
+    {
+      "subject": "Humayun's Tomb",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Pena Palace",
+      "object": "Portugal",
+      "split": "test"
+    },
+    {
+      "subject": "Bulguksa",
+      "object": "South Korea",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of Culture and Science",
+      "object": "Poland",
+      "split": "test"
+    },
+    {
+      "subject": "Torre Glories",
+      "object": "Spain",
+      "split": "test"
+    },
+    {
+      "subject": "Alhambra",
+      "object": "Spain",
+      "split": "test"
+    },
+    {
+      "subject": "Sky Tower",
+      "object": "New Zealand",
+      "split": "test"
+    },
+    {
+      "subject": "Jin Mao Tower",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Potala Palace",
+      "object": "China",
+      "split": "test"
+    },
+    {
+      "subject": "Hospicio Cabanas",
+      "object": "Mexico",
+      "split": "test"
+    },
+    {
+      "subject": "Parthenon",
+      "object": "Greece",
+      "split": "test"
+    },
+    {
+      "subject": "Winter Palace",
+      "object": "Russia",
+      "split": "test"
+    },
+    {
+      "subject": "Palace of the Parliament",
+      "object": "Romania",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Batllo",
+      "object": "Spain",
+      "split": "test"
+    },
+    {
+      "subject": "Casa Loma",
+      "object": "Canada",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio de La Moneda",
+      "object": "Chile",
+      "split": "test"
+    },
+    {
+      "subject": "Mole Antonelliana",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Carlton Centre",
+      "object": "South Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Kinkaku-ji",
+      "object": "Japan",
+      "split": "test"
+    },
+    {
+      "subject": "Flatiron Building",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Arc de Triomphe",
+      "object": "France",
+      "split": "test"
+    },
+    {
+      "subject": "Bolshoi Theatre",
+      "object": "Russia",
+      "split": "test"
+    },
+    {
+      "subject": "Masjid al-Haram",
+      "object": "Saudi Arabia",
+      "split": "test"
+    },
+    {
+      "subject": "Union Buildings",
+      "object": "South Africa",
+      "split": "test"
+    },
+    {
+      "subject": "Atomium",
+      "object": "Belgium",
+      "split": "test"
+    },
+    {
+      "subject": "Brandenburg Gate",
+      "object": "Germany",
+      "split": "test"
+    },
+    {
+      "subject": "Palacio Salvo",
+      "object": "Uruguay",
+      "split": "test"
+    },
+    {
+      "subject": "Independence Hall",
+      "object": "United States",
+      "split": "test"
+    },
+    {
+      "subject": "Menara Gardens",
+      "object": "Morocco",
+      "split": "test"
+    },
+    {
+      "subject": "Bab Bou Jeloud",
+      "object": "Morocco",
+      "split": "test"
+    },
+    {
+      "subject": "Lotus Temple",
+      "object": "India",
+      "split": "test"
+    },
+    {
+      "subject": "Pantheon",
+      "object": "Italy",
+      "split": "test"
+    },
+    {
+      "subject": "Baron Empain Palace",
+      "object": "Egypt",
+      "split": "test"
+    },
+    {
+      "subject": "El Badi Palace",
+      "object": "Morocco",
+      "split": "test"
+    },
+    {
+      "subject": "Copacabana Palace",
+      "object": "Brazil",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

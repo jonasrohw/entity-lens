@@ -1,0 +1,562 @@
+{
+  "name": "authors_birth_city",
+  "prompt_templates": [
+    "The city where {} was born is"
+  ],
+  "properties": {
+    "domain_name": "authors"
+  },
+  "samples": [
+    {
+      "subject": "Elsa Morante",
+      "object": "Rome",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "John Steinbeck",
+      "object": "Salinas",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Rabindranath Tagore",
+      "object": "Calcutta",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Nadine Gordimer",
+      "object": "Springs",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Lope de Vega",
+      "object": "Madrid",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Kazi Nazrul Islam",
+      "object": "Churulia",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "James Baldwin",
+      "object": "New York City",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Emily Dickinson",
+      "object": "Amherst",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Italo Calvino",
+      "object": "Santiago de las Vegas",
+      "split": "references"
+    },
+    {
+      "subject": "Marcel Proust",
+      "object": "Paris",
+      "split": "references"
+    },
+    {
+      "subject": "Rainer Maria Rilke",
+      "object": "Prague",
+      "split": "references"
+    },
+    {
+      "subject": "Dante Alighieri",
+      "object": "Florence",
+      "split": "references"
+    },
+    {
+      "subject": "Anna Akhmatova",
+      "object": "Odesa",
+      "split": "references"
+    },
+    {
+      "subject": "Mary Shelley",
+      "object": "London",
+      "split": "references"
+    },
+    {
+      "subject": "Agatha Christie",
+      "object": "Torquay",
+      "split": "references"
+    },
+    {
+      "subject": "Virginia Woolf",
+      "object": "London",
+      "split": "references"
+    },
+    {
+      "subject": "Jorge Amado",
+      "object": "Itabuna",
+      "split": "validation"
+    },
+    {
+      "subject": "Lu Xun",
+      "object": "Shaoxing",
+      "split": "validation"
+    },
+    {
+      "subject": "Jane Austen",
+      "object": "Steventon",
+      "split": "validation"
+    },
+    {
+      "subject": "James Joyce",
+      "object": "Dublin",
+      "split": "validation"
+    },
+    {
+      "subject": "Lao She",
+      "object": "Beijing",
+      "split": "validation"
+    },
+    {
+      "subject": "Samuel Taylor Coleridge",
+      "object": "Ottery St Mary",
+      "split": "validation"
+    },
+    {
+      "subject": "Charles Dickens",
+      "object": "Portsmouth",
+      "split": "validation"
+    },
+    {
+      "subject": "Alessandro Manzoni",
+      "object": "Milan",
+      "split": "validation"
+    },
+    {
+      "subject": "Sophia de Mello Breyner Andresen",
+      "object": "Porto",
+      "split": "validation"
+    },
+    {
+      "subject": "Kenji Miyazawa",
+      "object": "Hanamaki",
+      "split": "validation"
+    },
+    {
+      "subject": "Bram Stoker",
+      "object": "Dublin",
+      "split": "validation"
+    },
+    {
+      "subject": "William Faulkner",
+      "object": "New Albany",
+      "split": "validation"
+    },
+    {
+      "subject": "William Wordsworth",
+      "object": "Cockermouth",
+      "split": "validation"
+    },
+    {
+      "subject": "George Orwell",
+      "object": "Motihari",
+      "split": "validation"
+    },
+    {
+      "subject": "Katherine Mansfield",
+      "object": "Wellington",
+      "split": "validation"
+    },
+    {
+      "subject": "Yukio Mishima",
+      "object": "Tokyo",
+      "split": "validation"
+    },
+    {
+      "subject": "Horacio Quiroga",
+      "object": "Salto",
+      "split": "test"
+    },
+    {
+      "subject": "Paul Verlaine",
+      "object": "Metz",
+      "split": "test"
+    },
+    {
+      "subject": "Thomas Mann",
+      "object": "Lübeck",
+      "split": "test"
+    },
+    {
+      "subject": "George Bernard Shaw",
+      "object": "Dublin",
+      "split": "test"
+    },
+    {
+      "subject": "Victor Hugo",
+      "object": "Besançon",
+      "split": "test"
+    },
+    {
+      "subject": "Emily Brontë",
+      "object": "Thornton",
+      "split": "test"
+    },
+    {
+      "subject": "Nikos Kazantzakis",
+      "object": "Heraklion",
+      "split": "test"
+    },
+    {
+      "subject": "W. B. Yeats",
+      "object": "Dublin",
+      "split": "test"
+    },
+    {
+      "subject": "Mariama Bâ",
+      "object": "Dakar",
+      "split": "test"
+    },
+    {
+      "subject": "Eileen Chang",
+      "object": "Shanghai",
+      "split": "test"
+    },
+    {
+      "subject": "Giacomo Leopardi",
+      "object": "Recanati",
+      "split": "test"
+    },
+    {
+      "subject": "José Donoso",
+      "object": "Santiago",
+      "split": "test"
+    },
+    {
+      "subject": "Aleksandr Blok",
+      "object": "Saint Petersburg",
+      "split": "test"
+    },
+    {
+      "subject": "Shen Congwen",
+      "object": "Fenghuang",
+      "split": "test"
+    },
+    {
+      "subject": "Ivan Turgenev",
+      "object": "Oryol",
+      "split": "test"
+    },
+    {
+      "subject": "Günter Grass",
+      "object": "Danzig",
+      "split": "test"
+    },
+    {
+      "subject": "Johann Wolfgang von Goethe",
+      "object": "Frankfurt",
+      "split": "test"
+    },
+    {
+      "subject": "Herman Melville",
+      "object": "New York City",
+      "split": "test"
+    },
+    {
+      "subject": "Heinrich Heine",
+      "object": "Düsseldorf",
+      "split": "test"
+    },
+    {
+      "subject": "Gabriel García Márquez",
+      "object": "Aracataca",
+      "split": "test"
+    },
+    {
+      "subject": "Fyodor Dostoevsky",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Bertolt Brecht",
+      "object": "Augsburg",
+      "split": "test"
+    },
+    {
+      "subject": "Émile Zola",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Ralph Waldo Emerson",
+      "object": "Boston",
+      "split": "test"
+    },
+    {
+      "subject": "Federico García Lorca",
+      "object": "Fuente Vaqueros",
+      "split": "test"
+    },
+    {
+      "subject": "Mikhail Bulgakov",
+      "object": "Kyiv",
+      "split": "test"
+    },
+    {
+      "subject": "Ismat Chughtai",
+      "object": "Badayun",
+      "split": "test"
+    },
+    {
+      "subject": "Mao Dun",
+      "object": "Tongxiang",
+      "split": "test"
+    },
+    {
+      "subject": "Jun'ichirō Tanizaki",
+      "object": "Tokyo",
+      "split": "test"
+    },
+    {
+      "subject": "Umberto Eco",
+      "object": "Alessandria",
+      "split": "test"
+    },
+    {
+      "subject": "Jean-Paul Sartre",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Luigi Pirandello",
+      "object": "Agrigento",
+      "split": "test"
+    },
+    {
+      "subject": "Edgar Allan Poe",
+      "object": "Boston",
+      "split": "test"
+    },
+    {
+      "subject": "Miguel de Cervantes",
+      "object": "Alcalá de Henares",
+      "split": "test"
+    },
+    {
+      "subject": "F. Scott Fitzgerald",
+      "object": "Saint Paul",
+      "split": "test"
+    },
+    {
+      "subject": "Albert Camus",
+      "object": "Mondovi",
+      "split": "test"
+    },
+    {
+      "subject": "Mark Twain",
+      "object": "Florida",
+      "split": "test"
+    },
+    {
+      "subject": "Stefan Zweig",
+      "object": "Vienna",
+      "split": "test"
+    },
+    {
+      "subject": "John Keats",
+      "object": "London",
+      "split": "test"
+    },
+    {
+      "subject": "José Saramago",
+      "object": "Azinhaga",
+      "split": "test"
+    },
+    {
+      "subject": "Kōbō Abe",
+      "object": "Tokyo",
+      "split": "test"
+    },
+    {
+      "subject": "Jorge Luis Borges",
+      "object": "Buenos Aires",
+      "split": "test"
+    },
+    {
+      "subject": "Gabriela Mistral",
+      "object": "Vicuña",
+      "split": "test"
+    },
+    {
+      "subject": "E. T. A. Hoffmann",
+      "object": "Königsberg",
+      "split": "test"
+    },
+    {
+      "subject": "Gustave Flaubert",
+      "object": "Rouen",
+      "split": "test"
+    },
+    {
+      "subject": "Rosario Castellanos",
+      "object": "Mexico City",
+      "split": "test"
+    },
+    {
+      "subject": "Benito Pérez Galdós",
+      "object": "Las Palmas",
+      "split": "test"
+    },
+    {
+      "subject": "Alexandre Dumas",
+      "object": "Villers-Cotterêts",
+      "split": "test"
+    },
+    {
+      "subject": "Antonio Machado",
+      "object": "Seville",
+      "split": "test"
+    },
+    {
+      "subject": "Molière",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Friedrich Schiller",
+      "object": "Marbach am Neckar",
+      "split": "test"
+    },
+    {
+      "subject": "Chinua Achebe",
+      "object": "Ogidi",
+      "split": "test"
+    },
+    {
+      "subject": "Joseph Roth",
+      "object": "Brody",
+      "split": "test"
+    },
+    {
+      "subject": "Arthur Conan Doyle",
+      "object": "Edinburgh",
+      "split": "test"
+    },
+    {
+      "subject": "Edith Wharton",
+      "object": "New York City",
+      "split": "test"
+    },
+    {
+      "subject": "Franz Kafka",
+      "object": "Prague",
+      "split": "test"
+    },
+    {
+      "subject": "Robert Musil",
+      "object": "Klagenfurt",
+      "split": "test"
+    },
+    {
+      "subject": "Voltaire",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Jonathan Swift",
+      "object": "Dublin",
+      "split": "test"
+    },
+    {
+      "subject": "Stanisław Lem",
+      "object": "Lwów",
+      "split": "test"
+    },
+    {
+      "subject": "Ernest Hemingway",
+      "object": "Oak Park",
+      "split": "test"
+    },
+    {
+      "subject": "Arthur Rimbaud",
+      "object": "Charleville",
+      "split": "test"
+    },
+    {
+      "subject": "Anton Chekhov",
+      "object": "Taganrog",
+      "split": "test"
+    },
+    {
+      "subject": "Alexander Pushkin",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Ba Jin",
+      "object": "Chengdu",
+      "split": "test"
+    },
+    {
+      "subject": "Charles Baudelaire",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Boris Pasternak",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Natalia Ginzburg",
+      "object": "Palermo",
+      "split": "test"
+    },
+    {
+      "subject": "Saadat Hasan Manto",
+      "object": "Samrala",
+      "split": "test"
+    },
+    {
+      "subject": "Nathaniel Hawthorne",
+      "object": "Salem",
+      "split": "test"
+    },
+    {
+      "subject": "Sylvia Plath",
+      "object": "Boston",
+      "split": "test"
+    },
+    {
+      "subject": "Alberto Moravia",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Pedro Calderón de la Barca",
+      "object": "Madrid",
+      "split": "test"
+    },
+    {
+      "subject": "William Shakespeare",
+      "object": "Stratford-upon-Avon",
+      "split": "test"
+    },
+    {
+      "subject": "Arthur Schnitzler",
+      "object": "Vienna",
+      "split": "test"
+    },
+    {
+      "subject": "Maxim Gorky",
+      "object": "Nizhny Novgorod",
+      "split": "test"
+    },
+    {
+      "subject": "Hans Christian Andersen",
+      "object": "Odense",
+      "split": "test"
+    },
+    {
+      "subject": "Honoré de Balzac",
+      "object": "Tours",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

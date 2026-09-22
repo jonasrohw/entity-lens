@@ -1,0 +1,1939 @@
+{
+  "spec": {
+    "relations": [
+      "sport",
+      "position"
+    ],
+    "templates": [
+      "The sport played by {} is",
+      "The main playing position of {} is"
+    ],
+    "instruction": "Famous professional athletes with a single well-established main sport and playing position. Mix association football (answer soccer), American football (answer football), basketball, baseball, ice hockey, rugby, cricket, volleyball. No individual sports without playing positions. Include women and non-US athletes. Prefer retired players. Plain conventional position names; no handedness modifiers."
+  },
+  "accepted": [
+    {
+      "subject": "Pelé",
+      "object_a": "soccer",
+      "object_b": "forward",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Pel%C3%A9",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Pelé is universally recognized as an association football (soccer) player who played as a forward."
+      }
+    },
+    {
+      "subject": "Diego Maradona",
+      "object_a": "soccer",
+      "object_b": "attacking midfielder",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Diego_Maradona",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Diego Maradona is universally recognized as a soccer player who played as an attacking midfielder."
+      }
+    },
+    {
+      "subject": "Lev Yashin",
+      "object_a": "soccer",
+      "object_b": "goalkeeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Lev_Yashin",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Lev Yashin was a legendary soccer player who played as a goalkeeper."
+      }
+    },
+    {
+      "subject": "Dino Zoff",
+      "object_a": "soccer",
+      "object_b": "goalkeeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Dino_Zoff",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Dino Zoff is a well-known soccer player who played as a goalkeeper."
+      }
+    },
+    {
+      "subject": "Franz Beckenbauer",
+      "object_a": "soccer",
+      "object_b": "sweeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Franz_Beckenbauer",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Franz Beckenbauer famously played soccer as a sweeper (libero)."
+      }
+    },
+    {
+      "subject": "Franco Baresi",
+      "object_a": "soccer",
+      "object_b": "sweeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Franco_Baresi",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Franco Baresi played soccer as a sweeper / central defender."
+      }
+    },
+    {
+      "subject": "Bobby Moore",
+      "object_a": "soccer",
+      "object_b": "centre-back",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Bobby_Moore",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Bobby Moore played soccer as a centre-back."
+      }
+    },
+    {
+      "subject": "Roberto Carlos",
+      "object_a": "soccer",
+      "object_b": "left-back",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Roberto_Carlos",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Roberto Carlos played soccer as a left-back."
+      }
+    },
+    {
+      "subject": "Cafu",
+      "object_a": "soccer",
+      "object_b": "right-back",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Cafu",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Cafu played soccer as a right-back."
+      }
+    },
+    {
+      "subject": "Zinedine Zidane",
+      "object_a": "soccer",
+      "object_b": "attacking midfielder",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Zinedine_Zidane",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Zinedine Zidane played soccer as an attacking midfielder."
+      }
+    },
+    {
+      "subject": "Xavi",
+      "object_a": "soccer",
+      "object_b": "midfielder",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Xavi",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Xavi played soccer as a central midfielder."
+      }
+    },
+    {
+      "subject": "Andrea Pirlo",
+      "object_a": "soccer",
+      "object_b": "midfielder",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Andrea_Pirlo",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Andrea Pirlo played soccer as a midfielder / deep-lying playmaker."
+      }
+    },
+    {
+      "subject": "Thierry Henry",
+      "object_a": "soccer",
+      "object_b": "forward",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Thierry_Henry",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Thierry Henry played soccer as a forward / striker."
+      }
+    },
+    {
+      "subject": "Ronaldo Nazário",
+      "object_a": "soccer",
+      "object_b": "striker",
+      "region": "South America",
+      "source_url": "https://en.wikipedia.org/wiki/Ronaldo_(Brazilian_footballer)",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Ronaldo Nazário played soccer as a striker."
+      }
+    },
+    {
+      "subject": "Mia Hamm",
+      "object_a": "soccer",
+      "object_b": "forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Mia_Hamm",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Mia Hamm played soccer as a forward."
+      }
+    },
+    {
+      "subject": "Birgit Prinz",
+      "object_a": "soccer",
+      "object_b": "striker",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Birgit_Prinz",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Birgit Prinz played soccer as a striker."
+      }
+    },
+    {
+      "subject": "Abby Wambach",
+      "object_a": "soccer",
+      "object_b": "forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Abby_Wambach",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Abby Wambach played soccer as a forward."
+      }
+    },
+    {
+      "subject": "Oliver Kahn",
+      "object_a": "soccer",
+      "object_b": "goalkeeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Oliver_Kahn",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Oliver Kahn played soccer as a goalkeeper."
+      }
+    },
+    {
+      "subject": "Peter Schmeichel",
+      "object_a": "soccer",
+      "object_b": "goalkeeper",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Peter_Schmeichel",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Peter Schmeichel played soccer as a goalkeeper."
+      }
+    },
+    {
+      "subject": "Hope Solo",
+      "object_a": "soccer",
+      "object_b": "goalkeeper",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Hope_Solo",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Hope Solo played soccer as a goalkeeper."
+      }
+    },
+    {
+      "subject": "Joe Montana",
+      "object_a": "football",
+      "object_b": "quarterback",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Joe_Montana",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Joe Montana played American football as a quarterback."
+      }
+    },
+    {
+      "subject": "Dan Marino",
+      "object_a": "football",
+      "object_b": "quarterback",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Dan_Marino",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Dan Marino played American football as a quarterback."
+      }
+    },
+    {
+      "subject": "Jerry Rice",
+      "object_a": "football",
+      "object_b": "wide receiver",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Jerry_Rice",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Jerry Rice played American football as a wide receiver."
+      }
+    },
+    {
+      "subject": "Randy Moss",
+      "object_a": "football",
+      "object_b": "wide receiver",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Randy_Moss",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Randy Moss played American football as a wide receiver."
+      }
+    },
+    {
+      "subject": "Walter Payton",
+      "object_a": "football",
+      "object_b": "running back",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Walter_Payton",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Walter Payton played American football as a running back."
+      }
+    },
+    {
+      "subject": "Barry Sanders",
+      "object_a": "football",
+      "object_b": "running back",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Barry_Sanders",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Barry Sanders played American football as a running back."
+      }
+    },
+    {
+      "subject": "Lawrence Taylor",
+      "object_a": "football",
+      "object_b": "linebacker",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Lawrence_Taylor",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Lawrence Taylor played American football as a linebacker."
+      }
+    },
+    {
+      "subject": "Ray Lewis",
+      "object_a": "football",
+      "object_b": "linebacker",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Ray_Lewis",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Ray Lewis played American football as a linebacker."
+      }
+    },
+    {
+      "subject": "Reggie White",
+      "object_a": "football",
+      "object_b": "defensive end",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Reggie_White",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Reggie White played American football as a defensive end."
+      }
+    },
+    {
+      "subject": "Tony Gonzalez",
+      "object_a": "football",
+      "object_b": "tight end",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Tony_Gonzalez",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Tony Gonzalez played American football as a tight end."
+      }
+    },
+    {
+      "subject": "Adam Vinatieri",
+      "object_a": "football",
+      "object_b": "placekicker",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Adam_Vinatieri",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Adam Vinatieri played American football as a placekicker."
+      }
+    },
+    {
+      "subject": "Michael Jordan",
+      "object_a": "basketball",
+      "object_b": "shooting guard",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Michael Jordan is universally recognized as an NBA shooting guard."
+      }
+    },
+    {
+      "subject": "Kobe Bryant",
+      "object_a": "basketball",
+      "object_b": "shooting guard",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Kobe_Bryant",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Kobe Bryant is universally recognized as an NBA shooting guard."
+      }
+    },
+    {
+      "subject": "Magic Johnson",
+      "object_a": "basketball",
+      "object_b": "point guard",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Magic_Johnson",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Magic Johnson is universally recognized as an NBA point guard."
+      }
+    },
+    {
+      "subject": "John Stockton",
+      "object_a": "basketball",
+      "object_b": "point guard",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/John_Stockton",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "John Stockton is universally recognized as an NBA point guard."
+      }
+    },
+    {
+      "subject": "Larry Bird",
+      "object_a": "basketball",
+      "object_b": "small forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Larry_Bird",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Larry Bird is universally recognized as an NBA small forward."
+      }
+    },
+    {
+      "subject": "Scottie Pippen",
+      "object_a": "basketball",
+      "object_b": "small forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Scottie_Pippen",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Scottie Pippen is universally recognized as an NBA small forward."
+      }
+    },
+    {
+      "subject": "Karl Malone",
+      "object_a": "basketball",
+      "object_b": "power forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Karl_Malone",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Karl Malone is universally recognized as an NBA power forward."
+      }
+    },
+    {
+      "subject": "Tim Duncan",
+      "object_a": "basketball",
+      "object_b": "power forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Tim_Duncan",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Tim Duncan is widely recognized as an NBA power forward."
+      }
+    },
+    {
+      "subject": "Shaquille O'Neal",
+      "object_a": "basketball",
+      "object_b": "center",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Shaquille_O%27Neal",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Shaquille O'Neal is universally recognized as an NBA center."
+      }
+    },
+    {
+      "subject": "Kareem Abdul-Jabbar",
+      "object_a": "basketball",
+      "object_b": "center",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Kareem_Abdul-Jabbar",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Kareem Abdul-Jabbar is universally recognized as an NBA center."
+      }
+    },
+    {
+      "subject": "Yao Ming",
+      "object_a": "basketball",
+      "object_b": "center",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Yao_Ming",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Yao Ming is a Chinese basketball player who played center."
+      }
+    },
+    {
+      "subject": "Lisa Leslie",
+      "object_a": "basketball",
+      "object_b": "center",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Lisa_Leslie",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Lisa Leslie is a renowned WNBA basketball player who played center."
+      }
+    },
+    {
+      "subject": "Sheryl Swoopes",
+      "object_a": "basketball",
+      "object_b": "forward",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Sheryl_Swoopes",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Sheryl Swoopes is a renowned WNBA basketball player who played forward."
+      }
+    },
+    {
+      "subject": "Lauren Jackson",
+      "object_a": "basketball",
+      "object_b": "power forward",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Lauren_Jackson",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Lauren Jackson is an Australian basketball player who played power forward."
+      }
+    },
+    {
+      "subject": "Babe Ruth",
+      "object_a": "baseball",
+      "object_b": "outfielder",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Babe_Ruth",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Babe Ruth is famous for his MLB career primarily as an outfielder."
+      }
+    },
+    {
+      "subject": "Hank Aaron",
+      "object_a": "baseball",
+      "object_b": "right fielder",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Hank_Aaron",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Hank Aaron is universally recognized as an MLB right fielder."
+      }
+    },
+    {
+      "subject": "Cy Young",
+      "object_a": "baseball",
+      "object_b": "pitcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Cy_Young",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Cy Young is universally recognized as a historic MLB pitcher."
+      }
+    },
+    {
+      "subject": "Nolan Ryan",
+      "object_a": "baseball",
+      "object_b": "pitcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Nolan_Ryan",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Nolan Ryan is universally recognized as an MLB pitcher."
+      }
+    },
+    {
+      "subject": "Sandy Koufax",
+      "object_a": "baseball",
+      "object_b": "pitcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Sandy_Koufax",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Sandy Koufax is universally recognized as an MLB pitcher."
+      }
+    },
+    {
+      "subject": "Mariano Rivera",
+      "object_a": "baseball",
+      "object_b": "pitcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Mariano_Rivera",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Mariano Rivera is universally recognized as an MLB pitcher."
+      }
+    },
+    {
+      "subject": "Johnny Bench",
+      "object_a": "baseball",
+      "object_b": "catcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Johnny_Bench",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Johnny Bench is universally recognized as an MLB catcher."
+      }
+    },
+    {
+      "subject": "Yogi Berra",
+      "object_a": "baseball",
+      "object_b": "catcher",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Yogi_Berra",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Yogi Berra is universally recognized as an MLB catcher."
+      }
+    },
+    {
+      "subject": "Cal Ripken Jr.",
+      "object_a": "baseball",
+      "object_b": "shortstop",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Cal_Ripken_Jr.",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Cal Ripken Jr. is universally recognized as an MLB shortstop."
+      }
+    },
+    {
+      "subject": "Derek Jeter",
+      "object_a": "baseball",
+      "object_b": "shortstop",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Derek_Jeter",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Derek Jeter is universally recognized as an MLB shortstop."
+      }
+    },
+    {
+      "subject": "Brooks Robinson",
+      "object_a": "baseball",
+      "object_b": "third baseman",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Brooks_Robinson",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Brooks Robinson is universally recognized as an MLB third baseman."
+      }
+    },
+    {
+      "subject": "Sadaharu Oh",
+      "object_a": "baseball",
+      "object_b": "first baseman",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Sadaharu_Oh",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Sadaharu Oh is a legendary Japanese professional baseball first baseman."
+      }
+    },
+    {
+      "subject": "Wayne Gretzky",
+      "object_a": "ice hockey",
+      "object_b": "centre",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Wayne_Gretzky",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Wayne Gretzky is universally recognized as an NHL ice hockey centre."
+      }
+    },
+    {
+      "subject": "Mario Lemieux",
+      "object_a": "ice hockey",
+      "object_b": "centre",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Mario_Lemieux",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Mario Lemieux is universally recognized as an NHL ice hockey centre."
+      }
+    },
+    {
+      "subject": "Gordie Howe",
+      "object_a": "ice hockey",
+      "object_b": "right wing",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Gordie_Howe",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Gordie Howe is universally recognized as an NHL ice hockey right wing."
+      }
+    },
+    {
+      "subject": "Maurice Richard",
+      "object_a": "ice hockey",
+      "object_b": "right wing",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Maurice_Richard",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Maurice Richard is universally recognized as an NHL ice hockey right wing."
+      }
+    },
+    {
+      "subject": "Bobby Orr",
+      "object_a": "ice hockey",
+      "object_b": "defenceman",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Bobby_Orr",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Bobby Orr is universally recognized as an NHL ice hockey defenceman."
+      }
+    },
+    {
+      "subject": "Nicklas Lidström",
+      "object_a": "ice hockey",
+      "object_b": "defenceman",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Nicklas_Lidstr%C3%B6m",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Nicklas Lidström is a Swedish NHL ice hockey defenceman."
+      }
+    },
+    {
+      "subject": "Vladislav Tretiak",
+      "object_a": "ice hockey",
+      "object_b": "goaltender",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Vladislav_Tretiak",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Vladislav Tretiak is a legendary ice hockey goaltender."
+      }
+    },
+    {
+      "subject": "Dominik Hašek",
+      "object_a": "ice hockey",
+      "object_b": "goaltender",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Dominik_Ha%C5%A1ek",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Dominik Hašek is a renowned ice hockey goaltender."
+      }
+    },
+    {
+      "subject": "Patrick Roy",
+      "object_a": "ice hockey",
+      "object_b": "goaltender",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Patrick_Roy",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Patrick Roy is a hall of fame ice hockey goaltender."
+      }
+    },
+    {
+      "subject": "Hayley Wickenheiser",
+      "object_a": "ice hockey",
+      "object_b": "centre",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Hayley_Wickenheiser",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Hayley Wickenheiser is a prominent retired Canadian ice hockey centre."
+      }
+    },
+    {
+      "subject": "Shane Warne",
+      "object_a": "cricket",
+      "object_b": "bowler",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Shane_Warne",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Shane Warne was an iconic cricket bowler."
+      }
+    },
+    {
+      "subject": "Glenn McGrath",
+      "object_a": "cricket",
+      "object_b": "bowler",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Glenn_McGrath",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Glenn McGrath is an acclaimed cricket fast bowler."
+      }
+    },
+    {
+      "subject": "Sachin Tendulkar",
+      "object_a": "cricket",
+      "object_b": "batsman",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Sachin_Tendulkar",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Sachin Tendulkar is a world-renowned cricket batsman."
+      }
+    },
+    {
+      "subject": "Brian Lara",
+      "object_a": "cricket",
+      "object_b": "batsman",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Brian_Lara",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Brian Lara is a legendary cricket batsman."
+      }
+    },
+    {
+      "subject": "Adam Gilchrist",
+      "object_a": "cricket",
+      "object_b": "wicket-keeper",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Adam_Gilchrist",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Adam Gilchrist is an iconic cricket wicket-keeper."
+      }
+    },
+    {
+      "subject": "Wasim Akram",
+      "object_a": "cricket",
+      "object_b": "bowler",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Wasim_Akram",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Wasim Akram is a celebrated cricket bowler."
+      }
+    },
+    {
+      "subject": "Jonny Wilkinson",
+      "object_a": "rugby",
+      "object_b": "fly-half",
+      "region": "Europe",
+      "source_url": "https://en.wikipedia.org/wiki/Jonny_Wilkinson",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Jonny Wilkinson is a famous retired English rugby fly-half."
+      }
+    },
+    {
+      "subject": "Dan Carter",
+      "object_a": "rugby",
+      "object_b": "fly-half",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Dan_Carter",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Dan Carter is a legendary New Zealand rugby fly-half."
+      }
+    },
+    {
+      "subject": "Richie McCaw",
+      "object_a": "rugby",
+      "object_b": "flanker",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Richie_McCaw",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Richie McCaw is a celebrated retired New Zealand rugby flanker."
+      }
+    },
+    {
+      "subject": "Jonah Lomu",
+      "object_a": "rugby",
+      "object_b": "wing",
+      "region": "Oceania",
+      "source_url": "https://en.wikipedia.org/wiki/Jonah_Lomu",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Jonah Lomu was an iconic New Zealand rugby wing."
+      }
+    },
+    {
+      "subject": "Karch Kiraly",
+      "object_a": "volleyball",
+      "object_b": "outside hitter",
+      "region": "North America",
+      "source_url": "https://en.wikipedia.org/wiki/Karch_Kiraly",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Karch Kiraly is an acclaimed volleyball outside hitter."
+      }
+    },
+    {
+      "subject": "Lang Ping",
+      "object_a": "volleyball",
+      "object_b": "outside hitter",
+      "region": "Asia",
+      "source_url": "https://en.wikipedia.org/wiki/Lang_Ping",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Lang Ping is a legendary Chinese volleyball outside hitter."
+      }
+    },
+    {
+      "subject": "Michel Platini",
+      "object_a": "soccer",
+      "object_b": "Midfielder",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Michel_Platini",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Michel Platini was a renowned French soccer midfielder."
+      }
+    },
+    {
+      "subject": "Iker Casillas",
+      "object_a": "soccer",
+      "object_b": "Goalkeeper",
+      "region": "Spain",
+      "source_url": "https://en.wikipedia.org/wiki/Iker_Casillas",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Iker Casillas is an acclaimed Spanish soccer goalkeeper."
+      }
+    },
+    {
+      "subject": "Paolo Maldini",
+      "object_a": "soccer",
+      "object_b": "Defender",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Paolo_Maldini",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Paolo Maldini is a legendary Italian soccer defender."
+      }
+    },
+    {
+      "subject": "Marta",
+      "object_a": "soccer",
+      "object_b": "Forward",
+      "region": "Brazil",
+      "source_url": "https://en.wikipedia.org/wiki/Marta_(footballer)",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Marta is an iconic Brazilian soccer forward."
+      }
+    },
+    {
+      "subject": "Carli Lloyd",
+      "object_a": "soccer",
+      "object_b": "Midfielder",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Carli_Lloyd",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Carli Lloyd is a well-known American soccer midfielder."
+      }
+    },
+    {
+      "subject": "Sun Wen",
+      "object_a": "soccer",
+      "object_b": "Forward",
+      "region": "China",
+      "source_url": "https://en.wikipedia.org/wiki/Sun_Wen_(footballer)",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Sun Wen is a celebrated Chinese soccer forward."
+      }
+    },
+    {
+      "subject": "Gianluigi Buffon",
+      "object_a": "soccer",
+      "object_b": "Goalkeeper",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Gianluigi_Buffon",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Gianluigi Buffon is a legendary Italian soccer goalkeeper."
+      }
+    },
+    {
+      "subject": "Homare Sawa",
+      "object_a": "soccer",
+      "object_b": "Midfielder",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Homare_Sawa",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Homare Sawa is an acclaimed Japanese soccer midfielder."
+      }
+    },
+    {
+      "subject": "Fabio Cannavaro",
+      "object_a": "soccer",
+      "object_b": "Defender",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Fabio_Cannavaro",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Fabio Cannavaro is a Ballon d'Or-winning Italian soccer defender."
+      }
+    },
+    {
+      "subject": "Christine Sinclair",
+      "object_a": "soccer",
+      "object_b": "Forward",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Christine_Sinclair",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Christine Sinclair is the all-time leading international goalscorer and soccer forward."
+      }
+    },
+    {
+      "subject": "Marco van Basten",
+      "object_a": "soccer",
+      "object_b": "Forward",
+      "region": "Netherlands",
+      "source_url": "https://en.wikipedia.org/wiki/Marco_van_Basten",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Marco van Basten is a celebrated Dutch soccer forward."
+      }
+    },
+    {
+      "subject": "Nadine Angerer",
+      "object_a": "soccer",
+      "object_b": "Goalkeeper",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Nadine_Angerer",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Nadine Angerer is a FIFA World Player of the Year winning soccer goalkeeper."
+      }
+    },
+    {
+      "subject": "Peyton Manning",
+      "object_a": "football",
+      "object_b": "Quarterback",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Peyton_Manning",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Peyton Manning is an NFL Hall of Fame football quarterback."
+      }
+    },
+    {
+      "subject": "Emmitt Smith",
+      "object_a": "football",
+      "object_b": "Running back",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Emmitt_Smith",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Emmitt Smith is the NFL all-time rushing leader and football running back."
+      }
+    },
+    {
+      "subject": "Brett Favre",
+      "object_a": "football",
+      "object_b": "Quarterback",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Brett_Favre",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Brett Favre is an NFL Hall of Fame football quarterback."
+      }
+    },
+    {
+      "subject": "Bruce Smith",
+      "object_a": "football",
+      "object_b": "Defensive end",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Bruce_Smith",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Bruce Smith is the NFL all-time sacks leader and football defensive end."
+      }
+    },
+    {
+      "subject": "Ed Reed",
+      "object_a": "football",
+      "object_b": "Safety",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Ed_Reed",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Ed Reed was a prominent American football safety in the NFL."
+      }
+    },
+    {
+      "subject": "Troy Polamalu",
+      "object_a": "football",
+      "object_b": "Safety",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Troy_Polamalu",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Troy Polamalu was a Hall of Fame American football safety in the NFL."
+      }
+    },
+    {
+      "subject": "Shannon Sharpe",
+      "object_a": "football",
+      "object_b": "Tight end",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Shannon_Sharpe",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Shannon Sharpe was a Hall of Fame American football tight end in the NFL."
+      }
+    },
+    {
+      "subject": "Anthony Munoz",
+      "object_a": "football",
+      "object_b": "Offensive tackle",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Anthony_Mu%C3%B1oz",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Anthony Muñoz was a Hall of Fame American football offensive tackle in the NFL."
+      }
+    },
+    {
+      "subject": "Champ Bailey",
+      "object_a": "football",
+      "object_b": "Cornerback",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Champ_Bailey",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Champ Bailey was a Hall of Fame American football cornerback in the NFL."
+      }
+    },
+    {
+      "subject": "Mike Singletary",
+      "object_a": "football",
+      "object_b": "Linebacker",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Mike_Singletary",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Mike Singletary was a Hall of Fame American football linebacker in the NFL."
+      }
+    },
+    {
+      "subject": "Marshall Faulk",
+      "object_a": "football",
+      "object_b": "Running back",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Marshall_Faulk",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Marshall Faulk was a Hall of Fame American football running back in the NFL."
+      }
+    },
+    {
+      "subject": "Morten Andersen",
+      "object_a": "football",
+      "object_b": "Placekicker",
+      "region": "Denmark",
+      "source_url": "https://en.wikipedia.org/wiki/Morten_Andersen",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Morten Andersen is a Danish Hall of Fame American football placekicker."
+      }
+    },
+    {
+      "subject": "Steve Nash",
+      "object_a": "basketball",
+      "object_b": "Point guard",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Steve_Nash",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Steve Nash is a Canadian Hall of Fame basketball point guard."
+      }
+    },
+    {
+      "subject": "Dirk Nowitzki",
+      "object_a": "basketball",
+      "object_b": "Power forward",
+      "region": "Germany",
+      "source_url": "https://en.wikipedia.org/wiki/Dirk_Nowitzki",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Dirk Nowitzki is a German Hall of Fame basketball power forward."
+      }
+    },
+    {
+      "subject": "Hakeem Olajuwon",
+      "object_a": "basketball",
+      "object_b": "Center",
+      "region": "Nigeria",
+      "source_url": "https://en.wikipedia.org/wiki/Hakeem_Olajuwon",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "Hakeem Olajuwon is a Nigerian-American Hall of Fame basketball center."
+      }
+    },
+    {
+      "subject": "Reggie Miller",
+      "object_a": "basketball",
+      "object_b": "Shooting guard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Reggie_Miller",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Reggie Miller is a Hall of Fame basketball shooting guard."
+      }
+    },
+    {
+      "subject": "Charles Barkley",
+      "object_a": "basketball",
+      "object_b": "Power forward",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Charles_Barkley",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Charles Barkley is a Hall of Fame basketball power forward."
+      }
+    },
+    {
+      "subject": "Sue Bird",
+      "object_a": "basketball",
+      "object_b": "Point guard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Sue_Bird",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "Sue Bird is a celebrated professional basketball point guard."
+      }
+    },
+    {
+      "subject": "Cynthia Cooper-Dyke",
+      "object_a": "basketball",
+      "object_b": "Shooting guard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Cynthia_Cooper-Dyke",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Cynthia Cooper-Dyke is a Hall of Fame basketball shooting guard."
+      }
+    },
+    {
+      "subject": "Penny Taylor",
+      "object_a": "basketball",
+      "object_b": "Forward",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Penny_Taylor",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Penny Taylor is an Australian professional basketball forward."
+      }
+    },
+    {
+      "subject": "Dikembe Mutombo",
+      "object_a": "basketball",
+      "object_b": "Center",
+      "region": "Democratic Republic of the Congo",
+      "source_url": "https://en.wikipedia.org/wiki/Dikembe_Mutombo",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Dikembe Mutombo was a Congolese Hall of Fame basketball center."
+      }
+    },
+    {
+      "subject": "Patrick Ewing",
+      "object_a": "basketball",
+      "object_b": "Center",
+      "region": "Jamaica",
+      "source_url": "https://en.wikipedia.org/wiki/Patrick_Ewing",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Patrick Ewing is a Jamaican-American Hall of Fame basketball center."
+      }
+    },
+    {
+      "subject": "Gary Payton",
+      "object_a": "basketball",
+      "object_b": "Point guard",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Gary_Payton",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Gary Payton is a Hall of Fame basketball point guard."
+      }
+    },
+    {
+      "subject": "Tamika Catchings",
+      "object_a": "basketball",
+      "object_b": "Small forward",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Tamika_Catchings",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Tamika Catchings is a Hall of Fame basketball small forward."
+      }
+    },
+    {
+      "subject": "Barry Bonds",
+      "object_a": "baseball",
+      "object_b": "Outfielder",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Barry_Bonds",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Barry Bonds was a professional baseball outfielder in MLB."
+      }
+    },
+    {
+      "subject": "Ken Griffey Jr.",
+      "object_a": "baseball",
+      "object_b": "Outfielder",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Ken_Griffey_Jr.",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Ken Griffey Jr. is a Hall of Fame baseball outfielder in MLB."
+      }
+    },
+    {
+      "subject": "Pedro Martinez",
+      "object_a": "baseball",
+      "object_b": "Pitcher",
+      "region": "Dominican Republic",
+      "source_url": "https://en.wikipedia.org/wiki/Pedro_Martinez",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Pedro Martínez is a Dominican Hall of Fame baseball pitcher in MLB."
+      }
+    },
+    {
+      "subject": "Randy Johnson",
+      "object_a": "baseball",
+      "object_b": "Pitcher",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Randy_Johnson",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Randy Johnson is a Hall of Fame baseball pitcher in MLB."
+      }
+    },
+    {
+      "subject": "Greg Maddux",
+      "object_a": "baseball",
+      "object_b": "Pitcher",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Greg_Maddux",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Greg Maddux is a Hall of Fame baseball pitcher in MLB."
+      }
+    },
+    {
+      "subject": "Mike Piazza",
+      "object_a": "baseball",
+      "object_b": "Catcher",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Mike_Piazza",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Mike Piazza is a Hall of Fame baseball catcher in MLB."
+      }
+    },
+    {
+      "subject": "Ichiro Suzuki",
+      "object_a": "baseball",
+      "object_b": "Outfielder",
+      "region": "Japan",
+      "source_url": "https://en.wikipedia.org/wiki/Ichiro_Suzuki",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Ichiro Suzuki is a Japanese baseball outfielder with a storied MLB career."
+      }
+    },
+    {
+      "subject": "Ozzie Smith",
+      "object_a": "baseball",
+      "object_b": "Shortstop",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Ozzie_Smith",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Ozzie Smith is a Hall of Fame baseball shortstop in MLB."
+      }
+    },
+    {
+      "subject": "Ryne Sandberg",
+      "object_a": "baseball",
+      "object_b": "Second baseman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Ryne_Sandberg",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Ryne Sandberg is a Hall of Fame baseball second baseman in MLB."
+      }
+    },
+    {
+      "subject": "Lou Gehrig",
+      "object_a": "baseball",
+      "object_b": "First baseman",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Lou_Gehrig",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Lou Gehrig was a Hall of Fame baseball first baseman in MLB."
+      }
+    },
+    {
+      "subject": "Jaromir Jagr",
+      "object_a": "ice hockey",
+      "object_b": "Right wing",
+      "region": "Czech Republic",
+      "source_url": "https://en.wikipedia.org/wiki/Jarom%C3%ADr_J%C3%A1gr",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Jaromír Jágr is a Czech professional ice hockey right wing."
+      }
+    },
+    {
+      "subject": "Martin Brodeur",
+      "object_a": "ice hockey",
+      "object_b": "Goaltender",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Martin_Brodeur",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Martin Brodeur is a Canadian Hall of Fame ice hockey goaltender in the NHL."
+      }
+    },
+    {
+      "subject": "Ray Bourque",
+      "object_a": "ice hockey",
+      "object_b": "Defenceman",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Ray_Bourque",
+      "audit": {
+        "index": 0,
+        "verdict": "accept",
+        "reason": "Ray Bourque is a Hall of Fame Canadian ice hockey defenceman."
+      }
+    },
+    {
+      "subject": "Teemu Selanne",
+      "object_a": "ice hockey",
+      "object_b": "Right wing",
+      "region": "Finland",
+      "source_url": "https://en.wikipedia.org/wiki/Teemu_Sel%C3%A4nne",
+      "audit": {
+        "index": 1,
+        "verdict": "accept",
+        "reason": "Teemu Selanne is a Hall of Fame Finnish ice hockey right winger."
+      }
+    },
+    {
+      "subject": "Mark Messier",
+      "object_a": "ice hockey",
+      "object_b": "Centre",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Mark_Messier",
+      "audit": {
+        "index": 2,
+        "verdict": "accept",
+        "reason": "Mark Messier is a legendary Canadian ice hockey centre."
+      }
+    },
+    {
+      "subject": "Cammi Granato",
+      "object_a": "ice hockey",
+      "object_b": "Forward",
+      "region": "United States",
+      "source_url": "https://en.wikipedia.org/wiki/Cammi_Granato",
+      "audit": {
+        "index": 3,
+        "verdict": "accept",
+        "reason": "Cammi Granato is a Hall of Fame American ice hockey forward."
+      }
+    },
+    {
+      "subject": "Pavel Bure",
+      "object_a": "ice hockey",
+      "object_b": "Right wing",
+      "region": "Russia",
+      "source_url": "https://en.wikipedia.org/wiki/Pavel_Bure",
+      "audit": {
+        "index": 4,
+        "verdict": "accept",
+        "reason": "Pavel Bure is a Hall of Fame Russian ice hockey right winger."
+      }
+    },
+    {
+      "subject": "Denis Potvin",
+      "object_a": "ice hockey",
+      "object_b": "Defenceman",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Denis_Potvin",
+      "audit": {
+        "index": 5,
+        "verdict": "accept",
+        "reason": "Denis Potvin is a Hall of Fame Canadian ice hockey defenceman."
+      }
+    },
+    {
+      "subject": "Manon Rheaume",
+      "object_a": "ice hockey",
+      "object_b": "Goaltender",
+      "region": "Canada",
+      "source_url": "https://en.wikipedia.org/wiki/Manon_Rh%C3%A9aume",
+      "audit": {
+        "index": 6,
+        "verdict": "accept",
+        "reason": "Manon Rheaume is a renowned Canadian ice hockey goaltender."
+      }
+    },
+    {
+      "subject": "Peter Forsberg",
+      "object_a": "ice hockey",
+      "object_b": "Centre",
+      "region": "Sweden",
+      "source_url": "https://en.wikipedia.org/wiki/Peter_Forsberg",
+      "audit": {
+        "index": 7,
+        "verdict": "accept",
+        "reason": "Peter Forsberg is a Hall of Fame Swedish ice hockey centre."
+      }
+    },
+    {
+      "subject": "Brian O'Driscoll",
+      "object_a": "rugby",
+      "object_b": "Centre",
+      "region": "Ireland",
+      "source_url": "https://en.wikipedia.org/wiki/Brian_O%27Driscoll",
+      "audit": {
+        "index": 8,
+        "verdict": "accept",
+        "reason": "Brian O'Driscoll is a legendary Irish rugby union centre."
+      }
+    },
+    {
+      "subject": "Martin Johnson",
+      "object_a": "rugby",
+      "object_b": "Lock",
+      "region": "England",
+      "source_url": "https://en.wikipedia.org/wiki/Martin_Johnson_(rugby_union)",
+      "audit": {
+        "index": 9,
+        "verdict": "accept",
+        "reason": "Martin Johnson is a World Cup-winning English rugby union lock."
+      }
+    },
+    {
+      "subject": "George Gregan",
+      "object_a": "rugby",
+      "object_b": "Scrum-half",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/George_Gregan",
+      "audit": {
+        "index": 10,
+        "verdict": "accept",
+        "reason": "George Gregan is a former Australian rugby union scrum-half."
+      }
+    },
+    {
+      "subject": "Bryan Habana",
+      "object_a": "rugby",
+      "object_b": "Wing",
+      "region": "South Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Bryan_Habana",
+      "audit": {
+        "index": 11,
+        "verdict": "accept",
+        "reason": "Bryan Habana is a South African rugby union wing."
+      }
+    },
+    {
+      "subject": "Gareth Edwards",
+      "object_a": "rugby",
+      "object_b": "Scrum-half",
+      "region": "Wales",
+      "source_url": "https://en.wikipedia.org/wiki/Gareth_Edwards",
+      "audit": {
+        "index": 12,
+        "verdict": "accept",
+        "reason": "Gareth Edwards is a legendary Welsh rugby union scrum-half."
+      }
+    },
+    {
+      "subject": "John Eales",
+      "object_a": "rugby",
+      "object_b": "Lock",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/John_Eales",
+      "audit": {
+        "index": 13,
+        "verdict": "accept",
+        "reason": "John Eales is a World Cup-winning Australian rugby union lock."
+      }
+    },
+    {
+      "subject": "Sean Fitzpatrick",
+      "object_a": "rugby",
+      "object_b": "Hooker",
+      "region": "New Zealand",
+      "source_url": "https://en.wikipedia.org/wiki/Sean_Fitzpatrick",
+      "audit": {
+        "index": 14,
+        "verdict": "accept",
+        "reason": "Sean Fitzpatrick is a legendary New Zealand rugby union hooker."
+      }
+    },
+    {
+      "subject": "Serge Blanco",
+      "object_a": "rugby",
+      "object_b": "Fullback",
+      "region": "France",
+      "source_url": "https://en.wikipedia.org/wiki/Serge_Blanco",
+      "audit": {
+        "index": 15,
+        "verdict": "accept",
+        "reason": "Serge Blanco is a former French rugby union fullback."
+      }
+    },
+    {
+      "subject": "Maggie Alphonsi",
+      "object_a": "rugby",
+      "object_b": "Flanker",
+      "region": "England",
+      "source_url": "https://en.wikipedia.org/wiki/Maggie_Alphonsi",
+      "audit": {
+        "index": 16,
+        "verdict": "accept",
+        "reason": "Maggie Alphonsi is a World Cup-winning English rugby union flanker."
+      }
+    },
+    {
+      "subject": "Os du Randt",
+      "object_a": "rugby",
+      "object_b": "Prop",
+      "region": "South Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Os_du_Randt",
+      "audit": {
+        "index": 17,
+        "verdict": "accept",
+        "reason": "Os du Randt is a two-time World Cup-winning South African rugby union prop."
+      }
+    },
+    {
+      "subject": "Muttiah Muralitharan",
+      "object_a": "cricket",
+      "object_b": "Bowler",
+      "region": "Sri Lanka",
+      "source_url": "https://en.wikipedia.org/wiki/Muttiah_Muralitharan",
+      "audit": {
+        "index": 18,
+        "verdict": "accept",
+        "reason": "Muttiah Muralitharan is a legendary Sri Lankan cricket bowler."
+      }
+    },
+    {
+      "subject": "Ricky Ponting",
+      "object_a": "cricket",
+      "object_b": "Batter",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Ricky_Ponting",
+      "audit": {
+        "index": 19,
+        "verdict": "accept",
+        "reason": "Ricky Ponting is a legendary Australian cricket batter."
+      }
+    },
+    {
+      "subject": "Jacques Kallis",
+      "object_a": "cricket",
+      "object_b": "All-rounder",
+      "region": "South Africa",
+      "source_url": "https://en.wikipedia.org/wiki/Jacques_Kallis",
+      "audit": {
+        "index": 20,
+        "verdict": "accept",
+        "reason": "Jacques Kallis is a legendary South African cricket all-rounder."
+      }
+    },
+    {
+      "subject": "Kumar Sangakkara",
+      "object_a": "cricket",
+      "object_b": "Wicket-keeper",
+      "region": "Sri Lanka",
+      "source_url": "https://en.wikipedia.org/wiki/Kumar_Sangakkara",
+      "audit": {
+        "index": 21,
+        "verdict": "accept",
+        "reason": "Kumar Sangakkara is a Sri Lankan cricket wicket-keeper."
+      }
+    },
+    {
+      "subject": "Mithali Raj",
+      "object_a": "cricket",
+      "object_b": "Batter",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Mithali_Raj",
+      "audit": {
+        "index": 22,
+        "verdict": "accept",
+        "reason": "Mithali Raj is a record-setting Indian cricket batter."
+      }
+    },
+    {
+      "subject": "Jhulan Goswami",
+      "object_a": "cricket",
+      "object_b": "Bowler",
+      "region": "India",
+      "source_url": "https://en.wikipedia.org/wiki/Jhulan_Goswami",
+      "audit": {
+        "index": 23,
+        "verdict": "accept",
+        "reason": "Jhulan Goswami is a legendary Indian cricket bowler."
+      }
+    },
+    {
+      "subject": "Imran Khan",
+      "object_a": "cricket",
+      "object_b": "All-rounder",
+      "region": "Pakistan",
+      "source_url": "https://en.wikipedia.org/wiki/Imran_Khan",
+      "audit": {
+        "index": 24,
+        "verdict": "accept",
+        "reason": "Imran Khan is a World Cup-winning Pakistani cricket all-rounder."
+      }
+    },
+    {
+      "subject": "Allan Border",
+      "object_a": "cricket",
+      "object_b": "Batter",
+      "region": "Australia",
+      "source_url": "https://en.wikipedia.org/wiki/Allan_Border",
+      "audit": {
+        "index": 25,
+        "verdict": "accept",
+        "reason": "Allan Border is an Australian cricket batter and former captain."
+      }
+    },
+    {
+      "subject": "Giba",
+      "object_a": "volleyball",
+      "object_b": "Outside hitter",
+      "region": "Brazil",
+      "source_url": "https://en.wikipedia.org/wiki/Giba",
+      "audit": {
+        "index": 26,
+        "verdict": "accept",
+        "reason": "Giba is an Olympic champion Brazilian volleyball outside hitter."
+      }
+    },
+    {
+      "subject": "Mireya Luis",
+      "object_a": "volleyball",
+      "object_b": "Outside hitter",
+      "region": "Cuba",
+      "source_url": "https://en.wikipedia.org/wiki/Mireya_Luis",
+      "audit": {
+        "index": 27,
+        "verdict": "accept",
+        "reason": "Mireya Luis is a three-time Olympic gold medalist Cuban volleyball outside hitter."
+      }
+    },
+    {
+      "subject": "Andrea Giani",
+      "object_a": "volleyball",
+      "object_b": "Middle blocker",
+      "region": "Italy",
+      "source_url": "https://en.wikipedia.org/wiki/Andrea_Giani",
+      "audit": {
+        "index": 28,
+        "verdict": "accept",
+        "reason": "Andrea Giani is an Italian volleyball middle blocker and Hall of Famer."
+      }
+    },
+    {
+      "subject": "Sergio Santos",
+      "object_a": "volleyball",
+      "object_b": "Libero",
+      "region": "Brazil",
+      "source_url": "https://en.wikipedia.org/wiki/S%C3%A9rgio_Santos_(volleyball)",
+      "audit": {
+        "index": 29,
+        "verdict": "accept",
+        "reason": "Sergio Santos is a two-time Olympic champion Brazilian volleyball libero."
+      }
+    },
+    {
+      "subject": "Ekaterina Gamova",
+      "object_a": "volleyball",
+      "object_b": "Opposite hitter",
+      "region": "Russia",
+      "source_url": "https://en.wikipedia.org/wiki/Yekaterina_Gamova",
+      "audit": {
+        "index": 30,
+        "verdict": "accept",
+        "reason": "Ekaterina Gamova is a Russian volleyball opposite hitter."
+      }
+    },
+    {
+      "subject": "Nikola Grbic",
+      "object_a": "volleyball",
+      "object_b": "Setter",
+      "region": "Serbia",
+      "source_url": "https://en.wikipedia.org/wiki/Nikola_Grbi%C4%87",
+      "audit": {
+        "index": 31,
+        "verdict": "accept",
+        "reason": "Nikola Grbic is an Olympic champion Serbian volleyball setter."
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "row": {
+        "subject": "Deion Sanders",
+        "object_a": "football",
+        "object_b": "cornerback",
+        "region": "North America",
+        "source_url": "https://en.wikipedia.org/wiki/Deion_Sanders"
+      },
+      "reason": {
+        "index": 28,
+        "verdict": "reject",
+        "reason": "Deion Sanders was a prominent dual-sport professional athlete in both American football and Major League Baseball, violating the requirement for a single well-established main sport."
+      }
+    }
+  ]
+}

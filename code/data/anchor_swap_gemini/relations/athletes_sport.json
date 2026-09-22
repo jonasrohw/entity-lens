@@ -1,0 +1,787 @@
+{
+  "name": "athletes_sport",
+  "prompt_templates": [
+    "The sport played by {} is"
+  ],
+  "properties": {
+    "domain_name": "athletes"
+  },
+  "samples": [
+    {
+      "subject": "Randy Johnson",
+      "object": "baseball",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Ed Reed",
+      "object": "football",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Allan Border",
+      "object": "cricket",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Cy Young",
+      "object": "baseball",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Maurice Richard",
+      "object": "ice hockey",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Adam Gilchrist",
+      "object": "cricket",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Gianluigi Buffon",
+      "object": "soccer",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Lou Gehrig",
+      "object": "baseball",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Oliver Kahn",
+      "object": "soccer",
+      "split": "references"
+    },
+    {
+      "subject": "Richie McCaw",
+      "object": "rugby",
+      "split": "references"
+    },
+    {
+      "subject": "Yao Ming",
+      "object": "basketball",
+      "split": "references"
+    },
+    {
+      "subject": "Sue Bird",
+      "object": "basketball",
+      "split": "references"
+    },
+    {
+      "subject": "Morten Andersen",
+      "object": "football",
+      "split": "references"
+    },
+    {
+      "subject": "Shaquille O'Neal",
+      "object": "basketball",
+      "split": "references"
+    },
+    {
+      "subject": "Christine Sinclair",
+      "object": "soccer",
+      "split": "references"
+    },
+    {
+      "subject": "Franz Beckenbauer",
+      "object": "soccer",
+      "split": "references"
+    },
+    {
+      "subject": "Ray Bourque",
+      "object": "ice hockey",
+      "split": "validation"
+    },
+    {
+      "subject": "Reggie White",
+      "object": "football",
+      "split": "validation"
+    },
+    {
+      "subject": "Thierry Henry",
+      "object": "soccer",
+      "split": "validation"
+    },
+    {
+      "subject": "Tamika Catchings",
+      "object": "basketball",
+      "split": "validation"
+    },
+    {
+      "subject": "Mia Hamm",
+      "object": "soccer",
+      "split": "validation"
+    },
+    {
+      "subject": "Lisa Leslie",
+      "object": "basketball",
+      "split": "validation"
+    },
+    {
+      "subject": "John Stockton",
+      "object": "basketball",
+      "split": "validation"
+    },
+    {
+      "subject": "Lev Yashin",
+      "object": "soccer",
+      "split": "validation"
+    },
+    {
+      "subject": "Ray Lewis",
+      "object": "football",
+      "split": "validation"
+    },
+    {
+      "subject": "Gary Payton",
+      "object": "basketball",
+      "split": "validation"
+    },
+    {
+      "subject": "Andrea Pirlo",
+      "object": "soccer",
+      "split": "validation"
+    },
+    {
+      "subject": "Sergio Santos",
+      "object": "volleyball",
+      "split": "validation"
+    },
+    {
+      "subject": "Emmitt Smith",
+      "object": "football",
+      "split": "validation"
+    },
+    {
+      "subject": "Glenn McGrath",
+      "object": "cricket",
+      "split": "validation"
+    },
+    {
+      "subject": "Jaromir Jagr",
+      "object": "ice hockey",
+      "split": "validation"
+    },
+    {
+      "subject": "Dirk Nowitzki",
+      "object": "basketball",
+      "split": "validation"
+    },
+    {
+      "subject": "Adam Vinatieri",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Tim Duncan",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Andrea Giani",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Bobby Orr",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Abby Wambach",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Reggie Miller",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Bobby Moore",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Dan Marino",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Brian O'Driscoll",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Penny Taylor",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Shane Warne",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Sadaharu Oh",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Michael Jordan",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Peter Forsberg",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "George Gregan",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Mariano Rivera",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Joe Montana",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Paolo Maldini",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Troy Polamalu",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Marco van Basten",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "John Eales",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Cammi Granato",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Kobe Bryant",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Dino Zoff",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Dikembe Mutombo",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Ken Griffey Jr.",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Teemu Selanne",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Fabio Cannavaro",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Nikola Grbic",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Peter Schmeichel",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Franco Baresi",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Roberto Carlos",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Hope Solo",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Sun Wen",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Tony Gonzalez",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Cafu",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Peyton Manning",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Karl Malone",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Champ Bailey",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Imran Khan",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Jhulan Goswami",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Serge Blanco",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Martin Johnson",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Nadine Angerer",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Muttiah Muralitharan",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Jonny Wilkinson",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Bruce Smith",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Brett Favre",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Nicklas Lidström",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Wayne Gretzky",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Michel Platini",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Bryan Habana",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Kareem Abdul-Jabbar",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Pedro Martinez",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Dominik Hašek",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Ekaterina Gamova",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Pelé",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Anthony Munoz",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Denis Potvin",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Hayley Wickenheiser",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Maggie Alphonsi",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Lauren Jackson",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Iker Casillas",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Barry Bonds",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Mario Lemieux",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Jerry Rice",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Patrick Roy",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Greg Maddux",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Brian Lara",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Hank Aaron",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Ozzie Smith",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Mike Singletary",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Carli Lloyd",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Johnny Bench",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Mireya Luis",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Charles Barkley",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Brooks Robinson",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Babe Ruth",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Marta",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Zinedine Zidane",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Sandy Koufax",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Ronaldo Nazário",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Barry Sanders",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Lawrence Taylor",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Scottie Pippen",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Patrick Ewing",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Dan Carter",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Shannon Sharpe",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Wasim Akram",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Cynthia Cooper-Dyke",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Ricky Ponting",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Kumar Sangakkara",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Sachin Tendulkar",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Derek Jeter",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Marshall Faulk",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Walter Payton",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Steve Nash",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Hakeem Olajuwon",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Sheryl Swoopes",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Pavel Bure",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Yogi Berra",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Vladislav Tretiak",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Larry Bird",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Birgit Prinz",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Lang Ping",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Gordie Howe",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Sean Fitzpatrick",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Manon Rheaume",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Randy Moss",
+      "object": "football",
+      "split": "test"
+    },
+    {
+      "subject": "Martin Brodeur",
+      "object": "ice hockey",
+      "split": "test"
+    },
+    {
+      "subject": "Karch Kiraly",
+      "object": "volleyball",
+      "split": "test"
+    },
+    {
+      "subject": "Jonah Lomu",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Cal Ripken Jr.",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Homare Sawa",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Mithali Raj",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Mike Piazza",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Magic Johnson",
+      "object": "basketball",
+      "split": "test"
+    },
+    {
+      "subject": "Jacques Kallis",
+      "object": "cricket",
+      "split": "test"
+    },
+    {
+      "subject": "Diego Maradona",
+      "object": "soccer",
+      "split": "test"
+    },
+    {
+      "subject": "Os du Randt",
+      "object": "rugby",
+      "split": "test"
+    },
+    {
+      "subject": "Ryne Sandberg",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Ichiro Suzuki",
+      "object": "baseball",
+      "split": "test"
+    },
+    {
+      "subject": "Nolan Ryan",
+      "object": "baseball",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

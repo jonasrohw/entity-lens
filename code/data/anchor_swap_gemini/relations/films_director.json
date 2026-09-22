@@ -1,0 +1,637 @@
+{
+  "name": "films_director",
+  "prompt_templates": [
+    "The director of the film {} is"
+  ],
+  "properties": {
+    "domain_name": "films"
+  },
+  "samples": [
+    {
+      "subject": "Amélie",
+      "object": "Jean-Pierre Jeunet",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Alien",
+      "object": "Ridley Scott",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "The Pianist",
+      "object": "Roman Polanski",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Ran",
+      "object": "Akira Kurosawa",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Saving Private Ryan",
+      "object": "Steven Spielberg",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Three Colours: Blue",
+      "object": "Krzysztof Kieślowski",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Hana-bi",
+      "object": "Takeshi Kitano",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "The Spy Who Loved Me",
+      "object": "Lewis Gilbert",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "North by Northwest",
+      "object": "Alfred Hitchcock",
+      "split": "references"
+    },
+    {
+      "subject": "All About My Mother",
+      "object": "Pedro Almodóvar",
+      "split": "references"
+    },
+    {
+      "subject": "The Piano",
+      "object": "Jane Campion",
+      "split": "references"
+    },
+    {
+      "subject": "Dead Ringers",
+      "object": "David Cronenberg",
+      "split": "references"
+    },
+    {
+      "subject": "Skyfall",
+      "object": "Sam Mendes",
+      "split": "references"
+    },
+    {
+      "subject": "A Beautiful Mind",
+      "object": "Ron Howard",
+      "split": "references"
+    },
+    {
+      "subject": "Vertigo",
+      "object": "Alfred Hitchcock",
+      "split": "references"
+    },
+    {
+      "subject": "Grave of the Fireflies",
+      "object": "Isao Takahata",
+      "split": "references"
+    },
+    {
+      "subject": "Lagaan",
+      "object": "Ashutosh Gowariker",
+      "split": "validation"
+    },
+    {
+      "subject": "Harry Potter and the Philosopher's Stone",
+      "object": "Chris Columbus",
+      "split": "validation"
+    },
+    {
+      "subject": "Avatar",
+      "object": "James Cameron",
+      "split": "validation"
+    },
+    {
+      "subject": "The Third Man",
+      "object": "Carol Reed",
+      "split": "validation"
+    },
+    {
+      "subject": "Lawrence of Arabia",
+      "object": "David Lean",
+      "split": "validation"
+    },
+    {
+      "subject": "The 400 Blows",
+      "object": "François Truffaut",
+      "split": "validation"
+    },
+    {
+      "subject": "The Lord of the Rings: The Return of the King",
+      "object": "Peter Jackson",
+      "split": "validation"
+    },
+    {
+      "subject": "Predator",
+      "object": "John McTiernan",
+      "split": "validation"
+    },
+    {
+      "subject": "The Tin Drum",
+      "object": "Volker Schlöndorff",
+      "split": "validation"
+    },
+    {
+      "subject": "Seven Samurai",
+      "object": "Akira Kurosawa",
+      "split": "validation"
+    },
+    {
+      "subject": "The Untouchables",
+      "object": "Brian De Palma",
+      "split": "validation"
+    },
+    {
+      "subject": "The Good, the Bad and the Ugly",
+      "object": "Sergio Leone",
+      "split": "validation"
+    },
+    {
+      "subject": "My Neighbor Totoro",
+      "object": "Hayao Miyazaki",
+      "split": "validation"
+    },
+    {
+      "subject": "The Cook, the Thief, His Wife & Her Lover",
+      "object": "Peter Greenaway",
+      "split": "validation"
+    },
+    {
+      "subject": "The Motorcycle Diaries",
+      "object": "Walter Salles",
+      "split": "validation"
+    },
+    {
+      "subject": "Raiders of the Lost Ark",
+      "object": "Steven Spielberg",
+      "split": "validation"
+    },
+    {
+      "subject": "The Umbrellas of Cherbourg",
+      "object": "Jacques Demy",
+      "split": "test"
+    },
+    {
+      "subject": "Rashomon",
+      "object": "Akira Kurosawa",
+      "split": "test"
+    },
+    {
+      "subject": "Back to the Future",
+      "object": "Robert Zemeckis",
+      "split": "test"
+    },
+    {
+      "subject": "Das Boot",
+      "object": "Wolfgang Petersen",
+      "split": "test"
+    },
+    {
+      "subject": "Glory",
+      "object": "Edward Zwick",
+      "split": "test"
+    },
+    {
+      "subject": "L.A. Confidential",
+      "object": "Curtis Hanson",
+      "split": "test"
+    },
+    {
+      "subject": "Three Colours: White",
+      "object": "Krzysztof Kieślowski",
+      "split": "test"
+    },
+    {
+      "subject": "Stalker",
+      "object": "Andrei Tarkovsky",
+      "split": "test"
+    },
+    {
+      "subject": "Doctor Zhivago",
+      "object": "David Lean",
+      "split": "test"
+    },
+    {
+      "subject": "Interstellar",
+      "object": "Christopher Nolan",
+      "split": "test"
+    },
+    {
+      "subject": "Aliens",
+      "object": "James Cameron",
+      "split": "test"
+    },
+    {
+      "subject": "Chariots of Fire",
+      "object": "Hugh Hudson",
+      "split": "test"
+    },
+    {
+      "subject": "Home Alone",
+      "object": "Chris Columbus",
+      "split": "test"
+    },
+    {
+      "subject": "Diamonds Are Forever",
+      "object": "Guy Hamilton",
+      "split": "test"
+    },
+    {
+      "subject": "Taxi Driver",
+      "object": "Martin Scorsese",
+      "split": "test"
+    },
+    {
+      "subject": "Pan's Labyrinth",
+      "object": "Guillermo del Toro",
+      "split": "test"
+    },
+    {
+      "subject": "Pather Panchali",
+      "object": "Satyajit Ray",
+      "split": "test"
+    },
+    {
+      "subject": "Goldfinger",
+      "object": "Guy Hamilton",
+      "split": "test"
+    },
+    {
+      "subject": "The Lord of the Rings: The Two Towers",
+      "object": "Peter Jackson",
+      "split": "test"
+    },
+    {
+      "subject": "Metropolis",
+      "object": "Fritz Lang",
+      "split": "test"
+    },
+    {
+      "subject": "The Imitation Game",
+      "object": "Morten Tyldum",
+      "split": "test"
+    },
+    {
+      "subject": "1917",
+      "object": "Sam Mendes",
+      "split": "test"
+    },
+    {
+      "subject": "Once Upon a Time in America",
+      "object": "Sergio Leone",
+      "split": "test"
+    },
+    {
+      "subject": "The Abyss",
+      "object": "James Cameron",
+      "split": "test"
+    },
+    {
+      "subject": "8½",
+      "object": "Federico Fellini",
+      "split": "test"
+    },
+    {
+      "subject": "The Shape of Water",
+      "object": "Guillermo del Toro",
+      "split": "test"
+    },
+    {
+      "subject": "Apollo 13",
+      "object": "Ron Howard",
+      "split": "test"
+    },
+    {
+      "subject": "Wings of Desire",
+      "object": "Wim Wenders",
+      "split": "test"
+    },
+    {
+      "subject": "Volver",
+      "object": "Pedro Almodóvar",
+      "split": "test"
+    },
+    {
+      "subject": "E.T. the Extra-Terrestrial",
+      "object": "Steven Spielberg",
+      "split": "test"
+    },
+    {
+      "subject": "Farewell My Concubine",
+      "object": "Chen Kaige",
+      "split": "test"
+    },
+    {
+      "subject": "Jaws",
+      "object": "Steven Spielberg",
+      "split": "test"
+    },
+    {
+      "subject": "The Skin I Live In",
+      "object": "Pedro Almodóvar",
+      "split": "test"
+    },
+    {
+      "subject": "Inception",
+      "object": "Christopher Nolan",
+      "split": "test"
+    },
+    {
+      "subject": "Babe",
+      "object": "Chris Noonan",
+      "split": "test"
+    },
+    {
+      "subject": "28 Days Later",
+      "object": "Danny Boyle",
+      "split": "test"
+    },
+    {
+      "subject": "Schindler's List",
+      "object": "Steven Spielberg",
+      "split": "test"
+    },
+    {
+      "subject": "Howards End",
+      "object": "James Ivory",
+      "split": "test"
+    },
+    {
+      "subject": "Forrest Gump",
+      "object": "Robert Zemeckis",
+      "split": "test"
+    },
+    {
+      "subject": "Princess Mononoke",
+      "object": "Hayao Miyazaki",
+      "split": "test"
+    },
+    {
+      "subject": "Titanic",
+      "object": "James Cameron",
+      "split": "test"
+    },
+    {
+      "subject": "Jurassic Park",
+      "object": "Steven Spielberg",
+      "split": "test"
+    },
+    {
+      "subject": "Once Upon a Time in the West",
+      "object": "Sergio Leone",
+      "split": "test"
+    },
+    {
+      "subject": "The Empire Strikes Back",
+      "object": "Irvin Kershner",
+      "split": "test"
+    },
+    {
+      "subject": "Life Is Beautiful",
+      "object": "Roberto Benigni",
+      "split": "test"
+    },
+    {
+      "subject": "Memories of Murder",
+      "object": "Bong Joon-ho",
+      "split": "test"
+    },
+    {
+      "subject": "Spectre",
+      "object": "Sam Mendes",
+      "split": "test"
+    },
+    {
+      "subject": "The Bridge on the River Kwai",
+      "object": "David Lean",
+      "split": "test"
+    },
+    {
+      "subject": "The Godfather",
+      "object": "Francis Ford Coppola",
+      "split": "test"
+    },
+    {
+      "subject": "Gone with the Wind",
+      "object": "Victor Fleming",
+      "split": "test"
+    },
+    {
+      "subject": "Kagemusha",
+      "object": "Akira Kurosawa",
+      "split": "test"
+    },
+    {
+      "subject": "The Theory of Everything",
+      "object": "James Marsh",
+      "split": "test"
+    },
+    {
+      "subject": "Terminator 2: Judgment Day",
+      "object": "James Cameron",
+      "split": "test"
+    },
+    {
+      "subject": "The Draughtsman's Contract",
+      "object": "Peter Greenaway",
+      "split": "test"
+    },
+    {
+      "subject": "Cast Away",
+      "object": "Robert Zemeckis",
+      "split": "test"
+    },
+    {
+      "subject": "Close Encounters of the Third Kind",
+      "object": "Steven Spielberg",
+      "split": "test"
+    },
+    {
+      "subject": "The Terminator",
+      "object": "James Cameron",
+      "split": "test"
+    },
+    {
+      "subject": "The Grand Budapest Hotel",
+      "object": "Wes Anderson",
+      "split": "test"
+    },
+    {
+      "subject": "The Double Life of Véronique",
+      "object": "Krzysztof Kieślowski",
+      "split": "test"
+    },
+    {
+      "subject": "GoldenEye",
+      "object": "Martin Campbell",
+      "split": "test"
+    },
+    {
+      "subject": "A Fistful of Dollars",
+      "object": "Sergio Leone",
+      "split": "test"
+    },
+    {
+      "subject": "Chinatown",
+      "object": "Roman Polanski",
+      "split": "test"
+    },
+    {
+      "subject": "For a Few Dollars More",
+      "object": "Sergio Leone",
+      "split": "test"
+    },
+    {
+      "subject": "House of Flying Daggers",
+      "object": "Zhang Yimou",
+      "split": "test"
+    },
+    {
+      "subject": "Talk to Her",
+      "object": "Pedro Almodóvar",
+      "split": "test"
+    },
+    {
+      "subject": "Léon: The Professional",
+      "object": "Luc Besson",
+      "split": "test"
+    },
+    {
+      "subject": "Edward Scissorhands",
+      "object": "Tim Burton",
+      "split": "test"
+    },
+    {
+      "subject": "Merry Christmas, Mr. Lawrence",
+      "object": "Nagisa Oshima",
+      "split": "test"
+    },
+    {
+      "subject": "You Only Live Twice",
+      "object": "Lewis Gilbert",
+      "split": "test"
+    },
+    {
+      "subject": "Roja",
+      "object": "Mani Ratnam",
+      "split": "test"
+    },
+    {
+      "subject": "Beetlejuice",
+      "object": "Tim Burton",
+      "split": "test"
+    },
+    {
+      "subject": "Basic Instinct",
+      "object": "Paul Verhoeven",
+      "split": "test"
+    },
+    {
+      "subject": "The Remains of the Day",
+      "object": "James Ivory",
+      "split": "test"
+    },
+    {
+      "subject": "Three Colours: Red",
+      "object": "Krzysztof Kieślowski",
+      "split": "test"
+    },
+    {
+      "subject": "La Dolce Vita",
+      "object": "Federico Fellini",
+      "split": "test"
+    },
+    {
+      "subject": "Blade Runner",
+      "object": "Ridley Scott",
+      "split": "test"
+    },
+    {
+      "subject": "The Queen",
+      "object": "Stephen Frears",
+      "split": "test"
+    },
+    {
+      "subject": "The King's Speech",
+      "object": "Tom Hooper",
+      "split": "test"
+    },
+    {
+      "subject": "Die Hard",
+      "object": "John McTiernan",
+      "split": "test"
+    },
+    {
+      "subject": "Crouching Tiger, Hidden Dragon",
+      "object": "Ang Lee",
+      "split": "test"
+    },
+    {
+      "subject": "Rear Window",
+      "object": "Alfred Hitchcock",
+      "split": "test"
+    },
+    {
+      "subject": "The Tale of the Princess Kaguya",
+      "object": "Isao Takahata",
+      "split": "test"
+    },
+    {
+      "subject": "The Silence of the Lambs",
+      "object": "Jonathan Demme",
+      "split": "test"
+    },
+    {
+      "subject": "127 Hours",
+      "object": "Danny Boyle",
+      "split": "test"
+    },
+    {
+      "subject": "Eastern Promises",
+      "object": "David Cronenberg",
+      "split": "test"
+    },
+    {
+      "subject": "The Fifth Element",
+      "object": "Luc Besson",
+      "split": "test"
+    },
+    {
+      "subject": "Howl's Moving Castle",
+      "object": "Hayao Miyazaki",
+      "split": "test"
+    },
+    {
+      "subject": "Yojimbo",
+      "object": "Akira Kurosawa",
+      "split": "test"
+    },
+    {
+      "subject": "Spirited Away",
+      "object": "Hayao Miyazaki",
+      "split": "test"
+    },
+    {
+      "subject": "Dances with Wolves",
+      "object": "Kevin Costner",
+      "split": "test"
+    },
+    {
+      "subject": "The Sixth Sense",
+      "object": "M. Night Shyamalan",
+      "split": "test"
+    },
+    {
+      "subject": "The Lord of the Rings: The Fellowship of the Ring",
+      "object": "Peter Jackson",
+      "split": "test"
+    },
+    {
+      "subject": "The Handmaiden",
+      "object": "Park Chan-wook",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

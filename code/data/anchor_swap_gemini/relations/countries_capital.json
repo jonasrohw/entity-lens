@@ -1,0 +1,727 @@
+{
+  "name": "countries_capital",
+  "prompt_templates": [
+    "The capital city of {} is"
+  ],
+  "properties": {
+    "domain_name": "countries"
+  },
+  "samples": [
+    {
+      "subject": "Palau",
+      "object": "Ngerulmud",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Lithuania",
+      "object": "Vilnius",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Iraq",
+      "object": "Baghdad",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Greece",
+      "object": "Athens",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Kuwait",
+      "object": "Kuwait City",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Maldives",
+      "object": "Male",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Japan",
+      "object": "Tokyo",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Armenia",
+      "object": "Yerevan",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Denmark",
+      "object": "Copenhagen",
+      "split": "references"
+    },
+    {
+      "subject": "Guatemala",
+      "object": "Guatemala City",
+      "split": "references"
+    },
+    {
+      "subject": "Eritrea",
+      "object": "Asmara",
+      "split": "references"
+    },
+    {
+      "subject": "Estonia",
+      "object": "Tallinn",
+      "split": "references"
+    },
+    {
+      "subject": "Colombia",
+      "object": "Bogota",
+      "split": "references"
+    },
+    {
+      "subject": "Bangladesh",
+      "object": "Dhaka",
+      "split": "references"
+    },
+    {
+      "subject": "Poland",
+      "object": "Warsaw",
+      "split": "references"
+    },
+    {
+      "subject": "Vietnam",
+      "object": "Hanoi",
+      "split": "references"
+    },
+    {
+      "subject": "Argentina",
+      "object": "Buenos Aires",
+      "split": "validation"
+    },
+    {
+      "subject": "Ecuador",
+      "object": "Quito",
+      "split": "validation"
+    },
+    {
+      "subject": "Brazil",
+      "object": "Brasilia",
+      "split": "validation"
+    },
+    {
+      "subject": "Liechtenstein",
+      "object": "Vaduz",
+      "split": "validation"
+    },
+    {
+      "subject": "Democratic Republic of the Congo",
+      "object": "Kinshasa",
+      "split": "validation"
+    },
+    {
+      "subject": "Mauritania",
+      "object": "Nouakchott",
+      "split": "validation"
+    },
+    {
+      "subject": "Jordan",
+      "object": "Amman",
+      "split": "validation"
+    },
+    {
+      "subject": "Latvia",
+      "object": "Riga",
+      "split": "validation"
+    },
+    {
+      "subject": "Czech Republic",
+      "object": "Prague",
+      "split": "validation"
+    },
+    {
+      "subject": "Belgium",
+      "object": "Brussels",
+      "split": "validation"
+    },
+    {
+      "subject": "Chad",
+      "object": "N'Djamena",
+      "split": "validation"
+    },
+    {
+      "subject": "Spain",
+      "object": "Madrid",
+      "split": "validation"
+    },
+    {
+      "subject": "Georgia",
+      "object": "Tbilisi",
+      "split": "validation"
+    },
+    {
+      "subject": "Kyrgyzstan",
+      "object": "Bishkek",
+      "split": "validation"
+    },
+    {
+      "subject": "Hungary",
+      "object": "Budapest",
+      "split": "validation"
+    },
+    {
+      "subject": "Ethiopia",
+      "object": "Addis Ababa",
+      "split": "validation"
+    },
+    {
+      "subject": "Libya",
+      "object": "Tripoli",
+      "split": "test"
+    },
+    {
+      "subject": "Rwanda",
+      "object": "Kigali",
+      "split": "test"
+    },
+    {
+      "subject": "Saudi Arabia",
+      "object": "Riyadh",
+      "split": "test"
+    },
+    {
+      "subject": "Malawi",
+      "object": "Lilongwe",
+      "split": "test"
+    },
+    {
+      "subject": "Iceland",
+      "object": "Reykjavik",
+      "split": "test"
+    },
+    {
+      "subject": "Senegal",
+      "object": "Dakar",
+      "split": "test"
+    },
+    {
+      "subject": "Thailand",
+      "object": "Bangkok",
+      "split": "test"
+    },
+    {
+      "subject": "Lebanon",
+      "object": "Beirut",
+      "split": "test"
+    },
+    {
+      "subject": "Egypt",
+      "object": "Cairo",
+      "split": "test"
+    },
+    {
+      "subject": "Mali",
+      "object": "Bamako",
+      "split": "test"
+    },
+    {
+      "subject": "Laos",
+      "object": "Vientiane",
+      "split": "test"
+    },
+    {
+      "subject": "Moldova",
+      "object": "Chisinau",
+      "split": "test"
+    },
+    {
+      "subject": "Oman",
+      "object": "Muscat",
+      "split": "test"
+    },
+    {
+      "subject": "New Zealand",
+      "object": "Wellington",
+      "split": "test"
+    },
+    {
+      "subject": "Mozambique",
+      "object": "Maputo",
+      "split": "test"
+    },
+    {
+      "subject": "Comoros",
+      "object": "Moroni",
+      "split": "test"
+    },
+    {
+      "subject": "Guinea",
+      "object": "Conakry",
+      "split": "test"
+    },
+    {
+      "subject": "France",
+      "object": "Paris",
+      "split": "test"
+    },
+    {
+      "subject": "Barbados",
+      "object": "Bridgetown",
+      "split": "test"
+    },
+    {
+      "subject": "Solomon Islands",
+      "object": "Honiara",
+      "split": "test"
+    },
+    {
+      "subject": "Dominican Republic",
+      "object": "Santo Domingo",
+      "split": "test"
+    },
+    {
+      "subject": "Bahamas",
+      "object": "Nassau",
+      "split": "test"
+    },
+    {
+      "subject": "Australia",
+      "object": "Canberra",
+      "split": "test"
+    },
+    {
+      "subject": "Gabon",
+      "object": "Libreville",
+      "split": "test"
+    },
+    {
+      "subject": "Guyana",
+      "object": "Georgetown",
+      "split": "test"
+    },
+    {
+      "subject": "North Korea",
+      "object": "Pyongyang",
+      "split": "test"
+    },
+    {
+      "subject": "Austria",
+      "object": "Vienna",
+      "split": "test"
+    },
+    {
+      "subject": "Cyprus",
+      "object": "Nicosia",
+      "split": "test"
+    },
+    {
+      "subject": "Cape Verde",
+      "object": "Praia",
+      "split": "test"
+    },
+    {
+      "subject": "Central African Republic",
+      "object": "Bangui",
+      "split": "test"
+    },
+    {
+      "subject": "Samoa",
+      "object": "Apia",
+      "split": "test"
+    },
+    {
+      "subject": "Jamaica",
+      "object": "Kingston",
+      "split": "test"
+    },
+    {
+      "subject": "Cameroon",
+      "object": "Yaounde",
+      "split": "test"
+    },
+    {
+      "subject": "Serbia",
+      "object": "Belgrade",
+      "split": "test"
+    },
+    {
+      "subject": "Madagascar",
+      "object": "Antananarivo",
+      "split": "test"
+    },
+    {
+      "subject": "United Arab Emirates",
+      "object": "Abu Dhabi",
+      "split": "test"
+    },
+    {
+      "subject": "Niger",
+      "object": "Niamey",
+      "split": "test"
+    },
+    {
+      "subject": "Belize",
+      "object": "Belmopan",
+      "split": "test"
+    },
+    {
+      "subject": "Belarus",
+      "object": "Minsk",
+      "split": "test"
+    },
+    {
+      "subject": "Croatia",
+      "object": "Zagreb",
+      "split": "test"
+    },
+    {
+      "subject": "South Korea",
+      "object": "Seoul",
+      "split": "test"
+    },
+    {
+      "subject": "Portugal",
+      "object": "Lisbon",
+      "split": "test"
+    },
+    {
+      "subject": "Kenya",
+      "object": "Nairobi",
+      "split": "test"
+    },
+    {
+      "subject": "Guinea-Bissau",
+      "object": "Bissau",
+      "split": "test"
+    },
+    {
+      "subject": "Suriname",
+      "object": "Paramaribo",
+      "split": "test"
+    },
+    {
+      "subject": "Iran",
+      "object": "Tehran",
+      "split": "test"
+    },
+    {
+      "subject": "Albania",
+      "object": "Tirana",
+      "split": "test"
+    },
+    {
+      "subject": "Burkina Faso",
+      "object": "Ouagadougou",
+      "split": "test"
+    },
+    {
+      "subject": "Mexico",
+      "object": "Mexico City",
+      "split": "test"
+    },
+    {
+      "subject": "Switzerland",
+      "object": "Bern",
+      "split": "test"
+    },
+    {
+      "subject": "Republic of the Congo",
+      "object": "Brazzaville",
+      "split": "test"
+    },
+    {
+      "subject": "Mongolia",
+      "object": "Ulaanbaatar",
+      "split": "test"
+    },
+    {
+      "subject": "Antigua and Barbuda",
+      "object": "Saint John's",
+      "split": "test"
+    },
+    {
+      "subject": "Grenada",
+      "object": "Saint George's",
+      "split": "test"
+    },
+    {
+      "subject": "Qatar",
+      "object": "Doha",
+      "split": "test"
+    },
+    {
+      "subject": "Slovenia",
+      "object": "Ljubljana",
+      "split": "test"
+    },
+    {
+      "subject": "Micronesia",
+      "object": "Palikir",
+      "split": "test"
+    },
+    {
+      "subject": "Haiti",
+      "object": "Port-au-Prince",
+      "split": "test"
+    },
+    {
+      "subject": "Uganda",
+      "object": "Kampala",
+      "split": "test"
+    },
+    {
+      "subject": "Nepal",
+      "object": "Kathmandu",
+      "split": "test"
+    },
+    {
+      "subject": "Honduras",
+      "object": "Tegucigalpa",
+      "split": "test"
+    },
+    {
+      "subject": "Bahrain",
+      "object": "Manama",
+      "split": "test"
+    },
+    {
+      "subject": "Pakistan",
+      "object": "Islamabad",
+      "split": "test"
+    },
+    {
+      "subject": "Seychelles",
+      "object": "Victoria",
+      "split": "test"
+    },
+    {
+      "subject": "Philippines",
+      "object": "Manila",
+      "split": "test"
+    },
+    {
+      "subject": "Morocco",
+      "object": "Rabat",
+      "split": "test"
+    },
+    {
+      "subject": "Azerbaijan",
+      "object": "Baku",
+      "split": "test"
+    },
+    {
+      "subject": "Botswana",
+      "object": "Gaborone",
+      "split": "test"
+    },
+    {
+      "subject": "Norway",
+      "object": "Oslo",
+      "split": "test"
+    },
+    {
+      "subject": "China",
+      "object": "Beijing",
+      "split": "test"
+    },
+    {
+      "subject": "Germany",
+      "object": "Berlin",
+      "split": "test"
+    },
+    {
+      "subject": "Russia",
+      "object": "Moscow",
+      "split": "test"
+    },
+    {
+      "subject": "Italy",
+      "object": "Rome",
+      "split": "test"
+    },
+    {
+      "subject": "Uruguay",
+      "object": "Montevideo",
+      "split": "test"
+    },
+    {
+      "subject": "Dominica",
+      "object": "Roseau",
+      "split": "test"
+    },
+    {
+      "subject": "United Kingdom",
+      "object": "London",
+      "split": "test"
+    },
+    {
+      "subject": "Kazakhstan",
+      "object": "Astana",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Kitts and Nevis",
+      "object": "Basseterre",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Vincent and the Grenadines",
+      "object": "Kingstown",
+      "split": "test"
+    },
+    {
+      "subject": "Turkey",
+      "object": "Ankara",
+      "split": "test"
+    },
+    {
+      "subject": "Peru",
+      "object": "Lima",
+      "split": "test"
+    },
+    {
+      "subject": "Gambia",
+      "object": "Banjul",
+      "split": "test"
+    },
+    {
+      "subject": "Canada",
+      "object": "Ottawa",
+      "split": "test"
+    },
+    {
+      "subject": "Brunei",
+      "object": "Bandar Seri Begawan",
+      "split": "test"
+    },
+    {
+      "subject": "Papua New Guinea",
+      "object": "Port Moresby",
+      "split": "test"
+    },
+    {
+      "subject": "Slovakia",
+      "object": "Bratislava",
+      "split": "test"
+    },
+    {
+      "subject": "Saint Lucia",
+      "object": "Castries",
+      "split": "test"
+    },
+    {
+      "subject": "Tunisia",
+      "object": "Tunis",
+      "split": "test"
+    },
+    {
+      "subject": "Fiji",
+      "object": "Suva",
+      "split": "test"
+    },
+    {
+      "subject": "United States",
+      "object": "Washington",
+      "split": "test"
+    },
+    {
+      "subject": "North Macedonia",
+      "object": "Skopje",
+      "split": "test"
+    },
+    {
+      "subject": "Sweden",
+      "object": "Stockholm",
+      "split": "test"
+    },
+    {
+      "subject": "Angola",
+      "object": "Luanda",
+      "split": "test"
+    },
+    {
+      "subject": "Ghana",
+      "object": "Accra",
+      "split": "test"
+    },
+    {
+      "subject": "India",
+      "object": "New Delhi",
+      "split": "test"
+    },
+    {
+      "subject": "Ireland",
+      "object": "Dublin",
+      "split": "test"
+    },
+    {
+      "subject": "Costa Rica",
+      "object": "San Jose",
+      "split": "test"
+    },
+    {
+      "subject": "Andorra",
+      "object": "Andorra la Vella",
+      "split": "test"
+    },
+    {
+      "subject": "Romania",
+      "object": "Bucharest",
+      "split": "test"
+    },
+    {
+      "subject": "Finland",
+      "object": "Helsinki",
+      "split": "test"
+    },
+    {
+      "subject": "Montenegro",
+      "object": "Podgorica",
+      "split": "test"
+    },
+    {
+      "subject": "Afghanistan",
+      "object": "Kabul",
+      "split": "test"
+    },
+    {
+      "subject": "Zambia",
+      "object": "Lusaka",
+      "split": "test"
+    },
+    {
+      "subject": "Paraguay",
+      "object": "Asuncion",
+      "split": "test"
+    },
+    {
+      "subject": "Bosnia and Herzegovina",
+      "object": "Sarajevo",
+      "split": "test"
+    },
+    {
+      "subject": "Malta",
+      "object": "Valletta",
+      "split": "test"
+    },
+    {
+      "subject": "Indonesia",
+      "object": "Jakarta",
+      "split": "test"
+    },
+    {
+      "subject": "Algeria",
+      "object": "Algiers",
+      "split": "test"
+    },
+    {
+      "subject": "Mauritius",
+      "object": "Port Louis",
+      "split": "test"
+    },
+    {
+      "subject": "Marshall Islands",
+      "object": "Majuro",
+      "split": "test"
+    },
+    {
+      "subject": "Nigeria",
+      "object": "Abuja",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}

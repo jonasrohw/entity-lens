@@ -1,0 +1,637 @@
+{
+  "name": "films_composer",
+  "prompt_templates": [
+    "The composer of the original score for the film {} is"
+  ],
+  "properties": {
+    "domain_name": "films"
+  },
+  "samples": [
+    {
+      "subject": "Amélie",
+      "object": "Yann Tiersen",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Alien",
+      "object": "Jerry Goldsmith",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "The Pianist",
+      "object": "Wojciech Kilar",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Ran",
+      "object": "Toru Takemitsu",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Saving Private Ryan",
+      "object": "John Williams",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Three Colours: Blue",
+      "object": "Zbigniew Preisner",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "Hana-bi",
+      "object": "Joe Hisaishi",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "The Spy Who Loved Me",
+      "object": "Marvin Hamlisch",
+      "split": "demonstrations"
+    },
+    {
+      "subject": "North by Northwest",
+      "object": "Bernard Herrmann",
+      "split": "references"
+    },
+    {
+      "subject": "All About My Mother",
+      "object": "Alberto Iglesias",
+      "split": "references"
+    },
+    {
+      "subject": "The Piano",
+      "object": "Michael Nyman",
+      "split": "references"
+    },
+    {
+      "subject": "Dead Ringers",
+      "object": "Howard Shore",
+      "split": "references"
+    },
+    {
+      "subject": "Skyfall",
+      "object": "Thomas Newman",
+      "split": "references"
+    },
+    {
+      "subject": "A Beautiful Mind",
+      "object": "James Horner",
+      "split": "references"
+    },
+    {
+      "subject": "Vertigo",
+      "object": "Bernard Herrmann",
+      "split": "references"
+    },
+    {
+      "subject": "Grave of the Fireflies",
+      "object": "Michio Mamiya",
+      "split": "references"
+    },
+    {
+      "subject": "Lagaan",
+      "object": "A. R. Rahman",
+      "split": "validation"
+    },
+    {
+      "subject": "Harry Potter and the Philosopher's Stone",
+      "object": "John Williams",
+      "split": "validation"
+    },
+    {
+      "subject": "Avatar",
+      "object": "James Horner",
+      "split": "validation"
+    },
+    {
+      "subject": "The Third Man",
+      "object": "Anton Karas",
+      "split": "validation"
+    },
+    {
+      "subject": "Lawrence of Arabia",
+      "object": "Maurice Jarre",
+      "split": "validation"
+    },
+    {
+      "subject": "The 400 Blows",
+      "object": "Jean Constantin",
+      "split": "validation"
+    },
+    {
+      "subject": "The Lord of the Rings: The Return of the King",
+      "object": "Howard Shore",
+      "split": "validation"
+    },
+    {
+      "subject": "Predator",
+      "object": "Alan Silvestri",
+      "split": "validation"
+    },
+    {
+      "subject": "The Tin Drum",
+      "object": "Maurice Jarre",
+      "split": "validation"
+    },
+    {
+      "subject": "Seven Samurai",
+      "object": "Fumio Hayasaka",
+      "split": "validation"
+    },
+    {
+      "subject": "The Untouchables",
+      "object": "Ennio Morricone",
+      "split": "validation"
+    },
+    {
+      "subject": "The Good, the Bad and the Ugly",
+      "object": "Ennio Morricone",
+      "split": "validation"
+    },
+    {
+      "subject": "My Neighbor Totoro",
+      "object": "Joe Hisaishi",
+      "split": "validation"
+    },
+    {
+      "subject": "The Cook, the Thief, His Wife & Her Lover",
+      "object": "Michael Nyman",
+      "split": "validation"
+    },
+    {
+      "subject": "The Motorcycle Diaries",
+      "object": "Gustavo Santaolalla",
+      "split": "validation"
+    },
+    {
+      "subject": "Raiders of the Lost Ark",
+      "object": "John Williams",
+      "split": "validation"
+    },
+    {
+      "subject": "The Umbrellas of Cherbourg",
+      "object": "Michel Legrand",
+      "split": "test"
+    },
+    {
+      "subject": "Rashomon",
+      "object": "Fumio Hayasaka",
+      "split": "test"
+    },
+    {
+      "subject": "Back to the Future",
+      "object": "Alan Silvestri",
+      "split": "test"
+    },
+    {
+      "subject": "Das Boot",
+      "object": "Klaus Doldinger",
+      "split": "test"
+    },
+    {
+      "subject": "Glory",
+      "object": "James Horner",
+      "split": "test"
+    },
+    {
+      "subject": "L.A. Confidential",
+      "object": "Jerry Goldsmith",
+      "split": "test"
+    },
+    {
+      "subject": "Three Colours: White",
+      "object": "Zbigniew Preisner",
+      "split": "test"
+    },
+    {
+      "subject": "Stalker",
+      "object": "Eduard Artemyev",
+      "split": "test"
+    },
+    {
+      "subject": "Doctor Zhivago",
+      "object": "Maurice Jarre",
+      "split": "test"
+    },
+    {
+      "subject": "Interstellar",
+      "object": "Hans Zimmer",
+      "split": "test"
+    },
+    {
+      "subject": "Aliens",
+      "object": "James Horner",
+      "split": "test"
+    },
+    {
+      "subject": "Chariots of Fire",
+      "object": "Vangelis",
+      "split": "test"
+    },
+    {
+      "subject": "Home Alone",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "Diamonds Are Forever",
+      "object": "John Barry",
+      "split": "test"
+    },
+    {
+      "subject": "Taxi Driver",
+      "object": "Bernard Herrmann",
+      "split": "test"
+    },
+    {
+      "subject": "Pan's Labyrinth",
+      "object": "Javier Navarrete",
+      "split": "test"
+    },
+    {
+      "subject": "Pather Panchali",
+      "object": "Ravi Shankar",
+      "split": "test"
+    },
+    {
+      "subject": "Goldfinger",
+      "object": "John Barry",
+      "split": "test"
+    },
+    {
+      "subject": "The Lord of the Rings: The Two Towers",
+      "object": "Howard Shore",
+      "split": "test"
+    },
+    {
+      "subject": "Metropolis",
+      "object": "Gottfried Huppertz",
+      "split": "test"
+    },
+    {
+      "subject": "The Imitation Game",
+      "object": "Alexandre Desplat",
+      "split": "test"
+    },
+    {
+      "subject": "1917",
+      "object": "Thomas Newman",
+      "split": "test"
+    },
+    {
+      "subject": "Once Upon a Time in America",
+      "object": "Ennio Morricone",
+      "split": "test"
+    },
+    {
+      "subject": "The Abyss",
+      "object": "Alan Silvestri",
+      "split": "test"
+    },
+    {
+      "subject": "8½",
+      "object": "Nino Rota",
+      "split": "test"
+    },
+    {
+      "subject": "The Shape of Water",
+      "object": "Alexandre Desplat",
+      "split": "test"
+    },
+    {
+      "subject": "Apollo 13",
+      "object": "James Horner",
+      "split": "test"
+    },
+    {
+      "subject": "Wings of Desire",
+      "object": "Jürgen Knieper",
+      "split": "test"
+    },
+    {
+      "subject": "Volver",
+      "object": "Alberto Iglesias",
+      "split": "test"
+    },
+    {
+      "subject": "E.T. the Extra-Terrestrial",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "Farewell My Concubine",
+      "object": "Zhao Jiping",
+      "split": "test"
+    },
+    {
+      "subject": "Jaws",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "The Skin I Live In",
+      "object": "Alberto Iglesias",
+      "split": "test"
+    },
+    {
+      "subject": "Inception",
+      "object": "Hans Zimmer",
+      "split": "test"
+    },
+    {
+      "subject": "Babe",
+      "object": "Nigel Westlake",
+      "split": "test"
+    },
+    {
+      "subject": "28 Days Later",
+      "object": "John Murphy",
+      "split": "test"
+    },
+    {
+      "subject": "Schindler's List",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "Howards End",
+      "object": "Richard Robbins",
+      "split": "test"
+    },
+    {
+      "subject": "Forrest Gump",
+      "object": "Alan Silvestri",
+      "split": "test"
+    },
+    {
+      "subject": "Princess Mononoke",
+      "object": "Joe Hisaishi",
+      "split": "test"
+    },
+    {
+      "subject": "Titanic",
+      "object": "James Horner",
+      "split": "test"
+    },
+    {
+      "subject": "Jurassic Park",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "Once Upon a Time in the West",
+      "object": "Ennio Morricone",
+      "split": "test"
+    },
+    {
+      "subject": "The Empire Strikes Back",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "Life Is Beautiful",
+      "object": "Nicola Piovani",
+      "split": "test"
+    },
+    {
+      "subject": "Memories of Murder",
+      "object": "Taro Iwashiro",
+      "split": "test"
+    },
+    {
+      "subject": "Spectre",
+      "object": "Thomas Newman",
+      "split": "test"
+    },
+    {
+      "subject": "The Bridge on the River Kwai",
+      "object": "Malcolm Arnold",
+      "split": "test"
+    },
+    {
+      "subject": "The Godfather",
+      "object": "Nino Rota",
+      "split": "test"
+    },
+    {
+      "subject": "Gone with the Wind",
+      "object": "Max Steiner",
+      "split": "test"
+    },
+    {
+      "subject": "Kagemusha",
+      "object": "Shin'ichirō Ikebe",
+      "split": "test"
+    },
+    {
+      "subject": "The Theory of Everything",
+      "object": "Jóhann Jóhannsson",
+      "split": "test"
+    },
+    {
+      "subject": "Terminator 2: Judgment Day",
+      "object": "Brad Fiedel",
+      "split": "test"
+    },
+    {
+      "subject": "The Draughtsman's Contract",
+      "object": "Michael Nyman",
+      "split": "test"
+    },
+    {
+      "subject": "Cast Away",
+      "object": "Alan Silvestri",
+      "split": "test"
+    },
+    {
+      "subject": "Close Encounters of the Third Kind",
+      "object": "John Williams",
+      "split": "test"
+    },
+    {
+      "subject": "The Terminator",
+      "object": "Brad Fiedel",
+      "split": "test"
+    },
+    {
+      "subject": "The Grand Budapest Hotel",
+      "object": "Alexandre Desplat",
+      "split": "test"
+    },
+    {
+      "subject": "The Double Life of Véronique",
+      "object": "Zbigniew Preisner",
+      "split": "test"
+    },
+    {
+      "subject": "GoldenEye",
+      "object": "Éric Serra",
+      "split": "test"
+    },
+    {
+      "subject": "A Fistful of Dollars",
+      "object": "Ennio Morricone",
+      "split": "test"
+    },
+    {
+      "subject": "Chinatown",
+      "object": "Jerry Goldsmith",
+      "split": "test"
+    },
+    {
+      "subject": "For a Few Dollars More",
+      "object": "Ennio Morricone",
+      "split": "test"
+    },
+    {
+      "subject": "House of Flying Daggers",
+      "object": "Shigeru Umebayashi",
+      "split": "test"
+    },
+    {
+      "subject": "Talk to Her",
+      "object": "Alberto Iglesias",
+      "split": "test"
+    },
+    {
+      "subject": "Léon: The Professional",
+      "object": "Eric Serra",
+      "split": "test"
+    },
+    {
+      "subject": "Edward Scissorhands",
+      "object": "Danny Elfman",
+      "split": "test"
+    },
+    {
+      "subject": "Merry Christmas, Mr. Lawrence",
+      "object": "Ryuichi Sakamoto",
+      "split": "test"
+    },
+    {
+      "subject": "You Only Live Twice",
+      "object": "John Barry",
+      "split": "test"
+    },
+    {
+      "subject": "Roja",
+      "object": "A. R. Rahman",
+      "split": "test"
+    },
+    {
+      "subject": "Beetlejuice",
+      "object": "Danny Elfman",
+      "split": "test"
+    },
+    {
+      "subject": "Basic Instinct",
+      "object": "Jerry Goldsmith",
+      "split": "test"
+    },
+    {
+      "subject": "The Remains of the Day",
+      "object": "Richard Robbins",
+      "split": "test"
+    },
+    {
+      "subject": "Three Colours: Red",
+      "object": "Zbigniew Preisner",
+      "split": "test"
+    },
+    {
+      "subject": "La Dolce Vita",
+      "object": "Nino Rota",
+      "split": "test"
+    },
+    {
+      "subject": "Blade Runner",
+      "object": "Vangelis",
+      "split": "test"
+    },
+    {
+      "subject": "The Queen",
+      "object": "Alexandre Desplat",
+      "split": "test"
+    },
+    {
+      "subject": "The King's Speech",
+      "object": "Alexandre Desplat",
+      "split": "test"
+    },
+    {
+      "subject": "Die Hard",
+      "object": "Michael Kamen",
+      "split": "test"
+    },
+    {
+      "subject": "Crouching Tiger, Hidden Dragon",
+      "object": "Tan Dun",
+      "split": "test"
+    },
+    {
+      "subject": "Rear Window",
+      "object": "Franz Waxman",
+      "split": "test"
+    },
+    {
+      "subject": "The Tale of the Princess Kaguya",
+      "object": "Joe Hisaishi",
+      "split": "test"
+    },
+    {
+      "subject": "The Silence of the Lambs",
+      "object": "Howard Shore",
+      "split": "test"
+    },
+    {
+      "subject": "127 Hours",
+      "object": "A. R. Rahman",
+      "split": "test"
+    },
+    {
+      "subject": "Eastern Promises",
+      "object": "Howard Shore",
+      "split": "test"
+    },
+    {
+      "subject": "The Fifth Element",
+      "object": "Eric Serra",
+      "split": "test"
+    },
+    {
+      "subject": "Howl's Moving Castle",
+      "object": "Joe Hisaishi",
+      "split": "test"
+    },
+    {
+      "subject": "Yojimbo",
+      "object": "Masaru Sato",
+      "split": "test"
+    },
+    {
+      "subject": "Spirited Away",
+      "object": "Joe Hisaishi",
+      "split": "test"
+    },
+    {
+      "subject": "Dances with Wolves",
+      "object": "John Barry",
+      "split": "test"
+    },
+    {
+      "subject": "The Sixth Sense",
+      "object": "James Newton Howard",
+      "split": "test"
+    },
+    {
+      "subject": "The Lord of the Rings: The Fellowship of the Ring",
+      "object": "Howard Shore",
+      "split": "test"
+    },
+    {
+      "subject": "The Handmaiden",
+      "object": "Cho Young-wuk",
+      "split": "test"
+    }
+  ],
+  "split_manifest": "../manifest.json"
+}
