@@ -1,3 +1,6 @@
+<!-- edited 2026-09-20 14:37 — todo 4: the manuscript still reports pre-norm-fix numbers (rho 0.658 vs corrected 0.771) -->
+<!-- edited 2026-09-20 14:27 - todo 3 numbers updated to the norm-fixed run; conclusion unchanged -->
+<!-- edited 2026-09-18 15:52 — todo 3: the Discussion's rewriting motivates the lens algebraically, but cos(v,T)=0.17 -->
 <!-- edited 2026-09-18 15:00 — todo 2: direct subject-vs-relation evidence is thin after cutting the within-domain check -->
 <!-- edited 2026-09-18 14:47 — started; first item records the accepted risk of dropping the fact-level numbers -->
 
@@ -120,3 +123,98 @@ with mid-range faithfulness. Jonas's note in `../todos.txt` asks the same
 question from the other side --- *"if it were true that it's about the
 subject only, we could check for same subject different relationship and
 see if that holds?"* --- so this is wanted by more than one of us.
+
+---
+
+## 3. The lens motivation is algebraic, not mechanistic
+
+**Status: open, decide before submission. Raised 2026-09-18 by the affine
+decomposition experiment (`notes/affine-decomposition.md`).**
+
+The Discussion motivates the differential lens by the rewriting: the
+differencing "falls directly out of expressing the LRE as a constant plus
+a sum of $J_i(s-s_i)$ terms", and Eq. 4 is Eq. 3 "with the
+subject-independent anchor dropped and $\beta=1$".
+
+That is true as algebra. **It is false as a claim about the objects.**
+Measured on `country_capital_city` / `country_largest_city`, with lens and
+operator forced to the same layer, on the run with the final-norm bug
+fixed (`e2/affine_compare_L17_fixed.json`):
+
+- $\cos(v_e,\ T_r(e)) = +0.18$ --- above the 0.016 chance level for 4096
+  dimensions, but nowhere near interchangeable
+- the derived bridge $f'(x) = \beta x + A_r$ is **strictly worse than
+  predicting the anchor alone** (relative residual 0.874 vs 0.492 for
+  capital, 0.694 vs 0.374 for largest)
+
+The in-context prompt changes the local linear map enough that the
+neutral-prompt lens and the relation-fitted operator point in largely
+different directions. Norms are comparable ($\lVert v\rVert = 21.0$ vs
+$\lVert T\rVert \approx 15$), so this is about direction, not scale.
+
+These numbers survived the norm fix essentially unchanged (every cosine
+moved by under 0.01), so the conclusion does not rest on the bug.
+
+**The risk.** A reader who takes the rewriting mechanistically would
+predict $\cos(v, T) \approx 1$. Nothing in the paper says otherwise, and a
+referee who tries the composition would find what we found.
+
+**The fix is cheap and costs no claims.** Say that the rewriting is what
+*motivated* the construction, not that the lens approximates the
+operator's subject term. The empirical claim --- that a relation-agnostic
+readout predicts LRE faithfulness --- is untouched by this and stands on
+its own.
+
+**What we gain by saying it.** The same experiment produced a positive
+result worth having: the anchor carries the relation and the Jacobian term
+carries the subject ($\cos(T_a,T_b) = +0.718$, answer-independent). That
+is direct evidence for the title claim and speaks to todo 2. If the
+Discussion is rewritten anyway (the remaining enote says it is "a
+collection of content pieces"), both points can land together.
+
+---
+
+## 4. The manuscript still reports pre-norm-fix numbers
+
+**Status: open, and the most consequential item here. Found 2026-09-20
+while looking at `fig:main` labels for enote 3.**
+
+`lens.tex` reports $\rho = 0.658$ (S5, line ~297). That is
+`code/results/olmo-old` --- the run made **before** Adrian's final-norm
+double-application fix (`code/jlens/BUG-final-norm-twice.md`). The
+corrected run, `code/results/olmo`, gives $\rho = 0.771$
+($p = 1.6\times10^{-6}$ against $1.4\times10^{-4}$).
+
+`code/results/paper_figure_data.json` does not exist; the generator
+resolves `ROOT` from `JLENS_ROOT` at build time, so which run a figure
+comes from is a build-time choice and is not recorded in the figure. The
+committed `fig_iclr_agreement.pdf` is presumably `olmo-old` too, to match
+the text.
+
+**Why this is not merely a number to bump.** Several relations move enough
+to change what the prose says about them:
+
+| relation | olmo-old | olmo (fixed) |
+|---|---|---|
+| `name_gender` faithfulness | 0.667 | **0.333** |
+| `person_band_lead_singer` | 0.600 | 0.800 |
+| `star_constellation` | 0.420 | 0.500 |
+
+S7 cites `name_gender` as one of the three largest **positive** residuals
+($+0.29$, "faithful despite a low lens score", used to illustrate
+faithfulness-by-elimination on a two-answer relation). At 0.333 that
+example may no longer hold, and the residual ordering S7 is built around
+needs recomputing. Mean $|\Delta\text{faithfulness}|$ across 28 relations
+is 0.033 but the max is 0.333, so this is not a rounding-level update.
+
+**What it touches:** the headline $\rho$, the partial correlations, the
+residual tails in S7, `fig:main`, and every subject-level figure. The
+subject-level statistics themselves barely move (median AUC
+$0.689 \to 0.680$, median rank-rank $\rho$ $+0.198 \to +0.218$), so the
+conclusions hold --- it is the reported values and the worked examples
+that need to change.
+
+**Recommended order.** Re-run the figures and tables from
+`results/olmo`, then reread S5 and S7 for claims tied to specific
+relations. Doing this before the figure-labeling work of enote 3 avoids
+placing eleven labels against coordinates that then move.

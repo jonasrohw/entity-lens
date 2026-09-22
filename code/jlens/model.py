@@ -45,10 +45,10 @@ def resolve_final_norm(model):
 def final_logits(hidden, norm, unembedding, lm_bias=None, softcap=None):
     """Apply a final-norm module, then the unembedding, over the last dimension.
 
-    ``hidden`` may be a single vector or a batch; only its last axis is
-    normalized. Dispatches on the norm module's shape: RMSNorm (e.g.
-    Llama/OLMo/Gemma) has a weight only and no mean-centering; LayerNorm
-    (e.g. GPT-2/GPT-J) mean-centers and has both a weight and a bias.
+    ``hidden`` may be a single vector or a batch; the supplied module controls
+    normalization. Call the model's own module rather than inferring its
+    formula from the presence of a bias: Gemma2 RMSNorm uses ``1 + weight``,
+    and a bias-free LayerNorm must still subtract the mean.
 
     ``softcap`` applies Gemma-style final-logit softcapping,
     ``cap * tanh(logits / cap)``, after the unembedding matmul and any
@@ -56,20 +56,7 @@ def final_logits(hidden, norm, unembedding, lm_bias=None, softcap=None):
     order used by ``Gemma4ForCausalLM.forward``. ``None`` (the default, and
     the value on OLMo/GPT-J configs) skips this step entirely.
     """
-    weight = norm.weight.detach()
-    bias = getattr(norm, "bias", None)
-    if bias is not None:
-        eps = float(norm.eps)
-        mean = hidden.mean(dim=-1, keepdim=True)
-        var = hidden.var(dim=-1, unbiased=False, keepdim=True)
-        normed = (hidden - mean) / torch.sqrt(var + eps) * weight + bias.detach()
-    else:
-        eps = float(getattr(norm, "variance_epsilon", getattr(norm, "eps", 1e-5)))
-        normed = (
-            hidden
-            * torch.rsqrt(hidden.pow(2).mean(dim=-1, keepdim=True) + eps)
-            * weight
-        )
+    normed = norm(hidden)
     logits = normed.float() @ unembedding.T
     if lm_bias is not None:
         logits = logits + lm_bias

@@ -1,20 +1,20 @@
 {
-  "validated_at": "2026-09-22T09:21:03.307315+00:00",
+  "validated_at": "2026-09-22T09:31:17.094904+00:00",
   "models": 7,
   "relations": 175,
   "subject_rows": 10772,
   "correlation_records": 1114,
   "source_hashes_checked": 635,
   "tests": {
-    "command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 .venv/bin/python -m pytest tests/test_geva_baseline.py tests/test_splits.py tests/test_affine_beta.py tests/test_model_sweep.py -q",
-    "passed": 77,
+    "command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 .venv/bin/python -m pytest tests/test_readout_norm.py tests/test_geva_baseline.py tests/test_splits.py tests/test_affine_beta.py tests/test_model_sweep.py -q",
+    "passed": 79,
     "failed": 0,
-    "run_date": "2026-09-21; retained protocol tests, not rerun for the presentation-only update"
+    "run_date": "2026-09-22; merged implementation"
   },
   "lint": "All six maintained scripts pass Ruff checks and formatting",
   "builds": {
     "standalone_pages": 3,
-    "manuscript_pages": 15,
+    "manuscript_pages": 19,
     "overfull_boxes": 0,
     "undefined_references": 0
   },
@@ -30,10 +30,10 @@
     "code/results/shared_baselines/correlations.csv": "19c5fda10737905aeb282a45171b07e4835326ec25fd596f782edc849d9717e2",
     "code/results/shared_baselines/summary.json": "8ecdd4abc98a22f2a669aa58207ef4a216ef390794fce90b518c5bf366555cab",
     "code/results/shared_baselines/wikipedia_validation.json": "5d0cfffa7542c9c7ee72f3488d881ec506b29a96c7512f87b520fbcb8b0f51b8",
-    "code/results/shared_baselines/README.md": "4340c621034102c83e32925f7b8b09683efd29beb9149838c60bba6b78c57601",
-    "paper/shared_baselines.pdf": "93e0829f2576f4f5af64d0c94d3798c512fde0fb1f411c30f3ef5cbe03c81a7f",
-    "paper/lens.pdf": "6d4437f52c1016a899cc8b8f5458f8571aabbe34a86f239b55e766926ca49842",
-    "paper/appendix_shared_baselines.tex": "c119c22ac45aeac2e423941e2cd073519a3fa6af53538e7e1fb66444eec354f8",
+    "code/results/shared_baselines/README.md": "9dce78f6b69bb31cd030f2b05eee947da02286278f2278673e8b5770636843df",
+    "paper/shared_baselines.pdf": "048c6d9311f140b85785ce3cf2f6470e6075a74df7fa59b293b83bd6a1976c44",
+    "paper/lens.pdf": "11cccee68694f7e51c5dfc2bcf206ac5610e462a6d5988a605841ac43f690256",
+    "paper/appendix_shared_baselines.tex": "efb91ae86df4676103fe5f09bad72264f9b4060b3c2b0d5fd30a41c19f5800be",
     "paper/generated/shared_baselines/coverage.tex": "68f0c46852f5236108d27cb590609a1921165009dddfd73edd08165e78dfdcfe",
     "paper/generated/shared_baselines/relations_gemma2_9b.tex": "4152348d9f0aefe6f6beba18721bde6c8c2b2e45a2c028690e20c27e717375cc",
     "paper/generated/shared_baselines/relations_mistral7b.tex": "9a7a64d281a2af59f3d91a661613b19feab63363ec9eb76a1967383503af1a1e",
@@ -64,10 +64,10 @@
     "code/scripts/format_shared_baseline_tables.py": "6c03b7538a1618b31de426a55d73c04f043f243e67d918da88f9541f6217cad2",
     "paper/generated/shared_baselines/readout_comparison.tex": "69775dc0aec4cae63c6f6d8b7d01e444c27f6c4db994f93d5e542121fbabd312",
     "paper/generated/shared_baselines/olmo_frequencies.tex": "9778efbb915db665da5542d9fd9f721c3ab981e63bdbb1c201f5a2ca7b7da463",
-    "code/scripts/format_prompt_variation_table.py": "ab7fa78e5e0dcb5618c1f623efea11ca5c15d52441acda38c7204fad3af921d7",
+    "code/scripts/format_prompt_variation_table.py": "20e6c20c170ada9b036aa60f48d0599fbaceca41e54d45f8e0cda9ac1a2ae9e3",
     "paper/generated/shared_baselines/prompt_variations.tex": "fb092e32b328fe6570fdacddb0afba08ca31db165ee548997bd45ee12a5cc402",
     "paper/generated/shared_baselines/prompt_variations.csv": "d7c1c37e36190b9394e1a59f95f95a8287737f5d8f0e379dbb969d21311215ee",
-    "paper/generated/shared_baselines/prompt_variations_manifest.json": "93dd48637ec9b21ca99cbe010544d778002e88dd686f2cb379512514e34d4f99"
+    "paper/generated/shared_baselines/prompt_variations_manifest.json": "fe8acd93b9930d4ab009f4180c1db9dc7327e8bf60f25844a458e74e9d37b5df"
   },
   "presentation_update": "Three tables: five readouts, OLMo frequencies, and two-panel prompt variations; existing experimental measurements unchanged.",
   "presentation_validation": {
@@ -80,6 +80,13 @@
     "prompt_variants": 8,
     "prompt_models": 7,
     "prompt_correlations_recomputed": 30,
-    "prompt_source_hashes_checked": 885
+    "prompt_source_hashes_checked": 886
+  },
+  "merge_validation": {
+    "remote_commit": "4ca7130504179643d88a4facde0ec1de30f20d04",
+    "measurement_rerun": false,
+    "status": "Retained pre-merge results; Gemma2 readouts require rerun with corrected architecture-specific final normalization.",
+    "source_hashes_checked_note": "The 635-source full report check predates this merge; prompt source checks were rerun using archived executed model.py.",
+    "norm_regression_tests": "Gemma2 offset-weight RMSNorm and bias-free LayerNorm both pass."
   }
 }

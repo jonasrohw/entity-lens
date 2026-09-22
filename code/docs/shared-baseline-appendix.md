@@ -1,5 +1,12 @@
 # Current shared-split baseline appendix
 
+**Merge note, 22 September 2026:** These retained measurements predate the
+collaborator correction that calls each architecture's actual final-normalization
+module. In particular, Gemma2 readouts require a corrected rerun. The source
+snapshot in `provenance/executed_sources.json` preserves the executed
+implementation; validating its hashes does not validate the corrected code.
+The tables were not rerun as part of the Git synchronization.
+
 The PDF contains three tables: five readouts across all seven models,
 OLMo-only corpus-frequency results, and prompt variations. The prompt table
 collects eight Qwen templates and the seven-model newline comparison;

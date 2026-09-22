@@ -8,13 +8,13 @@ determines that variation and show it is substantially
 predictable from a readout that never sees the relation. We
 estimate a
 novel form of a
-Jacobian lens, the \emph{differential Jacobian lens}:
+Jacobian lens, the \emph{contrastive Jacobian lens}:
 instead of model outputs for
 ``France'', we instead
 contrastively predict outputs for ``France''
 that are not also outputs for ``Spain''.
 After estimating
-this differential Jacobian lens,
+this contrastive Jacobian lens,
 we measure how highly it ranks the model's answer
 for a
 relation 
@@ -23,7 +23,7 @@ information in estimation and prediction.
 Across
 28 relations of the LRE dataset on Olmo-3-7B this
 relation-agnostic score correlates with LRE faithfulness at
-$\rho = 0.66$ ($p <.01$).  This suggests that linear
+$\rho = 0.77$ ($p < 10^{-5}$).  This suggests that linear
 decodability may be largely a property of what a subject's
 representation already carries, rather than of the relation
 being decoded.

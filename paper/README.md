@@ -1,6 +1,6 @@
 # ICLR 2027 submission
 
-The current seven-model comparison is in
+The retained seven-model comparison is in
 [appendix_shared_baselines.tex](appendix_shared_baselines.tex), included as
 Appendix A. A separately readable [appendix PDF](shared_baselines.pdf) is built
 with `latexmk -pdf shared_baselines.tex`. Its tables cover the newline-prefixed
@@ -16,8 +16,12 @@ Regenerate the first two presentation tables with
 from this directory. The full numerical report and sensitivity analyses
 remain in the result files. The previous expanded appendix source is
 preserved under `archive/appendix_shared_baselines_expanded_2026-09-21.tex`.
-The existing main-text analyses are explicitly labelled historical; their
-figures have not been relabelled as measurements from the new configuration.
+The main text incorporates collaborator revisions, including the updated headline
+figure. The appendix experiments predate the final-normalization correction merged
+on 22 September 2026; Gemma2 readouts require a corrected rerun. Their exact
+measurement implementation is archived in the result provenance directory.
+The appendix explicitly records this limitation rather than presenting these
+measurements as validation of the merged implementation.
 
 The [curation and reproduction guide](../code/docs/shared-baseline-appendix.md)
 and [complete result tables](../code/results/shared_baselines/README.md) record

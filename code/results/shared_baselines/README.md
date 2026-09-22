@@ -1,5 +1,12 @@
 # Current shared-split baseline appendix
 
+**Merge note, 22 September 2026:** These retained measurements predate the
+collaborator correction that calls each architecture's actual final-normalization
+module. In particular, Gemma2 readouts require a corrected rerun. The source
+snapshot in `provenance/executed_sources.json` preserves the executed
+implementation; validating its hashes does not validate the corrected code.
+The tables were not rerun as part of the Git synchronization.
+
 All seven models, exact neutral template `\n{} is known for`, pinned revisions, fp32/eager, 25 relations each. Every statistic below is recomputed from retained current rows. Spearman is primary; Pearson, unadjusted p-values, and exact sample counts are also retained.
 
 [Paper appendix](../../../paper/appendix_shared_baselines.tex) · [Standalone PDF](../../../paper/shared_baselines.pdf) · [All correlations](correlations.csv) · [Relation measurements](relation_scores.csv) · [Subject measurements](subject_scores.csv) · [Source hashes and validation](summary.json)

@@ -173,11 +173,20 @@ def main():
                 # validate the unchanged measurement modules, not that launcher.
                 for relative, expected in worker["source_sha256"].items():
                     if relative.startswith("jlens/"):
+                        source = CODE / relative
+                        if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+                            # Validate the exact historical measurement source;
+                            # this does not certify equivalence to today's code.
+                            archive = read(
+                                CODE
+                                / "results/shared_baselines/provenance/executed_sources.json"
+                            )[relative]
+                            assert archive["executed_sha256"] == expected
+                            source = CODE / archive["snapshot"]
                         assert (
-                            hashlib.sha256((CODE / relative).read_bytes()).hexdigest()
-                            == expected
+                            hashlib.sha256(source.read_bytes()).hexdigest() == expected
                         )
-                        hashes[str((CODE / relative).relative_to(ROOT))] = expected
+                        hashes[str(source.relative_to(ROOT))] = expected
                 x.append(score(value["lens"]))
                 y.append(value["faithfulness"])
             rho = float(spearmanr(x, y).statistic)

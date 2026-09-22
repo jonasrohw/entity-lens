@@ -72,6 +72,92 @@ See the [command reference](docs/commands.md),
 The historical JSON field names are preserved so the retained measurements
 remain unchanged; their meaning is documented in the methods guide.
 
+## Qwen: bug diagnosis and ordinary model predictions
+
+The [consolidated bug diagnosis](docs/qwen3-8b-base-bug-diagnosis.md) brings together
+the implementation checks, the separate normalization fix, positional controls,
+raw/differential comparisons, and the exact token-score decomposition for Germany.
+It includes the newly published per-reference scores, coordinate ablations,
+JVP tensors, and reproduction scripts, with links to all earlier analyses.
+
+[Ordinary Qwen predictions](docs/qwen3-8b-base-neutral-prompt-predictions.md) show
+the next-token probabilities and 48-token greedy continuations for all 16 prompts
+`{country} is known for`. Every prompt predicts ` its` first (51.67–74.15%);
+the six inspected artifact tokens occur in neither the next top 10 nor the
+generated continuations. This separates the lens artifact from the remaining
+question of whether the neutral prompt is suitable for the measurement.
+
+## Qwen3 8B Base: 26-relation outliers
+
+The [raw J-lens experiment](docs/qwen3-8b-base-raw-jlens.md) drops reference-state
+subtraction, using `mean_i J_i h_subject`. At the original subject position,
+Spearman ρ is **0.294661** (versus 0.298768 with subtraction), and `-Semit`
+remains the top prediction for 10/16 country-language subjects. At the final
+`for` position, raw ρ is **0.364819** (p = 0.066881), but no target reaches the
+top 10. The report includes both positions, all 26 relation points, and raw
+country-language predictions. Subtraction alone does not explain the artifact.
+
+The [country-capital prediction tables](docs/qwen3-8b-base-country-capital-predictions.md)
+show raw and differential top-five tokens and target ranks for all 16 countries
+at both positions. CSV/JSON downloads include exact token IDs, input-state norms,
+and all 240 included reference contributions. At the subject position, removing
+subtraction increases top-10 hits from 2/16 to 4/16; `-Semit` remains top-1 for
+the same ten countries.
+
+The [final-prompt-position experiment](docs/last-position-lre-correlation.md)
+moves the lens input and Jacobian intervention to `for` in `{subject} is known for`,
+keeping the LRE scores, targets, layers and reference subjects fixed. Across the
+same 26 relations, Spearman ρ changes from **0.298768 to −0.067077** for Qwen
+(new p = 0.744746), and from **0.782758 to 0.645912** for OLMo
+(new p = 0.000365077). Qwen's extreme norm disparity and repeated `-Semit`
+predictions disappear, but target rankings worsen: **0/491 targets are in the
+top 10**. The report includes all relation points, refitted residuals, a plot,
+per-subject evidence and reproduction scripts. This ablation does not replace
+the historical results below.
+
+**Review finding (20 September):** the original Qwen differential lens can mix
+large first-token activations with much smaller later-token states. This produces
+the repeated `-Semit` / `(Initialized` outputs in the country relations and
+compromises their interpretation as semantic-salience scores. The
+[implementation review](docs/qwen3-jlens-implementation-review.md) includes
+independent derivative checks, reference/prefix controls, an OLMo comparison,
+and a separate fixed normalization bug. The historical scores below are retained;
+removing the year relations does not remove this positional artifact.
+
+The [updated Figure-1 analysis](docs/qwen3-8b-base-figure1.md) excludes only
+`presidents_birth_year` and `presidents_election_year`, retaining `name_gender`.
+The OLS line and all residuals are refitted on the remaining **26 relations**.
+Qwen's Spearman correlation increases from **0.060390 to 0.298768**
+(two-sided p = 0.138179); the OLS slope increases from **0.046492 to 0.095745**.
+
+The largest positive residuals are `name_gender` (+53.24 percentage points),
+`name_religion` (+42.94), and `landmark_on_continent` (+36.30). The largest
+negative residuals are `company_ceo` (−52.46), `person_mother` (−44.44), and
+`superhero_person` (−43.84). Faithfulness is a success rate against the model's
+first answer token: `0.02` means 2% agreement, not a 2% error rate.
+
+The report includes all 26 points ranked by absolute residual, changes from the
+old fit, unrounded CSVs, and a plot comparing Qwen and OLMo on the same relation
+set. The current OLMo snapshot gives **ρ = 0.782758** on these 26 relations.
+`name_gender` and `name_religion` have the largest cross-model residual
+differences; these identify follow-up candidates rather than establish a causal
+explanation. `name_gender` still has only three LRE test examples.
+
+The [original 28-relation report](docs/qwen3-8b-base-figure1-28-relations.md)
+and its CSV remain available. Reproduce the new fit, tables, and figures on CPU:
+
+```sh
+uv run python ../paper/repro/qwen3_26_relations.py
+```
+
+Concrete prediction tables are available for
+[`company_ceo`](docs/qwen3-8b-base-company-ceo-predictions.md) and
+[`country_language`](docs/qwen3-8b-base-country-language-predictions.md).
+For `country_language`, the selected LRE reproduces 6/8 model targets;
+the differential lens has 0/16 top-1 and 1/16 top-10 matches.
+The report includes every prediction, the five countries shared between the
+two test sets, and a JSON snapshot with token IDs and validation results.
+
 ## Corpus conditional probabilities
 
 Measure `P(object | subject)` and `P(subject | object)` in the full published

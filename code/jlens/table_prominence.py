@@ -41,7 +41,8 @@ def main():
         "\ngeneration and therefore independently of the lens, against how often"
         "\nthe lens surfaces the gold object in its top five. Spearman"
         f"\n$\\rho = {rho:.3f}$ ($p = {p_value:.3f}$, $n = {len(rows)}$)."
-        "\n$^{*}$the one relation that disobeys (\\S\\ref{sec:residuals}).}",
+        "\n$^{*}$: star\\_constellation, the outlier discussed in"
+        " \\S\\ref{sec:salience}.}",
         r"\label{tab:prominence}",
         r"\end{table}",
     ]

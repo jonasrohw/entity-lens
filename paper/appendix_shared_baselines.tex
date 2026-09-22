@@ -1,11 +1,10 @@
 \section{Shared-split baseline comparisons}
 \label{sec:shared-baselines}
 
-We compare five readouts across seven models, then examine corpus-frequency
-baselines for OLMo 3 7B. These first two tables report Spearman correlations with LRE
-faithfulness across 25 relations, giving each relation equal weight.
-The measurements use the current shared split and supersede the historical
-unprefixed-prompt comparisons.
+The first two tables report Spearman correlations with LRE faithfulness
+across 25 equally weighted relations. These runs predate the final-normalization
+fix merged on 22 September 2026: Gemma2 requires a corrected rerun.
+Exact executed sources are archived; these results do not validate the merged code.
 
 \paragraph{Matched protocol.}
 After filtering objects whose first answer token does not identify a unique
@@ -30,7 +29,7 @@ once before the vocabulary head. Each relation's score is the negative
 median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
 
 \paragraph{Attribute rate.}
-Following \citet{geva2023dissecting} and the reconstruction of
+Following \citet{geva-etal-2023-dissecting} and the reconstruction of
 \citet{gerstner2026weakening}, we measure overlap between filtered top-50
 logit-lens predictions and subject attributes retrieved from Wikipedia.
 The index uses the union of current test subjects; the source stopword,
