@@ -1,5 +1,7 @@
 # Qwen3 8B Base: what the J-lens predicts for `name_gender`
 
+**[View the top 100 predictions for every example](name_gender_top100.md)** · [Top-100 CSV](name_gender_top100.csv). The expanded export reproduces all values in this top-five summary exactly.
+
 These are all **11 saved differential J-lens rows** behind the `name_gender` point in the [Figure 1 comparison](README.md), using the latest newline-prompt run. Sofia occurs twice in the saved evaluation and is retained twice here. There are 10 distinct names; no examples were removed or rerun.
 
 [Download the table as CSV](name_gender_predictions.csv) · [Exact measurement snapshot](name_gender_measurement.json)

@@ -4,7 +4,7 @@
 
 [Vector PDF](relation_agreement.pdf) · [All plotted values](relation_scores.csv) · [Exact statistics](statistics.json)
 
-[Inspect all `name_gender` J-lens predictions](name_gender_predictions.md).
+[Inspect the top 100 `name_gender` J-lens predictions per example](name_gender_top100.md) · [Top-five summary](name_gender_predictions.md).
 
 The Figure 1 comparison uses the latest newline-prompt measurements for
 `Qwen/Qwen3-8B-Base`, main protocol, fixed lens state 19. Only
