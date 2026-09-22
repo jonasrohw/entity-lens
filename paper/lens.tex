@@ -221,6 +221,10 @@ contrastive associations are ``vodka'' and ``Kremlin''.
 The basic idea we will investigate is that such top-ranked contrastive associations
 give rise to linearity.
 
+To instantiate the contrastive Jacobian lens for factual
+relations, we need a prompt that evokes factual associations
+and a reference set that contrasts an entity with entities
+of the same type. 
 
 \paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
 state at the final token of its name, taken at a fixed layer $\ell$ under a
@@ -230,9 +234,6 @@ no relation and is identical for every relation in the
 study.
 In this paper, we use $\ell=17$ and the prompt
 \texttt{"\{\} is known for"}.
-As before, $f$ is
-the model's own map from a state at layer $\ell$ to the final-layer state
-at the last position, and $J_i$ its Jacobian at a reference state $s_i$.
 
 \paragraph{(i) A type-specific reference set.} We take
 $s_1,\dots,s_n$ to be the states of $n=8$ entities of the \emph{same type}
@@ -298,6 +299,10 @@ subject-minus-subject -- \emph{France} minus \emph{Spain}, never
 relation is used in estimation. Relation-specificity enters in exactly
 one place, the \emph{target} $m_e$, which is also the quantity
 faithfulness is defined against; that is what makes the two commensurable.
+
+
+
+
 
 \section{Experimental setup}
 \label{sec:setup}
