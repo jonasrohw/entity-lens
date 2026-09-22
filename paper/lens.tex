@@ -252,21 +252,6 @@ category. Same-type references make the comparison class the entity's own
 kind.
 
 
-\paragraph{What Eq.~\ref{eq:lens} is.} Each $J_i$ is linear, so the lens
-is affine in $s_e$:
-\begin{equation}
-v_e \;=\; W s_e - c, \qquad
-W = \operatorname{mean}_i J_i, \quad c = \operatorname{mean}_i J_i s_i ,
-\label{eq:affine}
-\end{equation}
-where $c$ does not depend on $e$. The reference set therefore enters in
-two places: in $W$, the points at which the Jacobians are taken, and in
-$c$, the readout the average reference entity would receive. Subtracting
-$c$ is not vacuous -- decoding applies the model's output normalization
-and unembedding, so a translation changes the ranking -- but it is the
-same translation for every entity, and what varies with $e$ is $W s_e$.
-Differences between entities are free of it altogether:
-$v_e - v_{e'} = W(s_e - s_{e'})$.
 
 Eq.~\ref{eq:affine} also states the net difference from a standard
 Jacobian lens, which is $J_\ell h_\ell$ with $J_\ell$ averaged over a
