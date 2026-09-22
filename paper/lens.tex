@@ -842,22 +842,8 @@ much either way.
 \section*{AI use statement}
 \input{ai_use}
 
-\section*{Ethics statement}
-This work studies model behavior using existing relation datasets. Model
-predictions and the associations reported in the subject-ambiguity analysis
-should not be interpreted as verified attributes of the named individuals.
-First-token collisions and mistaken entity identification illustrate risks of
-using such readouts to make factual claims about people. The experiments are
-intended to diagnose these limitations, not to support individual profiling.
-
 \section*{Reproducibility statement}
-Section~\ref{sec:setup} describes the model, relation selection, prompts,
-data partitions, and hyperparameter grid. Equations~\ref{eq:wb}--\ref{eq:lens}
-define the estimators; Appendices~\ref{sec:jvp}, \ref{sec:layer17},
-%\ref{sec:permutation},
-and~\ref{sec:numeric-objects} document the
-Jacobian--vector products, layer choice, permutation test, and numeric-token
-correction. Table~\ref{tab:relations} reports the relation-level results.
+We provide sufficient details to reproduce all experiments in the main text and appendix, including the datasets, model checkpoints, prompt templates, evaluation procedures, and hyperparameters used throughout. All experiments use publicly available model checkpoints and datasets. We report the procedures used to estimate linear relational embeddings and the contrastive Jacobian lens, as well as the definitions of all faithfulness and ranking metrics. Additional implementation details, robustness analyses, and per-relation results are provided in the appendix. Code for reproducing the experiments and figures will be released upon publication.
 
 \bibliographystyle{iclr2027_conference}
 \bibliography{custom}
