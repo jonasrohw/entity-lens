@@ -412,20 +412,6 @@ here. We return to first-token collapse, and to why restricting the gold
 objects is only a partial remedy, in \S\ref{sec:subject}.
 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
-\caption{
-In this  rank-rank analysis of individual facts for
- \textsc{product\_by\_company}, lens rank and LRE rank are
- moderately highly correlated: $\rho=.41$ for all points,
- $\rho=.58$ for misses.
-This is not the case in general: see Figure~\ref{fig:blacksheep}.
-Ranks are zero-based.
-}
-\label{fig:product}
-\end{figure}
-
 \input{table_prominence}
 
 
@@ -520,6 +506,19 @@ the contrastive Jacobian lens predicts the degree to which
 they are
 integrated into the linear structure.
 
+To analyze relations at the fact level, we compute the
+$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
+rank.
+
+
+In this  rank-rank analysis of individual facts for
+ \textsc{product\_by\_company}, lens rank and LRE rank are
+ moderately highly correlated: $\rho=.41$ for all points,
+ $\rho=.58$ for misses.
+This is not the case in general: see Figure~\ref{fig:blacksheep}.
+Ranks are zero-based.
+
+
 We use the setup shown in Figure~\ref{fig:product} to
 investigate fact-level linearity. The figure shows that lens
 rank is a moderately good predictor of LRE rank for
@@ -542,18 +541,6 @@ this section, we analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig_iclr_outliers.pdf}
-\caption{
-  Rank-rank analysis for the three relations with the worst
-  overall correlation between lens rank and LRE rank.
-Green solid regression lines over all points,
-orange dashed regression lines over the orange points, the subjects the
-LRE missed.  All three panels share both scales.
-}
-\label{fig:blacksheep}
-\end{figure}
 
 We conduct our analysis on the three relations that have the
 worst overall correlation in the rank-rank analysis: their
