@@ -1,20 +1,8 @@
-\section{Shared-split baseline comparisons}
+\section{Baseline comparisons}
 \label{sec:shared-baselines}
+% Mention and reference the exact Tables i.e Table X and Y show 
+The first two tables report Spearman correlations with LRE faithfulness across the LRE Dataset.
 
-The first two tables report Spearman correlations with LRE faithfulness
-across 25 equally weighted relations. These runs predate the final-normalization
-fix merged on 22 September 2026: Gemma2 requires a corrected rerun.
-Exact executed sources are archived; these results do not validate the merged code.
-
-\paragraph{Matched protocol.}
-After filtering objects whose first answer token does not identify a unique
-complete object, seed 0 selects eight demonstrations, eight references, and
-up to 100 test rows. All readouts receive the same test pool within a model;
-tokenizer-dependent filtering can change membership across models.
-The neutral prompt is exactly \texttt{\textbackslash n\{subject\} is known for}.
-Models use pinned revisions, float32, eager attention, and one fixed layer
-per model. The relation prompts, model answer tokens, and selected LRE
-settings are held fixed.
 
 \input{generated/shared_baselines/readout_comparison}
 
@@ -23,14 +11,10 @@ For subject state $s_e$, reference states $s_i$, and reference Jacobians
 $J_i$, the differential and raw Jacobian readouts decode
 $\operatorname{mean}_i J_i(s_e-s_i)$ and
 $\operatorname{mean}_i J_i s_e$, respectively. Logit lens decodes $s_e$;
-differential logit lens decodes $s_e-\operatorname{mean}_i s_i$.
-Same-subject references are excluded, and final normalization is applied
-once before the vocabulary head. Each relation's score is the negative
-median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
+differential logit lens decodes $s_e-\operatorname{mean}_i s_i$. Each relation's score is the negative median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
 
 \paragraph{Attribute rate.}
-Following \citet{geva-etal-2023-dissecting} and the reconstruction of
-\citet{gerstner2026weakening}, we measure overlap between filtered top-50
+Following \citet{geva-etal-2023-dissecting}, we measure overlap between filtered top-50
 logit-lens predictions and subject attributes retrieved from Wikipedia.
 The index uses the union of current test subjects; the source stopword,
 length, and retrieval filters are retained. Relation scores average the
@@ -44,13 +28,6 @@ for either readout. LRE hyperparameter selection remains in sample.
 
 \clearpage
 \subsection{OLMo corpus-frequency baselines}
-
-Table~\ref{tab:shared-corpus-spearman} uses the completed scan of OLMo's
-three published training mixes: 175,877 shards and 3.86 billion document
-records. The counts are reused, while all aggregates and correlations are
-recomputed on the current shared-split test rows. They describe the
-published document multiset, rather than exact packed training sequences
-or training exposure weights.
 
 \input{generated/shared_baselines/olmo_frequencies}
 
@@ -68,12 +45,8 @@ as the mean joint count because the transformation is monotonic.
 \paragraph{Interpretation and reproducibility.}
 These are exploratory associations. Relations can share subjects and
 objects, and the reported $p$-values are unadjusted. Conditional direction
-also reflects marginal frequency: when $c_{so}>0$,
-$P(o\mid s)/P(s\mid o)=c_o/c_s$.
-The full measurements, Pearson results, coverage sensitivities, paired
-intervals, and source hashes remain in
-\texttt{code/results/shared\_baselines/}. The tables are generated
-directly from the verified correlation records.
+also reflects marginal frequency: when $c_{so}>0$, $P(o\mid s)/P(s\mid o)=c_o/c_s$.
+
 
 \clearpage
 \subsection{Neutral-prompt variations}

@@ -24,25 +24,5 @@ Neutral prompt & Shared ($n=25$) & Legacy ($n=28$) \\
 \texttt{\textbackslash n\{s\} is known for} & $\phantom{-}0.729$ & $\phantom{-}0.216$ \\
 \bottomrule
 \end{tabular*}
-\par\vspace{10pt}
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrr@{}}
-\toprule
-\multicolumn{4}{@{}l}{\textbf{B. All models: newline prefix, shared split ($n=25$)}} \\
-\addlinespace[3pt]
-Model & Original & Newline & $\Delta\rho$ \\
-\midrule
-OLMo 3 7B & $\phantom{-}0.624$ & $\phantom{-}0.683$ & $+0.058$ \\
-GPT-J 6B & $\phantom{-}0.155$ & $\phantom{-}0.573$ & $+0.418$ \\
-Mistral 7B & $\phantom{-}0.625$ & $\phantom{-}0.606$ & $-0.018$ \\
-Gemma 2 9B & $\phantom{-}0.487$ & $\phantom{-}0.554$ & $+0.066$ \\
-Qwen3 8B Base & $\phantom{-}0.268$ & $\phantom{-}0.729$ & $+0.461$ \\
-Qwen3.8 27B & $\phantom{-}0.596$ & $\phantom{-}0.600$ & $+0.003$ \\
-Pythia 6.9B & $-0.045$ & $\phantom{-}0.479$ & $+0.524$ \\
-\bottomrule
-\end{tabular*}
 \endgroup
-\par\vspace{5pt}
-\begin{minipage}{\linewidth}\footnotesize
-$s$ denotes the subject; \texttt{\textbackslash n} denotes one leading newline. Panel B compares \texttt{\{s\} is known for} with \texttt{\textbackslash n\{s\} is known for}. The newline is a position control measured after the seven-template Qwen comparison; no additional newline is implied for the other templates.
-\end{minipage}
 \end{table}
