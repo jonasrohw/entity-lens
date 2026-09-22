@@ -1,3 +1,26 @@
+We flag all of this because the failure is silent: it produces a perfect
+or inflated score rather than an obvious error, and it will affect any
+first-token evaluation whose answers share prefixes -- numeric,
+titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
+(\emph{University of X}).
+
+
+
+
+We use this rank-rank setup to
+investigate fact-level linearity. The analysis shows that lens
+rank is a moderately good predictor of LRE rank for
+\textsc{product\_by\_company} ($\rho=.41$), especially if we
+only consider misses ($\rho=.58$). Points with an LRE rank
+of 0 (i.e., a hit, not a miss) are ``censored'': They give
+us no resolution because they fail to distinguish cases
+where the LRE predicts the correct object perfectly vs
+those where it barely avoids a miss. So
+misses may be a better diagnostic for assessing the size of
+the correlation.
+
+
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
