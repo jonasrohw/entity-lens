@@ -1,0 +1,93 @@
+{
+  "relation": "name_gender",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 19,
+  "cleaned_samples": 19,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 5,
+      "beta": 0.5,
+      "score": 0.0,
+      "hits": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          94292,
+          33164,
+          96255,
+          97962,
+          15974,
+          99165,
+          86117,
+          41382,
+          14622,
+          98027,
+          89725
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 4.952918307262305,
+        "mean_logrank": 4.757333985434826,
+        "top1": 0.0,
+        "top10": 0.0,
+        "mrr": 2.3594948549490623e-05,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 1.0,
+  "prior_only_faith": 0.0,
+  "n_faith": 3,
+  "n_lens": 11,
+  "faith_subjects": [
+    "Caleb",
+    "Michael",
+    "William"
+  ],
+  "lens_subjects": [
+    "David",
+    "Sofia",
+    "Evan",
+    "Connor",
+    "Scarlett",
+    "Michael",
+    "Caleb",
+    "Hannah",
+    "Mia",
+    "Oliver",
+    "William"
+  ],
+  "faith_split_fingerprint": "9bcdc06a3bd0",
+  "lens_split_fingerprint": "494d9dc159ac",
+  "worker": "olmo_confirm_rho2_5",
+  "elapsed_seconds": 6.610213994979858
+}

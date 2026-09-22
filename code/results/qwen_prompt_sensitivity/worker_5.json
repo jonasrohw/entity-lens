@@ -1,0 +1,30 @@
+{
+  "model_id": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "layer": 19,
+  "prompts": {
+    "known_for": "{} is known for",
+    "bare_subject": "{}",
+    "is": "{} is",
+    "described_as": "{} can be described as",
+    "information_about": "Information about {}:",
+    "facts_about": "Facts about {}:",
+    "entity_known_for": "Entity: {} is known for"
+  },
+  "dtype": "float32",
+  "torch": "2.14.0+cu130",
+  "host": "beta",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "batch_size": 8,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.0009765625,
+    "finite_difference_relative_error": 0.00013679452240467072
+  },
+  "source_sha256": {
+    "scripts/run_qwen_prompt_sensitivity.py": "1b12836764657c76c878993048b56ecd640efdec96f5e98cf60c1e2d22dbdcdb",
+    "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+    "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+    "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40"
+  }
+}

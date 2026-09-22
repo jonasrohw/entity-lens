@@ -1,0 +1,86 @@
+{
+  "relation": "name_gender",
+  "model": "gemma2_9b",
+  "worker": "rho2_6",
+  "protocol": "shared_split",
+  "prompt": "\n{} is known for",
+  "layer": 22,
+  "split_fingerprint": "e768509b2ebf",
+  "source_sha256": "7f762803ebe24698132bae13320506fb1db0f428834b7db192fbcfd5ece55bf9",
+  "data_sha256": "cfeded39fc091fb548791cf588e9ab0d1613b2ab5f8e72645929b55a4583fcf2",
+  "n": 3,
+  "rows": [
+    {
+      "subject": "Tom",
+      "object": "man",
+      "model_top1_id": 916,
+      "gold_id": 916,
+      "n_references": 8,
+      "target_prior": -11.404448509216309,
+      "gold_prior": -11.404448509216309,
+      "rank_raw_jacobian": 24927,
+      "rank_logit_lens": 1368,
+      "rank_differential_logit_lens": 18273
+    },
+    {
+      "subject": "Emily",
+      "object": "woman",
+      "model_top1_id": 4323,
+      "gold_id": 4323,
+      "n_references": 8,
+      "target_prior": -13.906447410583496,
+      "gold_prior": -13.906447410583496,
+      "rank_raw_jacobian": 36520,
+      "rank_logit_lens": 5270,
+      "rank_differential_logit_lens": 33941
+    },
+    {
+      "subject": "Evan",
+      "object": "man",
+      "model_top1_id": 916,
+      "gold_id": 916,
+      "n_references": 8,
+      "target_prior": -11.404448509216309,
+      "gold_prior": -11.404448509216309,
+      "rank_raw_jacobian": 44155,
+      "rank_logit_lens": 5835,
+      "rank_differential_logit_lens": 171686
+    }
+  ],
+  "agg": {
+    "raw_jacobian": {
+      "median_rank": 36520.0,
+      "median_lograng": 4.562542660662262,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    },
+    "logit_lens": {
+      "median_rank": 5270.0,
+      "median_lograng": 3.7218930162149575,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    },
+    "differential_logit_lens": {
+      "median_rank": 33941.0,
+      "median_lograng": 4.530737429124053,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    }
+  },
+  "answer_prior_contexts": [
+    "",
+    "The",
+    "In the",
+    "It was",
+    "She said the",
+    "Here is",
+    "One of the",
+    "According to the",
+    "There is a",
+    "Yesterday the"
+  ],
+  "cardinality_full": 9.5,
+  "cardinality_filtered": 9.5,
+  "cardinality_test": 1.5,
+  "elapsed_seconds": 2.2995972633361816
+}

@@ -1,0 +1,722 @@
+{
+  "relation": "city_in_country",
+  "protocol": "shared_split",
+  "model": "qwen3_8b_base",
+  "worker": "beta_3",
+  "lens": {
+    "n": 6,
+    "layer": 19,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 2.0,
+        "median_lograng": 0.45154499349597177,
+        "agree_at1": 0.3333333333333333,
+        "agree_at10": 0.6666666666666666
+      },
+      "lre": {
+        "median_rank": 2548.0,
+        "median_lograng": 3.406353659281388,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Panama City",
+        "model_top1_id": 48036,
+        "model_top1": "Panama",
+        "n_references": 8,
+        "rank_diff": 38,
+        "top_diff": [
+          "Florida",
+          "hurricane",
+          "hurricanes",
+          "Bahamas",
+          "Buccane"
+        ],
+        "rank_lre": 1860,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1860,
+          "0.5": 3483,
+          "1.5": 963,
+          "2.0": 517,
+          "3.0": 166,
+          "5.0": 62
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 61038,
+        "model_top1": "Cambodia",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "\u67ec\u57d4\u5be8",
+          "Cambodia",
+          "\u66b9",
+          "Camb",
+          "Laos"
+        ],
+        "rank_lre": 3627,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3627,
+          "0.5": 10509,
+          "1.5": 997,
+          "2.0": 236,
+          "3.0": 22,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 6747,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Delhi",
+          "Redskins",
+          "Kabul",
+          "Smithsonian",
+          "BJP"
+        ],
+        "rank_lre": 2570,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2570,
+          "0.5": 4332,
+          "1.5": 1516,
+          "2.0": 826,
+          "3.0": 253,
+          "5.0": 35
+        }
+      },
+      {
+        "subject": "Buenos Aires",
+        "model_top1_id": 31064,
+        "model_top1": "Argentina",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "\u963f\u6839\u5ef7",
+          "Buenos",
+          "Argentine",
+          "Argentina",
+          "Argentina"
+        ],
+        "rank_lre": 3175,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3175,
+          "0.5": 8080,
+          "1.5": 1113,
+          "2.0": 334,
+          "3.0": 26,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Port-au-Prince",
+        "model_top1_id": 55190,
+        "model_top1": "Haiti",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Haiti",
+          "Hait",
+          "Hurricane",
+          "\u66b4\u529b",
+          "\u9047\u96be"
+        ],
+        "rank_lre": 2088,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2088,
+          "0.5": 8357,
+          "1.5": 349,
+          "2.0": 60,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 66013,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dominican",
+          "Haiti",
+          "Hispan",
+          "Puerto",
+          "Caribbean"
+        ],
+        "rank_lre": 2526,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2526,
+          "0.5": 5195,
+          "1.5": 1151,
+          "2.0": 495,
+          "3.0": 88,
+          "5.0": 4
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 6637.5,
+          "median_lograng": 3.8115671245834233,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2548.0,
+          "median_lograng": 3.406353659281388,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1055.0,
+          "median_lograng": 3.0230078660625406,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 414.5,
+          "median_lograng": 2.6102632417635214,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 57.0,
+          "median_lograng": 1.69037688540195,
+          "agree_at1": 0.0,
+          "agree_at10": 0.16666666666666666
+        },
+        "5.0": {
+          "median_rank": 3.0,
+          "median_lograng": 0.5880456295278407,
+          "agree_at1": 0.3333333333333333,
+          "agree_at10": 0.6666666666666666
+        }
+      }
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "6": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "16": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "19": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.8333333333333334,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 22,
+    "best_beta": 5.0,
+    "best_faith": 0.8333333333333334,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 6,
+    "requested_n_test": 100,
+    "lm_correct": 6,
+    "per_subject": {
+      "Panama City": 0,
+      "Siem Reap": 1,
+      "New Delhi": 1,
+      "Buenos Aires": 1,
+      "Port-au-Prince": 1,
+      "Santo Domingo": 1
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "n_lre": 6,
+  "baseline_lens": {
+    "n": 6,
+    "layer": 19,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 3.0,
+        "median_lograng": 0.5395906230238124,
+        "agree_at1": 0.3333333333333333,
+        "agree_at10": 0.6666666666666666
+      },
+      "lre": {
+        "median_rank": 3510.5,
+        "median_lograng": 3.5400891632290437,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Panama City",
+        "model_top1_id": 48036,
+        "model_top1": "Panama",
+        "n_references": 8,
+        "rank_diff": 272,
+        "top_diff": [
+          "hurricanes",
+          "Florida",
+          "\u6d77\u6ee8",
+          "\u6c99\u6ee9",
+          "\u98d3"
+        ],
+        "rank_lre": 1557,
+        "top_lre": [
+          "its",
+          "beaches",
+          "shopping",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1557,
+          "0.5": 2233,
+          "1.5": 1091,
+          "2.0": 805,
+          "3.0": 471,
+          "5.0": 213
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 61038,
+        "model_top1": "Cambodia",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Cambodia",
+          "\u67ec\u57d4\u5be8",
+          "Laos",
+          "Bangkok",
+          "Thailand"
+        ],
+        "rank_lre": 2960,
+        "top_lre": [
+          "its",
+          "historic",
+          "museums",
+          "the",
+          "shopping"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2960,
+          "0.5": 6485,
+          "1.5": 1320,
+          "2.0": 566,
+          "3.0": 126,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 6747,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 391,
+        "top_diff": [
+          "Delhi",
+          "\u6bdb\u4e3b\u5e2d",
+          "\u5317\u6c7d",
+          "\u7d2b",
+          "\u666e\u4eac"
+        ],
+        "rank_lre": 1941,
+        "top_lre": [
+          "its",
+          "shopping",
+          "museums",
+          "the",
+          "historic"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1941,
+          "0.5": 2815,
+          "1.5": 1278,
+          "2.0": 866,
+          "3.0": 364,
+          "5.0": 104
+        }
+      },
+      {
+        "subject": "Buenos Aires",
+        "model_top1_id": 31064,
+        "model_top1": "Argentina",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Buenos",
+          "\u963f\u6839\u5ef7",
+          "Argentina",
+          "Argentine",
+          "\u5df4\u9ece"
+        ],
+        "rank_lre": 6025,
+        "top_lre": [
+          "its",
+          "museums",
+          "nightlife",
+          "the",
+          "being"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6025,
+          "0.5": 9685,
+          "1.5": 3702,
+          "2.0": 2162,
+          "3.0": 727,
+          "5.0": 108
+        }
+      },
+      {
+        "subject": "Port-au-Prince",
+        "model_top1_id": 55190,
+        "model_top1": "Haiti",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Haiti",
+          "Hait",
+          "\u827e\u6ecb\u75c5",
+          "\u81ea\u6740",
+          "\u759f"
+        ],
+        "rank_lre": 4061,
+        "top_lre": [
+          "its",
+          "the",
+          "shopping",
+          "being",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4061,
+          "0.5": 8998,
+          "1.5": 1615,
+          "2.0": 584,
+          "3.0": 70,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 66013,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Haiti",
+          "Dominican",
+          "Caribbean",
+          "Havana",
+          "Belize"
+        ],
+        "rank_lre": 4716,
+        "top_lre": [
+          "its",
+          "shopping",
+          "the",
+          "being",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4716,
+          "0.5": 7132,
+          "1.5": 3039,
+          "2.0": 1932,
+          "3.0": 736,
+          "5.0": 115
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 6808.5,
+          "median_lograng": 3.8326245841788187,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 3510.5,
+          "median_lograng": 3.5400891632290437,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1467.5,
+          "median_lograng": 3.1646720870265472,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 835.5,
+          "median_lograng": 2.9221770696406506,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 417.5,
+          "median_lograng": 2.618117431545281,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 106.0,
+          "median_lograng": 2.029307898505281,
+          "agree_at1": 0.16666666666666666,
+          "agree_at10": 0.16666666666666666
+        }
+      }
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "S\u00e3o Paulo": 3,
+    "Hong Kong": 2,
+    "Ho Chi Minh City": 4,
+    "Cape Town": 3,
+    "Saint Petersburg": 2,
+    "Casablanca": 4,
+    "Santiago de Chile": 4,
+    "Punta Cana": 4,
+    "Panama City": 3,
+    "Siem Reap": 4,
+    "New Delhi": 2,
+    "Buenos Aires": 4,
+    "Port-au-Prince": 4,
+    "Santo Domingo": 4
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "c5202c7b3638",
+  "baseline_sha256": {
+    "results/five_model_sweep/qwen3_8b_base/shared_split/city_in_country.json": "dc72e4affa16f13c5a13656610e366a790a9d791d008e8bb564b570dbedabe50"
+  },
+  "data_sha256": "5fd8f9e99e6d8567d05cfb4e7c9324ed03b07ba1ebf827614b7b58a811bc11a5",
+  "elapsed_seconds": 2.1075618267059326
+}

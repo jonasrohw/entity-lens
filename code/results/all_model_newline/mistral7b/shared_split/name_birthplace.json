@@ -1,0 +1,1829 @@
+{
+  "relation": "name_birthplace",
+  "protocol": "shared_split",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "lens": {
+    "n": 15,
+    "layer": 17,
+    "template": "{} was born in the country of",
+    "agg": {
+      "diff": {
+        "median_rank": 4.0,
+        "median_lograng": 0.6989700043360189,
+        "agree_at1": 0.06666666666666667,
+        "agree_at10": 0.6
+      },
+      "lre": {
+        "median_rank": 6553.0,
+        "median_lograng": 3.816506437046357,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Chalermchai",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 16,
+        "top_diff": [
+          "paintings",
+          "painting",
+          "painted",
+          "Budd",
+          "painter"
+        ],
+        "rank_lre": 6687,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6687,
+          "0.5": 7226,
+          "1.5": 6211,
+          "2.0": 5718,
+          "3.0": 4845,
+          "5.0": 3360
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 6326,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "cricket",
+          "Hind",
+          "scoring",
+          "Bol",
+          "India"
+        ],
+        "rank_lre": 3219,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3219,
+          "0.5": 3467,
+          "1.5": 3027,
+          "2.0": 2831,
+          "3.0": 2486,
+          "5.0": 1900
+        }
+      },
+      {
+        "subject": "Chang",
+        "model_top1_id": 5845,
+        "model_top1": "China",
+        "n_references": 8,
+        "rank_diff": 47,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "Korean",
+          "Taiwan"
+        ],
+        "rank_lre": 3058,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3058,
+          "0.5": 3180,
+          "1.5": 2963,
+          "2.0": 2837,
+          "3.0": 2626,
+          "5.0": 2211
+        }
+      },
+      {
+        "subject": "Hiroshi",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Japanese",
+          "Japan",
+          "Tokyo",
+          "Yam",
+          "anime"
+        ],
+        "rank_lre": 4078,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4078,
+          "0.5": 4619,
+          "1.5": 3549,
+          "2.0": 3100,
+          "3.0": 2398,
+          "5.0": 1324
+        }
+      },
+      {
+        "subject": "Alejandro",
+        "model_top1_id": 11010,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "Salvador",
+          "Venez",
+          "Mexican",
+          "Spanish",
+          "Latin"
+        ],
+        "rank_lre": 7337,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7337,
+          "0.5": 7667,
+          "1.5": 7025,
+          "2.0": 6688,
+          "3.0": 6008,
+          "5.0": 4867
+        }
+      },
+      {
+        "subject": "Akira",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Japanese",
+          "anime",
+          "Tokyo",
+          "fut",
+          "Japan"
+        ],
+        "rank_lre": 4407,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4407,
+          "0.5": 4800,
+          "1.5": 4061,
+          "2.0": 3687,
+          "3.0": 3108,
+          "5.0": 2204
+        }
+      },
+      {
+        "subject": "Kraipob",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Thailand",
+          "Tamb",
+          "Viet",
+          "Indones",
+          "Malays"
+        ],
+        "rank_lre": 6881,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6881,
+          "0.5": 7313,
+          "1.5": 6458,
+          "2.0": 6053,
+          "3.0": 5285,
+          "5.0": 3886
+        }
+      },
+      {
+        "subject": "Giovanni",
+        "model_top1_id": 11596,
+        "model_top1": "Italy",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Italian",
+          "Ital",
+          "Italia",
+          "Sic",
+          "Italy"
+        ],
+        "rank_lre": 5555,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5555,
+          "0.5": 6143,
+          "1.5": 5050,
+          "2.0": 4519,
+          "3.0": 3607,
+          "5.0": 2278
+        }
+      },
+      {
+        "subject": "Marco",
+        "model_top1_id": 11596,
+        "model_top1": "Italy",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Italian",
+          "Ital",
+          "Italia",
+          "Italy",
+          "Milan"
+        ],
+        "rank_lre": 5911,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5911,
+          "0.5": 6326,
+          "1.5": 5518,
+          "2.0": 5164,
+          "3.0": 4490,
+          "5.0": 3303
+        }
+      },
+      {
+        "subject": "Kazuki",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Japanese",
+          "anime",
+          "Tokyo",
+          "Sak",
+          "Japan"
+        ],
+        "rank_lre": 4337,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4337,
+          "0.5": 4761,
+          "1.5": 3952,
+          "2.0": 3589,
+          "3.0": 2975,
+          "5.0": 2021
+        }
+      },
+      {
+        "subject": "Shaked",
+        "model_top1_id": 7300,
+        "model_top1": "Israel",
+        "n_references": 8,
+        "rank_diff": 24,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "her",
+          "legal"
+        ],
+        "rank_lre": 6651,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6651,
+          "0.5": 6917,
+          "1.5": 6446,
+          "2.0": 6215,
+          "3.0": 5784,
+          "5.0": 4962
+        }
+      },
+      {
+        "subject": "Pierre",
+        "model_top1_id": 5611,
+        "model_top1": "France",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "French",
+          "Fran\u00e7ois",
+          "France",
+          "Pierre",
+          "Philippe"
+        ],
+        "rank_lre": 6950,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6950,
+          "0.5": 7745,
+          "1.5": 6193,
+          "2.0": 5445,
+          "3.0": 4176,
+          "5.0": 2359
+        }
+      },
+      {
+        "subject": "Pablo",
+        "model_top1_id": 13335,
+        "model_top1": "Spain",
+        "n_references": 8,
+        "rank_diff": 30,
+        "top_diff": [
+          "Salvador",
+          "painting",
+          "Spanish",
+          "Madrid",
+          "Colomb"
+        ],
+        "rank_lre": 6553,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6553,
+          "0.5": 6891,
+          "1.5": 6236,
+          "2.0": 5954,
+          "3.0": 5361,
+          "5.0": 4400
+        }
+      },
+      {
+        "subject": "Jules",
+        "model_top1_id": 5611,
+        "model_top1": "France",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "French",
+          "her",
+          "Belg",
+          "Fran\u00e7",
+          "France"
+        ],
+        "rank_lre": 7752,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7752,
+          "0.5": 8174,
+          "1.5": 7337,
+          "2.0": 6928,
+          "3.0": 6175,
+          "5.0": 4803
+        }
+      },
+      {
+        "subject": "Anong",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 626,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "her",
+          "Korean"
+        ],
+        "rank_lre": 7468,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7468,
+          "0.5": 7606,
+          "1.5": 7336,
+          "2.0": 7223,
+          "3.0": 6957,
+          "5.0": 6446
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 6891.0,
+          "median_lograng": 3.8383452687759907,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 6553.0,
+          "median_lograng": 3.816506437046357,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 6193.0,
+          "median_lograng": 3.791971201020768,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 5445.0,
+          "median_lograng": 3.736077637003946,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 4490.0,
+          "median_lograng": 3.652343055062715,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3303.0,
+          "median_lograng": 3.5190400386483445,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "0241983edbee",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.4,
+          0.0
+        ],
+        "2.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.8666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.9333333333333333,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.8666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.8,
+          0.0
+        ],
+        "3.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "5.0": [
+          0.8666666666666667,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.7333333333333333,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.26666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "5.0": [
+          0.9333333333333333,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 14,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 15,
+    "requested_n_test": 100,
+    "lm_correct": 14,
+    "per_subject": {
+      "Chalermchai": 1,
+      "Rohit": 1,
+      "Chang": 1,
+      "Hiroshi": 1,
+      "Alejandro": 1,
+      "Akira": 1,
+      "Kraipob": 1,
+      "Giovanni": 1,
+      "Marco": 1,
+      "Kazuki": 1,
+      "Shaked": 1,
+      "Pierre": 1,
+      "Pablo": 1,
+      "Jules": 1,
+      "Anong": 1
+    },
+    "split_fingerprint": "0241983edbee",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "n_lre": 15,
+  "baseline_lens": {
+    "n": 15,
+    "layer": 17,
+    "template": "{} was born in the country of",
+    "agg": {
+      "diff": {
+        "median_rank": 7.0,
+        "median_lograng": 0.9030899869919435,
+        "agree_at1": 0.06666666666666667,
+        "agree_at10": 0.6
+      },
+      "lre": {
+        "median_rank": 6013.0,
+        "median_lograng": 3.7791634237644987,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Chalermchai",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Budd",
+          "paintings",
+          "Tai",
+          "painting",
+          "painted"
+        ],
+        "rank_lre": 6377,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6377,
+          "0.5": 6870,
+          "1.5": 5889,
+          "2.0": 5447,
+          "3.0": 4604,
+          "5.0": 3157
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 6326,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 33,
+        "top_diff": [
+          "scoring",
+          "scored",
+          "cricket",
+          "score",
+          "Score"
+        ],
+        "rank_lre": 3305,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3305,
+          "0.5": 3467,
+          "1.5": 3158,
+          "2.0": 3013,
+          "3.0": 2737,
+          "5.0": 2265
+        }
+      },
+      {
+        "subject": "Chang",
+        "model_top1_id": 5845,
+        "model_top1": "China",
+        "n_references": 8,
+        "rank_diff": 73,
+        "top_diff": [
+          "her",
+          "herself",
+          "Taiwan",
+          "hers",
+          "Korean"
+        ],
+        "rank_lre": 2990,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2990,
+          "0.5": 3115,
+          "1.5": 2892,
+          "2.0": 2772,
+          "3.0": 2585,
+          "5.0": 2247
+        }
+      },
+      {
+        "subject": "Hiroshi",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Japanese",
+          "Tokyo",
+          "Japan",
+          "Sak",
+          "Yam"
+        ],
+        "rank_lre": 3881,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3881,
+          "0.5": 4333,
+          "1.5": 3458,
+          "2.0": 3093,
+          "3.0": 2457,
+          "5.0": 1471
+        }
+      },
+      {
+        "subject": "Alejandro",
+        "model_top1_id": 11010,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Salvador",
+          "Mexican",
+          "Venez",
+          "Spanish",
+          "Latin"
+        ],
+        "rank_lre": 6729,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6729,
+          "0.5": 7191,
+          "1.5": 6314,
+          "2.0": 5918,
+          "3.0": 5189,
+          "5.0": 3835
+        }
+      },
+      {
+        "subject": "Akira",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 16,
+        "top_diff": [
+          "fut",
+          "Fut",
+          "Japanese",
+          "their",
+          "anime"
+        ],
+        "rank_lre": 4282,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4282,
+          "0.5": 4542,
+          "1.5": 4053,
+          "2.0": 3813,
+          "3.0": 3374,
+          "5.0": 2653
+        }
+      },
+      {
+        "subject": "Kraipob",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Thailand",
+          "Viet",
+          "Indones",
+          "Tai",
+          "Tamb"
+        ],
+        "rank_lre": 6539,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6539,
+          "0.5": 6950,
+          "1.5": 6150,
+          "2.0": 5744,
+          "3.0": 5015,
+          "5.0": 3692
+        }
+      },
+      {
+        "subject": "Giovanni",
+        "model_top1_id": 11596,
+        "model_top1": "Italy",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Italian",
+          "Ital",
+          "Italia",
+          "Italy",
+          "Sic"
+        ],
+        "rank_lre": 5432,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5432,
+          "0.5": 5893,
+          "1.5": 4986,
+          "2.0": 4547,
+          "3.0": 3752,
+          "5.0": 2560
+        }
+      },
+      {
+        "subject": "Marco",
+        "model_top1_id": 11596,
+        "model_top1": "Italy",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Italian",
+          "Ital",
+          "Italy",
+          "Portugal",
+          "Sic"
+        ],
+        "rank_lre": 5611,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5611,
+          "0.5": 5994,
+          "1.5": 5255,
+          "2.0": 4901,
+          "3.0": 4264,
+          "5.0": 3132
+        }
+      },
+      {
+        "subject": "Kazuki",
+        "model_top1_id": 5488,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Japanese",
+          "Tokyo",
+          "Sak",
+          "anime",
+          "Japan"
+        ],
+        "rank_lre": 4018,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4018,
+          "0.5": 4393,
+          "1.5": 3643,
+          "2.0": 3320,
+          "3.0": 2702,
+          "5.0": 1804
+        }
+      },
+      {
+        "subject": "Shaked",
+        "model_top1_id": 7300,
+        "model_top1": "Israel",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "her",
+          "hers",
+          "herself",
+          "legal",
+          "prosecut"
+        ],
+        "rank_lre": 6345,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6345,
+          "0.5": 6611,
+          "1.5": 6088,
+          "2.0": 5823,
+          "3.0": 5311,
+          "5.0": 4392
+        }
+      },
+      {
+        "subject": "Pierre",
+        "model_top1_id": 5611,
+        "model_top1": "France",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "French",
+          "France",
+          "Fran\u00e7ois",
+          "Paris",
+          "Jacques"
+        ],
+        "rank_lre": 6946,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6946,
+          "0.5": 7589,
+          "1.5": 6330,
+          "2.0": 5770,
+          "3.0": 4694,
+          "5.0": 2974
+        }
+      },
+      {
+        "subject": "Pablo",
+        "model_top1_id": 13335,
+        "model_top1": "Spain",
+        "n_references": 8,
+        "rank_diff": 17,
+        "top_diff": [
+          "Salvador",
+          "Madrid",
+          "painting",
+          "Spanish",
+          "Buenos"
+        ],
+        "rank_lre": 6013,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "the",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6013,
+          "0.5": 6325,
+          "1.5": 5677,
+          "2.0": 5373,
+          "3.0": 4774,
+          "5.0": 3757
+        }
+      },
+      {
+        "subject": "Jules",
+        "model_top1_id": 5611,
+        "model_top1": "France",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "French",
+          "Belg",
+          "France",
+          "her",
+          "Paris"
+        ],
+        "rank_lre": 7370,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7370,
+          "0.5": 7816,
+          "1.5": 6930,
+          "2.0": 6499,
+          "3.0": 5720,
+          "5.0": 4274
+        }
+      },
+      {
+        "subject": "Anong",
+        "model_top1_id": 24329,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 69,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "Viet",
+          "Mong"
+        ],
+        "rank_lre": 7014,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7014,
+          "0.5": 7207,
+          "1.5": 6790,
+          "2.0": 6624,
+          "3.0": 6231,
+          "5.0": 5498
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 6325.0,
+          "median_lograng": 3.801129187579704,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 6013.0,
+          "median_lograng": 3.7791634237644987,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 5677.0,
+          "median_lograng": 3.7541953881898382,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 5373.0,
+          "median_lograng": 3.7302976620971497,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 4604.0,
+          "median_lograng": 3.663229634532868,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3132.0,
+          "median_lograng": 3.4959603948817053,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "0241983edbee",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Juan": 4,
+    "Antoine": 4,
+    "Hong": 4,
+    "Diego": 4,
+    "Xia": 4,
+    "Yitzhak": 6,
+    "Mei": 4,
+    "Manish": 4,
+    "Chalermchai": 7,
+    "Rohit": 5,
+    "Chang": 4,
+    "Hiroshi": 6,
+    "Alejandro": 6,
+    "Akira": 5,
+    "Kraipob": 6,
+    "Giovanni": 5,
+    "Marco": 4,
+    "Kazuki": 5,
+    "Shaked": 4,
+    "Pierre": 4,
+    "Pablo": 4,
+    "Jules": 4,
+    "Anong": 4
+  },
+  "content_tokenization_changes": [
+    {
+      "subject": "Juan",
+      "original_ids": [
+        12797,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        7650,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Antoine",
+      "original_ids": [
+        4589,
+        22033,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        14157,
+        22033,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Hong",
+      "original_ids": [
+        13734,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29537,
+        1334,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Diego",
+      "original_ids": [
+        16057,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29525,
+        9724,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Xia",
+      "original_ids": [
+        2268,
+        1283,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29582,
+        1283,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Yitzhak",
+      "original_ids": [
+        1395,
+        5102,
+        29484,
+        1259,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29570,
+        5102,
+        29484,
+        1259,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Mei",
+      "original_ids": [
+        3365,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        7889,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Manish",
+      "original_ids": [
+        2981,
+        1557,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3124,
+        1557,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Chalermchai",
+      "original_ids": [
+        1457,
+        1050,
+        1626,
+        1106,
+        2353,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1977,
+        1050,
+        1626,
+        1106,
+        2353,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Rohit",
+      "original_ids": [
+        27992,
+        1047,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        2139,
+        1047,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Chang",
+      "original_ids": [
+        1457,
+        1370,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1977,
+        1370,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Hiroshi",
+      "original_ids": [
+        1150,
+        5580,
+        1579,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29537,
+        5580,
+        1579,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Alejandro",
+      "original_ids": [
+        10534,
+        29536,
+        20850,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29509,
+        1059,
+        29536,
+        20850,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Akira",
+      "original_ids": [
+        10300,
+        5575,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29509,
+        29497,
+        5575,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Kraipob",
+      "original_ids": [
+        1292,
+        1288,
+        1276,
+        1366,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29564,
+        1288,
+        1276,
+        1366,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Giovanni",
+      "original_ids": [
+        21882,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29545,
+        19530,
+        15822,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Marco",
+      "original_ids": [
+        21837,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        8076,
+        1883,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Kazuki",
+      "original_ids": [
+        17127,
+        18067,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29564,
+        1709,
+        18067,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Shaked",
+      "original_ids": [
+        2063,
+        7111,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        2749,
+        7111,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Pierre",
+      "original_ids": [
+        14407,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        23642,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Pablo",
+      "original_ids": [
+        1135,
+        23634,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        23634,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Jules",
+      "original_ids": [
+        1243,
+        3232,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        3232,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Anong",
+      "original_ids": [
+        1862,
+        1334,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3588,
+        1334,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    }
+  ],
+  "split_fingerprint": "0241983edbee",
+  "baseline_sha256": {
+    "results/five_model_sweep/mistral7b/shared_split/name_birthplace.json": "328129e090540c40259982f13325e5a9891a8f53bf942fb4eb241254c82a5080"
+  },
+  "data_sha256": "b796df239a577a6bf09d6ad6f1b537a72a7b1a483352090a1586a91f7712584e",
+  "elapsed_seconds": 4.561983108520508
+}

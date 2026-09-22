@@ -1,0 +1,103 @@
+{
+  "relation": "person_band_lead_singer",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 21,
+  "cleaned_samples": 21,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 20,
+      "beta": 3.0,
+      "score": 0.6,
+      "hits": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          50,
+          226,
+          2652,
+          44,
+          1285,
+          648,
+          1,
+          0,
+          0,
+          10105,
+          998,
+          24,
+          0
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 1.7075701760979363,
+        "mean_logrank": 1.8280881729924243,
+        "top1": 0.23076923076923078,
+        "top10": 0.3076923076923077,
+        "mrr": 0.2761562055864281,
+        "optimistic_top1": 0.23076923076923078
+      }
+    }
+  },
+  "lm_accuracy": 1.0,
+  "prior_only_faith": 0.0,
+  "n_faith": 5,
+  "n_lens": 13,
+  "faith_subjects": [
+    "Bono",
+    "Freddie Mercury",
+    "Liam Gallagher",
+    "Brian Johnson",
+    "Jon Bon Jovi"
+  ],
+  "lens_subjects": [
+    "Bono",
+    "Axl Rose",
+    "Jim Morrison",
+    "Chris Martin",
+    "Don Henley",
+    "Jon Bon Jovi",
+    "Eddie Vedder",
+    "James Hetfield",
+    "Kurt Cobain",
+    "Mick Jagger",
+    "Ozzy Osbourne",
+    "Dave Grohl",
+    "Robert Plant"
+  ],
+  "faith_split_fingerprint": "c14eff1de436",
+  "lens_split_fingerprint": "90211ee2af6c",
+  "worker": "olmo_confirm_rho2_7",
+  "elapsed_seconds": 6.818597078323364
+}

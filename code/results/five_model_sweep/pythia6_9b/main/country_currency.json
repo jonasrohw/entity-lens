@@ -1,0 +1,882 @@
+{
+  "relation": "country_currency",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.5": [
+          0.2857142857142857,
+          0.0
+        ],
+        "2.0": [
+          0.35714285714285715,
+          0.0
+        ],
+        "3.0": [
+          0.42857142857142855,
+          0.0
+        ],
+        "5.0": [
+          0.21428571428571427,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "1.5": [
+          0.42857142857142855,
+          0.0
+        ],
+        "2.0": [
+          0.42857142857142855,
+          0.0
+        ],
+        "3.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "5.0": [
+          0.07142857142857142,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "1.5": [
+          0.42857142857142855,
+          0.0
+        ],
+        "2.0": [
+          0.42857142857142855,
+          0.0
+        ],
+        "3.0": [
+          0.21428571428571427,
+          0.0
+        ],
+        "5.0": [
+          0.14285714285714285,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.5": [
+          0.35714285714285715,
+          0.0
+        ],
+        "2.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "3.0": [
+          0.21428571428571427,
+          0.0
+        ],
+        "5.0": [
+          0.14285714285714285,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.5": [
+          0.21428571428571427,
+          0.0
+        ],
+        "2.0": [
+          0.35714285714285715,
+          0.0
+        ],
+        "3.0": [
+          0.35714285714285715,
+          0.0
+        ],
+        "5.0": [
+          0.21428571428571427,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "1.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "2.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "3.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "5.0": [
+          0.14285714285714285,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 5,
+    "best_beta": 3.0,
+    "best_faith": 0.42857142857142855,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 14,
+    "requested_n_test": 100,
+    "lm_correct": 14,
+    "per_subject": {
+      "Malaysia": 0,
+      "Brazil": 0,
+      "South Korea": 0,
+      "China": 1,
+      "United States": 1,
+      "Poland": 0,
+      "Denmark": 1,
+      "Singapore": 1,
+      "Czech Republic": 0,
+      "Sweden": 1,
+      "Indonesia": 0,
+      "Thailand": 0,
+      "Japan": 1,
+      "Russia": 0
+    },
+    "split_fingerprint": "863ba9c7ccbe",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "The official currency of {} is the",
+    "agg": {
+      "diff": {
+        "median_rank": 42772.5,
+        "median_lograng": 4.6300675182872215,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 19071.0,
+        "median_lograng": 4.280330426252893,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Japan",
+        "model_top1_id": 714,
+        "model_top1": "Y",
+        "n_references": 7,
+        "rank_diff": 45823,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 13315,
+        "top_lre": [
+          "",
+          "medical",
+          "veterinary",
+          "healthcare",
+          "reporting"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13315,
+          "0.5": 5091,
+          "1.5": 23311,
+          "2.0": 30126,
+          "3.0": 37128,
+          "5.0": 41627
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 50051,
+        "model_top1": "Yuan",
+        "n_references": 7,
+        "rank_diff": 47881,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 49256,
+        "top_lre": [
+          "",
+          "veterinary",
+          "medical",
+          "healthcare",
+          "reporting"
+        ],
+        "rank_lre_beta": {
+          "1.0": 49256,
+          "0.5": 48243,
+          "1.5": 49324,
+          "2.0": 49204,
+          "3.0": 48982,
+          "5.0": 48657
+        }
+      },
+      {
+        "subject": "Mexico",
+        "model_top1_id": 50035,
+        "model_top1": "Pes",
+        "n_references": 7,
+        "rank_diff": 48527,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 45215,
+        "top_lre": [
+          "",
+          "veterinary",
+          "medical",
+          "healthcare",
+          "reporting"
+        ],
+        "rank_lre_beta": {
+          "1.0": 45215,
+          "0.5": 35847,
+          "1.5": 47276,
+          "2.0": 47892,
+          "3.0": 48304,
+          "5.0": 48470
+        }
+      },
+      {
+        "subject": "Saudi Arabia",
+        "model_top1_id": 416,
+        "model_top1": "R",
+        "n_references": 7,
+        "rank_diff": 46070,
+        "top_diff": [
+          "Saudi",
+          "Yemen",
+          "Arab",
+          "Arabia",
+          "Arabic"
+        ],
+        "rank_lre": 1172,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1172,
+          "0.5": 941,
+          "1.5": 1468,
+          "2.0": 1740,
+          "3.0": 2520,
+          "5.0": 4645
+        }
+      },
+      {
+        "subject": "Hungary",
+        "model_top1_id": 1198,
+        "model_top1": "For",
+        "n_references": 7,
+        "rank_diff": 45966,
+        "top_diff": [
+          "Hungarian",
+          "Hungary",
+          "Hung",
+          "Europe",
+          "Budapest"
+        ],
+        "rank_lre": 8134,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8134,
+          "0.5": 7471,
+          "1.5": 8828,
+          "2.0": 9535,
+          "3.0": 10968,
+          "5.0": 14552
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 50035,
+        "model_top1": "Pes",
+        "n_references": 7,
+        "rank_diff": 38688,
+        "top_diff": [
+          "Argentine",
+          "Argentina",
+          "Buenos",
+          "Chile",
+          "Argent"
+        ],
+        "rank_lre": 18739,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18739,
+          "0.5": 18352,
+          "1.5": 19201,
+          "2.0": 19734,
+          "3.0": 21057,
+          "5.0": 24684
+        }
+      },
+      {
+        "subject": "Australia",
+        "model_top1_id": 46693,
+        "model_top1": "Dollar",
+        "n_references": 7,
+        "rank_diff": 49282,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 48635,
+        "top_lre": [
+          "",
+          "medical",
+          "veterinary",
+          "healthcare",
+          "reporting"
+        ],
+        "rank_lre_beta": {
+          "1.0": 48635,
+          "0.5": 43925,
+          "1.5": 49298,
+          "2.0": 49449,
+          "3.0": 49517,
+          "5.0": 49504
+        }
+      },
+      {
+        "subject": "Thailand",
+        "model_top1_id": 11086,
+        "model_top1": "Ba",
+        "n_references": 7,
+        "rank_diff": 15338,
+        "top_diff": [
+          "Thai",
+          "Thailand",
+          "Bangkok",
+          "Southeast",
+          "Cambodia"
+        ],
+        "rank_lre": 9361,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9361,
+          "0.5": 9622,
+          "1.5": 9134,
+          "2.0": 8914,
+          "3.0": 8540,
+          "5.0": 7963
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 38191,
+        "model_top1": "Won",
+        "n_references": 8,
+        "rank_diff": 2612,
+        "top_diff": [
+          "Seoul",
+          "Korea",
+          "Korean",
+          "Kore",
+          "Taiwan"
+        ],
+        "rank_lre": 20408,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20408,
+          "0.5": 21647,
+          "1.5": 19266,
+          "2.0": 18142,
+          "3.0": 16134,
+          "5.0": 12657
+        }
+      },
+      {
+        "subject": "India",
+        "model_top1_id": 18268,
+        "model_top1": "Ru",
+        "n_references": 8,
+        "rank_diff": 46400,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 33953,
+        "top_lre": [
+          "",
+          "its",
+          "medical",
+          "having",
+          "healthcare"
+        ],
+        "rank_lre_beta": {
+          "1.0": 33953,
+          "0.5": 22401,
+          "1.5": 39840,
+          "2.0": 42495,
+          "3.0": 44395,
+          "5.0": 45487
+        }
+      },
+      {
+        "subject": "United States",
+        "model_top1_id": 46693,
+        "model_top1": "Dollar",
+        "n_references": 8,
+        "rank_diff": 1442,
+        "top_diff": [
+          "Haiti",
+          "American",
+          "American",
+          "Kenya",
+          "Ecuador"
+        ],
+        "rank_lre": 19403,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19403,
+          "0.5": 20886,
+          "1.5": 17987,
+          "2.0": 16692,
+          "3.0": 14310,
+          "5.0": 10589
+        }
+      },
+      {
+        "subject": "Canada",
+        "model_top1_id": 46693,
+        "model_top1": "Dollar",
+        "n_references": 8,
+        "rank_diff": 49241,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 47969,
+        "top_lre": [
+          "",
+          "its",
+          "medical",
+          "healthcare",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 47969,
+          "0.5": 41877,
+          "1.5": 49050,
+          "2.0": 49310,
+          "3.0": 49443,
+          "5.0": 49450
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 11879,
+        "model_top1": "Rub",
+        "n_references": 8,
+        "rank_diff": 47730,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 30087,
+        "top_lre": [
+          "",
+          "its",
+          "medical",
+          "having",
+          "veterinary"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30087,
+          "0.5": 16590,
+          "1.5": 38330,
+          "2.0": 42178,
+          "3.0": 44902,
+          "5.0": 46428
+        }
+      },
+      {
+        "subject": "Sweden",
+        "model_top1_id": 611,
+        "model_top1": "K",
+        "n_references": 8,
+        "rank_diff": 39722,
+        "top_diff": [
+          "Finland",
+          "Scandin",
+          "Swed",
+          "Sweden",
+          "Finnish"
+        ],
+        "rank_lre": 928,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 928,
+          "0.5": 810,
+          "1.5": 1048,
+          "2.0": 1189,
+          "3.0": 1532,
+          "5.0": 2414
+        }
+      },
+      {
+        "subject": "Israel",
+        "model_top1_id": 1457,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 46047,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 15469,
+        "top_lre": [
+          "",
+          "medical",
+          "its",
+          "veterinary",
+          "healthcare"
+        ],
+        "rank_lre_beta": {
+          "1.0": 15469,
+          "0.5": 6628,
+          "1.5": 25511,
+          "2.0": 32120,
+          "3.0": 38514,
+          "5.0": 42437
+        }
+      },
+      {
+        "subject": "Brazil",
+        "model_top1_id": 10417,
+        "model_top1": "Real",
+        "n_references": 8,
+        "rank_diff": 26214,
+        "top_diff": [
+          "vaccine",
+          "veterinary",
+          "NHS",
+          "Veter",
+          "vaccination"
+        ],
+        "rank_lre": 8683,
+        "top_lre": [
+          "",
+          "its",
+          "medical",
+          "veterinary",
+          "healthcare"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8683,
+          "0.5": 6914,
+          "1.5": 11279,
+          "2.0": 13684,
+          "3.0": 17097,
+          "5.0": 20453
+        }
+      },
+      {
+        "subject": "Malaysia",
+        "model_top1_id": 22668,
+        "model_top1": "Ring",
+        "n_references": 8,
+        "rank_diff": 2899,
+        "top_diff": [
+          "Malaysian",
+          "Malaysia",
+          "Malay",
+          "Malays",
+          "Singapore"
+        ],
+        "rank_lre": 11831,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11831,
+          "0.5": 12766,
+          "1.5": 10987,
+          "2.0": 10200,
+          "3.0": 8773,
+          "5.0": 6464
+        }
+      },
+      {
+        "subject": "New Zealand",
+        "model_top1_id": 46693,
+        "model_top1": "Dollar",
+        "n_references": 8,
+        "rank_diff": 18920,
+        "top_diff": [
+          "NZ",
+          "Zealand",
+          "Auckland",
+          "Antarctic",
+          "Finland"
+        ],
+        "rank_lre": 21783,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 21783,
+          "0.5": 22103,
+          "1.5": 21547,
+          "2.0": 21292,
+          "3.0": 20934,
+          "5.0": 20459
+        }
+      },
+      {
+        "subject": "South Africa",
+        "model_top1_id": 18250,
+        "model_top1": "Rand",
+        "n_references": 8,
+        "rank_diff": 2023,
+        "top_diff": [
+          "Africa",
+          "African",
+          "Afric",
+          "Africans",
+          "Zimbabwe"
+        ],
+        "rank_lre": 17225,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17225,
+          "0.5": 18558,
+          "1.5": 15916,
+          "2.0": 14753,
+          "3.0": 12533,
+          "5.0": 9113
+        }
+      },
+      {
+        "subject": "Singapore",
+        "model_top1_id": 46693,
+        "model_top1": "Dollar",
+        "n_references": 8,
+        "rank_diff": 2900,
+        "top_diff": [
+          "Singapore",
+          "Malay",
+          "Malaysia",
+          "Malaysian",
+          "Southeast"
+        ],
+        "rank_lre": 19682,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19682,
+          "0.5": 21032,
+          "1.5": 18425,
+          "2.0": 17243,
+          "3.0": 15089,
+          "5.0": 11470
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 18455.0,
+          "median_lograng": 4.266130818186353,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 19071.0,
+          "median_lograng": 4.280330426252893,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 19233.5,
+          "median_lograng": 4.284080281368638,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 18938.0,
+          "median_lograng": 4.27697311565068,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 19015.5,
+          "median_lograng": 4.2769091389862375,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 20456.0,
+          "median_lograng": 4.310841940494338,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 65.61225843429565,
+  "model_id": "EleutherAI/pythia-6.9b",
+  "revision": "c0e3eee36dc47af0c49f361c74cfe459c09f7f23",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0018038790440186858
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

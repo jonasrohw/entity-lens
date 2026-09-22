@@ -1,0 +1,58 @@
+[
+  {
+    "host": "beta",
+    "devices": "0,1",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8_27b",
+      "--model",
+      "Qwen/Qwen3.8-27B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen_parallel_0.log"
+  },
+  {
+    "host": "beta",
+    "devices": "2,3",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8_27b",
+      "--model",
+      "Qwen/Qwen3.8-27B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen_parallel_1.log"
+  },
+  {
+    "host": "rho1",
+    "devices": "0,1,2",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8_27b",
+      "--model",
+      "Qwen/Qwen3.8-27B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen_parallel_2.log"
+  },
+  {
+    "host": "rho2",
+    "devices": "0,1,2",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8_27b",
+      "--model",
+      "Qwen/Qwen3.8-27B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen_parallel_3.log"
+  }
+]

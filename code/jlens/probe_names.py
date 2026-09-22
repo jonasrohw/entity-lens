@@ -11,16 +11,18 @@ def subject_state(model, tokenizer, name, device, layer):
     """Cache the unmodified state at the last subject token."""
     import torch
 
+    from jlens.model import forward_with_raw_hidden_states
+
     prompt = NEUTRAL_PROMPT.format(name)
     input_ids = tokenizer(prompt, return_tensors="pt").to(device)["input_ids"]
     end = prompt.rindex(name) + len(name)
     position = min(len(tokenizer(prompt[:end]).input_ids) - 1, input_ids.shape[1] - 1)
     with torch.no_grad():
-        output = model(input_ids=input_ids, output_hidden_states=True)
+        _, hidden_states = forward_with_raw_hidden_states(model, input_ids)
     return (
         input_ids,
         position,
-        output.hidden_states[layer][0, position, :].detach().clone(),
+        hidden_states[layer][0, position, :].detach().clone(),
     )
 
 

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Fresh free-generation prominence diagnostic on identical generation/lens rows. Entries show Spearman $\rho$ ($p$); LRE faithfulness is recomputed on those rows with the original selected LRE settings.}
+\label{tab:shared-prominence}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Model & Subset & Relations & vs. LRE faithfulness & vs. gold in lens top 5 \\
+\midrule
+OLMo 3 7B & All & 14 & +0.723 (0.00349) & +0.615 (0.0193) \\
+OLMo 3 7B & No name leakage & 13 & +0.616 (0.025) & +0.610 (0.0269) \\
+GPT-J 6B & All & 14 & +0.082 (0.781) & +0.494 (0.0726) \\
+GPT-J 6B & No name leakage & 13 & -0.057 (0.854) & +0.425 (0.148) \\
+\bottomrule
+\end{tabular}}
+\end{table}

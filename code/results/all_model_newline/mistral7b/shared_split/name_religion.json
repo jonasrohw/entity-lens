@@ -1,0 +1,1816 @@
+{
+  "relation": "name_religion",
+  "protocol": "shared_split",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "lens": {
+    "n": 15,
+    "layer": 17,
+    "template": "{} likely follows the religion of",
+    "agg": {
+      "diff": {
+        "median_rank": 1307.0,
+        "median_lograng": 3.1166077439882485,
+        "agree_at1": 0.0,
+        "agree_at10": 0.06666666666666667
+      },
+      "lre": {
+        "median_rank": 4154.0,
+        "median_lograng": 3.61857102812013,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Pooja",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "her",
+          "herself",
+          "Hind",
+          "Bol",
+          "hers"
+        ],
+        "rank_lre": 1511,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1511,
+          "0.5": 1738,
+          "1.5": 1272,
+          "2.0": 1111,
+          "3.0": 830,
+          "5.0": 495
+        }
+      },
+      {
+        "subject": "Abraham",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 461,
+        "top_diff": [
+          "Abraham",
+          "Moses",
+          "his",
+          "farming",
+          "father"
+        ],
+        "rank_lre": 4110,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4110,
+          "0.5": 4317,
+          "1.5": 3915,
+          "2.0": 3762,
+          "3.0": 3465,
+          "5.0": 2882
+        }
+      },
+      {
+        "subject": "Paul",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 354,
+        "top_diff": [
+          "his",
+          "photograph",
+          "writing",
+          "himself",
+          "photography"
+        ],
+        "rank_lre": 6986,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6986,
+          "0.5": 7270,
+          "1.5": 6740,
+          "2.0": 6503,
+          "3.0": 6017,
+          "5.0": 5130
+        }
+      },
+      {
+        "subject": "Moses",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 816,
+        "top_diff": [
+          "Moses",
+          "pray",
+          "his",
+          "God",
+          "Bible"
+        ],
+        "rank_lre": 4154,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4154,
+          "0.5": 4323,
+          "1.5": 3993,
+          "2.0": 3848,
+          "3.0": 3589,
+          "5.0": 3062
+        }
+      },
+      {
+        "subject": "Lhamo",
+        "model_top1_id": 14540,
+        "model_top1": "Budd",
+        "n_references": 8,
+        "rank_diff": 129,
+        "top_diff": [
+          "singing",
+          "her",
+          "herself",
+          "song",
+          "songs"
+        ],
+        "rank_lre": 1252,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1252,
+          "0.5": 1371,
+          "1.5": 1147,
+          "2.0": 1060,
+          "3.0": 913,
+          "5.0": 655
+        }
+      },
+      {
+        "subject": "Esther",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 1523,
+        "top_diff": [
+          "herself",
+          "her",
+          "Her",
+          "port",
+          "telling"
+        ],
+        "rank_lre": 4320,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4320,
+          "0.5": 4413,
+          "1.5": 4233,
+          "2.0": 4151,
+          "3.0": 3942,
+          "5.0": 3632
+        }
+      },
+      {
+        "subject": "Aarti",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "cooking",
+          "Hind"
+        ],
+        "rank_lre": 1605,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1605,
+          "0.5": 1801,
+          "1.5": 1449,
+          "2.0": 1275,
+          "3.0": 1040,
+          "5.0": 681
+        }
+      },
+      {
+        "subject": "Caroline",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 13306,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "Louise",
+          "French"
+        ],
+        "rank_lre": 7632,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7632,
+          "0.5": 7573,
+          "1.5": 7679,
+          "2.0": 7707,
+          "3.0": 7799,
+          "5.0": 7964
+        }
+      },
+      {
+        "subject": "Isabel",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 17004,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "painting",
+          "dancing"
+        ],
+        "rank_lre": 7718,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7718,
+          "0.5": 7617,
+          "1.5": 7780,
+          "2.0": 7851,
+          "3.0": 8015,
+          "5.0": 8313
+        }
+      },
+      {
+        "subject": "Abigail",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 2374,
+        "top_diff": [
+          "her",
+          "herself",
+          "singing",
+          "writing",
+          "shooting"
+        ],
+        "rank_lre": 7231,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7231,
+          "0.5": 7392,
+          "1.5": 7115,
+          "2.0": 6947,
+          "3.0": 6701,
+          "5.0": 6266
+        }
+      },
+      {
+        "subject": "Ali",
+        "model_top1_id": 11019,
+        "model_top1": "Islam",
+        "n_references": 8,
+        "rank_diff": 1307,
+        "top_diff": [
+          "her",
+          "herself",
+          "shooting",
+          "sty",
+          "riding"
+        ],
+        "rank_lre": 3004,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3004,
+          "0.5": 3079,
+          "1.5": 2926,
+          "2.0": 2857,
+          "3.0": 2728,
+          "5.0": 2517
+        }
+      },
+      {
+        "subject": "Peter",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 1404,
+        "top_diff": [
+          "his",
+          "photograph",
+          "shooting",
+          "himself",
+          "photography"
+        ],
+        "rank_lre": 7100,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7100,
+          "0.5": 7321,
+          "1.5": 6897,
+          "2.0": 6718,
+          "3.0": 6345,
+          "5.0": 5633
+        }
+      },
+      {
+        "subject": "Sumana",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 36,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "Beng",
+          "Software"
+        ],
+        "rank_lre": 1672,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1672,
+          "0.5": 1843,
+          "1.5": 1540,
+          "2.0": 1394,
+          "3.0": 1174,
+          "5.0": 832
+        }
+      },
+      {
+        "subject": "Andrew",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 3278,
+        "top_diff": [
+          "his",
+          "photograph",
+          "photography",
+          "shooting",
+          "writing"
+        ],
+        "rank_lre": 7290,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7290,
+          "0.5": 7414,
+          "1.5": 7183,
+          "2.0": 7062,
+          "3.0": 6862,
+          "5.0": 6481
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 1869,
+        "top_diff": [
+          "cricket",
+          "Hockey",
+          "scoring",
+          "autom",
+          "software"
+        ],
+        "rank_lre": 1907,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1907,
+          "0.5": 1952,
+          "1.5": 1855,
+          "2.0": 1815,
+          "3.0": 1728,
+          "5.0": 1580
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 4323.0,
+          "median_lograng": 3.6358856852812727,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4154.0,
+          "median_lograng": 3.61857102812013,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 3993.0,
+          "median_lograng": 3.6014080605346837,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 3848.0,
+          "median_lograng": 3.585347911094591,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3589.0,
+          "median_lograng": 3.555094448578319,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3062.0,
+          "median_lograng": 3.4861469968065726,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "d9e0fdf8cd40",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.26666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.4,
+          0.0
+        ],
+        "2.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.8,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.7333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.9333333333333333,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.8,
+          0.0
+        ],
+        "2.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.9333333333333333,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.5333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.4,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.4666666666666667,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 17,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 15,
+    "requested_n_test": 100,
+    "lm_correct": 13,
+    "per_subject": {
+      "Pooja": 1,
+      "Abraham": 1,
+      "Paul": 1,
+      "Moses": 1,
+      "Lhamo": 1,
+      "Esther": 1,
+      "Aarti": 1,
+      "Caroline": 1,
+      "Isabel": 1,
+      "Abigail": 1,
+      "Ali": 1,
+      "Peter": 1,
+      "Sumana": 1,
+      "Andrew": 1,
+      "Rohit": 1
+    },
+    "split_fingerprint": "d9e0fdf8cd40",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "n_lre": 15,
+  "baseline_lens": {
+    "n": 15,
+    "layer": 17,
+    "template": "{} likely follows the religion of",
+    "agg": {
+      "diff": {
+        "median_rank": 947.0,
+        "median_lograng": 2.976808337338066,
+        "agree_at1": 0.0,
+        "agree_at10": 0.06666666666666667
+      },
+      "lre": {
+        "median_rank": 4451.0,
+        "median_lograng": 3.6485551556626707,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Pooja",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "actress",
+          "Bol"
+        ],
+        "rank_lre": 1454,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1454,
+          "0.5": 1684,
+          "1.5": 1251,
+          "2.0": 1061,
+          "3.0": 788,
+          "5.0": 454
+        }
+      },
+      {
+        "subject": "Abraham",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 782,
+        "top_diff": [
+          "Moses",
+          "Abraham",
+          "his",
+          "Jesus",
+          "Isaac"
+        ],
+        "rank_lre": 4427,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4427,
+          "0.5": 4576,
+          "1.5": 4282,
+          "2.0": 4141,
+          "3.0": 3872,
+          "5.0": 3438
+        }
+      },
+      {
+        "subject": "Paul",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 947,
+        "top_diff": [
+          "his",
+          "writing",
+          "photograph",
+          "photography",
+          "guitar"
+        ],
+        "rank_lre": 6703,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6703,
+          "0.5": 6946,
+          "1.5": 6498,
+          "2.0": 6264,
+          "3.0": 5818,
+          "5.0": 5036
+        }
+      },
+      {
+        "subject": "Moses",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 1042,
+        "top_diff": [
+          "Moses",
+          "his",
+          "wisdom",
+          "Bible",
+          "His"
+        ],
+        "rank_lre": 4451,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4451,
+          "0.5": 4594,
+          "1.5": 4329,
+          "2.0": 4176,
+          "3.0": 3929,
+          "5.0": 3485
+        }
+      },
+      {
+        "subject": "Lhamo",
+        "model_top1_id": 14540,
+        "model_top1": "Budd",
+        "n_references": 8,
+        "rank_diff": 29,
+        "top_diff": [
+          "her",
+          "herself",
+          "Tibet",
+          "hers",
+          "singing"
+        ],
+        "rank_lre": 1099,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1099,
+          "0.5": 1230,
+          "1.5": 988,
+          "2.0": 882,
+          "3.0": 715,
+          "5.0": 455
+        }
+      },
+      {
+        "subject": "Esther",
+        "model_top1_id": 8172,
+        "model_top1": "Jud",
+        "n_references": 8,
+        "rank_diff": 1895,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "\u0435\u0451",
+          "Her"
+        ],
+        "rank_lre": 4534,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4534,
+          "0.5": 4645,
+          "1.5": 4442,
+          "2.0": 4355,
+          "3.0": 4180,
+          "5.0": 3880
+        }
+      },
+      {
+        "subject": "Aarti",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "cooking",
+          "\u0435\u0451"
+        ],
+        "rank_lre": 1558,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1558,
+          "0.5": 1739,
+          "1.5": 1397,
+          "2.0": 1232,
+          "3.0": 974,
+          "5.0": 614
+        }
+      },
+      {
+        "subject": "Caroline",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 5630,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "\u0435\u0451",
+          "haar"
+        ],
+        "rank_lre": 7071,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7071,
+          "0.5": 7121,
+          "1.5": 7052,
+          "2.0": 7001,
+          "3.0": 6918,
+          "5.0": 6774
+        }
+      },
+      {
+        "subject": "Isabel",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 9242,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "\u0435\u0451",
+          "haar"
+        ],
+        "rank_lre": 7224,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7224,
+          "0.5": 7197,
+          "1.5": 7237,
+          "2.0": 7272,
+          "3.0": 7313,
+          "5.0": 7381
+        }
+      },
+      {
+        "subject": "Abigail",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 3671,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "writing",
+          "telling"
+        ],
+        "rank_lre": 7008,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7008,
+          "0.5": 7087,
+          "1.5": 6906,
+          "2.0": 6826,
+          "3.0": 6645,
+          "5.0": 6309
+        }
+      },
+      {
+        "subject": "Ali",
+        "model_top1_id": 11019,
+        "model_top1": "Islam",
+        "n_references": 8,
+        "rank_diff": 548,
+        "top_diff": [
+          "her",
+          "herself",
+          "shooting",
+          "hers",
+          "racing"
+        ],
+        "rank_lre": 3214,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3214,
+          "0.5": 3361,
+          "1.5": 3086,
+          "2.0": 2983,
+          "3.0": 2767,
+          "5.0": 2426
+        }
+      },
+      {
+        "subject": "Peter",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 832,
+        "top_diff": [
+          "his",
+          "photography",
+          "photograph",
+          "fishing",
+          "mining"
+        ],
+        "rank_lre": 6688,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6688,
+          "0.5": 6937,
+          "1.5": 6467,
+          "2.0": 6218,
+          "3.0": 5750,
+          "5.0": 4946
+        }
+      },
+      {
+        "subject": "Sumana",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 249,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "Software",
+          "\u0435\u0451"
+        ],
+        "rank_lre": 1747,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1747,
+          "0.5": 1853,
+          "1.5": 1649,
+          "2.0": 1548,
+          "3.0": 1399,
+          "5.0": 1120
+        }
+      },
+      {
+        "subject": "Andrew",
+        "model_top1_id": 23034,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 2859,
+        "top_diff": [
+          "his",
+          "photography",
+          "photograph",
+          "shooting",
+          "writing"
+        ],
+        "rank_lre": 6930,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6930,
+          "0.5": 7049,
+          "1.5": 6798,
+          "2.0": 6681,
+          "3.0": 6441,
+          "5.0": 5991
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 26742,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 6186,
+        "top_diff": [
+          "cricket",
+          "scoring",
+          "Hockey",
+          "Football",
+          "his"
+        ],
+        "rank_lre": 1927,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1927,
+          "0.5": 1936,
+          "1.5": 1919,
+          "2.0": 1909,
+          "3.0": 1896,
+          "5.0": 1914
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 4594.0,
+          "median_lograng": 3.66228551572213,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4451.0,
+          "median_lograng": 3.6485551556626707,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 4329.0,
+          "median_lograng": 3.6364878963533656,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 4176.0,
+          "median_lograng": 3.620864475265121,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3929.0,
+          "median_lograng": 3.5943925503754266,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3485.0,
+          "median_lograng": 3.5423273827739745,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "d9e0fdf8cd40",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Arjun": 5,
+    "Thomas": 4,
+    "Jivaka": 5,
+    "Raj": 4,
+    "Bhikkhuni": 7,
+    "Fatima": 4,
+    "Ananda": 4,
+    "Omar": 4,
+    "Pooja": 5,
+    "Abraham": 4,
+    "Paul": 3,
+    "Moses": 4,
+    "Lhamo": 5,
+    "Esther": 4,
+    "Aarti": 5,
+    "Caroline": 4,
+    "Isabel": 4,
+    "Abigail": 5,
+    "Ali": 3,
+    "Peter": 4,
+    "Sumana": 4,
+    "Andrew": 4,
+    "Rohit": 5
+  },
+  "content_tokenization_changes": [
+    {
+      "subject": "Arjun",
+      "original_ids": [
+        1778,
+        29536,
+        1138,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        2132,
+        29536,
+        1138,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Thomas",
+      "original_ids": [
+        6851,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1995,
+        24624,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Jivaka",
+      "original_ids": [
+        1243,
+        1217,
+        9157,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        1217,
+        9157,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Raj",
+      "original_ids": [
+        17586,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        1918,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Bhikkhuni",
+      "original_ids": [
+        19579,
+        1617,
+        16655,
+        11578,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        29484,
+        1617,
+        16655,
+        11578,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Fatima",
+      "original_ids": [
+        21141,
+        5018,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        24844,
+        5018,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ananda",
+      "original_ids": [
+        1862,
+        6672,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3588,
+        6672,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Omar",
+      "original_ids": [
+        1219,
+        4247,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29530,
+        4247,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Pooja",
+      "original_ids": [
+        1135,
+        4232,
+        3599,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        4232,
+        3599,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Abraham",
+      "original_ids": [
+        23152,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        7338,
+        11930,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Paul",
+      "original_ids": [
+        4688,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        23009,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Moses",
+      "original_ids": [
+        27393,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        15547,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Lhamo",
+      "original_ids": [
+        1161,
+        4288,
+        29477,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29526,
+        4288,
+        29477,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Esther",
+      "original_ids": [
+        4746,
+        1431,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15412,
+        1431,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Aarti",
+      "original_ids": [
+        1098,
+        1212,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29509,
+        1212,
+        29478,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Caroline",
+      "original_ids": [
+        23985,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        12567,
+        21020,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Isabel",
+      "original_ids": [
+        22042,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3069,
+        1856,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Abigail",
+      "original_ids": [
+        3252,
+        1094,
+        1382,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29509,
+        4808,
+        1382,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ali",
+      "original_ids": [
+        16052,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15282,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Peter",
+      "original_ids": [
+        6734,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        2391,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Sumana",
+      "original_ids": [
+        7695,
+        3006,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        10649,
+        3006,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Andrew",
+      "original_ids": [
+        11158,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3235,
+        3284,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Rohit",
+      "original_ids": [
+        27992,
+        1047,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        2139,
+        1047,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    }
+  ],
+  "split_fingerprint": "d9e0fdf8cd40",
+  "baseline_sha256": {
+    "results/five_model_sweep/mistral7b/shared_split/name_religion.json": "a5ea24fe19d448aa5d9eafe98652a24dd5cc44778d8dfb10966b24c7597806df"
+  },
+  "data_sha256": "49552370e79d2ea17ce0c3e5335af42506ac09d6924618de96be20201b300aed",
+  "elapsed_seconds": 4.604784727096558
+}

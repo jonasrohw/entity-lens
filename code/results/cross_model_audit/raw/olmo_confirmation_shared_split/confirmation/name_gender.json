@@ -1,0 +1,69 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "subject_policy": "original_rows",
+  "input_samples": 19,
+  "cleaned_samples": 19,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 11,
+      "beta": 5.0,
+      "score": 1.0,
+      "hits": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          17162,
+          17162,
+          13069
+        ],
+        "hits": [
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 4.23459320248533,
+        "mean_logrank": 4.195153997517068,
+        "top1": 0.0,
+        "top10": 0.0,
+        "mrr": 6.434694610861907e-05,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 1.0,
+  "prior_only_faith": 0.0,
+  "n_faith": 3,
+  "n_lens": 3,
+  "faith_subjects": [
+    "Sofia",
+    "Sofia",
+    "Natalie"
+  ],
+  "lens_subjects": [
+    "Sofia",
+    "Sofia",
+    "Natalie"
+  ],
+  "faith_split_fingerprint": "2e2efc5326ab",
+  "lens_split_fingerprint": "2e2efc5326ab",
+  "worker": "olmo_shared_beta_3",
+  "elapsed_seconds": 4.864288330078125
+}

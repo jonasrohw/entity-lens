@@ -1,0 +1,256 @@
+\section{Current shared-split results and baseline audit}
+\label{sec:shared-baselines}
+
+This appendix reports the current, matched comparison across seven models.
+It supersedes the older baseline comparisons that used an unprefixed neutral
+prompt or the legacy split. All tables in this appendix are generated from
+the retained measurements, rather than transcribed from historical reports.
+Spearman correlation is the primary statistic; Pearson correlations are
+included below. The historical main-text figures are not inputs to this analysis.
+
+\subsection{Common evaluation protocol}
+
+For each model and relation, we first remove every example whose object's
+first answer token is shared by a \emph{different complete object} in that
+relation. Multiple examples with the same complete object remain eligible.
+This is a first-token identifiability filter, not a single-token-name filter:
+multi-token subjects and multi-token objects can remain. After filtering,
+seed 0 defines eight demonstrations, eight Jacobian references, and up to
+100 test rows. The scored rows are disjoint from the reference rows.
+Repeated subject strings can nevertheless occur in different rows; references
+with the same subject string as a test row are excluded from that row's average.
+We retain the existing 25 evaluable relations per model, including relations
+with only two or three test rows, and separately report the sensitivity
+requiring at least four. Every primary baseline receives the same test pool
+and answer targets \emph{within each model}; undefined Geva scores are
+handled explicitly below. Tokenizer-dependent object
+filtering means that the examples need not be identical across models.
+
+Every neutral lens uses exactly \texttt{\textbackslash n\{subject\} is known for},
+with the tokenizer's native special-token behavior retained. The readout
+position is the subject's final token. This avoids the Qwen3 8B first-position
+artifact seen with the unprefixed prompt; the diagnostic did not find a
+$+1$ or $-1$ indexing error. Qwen's original content tokens are unchanged by
+the prefix. This is not universal: Mistral's initial word-boundary tokenization
+changes, so its prefix comparison also changes tokenization. The
+relation-specific eight-shot prompts, their model top-one answer tokens,
+and the retained LRE measurements remain fixed. In particular, the newline
+does not redefine the LRE target task.
+
+All new lens measurements use float32, eager attention, frozen parameters,
+and pinned model revisions. Hidden-state indices in
+Table~\ref{tab:shared-coverage} denote the output after that many transformer
+blocks. The layer is fixed across relations for a given model.
+Jacobian products use double backward. Numerical checks compare final
+logits, scalar and batched products, finite differences, and, where used,
+cached-prefix derivatives. Each readout applies the model's actual final
+normalization exactly once, followed by its output head and native logit
+softcapping. This includes the Gemma/Qwen normalization parameterization and
+replaces the historical OLMo raw-Jacobian file that predated the normalization fix.
+
+For every test row, the target is the full model's top-one token under the
+relation prompt, not necessarily the gold answer. LRE faithfulness is its
+agreement with the selected relation-specific LRE. We retain the original
+layer/beta selection and outcome values: this appendix does not turn that
+in-sample hyperparameter selection into a held-out evaluation.
+
+\input{generated/shared_baselines/coverage}
+
+\subsection{Readout definitions}
+
+Let $s_e$ be a test subject's intermediate state, $s_i$ a reference state,
+$f_i(s_i)$ the last-position final-block state in reference $i$'s neutral
+prompt, and $J_i=\partial f_i/\partial s_i$. Averages below use only the
+eligible references for $e$. Let $D$ denote final normalization and vocabulary
+readout. We compare
+\begin{align*}
+ \text{logit lens:}\quad &D(s_e),\\
+ \text{differential logit lens:}\quad &D(s_e-\operatorname{mean}_i s_i),\\
+ \text{raw Jacobian:}\quad &D(\operatorname{mean}_i J_i s_e),\\
+ \text{differential Jacobian:}\quad &D(\operatorname{mean}_i J_i(s_e-s_i)),\\
+ \text{affine Jacobian:}\quad
+ &D\!\left(\operatorname{mean}_i[f_i(s_i)+\beta J_i(s_e-s_i)]\right).
+\end{align*}
+The raw Jacobian and affine readouts are distinct baselines. The fixed affine
+baseline uses $\beta=1$; the full fixed grid is
+$\{0.5,1,1.5,2,3,5\}$. We also retain both exploratory tuning rules: maximize
+top-one agreement or minimize median log-rank within a relation, breaking
+ties toward smaller beta. Both use the scored rows and are explicitly
+in sample.
+
+For neural readouts, a target's zero-based rank counts vocabulary logits
+strictly greater than its logit. The relation score is
+$-\operatorname{median}_e\log_{10}(\mathrm{rank}_e+1)$; higher is better.
+Every relation receives equal weight in the correlation with faithfulness.
+Ranks are not pooled over subjects or over models.
+
+\subsection{Wikipedia attribute and frequency baselines}
+
+The Geva baseline is the subject-attribute overlap metric of
+\citet{geva2023dissecting}, using the retrieval/filtering reconstruction of
+\citet{gerstner2026weakening}. It is not a frequency-rank correlation.
+We use the verified English Wikipedia dump of 20 October 2021, containing
+40,284,960 cleaned nonempty paragraphs. We rebuild the BM25 index for the
+union of the current test subjects across all seven models. This common
+query vocabulary is an explicit adaptation of the reconstruction: retaining
+the old index would retain its obsolete subject vocabulary and document
+lengths. Lucene BM25 uses $k_1=1.5$, $b=0.75$, and retrieves 100 paragraphs
+before applying the source subject/title substring filter.
+
+Each model tokenizes the concatenated retained paragraphs with its own
+tokenizer. The attribute set keeps decoded tokens of stripped length greater
+than two, excluding English stopwords. We take the \emph{top 50} ordinary
+logit-lens predictions first and then apply the source prediction filter.
+The subject's attribute rate is the overlap with the attribute set divided
+by the number of surviving predictions, times 100. The source's asymmetric
+case handling is preserved: the corpus-side stopword check is case-sensitive;
+the prediction-side check lowercases. Relation scores average subject rates.
+An empty retrieval contributes zero when predictions survive; an empty
+prediction denominator is undefined, not silently set to zero. Coverage is
+recorded separately. Pythia has 413 such undefined rows, which are excluded
+from its attribute-rate means; the other models have none.
+Table~\ref{tab:shared-geva-coverage} additionally restricts all readouts and
+the LRE outcome to the same Geva-defined rows, with at least two per relation.
+This transfers the metric to our models, layer, prompts,
+and relation pool; it does not reproduce the source papers' original experiments.
+
+The separate \emph{Wikipedia token-frequency rank} baseline ranks each
+relation-prompt target by its count in the same subject's retained Wikipedia
+text. Ties receive zero-based midranks across the full model output
+vocabulary; absent tokens tie at the bottom. We aggregate with the same
+negative median log-rank. Finally, the vocabulary-agreement diagnostic
+computes Spearman correlation between Wikipedia token counts and logit-lens
+logits over the eligible vocabulary, then averages over a relation's test
+rows. This diagnostic is distinct from both Geva overlap and answer-token rank.
+
+\subsection{Primary Spearman comparisons}
+
+\input{generated/shared_baselines/findings}
+\input{generated/shared_baselines/lenses_spearman}
+\input{generated/shared_baselines/lenses_pvalues}
+\input{generated/shared_baselines/geva_coverage}
+\input{generated/shared_baselines/beta_spearman}
+\input{generated/shared_baselines/paired_gaps}
+
+The $p$-values are two-sided and unadjusted. Relations can share subjects
+and objects, and many predictors are tested; these are descriptive,
+exploratory comparisons. Paired bootstrap intervals resample the same 25
+relations for both readouts, rerank each resample, and use 10,000 draws
+with seed 20260921. They quantify relation-resampling uncertainty, not
+variation across model training runs.
+
+\subsection{Frequency, cardinality, and output-distribution controls}
+
+The model answer prior is the mean log probability of a target token under
+ten fixed neutral contexts: empty/BOS, ``The'', ``In the'', ``It was'',
+``She said the'', ``Here is'', ``One of the'', ``According to the'',
+``There is a'', and ``Yesterday the''. We average these token scores over
+the current test rows, separately for model targets and gold first tokens.
+These contexts define a frequency proxy and are not the neutral lens prompt.
+They were rerun in float32 for every pinned model. The empty context uses
+the tokenizer's BOS string, or its existing end-of-text fallback, and retains
+the tokenizer's normal special-token insertion.
+
+Cardinality is samples per distinct complete object. We report the original
+full-data version as well as filtered-pool and test-only versions. The
+relation-prompt intercept-only baseline decodes the mean reference output
+without a subject-dependent Jacobian term. Its saved ordinary-forward
+measurements are reused only after checking model revision, split fingerprint,
+ordered target IDs, gold IDs, and selected-LRE agreement against the current
+rows. Modal-target fraction, target entropy, and model gold-token accuracy
+are outcome-distribution controls. Modal-target fraction is an in-sample
+constant-prediction oracle, not a learned predictor.
+
+\input{generated/shared_baselines/controls_spearman}
+\input{generated/shared_baselines/controls_pvalues}
+
+The corpus controls reuse a completed scan of the three published OLMo 3
+training mixes: 175,877 shards and 3,861,363,584 document records. Of these,
+2,329,747 records have redacted text that cannot contribute observed mentions.
+These are OLMo training-corpus measurements; for the six other models, the
+\emph{same OLMo corpus is only an external frequency proxy}. We do not claim
+access to those models' actual training frequencies. Counts describe the
+published document multiset, including repeated records across stages,
+rather than packed training sequences or exact training exposure weights.
+
+Counts are binary document presence of literal subject/object strings,
+using NFC normalization, whitespace collapse, casefolding, and Unicode word
+boundaries, without alias resolution or a proximity constraint. With joint
+count $c_{so}$ and marginals $c_s,c_o$, the directional quantities are
+$P(o|s)=c_{so}/c_s$, $P(s|o)=c_{so}/c_o$, and their difference. Both directions
+use common support where both marginals are at least one. Macro features
+average fact-level values on the exact current test rows; micro conditionals
+are ratios of summed counts. Repeated evaluation rows retain their evaluation
+weight even when they share a deduplicated corpus fact. The count scan itself
+does not depend on the lens prompt and is reused; all subset aggregation and
+correlations are recomputed. The overlap sensitivity removes pairs where one
+normalized name contains the other. Conditional direction is not independent
+of marginal frequency: when $c_{so}>0$, $P(o|s)/P(s|o)=c_o/c_s$.
+
+\input{generated/shared_baselines/corpus_spearman}
+\input{generated/shared_baselines/corpus_pvalues}
+\input{generated/shared_baselines/corpus_stages}
+
+\subsection{Matched prominence and partial-correlation diagnostics}
+
+We refresh the original OLMo/GPT-J prominence diagnostic on its 14-relation
+scope. For up to the first 40 test rows, the model greedily generates up to
+90 tokens from each of two newline-prefixed prose prompts:
+\texttt{\textbackslash n\{subject\} is best known for} and
+\texttt{\textbackslash nHere are some facts about \{subject\}. First,}.
+A row is a hit when either continuation contains a distinctive gold-object
+word under the existing matching rule. Words shared with the subject name
+are removed; rows with no distinctive word are excluded. A separate
+four-character-prefix rule flags residual name leakage. We require at least
+five scorable rows per relation/subset. The gold-in-lens top-five rate and
+selected-LRE faithfulness are recomputed on exactly these same rows, fixing
+the old comparison's cohort mismatch. This diagnostic uses two different
+prose prompts by design and is separate from the 25-relation lens benchmark.
+
+\input{generated/shared_baselines/prominence}
+\input{generated/shared_baselines/sensitivity}
+\input{generated/shared_baselines/robustness}
+
+Partial Spearman correlation here is Pearson correlation between residuals
+after regressing ranked lens score and ranked faithfulness on an intercept
+and the ranked controls. It is not Spearman correlation of reranked
+residuals. The intercept-adjusted outcome is
+$(\mathrm{faith}-\mathrm{prior\ faith})/(1-\mathrm{prior\ faith})$;
+relations with zero denominator are excluded and their counts are retained
+in the machine-readable report.
+
+\clearpage
+\subsection{Pearson sensitivity}
+These tables change only the correlation statistic. The samples, feature
+definitions, transformations, and LRE outcomes are identical to the
+Spearman tables. Pearson is computed on the already defined lens scores
+and aggregate corpus features, not on raw subject ranks.
+\input{generated/shared_baselines/lenses_pearson}
+\input{generated/shared_baselines/controls_pearson}
+\input{generated/shared_baselines/corpus_pearson}
+\input{generated/shared_baselines/beta_pearson}
+
+\clearpage
+\subsection{Complete relation-level measurements}
+The following tables give every primary relation measurement. Exact values,
+all beta settings, coverage, p-values for both correlation statistics,
+paired intervals, and source hashes are retained in the accompanying CSV/JSON
+artifacts under \texttt{code/results/shared\_baselines/}.
+Historical unprefixed measurements, extended-beta convergence checks,
+deduplicated Mistral grid-confirmation experiments, and causal/patching
+analyses are catalogued separately; they are not mixed into the current
+shared-split baseline tables.
+\input{generated/shared_baselines/relations_olmo3_7b}
+\clearpage
+\input{generated/shared_baselines/relations_gptj}
+\clearpage
+\input{generated/shared_baselines/relations_mistral7b}
+\clearpage
+\input{generated/shared_baselines/relations_gemma2_9b}
+\clearpage
+\input{generated/shared_baselines/relations_qwen3_8b_base}
+\clearpage
+\input{generated/shared_baselines/relations_qwen3_8_27b}
+\clearpage
+\input{generated/shared_baselines/relations_pythia6_9b}
+\clearpage

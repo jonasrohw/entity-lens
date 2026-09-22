@@ -1,0 +1,193 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "prompt_name": "is",
+  "lens": {
+    "n": 3,
+    "layer": 19,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 102934.0,
+        "median_lograng": 5.012563068857345,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 76382.0,
+        "median_lograng": 4.882996711615978,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 883,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 98262,
+        "top_diff": [
+          "\u82d7",
+          ".rectangle",
+          "&id",
+          "\u5919",
+          "\u79cd\u5b50"
+        ],
+        "rank_lre": 76382,
+        "top_lre": [
+          "\u82d7",
+          ".rectangle",
+          "&id",
+          "seeded",
+          "\u5919"
+        ],
+        "rank_lre_beta": {
+          "1.0": 76382,
+          "0.5": 50184,
+          "1.5": 84230,
+          "2.0": 87894,
+          "3.0": 91595,
+          "5.0": 94286
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 5220,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 102934,
+        "top_diff": [
+          "\u82d7",
+          ".rectangle",
+          "&id",
+          "\u5919",
+          "\u79cd\u5b50"
+        ],
+        "rank_lre": 90909,
+        "top_lre": [
+          "\u82d7",
+          ".rectangle",
+          "&id",
+          "\u5919",
+          "seeded"
+        ],
+        "rank_lre_beta": {
+          "1.0": 90909,
+          "0.5": 76686,
+          "1.5": 95199,
+          "2.0": 97232,
+          "3.0": 99119,
+          "5.0": 100670
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 883,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 130367,
+        "top_diff": [
+          "NewItem",
+          "-Type",
+          "Sort",
+          "\u77db",
+          "cholesterol"
+        ],
+        "rank_lre": 1235,
+        "top_lre": [
+          "a",
+          "preparing",
+          "making",
+          "trying",
+          "planning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1235,
+          "0.5": 1133,
+          "1.5": 1405,
+          "2.0": 1683,
+          "3.0": 2787,
+          "5.0": 9173
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 50184.0,
+          "median_lograng": 4.700573928485817,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 76382.0,
+          "median_lograng": 4.882996711615978,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 84230.0,
+          "median_lograng": 4.925471956715566,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 87894.0,
+          "median_lograng": 4.943964170475688,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 91595.0,
+          "median_lograng": 4.961876508429222,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 94286.0,
+          "median_lograng": 4.974451817684714,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "{} is"
+  },
+  "positions": {
+    "Oliver": 1,
+    "William": 0,
+    "Caleb": 1,
+    "Natalie": 2,
+    "Benjamin": 1,
+    "Scarlett": 1,
+    "Connor": 0,
+    "Sofia": 2,
+    "Tom": 0,
+    "Emily": 0,
+    "Evan": 1
+  },
+  "faithfulness": 0.6666666666666666,
+  "n_lre": 3,
+  "split_fingerprint": "e768509b2ebf",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/name_gender.json",
+  "retained_sha256": "dafdf854da5e74ae8e7b43f7714a4eacf4210e14ca0c24e6b541044938ebbc45",
+  "data_sha256": "cfeded39fc091fb548791cf588e9ab0d1613b2ab5f8e72645929b55a4583fcf2",
+  "worker": 4,
+  "elapsed_seconds": 1.6401550769805908
+}

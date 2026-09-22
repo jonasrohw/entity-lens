@@ -1,0 +1,536 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "model": "qwen3_8_27b",
+  "worker": "rho2_0_1_2_b8",
+  "lens": {
+    "n": 3,
+    "layer": 34,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 95283.0,
+        "median_lograng": 4.979019980438029,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 1653.0,
+        "median_lograng": 3.218535505216528,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 855,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 50252,
+        "top_diff": [
+          "Teixe",
+          "\u996e\u9152",
+          "\u559d\u9152",
+          "\u9152\u7cbe",
+          "songs"
+        ],
+        "rank_lre": 1583,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1583,
+          "0.5": 1594,
+          "1.5": 1548,
+          "2.0": 1534,
+          "3.0": 1489,
+          "5.0": 1434
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 5054,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 95283,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "poems",
+          "\u8bf4\u5979"
+        ],
+        "rank_lre": 5850,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5850,
+          "0.5": 5871,
+          "1.5": 5836,
+          "2.0": 5825,
+          "3.0": 5805,
+          "5.0": 5777
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 855,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 135514,
+        "top_diff": [
+          "riff",
+          "Nashville",
+          "Blizzard",
+          "Evan",
+          "indie"
+        ],
+        "rank_lre": 1653,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1653,
+          "0.5": 1630,
+          "1.5": 1667,
+          "2.0": 1700,
+          "3.0": 1755,
+          "5.0": 1878
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 1630.0,
+          "median_lograng": 3.212453961040276,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 1653.0,
+          "median_lograng": 3.218535505216528,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1667.0,
+          "median_lograng": 3.22219604630172,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1700.0,
+          "median_lograng": 3.230704313612569,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1755.0,
+          "median_lograng": 3.244524511570084,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 1878.0,
+          "median_lograng": 3.2739267801005254,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "10": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "28": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "34": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "40": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "46": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 10,
+    "best_beta": 0.5,
+    "best_faith": 0.6666666666666666,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 3,
+    "requested_n_test": 100,
+    "lm_correct": 3,
+    "per_subject": {
+      "Tom": 1,
+      "Emily": 0,
+      "Evan": 1
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "n_lre": 3,
+  "baseline_lens": {
+    "n": 3,
+    "layer": 34,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 147125.0,
+        "median_lograng": 5.167689427715593,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 1813.0,
+        "median_lograng": 3.2586372827240764,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 855,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 94017,
+        "top_diff": [
+          "hits",
+          "paintings",
+          "portraits",
+          "hit",
+          "translating"
+        ],
+        "rank_lre": 1813,
+        "top_lre": [
+          "being",
+          "the",
+          "his",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1813,
+          "0.5": 1750,
+          "1.5": 1887,
+          "2.0": 1958,
+          "3.0": 2150,
+          "5.0": 2633
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 5054,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 197105,
+        "top_diff": [
+          "paintings",
+          "translating",
+          "poems",
+          "hits",
+          "sculptures"
+        ],
+        "rank_lre": 7361,
+        "top_lre": [
+          "being",
+          "the",
+          "his",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7361,
+          "0.5": 6868,
+          "1.5": 7897,
+          "2.0": 8469,
+          "3.0": 9676,
+          "5.0": 12221
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 855,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 147125,
+        "top_diff": [
+          "Evan",
+          "Blizzard",
+          "Connor",
+          "Cardiff",
+          "Spokane"
+        ],
+        "rank_lre": 1746,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1746,
+          "0.5": 1707,
+          "1.5": 1778,
+          "2.0": 1818,
+          "3.0": 1886,
+          "5.0": 2104
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 1750.0,
+          "median_lograng": 3.243286146083446,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 1813.0,
+          "median_lograng": 3.2586372827240764,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1887.0,
+          "median_lograng": 3.27600198996205,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1958.0,
+          "median_lograng": 3.2920344359947364,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 2150.0,
+          "median_lograng": 3.3326404103874627,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2633.0,
+          "median_lograng": 3.420615770625765,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Oliver": 2,
+    "William": 1,
+    "Caleb": 2,
+    "Natalie": 3,
+    "Benjamin": 2,
+    "Scarlett": 2,
+    "Connor": 1,
+    "Sofia": 3,
+    "Tom": 1,
+    "Emily": 1,
+    "Evan": 2
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "e768509b2ebf",
+  "baseline_sha256": {
+    "results/five_model_sweep/qwen3_8_27b/shared_split/name_gender.json": "fa561bece12d49593dbeb6a63850f32abe6147bb81a47df8fe4a5c12c3866c04"
+  },
+  "data_sha256": "cfeded39fc091fb548791cf588e9ab0d1613b2ab5f8e72645929b55a4583fcf2",
+  "elapsed_seconds": 8.283603429794312
+}

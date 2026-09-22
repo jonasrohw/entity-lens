@@ -1,0 +1,286 @@
+{
+  "relation": "city_in_country",
+  "protocol": "shared_split",
+  "prompt_name": "described_as",
+  "lens": {
+    "n": 6,
+    "layer": 19,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 1.0,
+        "median_lograng": 0.3010299956639812,
+        "agree_at1": 0.3333333333333333,
+        "agree_at10": 0.8333333333333334
+      },
+      "lre": {
+        "median_rank": 559.0,
+        "median_lograng": 2.669346748964852,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Panama City",
+        "model_top1_id": 48036,
+        "model_top1": "Panama",
+        "n_references": 8,
+        "rank_diff": 27,
+        "top_diff": [
+          "Florida",
+          "hurricane",
+          "Tampa",
+          "Hurricane",
+          "Hurricanes"
+        ],
+        "rank_lre": 1560,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1560,
+          "0.5": 2503,
+          "1.5": 981,
+          "2.0": 611,
+          "3.0": 206,
+          "5.0": 40
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 61038,
+        "model_top1": "Cambodia",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "\u67ec\u57d4\u5be8",
+          "Cambodia",
+          "Laos",
+          "Myanmar",
+          "Sri"
+        ],
+        "rank_lre": 868,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 868,
+          "0.5": 2829,
+          "1.5": 221,
+          "2.0": 52,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 6747,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Delhi",
+          "India",
+          "India",
+          "Islamabad",
+          "BJP"
+        ],
+        "rank_lre": 103,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 103,
+          "0.5": 257,
+          "1.5": 44,
+          "2.0": 21,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Buenos Aires",
+        "model_top1_id": 31064,
+        "model_top1": "Argentina",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Buenos",
+          "Argentina",
+          "Argentine",
+          "\u963f\u6839\u5ef7",
+          "Argentina"
+        ],
+        "rank_lre": 150,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 150,
+          "0.5": 573,
+          "1.5": 44,
+          "2.0": 11,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Port-au-Prince",
+        "model_top1_id": 55190,
+        "model_top1": "Haiti",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Haiti",
+          "Hait",
+          "Congo",
+          "Jamaica",
+          "Trinidad"
+        ],
+        "rank_lre": 250,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 250,
+          "0.5": 1247,
+          "1.5": 53,
+          "2.0": 10,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 66013,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dominican",
+          "Puerto",
+          "Hispan",
+          "Nicaragua",
+          "Panama"
+        ],
+        "rank_lre": 1797,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1797,
+          "0.5": 3636,
+          "1.5": 847,
+          "2.0": 355,
+          "3.0": 70,
+          "5.0": 3
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 1875.0,
+          "median_lograng": 3.247424454942399,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 559.0,
+          "median_lograng": 2.669346748964852,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 137.0,
+          "median_lograng": 2.039373367136804,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 36.5,
+          "median_lograng": 1.5333492752114977,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3.0,
+          "median_lograng": 0.6020599913279624,
+          "agree_at1": 0.16666666666666666,
+          "agree_at10": 0.6666666666666666
+        },
+        "5.0": {
+          "median_rank": 0.0,
+          "median_lograng": 0.0,
+          "agree_at1": 0.6666666666666666,
+          "agree_at10": 0.8333333333333334
+        }
+      }
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "neutral_prompt": "{} can be described as"
+  },
+  "positions": {
+    "S\u00e3o Paulo": 2,
+    "Hong Kong": 1,
+    "Ho Chi Minh City": 3,
+    "Cape Town": 2,
+    "Saint Petersburg": 1,
+    "Casablanca": 3,
+    "Santiago de Chile": 3,
+    "Punta Cana": 3,
+    "Panama City": 2,
+    "Siem Reap": 3,
+    "New Delhi": 1,
+    "Buenos Aires": 3,
+    "Port-au-Prince": 3,
+    "Santo Domingo": 3
+  },
+  "faithfulness": 0.8333333333333334,
+  "n_lre": 6,
+  "split_fingerprint": "c5202c7b3638",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/city_in_country.json",
+  "retained_sha256": "dc72e4affa16f13c5a13656610e366a790a9d791d008e8bb564b570dbedabe50",
+  "data_sha256": "5fd8f9e99e6d8567d05cfb4e7c9324ed03b07ba1ebf827614b7b58a811bc11a5",
+  "worker": 0,
+  "elapsed_seconds": 2.7197368144989014
+}

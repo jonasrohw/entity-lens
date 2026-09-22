@@ -74,6 +74,19 @@ the differential lens, using the same forward passes and Jacobian products.
 differential correlation in the console output and `generated/statistics.txt`.
 Existing runs already containing `agg.lre` can regenerate this report on CPU.
 
+`--betas 0.5,1,1.5,2,3,5` additionally scores the affine readout with the
+first-order term reweighted, reusing the same Jacobian products; the grid must
+include 1. `--beta-selection {top1,median-logrank}` records a run's rule, but
+every beta's aggregate is saved, so `statistics` reports both rules from the
+retained file. `--vector-dir DIR` caches the per-subject reference mean and
+differential vector, which is enough to rescore any further beta without the
+model. `--correct-year-targets` applies the trailing-space fix to the two
+presidential year relations only, so one run covers all 28. `rerun` schedules
+this sweep for both protocols; a measurement made outside the runner has to be
+copied to `results/jacobian_lens_beta.json`, or `results/shared_split/`, under
+the selected root before `statistics` will report it. See the
+[beta sweep write-up](affine-beta-sweep.md).
+
 The subject-rank scorer requires matching shared splits and the stored
 faithfulness files specified by `--faith-dir`. Its `--no-distinct-first-token`
 option selects the unfiltered comparison. All three baselines require the

@@ -1,0 +1,726 @@
+{
+  "relation": "country_currency",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "3.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "5.0": [
+          0.21428571428571427,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "3.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "5.0": [
+          0.2857142857142857,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "3.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "5.0": [
+          0.2857142857142857,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "2.0": [
+          0.21428571428571427,
+          0.0
+        ],
+        "3.0": [
+          0.35714285714285715,
+          0.0
+        ],
+        "5.0": [
+          0.2857142857142857,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "3.0": [
+          0.35714285714285715,
+          0.0
+        ],
+        "5.0": [
+          0.35714285714285715,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.0": [
+          0.07142857142857142,
+          0.0
+        ],
+        "1.5": [
+          0.14285714285714285,
+          0.0
+        ],
+        "2.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "3.0": [
+          0.14285714285714285,
+          0.0
+        ],
+        "5.0": [
+          0.21428571428571427,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 17,
+    "best_beta": 3.0,
+    "best_faith": 0.35714285714285715,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 14,
+    "requested_n_test": 100,
+    "lm_correct": 14,
+    "per_subject": {
+      "Saudi Arabia": 0,
+      "China": 1,
+      "New Zealand": 1,
+      "Israel": 0,
+      "South Africa": 0,
+      "Thailand": 0,
+      "Argentina": 1,
+      "Norway": 0,
+      "Russia": 1,
+      "United Kingdom": 0,
+      "Switzerland": 0,
+      "United Arab Emirates": 0,
+      "South Korea": 1,
+      "Indonesia": 0
+    },
+    "split_fingerprint": "79451feaaae5",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 14,
+    "layer": 17,
+    "template": "The official currency of {} is the",
+    "agg": {
+      "diff": {
+        "median_rank": 28294.0,
+        "median_lograng": 4.451563124533632,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 8962.0,
+        "median_lograng": 3.9514219447271173,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Saudi Arabia",
+        "model_top1_id": 79890,
+        "model_top1": "Riy",
+        "n_references": 8,
+        "rank_diff": 615,
+        "top_diff": [
+          "Saudi",
+          "Arabic",
+          "UAE",
+          "Arabs",
+          "Arabia"
+        ],
+        "rank_lre": 25653,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 25653,
+          "0.5": 33840,
+          "1.5": 19262,
+          "2.0": 14264,
+          "3.0": 7652,
+          "5.0": 2586
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 69984,
+        "model_top1": "Yuan",
+        "n_references": 8,
+        "rank_diff": 24,
+        "top_diff": [
+          "Chinese",
+          "China",
+          "Beijing",
+          "Taiwanese",
+          "China"
+        ],
+        "rank_lre": 14319,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14319,
+          "0.5": 16520,
+          "1.5": 12398,
+          "2.0": 10731,
+          "3.0": 7967,
+          "5.0": 4353
+        }
+      },
+      {
+        "subject": "New Zealand",
+        "model_top1_id": 43464,
+        "model_top1": "Dollar",
+        "n_references": 8,
+        "rank_diff": 31600,
+        "top_diff": [
+          "NZ",
+          "NZ",
+          "Hawaii",
+          "Auckland",
+          "trout"
+        ],
+        "rank_lre": 10981,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10981,
+          "0.5": 11701,
+          "1.5": 10434,
+          "2.0": 9985,
+          "3.0": 9512,
+          "5.0": 9842
+        }
+      },
+      {
+        "subject": "Israel",
+        "model_top1_id": 3005,
+        "model_top1": "She",
+        "n_references": 8,
+        "rank_diff": 29029,
+        "top_diff": [
+          "Israeli",
+          "Israelis",
+          "Israel",
+          "Israel",
+          "Israeli"
+        ],
+        "rank_lre": 6306,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6306,
+          "0.5": 6359,
+          "1.5": 6299,
+          "2.0": 6259,
+          "3.0": 6193,
+          "5.0": 6229
+        }
+      },
+      {
+        "subject": "South Africa",
+        "model_top1_id": 24916,
+        "model_top1": "Rand",
+        "n_references": 8,
+        "rank_diff": 53844,
+        "top_diff": [
+          "Africa",
+          "apartheid",
+          "Johannesburg",
+          "Africa",
+          "Zimbabwe"
+        ],
+        "rank_lre": 18389,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18389,
+          "0.5": 18165,
+          "1.5": 18702,
+          "2.0": 19110,
+          "3.0": 20477,
+          "5.0": 24705
+        }
+      },
+      {
+        "subject": "Thailand",
+        "model_top1_id": 14659,
+        "model_top1": "Ba",
+        "n_references": 8,
+        "rank_diff": 68081,
+        "top_diff": [
+          "Thailand",
+          "Thai",
+          "Thai",
+          "Bangkok",
+          "Vietnam"
+        ],
+        "rank_lre": 4644,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4644,
+          "0.5": 4492,
+          "1.5": 4917,
+          "2.0": 5324,
+          "3.0": 6472,
+          "5.0": 10434
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 393,
+        "model_top1": "P",
+        "n_references": 8,
+        "rank_diff": 98279,
+        "top_diff": [
+          "Argentina",
+          "Argentine",
+          "Buenos",
+          "Argentina",
+          "Chile"
+        ],
+        "rank_lre": 900,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 900,
+          "0.5": 818,
+          "1.5": 1003,
+          "2.0": 1102,
+          "3.0": 1352,
+          "5.0": 2184
+        }
+      },
+      {
+        "subject": "Norway",
+        "model_top1_id": 16852,
+        "model_top1": "Kr",
+        "n_references": 8,
+        "rank_diff": 12754,
+        "top_diff": [
+          "Norway",
+          "Norwegian",
+          "Iceland",
+          "Scandin",
+          "Oslo"
+        ],
+        "rank_lre": 5463,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5463,
+          "0.5": 6574,
+          "1.5": 4639,
+          "2.0": 4010,
+          "3.0": 3250,
+          "5.0": 2807
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 13134,
+        "model_top1": "Rub",
+        "n_references": 8,
+        "rank_diff": 8766,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Russia",
+          "Putin",
+          "Russians"
+        ],
+        "rank_lre": 12367,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12367,
+          "0.5": 12724,
+          "1.5": 12054,
+          "2.0": 11769,
+          "3.0": 11133,
+          "5.0": 10148
+        }
+      },
+      {
+        "subject": "United Kingdom",
+        "model_top1_id": 79352,
+        "model_top1": "Pound",
+        "n_references": 8,
+        "rank_diff": 27559,
+        "top_diff": [
+          "Scotland",
+          "Britain",
+          "UK",
+          "Britain",
+          "London"
+        ],
+        "rank_lre": 30065,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30065,
+          "0.5": 32124,
+          "1.5": 28242,
+          "2.0": 26830,
+          "3.0": 24636,
+          "5.0": 22889
+        }
+      },
+      {
+        "subject": "Switzerland",
+        "model_top1_id": 9893,
+        "model_top1": "Franc",
+        "n_references": 8,
+        "rank_diff": 160,
+        "top_diff": [
+          "Switzerland",
+          "Swiss",
+          "Alpine",
+          "Alps",
+          "skiing"
+        ],
+        "rank_lre": 2765,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2765,
+          "0.5": 5129,
+          "1.5": 1419,
+          "2.0": 695,
+          "3.0": 228,
+          "5.0": 123
+        }
+      },
+      {
+        "subject": "United Arab Emirates",
+        "model_top1_id": 31194,
+        "model_top1": "Dir",
+        "n_references": 8,
+        "rank_diff": 61269,
+        "top_diff": [
+          "UAE",
+          "Emirates",
+          "Dubai",
+          "Leban",
+          "Arabic"
+        ],
+        "rank_lre": 8345,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8345,
+          "0.5": 8178,
+          "1.5": 8737,
+          "2.0": 9270,
+          "3.0": 10615,
+          "5.0": 15208
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 43549,
+        "model_top1": "Won",
+        "n_references": 8,
+        "rank_diff": 6889,
+        "top_diff": [
+          "Korea",
+          "Korean",
+          "Koreans",
+          "Seoul",
+          "Pyongyang"
+        ],
+        "rank_lre": 9579,
+        "top_lre": [
+          "its",
+          "producing",
+          "having",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9579,
+          "0.5": 11721,
+          "1.5": 7939,
+          "2.0": 6676,
+          "3.0": 4864,
+          "5.0": 3133
+        }
+      },
+      {
+        "subject": "Indonesia",
+        "model_top1_id": 432,
+        "model_top1": "R",
+        "n_references": 8,
+        "rank_diff": 72411,
+        "top_diff": [
+          "Indonesia",
+          "Indones",
+          "Indonesian",
+          "Hawaii",
+          "indonesia"
+        ],
+        "rank_lre": 1121,
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1121,
+          "0.5": 1064,
+          "1.5": 1248,
+          "2.0": 1447,
+          "3.0": 2232,
+          "5.0": 5037
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 9939.5,
+          "median_lograng": 3.99048015098278,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 8962.0,
+          "median_lograng": 3.9514219447271173,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 8338.0,
+          "median_lograng": 3.920616271400323,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7973.0,
+          "median_lograng": 3.895853978654948,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 7062.0,
+          "median_lograng": 3.8474686601736914,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 5633.0,
+          "median_lograng": 3.748373104910632,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "79451feaaae5",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 14.997332334518433,
+  "model_id": "allenai/Olmo-3-1025-7B",
+  "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "dtype": "float32",
+  "host": "beta",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.6987323760986328e-06,
+    "finite_difference_relative_error": 0.000762018549721688
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 16,
+  "convolution_check": null,
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 17,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 6.039730919837893e-07,
+      "full_seconds": 0.16065263748168945,
+      "cached_seconds": 0.17902827262878418
+    },
+    {
+      "length": 61,
+      "prefix_length": 59,
+      "layer": 10,
+      "state_relative_error": 5.910590630264778e-07,
+      "jvp_relative_error": 3.665889607873396e-06,
+      "full_seconds": 0.8077535629272461,
+      "cached_seconds": 0.31514930725097656
+    }
+  ],
+  "device_map": {
+    "observed_parameter_device_0": "cuda:0"
+  }
+}

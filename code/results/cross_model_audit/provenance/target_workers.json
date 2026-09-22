@@ -1,0 +1,107 @@
+[
+  {
+    "host": "rho1",
+    "devices": "4",
+    "name": "olmo3_7b",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "olmo3_7b",
+      "--model",
+      "allenai/Olmo-3-1025-7B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_olmo3_7b.log"
+  },
+  {
+    "host": "rho1",
+    "devices": "5",
+    "name": "mistral7b",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "mistral7b",
+      "--model",
+      "mistralai/Mistral-7B-v0.3"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_mistral7b.log"
+  },
+  {
+    "host": "rho1",
+    "devices": "6",
+    "name": "gemma2_9b",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "gemma2_9b",
+      "--model",
+      "google/gemma-2-9b"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_gemma2_9b.log"
+  },
+  {
+    "host": "rho1",
+    "devices": "7",
+    "name": "qwen3_8b_base",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8b_base",
+      "--model",
+      "Qwen/Qwen3-8B-Base"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen3_8b_base.log"
+  },
+  {
+    "host": "rho2",
+    "devices": "0,1,2",
+    "name": "qwen3_8_27b",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "qwen3_8_27b",
+      "--model",
+      "Qwen/Qwen3.8-27B"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_qwen3_8_27b.log"
+  },
+  {
+    "host": "rho2",
+    "devices": "3",
+    "name": "pythia6_9b",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "pythia6_9b",
+      "--model",
+      "EleutherAI/pythia-6.9b"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_pythia6_9b.log"
+  },
+  {
+    "host": "rho2",
+    "devices": "4",
+    "name": "gptj",
+    "command": [
+      "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+      "-u",
+      "scripts/audit_model_targets.py",
+      "--name",
+      "gptj",
+      "--model",
+      "EleutherAI/gpt-j-6b"
+    ],
+    "log": "/mounts/work/jonas/diff-jlens/code/generated/cross_model_audit/targets_gptj.log"
+  }
+]

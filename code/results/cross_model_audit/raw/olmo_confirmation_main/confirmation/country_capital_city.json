@@ -1,0 +1,118 @@
+{
+  "relation": "country_capital_city",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 24,
+  "cleaned_samples": 24,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 5,
+      "beta": 5.0,
+      "score": 0.875,
+      "hits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          1855,
+          7,
+          11,
+          1,
+          2,
+          3,
+          1,
+          4,
+          2,
+          1,
+          197,
+          6,
+          9,
+          12,
+          19,
+          2
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 0.7720340221751378,
+        "mean_logrank": 0.9651918456239956,
+        "top1": 0.0,
+        "top10": 0.6875,
+        "mrr": 0.22085642820421916,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 1.0,
+  "prior_only_faith": 0.0,
+  "n_faith": 8,
+  "n_lens": 16,
+  "faith_subjects": [
+    "Colombia",
+    "Nigeria",
+    "Russia",
+    "Canada",
+    "China",
+    "Australia",
+    "Chile",
+    "Germany"
+  ],
+  "lens_subjects": [
+    "Nigeria",
+    "Turkey",
+    "Italy",
+    "Russia",
+    "Argentina",
+    "Pakistan",
+    "Mexico",
+    "South Korea",
+    "Japan",
+    "Peru",
+    "Colombia",
+    "France",
+    "China",
+    "Saudi Arabia",
+    "Brazil",
+    "Chile"
+  ],
+  "faith_split_fingerprint": "5d5715f676fb",
+  "lens_split_fingerprint": "de57b00389a0",
+  "worker": "olmo_confirm_rho2_6",
+  "elapsed_seconds": 8.168570280075073
+}

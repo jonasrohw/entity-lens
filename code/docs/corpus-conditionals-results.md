@@ -1,5 +1,7 @@
 # Corpus co-occurrence and LRE faithfulness: results
 
+> Historical configuration: the numerical comparisons below predate the current matched newline/shared-split appendix. Use [the current baseline tables](../results/shared_baselines/README.md) and [curation guide](shared-baseline-appendix.md) for up-to-date results. Original measurements are preserved for provenance.
+
 Measured 2026-09-18 on the full published OLMo 3 training split. This document
 reports what the `jlens corpus-conditionals` run found and how it relates to
 [Merullo et al. (2025)](https://arxiv.org/abs/2504.12459), whose headline

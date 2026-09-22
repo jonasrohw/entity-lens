@@ -1,0 +1,122 @@
+{
+  "relation": "country_currency",
+  "model": "mistral7b",
+  "worker": "rho2_7",
+  "protocol": "shared_split",
+  "prompt": "\n{} is known for",
+  "layer": 17,
+  "split_fingerprint": "11619ad356b9",
+  "source_sha256": "bc0edcd2ecd134c33884d1efbe39e7c521a5f569caf90de84b635614475f4562",
+  "data_sha256": "4a1a49afbdc4792fc330196475f456a22bc49dfe0ec9eb966439e4f36081d99b",
+  "n": 6,
+  "rows": [
+    {
+      "subject": "Hungary",
+      "object": "Forint",
+      "model_top1_id": 2031,
+      "gold_id": 2031,
+      "n_references": 8,
+      "target_prior": -9.925448417663574,
+      "gold_prior": -9.925448417663574,
+      "rank_raw_jacobian": 25289,
+      "rank_logit_lens": 16459,
+      "rank_differential_logit_lens": 9059
+    },
+    {
+      "subject": "Czech Republic",
+      "object": "Koruna",
+      "model_top1_id": 18640,
+      "gold_id": 18640,
+      "n_references": 8,
+      "target_prior": -12.538329124450684,
+      "gold_prior": -12.538329124450684,
+      "rank_raw_jacobian": 8602,
+      "rank_logit_lens": 9635,
+      "rank_differential_logit_lens": 13602
+    },
+    {
+      "subject": "South Korea",
+      "object": "Won",
+      "model_top1_id": 28379,
+      "gold_id": 28379,
+      "n_references": 8,
+      "target_prior": -13.580116271972656,
+      "gold_prior": -13.580116271972656,
+      "rank_raw_jacobian": 1303,
+      "rank_logit_lens": 393,
+      "rank_differential_logit_lens": 175
+    },
+    {
+      "subject": "Canada",
+      "object": "Dollar",
+      "model_top1_id": 1152,
+      "gold_id": 1152,
+      "n_references": 8,
+      "target_prior": -7.336233615875244,
+      "gold_prior": -7.336233615875244,
+      "rank_raw_jacobian": 1883,
+      "rank_logit_lens": 17072,
+      "rank_differential_logit_lens": 21438
+    },
+    {
+      "subject": "Denmark",
+      "object": "Krone",
+      "model_top1_id": 8555,
+      "gold_id": 8555,
+      "n_references": 8,
+      "target_prior": -12.002318382263184,
+      "gold_prior": -12.002318382263184,
+      "rank_raw_jacobian": 3418,
+      "rank_logit_lens": 7316,
+      "rank_differential_logit_lens": 16551
+    },
+    {
+      "subject": "Sweden",
+      "object": "Krona",
+      "model_top1_id": 1292,
+      "gold_id": 1292,
+      "n_references": 8,
+      "target_prior": -7.626584529876709,
+      "gold_prior": -7.626584529876709,
+      "rank_raw_jacobian": 4340,
+      "rank_logit_lens": 19487,
+      "rank_differential_logit_lens": 8197
+    }
+  ],
+  "agg": {
+    "raw_jacobian": {
+      "median_rank": 3879.0,
+      "median_lograng": 3.5857444433176475,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    },
+    "logit_lens": {
+      "median_rank": 13047.0,
+      "median_lograng": 4.100163311101278,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    },
+    "differential_logit_lens": {
+      "median_rank": 11330.5,
+      "median_lograng": 4.045381447867871,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    }
+  },
+  "answer_prior_contexts": [
+    "",
+    "The",
+    "In the",
+    "It was",
+    "She said the",
+    "Here is",
+    "One of the",
+    "According to the",
+    "There is a",
+    "Yesterday the"
+  ],
+  "cardinality_full": 1.3043478260869565,
+  "cardinality_filtered": 1.2941176470588236,
+  "cardinality_test": 1.0,
+  "elapsed_seconds": 1.6690402030944824
+}

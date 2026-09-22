@@ -16,6 +16,24 @@ This is a neutral-prompt baseline, separate from relation-specific LRE faithfuln
 differential lens for both the main and shared-split protocols. Main-protocol
 scores use the same corrected year measurements as the differential lens.
 
+The affine baseline is the only readout here with a beta worth sweeping. The
+differential lens, the raw Jacobian lens, and both logit-lens baselines are
+single-term readouts, so a scalar beta rescales the whole vector and the final
+norm divides it straight back out: the ranks, and therefore every reported
+statistic, are unchanged. Only the affine readout sums two terms of different
+provenance, `f(s_i)` and the Jacobian product, where beta sets their relative
+weight. LRE faithfulness carries its own per-relation beta, selected by the
+layer-by-beta sweep in `measure-faithfulness`.
+
+Weighting the first-order term by beta interpolates between that affine
+baseline (beta 1) and the differential lens (the large-beta limit, since token
+ranks ignore positive rescaling). `measure-jacobian-lens --betas` scores a grid
+in one pass and saves every beta's aggregate under `beta_sweep`, so a retained
+sweep supports either selection rule on CPU. `statistics` reads it from
+`results/jacobian_lens_beta.json`, or `results/shared_split/` for that
+protocol, and reports both rules; without that file the report is skipped.
+See the [beta sweep write-up](affine-beta-sweep.md) for the measured curve.
+
 Three baselines drop one or both of the lens's two ingredients, at the same
 layer, neutral prompt, reference subjects, and target tokens:
 
@@ -46,12 +64,16 @@ default. Prominence and answer-prior forward passes use bfloat16.
 | --- | --- | --- | --- |
 | Legacy lens | First 8 after `Random(17)` shuffle | First 8 scored subjects, skipping self-comparisons | Next up to 20 subjects |
 | Legacy LRE | First 8 after `Random(0)`, then `Random(1000 + trial)` shuffles | Next 8 | Next up to 100 |
-| Shared | First 8 after `Random(seed)` shuffle | Next 8, disjoint from test subjects | Next up to 100 |
+| Shared | First 8 after `Random(seed)` shuffle | Next 8, disjoint from test rows | Next up to 100 |
 
 Legacy lens and LRE splits are independent. Their results support a
 relation-level comparison; they do not establish a matched per-subject analysis.
 Shared-split results record a fingerprint of ordered subject names in all three
 partitions. Subject-level analyses reject mismatched fingerprints.
+
+The retained input data contain duplicate subjects, so row-disjoint partitions
+are not always subject-disjoint. The [cross-model audit](cross-model-audit.md)
+and [Mistral cleaning sensitivity](mistral-grid-search.md) document this issue.
 
 The identifying-first-token filter keeps an object only if its first token
 uniquely identifies that object within the relation. Repeated occurrences of
@@ -62,6 +84,12 @@ For the two presidential-year relations, a leading space can become the target
 instead of a content token. The main analysis prefers the `_ts` LRE runs and
 `jacobian_lens_years.json`, measured with a trailing space in the relation query.
 The neutral lens prompt is unchanged.
+
+In trailing-space mode, the gold-token helper skips empty/whitespace dummy
+prefix tokens inserted by standalone answer tokenization (observed for Mistral
+years). The cross-model audit checks this against tokenization in the actual
+prompt. Historical gold-accuracy metadata are retained with the original runs;
+this label correction does not alter model-top-1 LRE faithfulness.
 
 ## Statistics and controls
 

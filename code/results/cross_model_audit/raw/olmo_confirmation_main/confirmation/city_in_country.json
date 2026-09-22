@@ -1,0 +1,133 @@
+{
+  "relation": "city_in_country",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 27,
+  "cleaned_samples": 27,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 14,
+      "beta": 3.0,
+      "score": 0.7272727272727273,
+      "hits": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          2,
+          1,
+          4,
+          24512,
+          1,
+          0,
+          0,
+          2,
+          0,
+          10,
+          0,
+          2,
+          2,
+          43683,
+          4139,
+          24,
+          0,
+          1,
+          25712
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 0.47712125471966244,
+        "mean_logrank": 1.2108815609805823,
+        "top1": 0.2631578947368421,
+        "top10": 0.6842105263157895,
+        "mrr": 0.42971508143823867,
+        "optimistic_top1": 0.2631578947368421
+      }
+    }
+  },
+  "lm_accuracy": 0.6363636363636364,
+  "prior_only_faith": 0.2727272727272727,
+  "n_faith": 11,
+  "n_lens": 19,
+  "faith_subjects": [
+    "Tel Aviv",
+    "Santo Domingo",
+    "New York City",
+    "Rio de Janeiro",
+    "Johannesburg",
+    "New Delhi",
+    "Cape Town",
+    "Los Angeles",
+    "Costa Rica",
+    "Addis Ababa",
+    "Port-au-Prince"
+  ],
+  "lens_subjects": [
+    "Ho Chi Minh City",
+    "Santo Domingo",
+    "Rio de Janeiro",
+    "Las Vegas",
+    "Addis Ababa",
+    "S\u00e3o Paulo",
+    "Costa Rica",
+    "Kuala Lumpur",
+    "Port-au-Prince",
+    "Punta Cana",
+    "Santiago de Chile",
+    "Tel Aviv",
+    "Saint Petersburg",
+    "San Francisco",
+    "Abu Dhabi",
+    "Hong Kong",
+    "Siem Reap",
+    "Mexico City",
+    "Los Angeles"
+  ],
+  "faith_split_fingerprint": "a2576390a1b1",
+  "lens_split_fingerprint": "226edc2e8a91",
+  "worker": "olmo_confirm_rho2_6",
+  "elapsed_seconds": 9.353395462036133
+}

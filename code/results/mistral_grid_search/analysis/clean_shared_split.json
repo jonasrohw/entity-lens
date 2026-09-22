@@ -1,0 +1,432 @@
+{
+  "seed": 1,
+  "protocol": "shared_split",
+  "subject_policy": "unique_unambiguous_subjects",
+  "input_policy_note": "Frozen original hyperparameters; collapse identical subject/object rows and exclude multi-object subjects before splitting. Unchanged effective inputs reuse seed-1 confirmation records.",
+  "excluded_relations": [
+    "person_band_lead_singer",
+    "presidents_birth_year",
+    "presidents_election_year"
+  ],
+  "results": {
+    "coarse": {
+      "baseline": {
+        "all_relations": {
+          "rho": 0.6653838876305854,
+          "p": 0.0002839329859232751,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.6428571428571429,
+          "p": 0.017792450692375714,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.7283308329950618,
+          "p": 3.6636280216722574e-05,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.4529463472345459
+      },
+      "exploratory_winner": {
+        "all_relations": {
+          "rho": 0.47864566836578054,
+          "p": 0.015499958309669494,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.4175824175824176,
+          "p": 0.15567475363347452,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.612359776703231,
+          "p": 0.0011392880871061838,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.4529463472345459
+      },
+      "original_target_winner": {
+        "all_relations": {
+          "rho": 0.41323589053444404,
+          "p": 0.04005316887038233,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.4175824175824176,
+          "p": 0.15567475363347452,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.50965630847936,
+          "p": 0.00925637229713094,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.4529463472345459
+      },
+      "relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.6806464528449082,
+          "p": 0.00018080422565529438,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.7197802197802198,
+          "p": 0.005536115775787644,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.7660288757750381,
+          "p": 8.061668271161005e-06,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.4529463472345459
+      },
+      "calibration_relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.5902270540780605,
+          "p": 0.0018974516247318234,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.4725274725274725,
+          "p": 0.10298105029992857,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.6949858751991274,
+          "p": 0.00011545861340313535,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.4529463472345459
+      }
+    },
+    "continuous": {
+      "baseline": {
+        "all_relations": {
+          "rho": 0.7606311474273292,
+          "p": 1.0179927267466929e-05,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.7592854500754067,
+          "p": 0.002609090832988291,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.8268564832627933,
+          "p": 3.48720549800024e-07,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5189041703637978
+      },
+      "exploratory_winner": {
+        "all_relations": {
+          "rho": 0.5721431743246911,
+          "p": 0.0028043434161929845,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.48418202613504197,
+          "p": 0.09361624596850136,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.7332179400875718,
+          "p": 3.05368676295332e-05,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5189041703637978
+      },
+      "original_target_winner": {
+        "all_relations": {
+          "rho": 0.6317815011709096,
+          "p": 0.0007052966217387036,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.6519951147386644,
+          "p": 0.01574139933955273,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.740142348755765,
+          "p": 2.3433542536143023e-05,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5189041703637978
+      },
+      "relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.717198975750655,
+          "p": 5.470298719004511e-05,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.6602482174568755,
+          "p": 0.014046214320984877,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.8374687594809255,
+          "p": 1.7805859912986327e-07,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5189041703637978
+      },
+      "calibration_relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.6891112476230812,
+          "p": 0.00013916566571103533,
+          "n": 25
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.5997254641899951,
+          "p": 0.03026622657894243,
+          "n": 13
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.8074629885854215,
+          "p": 1.0680435987361821e-06,
+          "n": 25
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5189041703637978
+      }
+    },
+    "calibrated_continuous": {
+      "baseline": {
+        "all_relations": {
+          "rho": 0.781114086142387,
+          "p": 6.6397911577624545e-06,
+          "n": 24
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.7845896445389478,
+          "p": 0.0025116023149757017,
+          "n": 12
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.8121873330567424,
+          "p": 1.4402212413860466e-06,
+          "n": 24
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5171333678398896
+      },
+      "exploratory_winner": {
+        "all_relations": {
+          "rho": 0.587774760794508,
+          "p": 0.0025245222983390106,
+          "n": 24
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.5218922189120679,
+          "p": 0.08178822638152844,
+          "n": 12
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.6953875566628447,
+          "p": 0.00016184009800753696,
+          "n": 24
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5171333678398896
+      },
+      "original_target_winner": {
+        "all_relations": {
+          "rho": 0.662171122079379,
+          "p": 0.0004237120182164407,
+          "n": 24
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.7740817475138726,
+          "p": 0.0031266563739204833,
+          "n": 12
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.760661732820183,
+          "p": 1.598832281954763e-05,
+          "n": 24
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5171333678398896
+      },
+      "relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.7596260046981574,
+          "p": 1.6677729284772203e-05,
+          "n": 24
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.7670764828304892,
+          "p": 0.003596176445383981,
+          "n": 12
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.8137513960948183,
+          "p": 1.3239175971815265e-06,
+          "n": 24
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5171333678398896
+      },
+      "calibration_relation_selection_winner": {
+        "all_relations": {
+          "rho": 0.6830543112119744,
+          "p": 0.00023466471769063128,
+          "n": 24
+        },
+        "predefined_evaluation_relations": {
+          "rho": 0.5814369687208275,
+          "p": 0.04737359617187987,
+          "n": 12
+        },
+        "normalized_excess_diagnostic": {
+          "rho": 0.758921088122654,
+          "p": 1.7161832021199564e-05,
+          "n": 24
+        },
+        "normalized_excess_excluded": [],
+        "mean_faith": 0.5171333678398896
+      }
+    }
+  },
+  "subject_overlap": [
+    {
+      "relation": "city_in_country",
+      "n_test": 6,
+      "overlap": 2
+    },
+    {
+      "relation": "company_ceo",
+      "n_test": 100,
+      "overlap": 72
+    },
+    {
+      "relation": "company_hq",
+      "n_test": 100,
+      "overlap": 19
+    },
+    {
+      "relation": "country_capital_city",
+      "n_test": 8,
+      "overlap": 2
+    },
+    {
+      "relation": "country_currency",
+      "n_test": 6,
+      "overlap": 2
+    },
+    {
+      "relation": "country_language",
+      "n_test": 8,
+      "overlap": 2
+    },
+    {
+      "relation": "country_largest_city",
+      "n_test": 8,
+      "overlap": 2
+    },
+    {
+      "relation": "landmark_in_country",
+      "n_test": 100,
+      "overlap": 8
+    },
+    {
+      "relation": "landmark_on_continent",
+      "n_test": 100,
+      "overlap": 9
+    },
+    {
+      "relation": "name_birthplace",
+      "n_test": 15,
+      "overlap": 8
+    },
+    {
+      "relation": "name_gender",
+      "n_test": 2,
+      "overlap": 0
+    },
+    {
+      "relation": "name_religion",
+      "n_test": 15,
+      "overlap": 8
+    },
+    {
+      "relation": "person_father",
+      "n_test": 100,
+      "overlap": 55
+    },
+    {
+      "relation": "person_mother",
+      "n_test": 100,
+      "overlap": 63
+    },
+    {
+      "relation": "person_native_language",
+      "n_test": 100,
+      "overlap": 7
+    },
+    {
+      "relation": "person_occupation",
+      "n_test": 100,
+      "overlap": 11
+    },
+    {
+      "relation": "person_plays_instrument",
+      "n_test": 100,
+      "overlap": 16
+    },
+    {
+      "relation": "person_plays_position_in_sport",
+      "n_test": 100,
+      "overlap": 12
+    },
+    {
+      "relation": "person_plays_pro_sport",
+      "n_test": 100,
+      "overlap": 27
+    },
+    {
+      "relation": "person_university",
+      "n_test": 23,
+      "overlap": 13
+    },
+    {
+      "relation": "pokemon_evolutions",
+      "n_test": 14,
+      "overlap": 7
+    },
+    {
+      "relation": "product_by_company",
+      "n_test": 100,
+      "overlap": 27
+    },
+    {
+      "relation": "star_constellation",
+      "n_test": 100,
+      "overlap": 28
+    },
+    {
+      "relation": "superhero_archnemesis",
+      "n_test": 49,
+      "overlap": 37
+    },
+    {
+      "relation": "superhero_person",
+      "n_test": 49,
+      "overlap": 34
+    }
+  ],
+  "note": "No hyperparameters selected on this draw. Operators were refitted with fresh demonstrations/references. This is a same-dataset robustness check, not new external data."
+}

@@ -1,0 +1,1339 @@
+{
+  "relation": "pokemon_evolutions",
+  "protocol": "shared_split",
+  "model": "olmo3_7b",
+  "worker": "rho2_7",
+  "lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{} evolves into a",
+    "agg": {
+      "diff": {
+        "median_rank": 1567.5,
+        "median_lograng": 3.191461804497144,
+        "agree_at1": 0.05,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 3818.5,
+        "median_lograng": 3.581827969213426,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Psyduck",
+        "model_top1_id": 7573,
+        "model_top1": "Gold",
+        "n_references": 8,
+        "rank_diff": 1195,
+        "top_diff": [
+          "Duck",
+          "duck",
+          "swim",
+          "ducks",
+          "duck"
+        ],
+        "rank_lre": 3176,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3176,
+          "0.5": 3881,
+          "1.5": 2654,
+          "2.0": 2231,
+          "3.0": 1635,
+          "5.0": 1035
+        }
+      },
+      {
+        "subject": "Pikachu",
+        "model_top1_id": 18989,
+        "model_top1": "Ra",
+        "n_references": 8,
+        "rank_diff": 660,
+        "top_diff": [
+          "Pikachu",
+          "Electric",
+          "electric",
+          "electr",
+          "electricity"
+        ],
+        "rank_lre": 5113,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5113,
+          "0.5": 6747,
+          "1.5": 3977,
+          "2.0": 3094,
+          "3.0": 1974,
+          "5.0": 1034
+        }
+      },
+      {
+        "subject": "Zubat",
+        "model_top1_id": 55679,
+        "model_top1": "Gol",
+        "n_references": 8,
+        "rank_diff": 171,
+        "top_diff": [
+          "Poison",
+          "poison",
+          "bats",
+          "evolve",
+          "lev"
+        ],
+        "rank_lre": 5654,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5654,
+          "0.5": 7609,
+          "1.5": 4260,
+          "2.0": 3283,
+          "3.0": 2002,
+          "5.0": 885
+        }
+      },
+      {
+        "subject": "Seel",
+        "model_top1_id": 50400,
+        "model_top1": "Dew",
+        "n_references": 8,
+        "rank_diff": 2465,
+        "top_diff": [
+          "swimming",
+          "sailing",
+          "swim",
+          "her",
+          "underwater"
+        ],
+        "rank_lre": 4139,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4139,
+          "0.5": 4460,
+          "1.5": 3860,
+          "2.0": 3651,
+          "3.0": 3249,
+          "5.0": 2693
+        }
+      },
+      {
+        "subject": "Oddish",
+        "model_top1_id": 480,
+        "model_top1": "G",
+        "n_references": 8,
+        "rank_diff": 7174,
+        "top_diff": [
+          "Grass",
+          "grass",
+          "grass",
+          "Poison",
+          "Weed"
+        ],
+        "rank_lre": 791,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 791,
+          "0.5": 839,
+          "1.5": 756,
+          "2.0": 740,
+          "3.0": 717,
+          "5.0": 753
+        }
+      },
+      {
+        "subject": "Krabby",
+        "model_top1_id": 6342,
+        "model_top1": "King",
+        "n_references": 8,
+        "rank_diff": 2220,
+        "top_diff": [
+          "Crab",
+          "crab",
+          "eating",
+          "boxing",
+          "Sponge"
+        ],
+        "rank_lre": 1706,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1706,
+          "0.5": 1893,
+          "1.5": 1535,
+          "2.0": 1413,
+          "3.0": 1232,
+          "5.0": 1050
+        }
+      },
+      {
+        "subject": "Diglett",
+        "model_top1_id": 423,
+        "model_top1": "D",
+        "n_references": 8,
+        "rank_diff": 13290,
+        "top_diff": [
+          "Dig",
+          "digging",
+          "dig",
+          "Dig",
+          "dug"
+        ],
+        "rank_lre": 1007,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1007,
+          "0.5": 1058,
+          "1.5": 958,
+          "2.0": 944,
+          "3.0": 934,
+          "5.0": 1029
+        }
+      },
+      {
+        "subject": "Ekans",
+        "model_top1_id": 87987,
+        "model_top1": "Arb",
+        "n_references": 8,
+        "rank_diff": 570,
+        "top_diff": [
+          "snake",
+          "Snake",
+          "snakes",
+          "viper",
+          "snake"
+        ],
+        "rank_lre": 3985,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3985,
+          "0.5": 5030,
+          "1.5": 3146,
+          "2.0": 2547,
+          "3.0": 1698,
+          "5.0": 903
+        }
+      },
+      {
+        "subject": "Poliwag",
+        "model_top1_id": 3735,
+        "model_top1": "Pol",
+        "n_references": 8,
+        "rank_diff": 1780,
+        "top_diff": [
+          "swimming",
+          "swim",
+          "aquatic",
+          "underwater",
+          "squirt"
+        ],
+        "rank_lre": 3709,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3709,
+          "0.5": 4159,
+          "1.5": 3327,
+          "2.0": 3028,
+          "3.0": 2561,
+          "5.0": 2062
+        }
+      },
+      {
+        "subject": "Weedle",
+        "model_top1_id": 75571,
+        "model_top1": "Kak",
+        "n_references": 8,
+        "rank_diff": 1203,
+        "top_diff": [
+          "flutter",
+          "nest",
+          "buzzing",
+          "insect",
+          "chir"
+        ],
+        "rank_lre": 12248,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12248,
+          "0.5": 14591,
+          "1.5": 10329,
+          "2.0": 8757,
+          "3.0": 6469,
+          "5.0": 4020
+        }
+      },
+      {
+        "subject": "Mankey",
+        "model_top1_id": 12801,
+        "model_top1": "Prime",
+        "n_references": 8,
+        "rank_diff": 10704,
+        "top_diff": [
+          "monkey",
+          "Monkey",
+          "punching",
+          "punches",
+          "Electric"
+        ],
+        "rank_lre": 9312,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9312,
+          "0.5": 9734,
+          "1.5": 8938,
+          "2.0": 8621,
+          "3.0": 8034,
+          "5.0": 7296
+        }
+      },
+      {
+        "subject": "Exeggcute",
+        "model_top1_id": 1398,
+        "model_top1": "Ex",
+        "n_references": 8,
+        "rank_diff": 17669,
+        "top_diff": [
+          "Grass",
+          "Egg",
+          "evolve",
+          "evolves",
+          "evolving"
+        ],
+        "rank_lre": 1891,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1891,
+          "0.5": 1949,
+          "1.5": 1846,
+          "2.0": 1848,
+          "3.0": 1888,
+          "5.0": 2092
+        }
+      },
+      {
+        "subject": "Magnemite",
+        "model_top1_id": 20918,
+        "model_top1": "Magn",
+        "n_references": 8,
+        "rank_diff": 84,
+        "top_diff": [
+          "magnet",
+          "electric",
+          "Electric",
+          "Magnet",
+          "electr"
+        ],
+        "rank_lre": 3928,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3928,
+          "0.5": 5748,
+          "1.5": 2710,
+          "2.0": 1896,
+          "3.0": 980,
+          "5.0": 309
+        }
+      },
+      {
+        "subject": "Shellder",
+        "model_top1_id": 19197,
+        "model_top1": "Clo",
+        "n_references": 8,
+        "rank_diff": 3877,
+        "top_diff": [
+          "Shell",
+          "Poison",
+          "shell",
+          "evolves",
+          "evolve"
+        ],
+        "rank_lre": 8868,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8868,
+          "0.5": 10212,
+          "1.5": 7785,
+          "2.0": 7007,
+          "3.0": 5791,
+          "5.0": 4431
+        }
+      },
+      {
+        "subject": "Abra",
+        "model_top1_id": 74776,
+        "model_top1": "Kad",
+        "n_references": 8,
+        "rank_diff": 1355,
+        "top_diff": [
+          "mining",
+          "Mining",
+          "mines",
+          "excav",
+          "digging"
+        ],
+        "rank_lre": 13190,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13190,
+          "0.5": 14759,
+          "1.5": 11748,
+          "2.0": 10481,
+          "3.0": 8566,
+          "5.0": 5985
+        }
+      },
+      {
+        "subject": "Drowzee",
+        "model_top1_id": 39515,
+        "model_top1": "Hyp",
+        "n_references": 8,
+        "rank_diff": 36,
+        "top_diff": [
+          "hypnot",
+          "sleep",
+          "Sleep",
+          "asleep",
+          "sno"
+        ],
+        "rank_lre": 1498,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1498,
+          "0.5": 2413,
+          "1.5": 937,
+          "2.0": 584,
+          "3.0": 233,
+          "5.0": 73
+        }
+      },
+      {
+        "subject": "Pidgey",
+        "model_top1_id": 393,
+        "model_top1": "P",
+        "n_references": 8,
+        "rank_diff": 7313,
+        "top_diff": [
+          "evolve",
+          "evolves",
+          "Grass",
+          "nests",
+          "nest"
+        ],
+        "rank_lre": 615,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 615,
+          "0.5": 684,
+          "1.5": 550,
+          "2.0": 510,
+          "3.0": 478,
+          "5.0": 492
+        }
+      },
+      {
+        "subject": "Squirtle",
+        "model_top1_id": 468,
+        "model_top1": "W",
+        "n_references": 8,
+        "rank_diff": 22737,
+        "top_diff": [
+          "Water",
+          "swim",
+          "Aqua",
+          "Splash",
+          "Swimming"
+        ],
+        "rank_lre": 536,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 536,
+          "0.5": 556,
+          "1.5": 532,
+          "2.0": 546,
+          "3.0": 611,
+          "5.0": 863
+        }
+      },
+      {
+        "subject": "Doduo",
+        "model_top1_id": 36968,
+        "model_top1": "Dod",
+        "n_references": 8,
+        "rank_diff": 201,
+        "top_diff": [
+          "flutter",
+          "nesting",
+          "poisonous",
+          "camouflage",
+          "poison"
+        ],
+        "rank_lre": 7288,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7288,
+          "0.5": 9017,
+          "1.5": 5923,
+          "2.0": 4921,
+          "3.0": 3484,
+          "5.0": 1997
+        }
+      },
+      {
+        "subject": "Slowpoke",
+        "model_top1_id": 39247,
+        "model_top1": "Slow",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Slow",
+          "slow",
+          "sluggish",
+          "slower",
+          "slowing"
+        ],
+        "rank_lre": 1210,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1210,
+          "0.5": 2345,
+          "1.5": 609,
+          "2.0": 281,
+          "3.0": 59,
+          "5.0": 7
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 4309.5,
+          "median_lograng": 3.6342627769341798,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 3818.5,
+          "median_lograng": 3.581827969213426,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2928.0,
+          "median_lograng": 3.465513130246853,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 2389.0,
+          "median_lograng": 3.377446806964427,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1793.0,
+          "median_lograng": 3.25321266839544,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 1034.5,
+          "median_lograng": 3.0151500526010757,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05
+        }
+      }
+    },
+    "split_fingerprint": "1f52e73146f5",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "pokemon_evolutions",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.1,
+          0.0
+        ],
+        "1.5": [
+          0.15,
+          0.0
+        ],
+        "2.0": [
+          0.1,
+          0.0
+        ],
+        "3.0": [
+          0.1,
+          0.0
+        ],
+        "5.0": [
+          0.1,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.15,
+          0.0
+        ],
+        "2.0": [
+          0.15,
+          0.0
+        ],
+        "3.0": [
+          0.15,
+          0.0
+        ],
+        "5.0": [
+          0.15,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.05,
+          0.0
+        ],
+        "1.0": [
+          0.05,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.1,
+          0.0
+        ],
+        "3.0": [
+          0.1,
+          0.0
+        ],
+        "5.0": [
+          0.15,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.05,
+          0.0
+        ],
+        "1.0": [
+          0.15,
+          0.0
+        ],
+        "1.5": [
+          0.15,
+          0.0
+        ],
+        "2.0": [
+          0.15,
+          0.0
+        ],
+        "3.0": [
+          0.2,
+          0.0
+        ],
+        "5.0": [
+          0.25,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.05,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.1,
+          0.0
+        ],
+        "2.0": [
+          0.15,
+          0.0
+        ],
+        "3.0": [
+          0.15,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.25,
+    "best_sd": 0.0,
+    "best_layer": 17,
+    "best_beta": 5.0,
+    "lm_correct": 20,
+    "split_fingerprint": "1f52e73146f5",
+    "legacy_split": false,
+    "distinct_first_token": true,
+    "per_subject": {
+      "Psyduck": 0,
+      "Pikachu": 0,
+      "Zubat": 0,
+      "Seel": 1,
+      "Oddish": 0,
+      "Krabby": 0,
+      "Diglett": 0,
+      "Ekans": 1,
+      "Poliwag": 1,
+      "Weedle": 0,
+      "Mankey": 0,
+      "Exeggcute": 0,
+      "Magnemite": 1,
+      "Shellder": 0,
+      "Abra": 1,
+      "Drowzee": 0,
+      "Pidgey": 0,
+      "Squirtle": 0,
+      "Doduo": 0,
+      "Slowpoke": 0
+    },
+    "biased_single_draw_mean": 0.25
+  },
+  "n_lre": 20,
+  "baseline_lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{} evolves into a",
+    "agg": {
+      "diff": {
+        "median_rank": 2007.0,
+        "median_lograng": 3.2953860975069893,
+        "agree_at1": 0.05,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 5366.5,
+        "median_lograng": 3.7294119115961104,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Psyduck",
+        "model_top1": "Gold",
+        "rank_diff": 3134,
+        "rank_lre": 5148,
+        "top_diff": [
+          "swim",
+          "swimming",
+          "duck",
+          "Duck",
+          "Swimming"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Pikachu",
+        "model_top1": "Ra",
+        "rank_diff": 861,
+        "rank_lre": 5585,
+        "top_diff": [
+          "Pikachu",
+          "Electric",
+          "electr",
+          "electric",
+          "Electric"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Zubat",
+        "model_top1": "Gol",
+        "rank_diff": 166,
+        "rank_lre": 6111,
+        "top_diff": [
+          "Poison",
+          "poison",
+          "evolves",
+          "evolve",
+          "evolving"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Seel",
+        "model_top1": "Dew",
+        "rank_diff": 1640,
+        "rank_lre": 5747,
+        "top_diff": [
+          "swimming",
+          "her",
+          "swim",
+          "sailing",
+          "swims"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Oddish",
+        "model_top1": "G",
+        "rank_diff": 15432,
+        "rank_lre": 1026,
+        "top_diff": [
+          "evolving",
+          "floating",
+          "evolve",
+          "sucking",
+          "plant"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          ""
+        ]
+      },
+      {
+        "subject": "Krabby",
+        "model_top1": "King",
+        "rank_diff": 2374,
+        "rank_lre": 2318,
+        "top_diff": [
+          "eating",
+          "crab",
+          "boxing",
+          "Sponge",
+          "fishing"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Diglett",
+        "model_top1": "D",
+        "rank_diff": 12930,
+        "rank_lre": 1110,
+        "top_diff": [
+          "Dig",
+          "digging",
+          "dig",
+          "Dig",
+          "dug"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Ekans",
+        "model_top1": "Arb",
+        "rank_diff": 298,
+        "rank_lre": 3674,
+        "top_diff": [
+          "venom",
+          "snake",
+          "poison",
+          "snakes",
+          "viper"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Poliwag",
+        "model_top1": "Pol",
+        "rank_diff": 2757,
+        "rank_lre": 6217,
+        "top_diff": [
+          "swimming",
+          "swim",
+          "aquatic",
+          "sque",
+          "squirt"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Weedle",
+        "model_top1": "Kak",
+        "rank_diff": 626,
+        "rank_lre": 11514,
+        "top_diff": [
+          "teaching",
+          "Egg",
+          "Spinner",
+          "Harry",
+          "Catch"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Mankey",
+        "model_top1": "Prime",
+        "rank_diff": 3991,
+        "rank_lre": 9409,
+        "top_diff": [
+          "monkey",
+          "punching",
+          "swinging",
+          "Monkey",
+          "swing"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Exeggcute",
+        "model_top1": "Ex",
+        "rank_diff": 11066,
+        "rank_lre": 2013,
+        "top_diff": [
+          "evolving",
+          "evolve",
+          "evolves",
+          "evolution",
+          "Egg"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "their"
+        ]
+      },
+      {
+        "subject": "Magnemite",
+        "model_top1": "Magn",
+        "rank_diff": 112,
+        "rank_lre": 7035,
+        "top_diff": [
+          "magnet",
+          "Magnet",
+          "mining",
+          "evolve",
+          "evolves"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          ""
+        ]
+      },
+      {
+        "subject": "Shellder",
+        "model_top1": "Clo",
+        "rank_diff": 6279,
+        "rank_lre": 13202,
+        "top_diff": [
+          "Poison",
+          "sealing",
+          "Pok\u00e9mon",
+          "KO",
+          "Poke"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "using"
+        ]
+      },
+      {
+        "subject": "Abra",
+        "model_top1": "Kad",
+        "rank_diff": 922,
+        "rank_lre": 15509,
+        "top_diff": [
+          "her",
+          "mining",
+          "teleport",
+          "Dig",
+          "excav"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Drowzee",
+        "model_top1": "Hyp",
+        "rank_diff": 62,
+        "rank_lre": 2570,
+        "top_diff": [
+          "hypnot",
+          "sleep",
+          "Sleep",
+          "asleep",
+          "sleepy"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Pidgey",
+        "model_top1": "P",
+        "rank_diff": 5187,
+        "rank_lre": 711,
+        "top_diff": [
+          "evolve",
+          "evolves",
+          "evolution",
+          "evolving",
+          "Evolution"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "their"
+        ]
+      },
+      {
+        "subject": "Squirtle",
+        "model_top1": "W",
+        "rank_diff": 24002,
+        "rank_lre": 650,
+        "top_diff": [
+          "swim",
+          "squirt",
+          "evolves",
+          "Water",
+          "Swimming"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Doduo",
+        "model_top1": "Dod",
+        "rank_diff": 504,
+        "rank_lre": 9373,
+        "top_diff": [
+          "eating",
+          "shopping",
+          "flying",
+          "planting",
+          "puff"
+        ],
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ]
+      },
+      {
+        "subject": "Slowpoke",
+        "model_top1": "Slow",
+        "rank_diff": 0,
+        "rank_lre": 2596,
+        "top_diff": [
+          "Slow",
+          "slow",
+          "sluggish",
+          "slower",
+          "slowing"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          ""
+        ]
+      }
+    ],
+    "split_fingerprint": "1f52e73146f5",
+    "legacy_split": false
+  },
+  "trailing_space": false,
+  "positions": {
+    "Meowth": 3,
+    "Venonat": 3,
+    "Growlithe": 3,
+    "Machop": 3,
+    "Cubone": 3,
+    "Charmander": 3,
+    "Grimer": 2,
+    "Ponyta": 3,
+    "Psyduck": 2,
+    "Pikachu": 3,
+    "Zubat": 3,
+    "Seel": 2,
+    "Oddish": 2,
+    "Krabby": 3,
+    "Diglett": 2,
+    "Ekans": 2,
+    "Poliwag": 4,
+    "Weedle": 3,
+    "Mankey": 2,
+    "Exeggcute": 4,
+    "Magnemite": 3,
+    "Shellder": 3,
+    "Abra": 2,
+    "Drowzee": 3,
+    "Pidgey": 3,
+    "Squirtle": 4,
+    "Doduo": 2,
+    "Slowpoke": 2
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "1f52e73146f5",
+  "baseline_sha256": {
+    "results/olmo/results/shared_split/jacobian_lens.json": "af2cb0a83bfb04f73b4fb913d494f26fce80760faf589b998a5373f0a8427e16",
+    "results/olmo/results/shared_split/faithfulness_pokemon_evolutions.json": "961955ed30698fba45250d09fa744bb8f7101a9ad812091f9096b3670c02d064"
+  },
+  "data_sha256": "254e3982935571cfd4311ea774da0d2a4b2a577c6c86e0f74508a9651efc6494",
+  "elapsed_seconds": 5.720583438873291
+}

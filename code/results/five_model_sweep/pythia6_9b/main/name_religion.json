@@ -1,0 +1,883 @@
+{
+  "relation": "name_religion",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.2,
+          0.0
+        ],
+        "1.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.5333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.7333333333333333,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.4,
+          0.0
+        ],
+        "1.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.8666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "3.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "5.0": [
+          0.7333333333333333,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.6,
+          0.0
+        ],
+        "1.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.9333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "5.0": [
+          0.8666666666666667,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.4666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.8666666666666667,
+          0.0
+        ],
+        "1.5": [
+          0.9333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.9333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.8,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.2,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.4,
+          0.0
+        ],
+        "3.0": [
+          0.2,
+          0.0
+        ],
+        "5.0": [
+          0.06666666666666667,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.2,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.2,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.4,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 14,
+    "best_beta": 1.5,
+    "best_faith": 0.9333333333333333,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 15,
+    "requested_n_test": 100,
+    "lm_correct": 15,
+    "per_subject": {
+      "Lhamo": 1,
+      "Sita": 1,
+      "Salim": 1,
+      "Andrew": 1,
+      "Abraham": 1,
+      "Abdullah": 1,
+      "Ananda": 0,
+      "Ajahn": 1,
+      "Raj": 1,
+      "Bhikkhuni": 1,
+      "Emily": 1,
+      "Rohit": 1,
+      "Esther": 1,
+      "Fatima": 1,
+      "Isabel": 1
+    },
+    "split_fingerprint": "fca7e8d0346c",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{} likely follows the religion of",
+    "agg": {
+      "diff": {
+        "median_rank": 97.5,
+        "median_lograng": 1.8438536398124095,
+        "agree_at1": 0.05,
+        "agree_at10": 0.3
+      },
+      "lre": {
+        "median_rank": 5643.5,
+        "median_lograng": 3.748968201538437,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Fatima",
+        "model_top1_id": 8033,
+        "model_top1": "Islam",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Islam",
+          "Islam",
+          "mosque",
+          "Abraham",
+          "prayer"
+        ],
+        "rank_lre": 2675,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2675,
+          "0.5": 3886,
+          "1.5": 1839,
+          "2.0": 1224,
+          "3.0": 491,
+          "5.0": 78
+        }
+      },
+      {
+        "subject": "Abraham",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 7,
+        "rank_diff": 7985,
+        "top_diff": [
+          "scientific",
+          "scientifically",
+          "species",
+          "Moses",
+          "Abraham"
+        ],
+        "rank_lre": 7558,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7558,
+          "0.5": 8065,
+          "1.5": 7173,
+          "2.0": 6816,
+          "3.0": 6187,
+          "5.0": 5520
+        }
+      },
+      {
+        "subject": "Miriam",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 7,
+        "rank_diff": 11876,
+        "top_diff": [
+          "Hebrew",
+          "clinical",
+          "Moses",
+          "dementia",
+          "scientific"
+        ],
+        "rank_lre": 7110,
+        "top_lre": [
+          "her",
+          "his",
+          "its",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7110,
+          "0.5": 7350,
+          "1.5": 6886,
+          "2.0": 6760,
+          "3.0": 6521,
+          "5.0": 6282
+        }
+      },
+      {
+        "subject": "Sumana",
+        "model_top1_id": 26334,
+        "model_top1": "Hindu",
+        "n_references": 7,
+        "rank_diff": 642,
+        "top_diff": [
+          "Wind",
+          "herself",
+          "Biology",
+          "scientific",
+          "genus"
+        ],
+        "rank_lre": 3084,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3084,
+          "0.5": 3448,
+          "1.5": 2790,
+          "2.0": 2531,
+          "3.0": 2040,
+          "5.0": 1364
+        }
+      },
+      {
+        "subject": "Ananda",
+        "model_top1_id": 26334,
+        "model_top1": "Hindu",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "monks",
+          "Buddhist",
+          "Hindu",
+          "Buddhism",
+          "meditation"
+        ],
+        "rank_lre": 2349,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2349,
+          "0.5": 3184,
+          "1.5": 1710,
+          "2.0": 1210,
+          "3.0": 578,
+          "5.0": 139
+        }
+      },
+      {
+        "subject": "Caroline",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 7,
+        "rank_diff": 15580,
+        "top_diff": [
+          "Virginia",
+          "Caroline",
+          "Missouri",
+          "Caribbean",
+          "Chelsea"
+        ],
+        "rank_lre": 6939,
+        "top_lre": [
+          "her",
+          "being",
+          "its",
+          "the",
+          "his"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6939,
+          "0.5": 7072,
+          "1.5": 6796,
+          "2.0": 6698,
+          "3.0": 6624,
+          "5.0": 6712
+        }
+      },
+      {
+        "subject": "Omar",
+        "model_top1_id": 8033,
+        "model_top1": "Islam",
+        "n_references": 7,
+        "rank_diff": 12,
+        "top_diff": [
+          "Omar",
+          "Morocco",
+          "Yemen",
+          "Somalia",
+          "Somal"
+        ],
+        "rank_lre": 2761,
+        "top_lre": [
+          "her",
+          "his",
+          "its",
+          "being",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2761,
+          "0.5": 3763,
+          "1.5": 2012,
+          "2.0": 1488,
+          "3.0": 707,
+          "5.0": 189
+        }
+      },
+      {
+        "subject": "Aarti",
+        "model_top1_id": 26334,
+        "model_top1": "Hindu",
+        "n_references": 7,
+        "rank_diff": 167,
+        "top_diff": [
+          "scientific",
+          "astrophys",
+          "scientifically",
+          "Biology",
+          "Indian"
+        ],
+        "rank_lre": 2777,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2777,
+          "0.5": 3278,
+          "1.5": 2362,
+          "2.0": 1994,
+          "3.0": 1434,
+          "5.0": 716
+        }
+      },
+      {
+        "subject": "Andrew",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 15446,
+        "top_diff": [
+          "biomed",
+          "genus",
+          "scientific",
+          "clinical",
+          "species"
+        ],
+        "rank_lre": 6920,
+        "top_lre": [
+          "scientific",
+          "clinical",
+          "synthes",
+          "scientifically",
+          "science"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6920,
+          "0.5": 6398,
+          "1.5": 7659,
+          "2.0": 8544,
+          "3.0": 10060,
+          "5.0": 11763
+        }
+      },
+      {
+        "subject": "Isaac",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 13017,
+        "top_diff": [
+          "Isaac",
+          "scientific",
+          "astrophys",
+          "science",
+          "Moses"
+        ],
+        "rank_lre": 7201,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7201,
+          "0.5": 7500,
+          "1.5": 6975,
+          "2.0": 6784,
+          "3.0": 6458,
+          "5.0": 6186
+        }
+      },
+      {
+        "subject": "Abdullah",
+        "model_top1_id": 8033,
+        "model_top1": "Islam",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Abdullah",
+          "Yemen",
+          "Pakistan",
+          "mosque",
+          "Islam"
+        ],
+        "rank_lre": 1863,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1863,
+          "0.5": 2882,
+          "1.5": 1169,
+          "2.0": 687,
+          "3.0": 224,
+          "5.0": 23
+        }
+      },
+      {
+        "subject": "Hussain",
+        "model_top1_id": 8033,
+        "model_top1": "Islam",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Pakistan",
+          "Islam",
+          "Pakistani",
+          "Ahmad",
+          "Islam"
+        ],
+        "rank_lre": 1885,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1885,
+          "0.5": 2892,
+          "1.5": 1193,
+          "2.0": 689,
+          "3.0": 236,
+          "5.0": 23
+        }
+      },
+      {
+        "subject": "Abigail",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 19310,
+        "top_diff": [
+          "Missouri",
+          "Nebraska",
+          "Kentucky",
+          "Pennsylvania",
+          "Arkansas"
+        ],
+        "rank_lre": 7638,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7638,
+          "0.5": 7746,
+          "1.5": 7609,
+          "2.0": 7610,
+          "3.0": 7643,
+          "5.0": 7826
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 36737,
+        "top_diff": [
+          "Emily",
+          "Missouri",
+          "Nebraska",
+          "Austin",
+          "Texas"
+        ],
+        "rank_lre": 8511,
+        "top_lre": [
+          "her",
+          "being",
+          "its",
+          "the",
+          "his"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8511,
+          "0.5": 8157,
+          "1.5": 8911,
+          "2.0": 9386,
+          "3.0": 10346,
+          "5.0": 12201
+        }
+      },
+      {
+        "subject": "Lhamo",
+        "model_top1_id": 35702,
+        "model_top1": "Buddhism",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Tibet",
+          "Tibetan",
+          "medicinal",
+          "herbs",
+          "biomed"
+        ],
+        "rank_lre": 9091,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9091,
+          "0.5": 11360,
+          "1.5": 7092,
+          "2.0": 5570,
+          "3.0": 3338,
+          "5.0": 1166
+        }
+      },
+      {
+        "subject": "Bhikkhuni",
+        "model_top1_id": 35702,
+        "model_top1": "Buddhism",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "monks",
+          "Buddhism",
+          "Buddhist",
+          "Buddh",
+          "monk"
+        ],
+        "rank_lre": 6266,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6266,
+          "0.5": 9611,
+          "1.5": 3955,
+          "2.0": 2459,
+          "3.0": 865,
+          "5.0": 99
+        }
+      },
+      {
+        "subject": "Salim",
+        "model_top1_id": 8033,
+        "model_top1": "Islam",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Arabia",
+          "Morocco",
+          "Arabian",
+          "Sudan",
+          "Yemen"
+        ],
+        "rank_lre": 2316,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2316,
+          "0.5": 3206,
+          "1.5": 1684,
+          "2.0": 1174,
+          "3.0": 524,
+          "5.0": 109
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 26334,
+        "model_top1": "Hindu",
+        "n_references": 8,
+        "rank_diff": 28,
+        "top_diff": [
+          "scientific",
+          "India",
+          "India",
+          "clinical",
+          "astrophys"
+        ],
+        "rank_lre": 2140,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2140,
+          "0.5": 2774,
+          "1.5": 1648,
+          "2.0": 1235,
+          "3.0": 683,
+          "5.0": 219
+        }
+      },
+      {
+        "subject": "Moses",
+        "model_top1_id": 43506,
+        "model_top1": "Judaism",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Moses",
+          "Judaism",
+          "Abraham",
+          "Jerusalem",
+          "Hebrew"
+        ],
+        "rank_lre": 5021,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5021,
+          "0.5": 7649,
+          "1.5": 3141,
+          "2.0": 1977,
+          "3.0": 644,
+          "5.0": 61
+        }
+      },
+      {
+        "subject": "Esther",
+        "model_top1_id": 20242,
+        "model_top1": "Christianity",
+        "n_references": 8,
+        "rank_diff": 6852,
+        "top_diff": [
+          "Abraham",
+          "species",
+          "genus",
+          "clinical",
+          "Moses"
+        ],
+        "rank_lre": 6921,
+        "top_lre": [
+          "her",
+          "being",
+          "his",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6921,
+          "0.5": 7349,
+          "1.5": 6529,
+          "2.0": 6203,
+          "3.0": 5606,
+          "5.0": 4836
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 6735.0,
+          "median_lograng": 3.8278578841257693,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 5643.5,
+          "median_lograng": 3.748968201538437,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 3548.0,
+          "median_lograng": 3.547231231814548,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 2495.0,
+          "median_lograng": 3.3971994042243483,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1737.0,
+          "median_lograng": 3.2333474528930406,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 941.0,
+          "median_lograng": 2.9612950058565852,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 58.451945543289185,
+  "model_id": "EleutherAI/pythia-6.9b",
+  "revision": "c0e3eee36dc47af0c49f361c74cfe459c09f7f23",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0018038790440186858
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

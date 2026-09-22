@@ -1,0 +1,959 @@
+{
+  "relation": "person_band_lead_singer",
+  "protocol": "main",
+  "model": "olmo3_7b",
+  "worker": "rho2_7",
+  "lens": {
+    "n": 13,
+    "layer": 17,
+    "template": "{} is the lead singer of",
+    "agg": {
+      "diff": {
+        "median_rank": 82.0,
+        "median_lograng": 1.919078092376074,
+        "agree_at1": 0.3076923076923077,
+        "agree_at10": 0.38461538461538464
+      },
+      "lre": {
+        "median_rank": 2803.0,
+        "median_lograng": 3.447778009294621,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Steven Tyler",
+        "model_top1_id": 64250,
+        "model_top1": "Aeros",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Aeros",
+          "rasp",
+          "bel",
+          "hits",
+          "explosive"
+        ],
+        "rank_lre": 4054,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4054,
+          "0.5": 5768,
+          "1.5": 2859,
+          "2.0": 2009,
+          "3.0": 948,
+          "5.0": 183
+        }
+      },
+      {
+        "subject": "Axl Rose",
+        "model_top1_id": 60565,
+        "model_top1": "Guns",
+        "n_references": 7,
+        "rank_diff": 16,
+        "top_diff": [
+          "front",
+          "Rage",
+          "rovers",
+          "-front",
+          "Metal"
+        ],
+        "rank_lre": 6418,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 6418,
+          "0.5": 8247,
+          "1.5": 5047,
+          "2.0": 4007,
+          "3.0": 2510,
+          "5.0": 1029
+        }
+      },
+      {
+        "subject": "Mick Jagger",
+        "model_top1_id": 578,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 5272,
+        "top_diff": [
+          "rock",
+          "Mick",
+          "rocking",
+          "Rolling",
+          "Rock"
+        ],
+        "rank_lre": 511,
+        "top_lre": [
+          "his",
+          "being",
+          "",
+          "having",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 511,
+          "0.5": 544,
+          "1.5": 481,
+          "2.0": 459,
+          "3.0": 416,
+          "5.0": 381
+        }
+      },
+      {
+        "subject": "Freddie Mercury",
+        "model_top1_id": 16657,
+        "model_top1": "Queen",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Queen",
+          "Mercury",
+          "Freddie",
+          "Queen",
+          "queen"
+        ],
+        "rank_lre": 414,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 414,
+          "0.5": 904,
+          "1.5": 185,
+          "2.0": 84,
+          "3.0": 13,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Liam Gallagher",
+        "model_top1_id": 88391,
+        "model_top1": "Oasis",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Oasis",
+          "Gallagher",
+          "Rage",
+          "divisive",
+          "dispar"
+        ],
+        "rank_lre": 4777,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4777,
+          "0.5": 7593,
+          "1.5": 2978,
+          "2.0": 1910,
+          "3.0": 690,
+          "5.0": 89
+        }
+      },
+      {
+        "subject": "Jon Bon Jovi",
+        "model_top1_id": 13789,
+        "model_top1": "Bon",
+        "n_references": 7,
+        "rank_diff": 377,
+        "top_diff": [
+          "rock",
+          "charity",
+          "hits",
+          "Rock",
+          "Guns"
+        ],
+        "rank_lre": 7542,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7542,
+          "0.5": 8923,
+          "1.5": 6473,
+          "2.0": 5558,
+          "3.0": 4143,
+          "5.0": 2452
+        }
+      },
+      {
+        "subject": "Jim Morrison",
+        "model_top1_id": 578,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 3670,
+        "top_diff": [
+          "Morrison",
+          "psychedelic",
+          "LSD",
+          "poetic",
+          "drugs"
+        ],
+        "rank_lre": 429,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 429,
+          "0.5": 504,
+          "1.5": 379,
+          "2.0": 331,
+          "3.0": 255,
+          "5.0": 203
+        }
+      },
+      {
+        "subject": "Robert Plant",
+        "model_top1_id": 32755,
+        "model_top1": "Led",
+        "n_references": 7,
+        "rank_diff": 1,
+        "top_diff": [
+          "blues",
+          "Led",
+          "front",
+          "Cover",
+          "Plant"
+        ],
+        "rank_lre": 3515,
+        "top_lre": [
+          "his",
+          "being",
+          "",
+          "having",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3515,
+          "0.5": 4907,
+          "1.5": 2557,
+          "2.0": 1836,
+          "3.0": 934,
+          "5.0": 226
+        }
+      },
+      {
+        "subject": "Don Henley",
+        "model_top1_id": 578,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 1614,
+        "top_diff": [
+          "Eagles",
+          "hits",
+          "hit",
+          "backing",
+          "Americ"
+        ],
+        "rank_lre": 457,
+        "top_lre": [
+          "his",
+          "being",
+          "",
+          "having",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 457,
+          "0.5": 510,
+          "1.5": 418,
+          "2.0": 367,
+          "3.0": 312,
+          "5.0": 235
+        }
+      },
+      {
+        "subject": "John Lennon",
+        "model_top1_id": 578,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 1296,
+        "top_diff": [
+          "Lennon",
+          "Beatles",
+          "Peace",
+          "McCartney",
+          "peace"
+        ],
+        "rank_lre": 430,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 430,
+          "0.5": 496,
+          "1.5": 382,
+          "2.0": 352,
+          "3.0": 293,
+          "5.0": 227
+        }
+      },
+      {
+        "subject": "Anthony Kiedis",
+        "model_top1_id": 3816,
+        "model_top1": "Red",
+        "n_references": 8,
+        "rank_diff": 2375,
+        "top_diff": [
+          "front",
+          "Drugs",
+          "funk",
+          "riff",
+          "punk"
+        ],
+        "rank_lre": 4045,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4045,
+          "0.5": 4410,
+          "1.5": 3715,
+          "2.0": 3439,
+          "3.0": 2952,
+          "5.0": 2291
+        }
+      },
+      {
+        "subject": "Bono",
+        "model_top1_id": 549,
+        "model_top1": "U",
+        "n_references": 8,
+        "rank_diff": 82,
+        "top_diff": [
+          "philanth",
+          "charity",
+          "charitable",
+          "donation",
+          "fundraising"
+        ],
+        "rank_lre": 1438,
+        "top_lre": [
+          "his",
+          "being",
+          "",
+          "having",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 1438,
+          "0.5": 1730,
+          "1.5": 1173,
+          "2.0": 957,
+          "3.0": 652,
+          "5.0": 351
+        }
+      },
+      {
+        "subject": "Eddie Vedder",
+        "model_top1_id": 37343,
+        "model_top1": "Pearl",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Pearl",
+          "Seattle",
+          "Nir",
+          "Ved",
+          "angst"
+        ],
+        "rank_lre": 2803,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          "performing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2803,
+          "0.5": 3973,
+          "1.5": 2022,
+          "2.0": 1469,
+          "3.0": 716,
+          "5.0": 153
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 3973.0,
+          "median_lograng": 3.5992278627737964,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2803.0,
+          "median_lograng": 3.447778009294621,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2022.0,
+          "median_lograng": 3.3059958827708047,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1469.0,
+          "median_lograng": 3.167317334748176,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 690.0,
+          "median_lograng": 2.8394780473741985,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 227.0,
+          "median_lograng": 2.357934847000454,
+          "agree_at1": 0.0,
+          "agree_at10": 0.07692307692307693
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "person_band_lead_singer",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.2,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.6,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.2,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.6,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.4,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.6,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.6,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.6,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.2,
+          0.0
+        ],
+        "3.0": [
+          0.8,
+          0.0
+        ],
+        "5.0": [
+          0.6,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.8,
+    "best_sd": 0.0,
+    "best_layer": 20,
+    "best_beta": 3.0,
+    "lm_correct": 5,
+    "split_fingerprint": "6911c3741843",
+    "legacy_split": true,
+    "distinct_first_token": false,
+    "per_subject": {
+      "Jon Bon Jovi": 1,
+      "Kurt Cobain": 1,
+      "Axl Rose": 1,
+      "Ozzy Osbourne": 1,
+      "Serj Tankian": 0
+    },
+    "biased_single_draw_mean": 0.8
+  },
+  "n_lre": 5,
+  "baseline_lens": {
+    "n": 13,
+    "layer": 17,
+    "template": "{} is the lead singer of",
+    "agg": {
+      "diff": {
+        "median_rank": 30.0,
+        "median_lograng": 1.4913616938342726,
+        "agree_at1": 0.15384615384615385,
+        "agree_at10": 0.38461538461538464
+      },
+      "lre": {
+        "median_rank": 3203.0,
+        "median_lograng": 3.5056925074122,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Steven Tyler",
+        "model_top1": "Aeros",
+        "rank_diff": 0,
+        "rank_lre": 4455,
+        "top_diff": [
+          "Aeros",
+          "audition",
+          "lip",
+          "explosive",
+          "gyr"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Axl Rose",
+        "model_top1": "Guns",
+        "rank_diff": 30,
+        "rank_lre": 8194,
+        "top_diff": [
+          "Rose",
+          "rose",
+          "Rose",
+          "Roses",
+          "front"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Mick Jagger",
+        "model_top1": "The",
+        "rank_diff": 9493,
+        "rank_lre": 811,
+        "top_diff": [
+          "Mick",
+          "Rolling",
+          "rock",
+          "rocking",
+          "Stones"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "performing",
+          "having",
+          ""
+        ]
+      },
+      {
+        "subject": "Freddie Mercury",
+        "model_top1": "Queen",
+        "rank_diff": 1,
+        "rank_lre": 479,
+        "top_diff": [
+          "Mercury",
+          "Queen",
+          "Queen",
+          "Freddie",
+          "mercury"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Liam Gallagher",
+        "model_top1": "Oasis",
+        "rank_diff": 0,
+        "rank_lre": 6123,
+        "top_diff": [
+          "Oasis",
+          "Gallagher",
+          "dispar",
+          "divisive",
+          "abrasive"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Jon Bon Jovi",
+        "model_top1": "Bon",
+        "rank_diff": 767,
+        "rank_lre": 9357,
+        "top_diff": [
+          "charity",
+          "Metal",
+          "charitable",
+          "rock",
+          "romantic"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Jim Morrison",
+        "model_top1": "The",
+        "rank_diff": 2202,
+        "rank_lre": 737,
+        "top_diff": [
+          "Morrison",
+          "psychedelic",
+          "poetic",
+          "lyric",
+          "poetry"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Robert Plant",
+        "model_top1": "Led",
+        "rank_diff": 1,
+        "rank_lre": 4849,
+        "top_diff": [
+          "blues",
+          "Led",
+          "front",
+          "Plant",
+          "Front"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Don Henley",
+        "model_top1": "The",
+        "rank_diff": 2994,
+        "rank_lre": 791,
+        "top_diff": [
+          "Eagles",
+          "backing",
+          "Americ",
+          "Texas",
+          "Lone"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "John Lennon",
+        "model_top1": "The",
+        "rank_diff": 1404,
+        "rank_lre": 717,
+        "top_diff": [
+          "Lennon",
+          "Beatles",
+          "McCartney",
+          "Peace",
+          "peace"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "Anthony Kiedis",
+        "model_top1": "Red",
+        "rank_diff": 2379,
+        "rank_lre": 5035,
+        "top_diff": [
+          "front",
+          "funk",
+          "California",
+          "-front",
+          "California"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Bono",
+        "model_top1": "U",
+        "rank_diff": 26,
+        "rank_lre": 1375,
+        "top_diff": [
+          "philanth",
+          "charitable",
+          "charity",
+          "donation",
+          "donating"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      },
+      {
+        "subject": "Eddie Vedder",
+        "model_top1": "Pearl",
+        "rank_diff": 1,
+        "rank_lre": 3203,
+        "top_diff": [
+          "Seattle",
+          "Pearl",
+          "front",
+          "Seattle",
+          "bands"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "performing",
+          ""
+        ]
+      }
+    ],
+    "split_fingerprint": null,
+    "legacy_split": true
+  },
+  "trailing_space": false,
+  "positions": {
+    "Steven Tyler": 2,
+    "Axl Rose": 3,
+    "Mick Jagger": 4,
+    "Freddie Mercury": 3,
+    "Liam Gallagher": 3,
+    "Jon Bon Jovi": 4,
+    "Jim Morrison": 2,
+    "Robert Plant": 2,
+    "Don Henley": 3,
+    "John Lennon": 2,
+    "Anthony Kiedis": 4,
+    "Bono": 2,
+    "Eddie Vedder": 4
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "ab20cb6a31ee",
+  "baseline_sha256": {
+    "results/olmo/results/jacobian_lens.json": "60222db85fbf21c5e57e1d92951a1e3d65ceabe6539a0c489327e2af78374be6",
+    "results/olmo/results/main/faithfulness_person_band_lead_singer.json": "7cecff11d87648833c47eccb003549d974c36871d1763f524a04a0a6de514f47"
+  },
+  "data_sha256": "ad4943c8bc14d649577dafce7acb8d81b2a56ea1f39ca806cdba20880dcd6742",
+  "elapsed_seconds": 3.795959234237671
+}

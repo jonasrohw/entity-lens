@@ -1,0 +1,1512 @@
+{
+  "relation": "city_in_country",
+  "protocol": "main",
+  "model": "gemma2_9b",
+  "worker": "rho2_5",
+  "lens": {
+    "n": 19,
+    "layer": 22,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 4.0,
+        "median_lograng": 0.6989700043360189,
+        "agree_at1": 0.21052631578947367,
+        "agree_at10": 0.631578947368421
+      },
+      "lre": {
+        "median_rank": 1674.0,
+        "median_lograng": 3.224014811372864,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tel Aviv",
+        "model_top1_id": 11965,
+        "model_top1": "Israel",
+        "n_references": 7,
+        "rank_diff": 4,
+        "top_diff": [
+          "Aviv",
+          "Israelis",
+          "Israeli",
+          "Hebrew",
+          "Israel"
+        ],
+        "rank_lre": 7857,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7857,
+          "0.5": 12717,
+          "1.5": 4760,
+          "2.0": 2903,
+          "3.0": 1173,
+          "5.0": 241
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 68134,
+        "model_top1": "Cambodia",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Cambodia",
+          "Monks",
+          "Cambodia",
+          "Cambodian",
+          "Khmer"
+        ],
+        "rank_lre": 19346,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19346,
+          "0.5": 31404,
+          "1.5": 11595,
+          "2.0": 6962,
+          "3.0": 2463,
+          "5.0": 442
+        }
+      },
+      {
+        "subject": "Santiago de Chile",
+        "model_top1_id": 22587,
+        "model_top1": "Chile",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Chile",
+          "Chilean",
+          "Chile",
+          "chilena",
+          "chilen"
+        ],
+        "rank_lre": 4186,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4186,
+          "0.5": 10208,
+          "1.5": 1693,
+          "2.0": 686,
+          "3.0": 137,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "S\u00e3o Paulo",
+        "model_top1_id": 19425,
+        "model_top1": "Brazil",
+        "n_references": 7,
+        "rank_diff": 3,
+        "top_diff": [
+          "Paulista",
+          "paulista",
+          "Br\u00e9sil",
+          "Brazil",
+          "Brazilian"
+        ],
+        "rank_lre": 2948,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2948,
+          "0.5": 5592,
+          "1.5": 1584,
+          "2.0": 881,
+          "3.0": 307,
+          "5.0": 31
+        }
+      },
+      {
+        "subject": "Saint Petersburg",
+        "model_top1_id": 11124,
+        "model_top1": "Russia",
+        "n_references": 7,
+        "rank_diff": 1,
+        "top_diff": [
+          "Leningrad",
+          "Russia",
+          "Russia",
+          "Petersburg",
+          "Philharmonic"
+        ],
+        "rank_lre": 3689,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3689,
+          "0.5": 6529,
+          "1.5": 2089,
+          "2.0": 1217,
+          "3.0": 443,
+          "5.0": 85
+        }
+      },
+      {
+        "subject": "San Juan",
+        "model_top1_id": 27405,
+        "model_top1": "Puerto",
+        "n_references": 7,
+        "rank_diff": 1,
+        "top_diff": [
+          "Caribbean",
+          "Puerto",
+          "Caribbean",
+          "caribbean",
+          "Puerto"
+        ],
+        "rank_lre": 3965,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3965,
+          "0.5": 7526,
+          "1.5": 2106,
+          "2.0": 1130,
+          "3.0": 346,
+          "5.0": 31
+        }
+      },
+      {
+        "subject": "Addis Ababa",
+        "model_top1_id": 52608,
+        "model_top1": "Ethiopia",
+        "n_references": 7,
+        "rank_diff": 3,
+        "top_diff": [
+          "Ethiopian",
+          "Ethiopia",
+          "Ethio",
+          "Ethiopia",
+          "Addis"
+        ],
+        "rank_lre": 9793,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9793,
+          "0.5": 19374,
+          "1.5": 4770,
+          "2.0": 2207,
+          "3.0": 539,
+          "5.0": 30
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 7,
+        "rank_diff": 4,
+        "top_diff": [
+          "Delhi",
+          "Delhi",
+          "delhi",
+          "DELHI",
+          "India"
+        ],
+        "rank_lre": 538,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 538,
+          "0.5": 1265,
+          "1.5": 275,
+          "2.0": 136,
+          "3.0": 30,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "San Francisco",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 1096,
+        "top_diff": [
+          "California",
+          "Californian",
+          "California",
+          "CALIFORNIA",
+          "Califor"
+        ],
+        "rank_lre": 984,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 984,
+          "0.5": 1245,
+          "1.5": 785,
+          "2.0": 624,
+          "3.0": 440,
+          "5.0": 254
+        }
+      },
+      {
+        "subject": "New York City",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 617,
+        "top_diff": [
+          "Manhattan",
+          "NYC",
+          "Brooklyn",
+          "NYC",
+          "Manhattan"
+        ],
+        "rank_lre": 926,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 926,
+          "0.5": 1213,
+          "1.5": 726,
+          "2.0": 583,
+          "3.0": 406,
+          "5.0": 251
+        }
+      },
+      {
+        "subject": "Mexico City",
+        "model_top1_id": 11198,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Mexico",
+          "Mexico",
+          "Aztec",
+          "Mexican",
+          "MEXICO"
+        ],
+        "rank_lre": 876,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 876,
+          "0.5": 1565,
+          "1.5": 498,
+          "2.0": 309,
+          "3.0": 114,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Ho Chi Minh City",
+        "model_top1_id": 22878,
+        "model_top1": "Vietnam",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Saigon",
+          "Vietnamese",
+          "Nguyen",
+          "Vietnamese",
+          "Vietnam"
+        ],
+        "rank_lre": 1674,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1674,
+          "0.5": 2778,
+          "1.5": 991,
+          "2.0": 599,
+          "3.0": 252,
+          "5.0": 51
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 75149,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dominican",
+          "Caribbean",
+          "Caribbean",
+          "Creole",
+          "Dominicana"
+        ],
+        "rank_lre": 1683,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1683,
+          "0.5": 3807,
+          "1.5": 758,
+          "2.0": 363,
+          "3.0": 86,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Los Angeles",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 1242,
+        "top_diff": [
+          "California",
+          "CALIFORNIA",
+          "Californian",
+          "Califor",
+          "California"
+        ],
+        "rank_lre": 1019,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1019,
+          "0.5": 1279,
+          "1.5": 841,
+          "2.0": 699,
+          "3.0": 512,
+          "5.0": 331
+        }
+      },
+      {
+        "subject": "Costa Rica",
+        "model_top1_id": 8506,
+        "model_top1": "Central",
+        "n_references": 8,
+        "rank_diff": 7763,
+        "top_diff": [
+          "Costa",
+          "Costa",
+          "rainforest",
+          "tropical",
+          "Rainforest"
+        ],
+        "rank_lre": 988,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 988,
+          "0.5": 1146,
+          "1.5": 867,
+          "2.0": 761,
+          "3.0": 632,
+          "5.0": 577
+        }
+      },
+      {
+        "subject": "Cape Town",
+        "model_top1_id": 4316,
+        "model_top1": "South",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "Cape",
+          "Cape",
+          "CAPE",
+          "harbour",
+          "cape"
+        ],
+        "rank_lre": 303,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 303,
+          "0.5": 410,
+          "1.5": 234,
+          "2.0": 182,
+          "3.0": 96,
+          "5.0": 29
+        }
+      },
+      {
+        "subject": "Kuala Lumpur",
+        "model_top1_id": 23977,
+        "model_top1": "Malaysia",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Malaysia",
+          "Malaysian",
+          "Kuala",
+          "Malaysia",
+          "Malay"
+        ],
+        "rank_lre": 3015,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3015,
+          "0.5": 6560,
+          "1.5": 1465,
+          "2.0": 701,
+          "3.0": 201,
+          "5.0": 17
+        }
+      },
+      {
+        "subject": "Las Vegas",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 6741,
+        "top_diff": [
+          "Vegas",
+          "casinos",
+          "Vegas",
+          "casino",
+          "gambling"
+        ],
+        "rank_lre": 1158,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1158,
+          "0.5": 1357,
+          "1.5": 999,
+          "2.0": 880,
+          "3.0": 734,
+          "5.0": 649
+        }
+      },
+      {
+        "subject": "Johannesburg",
+        "model_top1_id": 4316,
+        "model_top1": "South",
+        "n_references": 8,
+        "rank_diff": 156,
+        "top_diff": [
+          "Johannesburg",
+          "Gauteng",
+          "Gaut",
+          "skyscrapers",
+          "Transvaal"
+        ],
+        "rank_lre": 313,
+        "top_lre": [
+          "its",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 313,
+          "0.5": 411,
+          "1.5": 252,
+          "2.0": 194,
+          "3.0": 115,
+          "5.0": 46
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2778.0,
+          "median_lograng": 3.443888546777372,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 1674.0,
+          "median_lograng": 3.224014811372864,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 991.0,
+          "median_lograng": 2.9965116721541785,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 699.0,
+          "median_lograng": 2.845098040014257,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 346.0,
+          "median_lograng": 2.5403294747908736,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 46.0,
+          "median_lograng": 1.6720978579357175,
+          "agree_at1": 0.0,
+          "agree_at10": 0.15789473684210525
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "7": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.09090909090909091,
+          0.0
+        ],
+        "5.0": [
+          0.36363636363636365,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.18181818181818182,
+          0.0
+        ],
+        "2.0": [
+          0.2727272727272727,
+          0.0
+        ],
+        "3.0": [
+          0.45454545454545453,
+          0.0
+        ],
+        "5.0": [
+          0.7272727272727273,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.18181818181818182,
+          0.0
+        ],
+        "2.0": [
+          0.18181818181818182,
+          0.0
+        ],
+        "3.0": [
+          0.45454545454545453,
+          0.0
+        ],
+        "5.0": [
+          0.8181818181818182,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.09090909090909091,
+          0.0
+        ],
+        "2.0": [
+          0.2727272727272727,
+          0.0
+        ],
+        "3.0": [
+          0.36363636363636365,
+          0.0
+        ],
+        "5.0": [
+          0.7272727272727273,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.36363636363636365,
+          0.0
+        ]
+      },
+      "30": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 18,
+    "best_beta": 5.0,
+    "best_faith": 0.8181818181818182,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 11,
+    "requested_n_test": 100,
+    "lm_correct": 10,
+    "per_subject": {
+      "Costa Rica": 0,
+      "Panama City": 1,
+      "New York City": 1,
+      "Casablanca": 1,
+      "Abu Dhabi": 1,
+      "Addis Ababa": 1,
+      "S\u00e3o Paulo": 1,
+      "Santo Domingo": 1,
+      "Johannesburg": 0,
+      "Buenos Aires": 1,
+      "Las Vegas": 1
+    },
+    "split_fingerprint": "b94562f9114a",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "n_lre": 11,
+  "baseline_lens": {
+    "n": 19,
+    "layer": 22,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 3.0,
+        "median_lograng": 0.6020599913279624,
+        "agree_at1": 0.3157894736842105,
+        "agree_at10": 0.631578947368421
+      },
+      "lre": {
+        "median_rank": 2133.0,
+        "median_lograng": 3.329194415088451,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tel Aviv",
+        "model_top1_id": 11965,
+        "model_top1": "Israel",
+        "n_references": 7,
+        "rank_diff": 3,
+        "top_diff": [
+          "Aviv",
+          "Israeli",
+          "Israelis",
+          "Israel",
+          "Hebrew"
+        ],
+        "rank_lre": 8992,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8992,
+          "0.5": 13106,
+          "1.5": 6146,
+          "2.0": 4287,
+          "3.0": 2031,
+          "5.0": 565
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 68134,
+        "model_top1": "Cambodia",
+        "n_references": 7,
+        "rank_diff": 68,
+        "top_diff": [
+          "Monks",
+          "Yucat\u00e1n",
+          "Serap",
+          "Trop",
+          "monks"
+        ],
+        "rank_lre": 24798,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "museums",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 24798,
+          "0.5": 32507,
+          "1.5": 18787,
+          "2.0": 14178,
+          "3.0": 8220,
+          "5.0": 2937
+        }
+      },
+      {
+        "subject": "Santiago de Chile",
+        "model_top1_id": 22587,
+        "model_top1": "Chile",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Chile",
+          "Chilean",
+          "Chile",
+          "chileno",
+          "chilen"
+        ],
+        "rank_lre": 4179,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4179,
+          "0.5": 8365,
+          "1.5": 2125,
+          "2.0": 1057,
+          "3.0": 286,
+          "5.0": 17
+        }
+      },
+      {
+        "subject": "S\u00e3o Paulo",
+        "model_top1_id": 19425,
+        "model_top1": "Brazil",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Brazil",
+          "Brazilian",
+          "Br\u00e9sil",
+          "Brazilian",
+          "Paulista"
+        ],
+        "rank_lre": 3390,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3390,
+          "0.5": 5695,
+          "1.5": 2035,
+          "2.0": 1237,
+          "3.0": 495,
+          "5.0": 87
+        }
+      },
+      {
+        "subject": "Saint Petersburg",
+        "model_top1_id": 11124,
+        "model_top1": "Russia",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Russia",
+          "Petersburg",
+          "Russia",
+          "Leningrad",
+          "Louisiana"
+        ],
+        "rank_lre": 3996,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "museums",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3996,
+          "0.5": 6174,
+          "1.5": 2605,
+          "2.0": 1732,
+          "3.0": 787,
+          "5.0": 206
+        }
+      },
+      {
+        "subject": "San Juan",
+        "model_top1_id": 27405,
+        "model_top1": "Puerto",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Puerto",
+          "Caribbean",
+          "Puerto",
+          "Barbados",
+          "Caribbean"
+        ],
+        "rank_lre": 2764,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2764,
+          "0.5": 4636,
+          "1.5": 1716,
+          "2.0": 1027,
+          "3.0": 394,
+          "5.0": 59
+        }
+      },
+      {
+        "subject": "Addis Ababa",
+        "model_top1_id": 52608,
+        "model_top1": "Ethiopia",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Ethiopian",
+          "Ethiopia",
+          "Ethiopia",
+          "Ethio",
+          "Ethio"
+        ],
+        "rank_lre": 12938,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12938,
+          "0.5": 20994,
+          "1.5": 7904,
+          "2.0": 4743,
+          "3.0": 1727,
+          "5.0": 269
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 7,
+        "rank_diff": 3,
+        "top_diff": [
+          "Delhi",
+          "Delhi",
+          "delhi",
+          "India",
+          "DELHI"
+        ],
+        "rank_lre": 604,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "museums",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 604,
+          "0.5": 1256,
+          "1.5": 319,
+          "2.0": 168,
+          "3.0": 58,
+          "5.0": 7
+        }
+      },
+      {
+        "subject": "San Francisco",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 685,
+        "top_diff": [
+          "California",
+          "Californian",
+          "Califor",
+          "California",
+          "Californie"
+        ],
+        "rank_lre": 1651,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1651,
+          "0.5": 2018,
+          "1.5": 1363,
+          "2.0": 1117,
+          "3.0": 769,
+          "5.0": 418
+        }
+      },
+      {
+        "subject": "New York City",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 499,
+        "top_diff": [
+          "NYC",
+          "Manhattan",
+          "NYC",
+          "Brooklyn",
+          "\ud83d\uddfd"
+        ],
+        "rank_lre": 1583,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1583,
+          "0.5": 1976,
+          "1.5": 1298,
+          "2.0": 1061,
+          "3.0": 745,
+          "5.0": 424
+        }
+      },
+      {
+        "subject": "Mexico City",
+        "model_top1_id": 11198,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Mexico",
+          "Mexican",
+          "Mexico",
+          "Aztec",
+          "mexican"
+        ],
+        "rank_lre": 877,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "museums",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 877,
+          "0.5": 1412,
+          "1.5": 568,
+          "2.0": 379,
+          "3.0": 175,
+          "5.0": 34
+        }
+      },
+      {
+        "subject": "Ho Chi Minh City",
+        "model_top1_id": 22878,
+        "model_top1": "Vietnam",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Saigon",
+          "Vietnamese",
+          "Chinatown",
+          "Vietnamese",
+          "Nguyen"
+        ],
+        "rank_lre": 1916,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1916,
+          "0.5": 2780,
+          "1.5": 1331,
+          "2.0": 934,
+          "3.0": 458,
+          "5.0": 140
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 75149,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dominican",
+          "Caribbean",
+          "Caribbean",
+          "Dominicana",
+          "Rep\u00fablica"
+        ],
+        "rank_lre": 2133,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2133,
+          "0.5": 4132,
+          "1.5": 1093,
+          "2.0": 569,
+          "3.0": 173,
+          "5.0": 14
+        }
+      },
+      {
+        "subject": "Los Angeles",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 1055,
+        "top_diff": [
+          "California",
+          "Californian",
+          "Hollywood",
+          "Califor",
+          "LA"
+        ],
+        "rank_lre": 1738,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1738,
+          "0.5": 2097,
+          "1.5": 1471,
+          "2.0": 1263,
+          "3.0": 917,
+          "5.0": 580
+        }
+      },
+      {
+        "subject": "Costa Rica",
+        "model_top1_id": 8506,
+        "model_top1": "Central",
+        "n_references": 8,
+        "rank_diff": 33691,
+        "top_diff": [
+          "Costa",
+          "Costa",
+          "tropical",
+          "Rainforest",
+          "rainforest"
+        ],
+        "rank_lre": 2555,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2555,
+          "0.5": 2716,
+          "1.5": 2408,
+          "2.0": 2295,
+          "3.0": 2129,
+          "5.0": 1952
+        }
+      },
+      {
+        "subject": "Cape Town",
+        "model_top1_id": 4316,
+        "model_top1": "South",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Cape",
+          "Cape",
+          "roses",
+          "harbour",
+          "bays"
+        ],
+        "rank_lre": 417,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 417,
+          "0.5": 539,
+          "1.5": 331,
+          "2.0": 263,
+          "3.0": 164,
+          "5.0": 60
+        }
+      },
+      {
+        "subject": "Kuala Lumpur",
+        "model_top1_id": 23977,
+        "model_top1": "Malaysia",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Malaysia",
+          "Malaysian",
+          "Kuala",
+          "Malaysia",
+          "Malay"
+        ],
+        "rank_lre": 3427,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3427,
+          "0.5": 6218,
+          "1.5": 1950,
+          "2.0": 1115,
+          "3.0": 376,
+          "5.0": 63
+        }
+      },
+      {
+        "subject": "Las Vegas",
+        "model_top1_id": 3520,
+        "model_top1": "United",
+        "n_references": 8,
+        "rank_diff": 6355,
+        "top_diff": [
+          "Vegas",
+          "casinos",
+          "Vegas",
+          "VEGAS",
+          "Las"
+        ],
+        "rank_lre": 1894,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1894,
+          "0.5": 2165,
+          "1.5": 1692,
+          "2.0": 1524,
+          "3.0": 1262,
+          "5.0": 982
+        }
+      },
+      {
+        "subject": "Johannesburg",
+        "model_top1_id": 4316,
+        "model_top1": "South",
+        "n_references": 8,
+        "rank_diff": 82,
+        "top_diff": [
+          "Johannesburg",
+          "Gauteng",
+          "rappers",
+          "&___",
+          "Gaut"
+        ],
+        "rank_lre": 448,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "the",
+          "museums"
+        ],
+        "rank_lre_beta": {
+          "1.0": 448,
+          "0.5": 561,
+          "1.5": 369,
+          "2.0": 317,
+          "3.0": 224,
+          "5.0": 118
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2780.0,
+          "median_lograng": 3.4442009888641594,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2133.0,
+          "median_lograng": 3.329194415088451,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1692.0,
+          "median_lograng": 3.2286569581089353,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1115.0,
+          "median_lograng": 3.04766419460156,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 495.0,
+          "median_lograng": 2.6954816764901977,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 140.0,
+          "median_lograng": 2.1492191126553797,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05263157894736842
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Tel Aviv": 3,
+    "Siem Reap": 4,
+    "Santiago de Chile": 4,
+    "S\u00e3o Paulo": 3,
+    "Saint Petersburg": 3,
+    "San Juan": 3,
+    "Addis Ababa": 4,
+    "New Delhi": 3,
+    "San Francisco": 3,
+    "New York City": 4,
+    "Mexico City": 3,
+    "Ho Chi Minh City": 5,
+    "Santo Domingo": 3,
+    "Los Angeles": 3,
+    "Costa Rica": 3,
+    "Cape Town": 3,
+    "Kuala Lumpur": 4,
+    "Las Vegas": 3,
+    "Johannesburg": 3
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "776e090f96c8",
+  "baseline_sha256": {
+    "results/five_model_sweep/gemma2_9b/main/city_in_country.json": "4f11ad97ee6e476deba587822f27f24d4e8c93ecfe372b047f8aaae20cf79c92"
+  },
+  "data_sha256": "5fd8f9e99e6d8567d05cfb4e7c9324ed03b07ba1ebf827614b7b58a811bc11a5",
+  "elapsed_seconds": 6.756747245788574
+}

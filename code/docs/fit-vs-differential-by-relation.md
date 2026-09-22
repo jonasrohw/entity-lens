@@ -1,5 +1,7 @@
 # Which relations favour the fitted Jacobian, which the differential one
 
+> Historical configuration: the numerical comparisons below predate the current matched newline/shared-split appendix. Use [the current baseline tables](../results/shared_baselines/README.md) and [curation guide](shared-baseline-appendix.md) for up-to-date results. Original measurements are preserved for provenance.
+
 This note ranks every relation by how much better one of the two Jacobian
 readouts scores it. It exists to answer one question directly: for which
 relations is the *fitted* (affine, zeroth-order-restored) Jacobian the better

@@ -1,0 +1,883 @@
+{
+  "relation": "name_birthplace",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "7": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.4,
+          0.0
+        ],
+        "3.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.4666666666666667,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.4666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "3.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.4666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.4666666666666667,
+          0.0
+        ],
+        "3.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.13333333333333333,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.13333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.4,
+          0.0
+        ],
+        "1.5": [
+          0.6,
+          0.0
+        ],
+        "2.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.5333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "30": {
+        "0.5": [
+          0.06666666666666667,
+          0.0
+        ],
+        "1.0": [
+          0.26666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.4666666666666667,
+          0.0
+        ],
+        "2.0": [
+          0.6,
+          0.0
+        ],
+        "3.0": [
+          0.7333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.8666666666666667,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 30,
+    "best_beta": 5.0,
+    "best_faith": 0.8666666666666667,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 15,
+    "requested_n_test": 100,
+    "lm_correct": 13,
+    "per_subject": {
+      "Alejandro": 1,
+      "Chawalit": 1,
+      "Sanjana": 1,
+      "Jules": 1,
+      "Rohit": 1,
+      "Tal": 0,
+      "Mei": 0,
+      "Tao": 1,
+      "Diego": 1,
+      "Xia": 1,
+      "Carlo": 1,
+      "Anong": 1,
+      "Akira": 1,
+      "Yitzhak": 1,
+      "Marco": 1
+    },
+    "split_fingerprint": "b9ece9ae7b84",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 20,
+    "layer": 22,
+    "template": "{} was born in the country of",
+    "agg": {
+      "diff": {
+        "median_rank": 19.0,
+        "median_lograng": 1.2921656121837652,
+        "agree_at1": 0.0,
+        "agree_at10": 0.25
+      },
+      "lre": {
+        "median_rank": 6759.0,
+        "median_lograng": 3.829946463101826,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Yitzhak",
+        "model_top1_id": 11965,
+        "model_top1": "Israel",
+        "n_references": 7,
+        "rank_diff": 6,
+        "top_diff": [
+          "Rabin",
+          "his",
+          "Israelis",
+          "Israeli",
+          "Israeli"
+        ],
+        "rank_lre": 12323,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12323,
+          "0.5": 17112,
+          "1.5": 8851,
+          "2.0": 6431,
+          "3.0": 3427,
+          "5.0": 1024
+        }
+      },
+      {
+        "subject": "Rohit",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 7,
+        "rank_diff": 9,
+        "top_diff": [
+          "Rohit",
+          "Rohit",
+          "Bollywood",
+          "Mumbai",
+          "Mumbai"
+        ],
+        "rank_lre": 2787,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2787,
+          "0.5": 3628,
+          "1.5": 2144,
+          "2.0": 1621,
+          "3.0": 960,
+          "5.0": 365
+        }
+      },
+      {
+        "subject": "Sakura",
+        "model_top1_id": 5928,
+        "model_top1": "Japan",
+        "n_references": 7,
+        "rank_diff": 275,
+        "top_diff": [
+          "her",
+          "\uadf8\ub140",
+          "Sakura",
+          "\u0457\u0457",
+          "\u0435\u0435"
+        ],
+        "rank_lre": 6752,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6752,
+          "0.5": 8333,
+          "1.5": 5518,
+          "2.0": 4481,
+          "3.0": 3015,
+          "5.0": 1400
+        }
+      },
+      {
+        "subject": "Pablo",
+        "model_top1_id": 14034,
+        "model_top1": "Spain",
+        "n_references": 7,
+        "rank_diff": 23,
+        "top_diff": [
+          "Pablo",
+          "Pablo",
+          "flamenco",
+          "pablo",
+          "his"
+        ],
+        "rank_lre": 14620,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14620,
+          "0.5": 19070,
+          "1.5": 11220,
+          "2.0": 8551,
+          "3.0": 5075,
+          "5.0": 1918
+        }
+      },
+      {
+        "subject": "Mei",
+        "model_top1_id": 5892,
+        "model_top1": "China",
+        "n_references": 7,
+        "rank_diff": 289,
+        "top_diff": [
+          "her",
+          "\u5979\u7684",
+          "\uadf8\ub140",
+          "\u0435\u0435",
+          "\u0457\u0457"
+        ],
+        "rank_lre": 4899,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4899,
+          "0.5": 5620,
+          "1.5": 4283,
+          "2.0": 3747,
+          "3.0": 2899,
+          "5.0": 1802
+        }
+      },
+      {
+        "subject": "Giovanni",
+        "model_top1_id": 11474,
+        "model_top1": "Italy",
+        "n_references": 7,
+        "rank_diff": 6,
+        "top_diff": [
+          "Giovanni",
+          "Giovanni",
+          "Italian",
+          "Italy",
+          "Italian"
+        ],
+        "rank_lre": 9198,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9198,
+          "0.5": 12023,
+          "1.5": 7032,
+          "2.0": 5426,
+          "3.0": 3260,
+          "5.0": 1166
+        }
+      },
+      {
+        "subject": "Manish",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 7,
+        "rank_diff": 14,
+        "top_diff": [
+          "sarees",
+          "Bollywood",
+          "Indian",
+          "bollywood",
+          "his"
+        ],
+        "rank_lre": 2516,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2516,
+          "0.5": 3381,
+          "1.5": 1879,
+          "2.0": 1401,
+          "3.0": 823,
+          "5.0": 307
+        }
+      },
+      {
+        "subject": "Kraipob",
+        "model_top1_id": 28141,
+        "model_top1": "Thailand",
+        "n_references": 7,
+        "rank_diff": 10,
+        "top_diff": [
+          "his",
+          "Bulg",
+          "Thai",
+          "portraying",
+          "Bulgar"
+        ],
+        "rank_lre": 10884,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10884,
+          "0.5": 13735,
+          "1.5": 8684,
+          "2.0": 6945,
+          "3.0": 4448,
+          "5.0": 1956
+        }
+      },
+      {
+        "subject": "Jules",
+        "model_top1_id": 6081,
+        "model_top1": "France",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "her",
+          "Jules",
+          "Jules",
+          "Parisian",
+          "French"
+        ],
+        "rank_lre": 8416,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8416,
+          "0.5": 10905,
+          "1.5": 6545,
+          "2.0": 5135,
+          "3.0": 3183,
+          "5.0": 1248
+        }
+      },
+      {
+        "subject": "Arjun",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 213,
+        "top_diff": [
+          "Arjun",
+          "Arjuna",
+          "his",
+          "Bollywood",
+          "Mahabhar"
+        ],
+        "rank_lre": 2483,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2483,
+          "0.5": 2948,
+          "1.5": 2075,
+          "2.0": 1743,
+          "3.0": 1283,
+          "5.0": 692
+        }
+      },
+      {
+        "subject": "Tal",
+        "model_top1_id": 11965,
+        "model_top1": "Israel",
+        "n_references": 8,
+        "rank_diff": 21864,
+        "top_diff": [
+          "her",
+          "haar",
+          "\uadf8\ub140",
+          "\u0435\u0435",
+          "jej"
+        ],
+        "rank_lre": 12929,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12929,
+          "0.5": 13503,
+          "1.5": 12413,
+          "2.0": 11934,
+          "3.0": 11061,
+          "5.0": 9674
+        }
+      },
+      {
+        "subject": "Hila",
+        "model_top1_id": 11965,
+        "model_top1": "Israel",
+        "n_references": 8,
+        "rank_diff": 17368,
+        "top_diff": [
+          "her",
+          "jej",
+          "\u0457\u0457",
+          "\u0435\u0435",
+          "\u5979\u7684"
+        ],
+        "rank_lre": 12928,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12928,
+          "0.5": 13511,
+          "1.5": 12342,
+          "2.0": 11873,
+          "3.0": 11016,
+          "5.0": 9729
+        }
+      },
+      {
+        "subject": "Kazuki",
+        "model_top1_id": 5928,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "manga",
+          "Manga",
+          "Japanese",
+          "anime",
+          "Manga"
+        ],
+        "rank_lre": 3340,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3340,
+          "0.5": 4709,
+          "1.5": 2411,
+          "2.0": 1752,
+          "3.0": 908,
+          "5.0": 280
+        }
+      },
+      {
+        "subject": "Carlo",
+        "model_top1_id": 11474,
+        "model_top1": "Italy",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Carlo",
+          "Carlo",
+          "Italian",
+          "Ducati",
+          "Ferrari"
+        ],
+        "rank_lre": 6766,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6766,
+          "0.5": 8840,
+          "1.5": 5270,
+          "2.0": 4060,
+          "3.0": 2478,
+          "5.0": 917
+        }
+      },
+      {
+        "subject": "Alejandro",
+        "model_top1_id": 14034,
+        "model_top1": "Spain",
+        "n_references": 8,
+        "rank_diff": 86,
+        "top_diff": [
+          "Alejandro",
+          "Alejandro",
+          "flamenco",
+          "Mexican",
+          "Spanish"
+        ],
+        "rank_lre": 13059,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13059,
+          "0.5": 16041,
+          "1.5": 10628,
+          "2.0": 8631,
+          "3.0": 5810,
+          "5.0": 2717
+        }
+      },
+      {
+        "subject": "Xia",
+        "model_top1_id": 5892,
+        "model_top1": "China",
+        "n_references": 8,
+        "rank_diff": 53,
+        "top_diff": [
+          "her",
+          "\u5979\u7684",
+          "\uadf8\ub140",
+          "Xiaomi",
+          "haar"
+        ],
+        "rank_lre": 3431,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3431,
+          "0.5": 4252,
+          "1.5": 2828,
+          "2.0": 2329,
+          "3.0": 1541,
+          "5.0": 699
+        }
+      },
+      {
+        "subject": "Sanjana",
+        "model_top1_id": 5339,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 508,
+        "top_diff": [
+          "her",
+          "Bollywood",
+          "\uadf8\ub140",
+          "\u5979\u7684",
+          "\u5f7c\u5973\u306e"
+        ],
+        "rank_lre": 2607,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2607,
+          "0.5": 3021,
+          "1.5": 2239,
+          "2.0": 1959,
+          "3.0": 1465,
+          "5.0": 933
+        }
+      },
+      {
+        "subject": "Anong",
+        "model_top1_id": 28141,
+        "model_top1": "Thailand",
+        "n_references": 8,
+        "rank_diff": 27632,
+        "top_diff": [
+          "Filipinas",
+          "Philippine",
+          "Philippines",
+          "Filipinos",
+          "Filipina"
+        ],
+        "rank_lre": 8798,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8798,
+          "0.5": 9391,
+          "1.5": 8285,
+          "2.0": 7813,
+          "3.0": 6994,
+          "5.0": 5788
+        }
+      },
+      {
+        "subject": "Hiroshi",
+        "model_top1_id": 5928,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Hiroshi",
+          "Japanese",
+          "JAPAN",
+          "Japan",
+          "manga"
+        ],
+        "rank_lre": 2788,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2788,
+          "0.5": 4318,
+          "1.5": 1826,
+          "2.0": 1187,
+          "3.0": 537,
+          "5.0": 115
+        }
+      },
+      {
+        "subject": "Akira",
+        "model_top1_id": 5928,
+        "model_top1": "Japan",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Akira",
+          "Akira",
+          "samurai",
+          "manga",
+          "Mazda"
+        ],
+        "rank_lre": 3793,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "its",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3793,
+          "0.5": 4994,
+          "1.5": 2851,
+          "2.0": 2183,
+          "3.0": 1286,
+          "5.0": 444
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 8586.5,
+          "median_lograng": 3.9336774433454234,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 6759.0,
+          "median_lograng": 3.829946463101826,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 5394.0,
+          "median_lograng": 3.7318767051401105,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 4270.5,
+          "median_lograng": 3.6300524208445397,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 2957.0,
+          "median_lograng": 3.470914667548346,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 1095.0,
+          "median_lograng": 3.038897360718572,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 60.7479145526886,
+  "model_id": "google/gemma-2-9b",
+  "revision": "33c193028431c2fde6c6e51f29e6f17b60cbfac6",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "7,14,18,22,26,30",
+  "lens_layer": 22,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.811981201171875e-05,
+    "finite_difference_relative_error": 0.00045203283661976457
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

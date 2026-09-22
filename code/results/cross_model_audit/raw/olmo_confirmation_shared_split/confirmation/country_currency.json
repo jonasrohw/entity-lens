@@ -1,0 +1,124 @@
+{
+  "relation": "country_currency",
+  "protocol": "shared_split",
+  "subject_policy": "original_rows",
+  "input_samples": 30,
+  "cleaned_samples": 30,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 17,
+      "beta": 3.0,
+      "score": 0.42857142857142855,
+      "hits": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          39899,
+          57,
+          1437,
+          50579,
+          82908,
+          95563,
+          3,
+          30943,
+          95686,
+          40222,
+          15060,
+          47311,
+          38424,
+          40630
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 4.602723677329495,
+        "mean_logrank": 4.060663924384192,
+        "top1": 0.0,
+        "top10": 0.07142857142857142,
+        "mrr": 0.019157853322995754,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 0.9285714285714286,
+  "prior_only_faith": 0.14285714285714285,
+  "n_faith": 14,
+  "n_lens": 14,
+  "faith_subjects": [
+    "Israel",
+    "China",
+    "South Korea",
+    "Czech Republic",
+    "Turkey",
+    "Argentina",
+    "Canada",
+    "Russia",
+    "Japan",
+    "United Arab Emirates",
+    "Singapore",
+    "Indonesia",
+    "Denmark",
+    "Australia"
+  ],
+  "lens_subjects": [
+    "Israel",
+    "China",
+    "South Korea",
+    "Czech Republic",
+    "Turkey",
+    "Argentina",
+    "Canada",
+    "Russia",
+    "Japan",
+    "United Arab Emirates",
+    "Singapore",
+    "Indonesia",
+    "Denmark",
+    "Australia"
+  ],
+  "faith_split_fingerprint": "0efc4353ae06",
+  "lens_split_fingerprint": "0efc4353ae06",
+  "worker": "olmo_shared_beta_1",
+  "elapsed_seconds": 6.988881349563599
+}

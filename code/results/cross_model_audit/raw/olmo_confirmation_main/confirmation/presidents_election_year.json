@@ -1,0 +1,93 @@
+{
+  "relation": "presidents_election_year",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 19,
+  "cleaned_samples": 19,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 11,
+      "beta": 5.0,
+      "score": 0.3333333333333333,
+      "hits": [
+        0,
+        1,
+        0
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          56,
+          668,
+          147,
+          5,
+          564,
+          51,
+          91,
+          10,
+          17989,
+          17,
+          173
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 1.9637878273455553,
+        "mean_logrank": 2.068527196355308,
+        "top1": 0.0,
+        "top10": 0.09090909090909091,
+        "mrr": 0.03423633242494371,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 1.0,
+  "prior_only_faith": 0.3333333333333333,
+  "n_faith": 3,
+  "n_lens": 11,
+  "faith_subjects": [
+    "Joe Biden",
+    "George H. W. Bush",
+    "Andrew Jackson"
+  ],
+  "lens_subjects": [
+    "Bill Clinton",
+    "James Madison",
+    "George W. Bush",
+    "Ronald Reagan",
+    "William Henry Harrison",
+    "George H. W. Bush",
+    "Joe Biden",
+    "Richard Nixon",
+    "Jimmy Carter ",
+    "James Monroe",
+    "Andrew Jackson"
+  ],
+  "faith_split_fingerprint": "3ede3adfcdd6",
+  "lens_split_fingerprint": "6da1333b5231",
+  "worker": "olmo_confirm_rho2_7",
+  "elapsed_seconds": 6.867753505706787
+}

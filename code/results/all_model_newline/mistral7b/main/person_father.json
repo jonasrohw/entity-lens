@@ -1,0 +1,2248 @@
+{
+  "relation": "person_father",
+  "protocol": "main",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{}'s father is named",
+    "agg": {
+      "diff": {
+        "median_rank": 1621.0,
+        "median_lograng": 3.2099554152699694,
+        "agree_at1": 0.0,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 4525.5,
+        "median_lograng": 3.6506497176105004,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Michel Foucault",
+        "model_top1_id": 4688,
+        "model_top1": "Paul",
+        "n_references": 7,
+        "rank_diff": 30060,
+        "top_diff": [
+          "philosoph",
+          "Philosoph",
+          "philosophy",
+          "philos",
+          "intellectual"
+        ],
+        "rank_lre": 3431,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3431,
+          "0.5": 3109,
+          "1.5": 3744,
+          "2.0": 4065,
+          "3.0": 4782,
+          "5.0": 6262
+        }
+      },
+      {
+        "subject": "Ralph Vaughan Williams",
+        "model_top1_id": 24141,
+        "model_top1": "Ralph",
+        "n_references": 7,
+        "rank_diff": 1655,
+        "top_diff": [
+          "compos",
+          "composer",
+          "musical",
+          "music",
+          "Music"
+        ],
+        "rank_lre": 10273,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10273,
+          "0.5": 10641,
+          "1.5": 9937,
+          "2.0": 9624,
+          "3.0": 8909,
+          "5.0": 7679
+        }
+      },
+      {
+        "subject": "Thomas Gainsborough",
+        "model_top1_id": 2983,
+        "model_top1": "John",
+        "n_references": 7,
+        "rank_diff": 8244,
+        "top_diff": [
+          "painting",
+          "paintings",
+          "portrait",
+          "painter",
+          "Gallery"
+        ],
+        "rank_lre": 2507,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2507,
+          "0.5": 2569,
+          "1.5": 2431,
+          "2.0": 2374,
+          "3.0": 2276,
+          "5.0": 2154
+        }
+      },
+      {
+        "subject": "Heracles",
+        "model_top1_id": 5659,
+        "model_top1": "Ze",
+        "n_references": 7,
+        "rank_diff": 47,
+        "top_diff": [
+          "Greek",
+          "Gree",
+          "myth",
+          "Greece",
+          "Olymp"
+        ],
+        "rank_lre": 3835,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3835,
+          "0.5": 4429,
+          "1.5": 3325,
+          "2.0": 2854,
+          "3.0": 2101,
+          "5.0": 1085
+        }
+      },
+      {
+        "subject": "Victor Hugo",
+        "model_top1_id": 8986,
+        "model_top1": "Joseph",
+        "n_references": 7,
+        "rank_diff": 28091,
+        "top_diff": [
+          "French",
+          "Napole",
+          "Napoleon",
+          "France",
+          "Paris"
+        ],
+        "rank_lre": 7629,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7629,
+          "0.5": 7414,
+          "1.5": 7832,
+          "2.0": 8050,
+          "3.0": 8483,
+          "5.0": 9209
+        }
+      },
+      {
+        "subject": "Sun Yat-sen",
+        "model_top1_id": 7825,
+        "model_top1": "Sun",
+        "n_references": 7,
+        "rank_diff": 553,
+        "top_diff": [
+          "founding",
+          "founded",
+          "Liberty",
+          "liberty",
+          "universities"
+        ],
+        "rank_lre": 2082,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2082,
+          "0.5": 2372,
+          "1.5": 1862,
+          "2.0": 1663,
+          "3.0": 1343,
+          "5.0": 878
+        }
+      },
+      {
+        "subject": "Jimi Hendrix",
+        "model_top1_id": 1744,
+        "model_top1": "Al",
+        "n_references": 7,
+        "rank_diff": 17697,
+        "top_diff": [
+          "guitar",
+          "rock",
+          "Freedom",
+          "reb",
+          "Electric"
+        ],
+        "rank_lre": 1629,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1629,
+          "0.5": 1595,
+          "1.5": 1682,
+          "2.0": 1752,
+          "3.0": 1880,
+          "5.0": 2216
+        }
+      },
+      {
+        "subject": "Stendhal",
+        "model_top1_id": 13731,
+        "model_top1": "Marie",
+        "n_references": 7,
+        "rank_diff": 16789,
+        "top_diff": [
+          "romantic",
+          "romance",
+          "fever",
+          "Mediterranean",
+          "Kunst"
+        ],
+        "rank_lre": 5626,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5626,
+          "0.5": 5575,
+          "1.5": 5685,
+          "2.0": 5757,
+          "3.0": 5900,
+          "5.0": 6144
+        }
+      },
+      {
+        "subject": "Philip IV of Spain",
+        "model_top1_id": 8540,
+        "model_top1": "Philip",
+        "n_references": 8,
+        "rank_diff": 249,
+        "top_diff": [
+          "Spanish",
+          "Span",
+          "Spain",
+          "Madrid",
+          "Span"
+        ],
+        "rank_lre": 5216,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5216,
+          "0.5": 5867,
+          "1.5": 4639,
+          "2.0": 4163,
+          "3.0": 3365,
+          "5.0": 2159
+        }
+      },
+      {
+        "subject": "Hans-Georg Gadamer",
+        "model_top1_id": 11286,
+        "model_top1": "Hans",
+        "n_references": 8,
+        "rank_diff": 2750,
+        "top_diff": [
+          "German",
+          "Philosoph",
+          "Germans",
+          "philosoph",
+          "Wilhelm"
+        ],
+        "rank_lre": 5729,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5729,
+          "0.5": 6063,
+          "1.5": 5409,
+          "2.0": 5125,
+          "3.0": 4605,
+          "5.0": 3939
+        }
+      },
+      {
+        "subject": "W. H. Auden",
+        "model_top1_id": 5931,
+        "model_top1": "George",
+        "n_references": 8,
+        "rank_diff": 4362,
+        "top_diff": [
+          "poetry",
+          "poem",
+          "poems",
+          "poet",
+          "Shakespeare"
+        ],
+        "rank_lre": 3085,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3085,
+          "0.5": 3159,
+          "1.5": 3004,
+          "2.0": 2920,
+          "3.0": 2817,
+          "5.0": 2625
+        }
+      },
+      {
+        "subject": "Ellen DeGeneres",
+        "model_top1_id": 7973,
+        "model_top1": "Ell",
+        "n_references": 8,
+        "rank_diff": 15611,
+        "top_diff": [
+          "humor",
+          "comedy",
+          "comed",
+          "laughter",
+          "jokes"
+        ],
+        "rank_lre": 6902,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6902,
+          "0.5": 6879,
+          "1.5": 6922,
+          "2.0": 6946,
+          "3.0": 6998,
+          "5.0": 7067
+        }
+      },
+      {
+        "subject": "Frederic Edwin Church",
+        "model_top1_id": 22648,
+        "model_top1": "Frederick",
+        "n_references": 8,
+        "rank_diff": 1304,
+        "top_diff": [
+          "landsc",
+          "landscape",
+          "paintings",
+          "painting",
+          "Nature"
+        ],
+        "rank_lre": 9140,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9140,
+          "0.5": 9633,
+          "1.5": 8651,
+          "2.0": 8216,
+          "3.0": 7345,
+          "5.0": 5786
+        }
+      },
+      {
+        "subject": "Nikolai Rimsky-Korsakov",
+        "model_top1_id": 12720,
+        "model_top1": "Nik",
+        "n_references": 8,
+        "rank_diff": 1587,
+        "top_diff": [
+          "Russian",
+          "Russians",
+          "Ukrain",
+          "Ukr",
+          "Russia"
+        ],
+        "rank_lre": 7235,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7235,
+          "0.5": 7572,
+          "1.5": 6950,
+          "2.0": 6674,
+          "3.0": 6146,
+          "5.0": 5287
+        }
+      },
+      {
+        "subject": "Auguste Rodin",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "sculpt",
+          "statue",
+          "French",
+          "artwork",
+          "Claude"
+        ],
+        "rank_lre": 2563,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2563,
+          "0.5": 3122,
+          "1.5": 2042,
+          "2.0": 1654,
+          "3.0": 1102,
+          "5.0": 454
+        }
+      },
+      {
+        "subject": "Henri Poincar\u00e9",
+        "model_top1_id": 25852,
+        "model_top1": "L\u00e9",
+        "n_references": 8,
+        "rank_diff": 185,
+        "top_diff": [
+          "science",
+          "Science",
+          "mathematical",
+          "scientific",
+          "physics"
+        ],
+        "rank_lre": 10002,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10002,
+          "0.5": 10733,
+          "1.5": 9280,
+          "2.0": 8571,
+          "3.0": 7299,
+          "5.0": 5219
+        }
+      },
+      {
+        "subject": "Johann Sebastian Bach",
+        "model_top1_id": 13149,
+        "model_top1": "Johann",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "German",
+          "Leip",
+          "Germans",
+          "Luther",
+          "Germany"
+        ],
+        "rank_lre": 7321,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7321,
+          "0.5": 8802,
+          "1.5": 5918,
+          "2.0": 4635,
+          "3.0": 2846,
+          "5.0": 943
+        }
+      },
+      {
+        "subject": "Louis Pasteur",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 8,
+        "rank_diff": 132,
+        "top_diff": [
+          "French",
+          "scientific",
+          "science",
+          "Science",
+          "France"
+        ],
+        "rank_lre": 3034,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3034,
+          "0.5": 3391,
+          "1.5": 2694,
+          "2.0": 2387,
+          "3.0": 1898,
+          "5.0": 1237
+        }
+      },
+      {
+        "subject": "Yukio Mishima",
+        "model_top1_id": 1292,
+        "model_top1": "K",
+        "n_references": 8,
+        "rank_diff": 18107,
+        "top_diff": [
+          "sword",
+          "suicide",
+          "assass",
+          "homosexual",
+          "murder"
+        ],
+        "rank_lre": 1100,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1100,
+          "0.5": 1071,
+          "1.5": 1128,
+          "2.0": 1158,
+          "3.0": 1223,
+          "5.0": 1416
+        }
+      },
+      {
+        "subject": "Elisabeth P\u00e4htz",
+        "model_top1_id": 1243,
+        "model_top1": "J",
+        "n_references": 8,
+        "rank_diff": 497,
+        "top_diff": [
+          "German",
+          "Germany",
+          "Germans",
+          "Wilhelm",
+          "Berlin"
+        ],
+        "rank_lre": 733,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 733,
+          "0.5": 828,
+          "1.5": 657,
+          "2.0": 591,
+          "3.0": 455,
+          "5.0": 299
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 5002.0,
+          "median_lograng": 3.696363245656511,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4525.5,
+          "median_lograng": 3.6506497176105004,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 4191.5,
+          "median_lograng": 3.619984901295183,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 4114.0,
+          "median_lograng": 3.614339047570259,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3105.5,
+          "median_lograng": 3.4907507893933802,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2420.5,
+          "median_lograng": 3.382530207433974,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.02,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.02,
+          0.0
+        ],
+        "5.0": [
+          0.02,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.02,
+          0.0
+        ],
+        "5.0": [
+          0.01,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.01,
+          0.0
+        ],
+        "5.0": [
+          0.02,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 5,
+    "best_beta": 5.0,
+    "best_faith": 0.02,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 100,
+    "requested_n_test": 100,
+    "lm_correct": 65,
+    "per_subject": {
+      "Ambrose": 0,
+      "Gore Vidal": 0,
+      "C. S. Lewis": 0,
+      "Al Gore": 0,
+      "Albert Einstein": 0,
+      "Tim Berners-Lee": 0,
+      "Maupassant": 0,
+      "Lise Meitner": 0,
+      "Jean-Jacques Rousseau": 0,
+      "Emily Dickinson": 0,
+      "Leonard Cohen": 0,
+      "Bob Marley": 0,
+      "Thomas Lawrence": 0,
+      "Christo": 0,
+      "Milla Jovovich": 0,
+      "Sergei Rachmaninoff": 0,
+      "James VI and I": 0,
+      "Alexander the Great": 0,
+      "Confucius": 0,
+      "Ennio Morricone": 0,
+      "Richard Strauss": 0,
+      "Arielle Dombasle": 1,
+      "Jack London": 0,
+      "Augustus": 0,
+      "Washington Irving": 0,
+      "Oliver Cromwell": 0,
+      "Norman Mailer": 0,
+      "Martin Luther": 0,
+      "Henry Fonda": 0,
+      "Vincent van Gogh": 0,
+      "Ursula K. Le Guin": 0,
+      "Guglielmo Marconi": 0,
+      "Lord Byron": 0,
+      "Ezra Pound": 0,
+      "Drew Barrymore": 0,
+      "Thomas Aquinas": 0,
+      "Mao Zedong": 0,
+      "Albert I of Belgium": 0,
+      "Catherine Zeta-Jones": 0,
+      "\u00c9lisabeth Louise Vig\u00e9e Le Brun": 0,
+      "Michelle Yeoh": 0,
+      "Stefan Zweig": 0,
+      "Ginger Rogers": 0,
+      "Louis XVI of France": 0,
+      "Philippe P\u00e9tain": 0,
+      "Franz Joseph I of Austria": 0,
+      "William Hogarth": 0,
+      "Angelica Kauffmann": 0,
+      "Pius IX": 0,
+      "Zoe Kravitz": 0,
+      "Thomas Gainsborough": 0,
+      "Italo Calvino": 0,
+      "Jane Birkin": 0,
+      "John Constable": 0,
+      "Louis XV of France": 0,
+      "Ted Kennedy": 0,
+      "Nikolai Rimsky-Korsakov": 0,
+      "Barbara Hund": 0,
+      "Joseph Vernet": 0,
+      "Karl Popper": 0,
+      "Fr\u00e9d\u00e9ric Chopin": 0,
+      "Madeleine Albright": 0,
+      "Edward Gibbon": 0,
+      "Cecil Beaton": 0,
+      "Richard Nixon": 0,
+      "M. C. Escher": 0,
+      "Mariah Carey": 0,
+      "Henry Fuseli": 0,
+      "Jennifer Aniston": 0,
+      "Fernando Pessoa": 0,
+      "Arrigo Boito": 0,
+      "Robert Capa": 0,
+      "Grace Kelly": 0,
+      "Jackie Chan": 0,
+      "Stendhal": 0,
+      "Miley Cyrus": 0,
+      "Pius II": 0,
+      "Georg B\u00fcchner": 0,
+      "Erwin Schr\u00f6dinger": 0,
+      "Charlotte Bront\u00eb": 0,
+      "Will Smith": 0,
+      "Henry VIII of England": 1,
+      "Marie Curie": 0,
+      "Alec Baldwin": 0,
+      "Gy\u00f6rgy Ligeti": 0,
+      "Louisa May Alcott": 0,
+      "Ludwig Tieck": 0,
+      "Petrarch": 0,
+      "Margaret Thatcher": 0,
+      "Maria Theresa of Austria": 0,
+      "Josephus": 0,
+      "Vladimir Nabokov": 0,
+      "Edward VIII of the United Kingdom": 0,
+      "Fridtjof Nansen": 0,
+      "Alfred Russel Wallace": 0,
+      "Natalia Goncharova": 0,
+      "Joseph Addison": 0,
+      "Galen": 0,
+      "Prince Philip, Duke of Edinburgh": 0,
+      "Liudmila Belavenets": 0
+    },
+    "split_fingerprint": "e0afda277749",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{}'s father is named",
+    "agg": {
+      "diff": {
+        "median_rank": 726.5,
+        "median_lograng": 2.8559938278359494,
+        "agree_at1": 0.0,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 4493.0,
+        "median_lograng": 3.64671295754541,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Michel Foucault",
+        "model_top1_id": 4688,
+        "model_top1": "Paul",
+        "n_references": 7,
+        "rank_diff": 25858,
+        "top_diff": [
+          "philosoph",
+          "Philosoph",
+          "philosophy",
+          "philos",
+          "questioning"
+        ],
+        "rank_lre": 3343,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3343,
+          "0.5": 3141,
+          "1.5": 3523,
+          "2.0": 3712,
+          "3.0": 4172,
+          "5.0": 5087
+        }
+      },
+      {
+        "subject": "Ralph Vaughan Williams",
+        "model_top1_id": 24141,
+        "model_top1": "Ralph",
+        "n_references": 7,
+        "rank_diff": 7754,
+        "top_diff": [
+          "Songs",
+          "compos",
+          "Farm",
+          "composer",
+          "Music"
+        ],
+        "rank_lre": 10496,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10496,
+          "0.5": 10649,
+          "1.5": 10338,
+          "2.0": 10192,
+          "3.0": 9872,
+          "5.0": 9279
+        }
+      },
+      {
+        "subject": "Thomas Gainsborough",
+        "model_top1_id": 2983,
+        "model_top1": "John",
+        "n_references": 7,
+        "rank_diff": 4267,
+        "top_diff": [
+          "portrait",
+          "painting",
+          "painter",
+          "Gallery",
+          "paintings"
+        ],
+        "rank_lre": 2458,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2458,
+          "0.5": 2586,
+          "1.5": 2339,
+          "2.0": 2243,
+          "3.0": 2040,
+          "5.0": 1739
+        }
+      },
+      {
+        "subject": "Heracles",
+        "model_top1_id": 5659,
+        "model_top1": "Ze",
+        "n_references": 7,
+        "rank_diff": 36,
+        "top_diff": [
+          "Greek",
+          "Gree",
+          "Greece",
+          "myth",
+          "Olymp"
+        ],
+        "rank_lre": 3756,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3756,
+          "0.5": 4291,
+          "1.5": 3281,
+          "2.0": 2857,
+          "3.0": 2142,
+          "5.0": 1114
+        }
+      },
+      {
+        "subject": "Victor Hugo",
+        "model_top1_id": 8986,
+        "model_top1": "Joseph",
+        "n_references": 7,
+        "rank_diff": 29401,
+        "top_diff": [
+          "French",
+          "France",
+          "Paris",
+          "Pierre",
+          "literary"
+        ],
+        "rank_lre": 7824,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7824,
+          "0.5": 7591,
+          "1.5": 8041,
+          "2.0": 8239,
+          "3.0": 8640,
+          "5.0": 9392
+        }
+      },
+      {
+        "subject": "Sun Yat-sen",
+        "model_top1_id": 7825,
+        "model_top1": "Sun",
+        "n_references": 7,
+        "rank_diff": 206,
+        "top_diff": [
+          "founding",
+          "founded",
+          "Found",
+          "Liberty",
+          "Foundation"
+        ],
+        "rank_lre": 2039,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2039,
+          "0.5": 2343,
+          "1.5": 1790,
+          "2.0": 1569,
+          "3.0": 1188,
+          "5.0": 679
+        }
+      },
+      {
+        "subject": "Jimi Hendrix",
+        "model_top1_id": 1744,
+        "model_top1": "Al",
+        "n_references": 7,
+        "rank_diff": 10459,
+        "top_diff": [
+          "Freedom",
+          "reb",
+          "rock",
+          "Dream",
+          "Rock"
+        ],
+        "rank_lre": 1819,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1819,
+          "0.5": 1832,
+          "1.5": 1796,
+          "2.0": 1799,
+          "3.0": 1825,
+          "5.0": 1912
+        }
+      },
+      {
+        "subject": "Stendhal",
+        "model_top1_id": 13731,
+        "model_top1": "Marie",
+        "n_references": 7,
+        "rank_diff": 31896,
+        "top_diff": [
+          "festival",
+          "fever",
+          "romantic",
+          "Lost",
+          "Myst"
+        ],
+        "rank_lre": 6329,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6329,
+          "0.5": 6037,
+          "1.5": 6645,
+          "2.0": 6950,
+          "3.0": 7573,
+          "5.0": 8768
+        }
+      },
+      {
+        "subject": "Philip IV of Spain",
+        "model_top1_id": 8540,
+        "model_top1": "Philip",
+        "n_references": 8,
+        "rank_diff": 308,
+        "top_diff": [
+          "Spanish",
+          "Span",
+          "Spain",
+          "Madrid",
+          "Pedro"
+        ],
+        "rank_lre": 5230,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5230,
+          "0.5": 5804,
+          "1.5": 4677,
+          "2.0": 4191,
+          "3.0": 3399,
+          "5.0": 2197
+        }
+      },
+      {
+        "subject": "Hans-Georg Gadamer",
+        "model_top1_id": 11286,
+        "model_top1": "Hans",
+        "n_references": 8,
+        "rank_diff": 845,
+        "top_diff": [
+          "German",
+          "Germans",
+          "Friedrich",
+          "Wilhelm",
+          "Reich"
+        ],
+        "rank_lre": 5551,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5551,
+          "0.5": 6050,
+          "1.5": 5072,
+          "2.0": 4635,
+          "3.0": 3892,
+          "5.0": 2895
+        }
+      },
+      {
+        "subject": "W. H. Auden",
+        "model_top1_id": 5931,
+        "model_top1": "George",
+        "n_references": 8,
+        "rank_diff": 8153,
+        "top_diff": [
+          "poem",
+          "poetry",
+          "poems",
+          "poet",
+          "Shakespeare"
+        ],
+        "rank_lre": 2852,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2852,
+          "0.5": 2870,
+          "1.5": 2839,
+          "2.0": 2810,
+          "3.0": 2760,
+          "5.0": 2731
+        }
+      },
+      {
+        "subject": "Ellen DeGeneres",
+        "model_top1_id": 7973,
+        "model_top1": "Ell",
+        "n_references": 8,
+        "rank_diff": 14195,
+        "top_diff": [
+          "humor",
+          "laughter",
+          "smiles",
+          "laughing",
+          "jokes"
+        ],
+        "rank_lre": 6838,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6838,
+          "0.5": 6846,
+          "1.5": 6841,
+          "2.0": 6854,
+          "3.0": 6880,
+          "5.0": 6919
+        }
+      },
+      {
+        "subject": "Frederic Edwin Church",
+        "model_top1_id": 22648,
+        "model_top1": "Frederick",
+        "n_references": 8,
+        "rank_diff": 514,
+        "top_diff": [
+          "landsc",
+          "landscape",
+          "paintings",
+          "painting",
+          "painted"
+        ],
+        "rank_lre": 8628,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8628,
+          "0.5": 9200,
+          "1.5": 8066,
+          "2.0": 7492,
+          "3.0": 6341,
+          "5.0": 4582
+        }
+      },
+      {
+        "subject": "Nikolai Rimsky-Korsakov",
+        "model_top1_id": 12720,
+        "model_top1": "Nik",
+        "n_references": 8,
+        "rank_diff": 224,
+        "top_diff": [
+          "Russian",
+          "Russians",
+          "Ukrain",
+          "Ukr",
+          "Alexand"
+        ],
+        "rank_lre": 6989,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6989,
+          "0.5": 7529,
+          "1.5": 6519,
+          "2.0": 6065,
+          "3.0": 5171,
+          "5.0": 3819
+        }
+      },
+      {
+        "subject": "Auguste Rodin",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 8,
+        "rank_diff": 20,
+        "top_diff": [
+          "sculpt",
+          "French",
+          "statue",
+          "Paris",
+          "France"
+        ],
+        "rank_lre": 2893,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2893,
+          "0.5": 3513,
+          "1.5": 2366,
+          "2.0": 1923,
+          "3.0": 1275,
+          "5.0": 500
+        }
+      },
+      {
+        "subject": "Henri Poincar\u00e9",
+        "model_top1_id": 25852,
+        "model_top1": "L\u00e9",
+        "n_references": 8,
+        "rank_diff": 60,
+        "top_diff": [
+          "French",
+          "science",
+          "Science",
+          "mathematical",
+          "scientific"
+        ],
+        "rank_lre": 9474,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9474,
+          "0.5": 10259,
+          "1.5": 8624,
+          "2.0": 7820,
+          "3.0": 6399,
+          "5.0": 4092
+        }
+      },
+      {
+        "subject": "Johann Sebastian Bach",
+        "model_top1_id": 13149,
+        "model_top1": "Johann",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "German",
+          "Germans",
+          "Leip",
+          "Germany",
+          "Luther"
+        ],
+        "rank_lre": 7512,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7512,
+          "0.5": 9069,
+          "1.5": 6005,
+          "2.0": 4644,
+          "3.0": 2720,
+          "5.0": 764
+        }
+      },
+      {
+        "subject": "Louis Pasteur",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 8,
+        "rank_diff": 42,
+        "top_diff": [
+          "French",
+          "France",
+          "scientific",
+          "rench",
+          "\u0444\u0440\u0430\u043d"
+        ],
+        "rank_lre": 3186,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3186,
+          "0.5": 3660,
+          "1.5": 2748,
+          "2.0": 2381,
+          "3.0": 1741,
+          "5.0": 941
+        }
+      },
+      {
+        "subject": "Yukio Mishima",
+        "model_top1_id": 1292,
+        "model_top1": "K",
+        "n_references": 8,
+        "rank_diff": 14077,
+        "top_diff": [
+          "sword",
+          "assass",
+          "murder",
+          "suicide",
+          "death"
+        ],
+        "rank_lre": 1291,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1291,
+          "0.5": 1288,
+          "1.5": 1296,
+          "2.0": 1311,
+          "3.0": 1341,
+          "5.0": 1416
+        }
+      },
+      {
+        "subject": "Elisabeth P\u00e4htz",
+        "model_top1_id": 1243,
+        "model_top1": "J",
+        "n_references": 8,
+        "rank_diff": 608,
+        "top_diff": [
+          "German",
+          "Germany",
+          "Germans",
+          "Wilhelm",
+          "Berlin"
+        ],
+        "rank_lre": 831,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 831,
+          "0.5": 930,
+          "1.5": 735,
+          "2.0": 667,
+          "3.0": 536,
+          "5.0": 365
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 5047.5,
+          "median_lograng": 3.6982309686842534,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4493.0,
+          "median_lograng": 3.64671295754541,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 4100.0,
+          "median_lograng": 3.608548058606572,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 3951.5,
+          "median_lograng": 3.596073111600915,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3079.5,
+          "median_lograng": 3.486272661840759,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2464.0,
+          "median_lograng": 3.389254191548483,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Michel Foucault": 7,
+    "Ralph Vaughan Williams": 8,
+    "Thomas Gainsborough": 7,
+    "Heracles": 4,
+    "Victor Hugo": 6,
+    "Sun Yat-sen": 7,
+    "Jimi Hendrix": 6,
+    "Stendhal": 5,
+    "Philip IV of Spain": 7,
+    "Hans-Georg Gadamer": 10,
+    "W. H. Auden": 8,
+    "Ellen DeGeneres": 8,
+    "Frederic Edwin Church": 9,
+    "Nikolai Rimsky-Korsakov": 13,
+    "Auguste Rodin": 7,
+    "Henri Poincar\u00e9": 8,
+    "Johann Sebastian Bach": 7,
+    "Louis Pasteur": 7,
+    "Yukio Mishima": 8,
+    "Elisabeth P\u00e4htz": 9
+  },
+  "content_tokenization_changes": [
+    {
+      "subject": "Michel Foucault",
+      "original_ids": [
+        13390,
+        23345,
+        29485,
+        1886,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29140,
+        3573,
+        23345,
+        29485,
+        1886,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ralph Vaughan Williams",
+      "original_ids": [
+        24141,
+        1318,
+        4508,
+        1044,
+        11374,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        18857,
+        1318,
+        4508,
+        1044,
+        11374,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Thomas Gainsborough",
+      "original_ids": [
+        6851,
+        1188,
+        2374,
+        23824,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1995,
+        24624,
+        1188,
+        2374,
+        23824,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Heracles",
+      "original_ids": [
+        3352,
+        15163,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        18846,
+        15163,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Victor Hugo",
+      "original_ids": [
+        12945,
+        25643,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29558,
+        1616,
+        1039,
+        25643,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Sun Yat-sen",
+      "original_ids": [
+        7825,
+        1395,
+        1038,
+        29501,
+        7216,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29292,
+        1395,
+        1038,
+        29501,
+        7216,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Jimi Hendrix",
+      "original_ids": [
+        7483,
+        29478,
+        19356,
+        3676,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        14608,
+        19356,
+        3676,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Stendhal",
+      "original_ids": [
+        1430,
+        1184,
+        6787,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1486,
+        1184,
+        6787,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Philip IV of Spain",
+      "original_ids": [
+        8540,
+        9841,
+        1070,
+        13335,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        24654,
+        1276,
+        9841,
+        1070,
+        13335,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Hans-Georg Gadamer",
+      "original_ids": [
+        11286,
+        29501,
+        6677,
+        2677,
+        1188,
+        1084,
+        7730,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29537,
+        1277,
+        29501,
+        6677,
+        2677,
+        1188,
+        1084,
+        7730,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "W. H. Auden",
+      "original_ids": [
+        1162,
+        29491,
+        1150,
+        29491,
+        15189,
+        1037,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29548,
+        29491,
+        1150,
+        29491,
+        15189,
+        1037,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ellen DeGeneres",
+      "original_ids": [
+        23567,
+        2111,
+        4370,
+        1042,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29517,
+        1352,
+        1037,
+        2111,
+        4370,
+        1042,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Frederic Edwin Church",
+      "original_ids": [
+        16179,
+        1062,
+        3458,
+        5930,
+        7149,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29533,
+        1035,
+        1594,
+        1062,
+        3458,
+        5930,
+        7149,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Nikolai Rimsky-Korsakov",
+      "original_ids": [
+        12720,
+        1096,
+        2353,
+        1167,
+        1089,
+        11687,
+        29501,
+        29564,
+        1502,
+        25976,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29527,
+        1617,
+        1096,
+        2353,
+        1167,
+        1089,
+        11687,
+        29501,
+        29564,
+        1502,
+        25976,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Auguste Rodin",
+      "original_ids": [
+        4396,
+        29474,
+        9583,
+        1030,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        22343,
+        1237,
+        29474,
+        9583,
+        1030,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Henri Poincar\u00e9",
+      "original_ids": [
+        21142,
+        6232,
+        2582,
+        1051,
+        29565,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        26884,
+        1141,
+        6232,
+        2582,
+        1051,
+        29565,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Johann Sebastian Bach",
+      "original_ids": [
+        13149,
+        26883,
+        24926,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        2139,
+        1598,
+        26883,
+        24926,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Louis Pasteur",
+      "original_ids": [
+        7466,
+        1135,
+        5403,
+        1092,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        25386,
+        1046,
+        1135,
+        5403,
+        1092,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Yukio Mishima",
+      "original_ids": [
+        1395,
+        3718,
+        1459,
+        1119,
+        1557,
+        5018,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29570,
+        3718,
+        1459,
+        1119,
+        1557,
+        5018,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Elisabeth P\u00e4htz",
+      "original_ids": [
+        2512,
+        1046,
+        10023,
+        1135,
+        29598,
+        1175,
+        29532,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6541,
+        1046,
+        10023,
+        1135,
+        29598,
+        1175,
+        29532,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    }
+  ],
+  "split_fingerprint": "299f281ef47d",
+  "baseline_sha256": {
+    "results/five_model_sweep/mistral7b/main/person_father.json": "81c38eed1c30d80b1916dddd962fad72dd30e3c4f781f5b2873686c8ae5eb5a0"
+  },
+  "data_sha256": "796e03665de86d7441b2374fb443c1ddebc77749c01c4bab92c571fda4c8753d",
+  "elapsed_seconds": 6.237072467803955
+}

@@ -1,0 +1,663 @@
+{
+  "relation": "person_band_lead_singer",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.2,
+          0.0
+        ],
+        "3.0": [
+          0.2,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.4,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.4,
+          0.0
+        ],
+        "2.0": [
+          0.4,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.2,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.6,
+          0.0
+        ],
+        "2.0": [
+          0.6,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.4,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 17,
+    "best_beta": 1.5,
+    "best_faith": 0.6,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 5,
+    "requested_n_test": 100,
+    "lm_correct": 5,
+    "per_subject": {
+      "Jon Bon Jovi": 0,
+      "Kurt Cobain": 1,
+      "Axl Rose": 1,
+      "Ozzy Osbourne": 0,
+      "Serj Tankian": 1
+    },
+    "split_fingerprint": "6911c3741843",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 13,
+    "layer": 17,
+    "template": "{} is the lead singer of",
+    "agg": {
+      "diff": {
+        "median_rank": 9459.0,
+        "median_lograng": 3.975891136401793,
+        "agree_at1": 0.0,
+        "agree_at10": 0.07692307692307693
+      },
+      "lre": {
+        "median_rank": 779.0,
+        "median_lograng": 2.8920946026904804,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Steven Tyler",
+        "model_top1_id": 329,
+        "model_top1": "A",
+        "n_references": 7,
+        "rank_diff": 38579,
+        "top_diff": [
+          "Mormon",
+          "gospel",
+          "Tyler",
+          "Abraham",
+          "Texas"
+        ],
+        "rank_lre": 1245,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1245,
+          "0.5": 958,
+          "1.5": 1601,
+          "2.0": 2029,
+          "3.0": 3086,
+          "5.0": 5762
+        }
+      },
+      {
+        "subject": "Axl Rose",
+        "model_top1_id": 443,
+        "model_top1": "G",
+        "n_references": 7,
+        "rank_diff": 21553,
+        "top_diff": [
+          "blues",
+          "shred",
+          "harmon",
+          "Blues",
+          "Canadian"
+        ],
+        "rank_lre": 662,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 662,
+          "0.5": 602,
+          "1.5": 714,
+          "2.0": 815,
+          "3.0": 1006,
+          "5.0": 1518
+        }
+      },
+      {
+        "subject": "Mick Jagger",
+        "model_top1_id": 380,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 22728,
+        "top_diff": [
+          "Mick",
+          "Rolling",
+          "Beatles",
+          "blues",
+          "Groups"
+        ],
+        "rank_lre": 90,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 90,
+          "0.5": 78,
+          "1.5": 115,
+          "2.0": 150,
+          "3.0": 222,
+          "5.0": 545
+        }
+      },
+      {
+        "subject": "Freddie Mercury",
+        "model_top1_id": 11628,
+        "model_top1": "Queen",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Queen",
+          "Majesty",
+          "Queen",
+          "Freddie",
+          "British"
+        ],
+        "rank_lre": 442,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "singing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 442,
+          "0.5": 1103,
+          "1.5": 171,
+          "2.0": 67,
+          "3.0": 11,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Liam Gallagher",
+        "model_top1_id": 473,
+        "model_top1": "O",
+        "n_references": 7,
+        "rank_diff": 1044,
+        "top_diff": [
+          "Irish",
+          "Celtic",
+          "Irish",
+          "Welsh",
+          "Scottish"
+        ],
+        "rank_lre": 855,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 855,
+          "0.5": 1008,
+          "1.5": 755,
+          "2.0": 661,
+          "3.0": 535,
+          "5.0": 439
+        }
+      },
+      {
+        "subject": "Jon Bon Jovi",
+        "model_top1_id": 11228,
+        "model_top1": "Bon",
+        "n_references": 7,
+        "rank_diff": 1021,
+        "top_diff": [
+          "Pennsylvania",
+          "harmon",
+          "Canadian",
+          "Ohio",
+          "Jersey"
+        ],
+        "rank_lre": 1966,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1966,
+          "0.5": 2416,
+          "1.5": 1624,
+          "2.0": 1343,
+          "3.0": 989,
+          "5.0": 697
+        }
+      },
+      {
+        "subject": "Jim Morrison",
+        "model_top1_id": 380,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 15160,
+        "top_diff": [
+          "psy",
+          "Jung",
+          "screamed",
+          "poets",
+          "poet"
+        ],
+        "rank_lre": 112,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 112,
+          "0.5": 96,
+          "1.5": 131,
+          "2.0": 160,
+          "3.0": 221,
+          "5.0": 493
+        }
+      },
+      {
+        "subject": "Robert Plant",
+        "model_top1_id": 33227,
+        "model_top1": "Led",
+        "n_references": 7,
+        "rank_diff": 186,
+        "top_diff": [
+          "Beatles",
+          "Plant",
+          "Scottish",
+          "Yorkshire",
+          "Anglican"
+        ],
+        "rank_lre": 1061,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1061,
+          "0.5": 1580,
+          "1.5": 727,
+          "2.0": 500,
+          "3.0": 277,
+          "5.0": 130
+        }
+      },
+      {
+        "subject": "Don Henley",
+        "model_top1_id": 380,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 14331,
+        "top_diff": [
+          "Beatles",
+          "Eagles",
+          "harmon",
+          "harmony",
+          "folk"
+        ],
+        "rank_lre": 75,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "writing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 75,
+          "0.5": 78,
+          "1.5": 84,
+          "2.0": 87,
+          "3.0": 110,
+          "5.0": 199
+        }
+      },
+      {
+        "subject": "John Lennon",
+        "model_top1_id": 380,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 17088,
+        "top_diff": [
+          "Beatles",
+          "Beat",
+          "Lenn",
+          "Tibetan",
+          "harmon"
+        ],
+        "rank_lre": 86,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 86,
+          "0.5": 84,
+          "1.5": 97,
+          "2.0": 114,
+          "3.0": 162,
+          "5.0": 333
+        }
+      },
+      {
+        "subject": "Anthony Kiedis",
+        "model_top1_id": 4410,
+        "model_top1": "Red",
+        "n_references": 8,
+        "rank_diff": 9459,
+        "top_diff": [
+          "Brazilian",
+          "shred",
+          "Hawaiian",
+          "Brazil",
+          "Indonesian"
+        ],
+        "rank_lre": 2298,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2298,
+          "0.5": 2396,
+          "1.5": 2215,
+          "2.0": 2161,
+          "3.0": 2125,
+          "5.0": 2230
+        }
+      },
+      {
+        "subject": "Bono",
+        "model_top1_id": 530,
+        "model_top1": "U",
+        "n_references": 8,
+        "rank_diff": 340,
+        "top_diff": [
+          "Irish",
+          "Celtic",
+          "Irish",
+          "Catholics",
+          "gospel"
+        ],
+        "rank_lre": 779,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 779,
+          "0.5": 1157,
+          "1.5": 518,
+          "2.0": 362,
+          "3.0": 212,
+          "5.0": 109
+        }
+      },
+      {
+        "subject": "Eddie Vedder",
+        "model_top1_id": 29169,
+        "model_top1": "Pearl",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Hawaiian",
+          "Pacific",
+          "Hawai",
+          "Pacific",
+          "Norwegian"
+        ],
+        "rank_lre": 1072,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1072,
+          "0.5": 2155,
+          "1.5": 521,
+          "2.0": 262,
+          "3.0": 69,
+          "5.0": 17
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 1008.0,
+          "median_lograng": 3.0038911662369108,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 779.0,
+          "median_lograng": 2.8920946026904804,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 521.0,
+          "median_lograng": 2.717670503002262,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 362.0,
+          "median_lograng": 2.5599066250361124,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 222.0,
+          "median_lograng": 2.3483048630481607,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 439.0,
+          "median_lograng": 2.6434526764861874,
+          "agree_at1": 0.0,
+          "agree_at10": 0.07692307692307693
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 31.59867215156555,
+  "model_id": "EleutherAI/pythia-6.9b",
+  "revision": "c0e3eee36dc47af0c49f361c74cfe459c09f7f23",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0018038790440186858
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

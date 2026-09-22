@@ -1,0 +1,454 @@
+{
+  "relation": "city_in_country",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.16666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.16666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.8333333333333334,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.8333333333333334,
+          0.0
+        ],
+        "3.0": [
+          0.8333333333333334,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.16666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.16666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 11,
+    "best_beta": 3.0,
+    "best_faith": 0.8333333333333334,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 6,
+    "requested_n_test": 100,
+    "lm_correct": 6,
+    "per_subject": {
+      "Panama City": 0,
+      "Siem Reap": 1,
+      "New Delhi": 1,
+      "Buenos Aires": 1,
+      "Port-au-Prince": 1,
+      "Santo Domingo": 1
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 6,
+    "layer": 17,
+    "template": "{} is part of",
+    "agg": {
+      "diff": {
+        "median_rank": 0.0,
+        "median_lograng": 0.0,
+        "agree_at1": 0.6666666666666666,
+        "agree_at10": 1.0
+      },
+      "lre": {
+        "median_rank": 558.0,
+        "median_lograng": 2.7474090282149453,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Panama City",
+        "model_top1_id": 37783,
+        "model_top1": "Panama",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Panama",
+          "Philippines",
+          "Hond",
+          "Manila",
+          "Jacksonville"
+        ],
+        "rank_lre": 1075,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1075,
+          "0.5": 2647,
+          "1.5": 375,
+          "2.0": 114,
+          "3.0": 10,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Siem Reap",
+        "model_top1_id": 41984,
+        "model_top1": "Cambodia",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Cambodia",
+          "Myanmar",
+          "Lanka",
+          "Kamp",
+          "Viet"
+        ],
+        "rank_lre": 831,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 831,
+          "0.5": 4595,
+          "1.5": 95,
+          "2.0": 9,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "New Delhi",
+        "model_top1_id": 5427,
+        "model_top1": "India",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Delhi",
+          "India",
+          "India",
+          "Hindu",
+          "Mumbai"
+        ],
+        "rank_lre": 188,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 188,
+          "0.5": 1643,
+          "1.5": 19,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Buenos Aires",
+        "model_top1_id": 23881,
+        "model_top1": "Argentina",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Buenos",
+          "Argentine",
+          "Argentina",
+          "Argent",
+          "Aires"
+        ],
+        "rank_lre": 536,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 536,
+          "0.5": 3544,
+          "1.5": 50,
+          "2.0": 8,
+          "3.0": 2,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Port-au-Prince",
+        "model_top1_id": 40906,
+        "model_top1": "Haiti",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Haiti",
+          "Hait",
+          "Congo",
+          "Caribbean",
+          "poverty"
+        ],
+        "rank_lre": 556,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 556,
+          "0.5": 4215,
+          "1.5": 38,
+          "2.0": 7,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Santo Domingo",
+        "model_top1_id": 46406,
+        "model_top1": "Dominican",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dominican",
+          "Caribbean",
+          "Hait",
+          "Haiti",
+          "Puerto"
+        ],
+        "rank_lre": 560,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 560,
+          "0.5": 3184,
+          "1.5": 65,
+          "2.0": 9,
+          "3.0": 1,
+          "5.0": 0
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 3364.0,
+          "median_lograng": 3.526362838095227,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 558.0,
+          "median_lograng": 2.7474090282149453,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 57.5,
+          "median_lograng": 1.7635570558199025,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 8.5,
+          "median_lograng": 0.9771212547196624,
+          "agree_at1": 0.0,
+          "agree_at10": 0.8333333333333334
+        },
+        "3.0": {
+          "median_rank": 1.0,
+          "median_lograng": 0.3010299956639812,
+          "agree_at1": 0.16666666666666666,
+          "agree_at10": 0.8333333333333334
+        },
+        "5.0": {
+          "median_rank": 0.5,
+          "median_lograng": 0.1505149978319906,
+          "agree_at1": 0.5,
+          "agree_at10": 1.0
+        }
+      }
+    },
+    "split_fingerprint": "c5202c7b3638",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 28.354429006576538,
+  "model_id": "EleutherAI/pythia-6.9b",
+  "revision": "c0e3eee36dc47af0c49f361c74cfe459c09f7f23",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0018038790440186858
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

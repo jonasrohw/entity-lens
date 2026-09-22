@@ -1,0 +1,5499 @@
+{
+  "relation": "person_native_language",
+  "protocol": "shared_split",
+  "model": "gptj",
+  "worker": "rho2_6",
+  "lens": {
+    "n": 100,
+    "layer": 15,
+    "template": "{} speaks the language of",
+    "agg": {
+      "diff": {
+        "median_rank": 2.0,
+        "median_lograng": 0.47712125471966244,
+        "agree_at1": 0.4,
+        "agree_at10": 0.62
+      },
+      "lre": {
+        "median_rank": 202.0,
+        "median_lograng": 2.307496037913213,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Andrew Jackson",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 15671,
+        "top_diff": [
+          "Jackson",
+          "Jackson",
+          "Confederate",
+          "Presidents",
+          "Cherokee"
+        ],
+        "rank_lre": 889,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 889,
+          "0.5": 881,
+          "1.5": 925,
+          "2.0": 946,
+          "3.0": 1083,
+          "5.0": 1554
+        }
+      },
+      {
+        "subject": "Yves Beneyton",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Belgian",
+          "Jacques",
+          "french",
+          "Frenchman"
+        ],
+        "rank_lre": 202,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 202,
+          "0.5": 379,
+          "1.5": 107,
+          "2.0": 69,
+          "3.0": 27,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Louis Joxe",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Jesuit",
+          "Vatican",
+          "Portuguese",
+          "bishops",
+          "French"
+        ],
+        "rank_lre": 240,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 240,
+          "0.5": 398,
+          "1.5": 131,
+          "2.0": 81,
+          "3.0": 32,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Jacobus Henricus van 't Hoff",
+        "model_top1_id": 10914,
+        "model_top1": "Dutch",
+        "n_references": 8,
+        "rank_diff": 216,
+        "top_diff": [
+          "scientific",
+          "Scientific",
+          "Chemical",
+          "Hoff",
+          "chemical"
+        ],
+        "rank_lre": 3073,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3073,
+          "0.5": 4094,
+          "1.5": 2263,
+          "2.0": 1624,
+          "3.0": 872,
+          "5.0": 313
+        }
+      },
+      {
+        "subject": "Miho Mosulishvili",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 6592,
+        "top_diff": [
+          "Georgian",
+          "Georgia",
+          "Russian",
+          "Soviet",
+          "Nikol"
+        ],
+        "rank_lre": 791,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 791,
+          "0.5": 829,
+          "1.5": 764,
+          "2.0": 763,
+          "3.0": 759,
+          "5.0": 892
+        }
+      },
+      {
+        "subject": "Franz Kafka",
+        "model_top1_id": 2679,
+        "model_top1": "German",
+        "n_references": 8,
+        "rank_diff": 110,
+        "top_diff": [
+          "Kafka",
+          "Kaf",
+          "Franz",
+          "Prague",
+          "Czech"
+        ],
+        "rank_lre": 868,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "writing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 868,
+          "0.5": 1406,
+          "1.5": 534,
+          "2.0": 334,
+          "3.0": 146,
+          "5.0": 73
+        }
+      },
+      {
+        "subject": "Michel de Montaigne",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "philosophers",
+          "philosophical",
+          "Philos",
+          "Rousse",
+          "essays"
+        ],
+        "rank_lre": 222,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "writing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 222,
+          "0.5": 392,
+          "1.5": 124,
+          "2.0": 76,
+          "3.0": 29,
+          "5.0": 10
+        }
+      },
+      {
+        "subject": "Oleg Novitskiy",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Russia",
+          "Moscow",
+          "Russians",
+          "Siberian"
+        ],
+        "rank_lre": 243,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 243,
+          "0.5": 863,
+          "1.5": 72,
+          "2.0": 20,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Polaire",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "french",
+          "Jacques",
+          "France"
+        ],
+        "rank_lre": 100,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 100,
+          "0.5": 273,
+          "1.5": 44,
+          "2.0": 18,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Ivan Puni",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 17744,
+        "top_diff": [
+          "Navajo",
+          "Fiji",
+          "Samurai",
+          "Papua",
+          "Indigenous"
+        ],
+        "rank_lre": 1007,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1007,
+          "0.5": 940,
+          "1.5": 1081,
+          "2.0": 1171,
+          "3.0": 1338,
+          "5.0": 1822
+        }
+      },
+      {
+        "subject": "Adolphe Schneider",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Schneider",
+          "Schne",
+          "Leica",
+          "Swiss",
+          "Schultz"
+        ],
+        "rank_lre": 174,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 174,
+          "0.5": 352,
+          "1.5": 91,
+          "2.0": 54,
+          "3.0": 16,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Dmitry Muratov",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Soviet",
+          "Russia",
+          "Russians"
+        ],
+        "rank_lre": 137,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 137,
+          "0.5": 686,
+          "1.5": 37,
+          "2.0": 9,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Isaac Massa",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1305,
+        "top_diff": [
+          "African",
+          "Angola",
+          "Africans",
+          "Africa",
+          "Congo"
+        ],
+        "rank_lre": 544,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 544,
+          "0.5": 624,
+          "1.5": 470,
+          "2.0": 426,
+          "3.0": 351,
+          "5.0": 259
+        }
+      },
+      {
+        "subject": "Hans Peter Anvin",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 37557,
+        "top_diff": [
+          "Icelandic",
+          "Norse",
+          "SpaceX",
+          "Starfleet",
+          "Starcraft"
+        ],
+        "rank_lre": 1113,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1113,
+          "0.5": 984,
+          "1.5": 1238,
+          "2.0": 1396,
+          "3.0": 1800,
+          "5.0": 2922
+        }
+      },
+      {
+        "subject": "Camille Flammarion",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "Martian",
+          "Prometheus",
+          "Frenchman"
+        ],
+        "rank_lre": 117,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 117,
+          "0.5": 293,
+          "1.5": 60,
+          "2.0": 31,
+          "3.0": 8,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Irma Boom",
+        "model_top1_id": 10914,
+        "model_top1": "Dutch",
+        "n_references": 8,
+        "rank_diff": 798,
+        "top_diff": [
+          "Boom",
+          "boom",
+          "Buster",
+          "Booster",
+          "her"
+        ],
+        "rank_lre": 3700,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3700,
+          "0.5": 4481,
+          "1.5": 3023,
+          "2.0": 2497,
+          "3.0": 1705,
+          "5.0": 964
+        }
+      },
+      {
+        "subject": "Jean Yanne",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Jeanne",
+          "French",
+          "Jean",
+          "French",
+          "french"
+        ],
+        "rank_lre": 134,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 134,
+          "0.5": 317,
+          "1.5": 67,
+          "2.0": 35,
+          "3.0": 9,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Roger Nimier",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "Frenchman",
+          "Jacques",
+          "french"
+        ],
+        "rank_lre": 168,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 168,
+          "0.5": 346,
+          "1.5": 88,
+          "2.0": 48,
+          "3.0": 14,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Bernard Blier",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "France",
+          "French",
+          "french",
+          "Fran\u00e7"
+        ],
+        "rank_lre": 76,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "writing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 76,
+          "0.5": 234,
+          "1.5": 33,
+          "2.0": 11,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Edmond Gondinet",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "french",
+          "Frenchman",
+          "French",
+          "Jacques"
+        ],
+        "rank_lre": 96,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 96,
+          "0.5": 263,
+          "1.5": 46,
+          "2.0": 17,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Vasily Kamensky",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Russians",
+          "Soviet",
+          "Russia"
+        ],
+        "rank_lre": 82,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 82,
+          "0.5": 518,
+          "1.5": 18,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Paul Guth",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 23482,
+        "top_diff": [
+          "Guth",
+          "G\u00f6",
+          "guitar",
+          "gib",
+          "astroph"
+        ],
+        "rank_lre": 991,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 991,
+          "0.5": 929,
+          "1.5": 1072,
+          "2.0": 1156,
+          "3.0": 1393,
+          "5.0": 2049
+        }
+      },
+      {
+        "subject": "Michel d'Ornano",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Italian",
+          "Jesuit",
+          "France",
+          "Giovanni"
+        ],
+        "rank_lre": 205,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 205,
+          "0.5": 376,
+          "1.5": 110,
+          "2.0": 72,
+          "3.0": 24,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Jules Berry",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 25,
+        "top_diff": [
+          "Berry",
+          "berries",
+          "Berry",
+          "berry",
+          "Grape"
+        ],
+        "rank_lre": 202,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 202,
+          "0.5": 376,
+          "1.5": 117,
+          "2.0": 69,
+          "3.0": 29,
+          "5.0": 7
+        }
+      },
+      {
+        "subject": "Lionel Jospin",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Hollande",
+          "French",
+          "Socialist",
+          "electoral",
+          "socialist"
+        ],
+        "rank_lre": 117,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 117,
+          "0.5": 291,
+          "1.5": 58,
+          "2.0": 25,
+          "3.0": 6,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Hendrik Wagenvoort",
+        "model_top1_id": 10914,
+        "model_top1": "Dutch",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dutch",
+          "Dutch",
+          "van",
+          "Nether",
+          "Amsterdam"
+        ],
+        "rank_lre": 1548,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1548,
+          "0.5": 3014,
+          "1.5": 724,
+          "2.0": 328,
+          "3.0": 69,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Jacques Sadoul",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Fran\u00e7",
+          "French",
+          "Jacques",
+          "Paris"
+        ],
+        "rank_lre": 155,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 155,
+          "0.5": 332,
+          "1.5": 78,
+          "2.0": 48,
+          "3.0": 15,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Vera Lynn",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 2271,
+        "top_diff": [
+          "her",
+          "singing",
+          "songs",
+          "singers",
+          "wartime"
+        ],
+        "rank_lre": 552,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 552,
+          "0.5": 689,
+          "1.5": 446,
+          "2.0": 387,
+          "3.0": 316,
+          "5.0": 330
+        }
+      },
+      {
+        "subject": "Toon Hermans",
+        "model_top1_id": 10914,
+        "model_top1": "Dutch",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dutch",
+          "Dutch",
+          "Belgian",
+          "Amsterdam",
+          "Herman"
+        ],
+        "rank_lre": 1992,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1992,
+          "0.5": 3358,
+          "1.5": 1075,
+          "2.0": 569,
+          "3.0": 136,
+          "5.0": 14
+        }
+      },
+      {
+        "subject": "Jean Anouilh",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 28,
+        "top_diff": [
+          "Theatre",
+          "theatre",
+          "Theater",
+          "theater",
+          "plays"
+        ],
+        "rank_lre": 161,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "writing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 161,
+          "0.5": 340,
+          "1.5": 89,
+          "2.0": 62,
+          "3.0": 31,
+          "5.0": 20
+        }
+      },
+      {
+        "subject": "Didier Van Cauwelaert",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Belgian",
+          "Belgium",
+          "Belg",
+          "French",
+          "Frenchman"
+        ],
+        "rank_lre": 226,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 226,
+          "0.5": 391,
+          "1.5": 125,
+          "2.0": 78,
+          "3.0": 30,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Christopher Lambert",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 14792,
+        "top_diff": [
+          "Lambert",
+          "movie",
+          "actor",
+          "film",
+          "films"
+        ],
+        "rank_lre": 883,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 883,
+          "0.5": 876,
+          "1.5": 875,
+          "2.0": 910,
+          "3.0": 1018,
+          "5.0": 1519
+        }
+      },
+      {
+        "subject": "Gustave Geffroy",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "Claude",
+          "french",
+          "France"
+        ],
+        "rank_lre": 126,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 126,
+          "0.5": 310,
+          "1.5": 63,
+          "2.0": 28,
+          "3.0": 8,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Pierre Fresnay",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "films",
+          "film",
+          "Film",
+          "movies",
+          "movie"
+        ],
+        "rank_lre": 168,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 168,
+          "0.5": 345,
+          "1.5": 86,
+          "2.0": 55,
+          "3.0": 25,
+          "5.0": 15
+        }
+      },
+      {
+        "subject": "Thierry Lhermitte",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Frenchman",
+          "Jacques",
+          "french",
+          "France"
+        ],
+        "rank_lre": 131,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 131,
+          "0.5": 311,
+          "1.5": 61,
+          "2.0": 35,
+          "3.0": 7,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Ann Scott",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 13595,
+        "top_diff": [
+          "Scott",
+          "Scott",
+          "her",
+          "Scottish",
+          "hers"
+        ],
+        "rank_lre": 871,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 871,
+          "0.5": 875,
+          "1.5": 878,
+          "2.0": 882,
+          "3.0": 937,
+          "5.0": 1104
+        }
+      },
+      {
+        "subject": "Stefanos Stratigos",
+        "model_top1_id": 8312,
+        "model_top1": "Greek",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Greek",
+          "Greece",
+          "Greeks",
+          "Greek",
+          "Maced"
+        ],
+        "rank_lre": 255,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 255,
+          "0.5": 824,
+          "1.5": 84,
+          "2.0": 26,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Guy Debord",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 155,
+        "top_diff": [
+          "Marxist",
+          "Anarch",
+          "anarchist",
+          "anarchists",
+          "Marxism"
+        ],
+        "rank_lre": 259,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 259,
+          "0.5": 420,
+          "1.5": 165,
+          "2.0": 112,
+          "3.0": 62,
+          "5.0": 35
+        }
+      },
+      {
+        "subject": "Marie NDiaye",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "her",
+          "French",
+          "French",
+          "Fran\u00e7",
+          "french"
+        ],
+        "rank_lre": 97,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 97,
+          "0.5": 274,
+          "1.5": 44,
+          "2.0": 17,
+          "3.0": 4,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "John Paul II",
+        "model_top1_id": 15945,
+        "model_top1": "Polish",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "Vatican",
+          "Catholic",
+          "Pope",
+          "Catholicism",
+          "Pope"
+        ],
+        "rank_lre": 1327,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1327,
+          "0.5": 3348,
+          "1.5": 452,
+          "2.0": 148,
+          "3.0": 24,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Maurice Schutz",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 5084,
+        "top_diff": [
+          "astroph",
+          "science",
+          "Science",
+          "Einstein",
+          "Krypt"
+        ],
+        "rank_lre": 560,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 560,
+          "0.5": 630,
+          "1.5": 515,
+          "2.0": 477,
+          "3.0": 442,
+          "5.0": 437
+        }
+      },
+      {
+        "subject": "Lev Kulidzhanov",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Kazakh",
+          "Moscow",
+          "Russians",
+          "Soviet"
+        ],
+        "rank_lre": 154,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 154,
+          "0.5": 706,
+          "1.5": 40,
+          "2.0": 9,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Casimir Delavigne",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "poems",
+          "French",
+          "poetry",
+          "poetic",
+          "poets"
+        ],
+        "rank_lre": 119,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "writing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 119,
+          "0.5": 289,
+          "1.5": 54,
+          "2.0": 26,
+          "3.0": 11,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Roland Topor",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 245,
+        "top_diff": [
+          "Czech",
+          "Cambod",
+          "surreal",
+          "Golem",
+          "sorcerer"
+        ],
+        "rank_lre": 451,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 451,
+          "0.5": 571,
+          "1.5": 367,
+          "2.0": 297,
+          "3.0": 188,
+          "5.0": 96
+        }
+      },
+      {
+        "subject": "Grigore Moisil",
+        "model_top1_id": 34344,
+        "model_top1": "Romanian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Romanian",
+          "Romania",
+          "Bulgarian",
+          "Bulgaria",
+          "Hungarian"
+        ],
+        "rank_lre": 1685,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1685,
+          "0.5": 3501,
+          "1.5": 712,
+          "2.0": 297,
+          "3.0": 53,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Joseph Roumanille",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "France",
+          "Frenchman",
+          "french"
+        ],
+        "rank_lre": 151,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 151,
+          "0.5": 334,
+          "1.5": 76,
+          "2.0": 44,
+          "3.0": 12,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Michel Boujenah",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Lebanese",
+          "Palestinian",
+          "Beirut",
+          "Jordanian",
+          "Alger"
+        ],
+        "rank_lre": 203,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 203,
+          "0.5": 371,
+          "1.5": 111,
+          "2.0": 66,
+          "3.0": 23,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Louis Darquier de Pellepoix",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Gaul",
+          "France",
+          "Franco",
+          "assass"
+        ],
+        "rank_lre": 164,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 164,
+          "0.5": 341,
+          "1.5": 87,
+          "2.0": 46,
+          "3.0": 13,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Achille Varzi",
+        "model_top1_id": 8200,
+        "model_top1": "Italian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Italian",
+          "Italian",
+          "Italy",
+          "Italians",
+          "Luigi"
+        ],
+        "rank_lre": 107,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 107,
+          "0.5": 404,
+          "1.5": 38,
+          "2.0": 11,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Michel Camdessus",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "UNESCO",
+          "Frenchman",
+          "bureaucratic",
+          "Haitian"
+        ],
+        "rank_lre": 201,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 201,
+          "0.5": 373,
+          "1.5": 105,
+          "2.0": 62,
+          "3.0": 16,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "John Stuart Mill",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 3051,
+        "top_diff": [
+          "abolition",
+          "liberalism",
+          "Socialism",
+          "Mill",
+          "libertarian"
+        ],
+        "rank_lre": 618,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 618,
+          "0.5": 730,
+          "1.5": 532,
+          "2.0": 486,
+          "3.0": 414,
+          "5.0": 463
+        }
+      },
+      {
+        "subject": "Michel Poniatowski",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Frenchman",
+          "Lafayette",
+          "french",
+          "French"
+        ],
+        "rank_lre": 134,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 134,
+          "0.5": 315,
+          "1.5": 67,
+          "2.0": 34,
+          "3.0": 8,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Claude Gensac",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Frenchman",
+          "French",
+          "France",
+          "Jacques"
+        ],
+        "rank_lre": 124,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 124,
+          "0.5": 311,
+          "1.5": 65,
+          "2.0": 31,
+          "3.0": 9,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Michel Robin",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Robin",
+          "Robin",
+          "Rober",
+          "French",
+          "Sherlock"
+        ],
+        "rank_lre": 135,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 135,
+          "0.5": 309,
+          "1.5": 60,
+          "2.0": 34,
+          "3.0": 8,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Xavier de Maistre",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Jesuit",
+          "French",
+          "Rousse",
+          "Nietzsche",
+          "philosophers"
+        ],
+        "rank_lre": 183,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 183,
+          "0.5": 364,
+          "1.5": 104,
+          "2.0": 56,
+          "3.0": 17,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Louis Bonaparte",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Napoleon",
+          "Nap",
+          "Nap",
+          "Cors",
+          "French"
+        ],
+        "rank_lre": 115,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 115,
+          "0.5": 294,
+          "1.5": 58,
+          "2.0": 25,
+          "3.0": 7,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Christian Clavier",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "piano",
+          "pian",
+          "Piano",
+          "music",
+          "Keyboard"
+        ],
+        "rank_lre": 156,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 156,
+          "0.5": 339,
+          "1.5": 83,
+          "2.0": 51,
+          "3.0": 14,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Christiane Martel",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "her",
+          "hers",
+          "she",
+          "herself",
+          "French"
+        ],
+        "rank_lre": 154,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 154,
+          "0.5": 333,
+          "1.5": 80,
+          "2.0": 44,
+          "3.0": 12,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Jeanne Balibar",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Marxist",
+          "her",
+          "French",
+          "Jacques",
+          "Jean"
+        ],
+        "rank_lre": 166,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 166,
+          "0.5": 341,
+          "1.5": 88,
+          "2.0": 47,
+          "3.0": 13,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Huguette Duflos",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "her",
+          "she",
+          "hers",
+          "herself",
+          "Haitian"
+        ],
+        "rank_lre": 181,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 181,
+          "0.5": 357,
+          "1.5": 95,
+          "2.0": 61,
+          "3.0": 19,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Elsa Zylberstein",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 125,
+        "top_diff": [
+          "her",
+          "Israeli",
+          "Jewish",
+          "Russian",
+          "Soviet"
+        ],
+        "rank_lre": 321,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 321,
+          "0.5": 475,
+          "1.5": 211,
+          "2.0": 142,
+          "3.0": 77,
+          "5.0": 33
+        }
+      },
+      {
+        "subject": "Alex Ferguson",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 2290,
+        "top_diff": [
+          "Ferguson",
+          "football",
+          "Manchester",
+          "Football",
+          "Manchester"
+        ],
+        "rank_lre": 651,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 651,
+          "0.5": 752,
+          "1.5": 558,
+          "2.0": 492,
+          "3.0": 400,
+          "5.0": 357
+        }
+      },
+      {
+        "subject": "Akira Kurosawa",
+        "model_top1_id": 4960,
+        "model_top1": "Japanese",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "film",
+          "films",
+          "Film",
+          "cinematic",
+          "cinema"
+        ],
+        "rank_lre": 1207,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1207,
+          "0.5": 2450,
+          "1.5": 608,
+          "2.0": 279,
+          "3.0": 89,
+          "5.0": 35
+        }
+      },
+      {
+        "subject": "Aleksei Dikiy",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Soviet",
+          "Russian",
+          "Kiev",
+          "Ukrainian",
+          "Soviet"
+        ],
+        "rank_lre": 997,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 997,
+          "0.5": 1673,
+          "1.5": 599,
+          "2.0": 336,
+          "3.0": 104,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Porfiry Ivanov",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Russians",
+          "Moscow",
+          "Russia",
+          "Russian"
+        ],
+        "rank_lre": 105,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 105,
+          "0.5": 605,
+          "1.5": 23,
+          "2.0": 7,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Louis-Nicolas Davout",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 38,
+        "top_diff": [
+          "Napoleon",
+          "military",
+          "soldiers",
+          "soldier",
+          "Soldiers"
+        ],
+        "rank_lre": 195,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 195,
+          "0.5": 361,
+          "1.5": 104,
+          "2.0": 62,
+          "3.0": 21,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Nadine Morano",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "her",
+          "Italian",
+          "hers",
+          "French",
+          "Italians"
+        ],
+        "rank_lre": 151,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 151,
+          "0.5": 331,
+          "1.5": 79,
+          "2.0": 47,
+          "3.0": 11,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Julien Dray",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 2425,
+        "top_diff": [
+          "DD",
+          "DB",
+          "DD",
+          "dystopian",
+          "Dexter"
+        ],
+        "rank_lre": 580,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 580,
+          "0.5": 642,
+          "1.5": 526,
+          "2.0": 487,
+          "3.0": 432,
+          "5.0": 376
+        }
+      },
+      {
+        "subject": "Jean Giraudoux",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "Theatre",
+          "theatre",
+          "Theater",
+          "theater",
+          "plays"
+        ],
+        "rank_lre": 166,
+        "top_lre": [
+          "his",
+          "the",
+          "writing",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 166,
+          "0.5": 346,
+          "1.5": 84,
+          "2.0": 54,
+          "3.0": 19,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Milly Mathis",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 56,
+        "top_diff": [
+          "her",
+          "she",
+          "hers",
+          "herself",
+          "She"
+        ],
+        "rank_lre": 351,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 351,
+          "0.5": 495,
+          "1.5": 256,
+          "2.0": 168,
+          "3.0": 97,
+          "5.0": 42
+        }
+      },
+      {
+        "subject": "Charles-Joseph Panckoucke",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "translations",
+          "translation",
+          "translating",
+          "French"
+        ],
+        "rank_lre": 121,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 121,
+          "0.5": 294,
+          "1.5": 55,
+          "2.0": 26,
+          "3.0": 9,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Robert Merle",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 22,
+        "top_diff": [
+          "zombie",
+          "Haitian",
+          "zombies",
+          "Cambod",
+          "Zombies"
+        ],
+        "rank_lre": 272,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 272,
+          "0.5": 438,
+          "1.5": 159,
+          "2.0": 98,
+          "3.0": 48,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Pierre Brasseur",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "Frenchman",
+          "french",
+          "archaeological"
+        ],
+        "rank_lre": 165,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 165,
+          "0.5": 347,
+          "1.5": 79,
+          "2.0": 46,
+          "3.0": 12,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Aleksandr Kaleri",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Soviet",
+          "Ukrainian",
+          "Kazakh",
+          "Sergei"
+        ],
+        "rank_lre": 374,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 374,
+          "0.5": 1070,
+          "1.5": 116,
+          "2.0": 54,
+          "3.0": 7,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Pierre Daniel Huet",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Hume",
+          "French",
+          "Rousse",
+          "Jacques",
+          "French"
+        ],
+        "rank_lre": 201,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 201,
+          "0.5": 381,
+          "1.5": 107,
+          "2.0": 65,
+          "3.0": 21,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Ivan Ivanov-Vano",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Ukrainian",
+          "Nikol",
+          "Russian",
+          "Soviet",
+          "van"
+        ],
+        "rank_lre": 1557,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1557,
+          "0.5": 2073,
+          "1.5": 1163,
+          "2.0": 878,
+          "3.0": 495,
+          "5.0": 138
+        }
+      },
+      {
+        "subject": "Claude Ribbe",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 80,
+        "top_diff": [
+          "Greenland",
+          "Lutheran",
+          "Belgian",
+          "Danish",
+          "Swedish"
+        ],
+        "rank_lre": 371,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 371,
+          "0.5": 518,
+          "1.5": 277,
+          "2.0": 203,
+          "3.0": 121,
+          "5.0": 57
+        }
+      },
+      {
+        "subject": "Menno ter Braak",
+        "model_top1_id": 10914,
+        "model_top1": "Dutch",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Dutch",
+          "Amsterdam",
+          "Dutch",
+          "Netherlands",
+          "Belgian"
+        ],
+        "rank_lre": 1485,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1485,
+          "0.5": 2989,
+          "1.5": 682,
+          "2.0": 291,
+          "3.0": 59,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Rainer Maria Rilke",
+        "model_top1_id": 2679,
+        "model_top1": "German",
+        "n_references": 8,
+        "rank_diff": 93,
+        "top_diff": [
+          "poems",
+          "poetry",
+          "poem",
+          "poets",
+          "poet"
+        ],
+        "rank_lre": 910,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "writing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 910,
+          "0.5": 1442,
+          "1.5": 605,
+          "2.0": 381,
+          "3.0": 172,
+          "5.0": 78
+        }
+      },
+      {
+        "subject": "Barack Obama",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 18896,
+        "top_diff": [
+          "Obama",
+          "Barack",
+          "Obama",
+          "presidential",
+          "Presidential"
+        ],
+        "rank_lre": 988,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 988,
+          "0.5": 934,
+          "1.5": 1071,
+          "2.0": 1161,
+          "3.0": 1397,
+          "5.0": 2061
+        }
+      },
+      {
+        "subject": "Marina Hands",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 16110,
+        "top_diff": [
+          "her",
+          "she",
+          "hers",
+          "Hands",
+          "herself"
+        ],
+        "rank_lre": 882,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 882,
+          "0.5": 864,
+          "1.5": 891,
+          "2.0": 917,
+          "3.0": 963,
+          "5.0": 1186
+        }
+      },
+      {
+        "subject": "Jules Barbier",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Paris",
+          "French",
+          "Paris",
+          "french"
+        ],
+        "rank_lre": 87,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 87,
+          "0.5": 255,
+          "1.5": 47,
+          "2.0": 17,
+          "3.0": 2,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Michel Sardou",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "theatre",
+          "French",
+          "theater",
+          "Theatre",
+          "songs"
+        ],
+        "rank_lre": 157,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 157,
+          "0.5": 333,
+          "1.5": 77,
+          "2.0": 43,
+          "3.0": 14,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Georges Altman",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 219,
+        "top_diff": [
+          "Soviet",
+          "Kafka",
+          "Israeli",
+          "Jewish",
+          "Greenberg"
+        ],
+        "rank_lre": 401,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 401,
+          "0.5": 540,
+          "1.5": 308,
+          "2.0": 231,
+          "3.0": 133,
+          "5.0": 74
+        }
+      },
+      {
+        "subject": "Fred Vargas",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 19633,
+        "top_diff": [
+          "Filipino",
+          "Mexican",
+          "Puerto",
+          "Venezuelan",
+          "Haitian"
+        ],
+        "rank_lre": 997,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 997,
+          "0.5": 924,
+          "1.5": 1068,
+          "2.0": 1145,
+          "3.0": 1301,
+          "5.0": 1800
+        }
+      },
+      {
+        "subject": "Maurice Herzog",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Israeli",
+          "Frenchman",
+          "Jacques",
+          "Swiss"
+        ],
+        "rank_lre": 222,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 222,
+          "0.5": 393,
+          "1.5": 118,
+          "2.0": 68,
+          "3.0": 31,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Louis-Pierre Baltard",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Jean",
+          "Frenchman",
+          "Jacques",
+          "french"
+        ],
+        "rank_lre": 108,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 108,
+          "0.5": 292,
+          "1.5": 54,
+          "2.0": 24,
+          "3.0": 7,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Odette Barencey",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "her",
+          "French",
+          "hers",
+          "she",
+          "herself"
+        ],
+        "rank_lre": 105,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 105,
+          "0.5": 281,
+          "1.5": 50,
+          "2.0": 20,
+          "3.0": 6,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Anne Fontaine",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "French",
+          "french",
+          "Fran\u00e7",
+          "Frenchman"
+        ],
+        "rank_lre": 85,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 85,
+          "0.5": 239,
+          "1.5": 35,
+          "2.0": 14,
+          "3.0": 2,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Bernard Alane",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Romanian",
+          "Tolkien",
+          "Alban",
+          "Congo",
+          "Alger"
+        ],
+        "rank_lre": 316,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 316,
+          "0.5": 470,
+          "1.5": 201,
+          "2.0": 142,
+          "3.0": 76,
+          "5.0": 20
+        }
+      },
+      {
+        "subject": "Nyusha",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 32208,
+        "top_diff": [
+          "her",
+          "hers",
+          "she",
+          "Siberian",
+          "Russian"
+        ],
+        "rank_lre": 1179,
+        "top_lre": [
+          "his",
+          "her",
+          "the",
+          "being",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1179,
+          "0.5": 1017,
+          "1.5": 1353,
+          "2.0": 1552,
+          "3.0": 2055,
+          "5.0": 3613
+        }
+      },
+      {
+        "subject": "Robert Garnier",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "Frenchman",
+          "Quebec",
+          "french"
+        ],
+        "rank_lre": 99,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 99,
+          "0.5": 275,
+          "1.5": 49,
+          "2.0": 19,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "James A. Garfield",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 6545,
+        "top_diff": [
+          "Garfield",
+          "Presidents",
+          "presidential",
+          "presidency",
+          "presidents"
+        ],
+        "rank_lre": 710,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 710,
+          "0.5": 778,
+          "1.5": 634,
+          "2.0": 573,
+          "3.0": 508,
+          "5.0": 452
+        }
+      },
+      {
+        "subject": "Rafael Alberti",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Catalan",
+          "Argentine",
+          "Mexican",
+          "Roberto",
+          "Italian"
+        ],
+        "rank_lre": 1402,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1402,
+          "0.5": 2300,
+          "1.5": 820,
+          "2.0": 482,
+          "3.0": 158,
+          "5.0": 18
+        }
+      },
+      {
+        "subject": "Paul Klebnikov",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Russian",
+          "Soviet",
+          "Moscow",
+          "Russians"
+        ],
+        "rank_lre": 183,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 183,
+          "0.5": 774,
+          "1.5": 48,
+          "2.0": 12,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Marcel Marceau",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Theatre",
+          "stage",
+          "french",
+          "theatre"
+        ],
+        "rank_lre": 137,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 137,
+          "0.5": 321,
+          "1.5": 70,
+          "2.0": 38,
+          "3.0": 11,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Dmitry Medvedev",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Russia",
+          "Putin",
+          "Russians",
+          "Kremlin"
+        ],
+        "rank_lre": 87,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 87,
+          "0.5": 544,
+          "1.5": 17,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Daniel-Rops",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "French",
+          "french",
+          "Philippe"
+        ],
+        "rank_lre": 147,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 147,
+          "0.5": 332,
+          "1.5": 75,
+          "2.0": 38,
+          "3.0": 11,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Eugene Roshal",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Russian",
+          "Siberian",
+          "Soviet",
+          "Russian",
+          "Belarus"
+        ],
+        "rank_lre": 301,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 301,
+          "0.5": 956,
+          "1.5": 90,
+          "2.0": 34,
+          "3.0": 6,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Louis Gallet",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "French",
+          "Gast",
+          "French",
+          "Jacques",
+          "Frenchman"
+        ],
+        "rank_lre": 168,
+        "top_lre": [
+          "his",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 168,
+          "0.5": 346,
+          "1.5": 84,
+          "2.0": 51,
+          "3.0": 16,
+          "5.0": 1
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 401.0,
+          "median_lograng": 2.6042139594507088,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 202.0,
+          "median_lograng": 2.307496037913213,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 104.5,
+          "median_lograng": 2.0232475821673543,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 62.0,
+          "median_lograng": 1.7993405494535817,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05
+        },
+        "3.0": {
+          "median_rank": 21.0,
+          "median_lograng": 1.3424226808222062,
+          "agree_at1": 0.02,
+          "agree_at10": 0.3
+        },
+        "5.0": {
+          "median_rank": 3.5,
+          "median_lograng": 0.6505149978319906,
+          "agree_at1": 0.11,
+          "agree_at10": 0.6
+        }
+      }
+    },
+    "split_fingerprint": "414b1f576393",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "person_native_language",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "4": {
+        "0.5": [
+          0.62,
+          0.0
+        ],
+        "1.0": [
+          0.64,
+          0.0
+        ],
+        "1.5": [
+          0.64,
+          0.0
+        ],
+        "2.0": [
+          0.69,
+          0.0
+        ],
+        "3.0": [
+          0.69,
+          0.0
+        ],
+        "5.0": [
+          0.62,
+          0.0
+        ]
+      },
+      "10": {
+        "0.5": [
+          0.73,
+          0.0
+        ],
+        "1.0": [
+          0.77,
+          0.0
+        ],
+        "1.5": [
+          0.86,
+          0.0
+        ],
+        "2.0": [
+          0.86,
+          0.0
+        ],
+        "3.0": [
+          0.77,
+          0.0
+        ],
+        "5.0": [
+          0.66,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.74,
+          0.0
+        ],
+        "1.0": [
+          0.89,
+          0.0
+        ],
+        "1.5": [
+          0.85,
+          0.0
+        ],
+        "2.0": [
+          0.83,
+          0.0
+        ],
+        "3.0": [
+          0.73,
+          0.0
+        ],
+        "5.0": [
+          0.64,
+          0.0
+        ]
+      },
+      "15": {
+        "0.5": [
+          0.75,
+          0.0
+        ],
+        "1.0": [
+          0.87,
+          0.0
+        ],
+        "1.5": [
+          0.93,
+          0.0
+        ],
+        "2.0": [
+          0.93,
+          0.0
+        ],
+        "3.0": [
+          0.83,
+          0.0
+        ],
+        "5.0": [
+          0.73,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.69,
+          0.0
+        ],
+        "1.0": [
+          0.75,
+          0.0
+        ],
+        "1.5": [
+          0.77,
+          0.0
+        ],
+        "2.0": [
+          0.85,
+          0.0
+        ],
+        "3.0": [
+          0.9,
+          0.0
+        ],
+        "5.0": [
+          0.89,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.15,
+          0.0
+        ],
+        "1.0": [
+          0.15,
+          0.0
+        ],
+        "1.5": [
+          0.18,
+          0.0
+        ],
+        "2.0": [
+          0.32,
+          0.0
+        ],
+        "3.0": [
+          0.6,
+          0.0
+        ],
+        "5.0": [
+          0.65,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.93,
+    "best_sd": 0.0,
+    "best_layer": 15,
+    "best_beta": 1.5,
+    "lm_correct": 89,
+    "split_fingerprint": "414b1f576393",
+    "legacy_split": false,
+    "distinct_first_token": true,
+    "per_subject": {
+      "Andrew Jackson": 1,
+      "Yves Beneyton": 1,
+      "Louis Joxe": 1,
+      "Jacobus Henricus van 't Hoff": 1,
+      "Miho Mosulishvili": 0,
+      "Franz Kafka": 1,
+      "Michel de Montaigne": 1,
+      "Oleg Novitskiy": 1,
+      "Polaire": 1,
+      "Ivan Puni": 1,
+      "Adolphe Schneider": 1,
+      "Dmitry Muratov": 1,
+      "Isaac Massa": 1,
+      "Hans Peter Anvin": 1,
+      "Camille Flammarion": 1,
+      "Irma Boom": 1,
+      "Jean Yanne": 1,
+      "Roger Nimier": 1,
+      "Bernard Blier": 1,
+      "Edmond Gondinet": 1,
+      "Vasily Kamensky": 1,
+      "Paul Guth": 0,
+      "Michel d'Ornano": 1,
+      "Jules Berry": 1,
+      "Lionel Jospin": 1,
+      "Hendrik Wagenvoort": 1,
+      "Jacques Sadoul": 1,
+      "Vera Lynn": 1,
+      "Toon Hermans": 1,
+      "Jean Anouilh": 1,
+      "Didier Van Cauwelaert": 1,
+      "Christopher Lambert": 1,
+      "Gustave Geffroy": 1,
+      "Pierre Fresnay": 1,
+      "Thierry Lhermitte": 1,
+      "Ann Scott": 1,
+      "Stefanos Stratigos": 1,
+      "Guy Debord": 1,
+      "Marie NDiaye": 1,
+      "John Paul II": 0,
+      "Maurice Schutz": 0,
+      "Lev Kulidzhanov": 1,
+      "Casimir Delavigne": 1,
+      "Roland Topor": 1,
+      "Grigore Moisil": 0,
+      "Joseph Roumanille": 1,
+      "Michel Boujenah": 1,
+      "Louis Darquier de Pellepoix": 1,
+      "Achille Varzi": 1,
+      "Michel Camdessus": 1,
+      "John Stuart Mill": 1,
+      "Michel Poniatowski": 1,
+      "Claude Gensac": 1,
+      "Michel Robin": 1,
+      "Xavier de Maistre": 1,
+      "Louis Bonaparte": 1,
+      "Christian Clavier": 1,
+      "Christiane Martel": 1,
+      "Jeanne Balibar": 1,
+      "Huguette Duflos": 1,
+      "Elsa Zylberstein": 1,
+      "Alex Ferguson": 1,
+      "Akira Kurosawa": 1,
+      "Aleksei Dikiy": 1,
+      "Porfiry Ivanov": 1,
+      "Louis-Nicolas Davout": 1,
+      "Nadine Morano": 1,
+      "Julien Dray": 1,
+      "Jean Giraudoux": 1,
+      "Milly Mathis": 1,
+      "Charles-Joseph Panckoucke": 1,
+      "Robert Merle": 1,
+      "Pierre Brasseur": 1,
+      "Aleksandr Kaleri": 1,
+      "Pierre Daniel Huet": 1,
+      "Ivan Ivanov-Vano": 0,
+      "Claude Ribbe": 1,
+      "Menno ter Braak": 1,
+      "Rainer Maria Rilke": 1,
+      "Barack Obama": 1,
+      "Marina Hands": 1,
+      "Jules Barbier": 1,
+      "Michel Sardou": 1,
+      "Georges Altman": 1,
+      "Fred Vargas": 0,
+      "Maurice Herzog": 1,
+      "Louis-Pierre Baltard": 1,
+      "Odette Barencey": 1,
+      "Anne Fontaine": 1,
+      "Bernard Alane": 1,
+      "Nyusha": 1,
+      "Robert Garnier": 1,
+      "James A. Garfield": 1,
+      "Rafael Alberti": 1,
+      "Paul Klebnikov": 1,
+      "Marcel Marceau": 1,
+      "Dmitry Medvedev": 1,
+      "Daniel-Rops": 1,
+      "Eugene Roshal": 1,
+      "Louis Gallet": 1
+    },
+    "biased_single_draw_mean": 0.93
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 100,
+    "layer": 15,
+    "template": "{} speaks the language of",
+    "agg": {
+      "diff": {
+        "median_rank": 4.0,
+        "median_lograng": 0.6989700043360189,
+        "agree_at1": 0.37,
+        "agree_at10": 0.59
+      },
+      "lre": {
+        "median_rank": 396.0,
+        "median_lograng": 2.5987849956566045,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Andrew Jackson",
+        "model_top1": "English",
+        "rank_diff": 20142,
+        "rank_lre": 1481,
+        "top_diff": [
+          "Jackson",
+          "Jackson",
+          "Presidents",
+          "Presidential",
+          "presidential"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Yves Beneyton",
+        "model_top1": "French",
+        "rank_diff": 3,
+        "rank_lre": 540,
+        "top_diff": [
+          "Belgian",
+          "Jacques",
+          "Marcel",
+          "French",
+          "Belg"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Louis Joxe",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 350,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "french",
+          "Jesuit",
+          "Frenchman"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jacobus Henricus van 't Hoff",
+        "model_top1": "Dutch",
+        "rank_diff": 421,
+        "rank_lre": 4630,
+        "top_diff": [
+          "Scientific",
+          "scientific",
+          "Chem",
+          "Chem",
+          "biologist"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Miho Mosulishvili",
+        "model_top1": "English",
+        "rank_diff": 4794,
+        "rank_lre": 1218,
+        "top_diff": [
+          "Georgian",
+          "Russian",
+          "Ukrainian",
+          "Georgia",
+          "Eston"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Franz Kafka",
+        "model_top1": "German",
+        "rank_diff": 234,
+        "rank_lre": 1734,
+        "top_diff": [
+          "Kafka",
+          "Franz",
+          "Kaf",
+          "Prague",
+          "novels"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "writing"
+        ]
+      },
+      {
+        "subject": "Michel de Montaigne",
+        "model_top1": "French",
+        "rank_diff": 24,
+        "rank_lre": 474,
+        "top_diff": [
+          "philosophers",
+          "essays",
+          "Rousse",
+          "Philos",
+          "philosoph"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Oleg Novitskiy",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 350,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Soviet",
+          "Russia",
+          "Yuri"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Polaire",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 275,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "french",
+          "French",
+          "Jean"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Ivan Puni",
+        "model_top1": "English",
+        "rank_diff": 16962,
+        "rank_lre": 1631,
+        "top_diff": [
+          "Navajo",
+          "Pablo",
+          "Tup",
+          "Pac",
+          "Indigenous"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Adolphe Schneider",
+        "model_top1": "French",
+        "rank_diff": 8,
+        "rank_lre": 367,
+        "top_diff": [
+          "Schneider",
+          "Schne",
+          "Leica",
+          "Deutsche",
+          "Franz"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Dmitry Muratov",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 259,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Soviet",
+          "Russia",
+          "Russians"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Isaac Massa",
+        "model_top1": "French",
+        "rank_diff": 2794,
+        "rank_lre": 1115,
+        "top_diff": [
+          "African",
+          "Africans",
+          "Mandela",
+          "Congo",
+          "Ethiopian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Hans Peter Anvin",
+        "model_top1": "English",
+        "rank_diff": 35419,
+        "rank_lre": 1708,
+        "top_diff": [
+          "Norse",
+          "Icelandic",
+          "Starcraft",
+          "Valkyrie",
+          "Starfleet"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Camille Flammarion",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 203,
+        "top_diff": [
+          "French",
+          "Fran\u00e7",
+          "French",
+          "Sagan",
+          "Mons"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Irma Boom",
+        "model_top1": "Dutch",
+        "rank_diff": 3380,
+        "rank_lre": 5768,
+        "top_diff": [
+          "Boom",
+          "boom",
+          "her",
+          "loudspe",
+          "jazz"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "her",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jean Yanne",
+        "model_top1": "French",
+        "rank_diff": 2,
+        "rank_lre": 345,
+        "top_diff": [
+          "Jeanne",
+          "her",
+          "French",
+          "Jean",
+          "french"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "her"
+        ]
+      },
+      {
+        "subject": "Roger Nimier",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 275,
+        "top_diff": [
+          "French",
+          "Frenchman",
+          "Jacques",
+          "French",
+          "french"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Bernard Blier",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 139,
+        "top_diff": [
+          "French",
+          "lyric",
+          "Paris",
+          "Fran\u00e7",
+          "poems"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Edmond Gondinet",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 217,
+        "top_diff": [
+          "French",
+          "french",
+          "Frenchman",
+          "Fran\u00e7",
+          "French"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Vasily Kamensky",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 141,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Soviet",
+          "Russian",
+          "Russians"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Paul Guth",
+        "model_top1": "English",
+        "rank_diff": 27134,
+        "rank_lre": 1530,
+        "top_diff": [
+          "Guth",
+          "Hume",
+          "G\u00f6",
+          "Locke",
+          "libertarian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Michel d'Ornano",
+        "model_top1": "French",
+        "rank_diff": 5,
+        "rank_lre": 531,
+        "top_diff": [
+          "Italian",
+          "Jesuit",
+          "Giovanni",
+          "Italians",
+          "Italy"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jules Berry",
+        "model_top1": "French",
+        "rank_diff": 35,
+        "rank_lre": 450,
+        "top_diff": [
+          "Berry",
+          "Berry",
+          "berries",
+          "songs",
+          "LSD"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Lionel Jospin",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 222,
+        "top_diff": [
+          "Hollande",
+          "French",
+          "France",
+          "Macron",
+          "Fran\u00e7ois"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Hendrik Wagenvoort",
+        "model_top1": "Dutch",
+        "rank_diff": 0,
+        "rank_lre": 2642,
+        "top_diff": [
+          "Dutch",
+          "Amsterdam",
+          "Dutch",
+          "Belgian",
+          "van"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Jacques Sadoul",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 389,
+        "top_diff": [
+          "1932",
+          "French",
+          "interviewing",
+          "1936",
+          "1966"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Vera Lynn",
+        "model_top1": "English",
+        "rank_diff": 4137,
+        "rank_lre": 1045,
+        "top_diff": [
+          "her",
+          "singing",
+          "hers",
+          "songs",
+          "singer"
+        ],
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Toon Hermans",
+        "model_top1": "Dutch",
+        "rank_diff": 0,
+        "rank_lre": 3396,
+        "top_diff": [
+          "Dutch",
+          "Volks",
+          "Herman",
+          "Amsterdam",
+          "Belgian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jean Anouilh",
+        "model_top1": "French",
+        "rank_diff": 16,
+        "rank_lre": 322,
+        "top_diff": [
+          "Theatre",
+          "theatre",
+          "Theater",
+          "theater",
+          "plays"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Didier Van Cauwelaert",
+        "model_top1": "French",
+        "rank_diff": 3,
+        "rank_lre": 450,
+        "top_diff": [
+          "Belgian",
+          "Belgium",
+          "Belg",
+          "French",
+          "Frenchman"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Christopher Lambert",
+        "model_top1": "English",
+        "rank_diff": 8595,
+        "rank_lre": 1272,
+        "top_diff": [
+          "Lambert",
+          "Dracula",
+          "vampires",
+          "vampire",
+          "Juliet"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Gustave Geffroy",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 287,
+        "top_diff": [
+          "French",
+          "French",
+          "Frenchman",
+          "Fran\u00e7",
+          "Claude"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Pierre Fresnay",
+        "model_top1": "French",
+        "rank_diff": 38,
+        "rank_lre": 346,
+        "top_diff": [
+          "films",
+          "film",
+          "cinema",
+          "Film",
+          "cinem"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Thierry Lhermitte",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 266,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "Frenchman",
+          "french",
+          "Fran\u00e7"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Ann Scott",
+        "model_top1": "English",
+        "rank_diff": 19556,
+        "rank_lre": 1502,
+        "top_diff": [
+          "her",
+          "hers",
+          "Scott",
+          "she",
+          "Scott"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Stefanos Stratigos",
+        "model_top1": "Greek",
+        "rank_diff": 0,
+        "rank_lre": 515,
+        "top_diff": [
+          "Greek",
+          "Greece",
+          "Greeks",
+          "Greek",
+          "Athens"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Guy Debord",
+        "model_top1": "French",
+        "rank_diff": 211,
+        "rank_lre": 512,
+        "top_diff": [
+          "Marxist",
+          "Anarch",
+          "anarchist",
+          "anarchists",
+          "Marxism"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Marie NDiaye",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 165,
+        "top_diff": [
+          "her",
+          "French",
+          "hers",
+          "herself",
+          "French"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "the"
+        ]
+      },
+      {
+        "subject": "John Paul II",
+        "model_top1": "Polish",
+        "rank_diff": 15,
+        "rank_lre": 2784,
+        "top_diff": [
+          "Vatican",
+          "Pope",
+          "Catholic",
+          "Catholicism",
+          "Catholics"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Maurice Schutz",
+        "model_top1": "French",
+        "rank_diff": 2776,
+        "rank_lre": 926,
+        "top_diff": [
+          "Jung",
+          "anthropology",
+          "Werner",
+          "Fritz",
+          "Franz"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Lev Kulidzhanov",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 309,
+        "top_diff": [
+          "Russian",
+          "Kazakh",
+          "Soviet",
+          "Moscow",
+          "KGB"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Casimir Delavigne",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 231,
+        "top_diff": [
+          "French",
+          "Fran\u00e7",
+          "French",
+          "french",
+          "Fran\u00e7ois"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Roland Topor",
+        "model_top1": "French",
+        "rank_diff": 316,
+        "rank_lre": 915,
+        "top_diff": [
+          "sorcerer",
+          "Jung",
+          "Golem",
+          "Tolkien",
+          "Dracula"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Grigore Moisil",
+        "model_top1": "Romanian",
+        "rank_diff": 0,
+        "rank_lre": 3249,
+        "top_diff": [
+          "Romanian",
+          "Romania",
+          "Soviet",
+          "Lithuan",
+          "Hungarian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Joseph Roumanille",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 319,
+        "top_diff": [
+          "French",
+          "French",
+          "Haitian",
+          "Frenchman",
+          "Jacques"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Michel Boujenah",
+        "model_top1": "French",
+        "rank_diff": 10,
+        "rank_lre": 385,
+        "top_diff": [
+          "Lebanese",
+          "Palestinian",
+          "Alger",
+          "Moroccan",
+          "Beirut"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Louis Darquier de Pellepoix",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 290,
+        "top_diff": [
+          "French",
+          "France",
+          "Fran\u00e7",
+          "Frenchman",
+          "Gaul"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Achille Varzi",
+        "model_top1": "Italian",
+        "rank_diff": 0,
+        "rank_lre": 245,
+        "top_diff": [
+          "Italian",
+          "Italian",
+          "Giovanni",
+          "Luigi",
+          "Italians"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Michel Camdessus",
+        "model_top1": "French",
+        "rank_diff": 29,
+        "rank_lre": 440,
+        "top_diff": [
+          "economist",
+          "economists",
+          "IMF",
+          "bankers",
+          "Keynes"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "John Stuart Mill",
+        "model_top1": "English",
+        "rank_diff": 10550,
+        "rank_lre": 1318,
+        "top_diff": [
+          "Philos",
+          "liberalism",
+          "philosophers",
+          "Philosophy",
+          "Socialism"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Michel Poniatowski",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 361,
+        "top_diff": [
+          "French",
+          "Polish",
+          "Marcel",
+          "Frenchman",
+          "french"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Claude Gensac",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 268,
+        "top_diff": [
+          "French",
+          "Frenchman",
+          "France",
+          "French",
+          "Jacques"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Michel Robin",
+        "model_top1": "French",
+        "rank_diff": 4,
+        "rank_lre": 310,
+        "top_diff": [
+          "Robin",
+          "Robin",
+          "Rober",
+          "Jean",
+          "French"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Xavier de Maistre",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 307,
+        "top_diff": [
+          "Jesuit",
+          "French",
+          "France",
+          "Nietzsche",
+          "franc"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Louis Bonaparte",
+        "model_top1": "French",
+        "rank_diff": 6,
+        "rank_lre": 349,
+        "top_diff": [
+          "Napoleon",
+          "Nap",
+          "Nap",
+          "Cors",
+          "Caesar"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Christian Clavier",
+        "model_top1": "French",
+        "rank_diff": 37,
+        "rank_lre": 325,
+        "top_diff": [
+          "piano",
+          "pian",
+          "music",
+          "MIDI",
+          "Piano"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Christiane Martel",
+        "model_top1": "French",
+        "rank_diff": 7,
+        "rank_lre": 360,
+        "top_diff": [
+          "her",
+          "hers",
+          "herself",
+          "she",
+          "She"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "the"
+        ]
+      },
+      {
+        "subject": "Jeanne Balibar",
+        "model_top1": "French",
+        "rank_diff": 2,
+        "rank_lre": 304,
+        "top_diff": [
+          "her",
+          "Marxist",
+          "French",
+          "Jacques",
+          "Jean"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "the"
+        ]
+      },
+      {
+        "subject": "Huguette Duflos",
+        "model_top1": "French",
+        "rank_diff": 9,
+        "rank_lre": 378,
+        "top_diff": [
+          "her",
+          "hers",
+          "she",
+          "herself",
+          "she"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Elsa Zylberstein",
+        "model_top1": "French",
+        "rank_diff": 435,
+        "rank_lre": 763,
+        "top_diff": [
+          "her",
+          "Jewish",
+          "Israeli",
+          "hers",
+          "Jews"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Alex Ferguson",
+        "model_top1": "English",
+        "rank_diff": 1433,
+        "rank_lre": 995,
+        "top_diff": [
+          "Ferguson",
+          "Manchester",
+          "football",
+          "Manchester",
+          "Football"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Akira Kurosawa",
+        "model_top1": "Japanese",
+        "rank_diff": 60,
+        "rank_lre": 2303,
+        "top_diff": [
+          "film",
+          "films",
+          "Film",
+          "cinema",
+          "cinematic"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Aleksei Dikiy",
+        "model_top1": "Russian",
+        "rank_diff": 1,
+        "rank_lre": 1576,
+        "top_diff": [
+          "Soviet",
+          "Russian",
+          "Kiev",
+          "Yuri",
+          "Cambod"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Porfiry Ivanov",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 193,
+        "top_diff": [
+          "Russian",
+          "Moscow",
+          "Russians",
+          "Soviet",
+          "Russia"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Louis-Nicolas Davout",
+        "model_top1": "French",
+        "rank_diff": 15,
+        "rank_lre": 381,
+        "top_diff": [
+          "Napoleon",
+          "military",
+          "soldiers",
+          "battlefield",
+          "infantry"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Nadine Morano",
+        "model_top1": "French",
+        "rank_diff": 7,
+        "rank_lre": 384,
+        "top_diff": [
+          "her",
+          "hers",
+          "herself",
+          "she",
+          "Italian"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Julien Dray",
+        "model_top1": "French",
+        "rank_diff": 298,
+        "rank_lre": 893,
+        "top_diff": [
+          "DB",
+          "DD",
+          "DD",
+          "rab",
+          "Kier"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jean Giraudoux",
+        "model_top1": "French",
+        "rank_diff": 24,
+        "rank_lre": 359,
+        "top_diff": [
+          "Theatre",
+          "theatre",
+          "Theater",
+          "theater",
+          "plays"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Milly Mathis",
+        "model_top1": "French",
+        "rank_diff": 65,
+        "rank_lre": 635,
+        "top_diff": [
+          "her",
+          "she",
+          "hers",
+          "herself",
+          "She"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Charles-Joseph Panckoucke",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 253,
+        "top_diff": [
+          "French",
+          "French",
+          "franc",
+          "Lafayette",
+          "Franc"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Robert Merle",
+        "model_top1": "French",
+        "rank_diff": 140,
+        "rank_lre": 676,
+        "top_diff": [
+          "Manson",
+          "zombie",
+          "zombies",
+          "murder",
+          "Jean"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Pierre Brasseur",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 264,
+        "top_diff": [
+          "French",
+          "french",
+          "French",
+          "Frenchman",
+          "Fran\u00e7"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Aleksandr Kaleri",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 562,
+        "top_diff": [
+          "Russian",
+          "Soviet",
+          "Sergei",
+          "Sergey",
+          "Russian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Pierre Daniel Huet",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 319,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "french",
+          "French",
+          "Qu\u00e9"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Ivan Ivanov-Vano",
+        "model_top1": "Russian",
+        "rank_diff": 5,
+        "rank_lre": 2047,
+        "top_diff": [
+          "her",
+          "voices",
+          "voice",
+          "van",
+          "Ukrainian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Claude Ribbe",
+        "model_top1": "French",
+        "rank_diff": 36,
+        "rank_lre": 726,
+        "top_diff": [
+          "Belgian",
+          "Lutheran",
+          "Inquisitor",
+          "Jesuit",
+          "explorer"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Menno ter Braak",
+        "model_top1": "Dutch",
+        "rank_diff": 0,
+        "rank_lre": 2749,
+        "top_diff": [
+          "Dutch",
+          "Amsterdam",
+          "Dutch",
+          "Belgian",
+          "Netherlands"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Rainer Maria Rilke",
+        "model_top1": "German",
+        "rank_diff": 252,
+        "rank_lre": 1804,
+        "top_diff": [
+          "poems",
+          "poetry",
+          "poet",
+          "poets",
+          "poem"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Barack Obama",
+        "model_top1": "English",
+        "rank_diff": 32063,
+        "rank_lre": 1790,
+        "top_diff": [
+          "Obama",
+          "Barack",
+          "Obama",
+          "presidential",
+          "Presidential"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Marina Hands",
+        "model_top1": "English",
+        "rank_diff": 19149,
+        "rank_lre": 1509,
+        "top_diff": [
+          "her",
+          "she",
+          "herself",
+          "hers",
+          "she"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Jules Barbier",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 177,
+        "top_diff": [
+          "French",
+          "Paris",
+          "French",
+          "Frenchman",
+          "french"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Michel Sardou",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 311,
+        "top_diff": [
+          "theatre",
+          "French",
+          "Theatre",
+          "theater",
+          "stage"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Georges Altman",
+        "model_top1": "French",
+        "rank_diff": 262,
+        "rank_lre": 755,
+        "top_diff": [
+          "Film",
+          "film",
+          "films",
+          "Kubrick",
+          "cinema"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Fred Vargas",
+        "model_top1": "English",
+        "rank_diff": 27736,
+        "rank_lre": 1810,
+        "top_diff": [
+          "Mexican",
+          "Spanish",
+          "Cuban",
+          "Chavez",
+          "Filipino"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Maurice Herzog",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 475,
+        "top_diff": [
+          "French",
+          "Alger",
+          "Jewish",
+          "franc",
+          "Madagascar"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Louis-Pierre Baltard",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 222,
+        "top_diff": [
+          "French",
+          "french",
+          "Frenchman",
+          "Jacques",
+          "Jean"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Odette Barencey",
+        "model_top1": "French",
+        "rank_diff": 4,
+        "rank_lre": 235,
+        "top_diff": [
+          "her",
+          "hers",
+          "she",
+          "herself",
+          "French"
+        ],
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Anne Fontaine",
+        "model_top1": "French",
+        "rank_diff": 1,
+        "rank_lre": 196,
+        "top_diff": [
+          "her",
+          "French",
+          "hers",
+          "she",
+          "herself"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "the"
+        ]
+      },
+      {
+        "subject": "Bernard Alane",
+        "model_top1": "French",
+        "rank_diff": 17,
+        "rank_lre": 679,
+        "top_diff": [
+          "Tolkien",
+          "Welsh",
+          "Lovecraft",
+          "Alic",
+          "her"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Nyusha",
+        "model_top1": "English",
+        "rank_diff": 33601,
+        "rank_lre": 1947,
+        "top_diff": [
+          "her",
+          "hers",
+          "she",
+          "herself",
+          "Yuri"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "many",
+          "a"
+        ]
+      },
+      {
+        "subject": "Robert Garnier",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 329,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "Frenchman",
+          "Jean",
+          "french"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "James A. Garfield",
+        "model_top1": "English",
+        "rank_diff": 7563,
+        "rank_lre": 1218,
+        "top_diff": [
+          "Garfield",
+          "presidential",
+          "presidency",
+          "Presidency",
+          "presidents"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Rafael Alberti",
+        "model_top1": "Spanish",
+        "rank_diff": 7,
+        "rank_lre": 2015,
+        "top_diff": [
+          "Catalan",
+          "Roberto",
+          "Pablo",
+          "Barcelona",
+          "Alberto"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Paul Klebnikov",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 394,
+        "top_diff": [
+          "Russian",
+          "Soviet",
+          "Moscow",
+          "Russian",
+          "Russians"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Marcel Marceau",
+        "model_top1": "French",
+        "rank_diff": 2,
+        "rank_lre": 324,
+        "top_diff": [
+          "Theatre",
+          "theatre",
+          "French",
+          "stage",
+          "Jacques"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Dmitry Medvedev",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 201,
+        "top_diff": [
+          "Russian",
+          "Russia",
+          "Putin",
+          "Kremlin",
+          "Moscow"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Daniel-Rops",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 297,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "Marcel",
+          "French",
+          "Philippe"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "the",
+          "a"
+        ]
+      },
+      {
+        "subject": "Eugene Roshal",
+        "model_top1": "Russian",
+        "rank_diff": 0,
+        "rank_lre": 597,
+        "top_diff": [
+          "Russian",
+          "Belarus",
+          "Ukrainian",
+          "Soviet",
+          "Siberian"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      },
+      {
+        "subject": "Louis Gallet",
+        "model_top1": "French",
+        "rank_diff": 0,
+        "rank_lre": 398,
+        "top_diff": [
+          "French",
+          "Jacques",
+          "French",
+          "Frenchman",
+          "Sherlock"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "the"
+        ]
+      }
+    ],
+    "split_fingerprint": "414b1f576393",
+    "legacy_split": false
+  },
+  "trailing_space": false,
+  "positions": {
+    "Chrisye": 2,
+    "Isabelle Caro": 5,
+    "Charles Maurras": 3,
+    "Virgil": 3,
+    "Jacques Jouanneau": 5,
+    "Paul Verhoeven": 4,
+    "Ovid": 2,
+    "A. P. J. Abdul Kalam": 9,
+    "Andrew Jackson": 2,
+    "Yves Beneyton": 4,
+    "Louis Joxe": 4,
+    "Jacobus Henricus van 't Hoff": 9,
+    "Miho Mosulishvili": 7,
+    "Franz Kafka": 3,
+    "Michel de Montaigne": 6,
+    "Oleg Novitskiy": 6,
+    "Polaire": 3,
+    "Ivan Puni": 4,
+    "Adolphe Schneider": 4,
+    "Dmitry Muratov": 6,
+    "Isaac Massa": 4,
+    "Hans Peter Anvin": 5,
+    "Camille Flammarion": 5,
+    "Irma Boom": 3,
+    "Jean Yanne": 3,
+    "Roger Nimier": 3,
+    "Bernard Blier": 4,
+    "Edmond Gondinet": 5,
+    "Vasily Kamensky": 6,
+    "Paul Guth": 2,
+    "Michel d'Ornano": 7,
+    "Jules Berry": 3,
+    "Lionel Jospin": 6,
+    "Hendrik Wagenvoort": 7,
+    "Jacques Sadoul": 4,
+    "Vera Lynn": 3,
+    "Toon Hermans": 4,
+    "Jean Anouilh": 5,
+    "Didier Van Cauwelaert": 8,
+    "Christopher Lambert": 2,
+    "Gustave Geffroy": 6,
+    "Pierre Fresnay": 4,
+    "Thierry Lhermitte": 7,
+    "Ann Scott": 2,
+    "Stefanos Stratigos": 6,
+    "Guy Debord": 3,
+    "Marie NDiaye": 4,
+    "John Paul II": 3,
+    "Maurice Schutz": 5,
+    "Lev Kulidzhanov": 6,
+    "Casimir Delavigne": 5,
+    "Roland Topor": 4,
+    "Grigore Moisil": 6,
+    "Joseph Roumanille": 4,
+    "Michel Boujenah": 5,
+    "Louis Darquier de Pellepoix": 9,
+    "Achille Varzi": 5,
+    "Michel Camdessus": 6,
+    "John Stuart Mill": 3,
+    "Michel Poniatowski": 5,
+    "Claude Gensac": 5,
+    "Michel Robin": 3,
+    "Xavier de Maistre": 6,
+    "Louis Bonaparte": 4,
+    "Christian Clavier": 3,
+    "Christiane Martel": 4,
+    "Jeanne Balibar": 5,
+    "Huguette Duflos": 6,
+    "Elsa Zylberstein": 5,
+    "Alex Ferguson": 2,
+    "Akira Kurosawa": 5,
+    "Aleksei Dikiy": 6,
+    "Porfiry Ivanov": 5,
+    "Louis-Nicolas Davout": 6,
+    "Nadine Morano": 5,
+    "Julien Dray": 4,
+    "Jean Giraudoux": 4,
+    "Milly Mathis": 4,
+    "Charles-Joseph Panckoucke": 8,
+    "Robert Merle": 3,
+    "Pierre Brasseur": 4,
+    "Aleksandr Kaleri": 5,
+    "Pierre Daniel Huet": 4,
+    "Ivan Ivanov-Vano": 7,
+    "Claude Ribbe": 4,
+    "Menno ter Braak": 6,
+    "Rainer Maria Rilke": 6,
+    "Barack Obama": 3,
+    "Marina Hands": 3,
+    "Jules Barbier": 4,
+    "Michel Sardou": 4,
+    "Georges Altman": 4,
+    "Fred Vargas": 3,
+    "Maurice Herzog": 5,
+    "Louis-Pierre Baltard": 5,
+    "Odette Barencey": 6,
+    "Anne Fontaine": 3,
+    "Bernard Alane": 4,
+    "Nyusha": 3,
+    "Robert Garnier": 3,
+    "James A. Garfield": 4,
+    "Rafael Alberti": 5,
+    "Paul Klebnikov": 5,
+    "Marcel Marceau": 5,
+    "Dmitry Medvedev": 6,
+    "Daniel-Rops": 4,
+    "Eugene Roshal": 6,
+    "Louis Gallet": 3
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "414b1f576393",
+  "baseline_sha256": {
+    "results/gptj/results/shared_split/jacobian_lens.json": "3b7ae3386a8b5acf6dd04457ac4fcec439e9bece3eb262cfa18cfd2877052780",
+    "results/gptj/results/shared_split/faithfulness_person_native_language.json": "2ace62ad7ef9efe428e1e32241c3695efe2098996767b821144d22bcc7b5e333"
+  },
+  "data_sha256": "ad6f699fbad04cecf45a424713249803921598187c6302dd2a8e20702f4c1928",
+  "elapsed_seconds": 19.266815900802612
+}

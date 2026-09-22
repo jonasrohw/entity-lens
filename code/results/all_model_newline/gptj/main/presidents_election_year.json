@@ -1,0 +1,855 @@
+{
+  "relation": "presidents_election_year",
+  "protocol": "main",
+  "model": "gptj",
+  "worker": "rho2_6",
+  "lens": {
+    "n": 11,
+    "layer": 15,
+    "template": "{} was elected in",
+    "agg": {
+      "diff": {
+        "median_rank": 17.0,
+        "median_lograng": 1.255272505103306,
+        "agree_at1": 0.0,
+        "agree_at10": 0.36363636363636365
+      },
+      "lre": {
+        "median_rank": 4009.0,
+        "median_lograng": 3.603144372620182,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Thomas Jefferson",
+        "model_top1_id": 1248,
+        "model_top1": "18",
+        "n_references": 7,
+        "rank_diff": 5333,
+        "top_diff": [
+          "Jefferson",
+          "Thomas",
+          "slavery",
+          "Jeff",
+          "Enlightenment"
+        ],
+        "rank_lre": 1249,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "many",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1249,
+          "0.5": 1267,
+          "1.5": 1242,
+          "2.0": 1228,
+          "3.0": 1261,
+          "5.0": 1406
+        }
+      },
+      {
+        "subject": "Jimmy Carter ",
+        "model_top1_id": 15408,
+        "model_top1": "1976",
+        "n_references": 7,
+        "rank_diff": 9343,
+        "top_diff": [
+          "Muhammad",
+          "Babe",
+          "Garfield",
+          "pacif",
+          "Lyndon"
+        ],
+        "rank_lre": 16177,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16177,
+          "0.5": 16634,
+          "1.5": 15729,
+          "2.0": 15308,
+          "3.0": 14582,
+          "5.0": 13565
+        }
+      },
+      {
+        "subject": "Richard M. Nixon",
+        "model_top1_id": 15963,
+        "model_top1": "1968",
+        "n_references": 7,
+        "rank_diff": 9,
+        "top_diff": [
+          "Nixon",
+          "Watergate",
+          "Kissinger",
+          "Eisenhower",
+          "1972"
+        ],
+        "rank_lre": 3597,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3597,
+          "0.5": 6038,
+          "1.5": 1942,
+          "2.0": 1005,
+          "3.0": 199,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Ronald Reagan",
+        "model_top1_id": 7169,
+        "model_top1": "1980",
+        "n_references": 7,
+        "rank_diff": 4,
+        "top_diff": [
+          "Reagan",
+          "Ronald",
+          "1981",
+          "1981",
+          "1980"
+        ],
+        "rank_lre": 4009,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4009,
+          "0.5": 6901,
+          "1.5": 2154,
+          "2.0": 1100,
+          "3.0": 275,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "George W. Bush",
+        "model_top1_id": 4751,
+        "model_top1": "2000",
+        "n_references": 7,
+        "rank_diff": 38,
+        "top_diff": [
+          "Bush",
+          "Bush",
+          "Saddam",
+          "Iraq",
+          "Jeb"
+        ],
+        "rank_lre": 4849,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4849,
+          "0.5": 7002,
+          "1.5": 3340,
+          "2.0": 2251,
+          "3.0": 1028,
+          "5.0": 219
+        }
+      },
+      {
+        "subject": "James Madison",
+        "model_top1_id": 1248,
+        "model_top1": "18",
+        "n_references": 7,
+        "rank_diff": 8417,
+        "top_diff": [
+          "Madison",
+          "Madison",
+          "Jefferson",
+          "Constitutional",
+          "Monroe"
+        ],
+        "rank_lre": 1400,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "many",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1400,
+          "0.5": 1409,
+          "1.5": 1457,
+          "2.0": 1491,
+          "3.0": 1623,
+          "5.0": 1863
+        }
+      },
+      {
+        "subject": "John Quincy Adams",
+        "model_top1_id": 1248,
+        "model_top1": "18",
+        "n_references": 7,
+        "rank_diff": 388,
+        "top_diff": [
+          "Adams",
+          "Adams",
+          "Quincy",
+          "Kennedy",
+          "Jefferson"
+        ],
+        "rank_lre": 1021,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1021,
+          "0.5": 1224,
+          "1.5": 843,
+          "2.0": 703,
+          "3.0": 489,
+          "5.0": 298
+        }
+      },
+      {
+        "subject": "Bill Clinton",
+        "model_top1_id": 9768,
+        "model_top1": "1992",
+        "n_references": 7,
+        "rank_diff": 17,
+        "top_diff": [
+          "Clinton",
+          "Clintons",
+          "Hillary",
+          "Clinton",
+          "Rodham"
+        ],
+        "rank_lre": 5352,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5352,
+          "0.5": 8934,
+          "1.5": 3058,
+          "2.0": 1638,
+          "3.0": 403,
+          "5.0": 47
+        }
+      },
+      {
+        "subject": "John F. Kennedy",
+        "model_top1_id": 9507,
+        "model_top1": "1960",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "Kennedy",
+          "JFK",
+          "Kenn",
+          "Kenn",
+          "Jackie"
+        ],
+        "rank_lre": 2548,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2548,
+          "0.5": 4662,
+          "1.5": 1298,
+          "2.0": 631,
+          "3.0": 127,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Barack Obama",
+        "model_top1_id": 3648,
+        "model_top1": "2008",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Obama",
+          "Barack",
+          "Obama",
+          "ObamaCare",
+          "Kenyan"
+        ],
+        "rank_lre": 4139,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4139,
+          "0.5": 7088,
+          "1.5": 2262,
+          "2.0": 1206,
+          "3.0": 324,
+          "5.0": 24
+        }
+      },
+      {
+        "subject": "George H. W. Bush",
+        "model_top1_id": 12122,
+        "model_top1": "1988",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Bush",
+          "Reagan",
+          "Bush",
+          "Jeb",
+          "Saddam"
+        ],
+        "rank_lre": 6501,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "having",
+          "saying"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6501,
+          "0.5": 9349,
+          "1.5": 4436,
+          "2.0": 2914,
+          "3.0": 1178,
+          "5.0": 179
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 6901.0,
+          "median_lograng": 3.838974954955468,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4009.0,
+          "median_lograng": 3.603144372620182,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2154.0,
+          "median_lograng": 3.3334472744967503,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1228.0,
+          "median_lograng": 3.089551882886454,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 489.0,
+          "median_lograng": 2.690196080028514,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 179.0,
+          "median_lograng": 2.255272505103306,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "presidents_election_year",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "4": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "10": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "15": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.3333333333333333,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.3333333333333333,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "1.5": [
+          0.3333333333333333,
+          0.0
+        ],
+        "2.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "3.0": [
+          0.3333333333333333,
+          0.0
+        ],
+        "5.0": [
+          0.3333333333333333,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.6666666666666666,
+    "best_sd": 0.0,
+    "best_layer": 4,
+    "best_beta": 1.5,
+    "lm_correct": 0,
+    "split_fingerprint": "79482b915318",
+    "legacy_split": true,
+    "distinct_first_token": false,
+    "per_subject": {
+      "Martin Van Buren": 1,
+      "Franklin D. Roosevelt": 1,
+      "William Henry Harrison": 0
+    },
+    "biased_single_draw_mean": 0.6666666666666666
+  },
+  "n_lre": 3,
+  "baseline_lens": {
+    "n": 11,
+    "layer": 15,
+    "template": "{} was elected in",
+    "agg": {
+      "diff": {
+        "median_rank": 17.0,
+        "median_lograng": 1.255272505103306,
+        "agree_at1": 0.0,
+        "agree_at10": 0.2727272727272727
+      },
+      "lre": {
+        "median_rank": 4199.0,
+        "median_lograng": 3.6232492903979003,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Thomas Jefferson",
+        "model_top1": "18",
+        "rank_diff": 7967,
+        "rank_lre": 1245,
+        "top_diff": [
+          "Jefferson",
+          "Thomas",
+          "slavery",
+          "Jeff",
+          "Enlightenment"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Jimmy Carter ",
+        "model_top1": "1976",
+        "rank_diff": 1328,
+        "rank_lre": 15238,
+        "top_diff": [
+          "Babe",
+          "Whitney",
+          "Muhammad",
+          "prophetic",
+          "basketball"
+        ],
+        "top_lre": [
+          "many",
+          "his",
+          "a",
+          "being",
+          "having"
+        ]
+      },
+      {
+        "subject": "Richard M. Nixon",
+        "model_top1": "1968",
+        "rank_diff": 5,
+        "rank_lre": 2961,
+        "top_diff": [
+          "Nixon",
+          "Watergate",
+          "Kissinger",
+          "1972",
+          "1974"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Ronald Reagan",
+        "model_top1": "1980",
+        "rank_diff": 3,
+        "rank_lre": 4199,
+        "top_diff": [
+          "Reagan",
+          "Ronald",
+          "Ron",
+          "1980",
+          "1984"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "George W. Bush",
+        "model_top1": "2000",
+        "rank_diff": 33,
+        "rank_lre": 5213,
+        "top_diff": [
+          "Bush",
+          "Bush",
+          "Iraq",
+          "Saddam",
+          "Jeb"
+        ],
+        "top_lre": [
+          "many",
+          "his",
+          "a",
+          "being",
+          "having"
+        ]
+      },
+      {
+        "subject": "James Madison",
+        "model_top1": "18",
+        "rank_diff": 12478,
+        "rank_lre": 1455,
+        "top_diff": [
+          "Madison",
+          "Jefferson",
+          "Constitutional",
+          "Madison",
+          "Randolph"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "John Quincy Adams",
+        "model_top1": "18",
+        "rank_diff": 568,
+        "rank_lre": 993,
+        "top_diff": [
+          "Adams",
+          "Adams",
+          "Quincy",
+          "Kennedy",
+          "Eisenhower"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Bill Clinton",
+        "model_top1": "1992",
+        "rank_diff": 17,
+        "rank_lre": 5535,
+        "top_diff": [
+          "Clinton",
+          "Clintons",
+          "Hillary",
+          "Clinton",
+          "Rodham"
+        ],
+        "top_lre": [
+          "many",
+          "his",
+          "a",
+          "being",
+          "having"
+        ]
+      },
+      {
+        "subject": "John F. Kennedy",
+        "model_top1": "1960",
+        "rank_diff": 13,
+        "rank_lre": 2706,
+        "top_diff": [
+          "Kennedy",
+          "JFK",
+          "Kenn",
+          "Kenn",
+          "1963"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "a",
+          "being",
+          "having"
+        ]
+      },
+      {
+        "subject": "Barack Obama",
+        "model_top1": "2008",
+        "rank_diff": 4,
+        "rank_lre": 4342,
+        "top_diff": [
+          "Obama",
+          "Barack",
+          "Obama",
+          "ObamaCare",
+          "2008"
+        ],
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "George H. W. Bush",
+        "model_top1": "1988",
+        "rank_diff": 10,
+        "rank_lre": 7623,
+        "top_diff": [
+          "Bush",
+          "Bush",
+          "Jeb",
+          "Reagan",
+          "Iraq"
+        ],
+        "top_lre": [
+          "many",
+          "his",
+          "being",
+          "a",
+          "having"
+        ]
+      }
+    ],
+    "split_fingerprint": null,
+    "legacy_split": true
+  },
+  "trailing_space": true,
+  "positions": {
+    "Thomas Jefferson": 2,
+    "Jimmy Carter ": 3,
+    "Richard M. Nixon": 4,
+    "Ronald Reagan": 3,
+    "George W. Bush": 4,
+    "James Madison": 2,
+    "John Quincy Adams": 3,
+    "Bill Clinton": 2,
+    "John F. Kennedy": 4,
+    "Barack Obama": 3,
+    "George H. W. Bush": 6
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "4eece0b79721",
+  "baseline_sha256": {
+    "results/gptj/results/jacobian_lens_years.json": "5580611d4464d9749b158666a5c1a5d8cbbf897b035490cb2396424c859de32a",
+    "results/gptj/results/main/faithfulness_presidents_election_year_ts.json": "b6814dd8526d93e7616d50646c304c95cfa7110816a2915d08a2fc30d5b80b0c"
+  },
+  "data_sha256": "16a81b72fd253b82d7571d63e0e5ed3906eb62fde565b31ed2cd81967bfc46ee",
+  "elapsed_seconds": 2.5385847091674805
+}

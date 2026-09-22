@@ -1,0 +1,129 @@
+{
+  "relation": "name_religion",
+  "protocol": "shared_split",
+  "subject_policy": "original_rows",
+  "input_samples": 31,
+  "cleaned_samples": 31,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 11,
+      "beta": 2.0,
+      "score": 0.9333333333333333,
+      "hits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          94,
+          112,
+          13,
+          54603,
+          26,
+          34831,
+          13799,
+          1,
+          72788,
+          3,
+          14580,
+          88,
+          565,
+          3285,
+          19
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 2.05307844348342,
+        "mean_logrank": 2.631748189811915,
+        "top1": 0.0,
+        "top10": 0.13333333333333333,
+        "mrr": 0.06275669000453608,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 0.8,
+  "prior_only_faith": 0.3333333333333333,
+  "n_faith": 15,
+  "n_lens": 15,
+  "faith_subjects": [
+    "Ananda",
+    "Lhamo",
+    "Abraham",
+    "Andrew",
+    "Bhikkhuni",
+    "Thomas",
+    "Caroline",
+    "Hussain",
+    "Abigail",
+    "Fatima",
+    "Sumana",
+    "Arjun",
+    "Rohit",
+    "Paul",
+    "Omar"
+  ],
+  "lens_subjects": [
+    "Ananda",
+    "Lhamo",
+    "Abraham",
+    "Andrew",
+    "Bhikkhuni",
+    "Thomas",
+    "Caroline",
+    "Hussain",
+    "Abigail",
+    "Fatima",
+    "Sumana",
+    "Arjun",
+    "Rohit",
+    "Paul",
+    "Omar"
+  ],
+  "faith_split_fingerprint": "2fe6493d30f1",
+  "lens_split_fingerprint": "2fe6493d30f1",
+  "worker": "olmo_shared_beta_3",
+  "elapsed_seconds": 7.600376844406128
+}

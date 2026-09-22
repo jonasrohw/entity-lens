@@ -118,6 +118,8 @@ def subject_states(model, tokenizer, device, subjects, layer, neutral_prompt):
     """
     import torch
 
+    from jlens.model import forward_with_raw_hidden_states
+
     cache = {}
     with torch.no_grad():
         for subject in list(dict.fromkeys(subjects)):
@@ -127,9 +129,8 @@ def subject_states(model, tokenizer, device, subjects, layer, neutral_prompt):
             position = min(
                 len(tokenizer(prompt[:end]).input_ids) - 1, input_ids.shape[1] - 1
             )
-            hidden = model(
-                input_ids=input_ids, output_hidden_states=True
-            ).hidden_states[layer][0, position, :]
+            _, hidden_states = forward_with_raw_hidden_states(model, input_ids)
+            hidden = hidden_states[layer][0, position, :]
             cache[subject] = (input_ids, position, hidden.detach().clone())
     return cache
 

@@ -1,0 +1,3229 @@
+{
+  "provenance": {
+    "model": "Qwen/Qwen3-8B-Base",
+    "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+    "layer": 19,
+    "dtype": "float32",
+    "attention": "eager",
+    "torch": "2.14.0+cu130",
+    "transformers": "5.17.0",
+    "verification": {
+      "logits_max_abs_error": 0.0,
+      "batched_scalar_max_abs_error": 0.0002651214599609375,
+      "finite_difference_relative_error": 0.00013679452240467072
+    },
+    "source_sha256": {
+      "results/five_model_sweep/qwen3_8b_base/main/country_capital_city.json": "2c6d3c81067229a3b5dc397c27f53b93de75226fc68545842cef232458698e9d",
+      "scripts/diagnose_qwen_country_positions.py": "792869b2ba96cfb42ea02e423270b800a7015c5335f1a12a51bf87aafe4ef122",
+      "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+      "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+      "data/relations/country_capital_city.json": "9945d2da1fa1145c1d7e59ac61a25ebee74299c00bd53fc9308167f9e1d44fc0"
+    }
+  },
+  "mode": "next_token",
+  "positions": {
+    "Australia": {
+      "tokens": [
+        "Australia",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        48037,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          22
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 118.9738540649414,
+      "largest_coordinates": {
+        "1838": 63.90793228149414,
+        "2276": 38.81686782836914,
+        "994": 23.766084671020508,
+        "1214": -17.168087005615234,
+        "2573": -15.893745422363281
+      }
+    },
+    "Argentina": {
+      "tokens": [
+        "Argentina",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        95417,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          22
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 115.52327728271484,
+      "largest_coordinates": {
+        "1838": 61.13066482543945,
+        "2276": 36.84054183959961,
+        "994": 23.057832717895508,
+        "1214": -17.410675048828125,
+        "1984": 15.132100105285645
+      }
+    },
+    "Egypt": {
+      "tokens": [
+        "Egypt",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        85667,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 120.46013641357422,
+      "largest_coordinates": {
+        "1838": 66.04122924804688,
+        "2276": 39.42021942138672,
+        "994": 24.297080993652344,
+        "1214": -19.629915237426758,
+        "1984": 15.654826164245605
+      }
+    },
+    "Peru": {
+      "tokens": [
+        "Per",
+        "u",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        3889,
+        84,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          13,
+          17
+        ]
+      ],
+      "expected_subject_position": 1,
+      "selected_position": 2,
+      "previous_position_valid": true,
+      "state_norm": 103.11571502685547,
+      "largest_coordinates": {
+        "1838": 59.08103942871094,
+        "2276": 33.370975494384766,
+        "994": 21.340639114379883,
+        "2573": -14.982885360717773,
+        "3878": -11.896251678466797
+      }
+    },
+    "Japan": {
+      "tokens": [
+        "Japan",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        48752,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 117.01643371582031,
+      "largest_coordinates": {
+        "1838": 62.91557312011719,
+        "2276": 38.14891815185547,
+        "994": 22.617385864257812,
+        "1214": -17.04667854309082,
+        "1984": 13.753836631774902
+      }
+    },
+    "United States": {
+      "tokens": [
+        "United",
+        " States",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        22372,
+        4180,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          16,
+          22
+        ],
+        [
+          22,
+          26
+        ]
+      ],
+      "expected_subject_position": 1,
+      "selected_position": 2,
+      "previous_position_valid": true,
+      "state_norm": 106.80522918701172,
+      "largest_coordinates": {
+        "1838": 54.82318115234375,
+        "2276": 27.096885681152344,
+        "994": 22.587678909301758,
+        "1214": -14.502753257751465,
+        "2573": -12.702465057373047
+      }
+    },
+    "China": {
+      "tokens": [
+        "China",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        22282,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 117.4776382446289,
+      "largest_coordinates": {
+        "1838": 62.15807342529297,
+        "2276": 34.53193283081055,
+        "994": 21.476282119750977,
+        "1214": -16.335697174072266,
+        "2573": -15.409576416015625
+      }
+    },
+    "Brazil": {
+      "tokens": [
+        "Brazil",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        67199,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          15,
+          19
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 117.18284606933594,
+      "largest_coordinates": {
+        "1838": 64.9875717163086,
+        "2276": 37.72917175292969,
+        "994": 22.465925216674805,
+        "1214": -17.489322662353516,
+        "1984": 14.839219093322754
+      }
+    },
+    "Venezuela": {
+      "tokens": [
+        "V",
+        "enez",
+        "uela",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        53,
+        20556,
+        23737,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          22
+        ]
+      ],
+      "expected_subject_position": 2,
+      "selected_position": 3,
+      "previous_position_valid": true,
+      "state_norm": 102.1083755493164,
+      "largest_coordinates": {
+        "1838": 60.988182067871094,
+        "2276": 33.07489013671875,
+        "994": 19.500581741333008,
+        "2573": -15.022112846374512,
+        "1214": -12.143754005432129
+      }
+    },
+    "India": {
+      "tokens": [
+        "India",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        33548,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 118.97130584716797,
+      "largest_coordinates": {
+        "1838": 64.65829467773438,
+        "2276": 38.246543884277344,
+        "994": 23.52174949645996,
+        "1214": -16.923343658447266,
+        "2573": -16.092449188232422
+      }
+    },
+    "Chile": {
+      "tokens": [
+        "Ch",
+        "ile",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        1143,
+        457,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 1,
+      "selected_position": 2,
+      "previous_position_valid": true,
+      "state_norm": 103.38951110839844,
+      "largest_coordinates": {
+        "1838": 59.509796142578125,
+        "2276": 32.86595916748047,
+        "994": 21.107990264892578,
+        "2573": -15.153424263000488,
+        "3470": 11.816179275512695
+      }
+    },
+    "Saudi Arabia": {
+      "tokens": [
+        "Saudi",
+        " Arabia",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        87217,
+        23061,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          21,
+          25
+        ]
+      ],
+      "expected_subject_position": 1,
+      "selected_position": 2,
+      "previous_position_valid": true,
+      "state_norm": 101.6823501586914,
+      "largest_coordinates": {
+        "1838": 60.160987854003906,
+        "2276": 31.247285842895508,
+        "994": 19.532474517822266,
+        "2573": -16.168445587158203,
+        "1214": -12.755083084106445
+      }
+    },
+    "Germany": {
+      "tokens": [
+        "Germany",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        50170,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          16,
+          20
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 117.57291412353516,
+      "largest_coordinates": {
+        "1838": 61.19624328613281,
+        "2276": 36.46553039550781,
+        "994": 23.372255325317383,
+        "1214": -16.212730407714844,
+        "1984": 15.74370288848877
+      }
+    },
+    "Spain": {
+      "tokens": [
+        "Spain",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        74320,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          14,
+          18
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 118.43498229980469,
+      "largest_coordinates": {
+        "1838": 62.8293571472168,
+        "2276": 37.576805114746094,
+        "994": 24.695816040039062,
+        "1214": -16.84050941467285,
+        "1984": 14.861037254333496
+      }
+    },
+    "Russia": {
+      "tokens": [
+        "Russia",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        44506,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          15,
+          19
+        ]
+      ],
+      "expected_subject_position": 0,
+      "selected_position": 1,
+      "previous_position_valid": false,
+      "state_norm": 115.53666687011719,
+      "largest_coordinates": {
+        "1838": 60.899208068847656,
+        "2276": 37.886104583740234,
+        "994": 21.704246520996094,
+        "1214": -17.640073776245117,
+        "2573": -16.120258331298828
+      }
+    },
+    "South Korea": {
+      "tokens": [
+        "South",
+        " Korea",
+        " is",
+        " known",
+        " for"
+      ],
+      "token_ids": [
+        25018,
+        11862,
+        374,
+        3881,
+        369
+      ],
+      "offsets": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          20
+        ],
+        [
+          20,
+          24
+        ]
+      ],
+      "expected_subject_position": 1,
+      "selected_position": 2,
+      "previous_position_valid": true,
+      "state_norm": 100.23419952392578,
+      "largest_coordinates": {
+        "1838": 55.43824768066406,
+        "2276": 28.443092346191406,
+        "994": 20.529674530029297,
+        "2573": -14.914132118225098,
+        "1214": -12.511076927185059
+      }
+    }
+  },
+  "reference_names": [
+    "Australia",
+    "Argentina",
+    "Egypt",
+    "Peru",
+    "Japan",
+    "United States",
+    "China",
+    "Brazil"
+  ],
+  "noop_errors": {
+    "Australia": 0.0,
+    "Argentina": 0.0,
+    "Egypt": 0.0,
+    "Peru": 0.0,
+    "Japan": 0.0,
+    "United States": 0.0,
+    "China": 0.0,
+    "Brazil": 0.0
+  },
+  "rows": [
+    {
+      "subject": "Australia",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 127.42587280273438,
+        "rank": 299,
+        "top": [
+          "\u6fb3\u6d32",
+          "\u6fb3\u5927\u5229\u4e9a",
+          " Aussie",
+          " Australian",
+          " Australians"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 163.2272491455078,
+          "rank": 278,
+          "top": [
+            "\u6fb3\u6d32",
+            "\u6fb3\u5927\u5229\u4e9a",
+            " Aussie",
+            " Australian",
+            " Australians"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 103.23995208740234,
+          "rank": 19647,
+          "top": [
+            "...',",
+            "\u2026\u2026\n\n",
+            "\u2026.\n\n",
+            "\u2014but",
+            "\u2026\n\n\n"
+          ]
+        }
+      },
+      "per_reference": {
+        "Argentina": {
+          "norm": 312.1198425292969,
+          "rank": 2375,
+          "top": [
+            "\u6fb3\u6d32",
+            "\u6fb3\u5927\u5229\u4e9a",
+            "\u73ca\u745a",
+            " SPF",
+            "\u82f1"
+          ]
+        },
+        "Egypt": {
+          "norm": 270.95977783203125,
+          "rank": 14375,
+          "top": [
+            " S",
+            " safari",
+            " Safari",
+            " SPL",
+            " SOS"
+          ]
+        },
+        "Peru": {
+          "norm": 79.26490783691406,
+          "rank": 26048,
+          "top": [
+            "\u5371",
+            "\u54ea",
+            "\u65bc",
+            "(___",
+            " favourable"
+          ]
+        },
+        "Japan": {
+          "norm": 211.93618774414062,
+          "rank": 3599,
+          "top": [
+            "\u725b",
+            "\u6fb3\u6d32",
+            "\u6849",
+            "\u91ce\u751f\u52a8\u7269",
+            "\u6fb3\u5927\u5229\u4e9a"
+          ]
+        },
+        "United States": {
+          "norm": 177.46694946289062,
+          "rank": 28652,
+          "top": [
+            "\u2014but",
+            "\u77ad\u89e3\u4e26",
+            "\u2026\n\n\n",
+            "\u2026.\n\n",
+            "\u2026\n\n"
+          ]
+        },
+        "China": {
+          "norm": 176.80397033691406,
+          "rank": 1388,
+          "top": [
+            "\u8fea\u58eb",
+            "Australian",
+            "\u7ca4",
+            "(NS",
+            " Aussie"
+          ]
+        },
+        "Brazil": {
+          "norm": 253.4281768798828,
+          "rank": 124,
+          "top": [
+            "\u6fb3\u5927\u5229\u4e9a",
+            "\u6fb3\u6d32",
+            " Australian",
+            "\u65b0\u897f\u5170",
+            " kang"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Argentina",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 128.0307159423828,
+        "rank": 4,
+        "top": [
+          " Argentine",
+          "\u963f\u6839\u5ef7",
+          " Sergio",
+          " Messi",
+          " Buenos"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 153.70933532714844,
+          "rank": 3,
+          "top": [
+            " Argentine",
+            "\u963f\u6839\u5ef7",
+            " Messi",
+            " Buenos",
+            " Argentina"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 124.35948944091797,
+          "rank": 7804,
+          "top": [
+            "...,",
+            "...',",
+            "...\",",
+            ".',",
+            " ...,"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 220.15777587890625,
+          "rank": 6,
+          "top": [
+            " polo",
+            " Argentina",
+            " Tango",
+            " Argentine",
+            " Steak"
+          ]
+        },
+        "Egypt": {
+          "norm": 251.1272735595703,
+          "rank": 637,
+          "top": [
+            "\u502d",
+            " Moy",
+            " Mosque",
+            "\u9995",
+            " Zah"
+          ]
+        },
+        "Peru": {
+          "norm": 87.47634887695312,
+          "rank": 112922,
+          "top": [
+            "?):",
+            "(assign",
+            "(IT",
+            " BOOT",
+            "_REGS"
+          ]
+        },
+        "Japan": {
+          "norm": 212.48670959472656,
+          "rank": 48,
+          "top": [
+            "\u725b\u8089",
+            "\u963f\u6839\u5ef7",
+            " Argentine",
+            "\u7266",
+            " beef"
+          ]
+        },
+        "United States": {
+          "norm": 211.12490844726562,
+          "rank": 2821,
+          "top": [
+            "...,",
+            "...',",
+            ".",
+            ".',",
+            "...\","
+          ]
+        },
+        "China": {
+          "norm": 180.23358154296875,
+          "rank": 9,
+          "top": [
+            " Argentine",
+            ".ra",
+            ".Q",
+            "buff",
+            " Gund"
+          ]
+        },
+        "Brazil": {
+          "norm": 284.7375183105469,
+          "rank": 4,
+          "top": [
+            "\u963f\u6839\u5ef7",
+            " Argentine",
+            " Messi",
+            " Argentina",
+            " Buenos"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Egypt",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 141.39749145507812,
+        "rank": 7,
+        "top": [
+          "\u57c3\u53ca",
+          " Egyptian",
+          " Egypt",
+          "Egypt",
+          " Egyptians"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 184.93641662597656,
+          "rank": 6,
+          "top": [
+            "\u57c3\u53ca",
+            " Egyptian",
+            "Egypt",
+            " Egypt",
+            " Egyptians"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 119.6003646850586,
+          "rank": 33910,
+          "top": [
+            "...,",
+            ".--",
+            ".',",
+            "...',",
+            ".)."
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 245.78781127929688,
+          "rank": 7,
+          "top": [
+            " Egyptian",
+            "\u57c3\u53ca",
+            " Egypt",
+            "Egypt",
+            " Egyptians"
+          ]
+        },
+        "Argentina": {
+          "norm": 383.68170166015625,
+          "rank": 7,
+          "top": [
+            "\u57c3\u53ca",
+            "\u91d1\u5b57\u5854",
+            " Egypt",
+            " Egyptian",
+            " Egyptians"
+          ]
+        },
+        "Peru": {
+          "norm": 86.7969970703125,
+          "rank": 143371,
+          "top": [
+            "_ALLOW",
+            "_REGS",
+            " BOOT",
+            "(assign",
+            " HELP"
+          ]
+        },
+        "Japan": {
+          "norm": 256.99945068359375,
+          "rank": 15,
+          "top": [
+            "\u57c3\u53ca",
+            " Egyptian",
+            " Egyptians",
+            "Egypt",
+            " Egypt"
+          ]
+        },
+        "United States": {
+          "norm": 215.2823944091797,
+          "rank": 8658,
+          "top": [
+            ".",
+            ".).",
+            ".--",
+            ".',",
+            "...,"
+          ]
+        },
+        "China": {
+          "norm": 194.26980590820312,
+          "rank": 116,
+          "top": [
+            "Egypt",
+            "Des",
+            "Fun",
+            "PY",
+            "THE"
+          ]
+        },
+        "Brazil": {
+          "norm": 269.3249206542969,
+          "rank": 5,
+          "top": [
+            "\u57c3\u53ca",
+            " Egyptian",
+            " Egypt",
+            "Egypt",
+            " Egyptians"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Peru",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 102.93134307861328,
+        "rank": 543,
+        "top": [
+          " snork",
+          " salsa",
+          " safari",
+          " Cuban",
+          " atol"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 110.55104064941406,
+          "rank": 616,
+          "top": [
+            " snork",
+            " safari",
+            " salsa",
+            " spanish",
+            " atol"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "United States"
+          ],
+          "norm": 173.7823944091797,
+          "rank": 23199,
+          "top": [
+            ".",
+            ".;",
+            ".\n",
+            ".\u2026",
+            ".',"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 155.3905792236328,
+          "rank": 2899,
+          "top": [
+            " Thai",
+            " dive",
+            " resorts",
+            " backpack",
+            " lua"
+          ]
+        },
+        "Argentina": {
+          "norm": 250.6887664794922,
+          "rank": 153,
+          "top": [
+            "\u4e91\u5357",
+            " Ecuador",
+            " Caribbean",
+            " Guatemala",
+            "\u70ed\u5e26"
+          ]
+        },
+        "Egypt": {
+          "norm": 175.41574096679688,
+          "rank": 60166,
+          "top": [
+            " SPL",
+            " Mango",
+            " Mahm",
+            " mango",
+            " Sav"
+          ]
+        },
+        "Japan": {
+          "norm": 160.68435668945312,
+          "rank": 25450,
+          "top": [
+            " safari",
+            " Caj",
+            "_DISP",
+            "\u8292\u679c",
+            "\u9a74"
+          ]
+        },
+        "United States": {
+          "norm": 173.7823944091797,
+          "rank": 23199,
+          "top": [
+            ".",
+            ".;",
+            ".\n",
+            ".\u2026",
+            ".',"
+          ]
+        },
+        "China": {
+          "norm": 152.53390502929688,
+          "rank": 66707,
+          "top": [
+            "Cross",
+            "Chinese",
+            "Cam",
+            " spicy",
+            "live"
+          ]
+        },
+        "Brazil": {
+          "norm": 170.74386596679688,
+          "rank": 302,
+          "top": [
+            " spanish",
+            " Spanish",
+            "\u65c5\u6e38\u5c40",
+            "Spanish",
+            " tour"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Japan",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 133.1014862060547,
+        "rank": 7,
+        "top": [
+          "\u5728\u65e5\u672c",
+          "\u65e5\u672c\u4eba",
+          "\u65e5\u672c",
+          " Japanese",
+          "Japanese"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "China",
+            "Brazil"
+          ],
+          "norm": 170.89283752441406,
+          "rank": 7,
+          "top": [
+            "\u5728\u65e5\u672c",
+            "\u65e5\u672c\u4eba",
+            "\u65e5\u672c",
+            " Japanese",
+            "Japanese"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 101.80939483642578,
+          "rank": 19871,
+          "top": [
+            "...',",
+            "...,",
+            ".',",
+            "\u2026.\n\n",
+            "...\","
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 252.02398681640625,
+          "rank": 6,
+          "top": [
+            " Japanese",
+            " Taiwanese",
+            " japon",
+            "\u65e5\u672c",
+            "Japanese"
+          ]
+        },
+        "Argentina": {
+          "norm": 307.4038391113281,
+          "rank": 51,
+          "top": [
+            "\u5728\u65e5\u672c",
+            "\u65e5\u672c",
+            " tsunami",
+            "\u65e5\u672c\u4eba",
+            " Hawaii"
+          ]
+        },
+        "Egypt": {
+          "norm": 220.7299041748047,
+          "rank": 246,
+          "top": [
+            "\u502d",
+            "ollah",
+            " Mits",
+            " mosques",
+            "isu"
+          ]
+        },
+        "Peru": {
+          "norm": 78.56355285644531,
+          "rank": 135593,
+          "top": [
+            "\uff3f",
+            "\u3002\uff08",
+            "\uff08",
+            "\uff1f",
+            ")\uff0c"
+          ]
+        },
+        "United States": {
+          "norm": 178.83956909179688,
+          "rank": 3347,
+          "top": [
+            "...,",
+            "...',",
+            ".",
+            "\u2026.\n\n",
+            "...."
+          ]
+        },
+        "China": {
+          "norm": 168.96673583984375,
+          "rank": 18,
+          "top": [
+            "\u65e5\u672c\u4eba",
+            "Japanese",
+            "Japan",
+            "Tok",
+            " Japanese"
+          ]
+        },
+        "Brazil": {
+          "norm": 278.8200378417969,
+          "rank": 48,
+          "top": [
+            "\u5728\u65e5\u672c",
+            "\u6280\u672f",
+            " tecn",
+            "\u65e5\u672c",
+            "\u65e5\u672c\u4eba"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "United States",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 110.96810913085938,
+        "rank": 50227,
+        "top": [
+          "\u4ed6\u7684",
+          "\u6821",
+          "\u76f4\u63a5",
+          "\u5783\u573e",
+          "\u82f1\u6587"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 124.07481384277344,
+          "rank": 41681,
+          "top": [
+            "\u4ed6\u7684",
+            "\u6821",
+            "\u76f4\u63a5",
+            "\u5783\u573e",
+            "\u5bf9\u4ed6"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru"
+          ],
+          "norm": 77.37965393066406,
+          "rank": 134537,
+          "top": [
+            "\uff09\uff0c",
+            "\u201d\uff0c",
+            ")\uff0c",
+            "\uff08",
+            "\uff09"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 183.43675231933594,
+          "rank": 21382,
+          "top": [
+            "\u4fdd",
+            "Toronto",
+            "\u547d\u4ee4",
+            "\u83dc",
+            "\u6216\u591a"
+          ]
+        },
+        "Argentina": {
+          "norm": 243.3415069580078,
+          "rank": 50235,
+          "top": [
+            "\u786c",
+            "\u8367",
+            "\u5783\u573e",
+            "\u6027\u522b",
+            " Hond"
+          ]
+        },
+        "Egypt": {
+          "norm": 190.01611328125,
+          "rank": 103960,
+          "top": [
+            "\u4e0d\u5408\u683c",
+            "ibr",
+            "\u4f01\u4e1a",
+            " english",
+            "\u968f\u610f"
+          ]
+        },
+        "Peru": {
+          "norm": 77.37965393066406,
+          "rank": 134537,
+          "top": [
+            "\uff09\uff0c",
+            "\u201d\uff0c",
+            ")\uff0c",
+            "\uff08",
+            "\uff09"
+          ]
+        },
+        "Japan": {
+          "norm": 185.1841583251953,
+          "rank": 35702,
+          "top": [
+            "\u725b",
+            "\u8868\u793a",
+            "\u4ee3\u8868",
+            "\u6821",
+            "\u611f\u67d3"
+          ]
+        },
+        "China": {
+          "norm": 137.44290161132812,
+          "rank": 28551,
+          "top": [
+            "Chinese",
+            "-TV",
+            "\u4e2d\u56fd\u4eba",
+            ".Ch",
+            ".Pop"
+          ]
+        },
+        "Brazil": {
+          "norm": 189.2941436767578,
+          "rank": 85598,
+          "top": [
+            "\u662f\u4ed6",
+            "\u6742",
+            " tecn",
+            "ullo",
+            "Spanish"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "China",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 131.62355041503906,
+        "rank": 1743,
+        "top": [
+          "\u5de5",
+          "\u5de5\u5382",
+          "\u5236\u9020",
+          "\u5de5\u7a0b",
+          "\u4f4e"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "Brazil"
+          ],
+          "norm": 164.8671417236328,
+          "rank": 831,
+          "top": [
+            "\u5de5",
+            "\u5236\u9020",
+            "\u5de5\u5382",
+            "\u5de5\u7a0b",
+            "\u4fe1"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 106.1439437866211,
+          "rank": 43310,
+          "top": [
+            "\u3002(",
+            "\u3002\uff08",
+            "\uff08",
+            "(___",
+            "(__"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 233.5935516357422,
+          "rank": 104,
+          "top": [
+            "\u5236\u9020",
+            "\u77ff",
+            "\u5de5\u5382",
+            " Mandarin",
+            "\u7164"
+          ]
+        },
+        "Argentina": {
+          "norm": 336.9259033203125,
+          "rank": 14089,
+          "top": [
+            "\u4e9a\u9a6c\u900a",
+            " Hond",
+            "\u76f4\u5347\u673a",
+            "\u5de5\u7a0b",
+            "\u80fd\u529b"
+          ]
+        },
+        "Egypt": {
+          "norm": 190.32119750976562,
+          "rank": 16993,
+          "top": [
+            "\u5de5\u5382",
+            "\u5de5\u5320",
+            "\u5de5",
+            "\u6b63",
+            "\u8f66\u95f4"
+          ]
+        },
+        "Peru": {
+          "norm": 101.97840881347656,
+          "rank": 90009,
+          "top": [
+            "\u3002\\",
+            "\u3002\uff08",
+            "\uff08",
+            "(__",
+            "\uff3f"
+          ]
+        },
+        "Japan": {
+          "norm": 223.7687530517578,
+          "rank": 183,
+          "top": [
+            "\u6566\u714c",
+            "\u4e1c\u65b9",
+            "\u957f\u57ce",
+            "\u91d1",
+            "\u957f\u6c5f"
+          ]
+        },
+        "United States": {
+          "norm": 164.3523712158203,
+          "rank": 19959,
+          "top": [
+            "...(",
+            "\u2014but",
+            "\u3002(",
+            "\u201c(",
+            "\u2014or"
+          ]
+        },
+        "Brazil": {
+          "norm": 222.95838928222656,
+          "rank": 7336,
+          "top": [
+            "\u52b3",
+            "\u4e95",
+            "\u5de5",
+            "\u6253\u5370",
+            "\u8bbe\u8ba1"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Brazil",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 121.70210266113281,
+        "rank": 127,
+        "top": [
+          "\u70ed\u5e26",
+          "\u5df4\u897f",
+          " Tropical",
+          " tropical",
+          " Brazilian"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China"
+          ],
+          "norm": 147.44168090820312,
+          "rank": 122,
+          "top": [
+            "\u70ed\u5e26",
+            " tropical",
+            "\u5df4\u897f",
+            " Tropical",
+            "Brazil"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 124.62377166748047,
+          "rank": 33501,
+          "top": [
+            "...',",
+            "...,",
+            "\u30a8\u30cd\u30eb",
+            "\u2504",
+            ".--"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 210.2886199951172,
+          "rank": 1258,
+          "top": [
+            " Brazilian",
+            " Brazil",
+            "\u5df4\u897f",
+            "Brazil",
+            " tropical"
+          ]
+        },
+        "Argentina": {
+          "norm": 343.23565673828125,
+          "rank": 60,
+          "top": [
+            "\u4e9a\u9a6c\u900a",
+            "\u5df4\u897f",
+            "\u70ed\u5e26",
+            " Amazon",
+            "Amazon"
+          ]
+        },
+        "Egypt": {
+          "norm": 224.81675720214844,
+          "rank": 41650,
+          "top": [
+            " Sav",
+            "\u4e0d\u5408\u683c",
+            "\u502d",
+            "\u70ed\u5e26",
+            "adh"
+          ]
+        },
+        "Peru": {
+          "norm": 86.90690612792969,
+          "rank": 149131,
+          "top": [
+            "\u707e",
+            "(IT",
+            "\u5371",
+            "(___",
+            "?):"
+          ]
+        },
+        "Japan": {
+          "norm": 201.97019958496094,
+          "rank": 1063,
+          "top": [
+            "\u975e\u6d32",
+            "\u70ed\u5e26",
+            "\u5df4\u897f",
+            "\u725b\u8089",
+            " Afro"
+          ]
+        },
+        "United States": {
+          "norm": 205.99444580078125,
+          "rank": 2340,
+          "top": [
+            "...,",
+            "...(",
+            "\u2026\n\n\n",
+            "...',",
+            "\u30a8\u30cd\u30eb"
+          ]
+        },
+        "China": {
+          "norm": 171.39813232421875,
+          "rank": 5243,
+          "top": [
+            "Brazil",
+            "\u70ed\u5e26",
+            " Tropical",
+            " brazil",
+            "Enjoy"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Venezuela",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 82.7037582397461,
+        "rank": 134055,
+        "top": [
+          " Cuban",
+          " salsa",
+          " Venezuelan",
+          " Cuba",
+          " Mexican"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 99.47550201416016,
+          "rank": 127428,
+          "top": [
+            " Cuban",
+            " Venezuelan",
+            " salsa",
+            " Cuba",
+            "\u58a8\u897f\u54e5"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 82.68367767333984,
+          "rank": 132536,
+          "top": [
+            ".",
+            ".\n\n\n",
+            "...(",
+            ".\u2026",
+            ".;"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 142.28768920898438,
+          "rank": 115650,
+          "top": [
+            " jung",
+            " Hugh",
+            " revolver",
+            " resorts",
+            " salsa"
+          ]
+        },
+        "Argentina": {
+          "norm": 221.51527404785156,
+          "rank": 29895,
+          "top": [
+            " Caribbean",
+            " Haiti",
+            " Cuban",
+            " Venezuela",
+            " Venezuelan"
+          ]
+        },
+        "Egypt": {
+          "norm": 177.14334106445312,
+          "rank": 127131,
+          "top": [
+            " Mos",
+            " Mohammed",
+            "\u502d",
+            " SPL",
+            " Mahm"
+          ]
+        },
+        "Peru": {
+          "norm": 21.891386032104492,
+          "rank": 88477,
+          "top": [
+            " __",
+            "__(",
+            " (__",
+            " _:",
+            "____"
+          ]
+        },
+        "Japan": {
+          "norm": 140.77565002441406,
+          "rank": 138512,
+          "top": [
+            "\u8292\u679c",
+            " Caj",
+            " mafia",
+            "\u975e\u6d32",
+            "\u759f"
+          ]
+        },
+        "United States": {
+          "norm": 161.99737548828125,
+          "rank": 132048,
+          "top": [
+            ".",
+            ".\u2026",
+            ".\n\n\n",
+            ".;",
+            ".\n"
+          ]
+        },
+        "China": {
+          "norm": 139.87954711914062,
+          "rank": 145151,
+          "top": [
+            " spicy",
+            "Cam",
+            "Chinese",
+            "live",
+            "\u59ca\u59b9"
+          ]
+        },
+        "Brazil": {
+          "norm": 149.96258544921875,
+          "rank": 93296,
+          "top": [
+            " spanish",
+            " Miguel",
+            " Venezuelan",
+            "\u58a8\u897f\u54e5",
+            "Spanish"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "India",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 101.64459228515625,
+        "rank": 149220,
+        "top": [
+          " Bollywood",
+          " Hindus",
+          " Hindu",
+          "\u5370\u5ea6",
+          " Hindi"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 124.80964660644531,
+          "rank": 149035,
+          "top": [
+            " Bollywood",
+            " Hindu",
+            " Hindus",
+            "\u5370\u5ea6",
+            " Hindi"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 105.05426788330078,
+          "rank": 120920,
+          "top": [
+            "\u2026.\n\n",
+            ".....\n\n",
+            "....\n\n",
+            "\u2026\u2026\n\n",
+            "-----------\n\n"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 181.79928588867188,
+          "rank": 131783,
+          "top": [
+            " Hindus",
+            " Hindu",
+            " Bollywood",
+            " Buddhist",
+            " Hindi"
+          ]
+        },
+        "Argentina": {
+          "norm": 344.0272216796875,
+          "rank": 150008,
+          "top": [
+            "\u70ed\u5e26",
+            "\u4e9a\u9a6c\u900a",
+            " Hond",
+            "Amazon",
+            " amazon"
+          ]
+        },
+        "Egypt": {
+          "norm": 218.30662536621094,
+          "rank": 139363,
+          "top": [
+            " Sharia",
+            " McLaren",
+            " Bollywood",
+            "adh",
+            " Yog"
+          ]
+        },
+        "Peru": {
+          "norm": 74.12793731689453,
+          "rank": 149347,
+          "top": [
+            "(___",
+            "(__",
+            " __________________\n\n",
+            "__:",
+            "(_,"
+          ]
+        },
+        "Japan": {
+          "norm": 221.7718963623047,
+          "rank": 66180,
+          "top": [
+            "\u5370\u5ea6",
+            " Bollywood",
+            "India",
+            " India",
+            " \u1ea4n"
+          ]
+        },
+        "United States": {
+          "norm": 188.87501525878906,
+          "rank": 78008,
+          "top": [
+            "\u2026.\n\n",
+            "....\n\n",
+            ".....\n\n",
+            "\u2026\n\n",
+            "\u2026\u2026\n\n"
+          ]
+        },
+        "China": {
+          "norm": 123.4049301147461,
+          "rank": 105147,
+          "top": [
+            "India",
+            "Indian",
+            "\u5370\u5ea6",
+            ".She",
+            " spicy"
+          ]
+        },
+        "Brazil": {
+          "norm": 184.16461181640625,
+          "rank": 134226,
+          "top": [
+            "\u9e21\u6c64",
+            "\u52b3",
+            " Mig",
+            " Trident",
+            " labour"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Chile",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 87.75462341308594,
+        "rank": 1291,
+        "top": [
+          " salsa",
+          " Mexican",
+          " Cuban",
+          " snork",
+          " mez"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 105.48394775390625,
+          "rank": 733,
+          "top": [
+            " salsa",
+            " Mexican",
+            " Cuban",
+            " snork",
+            " Spanish"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 90.23299407958984,
+          "rank": 74673,
+          "top": [
+            ".",
+            ".\n",
+            ".',",
+            ".;",
+            ".\n\n\n"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 155.1330108642578,
+          "rank": 12037,
+          "top": [
+            " salsa",
+            " Thai",
+            " backpack",
+            " lua",
+            " menus"
+          ]
+        },
+        "Argentina": {
+          "norm": 224.7192840576172,
+          "rank": 36419,
+          "top": [
+            " Caribbean",
+            " Ecuador",
+            " Hawaii",
+            "\u4e91\u5357",
+            " Hond"
+          ]
+        },
+        "Egypt": {
+          "norm": 184.1414031982422,
+          "rank": 8863,
+          "top": [
+            " mango",
+            " Mango",
+            " Mosque",
+            " Mahm",
+            "\u502d"
+          ]
+        },
+        "Peru": {
+          "norm": 15.686079025268555,
+          "rank": 68483,
+          "top": [
+            "?\\",
+            "([],",
+            " [\\",
+            "?',",
+            " (\\"
+          ]
+        },
+        "Japan": {
+          "norm": 147.875732421875,
+          "rank": 1697,
+          "top": [
+            " Caj",
+            " italian",
+            " safari",
+            " Tango",
+            " salsa"
+          ]
+        },
+        "United States": {
+          "norm": 177.63665771484375,
+          "rank": 75434,
+          "top": [
+            ".",
+            ".\n",
+            ".;",
+            ".',",
+            ".\u2026"
+          ]
+        },
+        "China": {
+          "norm": 150.77517700195312,
+          "rank": 36003,
+          "top": [
+            " spicy",
+            "\u60ec\u610f",
+            "Cross",
+            "\u5bf9\u4e2d\u56fd",
+            "live"
+          ]
+        },
+        "Brazil": {
+          "norm": 164.18882751464844,
+          "rank": 48,
+          "top": [
+            " spanish",
+            " Mexican",
+            "\u897f\u73ed\u7259",
+            " Spanish",
+            "\u58a8\u897f\u54e5"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Saudi Arabia",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 86.6754379272461,
+        "rank": 10,
+        "top": [
+          " Saudi",
+          " Saudis",
+          "\u6c99\u7279",
+          " Arabian",
+          "\u8fea\u62dc"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 103.87049865722656,
+          "rank": 8,
+          "top": [
+            " Saudi",
+            " Saudis",
+            "\u6c99\u7279",
+            " Arabian",
+            "\u8fea\u62dc"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 81.85504150390625,
+          "rank": 51143,
+          "top": [
+            ".',",
+            ".\n\n\n",
+            ".\\",
+            "**,",
+            ".;"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 147.5154571533203,
+          "rank": 6,
+          "top": [
+            "\u539f\u6cb9",
+            " Saudi",
+            "\u6c99\u7279",
+            " Saudis",
+            "\u571f\u8c6a"
+          ]
+        },
+        "Argentina": {
+          "norm": 223.57684326171875,
+          "rank": 5988,
+          "top": [
+            "\u6930",
+            " narc",
+            "\u7f09",
+            " Caribbean",
+            "\u6d77\u5357"
+          ]
+        },
+        "Egypt": {
+          "norm": 185.50863647460938,
+          "rank": 9,
+          "top": [
+            " Saudi",
+            " Sharia",
+            " Mos",
+            " Islam",
+            " Saudis"
+          ]
+        },
+        "Peru": {
+          "norm": 39.08158493041992,
+          "rank": 28889,
+          "top": [
+            "**(",
+            "\u3002\\",
+            "(**",
+            " **",
+            " (**"
+          ]
+        },
+        "Japan": {
+          "norm": 141.44378662109375,
+          "rank": 24,
+          "top": [
+            " Arabian",
+            "\u963f\u62c9\u4f2f",
+            " Arabia",
+            " Saudi",
+            "\u725b"
+          ]
+        },
+        "United States": {
+          "norm": 157.66085815429688,
+          "rank": 65403,
+          "top": [
+            ".",
+            ".',",
+            ".;",
+            ".\n\n\n",
+            "...,"
+          ]
+        },
+        "China": {
+          "norm": 132.29058837890625,
+          "rank": 6514,
+          "top": [
+            "\u5f00\u5fc3",
+            "live",
+            "\u60ec\u610f",
+            "Enjoy",
+            "\u8fea\u58eb"
+          ]
+        },
+        "Brazil": {
+          "norm": 161.83392333984375,
+          "rank": 212,
+          "top": [
+            "\u77f3\u6cb9",
+            " petroleum",
+            "\u77f3\u6cb9\u5316\u5de5",
+            " sunscreen",
+            " bull"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Germany",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 123.81580352783203,
+        "rank": 22,
+        "top": [
+          " automotive",
+          "\u6c7d\u8f66\u884c\u4e1a",
+          " Volkswagen",
+          " Renault",
+          " autob"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 153.8823699951172,
+          "rank": 22,
+          "top": [
+            " automotive",
+            "\u5fb7\u56fd",
+            " Renault",
+            "Germany",
+            "\u6c7d\u8f66\u884c\u4e1a"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 102.2805404663086,
+          "rank": 20615,
+          "top": [
+            "...',",
+            "...,",
+            "...\",",
+            "\u2026\n\n\n",
+            "....\n"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 253.36424255371094,
+          "rank": 38,
+          "top": [
+            " manufact",
+            " Schwarz",
+            " factories",
+            " Siemens",
+            " Schwar"
+          ]
+        },
+        "Argentina": {
+          "norm": 278.3724060058594,
+          "rank": 11,
+          "top": [
+            " autob",
+            "\u90e2",
+            "Germany",
+            "Berlin",
+            " Ikea"
+          ]
+        },
+        "Egypt": {
+          "norm": 239.53427124023438,
+          "rank": 2575,
+          "top": [
+            " jihadists",
+            " jihadist",
+            " Jihad",
+            "caf",
+            " mosques"
+          ]
+        },
+        "Peru": {
+          "norm": 74.80433654785156,
+          "rank": 102521,
+          "top": [
+            "...',",
+            "(),\r\n",
+            "...',\n",
+            "=?,",
+            "?',"
+          ]
+        },
+        "Japan": {
+          "norm": 225.232177734375,
+          "rank": 52,
+          "top": [
+            " Volkswagen",
+            "\u5fb7\u56fd",
+            " Renault",
+            " UEFA",
+            " Bundesliga"
+          ]
+        },
+        "United States": {
+          "norm": 184.49452209472656,
+          "rank": 13888,
+          "top": [
+            "...,",
+            "...',",
+            "...\n",
+            ".",
+            "....\n"
+          ]
+        },
+        "China": {
+          "norm": 163.1430206298828,
+          "rank": 15,
+          "top": [
+            "German",
+            "Germany",
+            " German",
+            "\u6e56\u5317\u7701",
+            " Germans"
+          ]
+        },
+        "Brazil": {
+          "norm": 245.0651397705078,
+          "rank": 107,
+          "top": [
+            "\u6c7d\u8f66\u884c\u4e1a",
+            " automotive",
+            " Friedrich",
+            " Automotive",
+            "\u8f66\u4f01"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Spain",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 137.6680908203125,
+        "rank": 8,
+        "top": [
+          "\u897f\u73ed\u7259",
+          " Spain",
+          " Sevilla",
+          " Spanish",
+          " salsa"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 171.43955993652344,
+          "rank": 7,
+          "top": [
+            "\u897f\u73ed\u7259",
+            " Spain",
+            " Sevilla",
+            " Flam",
+            " Espa\u00f1a"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 104.63978576660156,
+          "rank": 9559,
+          "top": [
+            ".",
+            "...,",
+            ".',",
+            "...',",
+            ".)."
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 242.47769165039062,
+          "rank": 94,
+          "top": [
+            " Spain",
+            "\u897f\u73ed\u7259",
+            " Spanish",
+            " salsa",
+            " vin"
+          ]
+        },
+        "Argentina": {
+          "norm": 403.56134033203125,
+          "rank": 6,
+          "top": [
+            " Flam",
+            " Sevilla",
+            "Spain",
+            " Spain",
+            "bull"
+          ]
+        },
+        "Egypt": {
+          "norm": 246.7507781982422,
+          "rank": 297,
+          "top": [
+            " Mosque",
+            "\u7a46",
+            "\u502d",
+            " mez",
+            " Muslim"
+          ]
+        },
+        "Peru": {
+          "norm": 79.82058715820312,
+          "rank": 62550,
+          "top": [
+            ".?",
+            "(),\n\n",
+            "...',",
+            ".',",
+            ".\u2014"
+          ]
+        },
+        "Japan": {
+          "norm": 224.35943603515625,
+          "rank": 85,
+          "top": [
+            "\u897f\u73ed\u7259",
+            "\u8461\u8404\u9152",
+            "\u897f\u7532",
+            " Spanish",
+            " Spain"
+          ]
+        },
+        "United States": {
+          "norm": 184.31248474121094,
+          "rank": 8355,
+          "top": [
+            ".",
+            "...,",
+            ".;",
+            ".',",
+            ".)."
+          ]
+        },
+        "China": {
+          "norm": 178.2154083251953,
+          "rank": 463,
+          "top": [
+            ".\u2013",
+            "Enjoy",
+            ".F",
+            "fusion",
+            "Forbidden"
+          ]
+        },
+        "Brazil": {
+          "norm": 330.54638671875,
+          "rank": 8,
+          "top": [
+            "\u897f\u73ed\u7259",
+            " Spain",
+            " Lisbon",
+            " Espa\u00f1a",
+            " Spanish"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "Russia",
+      "original_single_token": true,
+      "all_references": {
+        "norm": 110.38291931152344,
+        "rank": 9,
+        "top": [
+          " Putin",
+          " Kremlin",
+          "\u666e\u4eac",
+          "\u4e2d\u4fc4",
+          "\u83ab\u65af\u79d1"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 132.02420043945312,
+          "rank": 12,
+          "top": [
+            " Putin",
+            " Kremlin",
+            "\u666e\u4eac",
+            "\u4e2d\u4fc4",
+            "Putin"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 102.7912368774414,
+          "rank": 867,
+          "top": [
+            "...,",
+            "...',",
+            "\u2026\n\n\n",
+            " ...,",
+            "...\n\n\n"
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 225.8375244140625,
+          "rank": 14,
+          "top": [
+            " Kremlin",
+            " Putin",
+            "\u4e2d\u4fc4",
+            " Russians",
+            " Russia"
+          ]
+        },
+        "Argentina": {
+          "norm": 258.8531188964844,
+          "rank": 36,
+          "top": [
+            "\u666e\u4eac",
+            " Putin",
+            " Kremlin",
+            "\u4e9a\u9a6c\u900a",
+            "Putin"
+          ]
+        },
+        "Egypt": {
+          "norm": 199.71243286132812,
+          "rank": 162,
+          "top": [
+            " jihadists",
+            " jihadist",
+            " dictatorship",
+            " Mos",
+            " extremist"
+          ]
+        },
+        "Peru": {
+          "norm": 80.8104248046875,
+          "rank": 34793,
+          "top": [
+            "(_,",
+            "()\\",
+            "\u5dfd",
+            "(___",
+            "(IT"
+          ]
+        },
+        "Japan": {
+          "norm": 200.6739501953125,
+          "rank": 14,
+          "top": [
+            " Putin",
+            " Siber",
+            "\u666e\u4eac",
+            " Kremlin",
+            "\u4e2d\u4fc4"
+          ]
+        },
+        "United States": {
+          "norm": 174.11767578125,
+          "rank": 729,
+          "top": [
+            "...,",
+            "...(",
+            "\u2026\n\n\n",
+            "...\n\n\n",
+            "...',"
+          ]
+        },
+        "China": {
+          "norm": 144.64894104003906,
+          "rank": 3,
+          "top": [
+            " vodka",
+            " Russians",
+            " Vlad",
+            " Moscow",
+            "Russian"
+          ]
+        },
+        "Brazil": {
+          "norm": 221.2965087890625,
+          "rank": 274,
+          "top": [
+            "\u6cb9\u6c14",
+            "\u666e\u4eac",
+            "\u6cb9\u7530",
+            "\u6cb9",
+            "\u77f3\u6cb9"
+          ]
+        }
+      }
+    },
+    {
+      "subject": "South Korea",
+      "original_single_token": false,
+      "all_references": {
+        "norm": 81.14083099365234,
+        "rank": 2948,
+        "top": [
+          "\u5c16",
+          " dolphin",
+          "\u6f5c\u6c34",
+          "\u97e9\u56fd",
+          "\u8d34\u5fc3"
+        ]
+      },
+      "by_group": {
+        "single_token_refs": {
+          "references": [
+            "Australia",
+            "Argentina",
+            "Egypt",
+            "Japan",
+            "China",
+            "Brazil"
+          ],
+          "norm": 94.86833953857422,
+          "rank": 1223,
+          "top": [
+            " samsung",
+            "\u6f5c\u6c34",
+            " dolphin",
+            "\u8d34\u5fc3",
+            "\u97e9\u56fd"
+          ]
+        },
+        "multitoken_refs": {
+          "references": [
+            "Peru",
+            "United States"
+          ],
+          "norm": 86.70670318603516,
+          "rank": 118829,
+          "top": [
+            ".',",
+            "...,",
+            "...',",
+            "\u3002(",
+            ".("
+          ]
+        }
+      },
+      "per_reference": {
+        "Australia": {
+          "norm": 139.32640075683594,
+          "rank": 82,
+          "top": [
+            "\u97e9\u56fd",
+            "\u5c16",
+            "\u826f\u5fc3",
+            " Rolex",
+            "\u9774"
+          ]
+        },
+        "Argentina": {
+          "norm": 188.64532470703125,
+          "rank": 49633,
+          "top": [
+            "\u6d77\u5357\u7701",
+            "\u6d77\u5357",
+            "\u6930",
+            " Hond",
+            " Hawaiian"
+          ]
+        },
+        "Egypt": {
+          "norm": 166.90777587890625,
+          "rank": 40537,
+          "top": [
+            "\u502d",
+            " **",
+            " Mos",
+            " Mohammed",
+            " jihadists"
+          ]
+        },
+        "Peru": {
+          "norm": 51.182884216308594,
+          "rank": 113814,
+          "top": [
+            "\u3002\uff08",
+            "\uff08",
+            "\u3002\\",
+            "\uff0c",
+            "\uff3f"
+          ]
+        },
+        "Japan": {
+          "norm": 120.42896270751953,
+          "rank": 4536,
+          "top": [
+            "\u725b",
+            "\u8e44",
+            "\u8d8a\u5357",
+            "\u9a8a",
+            "\u9ebb\u8fa3"
+          ]
+        },
+        "United States": {
+          "norm": 156.83604431152344,
+          "rank": 107104,
+          "top": [
+            "...,",
+            "...(",
+            ".',",
+            ".;",
+            "...',"
+          ]
+        },
+        "China": {
+          "norm": 136.3589630126953,
+          "rank": 18595,
+          "top": [
+            "olib",
+            "live",
+            "Cha",
+            "\u60ec\u610f",
+            "Charlie"
+          ]
+        },
+        "Brazil": {
+          "norm": 153.9625244140625,
+          "rank": 2859,
+          "top": [
+            "\u7b20",
+            "\u897f\u73ed\u7259",
+            "\u662f\u97e9\u56fd",
+            "/security",
+            "\u5c71\u9876"
+          ]
+        }
+      }
+    }
+  ],
+  "differential_cosines": [
+    [
+      1.0000001192092896,
+      0.23440863192081451,
+      0.1614903211593628,
+      0.36930209398269653,
+      0.25895440578460693,
+      0.3304744362831116,
+      0.21959365904331207,
+      0.36249929666519165,
+      0.3265150189399719,
+      0.34934741258621216,
+      0.3180273175239563,
+      0.36996152997016907,
+      0.07103757560253143,
+      0.1603134721517563,
+      0.24100792407989502,
+      0.34134188294410706
+    ],
+    [
+      0.23440863192081451,
+      1.0,
+      0.228417307138443,
+      0.4585071802139282,
+      0.2280396968126297,
+      -0.049370504915714264,
+      0.015708576887845993,
+      0.44912365078926086,
+      0.4917777478694916,
+      0.20635032653808594,
+      0.5433140993118286,
+      0.4446027874946594,
+      0.3656657338142395,
+      0.4862869679927826,
+      0.3877957761287689,
+      0.4390272796154022
+    ],
+    [
+      0.1614903211593628,
+      0.228417307138443,
+      0.9999999403953552,
+      0.4350765645503998,
+      0.1413789540529251,
+      0.005297210533171892,
+      0.18430045247077942,
+      0.30130112171173096,
+      0.4413500130176544,
+      0.40259867906570435,
+      0.3524972200393677,
+      0.45790553092956543,
+      0.13037656247615814,
+      0.3999865651130676,
+      0.2955154478549957,
+      0.21566766500473022
+    ],
+    [
+      0.36930209398269653,
+      0.4585071802139282,
+      0.4350765645503998,
+      1.0,
+      0.28244999051094055,
+      0.09221156686544418,
+      0.03724390268325806,
+      0.44143280386924744,
+      0.9080553650856018,
+      0.37491220235824585,
+      0.9486986398696899,
+      0.6709089875221252,
+      0.10812676697969437,
+      0.551113486289978,
+      0.18123438954353333,
+      0.6626828908920288
+    ],
+    [
+      0.25895440578460693,
+      0.2280396968126297,
+      0.1413789540529251,
+      0.28244999051094055,
+      0.9999998807907104,
+      0.30472445487976074,
+      0.41520047187805176,
+      0.2723883390426636,
+      0.27071237564086914,
+      0.3192801773548126,
+      0.37113291025161743,
+      0.39379265904426575,
+      0.4708446264266968,
+      0.3756524622440338,
+      0.22864817082881927,
+      0.596896767616272
+    ],
+    [
+      0.3304744362831116,
+      -0.049370504915714264,
+      0.005297210533171892,
+      0.09221156686544418,
+      0.30472445487976074,
+      1.0000001192092896,
+      0.4112693965435028,
+      0.10141938179731369,
+      0.09477562457323074,
+      0.3012954294681549,
+      0.07068417221307755,
+      0.223323255777359,
+      0.3188897967338562,
+      0.16756035387516022,
+      0.15243972837924957,
+      0.30518874526023865
+    ],
+    [
+      0.21959365904331207,
+      0.015708576887845993,
+      0.18430045247077942,
+      0.03724390268325806,
+      0.41520047187805176,
+      0.4112693965435028,
+      1.0,
+      0.24211983382701874,
+      0.12621179223060608,
+      0.5643170475959778,
+      0.07559661567211151,
+      0.292880654335022,
+      0.3337629735469818,
+      0.006758107338100672,
+      0.49114271998405457,
+      0.3888261020183563
+    ],
+    [
+      0.36249929666519165,
+      0.44912365078926086,
+      0.30130112171173096,
+      0.44143280386924744,
+      0.2723883390426636,
+      0.10141938179731369,
+      0.24211983382701874,
+      1.0,
+      0.47541582584381104,
+      0.5103834271430969,
+      0.4353378713130951,
+      0.4583713710308075,
+      0.1881510466337204,
+      0.33397021889686584,
+      0.3591853678226471,
+      0.4137924909591675
+    ],
+    [
+      0.3265150189399719,
+      0.4917777478694916,
+      0.4413500130176544,
+      0.9080553650856018,
+      0.27071237564086914,
+      0.09477562457323074,
+      0.12621179223060608,
+      0.47541582584381104,
+      1.0000001192092896,
+      0.42134353518486023,
+      0.890716016292572,
+      0.7743520736694336,
+      0.14156381785869598,
+      0.4482569694519043,
+      0.33803626894950867,
+      0.709047794342041
+    ],
+    [
+      0.34934741258621216,
+      0.20635032653808594,
+      0.40259867906570435,
+      0.37491220235824585,
+      0.3192801773548126,
+      0.3012954294681549,
+      0.5643170475959778,
+      0.5103834271430969,
+      0.42134353518486023,
+      1.0,
+      0.3499789535999298,
+      0.4173319935798645,
+      0.22477586567401886,
+      0.22067423164844513,
+      0.3907860517501831,
+      0.33067214488983154
+    ],
+    [
+      0.3180273175239563,
+      0.5433140993118286,
+      0.3524972200393677,
+      0.9486986398696899,
+      0.37113291025161743,
+      0.07068417221307755,
+      0.07559661567211151,
+      0.4353378713130951,
+      0.890716016292572,
+      0.3499789535999298,
+      1.000000238418579,
+      0.7101972699165344,
+      0.23866556584835052,
+      0.6003811359405518,
+      0.214487224817276,
+      0.7292360067367554
+    ],
+    [
+      0.36996152997016907,
+      0.4446027874946594,
+      0.45790553092956543,
+      0.6709089875221252,
+      0.39379265904426575,
+      0.223323255777359,
+      0.292880654335022,
+      0.4583713710308075,
+      0.7743520736694336,
+      0.4173319935798645,
+      0.7101972699165344,
+      1.0,
+      0.2783967852592468,
+      0.4821770191192627,
+      0.4006584584712982,
+      0.80295330286026
+    ],
+    [
+      0.07103757560253143,
+      0.3656657338142395,
+      0.13037656247615814,
+      0.10812676697969437,
+      0.4708446264266968,
+      0.3188897967338562,
+      0.3337629735469818,
+      0.1881510466337204,
+      0.14156381785869598,
+      0.22477586567401886,
+      0.23866556584835052,
+      0.2783967852592468,
+      1.0,
+      0.345828652381897,
+      0.40239232778549194,
+      0.4163602590560913
+    ],
+    [
+      0.1603134721517563,
+      0.4862869679927826,
+      0.3999865651130676,
+      0.551113486289978,
+      0.3756524622440338,
+      0.16756035387516022,
+      0.006758107338100672,
+      0.33397021889686584,
+      0.4482569694519043,
+      0.22067423164844513,
+      0.6003811359405518,
+      0.4821770191192627,
+      0.345828652381897,
+      0.9999999403953552,
+      0.10426363348960876,
+      0.4444078803062439
+    ],
+    [
+      0.24100792407989502,
+      0.3877957761287689,
+      0.2955154478549957,
+      0.18123438954353333,
+      0.22864817082881927,
+      0.15243972837924957,
+      0.49114271998405457,
+      0.3591853678226471,
+      0.33803626894950867,
+      0.3907860517501831,
+      0.214487224817276,
+      0.4006584584712982,
+      0.40239232778549194,
+      0.10426363348960876,
+      1.0,
+      0.2991652190685272
+    ],
+    [
+      0.34134188294410706,
+      0.4390272796154022,
+      0.21566766500473022,
+      0.6626828908920288,
+      0.596896767616272,
+      0.30518874526023865,
+      0.3888261020183563,
+      0.4137924909591675,
+      0.709047794342041,
+      0.33067214488983154,
+      0.7292360067367554,
+      0.80295330286026,
+      0.4163602590560913,
+      0.4444078803062439,
+      0.2991652190685272,
+      1.0
+    ]
+  ],
+  "ablated_direction_coordinates": []
+}

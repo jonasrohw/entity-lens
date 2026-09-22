@@ -1,0 +1,2211 @@
+{
+  "relation": "company_ceo",
+  "protocol": "main",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{}'s CEO is",
+    "agg": {
+      "diff": {
+        "median_rank": 20830.0,
+        "median_lograng": 4.316557306983233,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 7077.0,
+        "median_lograng": 3.8494522495511925,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "BASF",
+        "model_top1_id": 7972,
+        "model_top1": "Martin",
+        "n_references": 7,
+        "rank_diff": 11977,
+        "top_diff": [
+          "Germany",
+          "German",
+          "chemical",
+          "chemicals",
+          "Chem"
+        ],
+        "rank_lre": 7487,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7487,
+          "0.5": 7518,
+          "1.5": 7456,
+          "2.0": 7408,
+          "3.0": 7315,
+          "5.0": 7183
+        }
+      },
+      {
+        "subject": "ArcelorMittal",
+        "model_top1_id": 2732,
+        "model_top1": "Ad",
+        "n_references": 7,
+        "rank_diff": 27406,
+        "top_diff": [
+          "steel",
+          "Steel",
+          "Poland",
+          "metall",
+          "Belgium"
+        ],
+        "rank_lre": 2405,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2405,
+          "0.5": 2370,
+          "1.5": 2437,
+          "2.0": 2473,
+          "3.0": 2568,
+          "5.0": 2823
+        }
+      },
+      {
+        "subject": "Nederlandse Spoorwegen",
+        "model_top1_id": 24814,
+        "model_top1": "Andr\u00e9",
+        "n_references": 7,
+        "rank_diff": 1442,
+        "top_diff": [
+          "Dutch",
+          "Holland",
+          "railway",
+          "Netherlands",
+          "Sie"
+        ],
+        "rank_lre": 12566,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12566,
+          "0.5": 12700,
+          "1.5": 12417,
+          "2.0": 12262,
+          "3.0": 11933,
+          "5.0": 11236
+        }
+      },
+      {
+        "subject": "Aspen Institute",
+        "model_top1_id": 5062,
+        "model_top1": "Dan",
+        "n_references": 7,
+        "rank_diff": 25002,
+        "top_diff": [
+          "Education",
+          "education",
+          "confer",
+          "conven",
+          "funding"
+        ],
+        "rank_lre": 5595,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5595,
+          "0.5": 5579,
+          "1.5": 5619,
+          "2.0": 5651,
+          "3.0": 5761,
+          "5.0": 5993
+        }
+      },
+      {
+        "subject": "Institut de chimie",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 7,
+        "rank_diff": 48,
+        "top_diff": [
+          "scientific",
+          "scientists",
+          "France",
+          "French",
+          "science"
+        ],
+        "rank_lre": 6752,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6752,
+          "0.5": 7309,
+          "1.5": 6191,
+          "2.0": 5667,
+          "3.0": 4725,
+          "5.0": 3206
+        }
+      },
+      {
+        "subject": "Procter & Gamble",
+        "model_top1_id": 9022,
+        "model_top1": "Jon",
+        "n_references": 7,
+        "rank_diff": 13937,
+        "top_diff": [
+          "groom",
+          "recru",
+          "corporate",
+          "perf",
+          "Corpor"
+        ],
+        "rank_lre": 9136,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9136,
+          "0.5": 9157,
+          "1.5": 9116,
+          "2.0": 9092,
+          "3.0": 9031,
+          "5.0": 8938
+        }
+      },
+      {
+        "subject": "Seagate Technology",
+        "model_top1_id": 14381,
+        "model_top1": "Dave",
+        "n_references": 7,
+        "rank_diff": 18761,
+        "top_diff": [
+          "GPU",
+          "computers",
+          "computing",
+          "computer",
+          "technology"
+        ],
+        "rank_lre": 7861,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7861,
+          "0.5": 7876,
+          "1.5": 7848,
+          "2.0": 7841,
+          "3.0": 7786,
+          "5.0": 7733
+        }
+      },
+      {
+        "subject": "Deutsche Post AG",
+        "model_top1_id": 5558,
+        "model_top1": "Frank",
+        "n_references": 7,
+        "rank_diff": 1775,
+        "top_diff": [
+          "German",
+          "acquis",
+          "Frankfurt",
+          "acquisition",
+          "Germany"
+        ],
+        "rank_lre": 5090,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5090,
+          "0.5": 5305,
+          "1.5": 4925,
+          "2.0": 4767,
+          "3.0": 4431,
+          "5.0": 3840
+        }
+      },
+      {
+        "subject": "Bell Resources",
+        "model_top1_id": 4688,
+        "model_top1": "Paul",
+        "n_references": 8,
+        "rank_diff": 28556,
+        "top_diff": [
+          "mineral",
+          "mining",
+          "miner",
+          "Oil",
+          "oil"
+        ],
+        "rank_lre": 4179,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4179,
+          "0.5": 4035,
+          "1.5": 4322,
+          "2.0": 4456,
+          "3.0": 4733,
+          "5.0": 5285
+        }
+      },
+      {
+        "subject": "Cloudflare",
+        "model_top1_id": 16073,
+        "model_top1": "Matthew",
+        "n_references": 8,
+        "rank_diff": 25649,
+        "top_diff": [
+          "cyber",
+          "Security",
+          "HTTP",
+          "internet",
+          "tech"
+        ],
+        "rank_lre": 9477,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9477,
+          "0.5": 9434,
+          "1.5": 9530,
+          "2.0": 9581,
+          "3.0": 9636,
+          "5.0": 9775
+        }
+      },
+      {
+        "subject": "Comcast",
+        "model_top1_id": 13337,
+        "model_top1": "Brian",
+        "n_references": 8,
+        "rank_diff": 10717,
+        "top_diff": [
+          "TV",
+          "telev",
+          "Television",
+          "NBC",
+          "cable"
+        ],
+        "rank_lre": 8400,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8400,
+          "0.5": 8457,
+          "1.5": 8334,
+          "2.0": 8275,
+          "3.0": 8195,
+          "5.0": 7948
+        }
+      },
+      {
+        "subject": "Infineon Technologies",
+        "model_top1_id": 25309,
+        "model_top1": "Rein",
+        "n_references": 8,
+        "rank_diff": 3608,
+        "top_diff": [
+          "German",
+          "Germany",
+          "technological",
+          "engineering",
+          "technology"
+        ],
+        "rank_lre": 5872,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5872,
+          "0.5": 6025,
+          "1.5": 5741,
+          "2.0": 5606,
+          "3.0": 5357,
+          "5.0": 4922
+        }
+      },
+      {
+        "subject": "Boeing",
+        "model_top1_id": 5185,
+        "model_top1": "David",
+        "n_references": 8,
+        "rank_diff": 31860,
+        "top_diff": [
+          "aircraft",
+          "engineering",
+          "Engineering",
+          "Flight",
+          "planes"
+        ],
+        "rank_lre": 5637,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5637,
+          "0.5": 5372,
+          "1.5": 5876,
+          "2.0": 6155,
+          "3.0": 6687,
+          "5.0": 7670
+        }
+      },
+      {
+        "subject": "Kroger",
+        "model_top1_id": 9583,
+        "model_top1": "Rod",
+        "n_references": 8,
+        "rank_diff": 22899,
+        "top_diff": [
+          "grocery",
+          "food",
+          "Food",
+          "foods",
+          "nutrition"
+        ],
+        "rank_lre": 8698,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8698,
+          "0.5": 8651,
+          "1.5": 8746,
+          "2.0": 8763,
+          "3.0": 8844,
+          "5.0": 9000
+        }
+      },
+      {
+        "subject": "Southwest Airlines",
+        "model_top1_id": 18930,
+        "model_top1": "Gary",
+        "n_references": 8,
+        "rank_diff": 4278,
+        "top_diff": [
+          "Flight",
+          "passenger",
+          "flights",
+          "flight",
+          "aircraft"
+        ],
+        "rank_lre": 8043,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8043,
+          "0.5": 8230,
+          "1.5": 7876,
+          "2.0": 7717,
+          "3.0": 7365,
+          "5.0": 6729
+        }
+      },
+      {
+        "subject": "Qantas",
+        "model_top1_id": 16212,
+        "model_top1": "Alan",
+        "n_references": 8,
+        "rank_diff": 23496,
+        "top_diff": [
+          "aircraft",
+          "Flight",
+          "flights",
+          "flying",
+          "flight"
+        ],
+        "rank_lre": 8928,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8928,
+          "0.5": 8847,
+          "1.5": 8983,
+          "2.0": 9040,
+          "3.0": 9129,
+          "5.0": 9315
+        }
+      },
+      {
+        "subject": "Caterpillar Inc.",
+        "model_top1_id": 7483,
+        "model_top1": "Jim",
+        "n_references": 8,
+        "rank_diff": 31789,
+        "top_diff": [
+          "manufacturing",
+          "Ford",
+          "engineering",
+          "mach",
+          "environment"
+        ],
+        "rank_lre": 6563,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6563,
+          "0.5": 6333,
+          "1.5": 6776,
+          "2.0": 6964,
+          "3.0": 7375,
+          "5.0": 8231
+        }
+      },
+      {
+        "subject": "Koninklijke Philips NV",
+        "model_top1_id": 2129,
+        "model_top1": "Fr",
+        "n_references": 8,
+        "rank_diff": 6541,
+        "top_diff": [
+          "medical",
+          "acquis",
+          "healthcare",
+          "health",
+          "pharm"
+        ],
+        "rank_lre": 4544,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4544,
+          "0.5": 4629,
+          "1.5": 4451,
+          "2.0": 4348,
+          "3.0": 4152,
+          "5.0": 3794
+        }
+      },
+      {
+        "subject": "\u0160koda Transportation",
+        "model_top1_id": 7972,
+        "model_top1": "Martin",
+        "n_references": 8,
+        "rank_diff": 29030,
+        "top_diff": [
+          "Poland",
+          "Czech",
+          "Polish",
+          "Slov",
+          "manufact"
+        ],
+        "rank_lre": 7402,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7402,
+          "0.5": 7249,
+          "1.5": 7553,
+          "2.0": 7687,
+          "3.0": 8005,
+          "5.0": 8625
+        }
+      },
+      {
+        "subject": "Meta Platforms",
+        "model_top1_id": 4423,
+        "model_top1": "Mark",
+        "n_references": 8,
+        "rank_diff": 32415,
+        "top_diff": [
+          "Bitcoin",
+          "tech",
+          "AI",
+          "Facebook",
+          "earnings"
+        ],
+        "rank_lre": 5586,
+        "top_lre": [
+          "its",
+          "being",
+          "the",
+          "their",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5586,
+          "0.5": 5355,
+          "1.5": 5851,
+          "2.0": 6109,
+          "3.0": 6636,
+          "5.0": 7664
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 7279.0,
+          "median_lograng": 3.862127691764427,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 7077.0,
+          "median_lograng": 3.8494522495511925,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 7116.0,
+          "median_lograng": 3.8518008143653386,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7186.0,
+          "median_lograng": 3.856340357771196,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 7340.0,
+          "median_lograng": 3.8657527056616368,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 7667.0,
+          "median_lograng": 3.884682070968196,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.06,
+          0.0
+        ],
+        "2.0": [
+          0.06,
+          0.0
+        ],
+        "3.0": [
+          0.05,
+          0.0
+        ],
+        "5.0": [
+          0.05,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.05,
+          0.0
+        ],
+        "2.0": [
+          0.05,
+          0.0
+        ],
+        "3.0": [
+          0.04,
+          0.0
+        ],
+        "5.0": [
+          0.02,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.05,
+          0.0
+        ],
+        "2.0": [
+          0.04,
+          0.0
+        ],
+        "3.0": [
+          0.04,
+          0.0
+        ],
+        "5.0": [
+          0.04,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.06,
+          0.0
+        ],
+        "2.0": [
+          0.05,
+          0.0
+        ],
+        "3.0": [
+          0.05,
+          0.0
+        ],
+        "5.0": [
+          0.04,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.06,
+          0.0
+        ],
+        "2.0": [
+          0.06,
+          0.0
+        ],
+        "3.0": [
+          0.05,
+          0.0
+        ],
+        "5.0": [
+          0.02,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.06,
+          0.0
+        ],
+        "1.0": [
+          0.06,
+          0.0
+        ],
+        "1.5": [
+          0.06,
+          0.0
+        ],
+        "2.0": [
+          0.06,
+          0.0
+        ],
+        "3.0": [
+          0.06,
+          0.0
+        ],
+        "5.0": [
+          0.06,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 5,
+    "best_beta": 0.5,
+    "best_faith": 0.06,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 100,
+    "requested_n_test": 100,
+    "lm_correct": 56,
+    "per_subject": {
+      "Tesco": 0,
+      "Czech Airlines": 0,
+      "Johnson & Johnson": 0,
+      "U.S. Steel": 0,
+      "University of Leeds": 0,
+      "Kering": 0,
+      "thyssenkrupp AG": 0,
+      "Seagate Technology": 0,
+      "Yle": 1,
+      "UBS": 0,
+      "ConocoPhillips": 0,
+      "Cisco Systems": 0,
+      "SAP": 0,
+      "Valeo": 0,
+      "Goldman Sachs & Co. (US)": 0,
+      "Sanofi": 0,
+      "PepsiCo": 0,
+      "Warner Music Group": 0,
+      "The Home Depot": 0,
+      "GMV Innovating Solutions": 0,
+      "Abbott Laboratories": 0,
+      "\u010cesk\u00e9 dr\u00e1hy": 0,
+      "Heineken": 0,
+      "Raytheon Company": 0,
+      "Alphabet": 0,
+      "Bertelsmann": 0,
+      "Klinikum Ernst von Bergmann": 0,
+      "GlaxoSmithKline": 0,
+      "Activision Blizzard": 0,
+      "Toyota": 0,
+      "DuPont": 0,
+      "Intel": 0,
+      "Capgemini": 0,
+      "British Airways": 0,
+      "Airbus": 0,
+      "Accenture": 0,
+      "Colgate-Palmolive Company": 0,
+      "Carrefour Group": 0,
+      "Opera Software": 0,
+      "AC Sparta Prague": 0,
+      "ArcelorMittal": 0,
+      "Hewlett-Packard": 0,
+      "Nokia": 0,
+      "Vodafone": 0,
+      "Valve Corporation": 0,
+      "Sony": 0,
+      "Audi": 0,
+      "Southwest Airlines": 0,
+      "\u00c9lectricit\u00e9 de France": 0,
+      "Qantas": 0,
+      "Bristol-Myers Squibb": 0,
+      "FC Bayern Munich": 0,
+      "Gilead Sciences": 0,
+      "STMicroelectronics": 0,
+      "Nintendo": 0,
+      "Aspen Institute": 0,
+      "PayPal": 0,
+      "Merck & Co.": 0,
+      "Rheinmetall AG": 0,
+      "Shell": 0,
+      "Airbus Group": 0,
+      "McDonald\u2019s": 0,
+      "University of Gothenburg": 0,
+      "Paramount Global": 0,
+      "Biogen": 0,
+      "Aeroflot": 0,
+      "East Japan Railway Company": 0,
+      "NVIDIA": 1,
+      "Institut de chimie": 0,
+      "SpaceX": 0,
+      "BNP Paribas": 0,
+      "Hyundai Motor Company": 1,
+      "Hasbro": 0,
+      "Toulouse-Blagnac": 0,
+      "Orange": 0,
+      "Radio Free Europe/Radio Liberty": 0,
+      "Simon & Schuster": 0,
+      "Microsoft": 0,
+      "Ford Motor Company": 0,
+      "Yum! Brands": 0,
+      "Berkshire Hathaway": 0,
+      "Salesforce": 0,
+      "Broderbund": 0,
+      "IBM": 0,
+      "Deutsche Telekom": 0,
+      "Cloudflare": 0,
+      "Energetick\u00fd a pr\u016fmyslov\u00fd holding": 0,
+      "DR": 1,
+      "Chevron Corporation": 0,
+      "Eli Lilly and Company": 0,
+      "Electrolux": 0,
+      "Dell Inc.": 0,
+      "Yandex": 0,
+      "Humana": 0,
+      "FC Viktoria K\u00f6ln": 1,
+      "Verizon": 0,
+      "BT Group": 0,
+      "Infineon Technologies": 1,
+      "Peterson Institute for International Economics": 0,
+      "Publicis": 0
+    },
+    "split_fingerprint": "284343630b31",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 20,
+    "layer": 17,
+    "template": "{}'s CEO is",
+    "agg": {
+      "diff": {
+        "median_rank": 22564.0,
+        "median_lograng": 4.3531483931229396,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 7401.5,
+        "median_lograng": 3.8690154958867566,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "BASF",
+        "model_top1_id": 7972,
+        "model_top1": "Martin",
+        "n_references": 7,
+        "rank_diff": 21744,
+        "top_diff": [
+          "Germany",
+          "chemical",
+          "chemicals",
+          "German",
+          "Chem"
+        ],
+        "rank_lre": 7704,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7704,
+          "0.5": 7694,
+          "1.5": 7702,
+          "2.0": 7745,
+          "3.0": 7758,
+          "5.0": 7825
+        }
+      },
+      {
+        "subject": "ArcelorMittal",
+        "model_top1_id": 2732,
+        "model_top1": "Ad",
+        "n_references": 7,
+        "rank_diff": 27944,
+        "top_diff": [
+          "steel",
+          "Steel",
+          "metall",
+          "metal",
+          "Belgium"
+        ],
+        "rank_lre": 2469,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2469,
+          "0.5": 2421,
+          "1.5": 2541,
+          "2.0": 2611,
+          "3.0": 2721,
+          "5.0": 2995
+        }
+      },
+      {
+        "subject": "Nederlandse Spoorwegen",
+        "model_top1_id": 24814,
+        "model_top1": "Andr\u00e9",
+        "n_references": 7,
+        "rank_diff": 3176,
+        "top_diff": [
+          "Dutch",
+          "Netherlands",
+          "railway",
+          "Holland",
+          "Railway"
+        ],
+        "rank_lre": 12636,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12636,
+          "0.5": 12712,
+          "1.5": 12568,
+          "2.0": 12476,
+          "3.0": 12302,
+          "5.0": 11894
+        }
+      },
+      {
+        "subject": "Aspen Institute",
+        "model_top1_id": 5062,
+        "model_top1": "Dan",
+        "n_references": 7,
+        "rank_diff": 28712,
+        "top_diff": [
+          "Education",
+          "education",
+          "catal",
+          "conven",
+          "Fund"
+        ],
+        "rank_lre": 5531,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5531,
+          "0.5": 5449,
+          "1.5": 5626,
+          "2.0": 5718,
+          "3.0": 5916,
+          "5.0": 6313
+        }
+      },
+      {
+        "subject": "Institut de chimie",
+        "model_top1_id": 7487,
+        "model_top1": "Jean",
+        "n_references": 7,
+        "rank_diff": 52,
+        "top_diff": [
+          "scientific",
+          "France",
+          "scientists",
+          "French",
+          "science"
+        ],
+        "rank_lre": 6822,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6822,
+          "0.5": 7348,
+          "1.5": 6315,
+          "2.0": 5828,
+          "3.0": 4946,
+          "5.0": 3491
+        }
+      },
+      {
+        "subject": "Procter & Gamble",
+        "model_top1_id": 9022,
+        "model_top1": "Jon",
+        "n_references": 7,
+        "rank_diff": 26895,
+        "top_diff": [
+          "chocolate",
+          "groom",
+          "soap",
+          "perf",
+          "household"
+        ],
+        "rank_lre": 9097,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9097,
+          "0.5": 8998,
+          "1.5": 9181,
+          "2.0": 9253,
+          "3.0": 9424,
+          "5.0": 9693
+        }
+      },
+      {
+        "subject": "Seagate Technology",
+        "model_top1_id": 14381,
+        "model_top1": "Dave",
+        "n_references": 7,
+        "rank_diff": 20216,
+        "top_diff": [
+          "computer",
+          "AMD",
+          "computers",
+          "sem",
+          "computing"
+        ],
+        "rank_lre": 8304,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8304,
+          "0.5": 8308,
+          "1.5": 8322,
+          "2.0": 8342,
+          "3.0": 8329,
+          "5.0": 8319
+        }
+      },
+      {
+        "subject": "Deutsche Post AG",
+        "model_top1_id": 5558,
+        "model_top1": "Frank",
+        "n_references": 7,
+        "rank_diff": 939,
+        "top_diff": [
+          "German",
+          "Germany",
+          "Frankfurt",
+          "acquis",
+          "Nieder"
+        ],
+        "rank_lre": 5306,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5306,
+          "0.5": 5534,
+          "1.5": 5107,
+          "2.0": 4912,
+          "3.0": 4537,
+          "5.0": 3817
+        }
+      },
+      {
+        "subject": "Bell Resources",
+        "model_top1_id": 4688,
+        "model_top1": "Paul",
+        "n_references": 8,
+        "rank_diff": 29750,
+        "top_diff": [
+          "mineral",
+          "mining",
+          "miner",
+          "Oil",
+          "Australia"
+        ],
+        "rank_lre": 4530,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4530,
+          "0.5": 4388,
+          "1.5": 4706,
+          "2.0": 4861,
+          "3.0": 5164,
+          "5.0": 5829
+        }
+      },
+      {
+        "subject": "Cloudflare",
+        "model_top1_id": 16073,
+        "model_top1": "Matthew",
+        "n_references": 8,
+        "rank_diff": 28923,
+        "top_diff": [
+          "cyber",
+          "internet",
+          "Software",
+          "Internet",
+          "tech"
+        ],
+        "rank_lre": 9593,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9593,
+          "0.5": 9523,
+          "1.5": 9679,
+          "2.0": 9773,
+          "3.0": 9930,
+          "5.0": 10198
+        }
+      },
+      {
+        "subject": "Comcast",
+        "model_top1_id": 13337,
+        "model_top1": "Brian",
+        "n_references": 8,
+        "rank_diff": 5929,
+        "top_diff": [
+          "cable",
+          "Television",
+          "TV",
+          "telev",
+          "television"
+        ],
+        "rank_lre": 8484,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8484,
+          "0.5": 8584,
+          "1.5": 8352,
+          "2.0": 8239,
+          "3.0": 8019,
+          "5.0": 7603
+        }
+      },
+      {
+        "subject": "Infineon Technologies",
+        "model_top1_id": 25309,
+        "model_top1": "Rein",
+        "n_references": 8,
+        "rank_diff": 1887,
+        "top_diff": [
+          "alumin",
+          "medical",
+          "Germany",
+          "German",
+          "technological"
+        ],
+        "rank_lre": 6395,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6395,
+          "0.5": 6542,
+          "1.5": 6238,
+          "2.0": 6087,
+          "3.0": 5812,
+          "5.0": 5309
+        }
+      },
+      {
+        "subject": "Boeing",
+        "model_top1_id": 5185,
+        "model_top1": "David",
+        "n_references": 8,
+        "rank_diff": 32134,
+        "top_diff": [
+          "aircraft",
+          "Engineering",
+          "engineering",
+          "Flight",
+          "planes"
+        ],
+        "rank_lre": 5719,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5719,
+          "0.5": 5446,
+          "1.5": 5979,
+          "2.0": 6240,
+          "3.0": 6767,
+          "5.0": 7860
+        }
+      },
+      {
+        "subject": "Kroger",
+        "model_top1_id": 9583,
+        "model_top1": "Rod",
+        "n_references": 8,
+        "rank_diff": 30785,
+        "top_diff": [
+          "grocery",
+          "food",
+          "Food",
+          "foods",
+          "food"
+        ],
+        "rank_lre": 8838,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8838,
+          "0.5": 8706,
+          "1.5": 8983,
+          "2.0": 9138,
+          "3.0": 9399,
+          "5.0": 9867
+        }
+      },
+      {
+        "subject": "Southwest Airlines",
+        "model_top1_id": 18930,
+        "model_top1": "Gary",
+        "n_references": 8,
+        "rank_diff": 20441,
+        "top_diff": [
+          "passenger",
+          "aircraft",
+          "flights",
+          "flight",
+          "jet"
+        ],
+        "rank_lre": 9144,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9144,
+          "0.5": 9151,
+          "1.5": 9116,
+          "2.0": 9122,
+          "3.0": 9099,
+          "5.0": 9030
+        }
+      },
+      {
+        "subject": "Qantas",
+        "model_top1_id": 16212,
+        "model_top1": "Alan",
+        "n_references": 8,
+        "rank_diff": 23384,
+        "top_diff": [
+          "aircraft",
+          "flying",
+          "flights",
+          "Airlines",
+          "flight"
+        ],
+        "rank_lre": 8904,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8904,
+          "0.5": 8855,
+          "1.5": 8944,
+          "2.0": 8999,
+          "3.0": 9064,
+          "5.0": 9198
+        }
+      },
+      {
+        "subject": "Caterpillar Inc.",
+        "model_top1_id": 7483,
+        "model_top1": "Jim",
+        "n_references": 8,
+        "rank_diff": 27404,
+        "top_diff": [
+          "Ford",
+          "mach",
+          "industrial",
+          "trucks",
+          "truck"
+        ],
+        "rank_lre": 7099,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7099,
+          "0.5": 6965,
+          "1.5": 7219,
+          "2.0": 7359,
+          "3.0": 7616,
+          "5.0": 8083
+        }
+      },
+      {
+        "subject": "Koninklijke Philips NV",
+        "model_top1_id": 2129,
+        "model_top1": "Fr",
+        "n_references": 8,
+        "rank_diff": 16576,
+        "top_diff": [
+          "medical",
+          "healthcare",
+          "acquis",
+          "health",
+          "pharm"
+        ],
+        "rank_lre": 4980,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4980,
+          "0.5": 4985,
+          "1.5": 4992,
+          "2.0": 5000,
+          "3.0": 5012,
+          "5.0": 5075
+        }
+      },
+      {
+        "subject": "\u0160koda Transportation",
+        "model_top1_id": 7972,
+        "model_top1": "Martin",
+        "n_references": 8,
+        "rank_diff": 31489,
+        "top_diff": [
+          "Poland",
+          "Czech",
+          "Polish",
+          "Slov",
+          "Bulgar"
+        ],
+        "rank_lre": 7830,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7830,
+          "0.5": 7608,
+          "1.5": 8050,
+          "2.0": 8306,
+          "3.0": 8777,
+          "5.0": 9665
+        }
+      },
+      {
+        "subject": "Meta Platforms",
+        "model_top1_id": 4423,
+        "model_top1": "Mark",
+        "n_references": 8,
+        "rank_diff": 20554,
+        "top_diff": [
+          "AI",
+          "Facebook",
+          "Bitcoin",
+          "tech",
+          "Google"
+        ],
+        "rank_lre": 5826,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "the",
+          "making"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5826,
+          "0.5": 5721,
+          "1.5": 5902,
+          "2.0": 5986,
+          "3.0": 6140,
+          "5.0": 6459
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 7478.0,
+          "median_lograng": 3.8737779157400993,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 7401.5,
+          "median_lograng": 3.8690154958867566,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 7460.5,
+          "median_lograng": 3.872598547715421,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7552.0,
+          "median_lograng": 3.8779776534937813,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 7687.0,
+          "median_lograng": 3.8857948537307347,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 7842.5,
+          "median_lograng": 3.894508819920188,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "BASF": 5,
+    "ArcelorMittal": 8,
+    "Nederlandse Spoorwegen": 10,
+    "Aspen Institute": 5,
+    "Institut de chimie": 7,
+    "Procter & Gamble": 8,
+    "Seagate Technology": 6,
+    "Deutsche Post AG": 6,
+    "Bell Resources": 5,
+    "Cloudflare": 5,
+    "Comcast": 4,
+    "Infineon Technologies": 7,
+    "Boeing": 5,
+    "Kroger": 5,
+    "Southwest Airlines": 5,
+    "Qantas": 5,
+    "Caterpillar Inc.": 9,
+    "Koninklijke Philips NV": 10,
+    "\u0160koda Transportation": 7,
+    "Meta Platforms": 5
+  },
+  "content_tokenization_changes": [
+    {
+      "subject": "BASF",
+      "original_ids": [
+        12270,
+        29533,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        2877,
+        29533,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "ArcelorMittal",
+      "original_ids": [
+        1778,
+        4838,
+        1039,
+        29523,
+        1553,
+        1050,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        2132,
+        4838,
+        1039,
+        29523,
+        1553,
+        1050,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Nederlandse Spoorwegen",
+      "original_ids": [
+        21115,
+        1099,
+        2438,
+        11787,
+        29495,
+        6540,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29527,
+        3633,
+        1975,
+        1099,
+        2438,
+        11787,
+        29495,
+        6540,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Aspen Institute",
+      "original_ids": [
+        1098,
+        1654,
+        1037,
+        9392,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        13348,
+        1037,
+        9392,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Institut de chimie",
+      "original_ids": [
+        21697,
+        1108,
+        22135,
+        1180,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6828,
+        4056,
+        1108,
+        22135,
+        1180,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Procter & Gamble",
+      "original_ids": [
+        1901,
+        1078,
+        1031,
+        1335,
+        25151,
+        1750,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1701,
+        1078,
+        1031,
+        1335,
+        25151,
+        1750,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Seagate Technology",
+      "original_ids": [
+        1859,
+        1125,
+        1148,
+        13279,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        2748,
+        1125,
+        1148,
+        13279,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Deutsche Post AG",
+      "original_ids": [
+        2111,
+        16851,
+        5880,
+        15546,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4105,
+        16851,
+        5880,
+        15546,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Bell Resources",
+      "original_ids": [
+        12163,
+        20882,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        1247,
+        20882,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Cloudflare",
+      "original_ids": [
+        14600,
+        1902,
+        1260,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        13881,
+        1902,
+        1260,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Comcast",
+      "original_ids": [
+        1892,
+        3635,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1931,
+        3635,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Infineon Technologies",
+      "original_ids": [
+        19167,
+        1241,
+        1034,
+        7540,
+        9544,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        21185,
+        1241,
+        1034,
+        7540,
+        9544,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Boeing",
+      "original_ids": [
+        4036,
+        22226,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        4447,
+        1056,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Kroger",
+      "original_ids": [
+        1292,
+        1079,
+        1865,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29564,
+        1079,
+        1865,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Southwest Airlines",
+      "original_ids": [
+        4426,
+        8239,
+        29183,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        27581,
+        8239,
+        29183,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Qantas",
+      "original_ids": [
+        1954,
+        1208,
+        1061,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29592,
+        1208,
+        1061,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Caterpillar Inc.",
+      "original_ids": [
+        1102,
+        1563,
+        29488,
+        1193,
+        1051,
+        6439,
+        29491,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29511,
+        1563,
+        29488,
+        1193,
+        1051,
+        6439,
+        29491,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Koninklijke Philips NV",
+      "original_ids": [
+        9062,
+        1423,
+        14004,
+        1173,
+        5090,
+        3198,
+        28238,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29564,
+        1034,
+        1423,
+        14004,
+        1173,
+        5090,
+        3198,
+        28238,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "\u0160koda Transportation",
+      "original_ids": [
+        14456,
+        29497,
+        11537,
+        15864,
+        1120,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29734,
+        29497,
+        11537,
+        15864,
+        1120,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Meta Platforms",
+      "original_ids": [
+        25735,
+        21786,
+        29481,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        9731,
+        21786,
+        29481,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    }
+  ],
+  "split_fingerprint": "5aeede3516ca",
+  "baseline_sha256": {
+    "results/five_model_sweep/mistral7b/main/company_ceo.json": "d04b151688009dbf1f7abb2e7268e7a416241776a4cf3dfee4057fb044c06823"
+  },
+  "data_sha256": "c75f9b31c872b85601b7163b2c7a8f11c439f2852a876d5a126401d57ea3a81b",
+  "elapsed_seconds": 5.179800987243652
+}

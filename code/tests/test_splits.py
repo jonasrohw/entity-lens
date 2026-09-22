@@ -44,6 +44,32 @@ def test_identifying_filter_drops_collisions_but_retains_repeated_objects():
     assert splits.filter_identifying_objects(data, WordTokenizer()) == data[2:]
 
 
+@pytest.mark.parametrize("prefix", ["", " "])
+def test_trailing_space_skips_standalone_numeric_dummy_prefix(prefix):
+    class NumericTokenizer:
+        def encode(self, text, add_special_tokens=False):
+            return [0, *[int(digit) + 1 for digit in text.strip()]]
+
+        def decode(self, ids):
+            return "".join(prefix if i == 0 else str(i - 1) for i in ids)
+
+    tokenizer = NumericTokenizer()
+    assert splits.first_object_token("1782", tokenizer, trailing_space=True) == 2
+    assert splits.first_object_token("1882", tokenizer, trailing_space=True) == 2
+    assert splits.first_object_token("1782", tokenizer, trailing_space=False) == 0
+
+
+def test_trailing_space_keeps_content_token_with_its_own_leading_space():
+    class Tokenizer:
+        def encode(self, text, add_special_tokens=False):
+            return [1, 2]
+
+        def decode(self, ids):
+            return {1: " 17", 2: "82"}[ids[0]]
+
+    assert splits.first_object_token("1782", Tokenizer(), trailing_space=True) == 1
+
+
 def test_model_correct_split_requires_matching_demonstrations(tmp_path):
     data = samples()
     demonstrations, _, _ = splits.split_samples(data)

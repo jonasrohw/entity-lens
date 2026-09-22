@@ -1,0 +1,1662 @@
+{
+  "relation": "person_plays_pro_sport",
+  "protocol": "main",
+  "model": "qwen3_8b_base",
+  "worker": "beta_3",
+  "lens": {
+    "n": 20,
+    "layer": 19,
+    "template": "{} plays the sport of",
+    "agg": {
+      "diff": {
+        "median_rank": 53.0,
+        "median_lograng": 1.7305240458353288,
+        "agree_at1": 0.0,
+        "agree_at10": 0.25
+      },
+      "lre": {
+        "median_rank": 525.5,
+        "median_lograng": 2.7213746777972867,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Joakim Noah",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 7,
+        "rank_diff": 8,
+        "top_diff": [
+          "defensive",
+          "Defensive",
+          "defensively",
+          "\u9632\u5b88",
+          "\u7bee\u677f"
+        ],
+        "rank_lre": 531,
+        "top_lre": [
+          "his",
+          "being",
+          "wearing",
+          "playing",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 531,
+          "0.5": 1200,
+          "1.5": 204,
+          "2.0": 78,
+          "3.0": 18,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Troy Aikman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 9980,
+        "top_diff": [
+          "Throws",
+          "Dallas",
+          "Cowboys",
+          "quarterbacks",
+          "quarterback"
+        ],
+        "rank_lre": 342,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "a",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 342,
+          "0.5": 397,
+          "1.5": 295,
+          "2.0": 276,
+          "3.0": 246,
+          "5.0": 235
+        }
+      },
+      {
+        "subject": "Peyton Manning",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 23652,
+        "top_diff": [
+          "quarterbacks",
+          "Peyton",
+          "quarterback",
+          "Manning",
+          "QB"
+        ],
+        "rank_lre": 376,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "many",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 376,
+          "0.5": 403,
+          "1.5": 364,
+          "2.0": 354,
+          "3.0": 376,
+          "5.0": 454
+        }
+      },
+      {
+        "subject": "Walter Payton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 292,
+        "top_diff": [
+          "\u8dd1",
+          "\u901f\u5ea6",
+          "speed",
+          "\u5954\u8dd1",
+          "Speed"
+        ],
+        "rank_lre": 188,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "playing",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 188,
+          "0.5": 306,
+          "1.5": 129,
+          "2.0": 85,
+          "3.0": 51,
+          "5.0": 37
+        }
+      },
+      {
+        "subject": "Babe Ruth",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 7,
+        "rank_diff": 10,
+        "top_diff": [
+          "strikeouts",
+          "homer",
+          "Babe",
+          "lobber",
+          "homers"
+        ],
+        "rank_lre": 532,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "scoring",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 532,
+          "0.5": 1041,
+          "1.5": 263,
+          "2.0": 143,
+          "3.0": 42,
+          "5.0": 12
+        }
+      },
+      {
+        "subject": "Barry Bonds",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 7,
+        "rank_diff": 120,
+        "top_diff": [
+          "steroid",
+          "PED",
+          "steroids",
+          "itemprop",
+          "PED"
+        ],
+        "rank_lre": 779,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "wearing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 779,
+          "0.5": 1211,
+          "1.5": 498,
+          "2.0": 305,
+          "3.0": 136,
+          "5.0": 46
+        }
+      },
+      {
+        "subject": "Cuauht\u00e9moc Blanco",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 7,
+        "rank_diff": 5,
+        "top_diff": [
+          "M\u00e9xico",
+          "Mexican",
+          "Mexicans",
+          "goals",
+          "Hispanic"
+        ],
+        "rank_lre": 432,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "scoring",
+          "playing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 432,
+          "0.5": 998,
+          "1.5": 161,
+          "2.0": 63,
+          "3.0": 11,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Nigel de Jong",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 7,
+        "rank_diff": 13,
+        "top_diff": [
+          "midfield",
+          "midfielder",
+          "groin",
+          "kicks",
+          "UEFA"
+        ],
+        "rank_lre": 491,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "a",
+          "playing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 491,
+          "0.5": 1010,
+          "1.5": 219,
+          "2.0": 106,
+          "3.0": 23,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Ichiro Suzuki",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 88,
+        "top_diff": [
+          "speedy",
+          "speed",
+          "\u901f\u5ea6\u5feb",
+          "speeds",
+          "outfield"
+        ],
+        "rank_lre": 540,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "wearing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 540,
+          "0.5": 860,
+          "1.5": 351,
+          "2.0": 234,
+          "3.0": 116,
+          "5.0": 53
+        }
+      },
+      {
+        "subject": "Frank Robinson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "Baseball",
+          "RBI",
+          "hitters",
+          "Robinson",
+          "Orioles"
+        ],
+        "rank_lre": 574,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 574,
+          "0.5": 880,
+          "1.5": 366,
+          "2.0": 235,
+          "3.0": 104,
+          "5.0": 26
+        }
+      },
+      {
+        "subject": "Olumide Oyedeji",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 86969,
+        "top_diff": [
+          "Karnataka",
+          "Nigerian",
+          "speed",
+          "Everton",
+          "_speed"
+        ],
+        "rank_lre": 1627,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "playing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1627,
+          "0.5": 1615,
+          "1.5": 1651,
+          "2.0": 1692,
+          "3.0": 1804,
+          "5.0": 2230
+        }
+      },
+      {
+        "subject": "Gary Carter",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 58,
+        "top_diff": [
+          "catcher",
+          "RBI",
+          "Mets",
+          "catch",
+          "Saves"
+        ],
+        "rank_lre": 520,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "wearing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 520,
+          "0.5": 844,
+          "1.5": 326,
+          "2.0": 190,
+          "3.0": 70,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Pete Rose",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 91,
+        "top_diff": [
+          "\u6d89\u5acc",
+          "\u516c\u7136",
+          "Shoe",
+          "unlaw",
+          ".cum"
+        ],
+        "rank_lre": 483,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "wearing",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 483,
+          "0.5": 802,
+          "1.5": 287,
+          "2.0": 183,
+          "3.0": 81,
+          "5.0": 30
+        }
+      },
+      {
+        "subject": "Colin Kaepernick",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 14153,
+        "top_diff": [
+          "\u6297\u8bae",
+          "kneeling",
+          "protesting",
+          "\u8dea",
+          "protests"
+        ],
+        "rank_lre": 277,
+        "top_lre": [
+          "his",
+          "being",
+          "wearing",
+          "having",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 277,
+          "0.5": 345,
+          "1.5": 237,
+          "2.0": 221,
+          "3.0": 193,
+          "5.0": 220
+        }
+      },
+      {
+        "subject": "Phil Esposito",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "scoring",
+          "scored",
+          "NHL",
+          "\u5f97\u5206",
+          "Score"
+        ],
+        "rank_lre": 568,
+        "top_lre": [
+          "his",
+          "being",
+          "scoring",
+          "having",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 568,
+          "0.5": 1376,
+          "1.5": 217,
+          "2.0": 88,
+          "3.0": 19,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "Mari\u00e1n Hossa",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 22,
+        "top_diff": [
+          "scoring",
+          "scored",
+          "scores",
+          "\u5f97\u5206",
+          "goals"
+        ],
+        "rank_lre": 832,
+        "top_lre": [
+          "his",
+          "being",
+          "scoring",
+          "having",
+          "playing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 832,
+          "0.5": 1610,
+          "1.5": 395,
+          "2.0": 194,
+          "3.0": 49,
+          "5.0": 15
+        }
+      },
+      {
+        "subject": "Roy Campanella",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 48,
+        "top_diff": [
+          "catcher",
+          "catch",
+          "\u6355",
+          "catching",
+          "RBI"
+        ],
+        "rank_lre": 471,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "what",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 471,
+          "0.5": 804,
+          "1.5": 290,
+          "2.0": 159,
+          "3.0": 68,
+          "5.0": 21
+        }
+      },
+      {
+        "subject": "Claudio Reyna",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "MLS",
+          "soccer",
+          "midfielder",
+          "Soccer",
+          "midfield"
+        ],
+        "rank_lre": 277,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "playing",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 277,
+          "0.5": 721,
+          "1.5": 104,
+          "2.0": 37,
+          "3.0": 5,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Youri Djorkaeff",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 112,
+        "top_diff": [
+          "scoring",
+          "goals",
+          "scored",
+          "\u5c04",
+          "\u8fdb\u7403"
+        ],
+        "rank_lre": 579,
+        "top_lre": [
+          "his",
+          "being",
+          "scoring",
+          "having",
+          "playing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 579,
+          "0.5": 971,
+          "1.5": 319,
+          "2.0": 177,
+          "3.0": 64,
+          "5.0": 23
+        }
+      },
+      {
+        "subject": "Sidney Crosby",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "skating",
+          "Hockey",
+          "Penguins",
+          "hockey",
+          "\u51b0"
+        ],
+        "rank_lre": 599,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "scoring",
+          "playing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 599,
+          "0.5": 1404,
+          "1.5": 226,
+          "2.0": 86,
+          "3.0": 12,
+          "5.0": 2
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 925.5,
+          "median_lograng": 2.9663210866691614,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 525.5,
+          "median_lograng": 2.7213746777972867,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 288.5,
+          "median_lograng": 2.461642738372569,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 180.0,
+          "median_lograng": 2.257618912659215,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 66.0,
+          "median_lograng": 1.8258812236900552,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05
+        },
+        "5.0": {
+          "median_rank": 22.0,
+          "median_lograng": 1.361316961266906,
+          "agree_at1": 0.05,
+          "agree_at10": 0.3
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "6": {
+        "0.5": [
+          0.16,
+          0.0
+        ],
+        "1.0": [
+          0.18,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.21,
+          0.0
+        ],
+        "3.0": [
+          0.23,
+          0.0
+        ],
+        "5.0": [
+          0.22,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.62,
+          0.0
+        ],
+        "1.0": [
+          0.85,
+          0.0
+        ],
+        "1.5": [
+          0.92,
+          0.0
+        ],
+        "2.0": [
+          0.92,
+          0.0
+        ],
+        "3.0": [
+          0.93,
+          0.0
+        ],
+        "5.0": [
+          0.97,
+          0.0
+        ]
+      },
+      "16": {
+        "0.5": [
+          0.64,
+          0.0
+        ],
+        "1.0": [
+          0.85,
+          0.0
+        ],
+        "1.5": [
+          0.92,
+          0.0
+        ],
+        "2.0": [
+          0.93,
+          0.0
+        ],
+        "3.0": [
+          0.94,
+          0.0
+        ],
+        "5.0": [
+          0.96,
+          0.0
+        ]
+      },
+      "19": {
+        "0.5": [
+          0.64,
+          0.0
+        ],
+        "1.0": [
+          0.84,
+          0.0
+        ],
+        "1.5": [
+          0.92,
+          0.0
+        ],
+        "2.0": [
+          0.94,
+          0.0
+        ],
+        "3.0": [
+          0.95,
+          0.0
+        ],
+        "5.0": [
+          0.96,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.68,
+          0.0
+        ],
+        "1.0": [
+          0.86,
+          0.0
+        ],
+        "1.5": [
+          0.93,
+          0.0
+        ],
+        "2.0": [
+          0.95,
+          0.0
+        ],
+        "3.0": [
+          0.95,
+          0.0
+        ],
+        "5.0": [
+          0.97,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.37,
+          0.0
+        ],
+        "1.0": [
+          0.53,
+          0.0
+        ],
+        "1.5": [
+          0.7,
+          0.0
+        ],
+        "2.0": [
+          0.79,
+          0.0
+        ],
+        "3.0": [
+          0.86,
+          0.0
+        ],
+        "5.0": [
+          0.96,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 12,
+    "best_beta": 5.0,
+    "best_faith": 0.97,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 100,
+    "requested_n_test": 100,
+    "lm_correct": 93,
+    "per_subject": {
+      "Egidio Ar\u00e9valo Rios": 1,
+      "Woody Strode": 1,
+      "Kevin Love": 1,
+      "Kak\u00e1": 1,
+      "Chuck Connors": 1,
+      "Brett Favre": 1,
+      "Michael Bradley": 1,
+      "Stan Mikita": 1,
+      "Hank Aaron": 1,
+      "Zdeno Ch\u00e1ra": 1,
+      "Joe Namath": 1,
+      "Lawrence Taylor": 1,
+      "Jozy Altidore": 1,
+      "Jim Thorpe": 1,
+      "Allen Iverson": 1,
+      "Carlos Arroyo": 1,
+      "Connie Mack": 1,
+      "Danny Ainge": 1,
+      "Jason Kidd": 1,
+      "Phil Esposito": 1,
+      "Ray Allen": 1,
+      "Steve Nash": 1,
+      "Peyton Manning": 1,
+      "David Andersen": 1,
+      "Elton Brand": 1,
+      "Tim Duncan": 1,
+      "Brian Bosworth": 1,
+      "DaMarcus Beasley": 1,
+      "Bill Russell": 1,
+      "Roberto Clemente": 1,
+      "Emmitt Smith": 1,
+      "Alessandro Nesta": 1,
+      "Derek Jeter": 1,
+      "Deion Sanders": 1,
+      "Ollie Matson": 1,
+      "George Halas": 1,
+      "Alex Rodriguez": 1,
+      "Andreas Ivanschitz": 0,
+      "Tony Gwynn": 1,
+      "Warren Moon": 1,
+      "Arne Friedrich": 0,
+      "Kevin Garnett": 1,
+      "Cy Young": 1,
+      "Gonzalo Higua\u00edn": 1,
+      "Benny Feilhaber": 1,
+      "Dennis Rodman": 1,
+      "Bubba Smith": 1,
+      "Jim Brown": 1,
+      "Hugo S\u00e1nchez": 1,
+      "Frank Mahovlich": 1,
+      "Alexi Lalas": 1,
+      "Jermain Defoe": 1,
+      "Mickey Mantle": 1,
+      "Alan Ball, Jr.": 1,
+      "Jermaine Jones": 1,
+      "Marco Ure\u00f1a": 1,
+      "Leon Allen White": 1,
+      "Carlos Beltr\u00e1n": 1,
+      "Mari\u00e1n Hossa": 1,
+      "Randy Moss": 1,
+      "Dominik Ha\u0161ek": 1,
+      "Lutz Pfannenstiel": 0,
+      "Megan Rapinoe": 1,
+      "Abel Xavier": 1,
+      "Willie Stargell": 1,
+      "Ichiro Suzuki": 1,
+      "Brett Hull": 1,
+      "Frank Robinson": 1,
+      "Dick Butkus": 1,
+      "Herculez Gomez": 1,
+      "Jim Bunning": 1,
+      "Charles Barkley": 1,
+      "Sergei Makarov": 1,
+      "Wayne Rooney": 1,
+      "Antonio Nocerino": 1,
+      "Kobe Bryant": 1,
+      "Pau Gasol": 1,
+      "Brad Friedel": 1,
+      "Ken Dryden": 1,
+      "Bob Cousy": 1,
+      "Tim Horton": 1,
+      "Gordie Howe": 1,
+      "Gary Payton": 1,
+      "Evgeni Malkin": 1,
+      "Joakim Noah": 1,
+      "Pavel Datsyuk": 1,
+      "Giovani dos Santos": 1,
+      "John Olerud": 1,
+      "Howie Morenz": 1,
+      "Honus Wagner": 1,
+      "Willie Mays": 1,
+      "Roger Staubach": 1,
+      "Edgaras Jankauskas": 1,
+      "Lionel Conacher": 1,
+      "Guus Hiddink": 1,
+      "Carmelo Anthony": 1,
+      "Marc Gasol": 1,
+      "Ty Cobb": 1,
+      "Kenny Lofton": 1,
+      "Torsten Frings": 1
+    },
+    "split_fingerprint": "afe34c2a1004",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 20,
+    "layer": 19,
+    "template": "{} plays the sport of",
+    "agg": {
+      "diff": {
+        "median_rank": 82.0,
+        "median_lograng": 1.9152301750154836,
+        "agree_at1": 0.05,
+        "agree_at10": 0.35
+      },
+      "lre": {
+        "median_rank": 208.0,
+        "median_lograng": 2.319967248914409,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Joakim Noah",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 7,
+        "rank_diff": 4,
+        "top_diff": [
+          "Defensive",
+          "defensive",
+          "\u9632\u5b88",
+          "\u7bee\u677f",
+          "basketball"
+        ],
+        "rank_lre": 177,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 177,
+          "0.5": 587,
+          "1.5": 68,
+          "2.0": 24,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Troy Aikman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 6607,
+        "top_diff": [
+          "Throws",
+          "quarterbacks",
+          "quarterback",
+          "Cowboys",
+          "Dallas"
+        ],
+        "rank_lre": 121,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 121,
+          "0.5": 146,
+          "1.5": 100,
+          "2.0": 84,
+          "3.0": 68,
+          "5.0": 59
+        }
+      },
+      {
+        "subject": "Peyton Manning",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 22682,
+        "top_diff": [
+          "quarterbacks",
+          "Peyton",
+          "Manning",
+          "quarterback",
+          "QB"
+        ],
+        "rank_lre": 151,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 151,
+          "0.5": 156,
+          "1.5": 146,
+          "2.0": 148,
+          "3.0": 157,
+          "5.0": 198
+        }
+      },
+      {
+        "subject": "Walter Payton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 7,
+        "rank_diff": 159,
+        "top_diff": [
+          "\u8dd1",
+          "\u5954\u8dd1",
+          "\u901f\u5ea6",
+          "\u8dd1\u6b65",
+          "speed"
+        ],
+        "rank_lre": 67,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 67,
+          "0.5": 104,
+          "1.5": 46,
+          "2.0": 29,
+          "3.0": 11,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Babe Ruth",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 7,
+        "rank_diff": 9,
+        "top_diff": [
+          "lobber",
+          "smashing",
+          "homer",
+          "Babe",
+          "strikeouts"
+        ],
+        "rank_lre": 201,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 201,
+          "0.5": 412,
+          "1.5": 110,
+          "2.0": 61,
+          "3.0": 22,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "Barry Bonds",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 7,
+        "rank_diff": 11,
+        "top_diff": [
+          "steroid",
+          "intimidation",
+          "records",
+          "sniper",
+          "strikeouts"
+        ],
+        "rank_lre": 248,
+        "top_lre": [
+          "his",
+          "many",
+          "being",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 248,
+          "0.5": 434,
+          "1.5": 151,
+          "2.0": 91,
+          "3.0": 43,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Cuauht\u00e9moc Blanco",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 7,
+        "rank_diff": 9,
+        "top_diff": [
+          "MLS",
+          "Mexican",
+          "Hispanic",
+          "M\u00e9xico",
+          "Latino"
+        ],
+        "rank_lre": 422,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 422,
+          "0.5": 954,
+          "1.5": 169,
+          "2.0": 72,
+          "3.0": 17,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Nigel de Jong",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 7,
+        "rank_diff": 213,
+        "top_diff": [
+          "collided",
+          "violent",
+          "retali",
+          "retaliation",
+          "\u5f3a\u786c"
+        ],
+        "rank_lre": 408,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 408,
+          "0.5": 790,
+          "1.5": 225,
+          "2.0": 147,
+          "3.0": 75,
+          "5.0": 59
+        }
+      },
+      {
+        "subject": "Ichiro Suzuki",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 71,
+        "top_diff": [
+          "speedy",
+          "speed",
+          "\u901f\u5ea6\u5feb",
+          "Kawasaki",
+          "outfield"
+        ],
+        "rank_lre": 227,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 227,
+          "0.5": 363,
+          "1.5": 147,
+          "2.0": 105,
+          "3.0": 47,
+          "5.0": 26
+        }
+      },
+      {
+        "subject": "Frank Robinson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 24,
+        "top_diff": [
+          "Orioles",
+          "Baseball",
+          "managerial",
+          "Robinson",
+          "RBI"
+        ],
+        "rank_lre": 173,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 173,
+          "0.5": 316,
+          "1.5": 106,
+          "2.0": 65,
+          "3.0": 24,
+          "5.0": 7
+        }
+      },
+      {
+        "subject": "Olumide Oyedeji",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 110105,
+        "top_diff": [
+          "Everton",
+          "Recipes",
+          "Karnataka",
+          "Nigerian",
+          "Nigeria"
+        ],
+        "rank_lre": 1281,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1281,
+          "0.5": 1266,
+          "1.5": 1327,
+          "2.0": 1364,
+          "3.0": 1473,
+          "5.0": 2085
+        }
+      },
+      {
+        "subject": "Gary Carter",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 191,
+        "top_diff": [
+          "catcher",
+          "Mets",
+          "RBI",
+          "catch",
+          "Staten"
+        ],
+        "rank_lre": 214,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 214,
+          "0.5": 360,
+          "1.5": 127,
+          "2.0": 84,
+          "3.0": 38,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Pete Rose",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 851,
+        "top_diff": [
+          "\u5acc\u7591",
+          "\u79fd",
+          "\u73b7",
+          "/stat",
+          "\u8fb1"
+        ],
+        "rank_lre": 202,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 202,
+          "0.5": 344,
+          "1.5": 131,
+          "2.0": 79,
+          "3.0": 49,
+          "5.0": 20
+        }
+      },
+      {
+        "subject": "Colin Kaepernick",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 9617,
+        "top_diff": [
+          "\u6297\u8bae",
+          "Kaepernick",
+          "kneeling",
+          "protesting",
+          "protest"
+        ],
+        "rank_lre": 107,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 107,
+          "0.5": 130,
+          "1.5": 96,
+          "2.0": 88,
+          "3.0": 71,
+          "5.0": 80
+        }
+      },
+      {
+        "subject": "Phil Esposito",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "scoring",
+          "NHL",
+          "scored",
+          "hockey",
+          "Hockey"
+        ],
+        "rank_lre": 371,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "scoring",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 371,
+          "0.5": 955,
+          "1.5": 148,
+          "2.0": 60,
+          "3.0": 12,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Mari\u00e1n Hossa",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "scoring",
+          "NHL",
+          "scored",
+          "skating",
+          "Hockey"
+        ],
+        "rank_lre": 402,
+        "top_lre": [
+          "his",
+          "being",
+          "scoring",
+          "many",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 402,
+          "0.5": 987,
+          "1.5": 170,
+          "2.0": 87,
+          "3.0": 17,
+          "5.0": 7
+        }
+      },
+      {
+        "subject": "Roy Campanella",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 93,
+        "top_diff": [
+          "catcher",
+          "\u6355",
+          "catch",
+          "catch",
+          "Gentle"
+        ],
+        "rank_lre": 146,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 146,
+          "0.5": 305,
+          "1.5": 85,
+          "2.0": 55,
+          "3.0": 21,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "Claudio Reyna",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "MLS",
+          "soccer",
+          "midfield",
+          "midfielder",
+          "Holland"
+        ],
+        "rank_lre": 165,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 165,
+          "0.5": 489,
+          "1.5": 61,
+          "2.0": 22,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Youri Djorkaeff",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 95,
+        "top_diff": [
+          "\u5df4\u9ece",
+          "\u8fdb\u7403",
+          "goals",
+          "scoring",
+          "\u6cd5\u56fd"
+        ],
+        "rank_lre": 384,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 384,
+          "0.5": 740,
+          "1.5": 202,
+          "2.0": 119,
+          "3.0": 39,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Sidney Crosby",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "hockey",
+          "skating",
+          "Hockey",
+          "\u51b0",
+          "ice"
+        ],
+        "rank_lre": 230,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 230,
+          "0.5": 808,
+          "1.5": 67,
+          "2.0": 24,
+          "3.0": 4,
+          "5.0": 2
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 423.0,
+          "median_lograng": 2.6272196543055193,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 208.0,
+          "median_lograng": 2.319967248914409,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 129.0,
+          "median_lograng": 2.113891950426859,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 81.5,
+          "median_lograng": 1.9162544563531183,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 31.0,
+          "median_lograng": 1.4945023078492685,
+          "agree_at1": 0.0,
+          "agree_at10": 0.15
+        },
+        "5.0": {
+          "median_rank": 10.0,
+          "median_lograng": 1.0395906230238126,
+          "agree_at1": 0.05,
+          "agree_at10": 0.5
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Joakim Noah": 4,
+    "Troy Aikman": 5,
+    "Peyton Manning": 4,
+    "Walter Payton": 4,
+    "Babe Ruth": 3,
+    "Barry Bonds": 3,
+    "Cuauht\u00e9moc Blanco": 6,
+    "Nigel de Jong": 4,
+    "Ichiro Suzuki": 3,
+    "Frank Robinson": 2,
+    "Olumide Oyedeji": 7,
+    "Gary Carter": 2,
+    "Pete Rose": 3,
+    "Colin Kaepernick": 3,
+    "Phil Esposito": 4,
+    "Mari\u00e1n Hossa": 4,
+    "Roy Campanella": 4,
+    "Claudio Reyna": 4,
+    "Youri Djorkaeff": 6,
+    "Sidney Crosby": 3
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "fa15a183c794",
+  "baseline_sha256": {
+    "results/five_model_sweep/qwen3_8b_base/main/person_plays_pro_sport.json": "c372c2e36f8f0fc0df27128dd097233455c733e91fdd4b955211597e9717b2db"
+  },
+  "data_sha256": "adfea3a51c0315818a63ec0a421fba45818f3854212f9999910c80eac934165c",
+  "elapsed_seconds": 4.537785053253174
+}

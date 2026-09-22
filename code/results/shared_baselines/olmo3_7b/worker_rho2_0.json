@@ -1,0 +1,30 @@
+{
+  "name": "olmo3_7b",
+  "model_id": "allenai/Olmo-3-1025-7B",
+  "lens_layer": 17,
+  "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "prompt": "\n{} is known for",
+  "protocol": "shared_split",
+  "dtype": "float32",
+  "attention": "eager",
+  "host": "rho2",
+  "worker": "rho2_0",
+  "batch_size": 4,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.3113021850585938e-06,
+    "finite_difference_relative_error": 0.0004175077483523637
+  },
+  "convolution_check": null,
+  "prefix_cache_check": null,
+  "torch": "2.14.0+cu130",
+  "transformers": "5.17.0",
+  "source_sha256": {
+    "scripts/run_shared_baselines.py": "68d855a6bed501567a2fa684f67fd3541d4b2553769594a194d9a04406e8f57f",
+    "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+    "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+    "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40",
+    "jlens/prefix_intervention.py": "be9de46a2dc730f29a787a01611de923158bfcb4331349c1cb09d3dcd4d017df",
+    "jlens/measure_answer_prior.py": "f58b269b48e0966907d491afdd359ac081ab2d93fd039bbdf2deff47acb682b1"
+  }
+}

@@ -1,0 +1,2048 @@
+{
+  "relation": "superhero_person",
+  "protocol": "shared_split",
+  "prompt_name": "described_as",
+  "lens": {
+    "n": 63,
+    "layer": 19,
+    "template": "{}'s secret identity is",
+    "agg": {
+      "diff": {
+        "median_rank": 158.0,
+        "median_lograng": 2.2013971243204513,
+        "agree_at1": 0.031746031746031744,
+        "agree_at10": 0.15873015873015872
+      },
+      "lre": {
+        "median_rank": 848.0,
+        "median_lograng": 2.928907690243953,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Wonder Woman",
+        "model_top1_id": 44409,
+        "model_top1": "Diana",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Diana",
+          "Wonder",
+          "feminist",
+          "DC",
+          "DC"
+        ],
+        "rank_lre": 522,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 522,
+          "0.5": 1870,
+          "1.5": 138,
+          "2.0": 45,
+          "3.0": 9,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "She-Hulk",
+        "model_top1_id": 29650,
+        "model_top1": "Jennifer",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "Hulk",
+          "Marvel",
+          "Avengers",
+          "Marvel",
+          "MCU"
+        ],
+        "rank_lre": 1265,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1265,
+          "0.5": 2769,
+          "1.5": 621,
+          "2.0": 292,
+          "3.0": 79,
+          "5.0": 24
+        }
+      },
+      {
+        "subject": "Green Arrow",
+        "model_top1_id": 30246,
+        "model_top1": "Oliver",
+        "n_references": 8,
+        "rank_diff": 90,
+        "top_diff": [
+          "DC",
+          "Arrow",
+          "Arrow",
+          "Robin",
+          "Arsenal"
+        ],
+        "rank_lre": 746,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 746,
+          "0.5": 1246,
+          "1.5": 478,
+          "2.0": 300,
+          "3.0": 128,
+          "5.0": 45
+        }
+      },
+      {
+        "subject": "Mr. Fantastic",
+        "model_top1_id": 35421,
+        "model_top1": "Reed",
+        "n_references": 8,
+        "rank_diff": 25,
+        "top_diff": [
+          "Fantastic",
+          "physicist",
+          "Marvel",
+          "Marvel",
+          "Franklin"
+        ],
+        "rank_lre": 2752,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2752,
+          "0.5": 4423,
+          "1.5": 1724,
+          "2.0": 1122,
+          "3.0": 468,
+          "5.0": 107
+        }
+      },
+      {
+        "subject": "Nightwing",
+        "model_top1_id": 22557,
+        "model_top1": "Dick",
+        "n_references": 8,
+        "rank_diff": 44,
+        "top_diff": [
+          "Batman",
+          "\u8759",
+          "Batman",
+          "Gotham",
+          "Bat"
+        ],
+        "rank_lre": 890,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 890,
+          "0.5": 1654,
+          "1.5": 531,
+          "2.0": 293,
+          "3.0": 103,
+          "5.0": 40
+        }
+      },
+      {
+        "subject": "Rocket",
+        "model_top1_id": 39218,
+        "model_top1": "Rocket",
+        "n_references": 8,
+        "rank_diff": 23156,
+        "top_diff": [
+          "\u57fa\u7763\u6559",
+          "\u597d\u83b1",
+          "Wars",
+          "/star",
+          "icago"
+        ],
+        "rank_lre": 894,
+        "top_lre": [
+          "arguably",
+          "Christopher",
+          "Wikipedia",
+          "perhaps",
+          "Christianity"
+        ],
+        "rank_lre_beta": {
+          "1.0": 894,
+          "0.5": 436,
+          "1.5": 2178,
+          "2.0": 4002,
+          "3.0": 7435,
+          "5.0": 12058
+        }
+      },
+      {
+        "subject": "Spoiler",
+        "model_top1_id": 425,
+        "model_top1": "B",
+        "n_references": 8,
+        "rank_diff": 86523,
+        "top_diff": [
+          "\u57fa\u7763\u6559",
+          "\u597d\u83b1",
+          ".tv",
+          "Wars",
+          "icago"
+        ],
+        "rank_lre": 4419,
+        "top_lre": [
+          "Christopher",
+          "arguably",
+          "Wikipedia",
+          "Christianity",
+          "Winnipeg"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4419,
+          "0.5": 491,
+          "1.5": 14892,
+          "2.0": 26259,
+          "3.0": 42928,
+          "5.0": 62444
+        }
+      },
+      {
+        "subject": "Gambit",
+        "model_top1_id": 431,
+        "model_top1": "R",
+        "n_references": 8,
+        "rank_diff": 19248,
+        "top_diff": [
+          "Gamb",
+          "Deadpool",
+          "\u6e38\u51fb",
+          "\u6e58\u897f",
+          "Wolverine"
+        ],
+        "rank_lre": 150,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 150,
+          "0.5": 157,
+          "1.5": 145,
+          "2.0": 135,
+          "3.0": 131,
+          "5.0": 147
+        }
+      },
+      {
+        "subject": "Booster Gold",
+        "model_top1_id": 85683,
+        "model_top1": "Clifford",
+        "n_references": 8,
+        "rank_diff": 686,
+        "top_diff": [
+          "Superman",
+          "DC",
+          "Booster",
+          "DC",
+          "superhero"
+        ],
+        "rank_lre": 5467,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5467,
+          "0.5": 6829,
+          "1.5": 4352,
+          "2.0": 3524,
+          "3.0": 2402,
+          "5.0": 1436
+        }
+      },
+      {
+        "subject": "Spider-Man",
+        "model_top1_id": 11044,
+        "model_top1": "Peter",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "Spider",
+          "Spider",
+          "\u8718\u86db",
+          "spider",
+          "spiders"
+        ],
+        "rank_lre": 56,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 56,
+          "0.5": 131,
+          "1.5": 28,
+          "2.0": 14,
+          "3.0": 6,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Doctor Strange",
+        "model_top1_id": 18095,
+        "model_top1": "Stephen",
+        "n_references": 8,
+        "rank_diff": 44,
+        "top_diff": [
+          "Marvel",
+          "Marvel",
+          "Spider",
+          "Avengers",
+          "Strange"
+        ],
+        "rank_lre": 381,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 381,
+          "0.5": 722,
+          "1.5": 195,
+          "2.0": 119,
+          "3.0": 50,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Shadowcat",
+        "model_top1_id": 66181,
+        "model_top1": "Kitty",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Wolverine",
+          "mutant",
+          "mutants",
+          "Spider",
+          "Wolver"
+        ],
+        "rank_lre": 3138,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3138,
+          "0.5": 5557,
+          "1.5": 1670,
+          "2.0": 902,
+          "3.0": 254,
+          "5.0": 41
+        }
+      },
+      {
+        "subject": "Black Lightning",
+        "model_top1_id": 33544,
+        "model_top1": "Jefferson",
+        "n_references": 8,
+        "rank_diff": 134,
+        "top_diff": [
+          "DC",
+          "Harlem",
+          "DC",
+          "dc",
+          "_DC"
+        ],
+        "rank_lre": 3463,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3463,
+          "0.5": 5441,
+          "1.5": 2137,
+          "2.0": 1322,
+          "3.0": 572,
+          "5.0": 176
+        }
+      },
+      {
+        "subject": "Ms. Marvel",
+        "model_top1_id": 28449,
+        "model_top1": "Kam",
+        "n_references": 8,
+        "rank_diff": 102,
+        "top_diff": [
+          "Marvel",
+          "Avengers",
+          "Pakistani",
+          "Marvel",
+          "MCU"
+        ],
+        "rank_lre": 3244,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3244,
+          "0.5": 5228,
+          "1.5": 2022,
+          "2.0": 1300,
+          "3.0": 581,
+          "5.0": 195
+        }
+      },
+      {
+        "subject": "Captain Marvel",
+        "model_top1_id": 10252,
+        "model_top1": "Carol",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Avengers",
+          "Marvel",
+          "Marvel",
+          "MCU",
+          "Squadron"
+        ],
+        "rank_lre": 488,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 488,
+          "0.5": 1160,
+          "1.5": 206,
+          "2.0": 99,
+          "3.0": 30,
+          "5.0": 10
+        }
+      },
+      {
+        "subject": "Groot",
+        "model_top1_id": 479,
+        "model_top1": "G",
+        "n_references": 8,
+        "rank_diff": 7913,
+        "top_diff": [
+          "\u5927\u6811",
+          "tree",
+          "/tree",
+          "\u4e00\u68f5",
+          "Hulk"
+        ],
+        "rank_lre": 222,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 222,
+          "0.5": 271,
+          "1.5": 207,
+          "2.0": 200,
+          "3.0": 184,
+          "5.0": 203
+        }
+      },
+      {
+        "subject": "Superman",
+        "model_top1_id": 21304,
+        "model_top1": "Clark",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Superman",
+          "Clark",
+          "Clark",
+          "Batman",
+          "Super"
+        ],
+        "rank_lre": 161,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 161,
+          "0.5": 544,
+          "1.5": 56,
+          "2.0": 19,
+          "3.0": 7,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Iron Man",
+        "model_top1_id": 18528,
+        "model_top1": "Tony",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "\u94a2\u94c1",
+          "Iron",
+          "Tony",
+          "Avengers",
+          "IRON"
+        ],
+        "rank_lre": 51,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 51,
+          "0.5": 178,
+          "1.5": 16,
+          "2.0": 5,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1_id": 19851,
+        "model_top1": "Hal",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Lantern",
+          "lantern",
+          "DC",
+          "DC",
+          "-green"
+        ],
+        "rank_lre": 848,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 848,
+          "0.5": 1655,
+          "1.5": 447,
+          "2.0": 242,
+          "3.0": 83,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "The Atom",
+        "model_top1_id": 13255,
+        "model_top1": "Ray",
+        "n_references": 7,
+        "rank_diff": 7034,
+        "top_diff": [
+          "Atom",
+          "\u539f\u5b50",
+          "atom",
+          "Atom",
+          "_atom"
+        ],
+        "rank_lre": 879,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 879,
+          "0.5": 1025,
+          "1.5": 772,
+          "2.0": 679,
+          "3.0": 542,
+          "5.0": 466
+        }
+      },
+      {
+        "subject": "Black Panther",
+        "model_top1_id": 350,
+        "model_top1": "T",
+        "n_references": 8,
+        "rank_diff": 24607,
+        "top_diff": [
+          "Panther",
+          "Afro",
+          "African",
+          "Marvel",
+          "\u975e\u6d32"
+        ],
+        "rank_lre": 257,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 257,
+          "0.5": 258,
+          "1.5": 265,
+          "2.0": 275,
+          "3.0": 342,
+          "5.0": 639
+        }
+      },
+      {
+        "subject": "The Flash",
+        "model_top1_id": 30758,
+        "model_top1": "Barry",
+        "n_references": 8,
+        "rank_diff": 155,
+        "top_diff": [
+          "\u95ea\u7535",
+          "Flash",
+          "sped",
+          "speed",
+          "FLASH"
+        ],
+        "rank_lre": 556,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 556,
+          "0.5": 959,
+          "1.5": 313,
+          "2.0": 186,
+          "3.0": 84,
+          "5.0": 46
+        }
+      },
+      {
+        "subject": "Professor X",
+        "model_top1_id": 14927,
+        "model_top1": "Charles",
+        "n_references": 8,
+        "rank_diff": 515,
+        "top_diff": [
+          "Wolverine",
+          "\u6559\u6388",
+          "Professor",
+          "XPath",
+          "Dumbledore"
+        ],
+        "rank_lre": 329,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 329,
+          "0.5": 490,
+          "1.5": 220,
+          "2.0": 152,
+          "3.0": 77,
+          "5.0": 39
+        }
+      },
+      {
+        "subject": "The Thing",
+        "model_top1_id": 7355,
+        "model_top1": "Ben",
+        "n_references": 8,
+        "rank_diff": 13748,
+        "top_diff": [
+          "Manitoba",
+          "Antarctic",
+          "Fargo",
+          "Alien",
+          "yeti"
+        ],
+        "rank_lre": 777,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 777,
+          "0.5": 867,
+          "1.5": 731,
+          "2.0": 689,
+          "3.0": 699,
+          "5.0": 918
+        }
+      },
+      {
+        "subject": "Batwoman",
+        "model_top1_id": 29201,
+        "model_top1": "Kate",
+        "n_references": 8,
+        "rank_diff": 107,
+        "top_diff": [
+          "Gotham",
+          "Batman",
+          "\u8759",
+          "DC",
+          "lesbian"
+        ],
+        "rank_lre": 2818,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 2818,
+          "0.5": 4744,
+          "1.5": 1660,
+          "2.0": 952,
+          "3.0": 365,
+          "5.0": 104
+        }
+      },
+      {
+        "subject": "Ghost Rider",
+        "model_top1_id": 31880,
+        "model_top1": "Johnny",
+        "n_references": 8,
+        "rank_diff": 98,
+        "top_diff": [
+          "motorcycle",
+          "Venom",
+          "Wolverine",
+          "demonic",
+          "\u5730\u72f1"
+        ],
+        "rank_lre": 352,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 352,
+          "0.5": 625,
+          "1.5": 197,
+          "2.0": 128,
+          "3.0": 66,
+          "5.0": 34
+        }
+      },
+      {
+        "subject": "Supergirl",
+        "model_top1_id": 78350,
+        "model_top1": "Kara",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Superman",
+          "Kara",
+          "Kansas",
+          "DC",
+          "Diana"
+        ],
+        "rank_lre": 1606,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1606,
+          "0.5": 4060,
+          "1.5": 634,
+          "2.0": 242,
+          "3.0": 43,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Pixie",
+        "model_top1_id": 49466,
+        "model_top1": "Pix",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "\u7cbe\u7075",
+          "Fairy",
+          "fairy",
+          "adorable",
+          "cute"
+        ],
+        "rank_lre": 4508,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4508,
+          "0.5": 7829,
+          "1.5": 2366,
+          "2.0": 1273,
+          "3.0": 375,
+          "5.0": 59
+        }
+      },
+      {
+        "subject": "Hawkeye",
+        "model_top1_id": 55029,
+        "model_top1": "Clint",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Avengers",
+          "Clint",
+          "Marvel",
+          "Haw",
+          "\u6cb3\u5357"
+        ],
+        "rank_lre": 508,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 508,
+          "0.5": 1348,
+          "1.5": 161,
+          "2.0": 65,
+          "3.0": 14,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Black Canary",
+        "model_top1_id": 44773,
+        "model_top1": "Din",
+        "n_references": 8,
+        "rank_diff": 2254,
+        "top_diff": [
+          "DC",
+          "Gotham",
+          "sonic",
+          "Canary",
+          "Batman"
+        ],
+        "rank_lre": 3616,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3616,
+          "0.5": 4471,
+          "1.5": 2969,
+          "2.0": 2456,
+          "3.0": 1827,
+          "5.0": 1294
+        }
+      },
+      {
+        "subject": "Iron Fist",
+        "model_top1_id": 32599,
+        "model_top1": "Danny",
+        "n_references": 8,
+        "rank_diff": 536,
+        "top_diff": [
+          "Wolverine",
+          "\u6b66\u672f",
+          "Sikh",
+          "martial",
+          "Wolver"
+        ],
+        "rank_lre": 747,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 747,
+          "0.5": 1221,
+          "1.5": 484,
+          "2.0": 307,
+          "3.0": 156,
+          "5.0": 87
+        }
+      },
+      {
+        "subject": "Wasp",
+        "model_top1_id": 53665,
+        "model_top1": "Janet",
+        "n_references": 8,
+        "rank_diff": 16941,
+        "top_diff": [
+          "\u6606\u866b",
+          "insect",
+          "insects",
+          "\u866b",
+          "ants"
+        ],
+        "rank_lre": 8560,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8560,
+          "0.5": 9118,
+          "1.5": 8013,
+          "2.0": 7574,
+          "3.0": 6826,
+          "5.0": 6034
+        }
+      },
+      {
+        "subject": "Black Widow",
+        "model_top1_id": 86666,
+        "model_top1": "Natasha",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Spider",
+          "\u8718\u86db",
+          "Spider",
+          "spider",
+          "Venom"
+        ],
+        "rank_lre": 1281,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1281,
+          "0.5": 3583,
+          "1.5": 452,
+          "2.0": 158,
+          "3.0": 28,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Iceman",
+        "model_top1_id": 37381,
+        "model_top1": "Bobby",
+        "n_references": 8,
+        "rank_diff": 2469,
+        "top_diff": [
+          "\u51bb",
+          "\u96ea\u5c71",
+          "skiing",
+          "\u51b0",
+          "glacier"
+        ],
+        "rank_lre": 3525,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3525,
+          "0.5": 4326,
+          "1.5": 2859,
+          "2.0": 2318,
+          "3.0": 1606,
+          "5.0": 1036
+        }
+      },
+      {
+        "subject": "Captain America",
+        "model_top1_id": 13809,
+        "model_top1": "Steve",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Avengers",
+          "Captain",
+          "patriotic",
+          "NATO",
+          "Marvel"
+        ],
+        "rank_lre": 94,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 94,
+          "0.5": 240,
+          "1.5": 40,
+          "2.0": 16,
+          "3.0": 5,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1_id": 19851,
+        "model_top1": "Hal",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Lantern",
+          "lantern",
+          "DC",
+          "DC",
+          "-green"
+        ],
+        "rank_lre": 848,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 848,
+          "0.5": 1655,
+          "1.5": 447,
+          "2.0": 242,
+          "3.0": 83,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1_id": 19851,
+        "model_top1": "Hal",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Lantern",
+          "lantern",
+          "DC",
+          "DC",
+          "-green"
+        ],
+        "rank_lre": 848,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 848,
+          "0.5": 1655,
+          "1.5": 447,
+          "2.0": 242,
+          "3.0": 83,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Wolverine",
+        "model_top1_id": 7801,
+        "model_top1": "James",
+        "n_references": 8,
+        "rank_diff": 612,
+        "top_diff": [
+          "Wolverine",
+          "Wolver",
+          "claws",
+          "mutant",
+          "mutants"
+        ],
+        "rank_lre": 277,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 277,
+          "0.5": 431,
+          "1.5": 196,
+          "2.0": 142,
+          "3.0": 87,
+          "5.0": 68
+        }
+      },
+      {
+        "subject": "Storm",
+        "model_top1_id": 2521,
+        "model_top1": "Or",
+        "n_references": 8,
+        "rank_diff": 61750,
+        "top_diff": [
+          "\u57fa\u7763\u6559",
+          "\u597d\u83b1",
+          "Wars",
+          "icago",
+          ".tv"
+        ],
+        "rank_lre": 3072,
+        "top_lre": [
+          "Christopher",
+          "arguably",
+          "Wikipedia",
+          "Christianity",
+          "Winnipeg"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3072,
+          "0.5": 614,
+          "1.5": 9043,
+          "2.0": 15854,
+          "3.0": 26419,
+          "5.0": 37830
+        }
+      },
+      {
+        "subject": "Robin",
+        "model_top1_id": 22557,
+        "model_top1": "Dick",
+        "n_references": 8,
+        "rank_diff": 122838,
+        "top_diff": [
+          "\u57fa\u7763\u6559",
+          "\u597d\u83b1",
+          "Wars",
+          "/star",
+          "icago"
+        ],
+        "rank_lre": 43292,
+        "top_lre": [
+          "Christopher",
+          "arguably",
+          "Wikipedia",
+          "Christianity",
+          "Winnipeg"
+        ],
+        "rank_lre_beta": {
+          "1.0": 43292,
+          "0.5": 10336,
+          "1.5": 75939,
+          "2.0": 91752,
+          "3.0": 104881,
+          "5.0": 113540
+        }
+      },
+      {
+        "subject": "Spider-Girl",
+        "model_top1_id": 69331,
+        "model_top1": "Cindy",
+        "n_references": 8,
+        "rank_diff": 71,
+        "top_diff": [
+          "Gwen",
+          "Spider",
+          "Latina",
+          "\u5c0f\u59d1\u5a18",
+          "Deadpool"
+        ],
+        "rank_lre": 3395,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3395,
+          "0.5": 5456,
+          "1.5": 2027,
+          "2.0": 1235,
+          "3.0": 500,
+          "5.0": 119
+        }
+      },
+      {
+        "subject": "X-23",
+        "model_top1_id": 29828,
+        "model_top1": "Laura",
+        "n_references": 8,
+        "rank_diff": 346,
+        "top_diff": [
+          "Wolverine",
+          "mutants",
+          "mutant",
+          "Wolver",
+          "Deadpool"
+        ],
+        "rank_lre": 2645,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 2645,
+          "0.5": 3898,
+          "1.5": 1801,
+          "2.0": 1280,
+          "3.0": 670,
+          "5.0": 282
+        }
+      },
+      {
+        "subject": "Power Man",
+        "model_top1_id": 24453,
+        "model_top1": "Luke",
+        "n_references": 8,
+        "rank_diff": 370,
+        "top_diff": [
+          "Wolverine",
+          "Marvel",
+          "Avengers",
+          "Tony",
+          "Marvel"
+        ],
+        "rank_lre": 561,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 561,
+          "0.5": 815,
+          "1.5": 399,
+          "2.0": 290,
+          "3.0": 175,
+          "5.0": 125
+        }
+      },
+      {
+        "subject": "Big Barda",
+        "model_top1_id": 63204,
+        "model_top1": "Bard",
+        "n_references": 8,
+        "rank_diff": 857,
+        "top_diff": [
+          "Superman",
+          "DC",
+          "Gotham",
+          "Hulk",
+          "Hercules"
+        ],
+        "rank_lre": 7299,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7299,
+          "0.5": 9308,
+          "1.5": 5791,
+          "2.0": 4642,
+          "3.0": 3080,
+          "5.0": 1638
+        }
+      },
+      {
+        "subject": "Red Hood",
+        "model_top1_id": 18477,
+        "model_top1": "Jason",
+        "n_references": 8,
+        "rank_diff": 82,
+        "top_diff": [
+          "Batman",
+          "Gotham",
+          "Batman",
+          "Robin",
+          "\u8759"
+        ],
+        "rank_lre": 485,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 485,
+          "0.5": 835,
+          "1.5": 276,
+          "2.0": 166,
+          "3.0": 73,
+          "5.0": 36
+        }
+      },
+      {
+        "subject": "Brawn",
+        "model_top1_id": 425,
+        "model_top1": "B",
+        "n_references": 8,
+        "rank_diff": 14231,
+        "top_diff": [
+          "NASCAR",
+          "\u8d5b\u8f66",
+          "Ferrari",
+          "motors",
+          "\u8f66\u961f"
+        ],
+        "rank_lre": 195,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 195,
+          "0.5": 210,
+          "1.5": 183,
+          "2.0": 178,
+          "3.0": 173,
+          "5.0": 215
+        }
+      },
+      {
+        "subject": "Beast Boy",
+        "model_top1_id": 12193,
+        "model_top1": "Gar",
+        "n_references": 8,
+        "rank_diff": 18879,
+        "top_diff": [
+          "mutant",
+          "mutate",
+          "\u8760",
+          "mutated",
+          "teleport"
+        ],
+        "rank_lre": 1622,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1622,
+          "0.5": 1707,
+          "1.5": 1601,
+          "2.0": 1609,
+          "3.0": 1727,
+          "5.0": 2081
+        }
+      },
+      {
+        "subject": "Human Torch",
+        "model_top1_id": 31880,
+        "model_top1": "Johnny",
+        "n_references": 8,
+        "rank_diff": 4549,
+        "top_diff": [
+          "Torch",
+          "mutants",
+          "Mushroom",
+          "\u70ac",
+          "\u706b\u70ac"
+        ],
+        "rank_lre": 768,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 768,
+          "0.5": 901,
+          "1.5": 674,
+          "2.0": 585,
+          "3.0": 451,
+          "5.0": 342
+        }
+      },
+      {
+        "subject": "Winter Soldier",
+        "model_top1_id": 425,
+        "model_top1": "B",
+        "n_references": 8,
+        "rank_diff": 17028,
+        "top_diff": [
+          "Wolverine",
+          "Soldier",
+          "soldier",
+          "Soldiers",
+          "Avengers"
+        ],
+        "rank_lre": 186,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 186,
+          "0.5": 207,
+          "1.5": 173,
+          "2.0": 175,
+          "3.0": 209,
+          "5.0": 423
+        }
+      },
+      {
+        "subject": "Starfire",
+        "model_top1_id": 730,
+        "model_top1": "K",
+        "n_references": 8,
+        "rank_diff": 9042,
+        "top_diff": [
+          "lesbian",
+          "lunar",
+          "lesbians",
+          "wing",
+          "Princess"
+        ],
+        "rank_lre": 284,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 284,
+          "0.5": 312,
+          "1.5": 276,
+          "2.0": 267,
+          "3.0": 275,
+          "5.0": 406
+        }
+      },
+      {
+        "subject": "Catwoman",
+        "model_top1_id": 23204,
+        "model_top1": "Sel",
+        "n_references": 8,
+        "rank_diff": 128,
+        "top_diff": [
+          "\u8759",
+          "Batman",
+          "Gotham",
+          "Batman",
+          "femme"
+        ],
+        "rank_lre": 973,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 973,
+          "0.5": 1739,
+          "1.5": 609,
+          "2.0": 354,
+          "3.0": 136,
+          "5.0": 59
+        }
+      },
+      {
+        "subject": "Green Arrow",
+        "model_top1_id": 30246,
+        "model_top1": "Oliver",
+        "n_references": 8,
+        "rank_diff": 90,
+        "top_diff": [
+          "DC",
+          "Arrow",
+          "Arrow",
+          "Robin",
+          "Arsenal"
+        ],
+        "rank_lre": 746,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 746,
+          "0.5": 1246,
+          "1.5": 478,
+          "2.0": 300,
+          "3.0": 128,
+          "5.0": 45
+        }
+      },
+      {
+        "subject": "Falcon",
+        "model_top1_id": 8224,
+        "model_top1": "Sam",
+        "n_references": 8,
+        "rank_diff": 17390,
+        "top_diff": [
+          "Falcon",
+          "Falcons",
+          "\u9e1f\u7c7b",
+          "\u96bc",
+          "Raptors"
+        ],
+        "rank_lre": 353,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 353,
+          "0.5": 392,
+          "1.5": 331,
+          "2.0": 310,
+          "3.0": 337,
+          "5.0": 481
+        }
+      },
+      {
+        "subject": "Hellblazer",
+        "model_top1_id": 3757,
+        "model_top1": "John",
+        "n_references": 8,
+        "rank_diff": 589,
+        "top_diff": [
+          "DC",
+          "occult",
+          "Essex",
+          "Lucifer",
+          "Comics"
+        ],
+        "rank_lre": 139,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 139,
+          "0.5": 192,
+          "1.5": 113,
+          "2.0": 78,
+          "3.0": 56,
+          "5.0": 48
+        }
+      },
+      {
+        "subject": "Hawkman",
+        "model_top1_id": 24563,
+        "model_top1": "Carter",
+        "n_references": 8,
+        "rank_diff": 158,
+        "top_diff": [
+          "wing",
+          "flight",
+          "flying",
+          "\u7a7a\u519b",
+          "flown"
+        ],
+        "rank_lre": 2222,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2222,
+          "0.5": 3387,
+          "1.5": 1466,
+          "2.0": 1009,
+          "3.0": 496,
+          "5.0": 157
+        }
+      },
+      {
+        "subject": "Raven",
+        "model_top1_id": 45107,
+        "model_top1": "Raven",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Raven",
+          "Ravens",
+          "\u9e1f\u7c7b",
+          "bird",
+          "\u9e2e"
+        ],
+        "rank_lre": 748,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 748,
+          "0.5": 1798,
+          "1.5": 292,
+          "2.0": 128,
+          "3.0": 22,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Martian Manhunter",
+        "model_top1_id": 619,
+        "model_top1": "J",
+        "n_references": 8,
+        "rank_diff": 1733,
+        "top_diff": [
+          "\u8759",
+          "Superman",
+          "DC",
+          "DC",
+          "\u8760"
+        ],
+        "rank_lre": 137,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 137,
+          "0.5": 164,
+          "1.5": 112,
+          "2.0": 99,
+          "3.0": 75,
+          "5.0": 67
+        }
+      },
+      {
+        "subject": "Hawkgirl",
+        "model_top1_id": 1417,
+        "model_top1": "Sh",
+        "n_references": 8,
+        "rank_diff": 4378,
+        "top_diff": [
+          "DC",
+          "DC",
+          "Squadron",
+          "wing",
+          "Diana"
+        ],
+        "rank_lre": 250,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 250,
+          "0.5": 302,
+          "1.5": 224,
+          "2.0": 199,
+          "3.0": 181,
+          "5.0": 219
+        }
+      },
+      {
+        "subject": "Ravager",
+        "model_top1_id": 51709,
+        "model_top1": "Neb",
+        "n_references": 8,
+        "rank_diff": 1747,
+        "top_diff": [
+          "\u9b54\u517d",
+          "Venom",
+          "Predator",
+          "Horde",
+          "Fallout"
+        ],
+        "rank_lre": 1906,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "\""
+        ],
+        "rank_lre_beta": {
+          "1.0": 1906,
+          "0.5": 2515,
+          "1.5": 1462,
+          "2.0": 1160,
+          "3.0": 837,
+          "5.0": 640
+        }
+      },
+      {
+        "subject": "Oracle",
+        "model_top1_id": 31107,
+        "model_top1": "Barbara",
+        "n_references": 8,
+        "rank_diff": 53511,
+        "top_diff": [
+          "\u57fa\u7763\u6559",
+          "\u597d\u83b1",
+          "\u7b97",
+          "Wars",
+          ".tv"
+        ],
+        "rank_lre": 6570,
+        "top_lre": [
+          "Christopher",
+          "arguably",
+          "Wikipedia",
+          "Christianity",
+          "Winnipeg"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6570,
+          "0.5": 2406,
+          "1.5": 13497,
+          "2.0": 19572,
+          "3.0": 27710,
+          "5.0": 35941
+        }
+      },
+      {
+        "subject": "The Flash",
+        "model_top1_id": 30758,
+        "model_top1": "Barry",
+        "n_references": 8,
+        "rank_diff": 155,
+        "top_diff": [
+          "\u95ea\u7535",
+          "Flash",
+          "sped",
+          "speed",
+          "FLASH"
+        ],
+        "rank_lre": 556,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 556,
+          "0.5": 959,
+          "1.5": 313,
+          "2.0": 186,
+          "3.0": 84,
+          "5.0": 46
+        }
+      },
+      {
+        "subject": "Firestar",
+        "model_top1_id": 11563,
+        "model_top1": "Dan",
+        "n_references": 8,
+        "rank_diff": 64048,
+        "top_diff": [
+          "fiery",
+          "Lion",
+          "wildfire",
+          "Fire",
+          "Flame"
+        ],
+        "rank_lre": 2116,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2116,
+          "0.5": 1819,
+          "1.5": 2472,
+          "2.0": 2865,
+          "3.0": 3832,
+          "5.0": 5947
+        }
+      },
+      {
+        "subject": "Huntress",
+        "model_top1_id": 71946,
+        "model_top1": "Helena",
+        "n_references": 8,
+        "rank_diff": 47,
+        "top_diff": [
+          "Assassin",
+          "Overwatch",
+          "goddess",
+          "assassin",
+          "Arsenal"
+        ],
+        "rank_lre": 7491,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7491,
+          "0.5": 11849,
+          "1.5": 4478,
+          "2.0": 2544,
+          "3.0": 831,
+          "5.0": 178
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 1246.0,
+          "median_lograng": 3.0958664534785427,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 848.0,
+          "median_lograng": 2.928907690243953,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 478.0,
+          "median_lograng": 2.680335513414563,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 293.0,
+          "median_lograng": 2.4683473304121573,
+          "agree_at1": 0.0,
+          "agree_at10": 0.015873015873015872
+        },
+        "3.0": {
+          "median_rank": 181.0,
+          "median_lograng": 2.2600713879850747,
+          "agree_at1": 0.0,
+          "agree_at10": 0.07936507936507936
+        },
+        "5.0": {
+          "median_rank": 107.0,
+          "median_lograng": 2.03342375548695,
+          "agree_at1": 0.0,
+          "agree_at10": 0.14285714285714285
+        }
+      }
+    },
+    "split_fingerprint": "cc9d0623a978",
+    "legacy_split": false,
+    "neutral_prompt": "{} can be described as"
+  },
+  "positions": {
+    "Phoenix": 0,
+    "Daredevil": 2,
+    "Firestorm": 1,
+    "The Atom": 1,
+    "Nightcrawler": 1,
+    "Silver Surfer": 2,
+    "Kid Flash": 1,
+    "Colossus": 2,
+    "Wonder Woman": 1,
+    "She-Hulk": 2,
+    "Green Arrow": 1,
+    "Mr. Fantastic": 2,
+    "Nightwing": 1,
+    "Rocket": 0,
+    "Spoiler": 0,
+    "Gambit": 2,
+    "Booster Gold": 2,
+    "Spider-Man": 1,
+    "Doctor Strange": 1,
+    "Shadowcat": 1,
+    "Black Lightning": 1,
+    "Ms. Marvel": 2,
+    "Captain Marvel": 1,
+    "Groot": 1,
+    "Superman": 1,
+    "Iron Man": 1,
+    "Green Lantern": 1,
+    "Black Panther": 1,
+    "The Flash": 1,
+    "Professor X": 1,
+    "The Thing": 1,
+    "Batwoman": 1,
+    "Ghost Rider": 1,
+    "Supergirl": 2,
+    "Pixie": 1,
+    "Hawkeye": 3,
+    "Black Canary": 1,
+    "Iron Fist": 1,
+    "Wasp": 1,
+    "Black Widow": 1,
+    "Iceman": 2,
+    "Captain America": 1,
+    "Wolverine": 2,
+    "Storm": 0,
+    "Robin": 0,
+    "Spider-Girl": 2,
+    "X-23": 3,
+    "Power Man": 1,
+    "Big Barda": 2,
+    "Red Hood": 1,
+    "Brawn": 1,
+    "Beast Boy": 2,
+    "Human Torch": 1,
+    "Winter Soldier": 1,
+    "Starfire": 1,
+    "Catwoman": 1,
+    "Falcon": 1,
+    "Hellblazer": 2,
+    "Hawkman": 2,
+    "Raven": 1,
+    "Martian Manhunter": 3,
+    "Hawkgirl": 3,
+    "Ravager": 2,
+    "Oracle": 0,
+    "Firestar": 1,
+    "Huntress": 2
+  },
+  "faithfulness": 0.2698412698412698,
+  "n_lre": 63,
+  "split_fingerprint": "cc9d0623a978",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/superhero_person.json",
+  "retained_sha256": "e99a9b1fd990a80e1ea6f5a06d126b5baed78c6e6314565cefa98db8ec72ca90",
+  "data_sha256": "3b3a3a03d4b5c0b91343d4e7d562a434a17ae85ef286ed151bafee65c19a7804",
+  "worker": 6,
+  "elapsed_seconds": 12.709350824356079
+}

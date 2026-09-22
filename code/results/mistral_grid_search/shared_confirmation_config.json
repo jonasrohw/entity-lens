@@ -1,0 +1,494 @@
+{
+  "seed": 1,
+  "protocol": "shared_split",
+  "source_grid_root": "/mounts/work/jonas/diff-jlens/code/generated/mistral_full_grid",
+  "lens_configs": {
+    "baseline": {
+      "prompt": "known_for",
+      "layer": 17,
+      "references": 8,
+      "readout": "diff",
+      "beta": null,
+      "metric": "median_logrank"
+    },
+    "exploratory_winner": {
+      "prompt": "known_for",
+      "layer": 10,
+      "references": 4,
+      "readout": "affine",
+      "beta": 50.0,
+      "metric": "median_logrank"
+    },
+    "original_target_winner": {
+      "prompt": "known_for",
+      "layer": 20,
+      "references": 4,
+      "readout": "affine",
+      "beta": 50.0,
+      "metric": "median_logrank"
+    },
+    "relation_selection_winner": {
+      "prompt": "known_for",
+      "layer": 11,
+      "references": 8,
+      "readout": "affine",
+      "beta": 100.0,
+      "metric": "median_logrank"
+    },
+    "calibration_relation_selection_winner": {
+      "prompt": "known_for",
+      "layer": 7,
+      "references": 4,
+      "readout": "affine",
+      "beta": 10.0,
+      "metric": "median_logrank"
+    }
+  },
+  "faith_configs": {
+    "city_in_country": {
+      "coarse": {
+        "layer": 23,
+        "beta": 5.0,
+        "score": 0.5
+      },
+      "continuous": {
+        "layer": 24,
+        "beta": 20.0,
+        "score": 0.8333333333333334
+      },
+      "calibrated_continuous": {
+        "layer": 22,
+        "beta": 50.0,
+        "score": 0.3333333333333333,
+        "selection_score": 1.0
+      }
+    },
+    "company_ceo": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0,
+        "score": 0.04
+      },
+      "continuous": {
+        "layer": 7,
+        "beta": 4.0,
+        "score": 0.04
+      },
+      "calibrated_continuous": {
+        "layer": 7,
+        "beta": 4.0,
+        "score": 0.0,
+        "selection_score": 0.08
+      }
+    },
+    "company_hq": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0,
+        "score": 0.56
+      },
+      "continuous": {
+        "layer": 18,
+        "beta": 6.25,
+        "score": 0.63
+      },
+      "calibrated_continuous": {
+        "layer": 17,
+        "beta": 6.0,
+        "score": 0.6,
+        "selection_score": 0.6
+      }
+    },
+    "country_capital_city": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0,
+        "score": 0.625
+      },
+      "continuous": {
+        "layer": 20,
+        "beta": 13.939720884536152,
+        "score": 1.0
+      },
+      "calibrated_continuous": {
+        "layer": 18,
+        "beta": 4.0,
+        "score": 0.75,
+        "selection_score": 1.0
+      }
+    },
+    "country_currency": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.3333333333333333
+      },
+      "continuous": {
+        "layer": 2,
+        "beta": 38.22139975600251,
+        "score": 0.5
+      },
+      "calibrated_continuous": {
+        "layer": 5,
+        "beta": 42.58544907849607,
+        "score": 0.3333333333333333,
+        "selection_score": 0.3333333333333333
+      }
+    },
+    "country_language": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.625
+      },
+      "continuous": {
+        "layer": 17,
+        "beta": 15.0,
+        "score": 1.0
+      },
+      "calibrated_continuous": {
+        "layer": 7,
+        "beta": 9550.352219610371,
+        "score": 0.75,
+        "selection_score": 1.0
+      }
+    },
+    "country_largest_city": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0,
+        "score": 0.5
+      },
+      "continuous": {
+        "layer": 14,
+        "beta": 15.0,
+        "score": 1.0
+      },
+      "calibrated_continuous": {
+        "layer": 9,
+        "beta": 30.0,
+        "score": 0.5,
+        "selection_score": 1.0
+      }
+    },
+    "landmark_in_country": {
+      "coarse": {
+        "layer": 23,
+        "beta": 5.0,
+        "score": 0.82
+      },
+      "continuous": {
+        "layer": 24,
+        "beta": 7.25,
+        "score": 0.88
+      },
+      "calibrated_continuous": {
+        "layer": 24,
+        "beta": 6.75,
+        "score": 0.86,
+        "selection_score": 0.88
+      }
+    },
+    "landmark_on_continent": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.92
+      },
+      "continuous": {
+        "layer": 11,
+        "beta": 11.608815873891611,
+        "score": 0.97
+      },
+      "calibrated_continuous": {
+        "layer": 10,
+        "beta": 7.25,
+        "score": 0.92,
+        "selection_score": 1.0
+      }
+    },
+    "name_birthplace": {
+      "coarse": {
+        "layer": 14,
+        "beta": 5.0,
+        "score": 1.0
+      },
+      "continuous": {
+        "layer": 9,
+        "beta": 6.75,
+        "score": 1.0
+      },
+      "calibrated_continuous": {
+        "layer": 9,
+        "beta": 6.75,
+        "score": 1.0,
+        "selection_score": 1.0
+      }
+    },
+    "name_gender": {
+      "coarse": {
+        "layer": 5,
+        "beta": 0.5,
+        "score": 0.6666666666666666
+      },
+      "continuous": {
+        "layer": 1,
+        "beta": 10.0,
+        "score": 1.0
+      }
+    },
+    "name_religion": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0,
+        "score": 1.0
+      },
+      "continuous": {
+        "layer": 17,
+        "beta": 4.5,
+        "score": 1.0
+      },
+      "calibrated_continuous": {
+        "layer": 7,
+        "beta": 2.5,
+        "score": 0.875,
+        "selection_score": 1.0
+      }
+    },
+    "person_father": {
+      "coarse": {
+        "layer": 11,
+        "beta": 3.0,
+        "score": 0.02
+      },
+      "continuous": {
+        "layer": 24,
+        "beta": 30.0,
+        "score": 0.03
+      },
+      "calibrated_continuous": {
+        "layer": 6,
+        "beta": 4.5,
+        "score": 0.0,
+        "selection_score": 0.02
+      }
+    },
+    "person_mother": {
+      "coarse": {
+        "layer": 14,
+        "beta": 1.0,
+        "score": 0.02
+      },
+      "continuous": {
+        "layer": 3,
+        "beta": 20.0,
+        "score": 0.04
+      },
+      "calibrated_continuous": {
+        "layer": 18,
+        "beta": 3.0,
+        "score": 0.0,
+        "selection_score": 0.06
+      }
+    },
+    "person_native_language": {
+      "coarse": {
+        "layer": 14,
+        "beta": 5.0,
+        "score": 0.88
+      },
+      "continuous": {
+        "layer": 22,
+        "beta": 15.0,
+        "score": 0.95
+      },
+      "calibrated_continuous": {
+        "layer": 15,
+        "beta": 6.75,
+        "score": 0.84,
+        "selection_score": 0.96
+      }
+    },
+    "person_occupation": {
+      "coarse": {
+        "layer": 14,
+        "beta": 3.0,
+        "score": 0.79
+      },
+      "continuous": {
+        "layer": 19,
+        "beta": 5.165853795976876,
+        "score": 0.84
+      },
+      "calibrated_continuous": {
+        "layer": 18,
+        "beta": 3.25,
+        "score": 0.8,
+        "selection_score": 0.84
+      }
+    },
+    "person_plays_instrument": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0,
+        "score": 0.89
+      },
+      "continuous": {
+        "layer": 19,
+        "beta": 5.25,
+        "score": 0.9
+      },
+      "calibrated_continuous": {
+        "layer": 18,
+        "beta": 2.5,
+        "score": 0.78,
+        "selection_score": 0.86
+      }
+    },
+    "person_plays_position_in_sport": {
+      "coarse": {
+        "layer": 14,
+        "beta": 3.0,
+        "score": 0.9
+      },
+      "continuous": {
+        "layer": 16,
+        "beta": 3.5,
+        "score": 0.93
+      },
+      "calibrated_continuous": {
+        "layer": 8,
+        "beta": 1.75,
+        "score": 0.86,
+        "selection_score": 0.9
+      }
+    },
+    "person_plays_pro_sport": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.82
+      },
+      "continuous": {
+        "layer": 10,
+        "beta": 4.5,
+        "score": 0.85
+      },
+      "calibrated_continuous": {
+        "layer": 10,
+        "beta": 4.25,
+        "score": 0.82,
+        "selection_score": 0.84
+      }
+    },
+    "person_university": {
+      "coarse": {
+        "layer": 5,
+        "beta": 2.0,
+        "score": 0.30434782608695654
+      },
+      "continuous": {
+        "layer": 4,
+        "beta": 3.0,
+        "score": 0.30434782608695654
+      },
+      "calibrated_continuous": {
+        "layer": 4,
+        "beta": 10.0,
+        "score": 0.3333333333333333,
+        "selection_score": 0.18181818181818182
+      }
+    },
+    "pokemon_evolutions": {
+      "coarse": {
+        "layer": 11,
+        "beta": 3.0,
+        "score": 0.21428571428571427
+      },
+      "continuous": {
+        "layer": 16,
+        "beta": 20.0,
+        "score": 0.35714285714285715
+      },
+      "calibrated_continuous": {
+        "layer": 14,
+        "beta": 50.0,
+        "score": 0.0,
+        "selection_score": 0.42857142857142855
+      }
+    },
+    "product_by_company": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.64
+      },
+      "continuous": {
+        "layer": 19,
+        "beta": 23.930014459817933,
+        "score": 0.73
+      },
+      "calibrated_continuous": {
+        "layer": 18,
+        "beta": 22.272714904145797,
+        "score": 0.7,
+        "selection_score": 0.72
+      }
+    },
+    "star_constellation": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0,
+        "score": 0.27
+      },
+      "continuous": {
+        "layer": 11,
+        "beta": 3.387246548259039,
+        "score": 0.28
+      },
+      "calibrated_continuous": {
+        "layer": 17,
+        "beta": 4.5,
+        "score": 0.3,
+        "selection_score": 0.26
+      }
+    },
+    "superhero_archnemesis": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.24489795918367346
+      },
+      "continuous": {
+        "layer": 11,
+        "beta": 3.75,
+        "score": 0.2653061224489796
+      },
+      "calibrated_continuous": {
+        "layer": 11,
+        "beta": 3.5,
+        "score": 0.24,
+        "selection_score": 0.25
+      }
+    },
+    "superhero_person": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0,
+        "score": 0.2033898305084746
+      },
+      "continuous": {
+        "layer": 14,
+        "beta": 10.0,
+        "score": 0.288135593220339
+      },
+      "calibrated_continuous": {
+        "layer": 17,
+        "beta": 7.25,
+        "score": 0.2,
+        "selection_score": 0.3448275862068966
+      }
+    }
+  },
+  "note": "Frozen seed-0 shared-split settings; same-dataset fresh seed-1 operator refit."
+}

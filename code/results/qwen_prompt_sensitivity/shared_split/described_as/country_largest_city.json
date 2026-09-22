@@ -1,0 +1,348 @@
+{
+  "relation": "country_largest_city",
+  "protocol": "shared_split",
+  "prompt_name": "described_as",
+  "lens": {
+    "n": 8,
+    "layer": 19,
+    "template": "The largest city in {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 777.0,
+        "median_lograng": 2.8713009075018547,
+        "agree_at1": 0.125,
+        "agree_at10": 0.25
+      },
+      "lre": {
+        "median_rank": 1768.0,
+        "median_lograng": 3.205583497920478,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "France",
+        "model_top1_id": 12095,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 2157,
+        "top_diff": [
+          "Mongolia",
+          "Riyadh",
+          "Qatar",
+          "Myanmar",
+          "Rajasthan"
+        ],
+        "rank_lre": 711,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "America",
+          "Japan"
+        ],
+        "rank_lre_beta": {
+          "1.0": 711,
+          "0.5": 1325,
+          "1.5": 728,
+          "2.0": 783,
+          "3.0": 966,
+          "5.0": 1229
+        }
+      },
+      {
+        "subject": "Pakistan",
+        "model_top1_id": 88608,
+        "model_top1": "Karachi",
+        "n_references": 8,
+        "rank_diff": 548,
+        "top_diff": [
+          "Mongolia",
+          "Riyadh",
+          "Qatar",
+          "Myanmar",
+          "Rajasthan"
+        ],
+        "rank_lre": 4137,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "a",
+          "America"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4137,
+          "0.5": 13500,
+          "1.5": 1839,
+          "2.0": 1216,
+          "3.0": 807,
+          "5.0": 641
+        }
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 24081,
+        "model_top1": "Madrid",
+        "n_references": 8,
+        "rank_diff": 1012,
+        "top_diff": [
+          "Mongolia",
+          "Riyadh",
+          "Qatar",
+          "Myanmar",
+          "Rajasthan"
+        ],
+        "rank_lre": 1025,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "America",
+          "Japan"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1025,
+          "0.5": 2837,
+          "1.5": 749,
+          "2.0": 678,
+          "3.0": 680,
+          "5.0": 748
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 68073,
+        "model_top1": "Buenos",
+        "n_references": 8,
+        "rank_diff": 1968,
+        "top_diff": [
+          "Mongolia",
+          "Qatar",
+          "Riyadh",
+          "Myanmar",
+          "Kuwait"
+        ],
+        "rank_lre": 5616,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "America",
+          "Japan"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5616,
+          "0.5": 12895,
+          "1.5": 3462,
+          "2.0": 2647,
+          "3.0": 2114,
+          "5.0": 1896
+        }
+      },
+      {
+        "subject": "United Kingdom",
+        "model_top1_id": 7148,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "\u82f1\u56fd",
+          "British",
+          "UK",
+          "\u4f26\u6566",
+          "British"
+        ],
+        "rank_lre": 2511,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2511,
+          "0.5": 3479,
+          "1.5": 1832,
+          "2.0": 1348,
+          "3.0": 687,
+          "5.0": 158
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 37047,
+        "model_top1": "Shanghai",
+        "n_references": 8,
+        "rank_diff": 534,
+        "top_diff": [
+          "Mongolia",
+          "Riyadh",
+          "Qatar",
+          "Myanmar",
+          "Rajasthan"
+        ],
+        "rank_lre": 656,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "a",
+          "America"
+        ],
+        "rank_lre_beta": {
+          "1.0": 656,
+          "0.5": 2333,
+          "1.5": 409,
+          "2.0": 366,
+          "3.0": 369,
+          "5.0": 412
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 50189,
+        "model_top1": "Seoul",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Seoul",
+          "Korean",
+          "Korea",
+          "Taiwanese",
+          "Koreans"
+        ],
+        "rank_lre": 11774,
+        "top_lre": [
+          "a",
+          "an",
+          "the",
+          "having",
+          "one"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11774,
+          "0.5": 14406,
+          "1.5": 9544,
+          "2.0": 7515,
+          "3.0": 4448,
+          "5.0": 1342
+        }
+      },
+      {
+        "subject": "Mexico",
+        "model_top1_id": 12270,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 1006,
+        "top_diff": [
+          "Mongolia",
+          "Riyadh",
+          "Qatar",
+          "Myanmar",
+          "Rajasthan"
+        ],
+        "rank_lre": 253,
+        "top_lre": [
+          "the",
+          "one",
+          "China",
+          "America",
+          "Japan"
+        ],
+        "rank_lre_beta": {
+          "1.0": 253,
+          "0.5": 547,
+          "1.5": 260,
+          "2.0": 289,
+          "3.0": 395,
+          "5.0": 523
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 3158.0,
+          "median_lograng": 3.497295817534018,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 1768.0,
+          "median_lograng": 3.205583497920478,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1290.5,
+          "median_lograng": 3.0691118641769584,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 999.5,
+          "median_lograng": 2.9898033204572516,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 747.0,
+          "median_lograng": 2.8724998995050486,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 694.5,
+          "median_lograng": 2.84100842288416,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false,
+    "neutral_prompt": "{} can be described as"
+  },
+  "positions": {
+    "Germany": 0,
+    "India": 0,
+    "Japan": 0,
+    "New Zealand": 1,
+    "Russia": 0,
+    "Nigeria": 1,
+    "Brazil": 0,
+    "Poland": 1,
+    "France": 0,
+    "Pakistan": 0,
+    "Spain": 0,
+    "Argentina": 0,
+    "United Kingdom": 1,
+    "China": 0,
+    "South Korea": 1,
+    "Mexico": 0
+  },
+  "faithfulness": 0.875,
+  "n_lre": 8,
+  "split_fingerprint": "fde7d372cb1f",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/country_largest_city.json",
+  "retained_sha256": "6c0f25ad2b70add96736541b5f36cc6923688d998e17427b4ac704a235da0e8a",
+  "data_sha256": "ffb5e18dc1f26a101786905db84f087370bb191067ff8d9f1294156b1d9bdccc",
+  "worker": 6,
+  "elapsed_seconds": 2.50634765625
+}

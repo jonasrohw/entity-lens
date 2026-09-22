@@ -1,0 +1,850 @@
+{
+  "relation": "country_language",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "10": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.25,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.25,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.25,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.125,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.25,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.25,
+          0.0
+        ]
+      },
+      "28": {
+        "0.5": [
+          0.5,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.375,
+          0.0
+        ],
+        "3.0": [
+          0.375,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "34": {
+        "0.5": [
+          0.375,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.625,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          0.625,
+          0.0
+        ]
+      },
+      "40": {
+        "0.5": [
+          0.5,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.625,
+          0.0
+        ],
+        "2.0": [
+          0.625,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          0.75,
+          0.0
+        ]
+      },
+      "46": {
+        "0.5": [
+          0.5,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.625,
+          0.0
+        ],
+        "2.0": [
+          0.625,
+          0.0
+        ],
+        "3.0": [
+          0.75,
+          0.0
+        ],
+        "5.0": [
+          0.75,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 40,
+    "best_beta": 5.0,
+    "best_faith": 0.75,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 8,
+    "requested_n_test": 100,
+    "lm_correct": 8,
+    "per_subject": {
+      "Germany": 1,
+      "Chile": 1,
+      "India": 0,
+      "Egypt": 1,
+      "Brazil": 0,
+      "Colombia": 1,
+      "Canada": 1,
+      "Nigeria": 1
+    },
+    "split_fingerprint": "d9cfbee9a332",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 16,
+    "layer": 34,
+    "template": "People in {} speak",
+    "agg": {
+      "diff": {
+        "median_rank": 47.0,
+        "median_lograng": 1.652137525238564,
+        "agree_at1": 0.0,
+        "agree_at10": 0.375
+      },
+      "lre": {
+        "median_rank": 2500.5,
+        "median_lograng": 3.398115462228084,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Australia",
+        "model_top1_id": 6163,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 1503,
+        "top_diff": [
+          "Canberra",
+          "Tasmania",
+          "Melbourne",
+          "Aussie",
+          "Perth"
+        ],
+        "rank_lre": 785,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 785,
+          "0.5": 832,
+          "1.5": 737,
+          "2.0": 682,
+          "3.0": 580,
+          "5.0": 435
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 14712,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 64,
+        "top_diff": [
+          "Argentine",
+          "\u963f\u6839\u5ef7",
+          "Buenos",
+          "Argentina",
+          "Argentina"
+        ],
+        "rank_lre": 2550,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2550,
+          "0.5": 2842,
+          "1.5": 2295,
+          "2.0": 2031,
+          "3.0": 1621,
+          "5.0": 1052
+        }
+      },
+      {
+        "subject": "Egypt",
+        "model_top1_id": 32988,
+        "model_top1": "Arabic",
+        "n_references": 7,
+        "rank_diff": 8,
+        "top_diff": [
+          "Egyptian",
+          "Cairo",
+          "Egypt",
+          "\u57c3\u53ca",
+          "Nile"
+        ],
+        "rank_lre": 5252,
+        "top_lre": [
+          "its",
+          "having",
+          "the",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5252,
+          "0.5": 6100,
+          "1.5": 4460,
+          "2.0": 3785,
+          "3.0": 2756,
+          "5.0": 1349
+        }
+      },
+      {
+        "subject": "Peru",
+        "model_top1_id": 14712,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 215,
+        "top_diff": [
+          "\u79d8\u9c81",
+          "Per\u00fa",
+          "Peru",
+          "peru",
+          "Boliv"
+        ],
+        "rank_lre": 1601,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1601,
+          "0.5": 2127,
+          "1.5": 1196,
+          "2.0": 924,
+          "3.0": 545,
+          "5.0": 221
+        }
+      },
+      {
+        "subject": "Japan",
+        "model_top1_id": 10452,
+        "model_top1": "Japanese",
+        "n_references": 7,
+        "rank_diff": 15,
+        "top_diff": [
+          "Samurai",
+          "Osaka",
+          "Sakura",
+          "Fukushima",
+          "Miy"
+        ],
+        "rank_lre": 4545,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4545,
+          "0.5": 5313,
+          "1.5": 3853,
+          "2.0": 3315,
+          "3.0": 2406,
+          "5.0": 1153
+        }
+      },
+      {
+        "subject": "United States",
+        "model_top1_id": 6163,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 853,
+        "top_diff": [
+          "Yankees",
+          "\u5168\u7f8e",
+          "\u829d\u52a0",
+          "\u662f\u7f8e\u56fd",
+          "Yankee"
+        ],
+        "rank_lre": 621,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 621,
+          "0.5": 753,
+          "1.5": 493,
+          "2.0": 392,
+          "3.0": 256,
+          "5.0": 131
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 8193,
+        "model_top1": "Chinese",
+        "n_references": 7,
+        "rank_diff": 282,
+        "top_diff": [
+          "Tehran",
+          "Pyongyang",
+          "Redmi",
+          "Sri",
+          "Shenzhen"
+        ],
+        "rank_lre": 1610,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1610,
+          "0.5": 1778,
+          "1.5": 1431,
+          "2.0": 1286,
+          "3.0": 1050,
+          "5.0": 688
+        }
+      },
+      {
+        "subject": "Brazil",
+        "model_top1_id": 40790,
+        "model_top1": "Portuguese",
+        "n_references": 7,
+        "rank_diff": 3,
+        "top_diff": [
+          "Neymar",
+          "Brazilian",
+          "Bolsonaro",
+          "Portuguese",
+          "samba"
+        ],
+        "rank_lre": 5647,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5647,
+          "0.5": 6518,
+          "1.5": 4896,
+          "2.0": 4167,
+          "3.0": 3062,
+          "5.0": 1562
+        }
+      },
+      {
+        "subject": "Venezuela",
+        "model_top1_id": 14712,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 108,
+        "top_diff": [
+          "Caracas",
+          "\u59d4\u5185\u745e\u62c9",
+          "Venezuelan",
+          "venez",
+          "boliv"
+        ],
+        "rank_lre": 1228,
+        "top_lre": [
+          "its",
+          "having",
+          "the",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1228,
+          "0.5": 1643,
+          "1.5": 971,
+          "2.0": 749,
+          "3.0": 435,
+          "5.0": 172
+        }
+      },
+      {
+        "subject": "India",
+        "model_top1_id": 42524,
+        "model_top1": "Hindi",
+        "n_references": 8,
+        "rank_diff": 30,
+        "top_diff": [
+          "Bhar",
+          "Bh",
+          "Mumbai",
+          "Sri",
+          "Delhi"
+        ],
+        "rank_lre": 20008,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20008,
+          "0.5": 22185,
+          "1.5": 17976,
+          "2.0": 16155,
+          "3.0": 12898,
+          "5.0": 7890
+        }
+      },
+      {
+        "subject": "Chile",
+        "model_top1_id": 14712,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 184,
+        "top_diff": [
+          "Chile",
+          "\u667a\u5229",
+          "Chili",
+          "Pino",
+          "chil"
+        ],
+        "rank_lre": 1224,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1224,
+          "0.5": 1637,
+          "1.5": 948,
+          "2.0": 746,
+          "3.0": 443,
+          "5.0": 184
+        }
+      },
+      {
+        "subject": "Saudi Arabia",
+        "model_top1_id": 32988,
+        "model_top1": "Arabic",
+        "n_references": 8,
+        "rank_diff": 83,
+        "top_diff": [
+          "Saudi",
+          "Saudi",
+          "Riyadh",
+          "\u6c99\u7279",
+          "\u0633\u0639\u0648\u062f"
+        ],
+        "rank_lre": 2451,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2451,
+          "0.5": 3584,
+          "1.5": 1648,
+          "2.0": 1129,
+          "3.0": 511,
+          "5.0": 110
+        }
+      },
+      {
+        "subject": "Germany",
+        "model_top1_id": 5753,
+        "model_top1": "German",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Baltic",
+          "Bundesliga",
+          "Munich",
+          "Bav",
+          "Merkel"
+        ],
+        "rank_lre": 2850,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2850,
+          "0.5": 3283,
+          "1.5": 2472,
+          "2.0": 2125,
+          "3.0": 1557,
+          "5.0": 842
+        }
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 14712,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Catalan",
+          "Spanish",
+          "Catalonia",
+          "Spain",
+          "Iber"
+        ],
+        "rank_lre": 1354,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1354,
+          "0.5": 1721,
+          "1.5": 1085,
+          "2.0": 893,
+          "3.0": 564,
+          "5.0": 196
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 8260,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Putin",
+          "Kremlin",
+          "Russian",
+          "\u666e\u4eac",
+          "Moscow"
+        ],
+        "rank_lre": 5433,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5433,
+          "0.5": 6535,
+          "1.5": 4467,
+          "2.0": 3645,
+          "3.0": 2405,
+          "5.0": 968
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 15659,
+        "model_top1": "Korean",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Seoul",
+          "\u20a9",
+          "\u4e2d\u97e9",
+          "Korean",
+          "Hyundai"
+        ],
+        "rank_lre": 3875,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3875,
+          "0.5": 6093,
+          "1.5": 2405,
+          "2.0": 1432,
+          "3.0": 512,
+          "5.0": 72
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 3062.5,
+          "median_lograng": 3.4850900040689226,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2500.5,
+          "median_lograng": 3.398115462228084,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1971.5,
+          "median_lograng": 3.2890962696852273,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1359.0,
+          "median_lograng": 3.1329123686508655,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 815.0,
+          "median_lograng": 2.8928894242092866,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 561.5,
+          "median_lograng": 2.7388528555881058,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 53.96303629875183,
+  "model_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "10,22,28,34,40,46",
+  "lens_layer": 34,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.33514404296875e-05,
+    "finite_difference_relative_error": 0.0008246813085861504
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 8,
+  "convolution_check": {
+    "logits_max_abs_error": 6.67572021484375e-06,
+    "jvp_relative_error": 1.0528084430916351e-06
+  },
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 34,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 0.0,
+      "full_seconds": 0.7262475490570068,
+      "cached_seconds": 0.7459683418273926
+    },
+    {
+      "length": 69,
+      "prefix_length": 67,
+      "layer": 10,
+      "state_relative_error": 1.0854059837583918e-06,
+      "jvp_relative_error": 4.885464477411006e-06,
+      "full_seconds": 3.214928150177002,
+      "cached_seconds": 1.526707649230957
+    }
+  ],
+  "device_map": {
+    "model.embed_tokens": "0",
+    "model.layers.0": "0",
+    "model.layers.1": "0",
+    "model.layers.2": "0",
+    "model.layers.3": "0",
+    "model.layers.4": "0",
+    "model.layers.5": "0",
+    "model.layers.6": "0",
+    "model.layers.7": "0",
+    "model.layers.8": "0",
+    "model.layers.9": "0",
+    "model.layers.10": "0",
+    "model.layers.11": "0",
+    "model.layers.12": "0",
+    "model.layers.13": "0",
+    "model.layers.14": "0",
+    "model.layers.15": "0",
+    "model.layers.16": "0",
+    "model.layers.17": "0",
+    "model.layers.18": "1",
+    "model.layers.19": "1",
+    "model.layers.20": "1",
+    "model.layers.21": "1",
+    "model.layers.22": "1",
+    "model.layers.23": "1",
+    "model.layers.24": "1",
+    "model.layers.25": "1",
+    "model.layers.26": "1",
+    "model.layers.27": "1",
+    "model.layers.28": "1",
+    "model.layers.29": "1",
+    "model.layers.30": "1",
+    "model.layers.31": "1",
+    "model.layers.32": "1",
+    "model.layers.33": "1",
+    "model.layers.34": "1",
+    "model.layers.35": "1",
+    "model.layers.36": "1",
+    "model.layers.37": "1",
+    "model.layers.38": "1",
+    "model.layers.39": "1",
+    "model.layers.40": "1",
+    "model.layers.41": "1",
+    "model.layers.42": "2",
+    "model.layers.43": "2",
+    "model.layers.44": "2",
+    "model.layers.45": "2",
+    "model.layers.46": "2",
+    "model.layers.47": "2",
+    "model.layers.48": "2",
+    "model.layers.49": "2",
+    "model.layers.50": "2",
+    "model.layers.51": "2",
+    "model.layers.52": "2",
+    "model.layers.53": "2",
+    "model.layers.54": "2",
+    "model.layers.55": "2",
+    "model.layers.56": "2",
+    "model.layers.57": "2",
+    "model.layers.58": "2",
+    "model.layers.59": "2",
+    "model.layers.60": "2",
+    "model.layers.61": "2",
+    "model.layers.62": "2",
+    "model.layers.63": "2",
+    "model.norm": "2",
+    "model.rotary_emb": "2",
+    "lm_head": "2"
+  }
+}

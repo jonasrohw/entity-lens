@@ -1,0 +1,122 @@
+{
+  "relation": "city_in_country",
+  "model": "olmo3_7b",
+  "worker": "rho2_0",
+  "protocol": "shared_split",
+  "prompt": "\n{} is known for",
+  "layer": 17,
+  "split_fingerprint": "c5202c7b3638",
+  "source_sha256": "a5c8d14dcc90a24234ef1e2127f2fe716331ebb3394993c12604376b7e0995ce",
+  "data_sha256": "5fd8f9e99e6d8567d05cfb4e7c9324ed03b07ba1ebf827614b7b58a811bc11a5",
+  "n": 6,
+  "rows": [
+    {
+      "subject": "Panama City",
+      "object": "Panama",
+      "model_top1_id": 49136,
+      "gold_id": 49136,
+      "n_references": 8,
+      "target_prior": -13.273306846618652,
+      "gold_prior": -13.273306846618652,
+      "rank_raw_jacobian": 88,
+      "rank_logit_lens": 4151,
+      "rank_differential_logit_lens": 3003
+    },
+    {
+      "subject": "Siem Reap",
+      "object": "Cambodia",
+      "model_top1_id": 62138,
+      "gold_id": 62138,
+      "n_references": 8,
+      "target_prior": -15.138833999633789,
+      "gold_prior": -15.138833999633789,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 2880,
+      "rank_differential_logit_lens": 274
+    },
+    {
+      "subject": "New Delhi",
+      "object": "India",
+      "model_top1_id": 6890,
+      "gold_id": 6890,
+      "n_references": 8,
+      "target_prior": -12.605547904968262,
+      "gold_prior": -12.605547904968262,
+      "rank_raw_jacobian": 3,
+      "rank_logit_lens": 17,
+      "rank_differential_logit_lens": 720
+    },
+    {
+      "subject": "Buenos Aires",
+      "object": "Argentina",
+      "model_top1_id": 32164,
+      "gold_id": 32164,
+      "n_references": 8,
+      "target_prior": -14.55162239074707,
+      "gold_prior": -14.55162239074707,
+      "rank_raw_jacobian": 2,
+      "rank_logit_lens": 8816,
+      "rank_differential_logit_lens": 14900
+    },
+    {
+      "subject": "Port-au-Prince",
+      "object": "Haiti",
+      "model_top1_id": 56290,
+      "gold_id": 56290,
+      "n_references": 8,
+      "target_prior": -14.47979736328125,
+      "gold_prior": -14.47979736328125,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 27,
+      "rank_differential_logit_lens": 111
+    },
+    {
+      "subject": "Santo Domingo",
+      "object": "Dominican Republic",
+      "model_top1_id": 279,
+      "gold_id": 67113,
+      "n_references": 8,
+      "target_prior": -8.324697494506836,
+      "gold_prior": -13.77167797088623,
+      "rank_raw_jacobian": 19145,
+      "rank_logit_lens": 2138,
+      "rank_differential_logit_lens": 21822
+    }
+  ],
+  "agg": {
+    "raw_jacobian": {
+      "median_rank": 2.5,
+      "median_lograng": 0.5395906230238124,
+      "agree_at1": 0.3333333333333333,
+      "agree_at10": 0.6666666666666666
+    },
+    "logit_lens": {
+      "median_rank": 2509.0,
+      "median_lograng": 3.3948770214259705,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    },
+    "differential_logit_lens": {
+      "median_rank": 1861.5,
+      "median_lograng": 3.1678175965257798,
+      "agree_at1": 0.0,
+      "agree_at10": 0.0
+    }
+  },
+  "answer_prior_contexts": [
+    "",
+    "The",
+    "In the",
+    "It was",
+    "She said the",
+    "Here is",
+    "One of the",
+    "According to the",
+    "There is a",
+    "Yesterday the"
+  ],
+  "cardinality_full": 1.2857142857142858,
+  "cardinality_filtered": 1.1578947368421053,
+  "cardinality_test": 1.0,
+  "elapsed_seconds": 1.9472370147705078
+}

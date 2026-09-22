@@ -1,0 +1,3200 @@
+{
+  "relation": "person_plays_pro_sport",
+  "protocol": "shared_split",
+  "prompt_name": "described_as",
+  "lens": {
+    "n": 100,
+    "layer": 19,
+    "template": "{} plays the sport of",
+    "agg": {
+      "diff": {
+        "median_rank": 27.5,
+        "median_lograng": 1.4547780146205875,
+        "agree_at1": 0.05,
+        "agree_at10": 0.33
+      },
+      "lre": {
+        "median_rank": 127.5,
+        "median_lograng": 2.1088998399735583,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Sergei Makarov",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 357,
+        "top_diff": [
+          "Russians",
+          "Russian",
+          "Belarus",
+          "-Russian",
+          "Kazakhstan"
+        ],
+        "rank_lre": 483,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 483,
+          "0.5": 634,
+          "1.5": 353,
+          "2.0": 266,
+          "3.0": 146,
+          "5.0": 60
+        }
+      },
+      {
+        "subject": "Sidney Crosby",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Pittsburgh",
+          "hockey",
+          "Hockey",
+          "Canadiens",
+          "Philadelphia"
+        ],
+        "rank_lre": 131,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 131,
+          "0.5": 340,
+          "1.5": 53,
+          "2.0": 19,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Cam Newton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 100,
+        "top_diff": [
+          "Alabama",
+          "LSU",
+          "Atlanta",
+          "Clemson",
+          "Alabama"
+        ],
+        "rank_lre": 111,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 111,
+          "0.5": 176,
+          "1.5": 73,
+          "2.0": 48,
+          "3.0": 18,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Terrell Owens",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 471,
+        "top_diff": [
+          "arrogant",
+          "\u56a3",
+          "NFL",
+          "selfish",
+          "Cowboys"
+        ],
+        "rank_lre": 141,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 141,
+          "0.5": 185,
+          "1.5": 115,
+          "2.0": 85,
+          "3.0": 58,
+          "5.0": 47
+        }
+      },
+      {
+        "subject": "Frank Gifford",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "NFL",
+          "Packers",
+          "NFL",
+          "Colts",
+          "Philly"
+        ],
+        "rank_lre": 89,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 89,
+          "0.5": 159,
+          "1.5": 53,
+          "2.0": 26,
+          "3.0": 11,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Fr\u00e9d\u00e9ric Piquionne",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 9549,
+        "top_diff": [
+          "French",
+          "Bordeaux",
+          "France",
+          "Quebec",
+          "Paris"
+        ],
+        "rank_lre": 1322,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1322,
+          "0.5": 1401,
+          "1.5": 1269,
+          "2.0": 1193,
+          "3.0": 1115,
+          "5.0": 1098
+        }
+      },
+      {
+        "subject": "Carlos Beltr\u00e1n",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "Venezuelan",
+          "Houston",
+          "Astros",
+          "Puerto",
+          "Bronx"
+        ],
+        "rank_lre": 47,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 47,
+          "0.5": 109,
+          "1.5": 17,
+          "2.0": 10,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Tim Horton",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "Canadian",
+          "Toronto",
+          "Canadians",
+          "Canada",
+          "Newfoundland"
+        ],
+        "rank_lre": 271,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 271,
+          "0.5": 469,
+          "1.5": 157,
+          "2.0": 87,
+          "3.0": 33,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "Jermain Defoe",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 63,
+        "top_diff": [
+          "Tottenham",
+          "Toronto",
+          "Thames",
+          "Liverpool",
+          "Sunderland"
+        ],
+        "rank_lre": 471,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 471,
+          "0.5": 861,
+          "1.5": 248,
+          "2.0": 148,
+          "3.0": 48,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Steve Yzerman",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Detroit",
+          "Hockey",
+          "Toronto",
+          "Michigan",
+          "NHL"
+        ],
+        "rank_lre": 156,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 156,
+          "0.5": 368,
+          "1.5": 66,
+          "2.0": 25,
+          "3.0": 7,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Matteo Ferrari",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 1918,
+        "top_diff": [
+          "Italian",
+          "Italy",
+          "Italians",
+          "Ferrari",
+          "Milan"
+        ],
+        "rank_lre": 1054,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1054,
+          "0.5": 1268,
+          "1.5": 892,
+          "2.0": 742,
+          "3.0": 546,
+          "5.0": 348
+        }
+      },
+      {
+        "subject": "Jesse Hibbs",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 6675,
+        "top_diff": [
+          "Arkansas",
+          "Montana",
+          "Idaho",
+          "Wyoming",
+          "Mississippi"
+        ],
+        "rank_lre": 212,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 212,
+          "0.5": 240,
+          "1.5": 191,
+          "2.0": 184,
+          "3.0": 169,
+          "5.0": 192
+        }
+      },
+      {
+        "subject": "Brett Hull",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Manitoba",
+          "NHL",
+          "Arkansas",
+          "Blackhawks",
+          "Saskatchewan"
+        ],
+        "rank_lre": 216,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 216,
+          "0.5": 441,
+          "1.5": 115,
+          "2.0": 54,
+          "3.0": 15,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Ollie Matson",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 28,
+        "top_diff": [
+          "NFL",
+          "NFL",
+          "Chargers",
+          "Negro",
+          "Oakland"
+        ],
+        "rank_lre": 80,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 80,
+          "0.5": 148,
+          "1.5": 43,
+          "2.0": 23,
+          "3.0": 9,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Edgaras Jankauskas",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 6232,
+        "top_diff": [
+          "Lithuania",
+          "Belarus",
+          "Latvia",
+          "Slovak",
+          "Baltic"
+        ],
+        "rank_lre": 217,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 217,
+          "0.5": 247,
+          "1.5": 204,
+          "2.0": 190,
+          "3.0": 169,
+          "5.0": 196
+        }
+      },
+      {
+        "subject": "Brett Favre",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 225,
+        "top_diff": [
+          "Wisconsin",
+          "Minnesota",
+          "Minnesota",
+          "Packers",
+          "Milwaukee"
+        ],
+        "rank_lre": 136,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 136,
+          "0.5": 185,
+          "1.5": 100,
+          "2.0": 74,
+          "3.0": 45,
+          "5.0": 22
+        }
+      },
+      {
+        "subject": "Christy Mathewson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "Yankees",
+          "Phillies",
+          "pitchers"
+        ],
+        "rank_lre": 30,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30,
+          "0.5": 87,
+          "1.5": 13,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Wayne Rooney",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "Manchester",
+          "Manchester",
+          "\u66fc\u8054",
+          "\u82f1\u683c\u5170",
+          "England"
+        ],
+        "rank_lre": 538,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 538,
+          "0.5": 904,
+          "1.5": 308,
+          "2.0": 183,
+          "3.0": 62,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Obafemi Martins",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 249,
+        "top_diff": [
+          "Nigeria",
+          "Nigerian",
+          "Cameroon",
+          "Ghana",
+          "Lagos"
+        ],
+        "rank_lre": 547,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 547,
+          "0.5": 926,
+          "1.5": 328,
+          "2.0": 210,
+          "3.0": 83,
+          "5.0": 34
+        }
+      },
+      {
+        "subject": "Casey Stengel",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "Yankee",
+          "Phillies",
+          "Mets"
+        ],
+        "rank_lre": 25,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 25,
+          "0.5": 83,
+          "1.5": 11,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Patrick Roy",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Canadiens",
+          "Quebec",
+          "Montreal",
+          "Qu\u00e9bec",
+          "Calgary"
+        ],
+        "rank_lre": 148,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 148,
+          "0.5": 375,
+          "1.5": 62,
+          "2.0": 27,
+          "3.0": 5,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Ken Dryden",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Toronto",
+          "Canada",
+          "Canadiens",
+          "Montreal",
+          "Hockey"
+        ],
+        "rank_lre": 138,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 138,
+          "0.5": 354,
+          "1.5": 54,
+          "2.0": 21,
+          "3.0": 6,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Allen Iverson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Philly",
+          "Knicks",
+          "Philadelphia",
+          "Philadelphia",
+          "NBA"
+        ],
+        "rank_lre": 70,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 70,
+          "0.5": 139,
+          "1.5": 35,
+          "2.0": 18,
+          "3.0": 7,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Emanuel Pogatetz",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 3226,
+        "top_diff": [
+          "Austrian",
+          "Austria",
+          "\u5965\u5730\u5229",
+          "Sloven",
+          "\u00d6sterreich"
+        ],
+        "rank_lre": 1010,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1010,
+          "0.5": 1239,
+          "1.5": 849,
+          "2.0": 723,
+          "3.0": 563,
+          "5.0": 499
+        }
+      },
+      {
+        "subject": "Ji\u0159\u00ed \u0160l\u00e9gr",
+        "model_top1_id": 9853,
+        "model_top1": "ice",
+        "n_references": 8,
+        "rank_diff": 1084,
+        "top_diff": [
+          "Czech",
+          "Slovak",
+          "Slovakia",
+          "Prague",
+          "Sloven"
+        ],
+        "rank_lre": 800,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 800,
+          "0.5": 1004,
+          "1.5": 657,
+          "2.0": 521,
+          "3.0": 369,
+          "5.0": 244
+        }
+      },
+      {
+        "subject": "Giovani dos Santos",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 163,
+        "top_diff": [
+          "\u58a8\u897f\u54e5",
+          "Mexican",
+          "\u897f\u73ed\u7259",
+          "Mex",
+          "Mexicans"
+        ],
+        "rank_lre": 414,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 414,
+          "0.5": 783,
+          "1.5": 194,
+          "2.0": 96,
+          "3.0": 29,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Clayton Kershaw",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "\u6d1b\u6749\u77f6",
+          "Dodgers",
+          "Los",
+          "Pasadena",
+          "pitchers"
+        ],
+        "rank_lre": 61,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 61,
+          "0.5": 127,
+          "1.5": 30,
+          "2.0": 14,
+          "3.0": 4,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Jarome Iginla",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "Calgary",
+          "Alberta",
+          "Edmonton",
+          "Manitoba",
+          "Toronto"
+        ],
+        "rank_lre": 159,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 159,
+          "0.5": 377,
+          "1.5": 70,
+          "2.0": 31,
+          "3.0": 8,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Lutz Pfannenstiel",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 6086,
+        "top_diff": [
+          "\u5fb7\u56fd",
+          "\u6b27\u6d32",
+          "German",
+          "\u6bd4\u5229\u65f6",
+          "\u30c9\u30a4\u30c4"
+        ],
+        "rank_lre": 1036,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1036,
+          "0.5": 1256,
+          "1.5": 827,
+          "2.0": 698,
+          "3.0": 515,
+          "5.0": 340
+        }
+      },
+      {
+        "subject": "Benny Feilhaber",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "MLS",
+          "midfielder",
+          "midfield",
+          "soccer",
+          "Milwaukee"
+        ],
+        "rank_lre": 346,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 346,
+          "0.5": 731,
+          "1.5": 148,
+          "2.0": 71,
+          "3.0": 12,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Lawrence Taylor",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "NFL",
+          "linebacker",
+          "lineback",
+          "fer",
+          "NFL"
+        ],
+        "rank_lre": 65,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 65,
+          "0.5": 132,
+          "1.5": 33,
+          "2.0": 16,
+          "3.0": 5,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Bart Starr",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 168,
+        "top_diff": [
+          "Packers",
+          "Milwaukee",
+          "Wisconsin",
+          "Tennessee",
+          "Knoxville"
+        ],
+        "rank_lre": 123,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 123,
+          "0.5": 174,
+          "1.5": 78,
+          "2.0": 55,
+          "3.0": 26,
+          "5.0": 20
+        }
+      },
+      {
+        "subject": "Kenny Lofton",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Cincinnati",
+          "Phillies",
+          "Pittsburgh",
+          "speedy",
+          "Cleveland"
+        ],
+        "rank_lre": 52,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 52,
+          "0.5": 114,
+          "1.5": 23,
+          "2.0": 12,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Dennis Seidenberg",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 9695,
+        "top_diff": [
+          "defenseman",
+          "NHL",
+          "German",
+          "Minnesota",
+          "lumber"
+        ],
+        "rank_lre": 226,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 226,
+          "0.5": 243,
+          "1.5": 220,
+          "2.0": 217,
+          "3.0": 243,
+          "5.0": 331
+        }
+      },
+      {
+        "subject": "Ernie Davis",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 235,
+        "top_diff": [
+          "Appalachian",
+          "Appalach",
+          "\u6c82",
+          "Ohio",
+          "Rutgers"
+        ],
+        "rank_lre": 108,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 108,
+          "0.5": 174,
+          "1.5": 74,
+          "2.0": 52,
+          "3.0": 26,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "David Robinson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 33,
+        "top_diff": [
+          "guarded",
+          "\u6d77\u519b",
+          "Texans",
+          "guards",
+          "Spurs"
+        ],
+        "rank_lre": 87,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 87,
+          "0.5": 161,
+          "1.5": 54,
+          "2.0": 31,
+          "3.0": 13,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Blaise Matuidi",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 56,
+        "top_diff": [
+          "Juventus",
+          "UEFA",
+          "Ferrari",
+          "Barcelona",
+          "Paris"
+        ],
+        "rank_lre": 545,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 545,
+          "0.5": 906,
+          "1.5": 321,
+          "2.0": 180,
+          "3.0": 66,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Carlos Valderrama",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 171,
+        "top_diff": [
+          "Colombian",
+          "Colombia",
+          "Venezuelan",
+          "colomb",
+          "Venezuela"
+        ],
+        "rank_lre": 456,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 456,
+          "0.5": 840,
+          "1.5": 240,
+          "2.0": 132,
+          "3.0": 50,
+          "5.0": 29
+        }
+      },
+      {
+        "subject": "Pat Tillman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 1440,
+        "top_diff": [
+          "Wyoming",
+          "\u7f8e\u519b",
+          "Army",
+          "Montana",
+          "\u9646\u519b"
+        ],
+        "rank_lre": 154,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 154,
+          "0.5": 197,
+          "1.5": 116,
+          "2.0": 87,
+          "3.0": 56,
+          "5.0": 39
+        }
+      },
+      {
+        "subject": "Roger Maris",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Kansas",
+          "Kansas",
+          "Mets",
+          "Bronx",
+          "Baseball"
+        ],
+        "rank_lre": 48,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 48,
+          "0.5": 113,
+          "1.5": 20,
+          "2.0": 12,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jermaine Jones",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 126,
+        "top_diff": [
+          "Wisconsin",
+          "Milwaukee",
+          "Minnesota",
+          "MLS",
+          "Bundesliga"
+        ],
+        "rank_lre": 602,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 602,
+          "0.5": 982,
+          "1.5": 398,
+          "2.0": 245,
+          "3.0": 118,
+          "5.0": 46
+        }
+      },
+      {
+        "subject": "Alexander Ovechkin",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "Vladimir",
+          "Russians",
+          "Russian",
+          "Russia",
+          "Putin"
+        ],
+        "rank_lre": 277,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 277,
+          "0.5": 491,
+          "1.5": 162,
+          "2.0": 93,
+          "3.0": 32,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Tim Cahill",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "soccer",
+          "FIFA",
+          "Australia",
+          "NSW",
+          "MLS"
+        ],
+        "rank_lre": 351,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 351,
+          "0.5": 739,
+          "1.5": 159,
+          "2.0": 69,
+          "3.0": 14,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Rick Barry",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Sacramento",
+          "Basketball",
+          "basketball",
+          "Oakland",
+          "NBA"
+        ],
+        "rank_lre": 58,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 58,
+          "0.5": 130,
+          "1.5": 24,
+          "2.0": 13,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Walter Zenga",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 27,
+        "top_diff": [
+          "Italian",
+          "Italy",
+          "Italians",
+          "goalie",
+          "italian"
+        ],
+        "rank_lre": 483,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 483,
+          "0.5": 857,
+          "1.5": 279,
+          "2.0": 156,
+          "3.0": 48,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Walter Payton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "NFL",
+          "Illinois",
+          "\u829d\u52a0\u54e5",
+          "Chicago",
+          "NFL"
+        ],
+        "rank_lre": 64,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 64,
+          "0.5": 131,
+          "1.5": 30,
+          "2.0": 15,
+          "3.0": 5,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Joakim Noah",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Knicks",
+          "Chicago",
+          "\u829d\u52a0\u54e5",
+          "Illinois",
+          "NBA"
+        ],
+        "rank_lre": 68,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 68,
+          "0.5": 138,
+          "1.5": 37,
+          "2.0": 15,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "David Beckham",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "soccer",
+          "\u82f1\u56fd",
+          "\u6d1b\u6749\u77f6",
+          "Beckham",
+          "\u4f26\u6566"
+        ],
+        "rank_lre": 285,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 285,
+          "0.5": 680,
+          "1.5": 125,
+          "2.0": 60,
+          "3.0": 11,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Alan Ball, Jr.",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 2132,
+        "top_diff": [
+          "guarded",
+          "Minnesota",
+          "Portland",
+          "Mississippi",
+          "filmmakers"
+        ],
+        "rank_lre": 202,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 202,
+          "0.5": 226,
+          "1.5": 180,
+          "2.0": 151,
+          "3.0": 110,
+          "5.0": 74
+        }
+      },
+      {
+        "subject": "Hugo S\u00e1nchez",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 358,
+        "top_diff": [
+          "\u58a8\u897f\u54e5",
+          "Mexican",
+          "Mexico",
+          "Mexicans",
+          "M\u00e9xico"
+        ],
+        "rank_lre": 635,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 635,
+          "0.5": 986,
+          "1.5": 437,
+          "2.0": 294,
+          "3.0": 163,
+          "5.0": 100
+        }
+      },
+      {
+        "subject": "Florent Sinama Pongolle",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 283,
+        "top_diff": [
+          "Cameroon",
+          "Moroccan",
+          "Nigerian",
+          "Bordeaux",
+          "Colombian"
+        ],
+        "rank_lre": 699,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 699,
+          "0.5": 1057,
+          "1.5": 480,
+          "2.0": 330,
+          "3.0": 153,
+          "5.0": 45
+        }
+      },
+      {
+        "subject": "Arvydas Sabonis",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "Latvia",
+          "Lithuania",
+          "Yugosl",
+          "Serbian",
+          "Sloven"
+        ],
+        "rank_lre": 51,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 51,
+          "0.5": 120,
+          "1.5": 22,
+          "2.0": 13,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Patrick Ewing",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Knicks",
+          "Harlem",
+          "Bronx",
+          "\u7ebd\u7ea6",
+          "NYC"
+        ],
+        "rank_lre": 53,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 53,
+          "0.5": 124,
+          "1.5": 20,
+          "2.0": 13,
+          "3.0": 2,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Nelson Valdez",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 358,
+        "top_diff": [
+          "Colombian",
+          "Venezuelan",
+          "Chile",
+          "Barcelona",
+          "Ecuador"
+        ],
+        "rank_lre": 506,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 506,
+          "0.5": 897,
+          "1.5": 288,
+          "2.0": 167,
+          "3.0": 60,
+          "5.0": 37
+        }
+      },
+      {
+        "subject": "Chuck Connors",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 737,
+        "top_diff": [
+          "ranch",
+          "Wyoming",
+          "Shotgun",
+          "rugged",
+          "Rifle"
+        ],
+        "rank_lre": 128,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 128,
+          "0.5": 175,
+          "1.5": 88,
+          "2.0": 64,
+          "3.0": 27,
+          "5.0": 14
+        }
+      },
+      {
+        "subject": "Kevin Durant",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "\u675c\u5170\u7279",
+          "NBA",
+          "Kobe",
+          "Kare",
+          "LeBron"
+        ],
+        "rank_lre": 67,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 67,
+          "0.5": 134,
+          "1.5": 31,
+          "2.0": 15,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "David Andersen",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "NBA",
+          "BYU",
+          "Portland",
+          "basketball",
+          "Utah"
+        ],
+        "rank_lre": 61,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 61,
+          "0.5": 130,
+          "1.5": 29,
+          "2.0": 16,
+          "3.0": 5,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Michael Uma\u00f1a",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 10935,
+        "top_diff": [
+          "Puerto",
+          "Colombian",
+          "Nicar",
+          "Honduras",
+          "Cuban"
+        ],
+        "rank_lre": 1306,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1306,
+          "0.5": 1388,
+          "1.5": 1230,
+          "2.0": 1177,
+          "3.0": 1123,
+          "5.0": 1195
+        }
+      },
+      {
+        "subject": "Ra\u00efs M'Bolhi",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 16596,
+        "top_diff": [
+          "Algeria",
+          "Ghana",
+          "Libyan",
+          "Alger",
+          "Zambia"
+        ],
+        "rank_lre": 1327,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1327,
+          "0.5": 1399,
+          "1.5": 1255,
+          "2.0": 1216,
+          "3.0": 1225,
+          "5.0": 1414
+        }
+      },
+      {
+        "subject": "Carlos Arroyo",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 136,
+        "top_diff": [
+          "Knicks",
+          "Puerto",
+          "Venezuelan",
+          "Miami",
+          "Caribbean"
+        ],
+        "rank_lre": 69,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 69,
+          "0.5": 145,
+          "1.5": 34,
+          "2.0": 18,
+          "3.0": 6,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Jos\u00e9 Canseco",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 23,
+        "top_diff": [
+          "Venezuelan",
+          "\u58a8\u897f\u54e5",
+          "Cuban",
+          "\u5df4\u897f",
+          "Mexican"
+        ],
+        "rank_lre": 56,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 56,
+          "0.5": 122,
+          "1.5": 24,
+          "2.0": 13,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Rick Fox",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Lakers",
+          "Celtics",
+          "NBA",
+          "Boston",
+          "Knicks"
+        ],
+        "rank_lre": 61,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 61,
+          "0.5": 129,
+          "1.5": 28,
+          "2.0": 14,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Gary Payton",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Seattle",
+          "Seattle",
+          "Lakers",
+          "Miami",
+          "Seahawks"
+        ],
+        "rank_lre": 68,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 68,
+          "0.5": 133,
+          "1.5": 34,
+          "2.0": 14,
+          "3.0": 5,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Billy Sunday",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 1309,
+        "top_diff": [
+          "bible",
+          "evangel",
+          "baseball",
+          "Bible",
+          "preacher"
+        ],
+        "rank_lre": 153,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 153,
+          "0.5": 196,
+          "1.5": 126,
+          "2.0": 105,
+          "3.0": 68,
+          "5.0": 50
+        }
+      },
+      {
+        "subject": "Jim Bunning",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 42,
+        "top_diff": [
+          "Cincinnati",
+          "Louisiana",
+          "Phillies",
+          "Mississippi",
+          "Pennsylvania"
+        ],
+        "rank_lre": 70,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 70,
+          "0.5": 135,
+          "1.5": 33,
+          "2.0": 17,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Willie Stargell",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "Pittsburgh",
+          "Cincinnati",
+          "Phillies",
+          "Louisville",
+          "Philly"
+        ],
+        "rank_lre": 48,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 48,
+          "0.5": 112,
+          "1.5": 22,
+          "2.0": 11,
+          "3.0": 4,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Wilt Chamberlain",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "NBA",
+          "Philly",
+          "basketball",
+          "Philadelphia",
+          "Philadelphia"
+        ],
+        "rank_lre": 62,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 62,
+          "0.5": 128,
+          "1.5": 25,
+          "2.0": 13,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Sergei Fedorov",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "Detroit",
+          "Russians",
+          "Russian",
+          "Sloven",
+          "Ukrainian"
+        ],
+        "rank_lre": 157,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 157,
+          "0.5": 378,
+          "1.5": 68,
+          "2.0": 29,
+          "3.0": 6,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Pavel Bure",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Vancouver",
+          "Canucks",
+          "\u4e2d\u4fc4",
+          "Russians",
+          "\u83ab\u65af\u79d1"
+        ],
+        "rank_lre": 169,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 169,
+          "0.5": 394,
+          "1.5": 78,
+          "2.0": 35,
+          "3.0": 8,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Tony Gwynn",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Padres",
+          "batting",
+          "Baseball",
+          "hitters",
+          "California"
+        ],
+        "rank_lre": 44,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 44,
+          "0.5": 102,
+          "1.5": 15,
+          "2.0": 8,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Yao Ming",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 121,
+        "top_diff": [
+          "\u59da\u660e",
+          "\u91cd\u5e86",
+          "Yao",
+          "\u4e2d\u56fd",
+          "\u4e2d\u56fd\u4eba"
+        ],
+        "rank_lre": 70,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 70,
+          "0.5": 134,
+          "1.5": 38,
+          "2.0": 20,
+          "3.0": 5,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Stephen Curry",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Sacramento",
+          "Fresno",
+          "Celtics",
+          "NBA",
+          "Curry"
+        ],
+        "rank_lre": 53,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 53,
+          "0.5": 118,
+          "1.5": 21,
+          "2.0": 11,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Ashley Cole",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 61,
+        "top_diff": [
+          "\u5207\u5c14\u897f",
+          "London",
+          "\u963f\u68ee\u7eb3",
+          "UEFA",
+          "Chelsea"
+        ],
+        "rank_lre": 533,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 533,
+          "0.5": 900,
+          "1.5": 303,
+          "2.0": 176,
+          "3.0": 76,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Ichiro Suzuki",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Japanese",
+          "Suzuki",
+          "Japanese",
+          "Mets",
+          "\u65e5\u672c\u4eba"
+        ],
+        "rank_lre": 54,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 54,
+          "0.5": 117,
+          "1.5": 26,
+          "2.0": 12,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Otto Graham",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 60,
+        "top_diff": [
+          "Baltimore",
+          "Cleveland",
+          "Pittsburgh",
+          "Cincinnati",
+          "Akron"
+        ],
+        "rank_lre": 129,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 129,
+          "0.5": 177,
+          "1.5": 79,
+          "2.0": 59,
+          "3.0": 28,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Tom Seaver",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Mets",
+          "Cincinnati",
+          "Brooklyn",
+          "Baseball",
+          "baseball"
+        ],
+        "rank_lre": 33,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 33,
+          "0.5": 91,
+          "1.5": 13,
+          "2.0": 5,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Gale Sayers",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 86,
+        "top_diff": [
+          "\u829d\u52a0\u54e5",
+          "Chicago",
+          "Illinois",
+          "Chicago",
+          "\u8dd1"
+        ],
+        "rank_lre": 111,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 111,
+          "0.5": 170,
+          "1.5": 70,
+          "2.0": 51,
+          "3.0": 24,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "Moses Malone",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "\u5b81\u590f",
+          "\u94f6\u5ddd",
+          "Houston",
+          "Baylor",
+          "Texans"
+        ],
+        "rank_lre": 49,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 49,
+          "0.5": 118,
+          "1.5": 17,
+          "2.0": 10,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Troy Aikman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 114,
+        "top_diff": [
+          "Cowboys",
+          "Dallas",
+          "Dallas",
+          "Texans",
+          "quarterback"
+        ],
+        "rank_lre": 126,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 126,
+          "0.5": 182,
+          "1.5": 83,
+          "2.0": 57,
+          "3.0": 28,
+          "5.0": 14
+        }
+      },
+      {
+        "subject": "Leon Allen White",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 6135,
+        "top_diff": [
+          "Vermont",
+          "Maine",
+          "Charlottesville",
+          "Rhode",
+          "Connecticut"
+        ],
+        "rank_lre": 203,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 203,
+          "0.5": 230,
+          "1.5": 177,
+          "2.0": 168,
+          "3.0": 135,
+          "5.0": 122
+        }
+      },
+      {
+        "subject": "Fred Williamson",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 147,
+        "top_diff": [
+          "Harlem",
+          "African",
+          "Negro",
+          "Memphis",
+          "blacks"
+        ],
+        "rank_lre": 112,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 112,
+          "0.5": 174,
+          "1.5": 75,
+          "2.0": 52,
+          "3.0": 24,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Ty Cobb",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "\u51f6",
+          "Braves",
+          "murderous"
+        ],
+        "rank_lre": 54,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 54,
+          "0.5": 111,
+          "1.5": 22,
+          "2.0": 13,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Pavel Datsyuk",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Detroit",
+          "Michigan",
+          "Detroit",
+          "Pistons",
+          "Michigan"
+        ],
+        "rank_lre": 200,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 200,
+          "0.5": 424,
+          "1.5": 94,
+          "2.0": 52,
+          "3.0": 14,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Mark Messier",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Edmonton",
+          "Toronto",
+          "Hockey",
+          "Vancouver",
+          "Canada"
+        ],
+        "rank_lre": 127,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 127,
+          "0.5": 341,
+          "1.5": 50,
+          "2.0": 18,
+          "3.0": 6,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Roberto Clemente",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 246,
+        "top_diff": [
+          "Puerto",
+          "Caribbean",
+          "Colombian",
+          "Nicar",
+          "Nicaragua"
+        ],
+        "rank_lre": 82,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 82,
+          "0.5": 151,
+          "1.5": 51,
+          "2.0": 25,
+          "3.0": 12,
+          "5.0": 11
+        }
+      },
+      {
+        "subject": "Yogi Berra",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Yankee",
+          "Yankees",
+          "Mets",
+          "Bronx",
+          "catcher"
+        ],
+        "rank_lre": 48,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 48,
+          "0.5": 106,
+          "1.5": 20,
+          "2.0": 11,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jerry West",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "\u6e56\u4eba",
+          "Lakers",
+          "NBA",
+          "Basketball",
+          "Pistons"
+        ],
+        "rank_lre": 64,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 64,
+          "0.5": 138,
+          "1.5": 32,
+          "2.0": 17,
+          "3.0": 5,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Stan Musial",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Cardinals",
+          "Missouri",
+          "Cincinnati",
+          "Baseball",
+          "baseball"
+        ],
+        "rank_lre": 43,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 43,
+          "0.5": 99,
+          "1.5": 14,
+          "2.0": 9,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Warren Spahn",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Milwaukee",
+          "Braves",
+          "Brewers",
+          "Wisconsin",
+          "pitchers"
+        ],
+        "rank_lre": 51,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 51,
+          "0.5": 119,
+          "1.5": 23,
+          "2.0": 14,
+          "3.0": 4,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Aleksandar \u0110or\u0111evi\u0107",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 403,
+        "top_diff": [
+          "Serbian",
+          "Serbia",
+          "Yugosl",
+          "Croatian",
+          "Bosnia"
+        ],
+        "rank_lre": 114,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 114,
+          "0.5": 176,
+          "1.5": 74,
+          "2.0": 41,
+          "3.0": 18,
+          "5.0": 10
+        }
+      },
+      {
+        "subject": "Phil Jackson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Lakers",
+          "Minnesota",
+          "\u6e56\u4eba",
+          "Minnesota",
+          "NBA"
+        ],
+        "rank_lre": 58,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 58,
+          "0.5": 129,
+          "1.5": 27,
+          "2.0": 15,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Gonzalo Higua\u00edn",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 1418,
+        "top_diff": [
+          "\u963f\u6839\u5ef7",
+          "Argentine",
+          "Argentina",
+          "Napoli",
+          "Madrid"
+        ],
+        "rank_lre": 902,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 902,
+          "0.5": 1155,
+          "1.5": 699,
+          "2.0": 574,
+          "3.0": 433,
+          "5.0": 330
+        }
+      },
+      {
+        "subject": "Jackie Robinson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Dodgers",
+          "baseball",
+          "Negro",
+          "\u7834",
+          "\u79cd\u65cf"
+        ],
+        "rank_lre": 46,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 46,
+          "0.5": 104,
+          "1.5": 17,
+          "2.0": 10,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Pavol Demitra",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Slovak",
+          "Slovakia",
+          "NHL",
+          "Czech",
+          "Canadian"
+        ],
+        "rank_lre": 120,
+        "top_lre": [
+          "a",
+          "the",
+          "one",
+          "an",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 120,
+          "0.5": 324,
+          "1.5": 49,
+          "2.0": 17,
+          "3.0": 5,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Lionel Conacher",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 17,
+        "top_diff": [
+          "Toronto",
+          "Ontario",
+          "Canadian",
+          "Canada",
+          "Philadelphia"
+        ],
+        "rank_lre": 205,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 205,
+          "0.5": 426,
+          "1.5": 107,
+          "2.0": 58,
+          "3.0": 17,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "J\u00falio Baptista",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 199,
+        "top_diff": [
+          "Portuguese",
+          "Uruguay",
+          "\u8461\u8404\u7259",
+          "Venezuelan",
+          "Brazilian"
+        ],
+        "rank_lre": 485,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 485,
+          "0.5": 869,
+          "1.5": 263,
+          "2.0": 149,
+          "3.0": 45,
+          "5.0": 22
+        }
+      },
+      {
+        "subject": "Freddie Ljungberg",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 159,
+        "top_diff": [
+          "\u963f\u68ee\u7eb3",
+          "Arsenal",
+          "Amsterdam",
+          "London",
+          "Knicks"
+        ],
+        "rank_lre": 704,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 704,
+          "0.5": 1048,
+          "1.5": 491,
+          "2.0": 333,
+          "3.0": 167,
+          "5.0": 48
+        }
+      },
+      {
+        "subject": "Tom Brady",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 46,
+        "top_diff": [
+          "quarterbacks",
+          "Boston",
+          "Patriots",
+          "NFL",
+          "quarterback"
+        ],
+        "rank_lre": 116,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 116,
+          "0.5": 179,
+          "1.5": 83,
+          "2.0": 56,
+          "3.0": 24,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "Jim Thorpe",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 955,
+        "top_diff": [
+          "Albania",
+          "Athletics",
+          "Oklahoma",
+          "Penn",
+          "Pennsylvania"
+        ],
+        "rank_lre": 120,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 120,
+          "0.5": 174,
+          "1.5": 80,
+          "2.0": 63,
+          "3.0": 28,
+          "5.0": 21
+        }
+      },
+      {
+        "subject": "Roman Reigns",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 5167,
+        "top_diff": [
+          "WWE",
+          "Hulk",
+          "wrestlers",
+          "Wrestle",
+          "Godzilla"
+        ],
+        "rank_lre": 207,
+        "top_lre": [
+          "a",
+          "the",
+          "an",
+          "one",
+          "what"
+        ],
+        "rank_lre_beta": {
+          "1.0": 207,
+          "0.5": 231,
+          "1.5": 189,
+          "2.0": 176,
+          "3.0": 166,
+          "5.0": 200
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 183.5,
+          "median_lograng": 2.265982016974173,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 127.5,
+          "median_lograng": 2.1088998399735583,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 74.0,
+          "median_lograng": 1.8750612633917,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 49.5,
+          "median_lograng": 1.7030997118316564,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05
+        },
+        "3.0": {
+          "median_rank": 13.5,
+          "median_lograng": 1.1611096473669598,
+          "agree_at1": 0.03,
+          "agree_at10": 0.45
+        },
+        "5.0": {
+          "median_rank": 3.5,
+          "median_lograng": 0.6505149978319906,
+          "agree_at1": 0.27,
+          "agree_at10": 0.56
+        }
+      }
+    },
+    "split_fingerprint": "fdc72b07d56e",
+    "legacy_split": false,
+    "neutral_prompt": "{} can be described as"
+  },
+  "positions": {
+    "Michael Jordan": 1,
+    "Nate Schierholtz": 6,
+    "Teemu S\u00e4l\u00e4nn\u00e4": 5,
+    "Tom Harmon": 1,
+    "Bob Hayes": 1,
+    "Julius Erving": 3,
+    "Stan Mikita": 2,
+    "Tim Tebow": 2,
+    "Sergei Makarov": 4,
+    "Sidney Crosby": 2,
+    "Cam Newton": 1,
+    "Terrell Owens": 2,
+    "Frank Gifford": 3,
+    "Fr\u00e9d\u00e9ric Piquionne": 6,
+    "Carlos Beltr\u00e1n": 3,
+    "Tim Horton": 1,
+    "Jermain Defoe": 3,
+    "Steve Yzerman": 3,
+    "Matteo Ferrari": 3,
+    "Jesse Hibbs": 3,
+    "Brett Hull": 2,
+    "Ollie Matson": 4,
+    "Edgaras Jankauskas": 6,
+    "Brett Favre": 3,
+    "Christy Mathewson": 4,
+    "Wayne Rooney": 2,
+    "Obafemi Martins": 3,
+    "Casey Stengel": 4,
+    "Patrick Roy": 1,
+    "Ken Dryden": 2,
+    "Allen Iverson": 2,
+    "Emanuel Pogatetz": 5,
+    "Ji\u0159\u00ed \u0160l\u00e9gr": 7,
+    "Giovani dos Santos": 4,
+    "Clayton Kershaw": 5,
+    "Jarome Iginla": 4,
+    "Lutz Pfannenstiel": 6,
+    "Benny Feilhaber": 5,
+    "Lawrence Taylor": 2,
+    "Bart Starr": 2,
+    "Kenny Lofton": 3,
+    "Dennis Seidenberg": 4,
+    "Ernie Davis": 2,
+    "David Robinson": 1,
+    "Blaise Matuidi": 4,
+    "Carlos Valderrama": 4,
+    "Pat Tillman": 2,
+    "Roger Maris": 2,
+    "Jermaine Jones": 3,
+    "Alexander Ovechkin": 4,
+    "Tim Cahill": 2,
+    "Rick Barry": 1,
+    "Walter Zenga": 3,
+    "Walter Payton": 3,
+    "Joakim Noah": 3,
+    "David Beckham": 1,
+    "Alan Ball, Jr.": 4,
+    "Hugo S\u00e1nchez": 3,
+    "Florent Sinama Pongolle": 6,
+    "Arvydas Sabonis": 4,
+    "Patrick Ewing": 2,
+    "Nelson Valdez": 3,
+    "Chuck Connors": 2,
+    "Kevin Durant": 1,
+    "David Andersen": 1,
+    "Michael Uma\u00f1a": 2,
+    "Ra\u00efs M'Bolhi": 6,
+    "Carlos Arroyo": 3,
+    "Jos\u00e9 Canseco": 4,
+    "Rick Fox": 1,
+    "Gary Payton": 2,
+    "Billy Sunday": 1,
+    "Jim Bunning": 2,
+    "Willie Stargell": 4,
+    "Wilt Chamberlain": 3,
+    "Sergei Fedorov": 5,
+    "Pavel Bure": 3,
+    "Tony Gwynn": 3,
+    "Yao Ming": 2,
+    "Stephen Curry": 1,
+    "Ashley Cole": 2,
+    "Ichiro Suzuki": 2,
+    "Otto Graham": 2,
+    "Tom Seaver": 2,
+    "Gale Sayers": 3,
+    "Moses Malone": 2,
+    "Troy Aikman": 4,
+    "Leon Allen White": 2,
+    "Fred Williamson": 1,
+    "Ty Cobb": 1,
+    "Pavel Datsyuk": 5,
+    "Mark Messier": 2,
+    "Roberto Clemente": 3,
+    "Yogi Berra": 3,
+    "Jerry West": 1,
+    "Stan Musial": 2,
+    "Warren Spahn": 3,
+    "Aleksandar \u0110or\u0111evi\u0107": 8,
+    "Phil Jackson": 1,
+    "Gonzalo Higua\u00edn": 5,
+    "Jackie Robinson": 2,
+    "Pavol Demitra": 4,
+    "Lionel Conacher": 4,
+    "J\u00falio Baptista": 4,
+    "Freddie Ljungberg": 5,
+    "Tom Brady": 1,
+    "Jim Thorpe": 2,
+    "Roman Reigns": 2
+  },
+  "faithfulness": 0.96,
+  "n_lre": 100,
+  "split_fingerprint": "fdc72b07d56e",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/person_plays_pro_sport.json",
+  "retained_sha256": "37d5ff9daaca3c723b2a67201ad8e374dd39915a37c28c3758eeaeb523c99b0e",
+  "data_sha256": "adfea3a51c0315818a63ec0a421fba45818f3854212f9999910c80eac934165c",
+  "worker": 10,
+  "elapsed_seconds": 24.498206615447998
+}

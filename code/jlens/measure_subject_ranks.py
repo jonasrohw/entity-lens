@@ -49,6 +49,7 @@ def main():
     from jlens.model import (
         HiddenStateIntervention,
         final_logits,
+        forward_with_raw_hidden_states,
         resolve_blocks,
         resolve_final_norm,
     )
@@ -129,13 +130,11 @@ def main():
                 "input_ids"
             ]
             subject_position = min(sub_pos(sub), input_ids.shape[1] - 1)
-            out = model(input_ids=input_ids, output_hidden_states=True)
+            out, hidden_states = forward_with_raw_hidden_states(model, input_ids)
             cache[sub] = (
                 input_ids,
                 subject_position,
-                out.hidden_states[selected_layer][0, subject_position, :]
-                .detach()
-                .clone(),
+                hidden_states[selected_layer][0, subject_position, :].detach().clone(),
             )
             model_top_tokens[sub] = int(out.logits[0, -1].argmax())
 

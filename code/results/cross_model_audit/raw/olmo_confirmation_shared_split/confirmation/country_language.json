@@ -1,0 +1,94 @@
+{
+  "relation": "country_language",
+  "protocol": "shared_split",
+  "subject_policy": "original_rows",
+  "input_samples": 24,
+  "cleaned_samples": 24,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 11,
+      "beta": 5.0,
+      "score": 1.0,
+      "hits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          0,
+          0,
+          0,
+          6,
+          857,
+          62,
+          6,
+          1158
+        ],
+        "hits": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 0.8450980400142568,
+        "mean_logrank": 1.1858884191617995,
+        "top1": 0.375,
+        "top10": 0.625,
+        "mrr": 0.412951951940304,
+        "optimistic_top1": 0.375
+      }
+    }
+  },
+  "lm_accuracy": 0.875,
+  "prior_only_faith": 0.0,
+  "n_faith": 8,
+  "n_lens": 8,
+  "faith_subjects": [
+    "Turkey",
+    "China",
+    "Japan",
+    "Brazil",
+    "Venezuela",
+    "Mexico",
+    "Pakistan",
+    "Argentina"
+  ],
+  "lens_subjects": [
+    "Turkey",
+    "China",
+    "Japan",
+    "Brazil",
+    "Venezuela",
+    "Mexico",
+    "Pakistan",
+    "Argentina"
+  ],
+  "faith_split_fingerprint": "5705f09ec166",
+  "lens_split_fingerprint": "5705f09ec166",
+  "worker": "olmo_shared_beta_2",
+  "elapsed_seconds": 5.279301643371582
+}

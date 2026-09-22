@@ -1,0 +1,516 @@
+{
+  "relation": "country_language",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "7": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.25,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.375,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.25,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.375,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      },
+      "30": {
+        "0.5": [
+          0.25,
+          0.0
+        ],
+        "1.0": [
+          0.25,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.25,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 22,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 8,
+    "requested_n_test": 100,
+    "lm_correct": 8,
+    "per_subject": {
+      "Spain": 1,
+      "Australia": 1,
+      "Japan": 1,
+      "South Korea": 1,
+      "Venezuela": 1,
+      "Canada": 1,
+      "Russia": 1,
+      "Italy": 1
+    },
+    "split_fingerprint": "99747761f2d7",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 8,
+    "layer": 22,
+    "template": "People in {} speak",
+    "agg": {
+      "diff": {
+        "median_rank": 2174.5,
+        "median_lograng": 2.794225495711906,
+        "agree_at1": 0.0,
+        "agree_at10": 0.125
+      },
+      "lre": {
+        "median_rank": 7901.0,
+        "median_lograng": 3.895782521638883,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Spain",
+        "model_top1_id": 13035,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 4259,
+        "top_diff": [
+          "Barcelona",
+          "flamenco",
+          "football",
+          "Barcelona",
+          "Granada"
+        ],
+        "rank_lre": 5796,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5796,
+          "0.5": 6164,
+          "1.5": 5443,
+          "2.0": 5142,
+          "3.0": 4593,
+          "5.0": 3649
+        }
+      },
+      {
+        "subject": "Australia",
+        "model_top1_id": 4645,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 4384,
+        "top_diff": [
+          "cricket",
+          "Melbourne",
+          "Rugby",
+          "rugby",
+          "Kangaroo"
+        ],
+        "rank_lre": 1895,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1895,
+          "0.5": 2026,
+          "1.5": 1782,
+          "2.0": 1664,
+          "3.0": 1480,
+          "5.0": 1194
+        }
+      },
+      {
+        "subject": "Japan",
+        "model_top1_id": 11430,
+        "model_top1": "Japanese",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Anime",
+          "anime",
+          "Tokyo",
+          "Osaka",
+          "Japanese"
+        ],
+        "rank_lre": 13732,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13732,
+          "0.5": 16606,
+          "1.5": 11361,
+          "2.0": 9352,
+          "3.0": 6099,
+          "5.0": 2551
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 23592,
+        "model_top1": "Korean",
+        "n_references": 8,
+        "rank_diff": 68,
+        "top_diff": [
+          "ciber",
+          "anime",
+          "Hentet",
+          "Armada",
+          "missile"
+        ],
+        "rank_lre": 33883,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 33883,
+          "0.5": 42606,
+          "1.5": 26939,
+          "2.0": 21535,
+          "3.0": 13801,
+          "5.0": 6046
+        }
+      },
+      {
+        "subject": "Venezuela",
+        "model_top1_id": 13035,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 237684,
+        "top_diff": [
+          "oil",
+          "Oil",
+          "Oil",
+          "\u77f3\u6cb9",
+          "Caracas"
+        ],
+        "rank_lre": 7153,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7153,
+          "0.5": 6829,
+          "1.5": 7488,
+          "2.0": 7814,
+          "3.0": 8582,
+          "5.0": 10330
+        }
+      },
+      {
+        "subject": "Canada",
+        "model_top1_id": 4645,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 9357,
+        "top_diff": [
+          "Toronto",
+          "Montreal",
+          "Canadians",
+          "maple",
+          "Hockey"
+        ],
+        "rank_lre": 1982,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1982,
+          "0.5": 2075,
+          "1.5": 1906,
+          "2.0": 1836,
+          "3.0": 1691,
+          "5.0": 1467
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 11200,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 80,
+        "top_diff": [
+          "Moscow",
+          "Kremlin",
+          "Putin",
+          "Leonid",
+          "oil"
+        ],
+        "rank_lre": 14393,
+        "top_lre": [
+          "its",
+          "many",
+          "being",
+          "having",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14393,
+          "0.5": 16203,
+          "1.5": 12767,
+          "2.0": 11383,
+          "3.0": 8958,
+          "5.0": 5392
+        }
+      },
+      {
+        "subject": "Italy",
+        "model_top1_id": 12710,
+        "model_top1": "Italian",
+        "n_references": 8,
+        "rank_diff": 90,
+        "top_diff": [
+          "Modena",
+          "Naples",
+          "Argentina",
+          "Napoli",
+          "Bologna"
+        ],
+        "rank_lre": 8649,
+        "top_lre": [
+          "its",
+          "many",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8649,
+          "0.5": 9727,
+          "1.5": 7684,
+          "2.0": 6792,
+          "3.0": 5303,
+          "5.0": 3248
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 8278.0,
+          "median_lograng": 3.9112221328050962,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 7901.0,
+          "median_lograng": 3.895782521638883,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 7586.0,
+          "median_lograng": 3.8800338512111328,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 7303.0,
+          "median_lograng": 3.8624952984729664,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 5701.0,
+          "median_lograng": 3.754966675203742,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3448.5,
+          "median_lograng": 3.537021287900729,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "99747761f2d7",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 28.22060990333557,
+  "model_id": "google/gemma-2-9b",
+  "revision": "33c193028431c2fde6c6e51f29e6f17b60cbfac6",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "7,14,18,22,26,30",
+  "lens_layer": 22,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.811981201171875e-05,
+    "finite_difference_relative_error": 0.00045203283661976457
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

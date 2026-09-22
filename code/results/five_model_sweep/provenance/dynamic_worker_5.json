@@ -1,0 +1,27 @@
+{
+  "host": "rho2",
+  "devices": "0,1,2",
+  "shard": 5,
+  "command": [
+    "/mounts/work/jonas/diff-jlens/code/.venv/bin/python",
+    "-u",
+    "-m",
+    "jlens.model_sweep",
+    "--model",
+    "Qwen/Qwen3.8-27B",
+    "--name",
+    "qwen3_8_27b",
+    "--lens-layer",
+    "34",
+    "--layers",
+    "10,22,28,34,40,46",
+    "--root",
+    "/mounts/work/jonas/diff-jlens/code/generated/five_model_sweep/results",
+    "--shard",
+    "5",
+    "--batch-size",
+    "8",
+    "--dynamic"
+  ],
+  "log": "/mounts/work/jonas/diff-jlens/code/generated/five_model_sweep/qwen3_8_27b_5.log"
+}

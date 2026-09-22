@@ -32,7 +32,11 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    from jlens.model import final_logits, resolve_final_norm
+    from jlens.model import (
+        final_logits,
+        forward_with_raw_hidden_states,
+        resolve_final_norm,
+    )
 
     main_ref = json.loads((ROOT / "results/jacobian_lens.json").read_text())
     year_ref = json.loads((ROOT / "results/jacobian_lens_years.json").read_text())
@@ -108,9 +112,8 @@ def main():
                     len(tokenizer(neutral_prompt[:end]).input_ids) - 1,
                     neutral_ids.shape[1] - 1,
                 )
-                hidden = model(
-                    input_ids=neutral_ids, output_hidden_states=True
-                ).hidden_states[args.layer][0, position, :]
+                _, hidden_states = forward_with_raw_hidden_states(model, neutral_ids)
+                hidden = hidden_states[args.layer][0, position, :]
                 rank, top = rank_of(hidden, target_id)
                 rows.append(
                     dict(

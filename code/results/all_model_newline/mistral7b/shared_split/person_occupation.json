@@ -1,0 +1,9664 @@
+{
+  "relation": "person_occupation",
+  "protocol": "shared_split",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "lens": {
+    "n": 100,
+    "layer": 17,
+    "template": "{} works as a",
+    "agg": {
+      "diff": {
+        "median_rank": 148.5,
+        "median_lograng": 2.1746387637339777,
+        "agree_at1": 0.0,
+        "agree_at10": 0.23
+      },
+      "lre": {
+        "median_rank": 2465.5,
+        "median_lograng": 3.39208004005979,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Daniel D. Tompkins",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "governor",
+          "Governor",
+          "presid",
+          "presidential",
+          "politics"
+        ],
+        "rank_lre": 10587,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10587,
+          "0.5": 11062,
+          "1.5": 10102,
+          "2.0": 9592,
+          "3.0": 8521,
+          "5.0": 6371
+        }
+      },
+      {
+        "subject": "Simon Gosejohann",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3350,
+        "top_diff": [
+          "software",
+          "brew",
+          "his",
+          "German",
+          "marketing"
+        ],
+        "rank_lre": 2303,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2303,
+          "0.5": 2332,
+          "1.5": 2274,
+          "2.0": 2257,
+          "3.0": 2216,
+          "5.0": 2143
+        }
+      },
+      {
+        "subject": "Masato Wada",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2385,
+        "top_diff": [
+          "Japanese",
+          "Japan",
+          "his",
+          "anime",
+          "photography"
+        ],
+        "rank_lre": 2295,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2295,
+          "0.5": 2331,
+          "1.5": 2253,
+          "2.0": 2219,
+          "3.0": 2141,
+          "5.0": 2058
+        }
+      },
+      {
+        "subject": "Steven Mercurio",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4035,
+        "top_diff": [
+          "Italian",
+          "cooking",
+          "compos",
+          "Italy",
+          "singing"
+        ],
+        "rank_lre": 2334,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2334,
+          "0.5": 2353,
+          "1.5": 2328,
+          "2.0": 2315,
+          "3.0": 2262,
+          "5.0": 2254
+        }
+      },
+      {
+        "subject": "Paolo Soleri",
+        "model_top1_id": 8589,
+        "model_top1": "architect",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "sculpt",
+          "Architect",
+          "architecture",
+          "architect",
+          "cer"
+        ],
+        "rank_lre": 605,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 605,
+          "0.5": 821,
+          "1.5": 439,
+          "2.0": 328,
+          "3.0": 165,
+          "5.0": 48
+        }
+      },
+      {
+        "subject": "Graham Linehan",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 77,
+        "top_diff": [
+          "Twitter",
+          "comedy",
+          "twe",
+          "comed",
+          "writing"
+        ],
+        "rank_lre": 4569,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4569,
+          "0.5": 5026,
+          "1.5": 4173,
+          "2.0": 3773,
+          "3.0": 3138,
+          "5.0": 2095
+        }
+      },
+      {
+        "subject": "Edward Gregson",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "composition",
+          "compos",
+          "composer",
+          "Jazz",
+          "jazz"
+        ],
+        "rank_lre": 4098,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4098,
+          "0.5": 4962,
+          "1.5": 3342,
+          "2.0": 2715,
+          "3.0": 1738,
+          "5.0": 661
+        }
+      },
+      {
+        "subject": "Rolf Thommessen",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2659,
+        "top_diff": [
+          "Norweg",
+          "Norway",
+          "photography",
+          "paintings",
+          "sculpt"
+        ],
+        "rank_lre": 2294,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2294,
+          "0.5": 2340,
+          "1.5": 2261,
+          "2.0": 2233,
+          "3.0": 2175,
+          "5.0": 2067
+        }
+      },
+      {
+        "subject": "Andrei Bely",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "literary",
+          "novels",
+          "poet",
+          "literature",
+          "Liter"
+        ],
+        "rank_lre": 4457,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4457,
+          "0.5": 4962,
+          "1.5": 4029,
+          "2.0": 3577,
+          "3.0": 2855,
+          "5.0": 1768
+        }
+      },
+      {
+        "subject": "Paruyr Sevak",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "poet",
+          "literary",
+          "poem"
+        ],
+        "rank_lre": 753,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 753,
+          "0.5": 1013,
+          "1.5": 537,
+          "2.0": 405,
+          "3.0": 194,
+          "5.0": 51
+        }
+      },
+      {
+        "subject": "Vanessa Ray",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "Broadway",
+          "port",
+          "Disney",
+          "star",
+          "roles"
+        ],
+        "rank_lre": 1850,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1850,
+          "0.5": 2101,
+          "1.5": 1574,
+          "2.0": 1377,
+          "3.0": 1060,
+          "5.0": 613
+        }
+      },
+      {
+        "subject": "Audrey Wise",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 8851,
+        "top_diff": [
+          "her",
+          "writing",
+          "Jazz",
+          "jazz",
+          "poetry"
+        ],
+        "rank_lre": 2460,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2460,
+          "0.5": 2422,
+          "1.5": 2502,
+          "2.0": 2558,
+          "3.0": 2666,
+          "5.0": 2861
+        }
+      },
+      {
+        "subject": "Michael William Balfe",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "opera",
+          "Opera",
+          "musical",
+          "oper",
+          "Shakespeare"
+        ],
+        "rank_lre": 4210,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4210,
+          "0.5": 5041,
+          "1.5": 3499,
+          "2.0": 2901,
+          "3.0": 1916,
+          "5.0": 764
+        }
+      },
+      {
+        "subject": "Vondell Darr",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 12771,
+        "top_diff": [
+          "DJ",
+          "her",
+          "D",
+          "his",
+          "flavor"
+        ],
+        "rank_lre": 2497,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2497,
+          "0.5": 2444,
+          "1.5": 2555,
+          "2.0": 2623,
+          "3.0": 2767,
+          "5.0": 3044
+        }
+      },
+      {
+        "subject": "Herb Greene",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 10042,
+        "top_diff": [
+          "photographs",
+          "architecture",
+          "architect",
+          "photography",
+          "sculpt"
+        ],
+        "rank_lre": 2487,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2487,
+          "0.5": 2427,
+          "1.5": 2541,
+          "2.0": 2604,
+          "3.0": 2708,
+          "5.0": 2917
+        }
+      },
+      {
+        "subject": "Krister Henriksson",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "port",
+          "Theatre",
+          "Swedish",
+          "theatre",
+          "actors"
+        ],
+        "rank_lre": 1742,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1742,
+          "0.5": 2044,
+          "1.5": 1442,
+          "2.0": 1211,
+          "3.0": 871,
+          "5.0": 432
+        }
+      },
+      {
+        "subject": "Patricia Idlette",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4919,
+        "top_diff": [
+          "her",
+          "cooking",
+          "coaching",
+          "Jazz",
+          "Caribbean"
+        ],
+        "rank_lre": 2371,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2371,
+          "0.5": 2378,
+          "1.5": 2379,
+          "2.0": 2381,
+          "3.0": 2402,
+          "5.0": 2428
+        }
+      },
+      {
+        "subject": "William Hardy Wilson",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 335,
+        "top_diff": [
+          "Jefferson",
+          "presid",
+          "scholarship",
+          "leadership",
+          "Jazz"
+        ],
+        "rank_lre": 10973,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10973,
+          "0.5": 11262,
+          "1.5": 10705,
+          "2.0": 10427,
+          "3.0": 9871,
+          "5.0": 8660
+        }
+      },
+      {
+        "subject": "Ron Rash",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "literary",
+          "novels",
+          "poetry",
+          "poems",
+          "poet"
+        ],
+        "rank_lre": 3833,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3833,
+          "0.5": 4618,
+          "1.5": 3166,
+          "2.0": 2594,
+          "3.0": 1710,
+          "5.0": 702
+        }
+      },
+      {
+        "subject": "Leyla Saz",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 15862,
+        "top_diff": [
+          "her",
+          "DJ",
+          "herself",
+          "hers",
+          "\u0435\u0451"
+        ],
+        "rank_lre": 2471,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2471,
+          "0.5": 2443,
+          "1.5": 2534,
+          "2.0": 2604,
+          "3.0": 2722,
+          "5.0": 2972
+        }
+      },
+      {
+        "subject": "Bibb Graves",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "politics",
+          "legisl",
+          "political",
+          "Politics",
+          "politician"
+        ],
+        "rank_lre": 10006,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10006,
+          "0.5": 10784,
+          "1.5": 9212,
+          "2.0": 8302,
+          "3.0": 6543,
+          "5.0": 3719
+        }
+      },
+      {
+        "subject": "Mia Freedman",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "interview",
+          "blog",
+          "interviews",
+          "blogs",
+          "interviewed"
+        ],
+        "rank_lre": 6431,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6431,
+          "0.5": 7215,
+          "1.5": 5642,
+          "2.0": 4939,
+          "3.0": 3817,
+          "5.0": 2210
+        }
+      },
+      {
+        "subject": "Philip Warren Anderson",
+        "model_top1_id": 4024,
+        "model_top1": "phys",
+        "n_references": 8,
+        "rank_diff": 24,
+        "top_diff": [
+          "quantum",
+          "physics",
+          "scientific",
+          "Scient",
+          "theoretical"
+        ],
+        "rank_lre": 2180,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2180,
+          "0.5": 2527,
+          "1.5": 1855,
+          "2.0": 1566,
+          "3.0": 1110,
+          "5.0": 563
+        }
+      },
+      {
+        "subject": "Saskia Mulder",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6081,
+        "top_diff": [
+          "sculpt",
+          "paintings",
+          "her",
+          "photography",
+          "painting"
+        ],
+        "rank_lre": 2434,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2434,
+          "0.5": 2400,
+          "1.5": 2462,
+          "2.0": 2491,
+          "3.0": 2556,
+          "5.0": 2685
+        }
+      },
+      {
+        "subject": "Yuvraj Hans",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 111,
+        "top_diff": [
+          "singing",
+          "songs",
+          "Songs",
+          "song",
+          "singer"
+        ],
+        "rank_lre": 1984,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1984,
+          "0.5": 2174,
+          "1.5": 1809,
+          "2.0": 1646,
+          "3.0": 1349,
+          "5.0": 938
+        }
+      },
+      {
+        "subject": "James Reese Europe",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "Jazz",
+          "jazz",
+          "Orchestra",
+          "Songs",
+          "Dance"
+        ],
+        "rank_lre": 4534,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4534,
+          "0.5": 5211,
+          "1.5": 3957,
+          "2.0": 3415,
+          "3.0": 2531,
+          "5.0": 1343
+        }
+      },
+      {
+        "subject": "Philip Wharton, 4th Baron Wharton",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "breed",
+          "castle",
+          "commission",
+          "presid",
+          "governor"
+        ],
+        "rank_lre": 10602,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10602,
+          "0.5": 11078,
+          "1.5": 10122,
+          "2.0": 9612,
+          "3.0": 8538,
+          "5.0": 6440
+        }
+      },
+      {
+        "subject": "Edward Dodsley Barrow",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 4120,
+        "top_diff": [
+          "his",
+          "engineering",
+          "painting",
+          "oil",
+          "foss"
+        ],
+        "rank_lre": 11393,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11393,
+          "0.5": 11458,
+          "1.5": 11332,
+          "2.0": 11248,
+          "3.0": 11098,
+          "5.0": 10782
+        }
+      },
+      {
+        "subject": "Stephen Colbert",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1442,
+        "top_diff": [
+          "humor",
+          "hilar",
+          "comedy",
+          "jokes",
+          "mock"
+        ],
+        "rank_lre": 2218,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2218,
+          "0.5": 2295,
+          "1.5": 2158,
+          "2.0": 2091,
+          "3.0": 1951,
+          "5.0": 1766
+        }
+      },
+      {
+        "subject": "Paul Abraham",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "musical",
+          "Jazz",
+          "jazz",
+          "songs",
+          "Broadway"
+        ],
+        "rank_lre": 4683,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4683,
+          "0.5": 5306,
+          "1.5": 4138,
+          "2.0": 3612,
+          "3.0": 2805,
+          "5.0": 1526
+        }
+      },
+      {
+        "subject": "Daniel Showalter",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 12841,
+        "top_diff": [
+          "farming",
+          "photography",
+          "brew",
+          "cooking",
+          "baking"
+        ],
+        "rank_lre": 2568,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2568,
+          "0.5": 2479,
+          "1.5": 2667,
+          "2.0": 2773,
+          "3.0": 2981,
+          "5.0": 3403
+        }
+      },
+      {
+        "subject": "Yoo So-young",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 180,
+        "top_diff": [
+          "her",
+          "herself",
+          "hers",
+          "cooking",
+          "star"
+        ],
+        "rank_lre": 2117,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2117,
+          "0.5": 2239,
+          "1.5": 2000,
+          "2.0": 1884,
+          "3.0": 1663,
+          "5.0": 1320
+        }
+      },
+      {
+        "subject": "William Shiels",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 8504,
+        "top_diff": [
+          "photography",
+          "painting",
+          "photograph",
+          "his",
+          "sculpt"
+        ],
+        "rank_lre": 2450,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2450,
+          "0.5": 2416,
+          "1.5": 2487,
+          "2.0": 2546,
+          "3.0": 2645,
+          "5.0": 2857
+        }
+      },
+      {
+        "subject": "Alfonso Fontanelli",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 8723,
+        "top_diff": [
+          "cooking",
+          "Italian",
+          "pizza",
+          "his",
+          "cook"
+        ],
+        "rank_lre": 2497,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2497,
+          "0.5": 2450,
+          "1.5": 2568,
+          "2.0": 2657,
+          "3.0": 2808,
+          "5.0": 3101
+        }
+      },
+      {
+        "subject": "John Fortune",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 441,
+        "top_diff": [
+          "comedy",
+          "comed",
+          "hilar",
+          "humor",
+          "jokes"
+        ],
+        "rank_lre": 2137,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2137,
+          "0.5": 2256,
+          "1.5": 2011,
+          "2.0": 1899,
+          "3.0": 1718,
+          "5.0": 1390
+        }
+      },
+      {
+        "subject": "Esther Ralston",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 98,
+        "top_diff": [
+          "Hollywood",
+          "port",
+          "romantic",
+          "star",
+          "roles"
+        ],
+        "rank_lre": 1958,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1958,
+          "0.5": 2153,
+          "1.5": 1776,
+          "2.0": 1604,
+          "3.0": 1302,
+          "5.0": 874
+        }
+      },
+      {
+        "subject": "Vic Chou",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 149,
+        "top_diff": [
+          "Taiwan",
+          "wearing",
+          "star",
+          "Hong",
+          "Korean"
+        ],
+        "rank_lre": 2018,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2018,
+          "0.5": 2197,
+          "1.5": 1854,
+          "2.0": 1702,
+          "3.0": 1448,
+          "5.0": 1029
+        }
+      },
+      {
+        "subject": "Ian Hanomansing",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "interview",
+          "broadcast",
+          "television",
+          "CNN",
+          "news"
+        ],
+        "rank_lre": 5552,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5552,
+          "0.5": 6786,
+          "1.5": 4493,
+          "2.0": 3601,
+          "3.0": 2227,
+          "5.0": 790
+        }
+      },
+      {
+        "subject": "Jung Ryeo-won",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "star",
+          "port",
+          "actress",
+          "her",
+          "drama"
+        ],
+        "rank_lre": 1871,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1871,
+          "0.5": 2115,
+          "1.5": 1642,
+          "2.0": 1446,
+          "3.0": 1110,
+          "5.0": 696
+        }
+      },
+      {
+        "subject": "Samuel Fessenden",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 1719,
+        "top_diff": [
+          "farming",
+          "archae",
+          "manufacturing",
+          "farms",
+          "agriculture"
+        ],
+        "rank_lre": 11154,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11154,
+          "0.5": 11356,
+          "1.5": 10952,
+          "2.0": 10753,
+          "3.0": 10418,
+          "5.0": 9657
+        }
+      },
+      {
+        "subject": "Barry Sobel",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 7446,
+        "top_diff": [
+          "psychiat",
+          "counsel",
+          "diagn",
+          "clinical",
+          "coaching"
+        ],
+        "rank_lre": 2420,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2420,
+          "0.5": 2399,
+          "1.5": 2421,
+          "2.0": 2459,
+          "3.0": 2532,
+          "5.0": 2690
+        }
+      },
+      {
+        "subject": "Taku Iwasaki",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3019,
+        "top_diff": [
+          "compos",
+          "music",
+          "anime",
+          "composer",
+          "Japanese"
+        ],
+        "rank_lre": 2316,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2316,
+          "0.5": 2352,
+          "1.5": 2297,
+          "2.0": 2273,
+          "3.0": 2227,
+          "5.0": 2151
+        }
+      },
+      {
+        "subject": "Ernst Jaakson",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 8530,
+        "top_diff": [
+          "photography",
+          "sculpt",
+          "photograph",
+          "compos",
+          "his"
+        ],
+        "rank_lre": 2442,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2442,
+          "0.5": 2420,
+          "1.5": 2483,
+          "2.0": 2533,
+          "3.0": 2619,
+          "5.0": 2782
+        }
+      },
+      {
+        "subject": "Susanna Haavisto",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 5812,
+        "top_diff": [
+          "photography",
+          "her",
+          "sculpt",
+          "Finn",
+          "cer"
+        ],
+        "rank_lre": 2398,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2398,
+          "0.5": 2395,
+          "1.5": 2426,
+          "2.0": 2453,
+          "3.0": 2499,
+          "5.0": 2610
+        }
+      },
+      {
+        "subject": "David Gascoyne",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "poetry",
+          "paintings",
+          "poems",
+          "painting",
+          "poet"
+        ],
+        "rank_lre": 810,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 810,
+          "0.5": 1047,
+          "1.5": 617,
+          "2.0": 471,
+          "3.0": 250,
+          "5.0": 74
+        }
+      },
+      {
+        "subject": "Claude Corea",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 10910,
+        "top_diff": [
+          "cooking",
+          "Sri",
+          "jazz",
+          "Jazz",
+          "piano"
+        ],
+        "rank_lre": 2503,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2503,
+          "0.5": 2439,
+          "1.5": 2591,
+          "2.0": 2685,
+          "3.0": 2853,
+          "5.0": 3152
+        }
+      },
+      {
+        "subject": "Mikey North",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "port",
+          "TV",
+          "star",
+          "playing",
+          "television"
+        ],
+        "rank_lre": 1744,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1744,
+          "0.5": 2042,
+          "1.5": 1460,
+          "2.0": 1231,
+          "3.0": 888,
+          "5.0": 456
+        }
+      },
+      {
+        "subject": "Boethius",
+        "model_top1_id": 28807,
+        "model_top1": "philos",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Philosoph",
+          "philosoph",
+          "Shakespeare",
+          "philosophy",
+          "philos"
+        ],
+        "rank_lre": 8049,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8049,
+          "0.5": 8802,
+          "1.5": 7278,
+          "2.0": 6537,
+          "3.0": 5153,
+          "5.0": 3054
+        }
+      },
+      {
+        "subject": "Charles James Mathews",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 277,
+        "top_diff": [
+          "Shakespeare",
+          "port",
+          "Theatre",
+          "Victorian",
+          "comedy"
+        ],
+        "rank_lre": 2084,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2084,
+          "0.5": 2225,
+          "1.5": 1931,
+          "2.0": 1814,
+          "3.0": 1581,
+          "5.0": 1210
+        }
+      },
+      {
+        "subject": "Adam Carolla",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 390,
+        "top_diff": [
+          "podcast",
+          "comedy",
+          "comed",
+          "TV",
+          "hilar"
+        ],
+        "rank_lre": 2094,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2094,
+          "0.5": 2226,
+          "1.5": 1965,
+          "2.0": 1838,
+          "3.0": 1628,
+          "5.0": 1266
+        }
+      },
+      {
+        "subject": "Robert Stout",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "legisl",
+          "legal",
+          "prosecut",
+          "parliament",
+          "political"
+        ],
+        "rank_lre": 10309,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10309,
+          "0.5": 10915,
+          "1.5": 9661,
+          "2.0": 8947,
+          "3.0": 7552,
+          "5.0": 5017
+        }
+      },
+      {
+        "subject": "Michael McKell",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 33,
+        "top_diff": [
+          "port",
+          "roles",
+          "star",
+          "theatre",
+          "Mau"
+        ],
+        "rank_lre": 1935,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1935,
+          "0.5": 2153,
+          "1.5": 1738,
+          "2.0": 1529,
+          "3.0": 1238,
+          "5.0": 813
+        }
+      },
+      {
+        "subject": "Maliha Lodhi",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "diplom",
+          "political",
+          "Political",
+          "polit",
+          "Politics"
+        ],
+        "rank_lre": 10084,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10084,
+          "0.5": 10808,
+          "1.5": 9248,
+          "2.0": 8409,
+          "3.0": 6684,
+          "5.0": 3920
+        }
+      },
+      {
+        "subject": "Giuseppe Saracco",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "parliament",
+          "Italy",
+          "Italian",
+          "politics",
+          "legisl"
+        ],
+        "rank_lre": 10213,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10213,
+          "0.5": 10869,
+          "1.5": 9484,
+          "2.0": 8728,
+          "3.0": 7193,
+          "5.0": 4403
+        }
+      },
+      {
+        "subject": "Lim Chin Siong",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 17,
+        "top_diff": [
+          "protest",
+          "political",
+          "lobby",
+          "politics",
+          "protests"
+        ],
+        "rank_lre": 10101,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10101,
+          "0.5": 10818,
+          "1.5": 9333,
+          "2.0": 8486,
+          "3.0": 6829,
+          "5.0": 4017
+        }
+      },
+      {
+        "subject": "Juan Blanco",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 12405,
+        "top_diff": [
+          "brew",
+          "cooking",
+          "wine",
+          "beer",
+          "his"
+        ],
+        "rank_lre": 11625,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11625,
+          "0.5": 11574,
+          "1.5": 11639,
+          "2.0": 11648,
+          "3.0": 11688,
+          "5.0": 11742
+        }
+      },
+      {
+        "subject": "Ben Joseph Green",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 17855,
+        "top_diff": [
+          "his",
+          "Christianity",
+          "compos",
+          "tatto",
+          "Brooklyn"
+        ],
+        "rank_lre": 2532,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2532,
+          "0.5": 2456,
+          "1.5": 2597,
+          "2.0": 2695,
+          "3.0": 2872,
+          "5.0": 3231
+        }
+      },
+      {
+        "subject": "Maurice Nicoll",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 3934,
+        "top_diff": [
+          "psych",
+          "Psych",
+          "psy",
+          "spiritual",
+          "Freud"
+        ],
+        "rank_lre": 5357,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5357,
+          "0.5": 5434,
+          "1.5": 5285,
+          "2.0": 5232,
+          "3.0": 5117,
+          "5.0": 4913
+        }
+      },
+      {
+        "subject": "Thomas Hailes Lacy",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 5842,
+        "top_diff": [
+          "Victorian",
+          "bibli",
+          "Santa",
+          "literary",
+          "breed"
+        ],
+        "rank_lre": 2388,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2388,
+          "0.5": 2382,
+          "1.5": 2393,
+          "2.0": 2416,
+          "3.0": 2450,
+          "5.0": 2490
+        }
+      },
+      {
+        "subject": "Clive Granger",
+        "model_top1_id": 4388,
+        "model_top1": "econom",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "statistical",
+          "research",
+          "economics",
+          "forecast",
+          "Econom"
+        ],
+        "rank_lre": 4135,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4135,
+          "0.5": 4754,
+          "1.5": 3609,
+          "2.0": 3120,
+          "3.0": 2306,
+          "5.0": 1251
+        }
+      },
+      {
+        "subject": "John Horgan",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 148,
+        "top_diff": [
+          "questioning",
+          "critic",
+          "interview",
+          "political",
+          "scientific"
+        ],
+        "rank_lre": 10730,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10730,
+          "0.5": 11144,
+          "1.5": 10331,
+          "2.0": 9892,
+          "3.0": 9001,
+          "5.0": 7331
+        }
+      },
+      {
+        "subject": "George Santayana",
+        "model_top1_id": 28807,
+        "model_top1": "philos",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "quote",
+          "saying",
+          "quotes",
+          "stating",
+          "quoted"
+        ],
+        "rank_lre": 8075,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8075,
+          "0.5": 8814,
+          "1.5": 7318,
+          "2.0": 6567,
+          "3.0": 5156,
+          "5.0": 3064
+        }
+      },
+      {
+        "subject": "Boris Tchaikovsky",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "compos",
+          "composer",
+          "music",
+          "musical",
+          "jazz"
+        ],
+        "rank_lre": 4039,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4039,
+          "0.5": 4923,
+          "1.5": 3301,
+          "2.0": 2717,
+          "3.0": 1745,
+          "5.0": 701
+        }
+      },
+      {
+        "subject": "Beth Ostrosky Stern",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1312,
+        "top_diff": [
+          "hosting",
+          "wearing",
+          "Sex",
+          "DJ",
+          "candid"
+        ],
+        "rank_lre": 2204,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2204,
+          "0.5": 2283,
+          "1.5": 2130,
+          "2.0": 2057,
+          "3.0": 1920,
+          "5.0": 1680
+        }
+      },
+      {
+        "subject": "Bernard Vonnegut",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4252,
+        "top_diff": [
+          "painting",
+          "paintings",
+          "chemistry",
+          "sculpt",
+          "writing"
+        ],
+        "rank_lre": 2333,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2333,
+          "0.5": 2360,
+          "1.5": 2330,
+          "2.0": 2324,
+          "3.0": 2312,
+          "5.0": 2280
+        }
+      },
+      {
+        "subject": "Margarete Schlegel",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 7819,
+        "top_diff": [
+          "literary",
+          "Shakespeare",
+          "poetry",
+          "literature",
+          "essays"
+        ],
+        "rank_lre": 2365,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2365,
+          "0.5": 2372,
+          "1.5": 2376,
+          "2.0": 2369,
+          "3.0": 2391,
+          "5.0": 2452
+        }
+      },
+      {
+        "subject": "Trevor Sargent",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "politics",
+          "parliament",
+          "political",
+          "farming",
+          "gard"
+        ],
+        "rank_lre": 9625,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9625,
+          "0.5": 10581,
+          "1.5": 8564,
+          "2.0": 7464,
+          "3.0": 5426,
+          "5.0": 2540
+        }
+      },
+      {
+        "subject": "Haim Corfu",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 10200,
+        "top_diff": [
+          "beach",
+          "luxury",
+          "lux",
+          "his",
+          "Beach"
+        ],
+        "rank_lre": 2539,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2539,
+          "0.5": 2458,
+          "1.5": 2616,
+          "2.0": 2701,
+          "3.0": 2865,
+          "5.0": 3199
+        }
+      },
+      {
+        "subject": "Theodor Rosetti",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 438,
+        "top_diff": [
+          "sculpt",
+          "architecture",
+          "architect",
+          "his",
+          "Architect"
+        ],
+        "rank_lre": 11052,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11052,
+          "0.5": 11307,
+          "1.5": 10817,
+          "2.0": 10563,
+          "3.0": 10107,
+          "5.0": 9114
+        }
+      },
+      {
+        "subject": "Andrew Ross Sorkin",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "interview",
+          "interviews",
+          "Financial",
+          "Finance",
+          "finance"
+        ],
+        "rank_lre": 6573,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6573,
+          "0.5": 7287,
+          "1.5": 5866,
+          "2.0": 5189,
+          "3.0": 4048,
+          "5.0": 2410
+        }
+      },
+      {
+        "subject": "Pearse Doherty",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "politics",
+          "political",
+          "parliament",
+          "campaign",
+          "Political"
+        ],
+        "rank_lre": 9506,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9506,
+          "0.5": 10528,
+          "1.5": 8288,
+          "2.0": 7190,
+          "3.0": 4983,
+          "5.0": 2183
+        }
+      },
+      {
+        "subject": "Marion Post Wolcott",
+        "model_top1_id": 24927,
+        "model_top1": "photographer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "photographs",
+          "photograph",
+          "paintings",
+          "photography",
+          "painting"
+        ],
+        "rank_lre": 5281,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5281,
+          "0.5": 6427,
+          "1.5": 4245,
+          "2.0": 3373,
+          "3.0": 2161,
+          "5.0": 788
+        }
+      },
+      {
+        "subject": "Montserrat Lombard",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1871,
+        "top_diff": [
+          "her",
+          "Spanish",
+          "Dutch",
+          "Mexican",
+          "photography"
+        ],
+        "rank_lre": 2277,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2277,
+          "0.5": 2325,
+          "1.5": 2247,
+          "2.0": 2212,
+          "3.0": 2133,
+          "5.0": 1982
+        }
+      },
+      {
+        "subject": "Agnes Miegel",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "poet",
+          "literary",
+          "paintings"
+        ],
+        "rank_lre": 800,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 800,
+          "0.5": 1043,
+          "1.5": 607,
+          "2.0": 451,
+          "3.0": 243,
+          "5.0": 76
+        }
+      },
+      {
+        "subject": "Conchita Montenegro",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3168,
+        "top_diff": [
+          "her",
+          "painting",
+          "photography",
+          "paintings",
+          "photograph"
+        ],
+        "rank_lre": 2334,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2334,
+          "0.5": 2359,
+          "1.5": 2325,
+          "2.0": 2324,
+          "3.0": 2305,
+          "5.0": 2272
+        }
+      },
+      {
+        "subject": "Vauro Senesi",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4819,
+        "top_diff": [
+          "Italian",
+          "Ital",
+          "jazz",
+          "paintings",
+          "Jazz"
+        ],
+        "rank_lre": 2399,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2399,
+          "0.5": 2388,
+          "1.5": 2406,
+          "2.0": 2415,
+          "3.0": 2435,
+          "5.0": 2446
+        }
+      },
+      {
+        "subject": "Gordon Scott",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2770,
+        "top_diff": [
+          "rugby",
+          "fitness",
+          "Sports",
+          "athlet",
+          "Scott"
+        ],
+        "rank_lre": 2299,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2299,
+          "0.5": 2344,
+          "1.5": 2279,
+          "2.0": 2251,
+          "3.0": 2199,
+          "5.0": 2087
+        }
+      },
+      {
+        "subject": "Ciara",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2432,
+        "top_diff": [
+          "DJ",
+          "her",
+          "Bey",
+          "singer",
+          "singing"
+        ],
+        "rank_lre": 2289,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2289,
+          "0.5": 2338,
+          "1.5": 2252,
+          "2.0": 2215,
+          "3.0": 2152,
+          "5.0": 2030
+        }
+      },
+      {
+        "subject": "Femi Jacobs",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "comedy",
+          "port",
+          "star",
+          "drama",
+          "actor"
+        ],
+        "rank_lre": 1684,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1684,
+          "0.5": 2020,
+          "1.5": 1391,
+          "2.0": 1144,
+          "3.0": 802,
+          "5.0": 375
+        }
+      },
+      {
+        "subject": "Alberto Prebisch",
+        "model_top1_id": 4388,
+        "model_top1": "econom",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "economics",
+          "economic",
+          "Econom",
+          "econom",
+          "Economic"
+        ],
+        "rank_lre": 3796,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3796,
+          "0.5": 4544,
+          "1.5": 3134,
+          "2.0": 2577,
+          "3.0": 1732,
+          "5.0": 750
+        }
+      },
+      {
+        "subject": "George Thalben-Ball",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "compos",
+          "piano",
+          "jazz",
+          "Jazz",
+          "composer"
+        ],
+        "rank_lre": 3940,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3940,
+          "0.5": 4868,
+          "1.5": 3159,
+          "2.0": 2516,
+          "3.0": 1540,
+          "5.0": 555
+        }
+      },
+      {
+        "subject": "Giannina Braschi",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "literary",
+          "poet",
+          "poetry",
+          "poems",
+          "Liter"
+        ],
+        "rank_lre": 783,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 783,
+          "0.5": 1037,
+          "1.5": 570,
+          "2.0": 419,
+          "3.0": 220,
+          "5.0": 63
+        }
+      },
+      {
+        "subject": "Sahir Ali Bagga",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "songs",
+          "singing",
+          "song",
+          "Songs",
+          "lyrics"
+        ],
+        "rank_lre": 4282,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4282,
+          "0.5": 5053,
+          "1.5": 3599,
+          "2.0": 3040,
+          "3.0": 2106,
+          "5.0": 981
+        }
+      },
+      {
+        "subject": "Simon Dallow",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1457,
+        "top_diff": [
+          "interview",
+          "journal",
+          "reporting",
+          "his",
+          "broadcast"
+        ],
+        "rank_lre": 2245,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2245,
+          "0.5": 2309,
+          "1.5": 2181,
+          "2.0": 2128,
+          "3.0": 2004,
+          "5.0": 1806
+        }
+      },
+      {
+        "subject": "Juan Rulfo",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "literary",
+          "poet",
+          "literature",
+          "novels",
+          "poetry"
+        ],
+        "rank_lre": 4137,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4137,
+          "0.5": 4788,
+          "1.5": 3567,
+          "2.0": 3080,
+          "3.0": 2251,
+          "5.0": 1183
+        }
+      },
+      {
+        "subject": "Shibdas Ghosh",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 2792,
+        "top_diff": [
+          "Beng",
+          "painting",
+          "his",
+          "compos",
+          "Hindu"
+        ],
+        "rank_lre": 11273,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11273,
+          "0.5": 11404,
+          "1.5": 11143,
+          "2.0": 11018,
+          "3.0": 10750,
+          "5.0": 10240
+        }
+      },
+      {
+        "subject": "Suzanne Crouch",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 54,
+        "top_diff": [
+          "governor",
+          "govern",
+          "legisl",
+          "Governor",
+          "policy"
+        ],
+        "rank_lre": 10446,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10446,
+          "0.5": 10994,
+          "1.5": 9912,
+          "2.0": 9335,
+          "3.0": 8070,
+          "5.0": 5802
+        }
+      },
+      {
+        "subject": "Frits Helmuth",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 7560,
+        "top_diff": [
+          "photography",
+          "his",
+          "photograph",
+          "sculpt",
+          "Dutch"
+        ],
+        "rank_lre": 2421,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2421,
+          "0.5": 2404,
+          "1.5": 2458,
+          "2.0": 2496,
+          "3.0": 2568,
+          "5.0": 2692
+        }
+      },
+      {
+        "subject": "Tracey Ross",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6701,
+        "top_diff": [
+          "photography",
+          "sculpt",
+          "paintings",
+          "painting",
+          "her"
+        ],
+        "rank_lre": 2417,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2417,
+          "0.5": 2393,
+          "1.5": 2433,
+          "2.0": 2471,
+          "3.0": 2542,
+          "5.0": 2650
+        }
+      },
+      {
+        "subject": "William Averell Harriman",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "diplom",
+          "Roosevelt",
+          "financing",
+          "presidential",
+          "investments"
+        ],
+        "rank_lre": 10146,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10146,
+          "0.5": 10840,
+          "1.5": 9407,
+          "2.0": 8567,
+          "3.0": 6863,
+          "5.0": 4088
+        }
+      },
+      {
+        "subject": "Yanis Varoufakis",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "political",
+          "politics",
+          "Democr",
+          "Politics",
+          "parliament"
+        ],
+        "rank_lre": 10044,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10044,
+          "0.5": 10776,
+          "1.5": 9236,
+          "2.0": 8437,
+          "3.0": 6818,
+          "5.0": 4128
+        }
+      },
+      {
+        "subject": "Edmond Leung",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 63,
+        "top_diff": [
+          "Hong",
+          "Taiwan",
+          "Chinese",
+          "port",
+          "Shanghai"
+        ],
+        "rank_lre": 1984,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1984,
+          "0.5": 2178,
+          "1.5": 1803,
+          "2.0": 1623,
+          "3.0": 1345,
+          "5.0": 927
+        }
+      },
+      {
+        "subject": "Harshika Poonacha",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6027,
+        "top_diff": [
+          "tennis",
+          "golf",
+          "Golf",
+          "basketball",
+          "surf"
+        ],
+        "rank_lre": 2408,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2408,
+          "0.5": 2401,
+          "1.5": 2427,
+          "2.0": 2444,
+          "3.0": 2495,
+          "5.0": 2579
+        }
+      },
+      {
+        "subject": "Menachem Mendel Schneerson",
+        "model_top1_id": 17247,
+        "model_top1": "rab",
+        "n_references": 8,
+        "rank_diff": 1536,
+        "top_diff": [
+          "Jewish",
+          "encour",
+          "encouraging",
+          "spiritual",
+          "phil"
+        ],
+        "rank_lre": 4303,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4303,
+          "0.5": 4496,
+          "1.5": 4134,
+          "2.0": 3996,
+          "3.0": 3747,
+          "5.0": 3287
+        }
+      },
+      {
+        "subject": "Constand Viljoen",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 249,
+        "top_diff": [
+          "rugby",
+          "farming",
+          "mountain",
+          "Agricult",
+          "cattle"
+        ],
+        "rank_lre": 10859,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10859,
+          "0.5": 11195,
+          "1.5": 10519,
+          "2.0": 10160,
+          "3.0": 9412,
+          "5.0": 7924
+        }
+      },
+      {
+        "subject": "George Bennard",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 17,
+        "top_diff": [
+          "songs",
+          "Songs",
+          "song",
+          "Christianity",
+          "singing"
+        ],
+        "rank_lre": 4443,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4443,
+          "0.5": 5155,
+          "1.5": 3816,
+          "2.0": 3242,
+          "3.0": 2338,
+          "5.0": 1152
+        }
+      },
+      {
+        "subject": "Michael Kidd",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 561,
+        "top_diff": [
+          "Dance",
+          "dance",
+          "dancing",
+          "Jazz",
+          "his"
+        ],
+        "rank_lre": 2165,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2165,
+          "0.5": 2270,
+          "1.5": 2068,
+          "2.0": 1964,
+          "3.0": 1780,
+          "5.0": 1477
+        }
+      },
+      {
+        "subject": "John Gawsworth",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 19,
+        "top_diff": [
+          "literary",
+          "writing",
+          "his",
+          "transl",
+          "Shakespeare"
+        ],
+        "rank_lre": 1033,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1033,
+          "0.5": 1196,
+          "1.5": 910,
+          "2.0": 788,
+          "3.0": 614,
+          "5.0": 370
+        }
+      },
+      {
+        "subject": "Emily Barton",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3691,
+        "top_diff": [
+          "literary",
+          "poetry",
+          "writing",
+          "novels",
+          "poet"
+        ],
+        "rank_lre": 2325,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2325,
+          "0.5": 2353,
+          "1.5": 2304,
+          "2.0": 2274,
+          "3.0": 2239,
+          "5.0": 2169
+        }
+      },
+      {
+        "subject": "Naomi Shihab Nye",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "poet",
+          "poem",
+          "literary"
+        ],
+        "rank_lre": 695,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 695,
+          "0.5": 988,
+          "1.5": 483,
+          "2.0": 327,
+          "3.0": 138,
+          "5.0": 26
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2433.0,
+          "median_lograng": 3.386319254370975,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2465.5,
+          "median_lograng": 3.39208004005979,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2518.0,
+          "median_lograng": 3.401219406638789,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 2552.0,
+          "median_lograng": 3.4070496154254,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 2396.5,
+          "median_lograng": 3.3797574730601365,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2176.0,
+          "median_lograng": 3.3378561839406147,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "3af986aae9f6",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.53,
+          0.0
+        ],
+        "1.0": [
+          0.53,
+          0.0
+        ],
+        "1.5": [
+          0.54,
+          0.0
+        ],
+        "2.0": [
+          0.54,
+          0.0
+        ],
+        "3.0": [
+          0.59,
+          0.0
+        ],
+        "5.0": [
+          0.61,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.65,
+          0.0
+        ],
+        "1.0": [
+          0.66,
+          0.0
+        ],
+        "1.5": [
+          0.7,
+          0.0
+        ],
+        "2.0": [
+          0.74,
+          0.0
+        ],
+        "3.0": [
+          0.67,
+          0.0
+        ],
+        "5.0": [
+          0.53,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.63,
+          0.0
+        ],
+        "1.0": [
+          0.65,
+          0.0
+        ],
+        "1.5": [
+          0.68,
+          0.0
+        ],
+        "2.0": [
+          0.75,
+          0.0
+        ],
+        "3.0": [
+          0.79,
+          0.0
+        ],
+        "5.0": [
+          0.64,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.55,
+          0.0
+        ],
+        "1.0": [
+          0.63,
+          0.0
+        ],
+        "1.5": [
+          0.66,
+          0.0
+        ],
+        "2.0": [
+          0.65,
+          0.0
+        ],
+        "3.0": [
+          0.72,
+          0.0
+        ],
+        "5.0": [
+          0.74,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.5,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.51,
+          0.0
+        ],
+        "2.0": [
+          0.56,
+          0.0
+        ],
+        "3.0": [
+          0.62,
+          0.0
+        ],
+        "5.0": [
+          0.69,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.5,
+          0.0
+        ],
+        "1.0": [
+          0.5,
+          0.0
+        ],
+        "1.5": [
+          0.5,
+          0.0
+        ],
+        "2.0": [
+          0.5,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 14,
+    "best_beta": 3.0,
+    "best_faith": 0.79,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 100,
+    "requested_n_test": 100,
+    "lm_correct": 65,
+    "per_subject": {
+      "Daniel D. Tompkins": 1,
+      "Simon Gosejohann": 0,
+      "Masato Wada": 1,
+      "Steven Mercurio": 1,
+      "Paolo Soleri": 0,
+      "Graham Linehan": 0,
+      "Edward Gregson": 1,
+      "Rolf Thommessen": 1,
+      "Andrei Bely": 1,
+      "Paruyr Sevak": 1,
+      "Vanessa Ray": 1,
+      "Audrey Wise": 1,
+      "Michael William Balfe": 1,
+      "Vondell Darr": 1,
+      "Herb Greene": 0,
+      "Krister Henriksson": 1,
+      "Patricia Idlette": 1,
+      "William Hardy Wilson": 1,
+      "Ron Rash": 1,
+      "Leyla Saz": 1,
+      "Bibb Graves": 1,
+      "Mia Freedman": 1,
+      "Philip Warren Anderson": 0,
+      "Saskia Mulder": 1,
+      "Yuvraj Hans": 1,
+      "James Reese Europe": 1,
+      "Philip Wharton, 4th Baron Wharton": 1,
+      "Edward Dodsley Barrow": 1,
+      "Stephen Colbert": 1,
+      "Paul Abraham": 1,
+      "Daniel Showalter": 1,
+      "Yoo So-young": 1,
+      "William Shiels": 1,
+      "Alfonso Fontanelli": 1,
+      "John Fortune": 1,
+      "Esther Ralston": 1,
+      "Vic Chou": 1,
+      "Ian Hanomansing": 1,
+      "Jung Ryeo-won": 1,
+      "Samuel Fessenden": 1,
+      "Barry Sobel": 1,
+      "Taku Iwasaki": 0,
+      "Ernst Jaakson": 0,
+      "Susanna Haavisto": 0,
+      "David Gascoyne": 1,
+      "Claude Corea": 0,
+      "Mikey North": 1,
+      "Boethius": 0,
+      "Charles James Mathews": 1,
+      "Adam Carolla": 1,
+      "Robert Stout": 1,
+      "Michael McKell": 1,
+      "Maliha Lodhi": 0,
+      "Giuseppe Saracco": 1,
+      "Lim Chin Siong": 1,
+      "Juan Blanco": 0,
+      "Ben Joseph Green": 1,
+      "Maurice Nicoll": 0,
+      "Thomas Hailes Lacy": 0,
+      "Clive Granger": 1,
+      "John Horgan": 1,
+      "George Santayana": 0,
+      "Boris Tchaikovsky": 1,
+      "Beth Ostrosky Stern": 1,
+      "Bernard Vonnegut": 1,
+      "Margarete Schlegel": 0,
+      "Trevor Sargent": 1,
+      "Haim Corfu": 0,
+      "Theodor Rosetti": 1,
+      "Andrew Ross Sorkin": 1,
+      "Pearse Doherty": 1,
+      "Marion Post Wolcott": 0,
+      "Montserrat Lombard": 1,
+      "Agnes Miegel": 1,
+      "Conchita Montenegro": 1,
+      "Vauro Senesi": 1,
+      "Gordon Scott": 1,
+      "Ciara": 1,
+      "Femi Jacobs": 1,
+      "Alberto Prebisch": 1,
+      "George Thalben-Ball": 1,
+      "Giannina Braschi": 0,
+      "Sahir Ali Bagga": 1,
+      "Simon Dallow": 1,
+      "Juan Rulfo": 1,
+      "Shibdas Ghosh": 1,
+      "Suzanne Crouch": 1,
+      "Frits Helmuth": 1,
+      "Tracey Ross": 1,
+      "William Averell Harriman": 0,
+      "Yanis Varoufakis": 1,
+      "Edmond Leung": 1,
+      "Harshika Poonacha": 1,
+      "Menachem Mendel Schneerson": 0,
+      "Constand Viljoen": 1,
+      "George Bennard": 1,
+      "Michael Kidd": 1,
+      "John Gawsworth": 1,
+      "Emily Barton": 1,
+      "Naomi Shihab Nye": 1
+    },
+    "split_fingerprint": "3af986aae9f6",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 100,
+    "layer": 17,
+    "template": "{} works as a",
+    "agg": {
+      "diff": {
+        "median_rank": 203.0,
+        "median_lograng": 2.3096249494844834,
+        "agree_at1": 0.0,
+        "agree_at10": 0.22
+      },
+      "lre": {
+        "median_rank": 2394.0,
+        "median_lograng": 3.3793054798938327,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Daniel D. Tompkins",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 36,
+        "top_diff": [
+          "governor",
+          "Governor",
+          "presidential",
+          "presid",
+          "politics"
+        ],
+        "rank_lre": 10695,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10695,
+          "0.5": 11100,
+          "1.5": 10325,
+          "2.0": 9921,
+          "3.0": 8985,
+          "5.0": 7132
+        }
+      },
+      {
+        "subject": "Simon Gosejohann",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4300,
+        "top_diff": [
+          "brew",
+          "baking",
+          "photography",
+          "marketing",
+          "German"
+        ],
+        "rank_lre": 2337,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2337,
+          "0.5": 2342,
+          "1.5": 2330,
+          "2.0": 2331,
+          "3.0": 2334,
+          "5.0": 2372
+        }
+      },
+      {
+        "subject": "Masato Wada",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3344,
+        "top_diff": [
+          "Japanese",
+          "Japan",
+          "Tokyo",
+          "anime",
+          "Taiwan"
+        ],
+        "rank_lre": 2302,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2302,
+          "0.5": 2327,
+          "1.5": 2296,
+          "2.0": 2276,
+          "3.0": 2247,
+          "5.0": 2218
+        }
+      },
+      {
+        "subject": "Steven Mercurio",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4083,
+        "top_diff": [
+          "Italian",
+          "cooking",
+          "Italy",
+          "singing",
+          "food"
+        ],
+        "rank_lre": 2320,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2320,
+          "0.5": 2329,
+          "1.5": 2299,
+          "2.0": 2296,
+          "3.0": 2303,
+          "5.0": 2327
+        }
+      },
+      {
+        "subject": "Paolo Soleri",
+        "model_top1_id": 8589,
+        "model_top1": "architect",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "sculpt",
+          "Architect",
+          "architecture",
+          "architect",
+          "cer"
+        ],
+        "rank_lre": 847,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 847,
+          "0.5": 1092,
+          "1.5": 653,
+          "2.0": 494,
+          "3.0": 283,
+          "5.0": 89
+        }
+      },
+      {
+        "subject": "Graham Linehan",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 51,
+        "top_diff": [
+          "Twitter",
+          "comedy",
+          "twe",
+          "comed",
+          "writing"
+        ],
+        "rank_lre": 4138,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4138,
+          "0.5": 4529,
+          "1.5": 3814,
+          "2.0": 3496,
+          "3.0": 2925,
+          "5.0": 2073
+        }
+      },
+      {
+        "subject": "Edward Gregson",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "composition",
+          "compos",
+          "composer",
+          "Jazz",
+          "jazz"
+        ],
+        "rank_lre": 3926,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3926,
+          "0.5": 4789,
+          "1.5": 3201,
+          "2.0": 2571,
+          "3.0": 1631,
+          "5.0": 606
+        }
+      },
+      {
+        "subject": "Rolf Thommessen",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2527,
+        "top_diff": [
+          "Norweg",
+          "Norway",
+          "photography",
+          "Denmark",
+          "Nord"
+        ],
+        "rank_lre": 2270,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2270,
+          "0.5": 2308,
+          "1.5": 2234,
+          "2.0": 2198,
+          "3.0": 2139,
+          "5.0": 2058
+        }
+      },
+      {
+        "subject": "Andrei Bely",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 25,
+        "top_diff": [
+          "literary",
+          "novels",
+          "Liter",
+          "poet",
+          "literature"
+        ],
+        "rank_lre": 3982,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3982,
+          "0.5": 4429,
+          "1.5": 3576,
+          "2.0": 3221,
+          "3.0": 2549,
+          "5.0": 1547
+        }
+      },
+      {
+        "subject": "Paruyr Sevak",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "literary",
+          "poet",
+          "poem"
+        ],
+        "rank_lre": 856,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 856,
+          "0.5": 1122,
+          "1.5": 651,
+          "2.0": 481,
+          "3.0": 260,
+          "5.0": 71
+        }
+      },
+      {
+        "subject": "Vanessa Ray",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 168,
+        "top_diff": [
+          "Broadway",
+          "Disney",
+          "port",
+          "Crim",
+          "Holly"
+        ],
+        "rank_lre": 1943,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1943,
+          "0.5": 2151,
+          "1.5": 1775,
+          "2.0": 1599,
+          "3.0": 1319,
+          "5.0": 919
+        }
+      },
+      {
+        "subject": "Audrey Wise",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6263,
+        "top_diff": [
+          "her",
+          "writing",
+          "poetry",
+          "Jazz",
+          "Writing"
+        ],
+        "rank_lre": 2388,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2388,
+          "0.5": 2368,
+          "1.5": 2414,
+          "2.0": 2444,
+          "3.0": 2512,
+          "5.0": 2635
+        }
+      },
+      {
+        "subject": "Michael William Balfe",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "opera",
+          "musical",
+          "Shakespeare",
+          "Opera",
+          "oper"
+        ],
+        "rank_lre": 4023,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4023,
+          "0.5": 4844,
+          "1.5": 3360,
+          "2.0": 2748,
+          "3.0": 1793,
+          "5.0": 690
+        }
+      },
+      {
+        "subject": "Vondell Darr",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 9405,
+        "top_diff": [
+          "her",
+          "DJ",
+          "D",
+          "hers",
+          "Dallas"
+        ],
+        "rank_lre": 2411,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2411,
+          "0.5": 2382,
+          "1.5": 2465,
+          "2.0": 2511,
+          "3.0": 2602,
+          "5.0": 2798
+        }
+      },
+      {
+        "subject": "Herb Greene",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6898,
+        "top_diff": [
+          "photography",
+          "photograph",
+          "photographs",
+          "architecture",
+          "architect"
+        ],
+        "rank_lre": 2395,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2395,
+          "0.5": 2368,
+          "1.5": 2419,
+          "2.0": 2448,
+          "3.0": 2511,
+          "5.0": 2626
+        }
+      },
+      {
+        "subject": "Krister Henriksson",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "Swedish",
+          "Sweden",
+          "Stockholm",
+          "port",
+          "\u00c5"
+        ],
+        "rank_lre": 1820,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1820,
+          "0.5": 2066,
+          "1.5": 1580,
+          "2.0": 1365,
+          "3.0": 1041,
+          "5.0": 604
+        }
+      },
+      {
+        "subject": "Patricia Idlette",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4556,
+        "top_diff": [
+          "her",
+          "cooking",
+          "baking",
+          "coaching",
+          "Louisiana"
+        ],
+        "rank_lre": 2335,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2335,
+          "0.5": 2344,
+          "1.5": 2338,
+          "2.0": 2332,
+          "3.0": 2336,
+          "5.0": 2376
+        }
+      },
+      {
+        "subject": "William Hardy Wilson",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 599,
+        "top_diff": [
+          "Jefferson",
+          "jazz",
+          "Jazz",
+          "civil",
+          "Southern"
+        ],
+        "rank_lre": 11072,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11072,
+          "0.5": 11280,
+          "1.5": 10848,
+          "2.0": 10657,
+          "3.0": 10240,
+          "5.0": 9324
+        }
+      },
+      {
+        "subject": "Ron Rash",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "literary",
+          "poetry",
+          "novels",
+          "poet",
+          "poems"
+        ],
+        "rank_lre": 3457,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3457,
+          "0.5": 4112,
+          "1.5": 2864,
+          "2.0": 2318,
+          "3.0": 1547,
+          "5.0": 671
+        }
+      },
+      {
+        "subject": "Leyla Saz",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 10642,
+        "top_diff": [
+          "her",
+          "DJ",
+          "hers",
+          "herself",
+          "Jazz"
+        ],
+        "rank_lre": 2396,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2396,
+          "0.5": 2373,
+          "1.5": 2419,
+          "2.0": 2459,
+          "3.0": 2519,
+          "5.0": 2666
+        }
+      },
+      {
+        "subject": "Bibb Graves",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "politics",
+          "political",
+          "legisl",
+          "Politics",
+          "Legisl"
+        ],
+        "rank_lre": 10244,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10244,
+          "0.5": 10891,
+          "1.5": 9583,
+          "2.0": 8820,
+          "3.0": 7263,
+          "5.0": 4555
+        }
+      },
+      {
+        "subject": "Mia Freedman",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 30,
+        "top_diff": [
+          "interview",
+          "blog",
+          "interviews",
+          "blogs",
+          "interviewed"
+        ],
+        "rank_lre": 6591,
+        "top_lre": [
+          "being",
+          "his",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6591,
+          "0.5": 7342,
+          "1.5": 5887,
+          "2.0": 5226,
+          "3.0": 4090,
+          "5.0": 2486
+        }
+      },
+      {
+        "subject": "Philip Warren Anderson",
+        "model_top1_id": 4024,
+        "model_top1": "phys",
+        "n_references": 8,
+        "rank_diff": 37,
+        "top_diff": [
+          "quantum",
+          "physics",
+          "scientific",
+          "Scient",
+          "theoretical"
+        ],
+        "rank_lre": 2291,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2291,
+          "0.5": 2614,
+          "1.5": 2010,
+          "2.0": 1793,
+          "3.0": 1377,
+          "5.0": 811
+        }
+      },
+      {
+        "subject": "Saskia Mulder",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4842,
+        "top_diff": [
+          "her",
+          "swim",
+          "painting",
+          "sculpt",
+          "paintings"
+        ],
+        "rank_lre": 2355,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2355,
+          "0.5": 2356,
+          "1.5": 2360,
+          "2.0": 2376,
+          "3.0": 2407,
+          "5.0": 2469
+        }
+      },
+      {
+        "subject": "Yuvraj Hans",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 193,
+        "top_diff": [
+          "singing",
+          "songs",
+          "singer",
+          "song",
+          "Songs"
+        ],
+        "rank_lre": 1983,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1983,
+          "0.5": 2176,
+          "1.5": 1846,
+          "2.0": 1696,
+          "3.0": 1429,
+          "5.0": 1075
+        }
+      },
+      {
+        "subject": "James Reese Europe",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "jazz",
+          "Jazz",
+          "Orchestra",
+          "music",
+          "Songs"
+        ],
+        "rank_lre": 4444,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4444,
+          "0.5": 5074,
+          "1.5": 3906,
+          "2.0": 3417,
+          "3.0": 2562,
+          "5.0": 1406
+        }
+      },
+      {
+        "subject": "Philip Wharton, 4th Baron Wharton",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "castle",
+          "politics",
+          "commission",
+          "breed",
+          "political"
+        ],
+        "rank_lre": 10590,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10590,
+          "0.5": 11047,
+          "1.5": 10131,
+          "2.0": 9671,
+          "3.0": 8563,
+          "5.0": 6418
+        }
+      },
+      {
+        "subject": "Edward Dodsley Barrow",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 3173,
+        "top_diff": [
+          "engineering",
+          "DJ",
+          "foss",
+          "painting",
+          "Scotland"
+        ],
+        "rank_lre": 11298,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11298,
+          "0.5": 11380,
+          "1.5": 11216,
+          "2.0": 11129,
+          "3.0": 10968,
+          "5.0": 10584
+        }
+      },
+      {
+        "subject": "Stephen Colbert",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1760,
+        "top_diff": [
+          "hilar",
+          "jokes",
+          "mock",
+          "humor",
+          "comedy"
+        ],
+        "rank_lre": 2228,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2228,
+          "0.5": 2289,
+          "1.5": 2167,
+          "2.0": 2126,
+          "3.0": 2054,
+          "5.0": 1923
+        }
+      },
+      {
+        "subject": "Paul Abraham",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Jazz",
+          "songs",
+          "jazz",
+          "musical",
+          "opera"
+        ],
+        "rank_lre": 4468,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4468,
+          "0.5": 5087,
+          "1.5": 3895,
+          "2.0": 3409,
+          "3.0": 2580,
+          "5.0": 1367
+        }
+      },
+      {
+        "subject": "Daniel Showalter",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 9926,
+        "top_diff": [
+          "baking",
+          "farming",
+          "photography",
+          "brew",
+          "farm"
+        ],
+        "rank_lre": 2496,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2496,
+          "0.5": 2423,
+          "1.5": 2580,
+          "2.0": 2669,
+          "3.0": 2833,
+          "5.0": 3160
+        }
+      },
+      {
+        "subject": "Yoo So-young",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1023,
+        "top_diff": [
+          "her",
+          "Korean",
+          "Korea",
+          "herself",
+          "hers"
+        ],
+        "rank_lre": 2227,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2227,
+          "0.5": 2287,
+          "1.5": 2152,
+          "2.0": 2079,
+          "3.0": 1983,
+          "5.0": 1805
+        }
+      },
+      {
+        "subject": "William Shiels",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6010,
+        "top_diff": [
+          "Scotland",
+          "Scottish",
+          "painting",
+          "photography",
+          "baking"
+        ],
+        "rank_lre": 2383,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2383,
+          "0.5": 2357,
+          "1.5": 2409,
+          "2.0": 2432,
+          "3.0": 2477,
+          "5.0": 2590
+        }
+      },
+      {
+        "subject": "Alfonso Fontanelli",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6786,
+        "top_diff": [
+          "Italian",
+          "cooking",
+          "pizza",
+          "Italy",
+          "Ital"
+        ],
+        "rank_lre": 2411,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2411,
+          "0.5": 2377,
+          "1.5": 2456,
+          "2.0": 2494,
+          "3.0": 2590,
+          "5.0": 2766
+        }
+      },
+      {
+        "subject": "John Fortune",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 447,
+        "top_diff": [
+          "comedy",
+          "comed",
+          "hilar",
+          "jokes",
+          "humor"
+        ],
+        "rank_lre": 2108,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2108,
+          "0.5": 2227,
+          "1.5": 2007,
+          "2.0": 1900,
+          "3.0": 1696,
+          "5.0": 1401
+        }
+      },
+      {
+        "subject": "Esther Ralston",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 204,
+        "top_diff": [
+          "Hollywood",
+          "romantic",
+          "port",
+          "rom",
+          "romance"
+        ],
+        "rank_lre": 2000,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2000,
+          "0.5": 2169,
+          "1.5": 1852,
+          "2.0": 1702,
+          "3.0": 1430,
+          "5.0": 1066
+        }
+      },
+      {
+        "subject": "Vic Chou",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 178,
+        "top_diff": [
+          "Taiwan",
+          "Hong",
+          "Korean",
+          "Chinese",
+          "Filip"
+        ],
+        "rank_lre": 1999,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1999,
+          "0.5": 2172,
+          "1.5": 1860,
+          "2.0": 1736,
+          "3.0": 1468,
+          "5.0": 1096
+        }
+      },
+      {
+        "subject": "Ian Hanomansing",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "interview",
+          "broadcast",
+          "journal",
+          "reporting",
+          "news"
+        ],
+        "rank_lre": 5890,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5890,
+          "0.5": 6992,
+          "1.5": 4896,
+          "2.0": 4039,
+          "3.0": 2689,
+          "5.0": 1057
+        }
+      },
+      {
+        "subject": "Jung Ryeo-won",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 29,
+        "top_diff": [
+          "star",
+          "her",
+          "Korean",
+          "actress",
+          "port"
+        ],
+        "rank_lre": 1924,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1924,
+          "0.5": 2121,
+          "1.5": 1755,
+          "2.0": 1583,
+          "3.0": 1284,
+          "5.0": 896
+        }
+      },
+      {
+        "subject": "Samuel Fessenden",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 3298,
+        "top_diff": [
+          "baking",
+          "manufacturing",
+          "farming",
+          "agriculture",
+          "agricultural"
+        ],
+        "rank_lre": 11244,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11244,
+          "0.5": 11355,
+          "1.5": 11127,
+          "2.0": 11025,
+          "3.0": 10816,
+          "5.0": 10364
+        }
+      },
+      {
+        "subject": "Barry Sobel",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 7087,
+        "top_diff": [
+          "counsel",
+          "coaching",
+          "psychiat",
+          "clinical",
+          "cannab"
+        ],
+        "rank_lre": 2396,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2396,
+          "0.5": 2368,
+          "1.5": 2430,
+          "2.0": 2464,
+          "3.0": 2530,
+          "5.0": 2678
+        }
+      },
+      {
+        "subject": "Taku Iwasaki",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2866,
+        "top_diff": [
+          "music",
+          "anime",
+          "compos",
+          "composer",
+          "Japanese"
+        ],
+        "rank_lre": 2284,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2284,
+          "0.5": 2309,
+          "1.5": 2254,
+          "2.0": 2231,
+          "3.0": 2182,
+          "5.0": 2097
+        }
+      },
+      {
+        "subject": "Ernst Jaakson",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4168,
+        "top_diff": [
+          "photography",
+          "sculpt",
+          "photograph",
+          "compos",
+          "music"
+        ],
+        "rank_lre": 2329,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2329,
+          "0.5": 2335,
+          "1.5": 2321,
+          "2.0": 2320,
+          "3.0": 2315,
+          "5.0": 2320
+        }
+      },
+      {
+        "subject": "Susanna Haavisto",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6206,
+        "top_diff": [
+          "her",
+          "photography",
+          "Finland",
+          "Finn",
+          "sculpt"
+        ],
+        "rank_lre": 2393,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2393,
+          "0.5": 2368,
+          "1.5": 2416,
+          "2.0": 2456,
+          "3.0": 2502,
+          "5.0": 2638
+        }
+      },
+      {
+        "subject": "David Gascoyne",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "poet",
+          "literary",
+          "poem"
+        ],
+        "rank_lre": 873,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 873,
+          "0.5": 1131,
+          "1.5": 679,
+          "2.0": 514,
+          "3.0": 286,
+          "5.0": 82
+        }
+      },
+      {
+        "subject": "Claude Corea",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6805,
+        "top_diff": [
+          "cooking",
+          "jazz",
+          "Jazz",
+          "Sri",
+          "piano"
+        ],
+        "rank_lre": 2406,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2406,
+          "0.5": 2366,
+          "1.5": 2430,
+          "2.0": 2476,
+          "3.0": 2576,
+          "5.0": 2730
+        }
+      },
+      {
+        "subject": "Mikey North",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 15,
+        "top_diff": [
+          "port",
+          "soap",
+          "TV",
+          "playing",
+          "television"
+        ],
+        "rank_lre": 1841,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1841,
+          "0.5": 2083,
+          "1.5": 1625,
+          "2.0": 1421,
+          "3.0": 1109,
+          "5.0": 700
+        }
+      },
+      {
+        "subject": "Boethius",
+        "model_top1_id": 28807,
+        "model_top1": "philos",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Philosoph",
+          "Shakespeare",
+          "philosoph",
+          "Christianity",
+          "philosophy"
+        ],
+        "rank_lre": 8386,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8386,
+          "0.5": 9074,
+          "1.5": 7704,
+          "2.0": 7000,
+          "3.0": 5729,
+          "5.0": 3583
+        }
+      },
+      {
+        "subject": "Charles James Mathews",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 865,
+        "top_diff": [
+          "Shakespeare",
+          "comedy",
+          "comed",
+          "Victorian",
+          "Broadway"
+        ],
+        "rank_lre": 2118,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2118,
+          "0.5": 2236,
+          "1.5": 2029,
+          "2.0": 1935,
+          "3.0": 1763,
+          "5.0": 1444
+        }
+      },
+      {
+        "subject": "Adam Carolla",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1396,
+        "top_diff": [
+          "podcast",
+          "comedy",
+          "hilar",
+          "jokes",
+          "radio"
+        ],
+        "rank_lre": 2183,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2183,
+          "0.5": 2268,
+          "1.5": 2115,
+          "2.0": 2045,
+          "3.0": 1923,
+          "5.0": 1713
+        }
+      },
+      {
+        "subject": "Robert Stout",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "legal",
+          "legisl",
+          "prosecut",
+          "Legal",
+          "law"
+        ],
+        "rank_lre": 10523,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10523,
+          "0.5": 11019,
+          "1.5": 10046,
+          "2.0": 9520,
+          "3.0": 8393,
+          "5.0": 6143
+        }
+      },
+      {
+        "subject": "Michael McKell",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 252,
+        "top_diff": [
+          "port",
+          "Mau",
+          "Broadway",
+          "star",
+          "Shakespeare"
+        ],
+        "rank_lre": 2071,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2071,
+          "0.5": 2205,
+          "1.5": 1932,
+          "2.0": 1816,
+          "3.0": 1579,
+          "5.0": 1201
+        }
+      },
+      {
+        "subject": "Maliha Lodhi",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "diplom",
+          "political",
+          "Pakistan",
+          "Political",
+          "Politics"
+        ],
+        "rank_lre": 10320,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10320,
+          "0.5": 10909,
+          "1.5": 9716,
+          "2.0": 9015,
+          "3.0": 7516,
+          "5.0": 4956
+        }
+      },
+      {
+        "subject": "Giuseppe Saracco",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Italy",
+          "Italian",
+          "politics",
+          "parliament",
+          "Italia"
+        ],
+        "rank_lre": 10260,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10260,
+          "0.5": 10907,
+          "1.5": 9615,
+          "2.0": 8836,
+          "3.0": 7334,
+          "5.0": 4547
+        }
+      },
+      {
+        "subject": "Lim Chin Siong",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 19,
+        "top_diff": [
+          "protest",
+          "political",
+          "politics",
+          "Politics",
+          "Political"
+        ],
+        "rank_lre": 10295,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10295,
+          "0.5": 10914,
+          "1.5": 9681,
+          "2.0": 8958,
+          "3.0": 7476,
+          "5.0": 4781
+        }
+      },
+      {
+        "subject": "Juan Blanco",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 10857,
+        "top_diff": [
+          "cooking",
+          "brew",
+          "food",
+          "wine",
+          "restaurants"
+        ],
+        "rank_lre": 11504,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11504,
+          "0.5": 11473,
+          "1.5": 11521,
+          "2.0": 11536,
+          "3.0": 11554,
+          "5.0": 11565
+        }
+      },
+      {
+        "subject": "Ben Joseph Green",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 13128,
+        "top_diff": [
+          "Christianity",
+          "DJ",
+          "photography",
+          "Soul",
+          "writing"
+        ],
+        "rank_lre": 2473,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2473,
+          "0.5": 2411,
+          "1.5": 2543,
+          "2.0": 2611,
+          "3.0": 2736,
+          "5.0": 3035
+        }
+      },
+      {
+        "subject": "Maurice Nicoll",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 1590,
+        "top_diff": [
+          "Psych",
+          "psych",
+          "Philosoph",
+          "spiritual",
+          "philosoph"
+        ],
+        "rank_lre": 4582,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4582,
+          "0.5": 4750,
+          "1.5": 4440,
+          "2.0": 4302,
+          "3.0": 4055,
+          "5.0": 3650
+        }
+      },
+      {
+        "subject": "Thomas Hailes Lacy",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4540,
+        "top_diff": [
+          "ranch",
+          "breed",
+          "Santa",
+          "anth",
+          "literary"
+        ],
+        "rank_lre": 2338,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2338,
+          "0.5": 2345,
+          "1.5": 2335,
+          "2.0": 2323,
+          "3.0": 2314,
+          "5.0": 2317
+        }
+      },
+      {
+        "subject": "Clive Granger",
+        "model_top1_id": 4388,
+        "model_top1": "econom",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "statistical",
+          "research",
+          "economics",
+          "Econom",
+          "forecast"
+        ],
+        "rank_lre": 3997,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3997,
+          "0.5": 4581,
+          "1.5": 3499,
+          "2.0": 3019,
+          "3.0": 2221,
+          "5.0": 1177
+        }
+      },
+      {
+        "subject": "John Horgan",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "political",
+          "politics",
+          "polit",
+          "politicians",
+          "policy"
+        ],
+        "rank_lre": 10421,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10421,
+          "0.5": 10969,
+          "1.5": 9836,
+          "2.0": 9227,
+          "3.0": 7920,
+          "5.0": 5546
+        }
+      },
+      {
+        "subject": "George Santayana",
+        "model_top1_id": 28807,
+        "model_top1": "philos",
+        "n_references": 8,
+        "rank_diff": 20,
+        "top_diff": [
+          "quote",
+          "saying",
+          "quotes",
+          "quoted",
+          "stating"
+        ],
+        "rank_lre": 8402,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8402,
+          "0.5": 9089,
+          "1.5": 7735,
+          "2.0": 7064,
+          "3.0": 5797,
+          "5.0": 3687
+        }
+      },
+      {
+        "subject": "Boris Tchaikovsky",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "compos",
+          "music",
+          "composer",
+          "jazz",
+          "musical"
+        ],
+        "rank_lre": 4088,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4088,
+          "0.5": 4876,
+          "1.5": 3440,
+          "2.0": 2886,
+          "3.0": 2013,
+          "5.0": 904
+        }
+      },
+      {
+        "subject": "Beth Ostrosky Stern",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1539,
+        "top_diff": [
+          "hosting",
+          "Sex",
+          "publicly",
+          "openly",
+          "candid"
+        ],
+        "rank_lre": 2209,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2209,
+          "0.5": 2278,
+          "1.5": 2164,
+          "2.0": 2106,
+          "3.0": 1997,
+          "5.0": 1826
+        }
+      },
+      {
+        "subject": "Bernard Vonnegut",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4167,
+        "top_diff": [
+          "writing",
+          "painting",
+          "baking",
+          "chemistry",
+          "novels"
+        ],
+        "rank_lre": 2319,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2319,
+          "0.5": 2330,
+          "1.5": 2309,
+          "2.0": 2300,
+          "3.0": 2279,
+          "5.0": 2273
+        }
+      },
+      {
+        "subject": "Margarete Schlegel",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 6990,
+        "top_diff": [
+          "literary",
+          "Shakespeare",
+          "Berlin",
+          "poetry",
+          "literature"
+        ],
+        "rank_lre": 2353,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2353,
+          "0.5": 2349,
+          "1.5": 2357,
+          "2.0": 2372,
+          "3.0": 2380,
+          "5.0": 2489
+        }
+      },
+      {
+        "subject": "Trevor Sargent",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 21,
+        "top_diff": [
+          "gard",
+          "politics",
+          "agriculture",
+          "Agricult",
+          "farming"
+        ],
+        "rank_lre": 9939,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9939,
+          "0.5": 10712,
+          "1.5": 9028,
+          "2.0": 8052,
+          "3.0": 6288,
+          "5.0": 3397
+        }
+      },
+      {
+        "subject": "Haim Corfu",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4377,
+        "top_diff": [
+          "its",
+          "beach",
+          "her",
+          "luxury",
+          "Its"
+        ],
+        "rank_lre": 2343,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2343,
+          "0.5": 2350,
+          "1.5": 2355,
+          "2.0": 2344,
+          "3.0": 2352,
+          "5.0": 2412
+        }
+      },
+      {
+        "subject": "Theodor Rosetti",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 503,
+        "top_diff": [
+          "sculpt",
+          "architecture",
+          "paintings",
+          "painting",
+          "poetry"
+        ],
+        "rank_lre": 11063,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11063,
+          "0.5": 11271,
+          "1.5": 10835,
+          "2.0": 10622,
+          "3.0": 10188,
+          "5.0": 9183
+        }
+      },
+      {
+        "subject": "Andrew Ross Sorkin",
+        "model_top1_id": 19994,
+        "model_top1": "journalist",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "interview",
+          "interviews",
+          "editorial",
+          "Financial",
+          "Finance"
+        ],
+        "rank_lre": 6636,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6636,
+          "0.5": 7368,
+          "1.5": 5952,
+          "2.0": 5247,
+          "3.0": 4114,
+          "5.0": 2433
+        }
+      },
+      {
+        "subject": "Pearse Doherty",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "politics",
+          "parliament",
+          "political",
+          "campaign",
+          "Politics"
+        ],
+        "rank_lre": 9754,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9754,
+          "0.5": 10631,
+          "1.5": 8664,
+          "2.0": 7589,
+          "3.0": 5571,
+          "5.0": 2649
+        }
+      },
+      {
+        "subject": "Marion Post Wolcott",
+        "model_top1_id": 24927,
+        "model_top1": "photographer",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "photograph",
+          "photographs",
+          "photography",
+          "paintings",
+          "painting"
+        ],
+        "rank_lre": 6170,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6170,
+          "0.5": 7337,
+          "1.5": 5120,
+          "2.0": 4137,
+          "3.0": 2718,
+          "5.0": 1022
+        }
+      },
+      {
+        "subject": "Montserrat Lombard",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 857,
+        "top_diff": [
+          "her",
+          "Spanish",
+          "photography",
+          "Dutch",
+          "Mexican"
+        ],
+        "rank_lre": 2199,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2199,
+          "0.5": 2271,
+          "1.5": 2114,
+          "2.0": 2042,
+          "3.0": 1907,
+          "5.0": 1685
+        }
+      },
+      {
+        "subject": "Agnes Miegel",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "poetry",
+          "poems",
+          "poet",
+          "literary",
+          "poem"
+        ],
+        "rank_lre": 797,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 797,
+          "0.5": 1079,
+          "1.5": 570,
+          "2.0": 412,
+          "3.0": 181,
+          "5.0": 40
+        }
+      },
+      {
+        "subject": "Conchita Montenegro",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2501,
+        "top_diff": [
+          "her",
+          "painting",
+          "herself",
+          "photography",
+          "jazz"
+        ],
+        "rank_lre": 2288,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2288,
+          "0.5": 2320,
+          "1.5": 2274,
+          "2.0": 2253,
+          "3.0": 2206,
+          "5.0": 2136
+        }
+      },
+      {
+        "subject": "Vauro Senesi",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 5151,
+        "top_diff": [
+          "Italian",
+          "Italy",
+          "Ital",
+          "jazz",
+          "Jazz"
+        ],
+        "rank_lre": 2375,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2375,
+          "0.5": 2355,
+          "1.5": 2385,
+          "2.0": 2391,
+          "3.0": 2425,
+          "5.0": 2509
+        }
+      },
+      {
+        "subject": "Gordon Scott",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3502,
+        "top_diff": [
+          "Scott",
+          "Sports",
+          "tennis",
+          "golf",
+          "rugby"
+        ],
+        "rank_lre": 2312,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2312,
+          "0.5": 2325,
+          "1.5": 2278,
+          "2.0": 2266,
+          "3.0": 2235,
+          "5.0": 2188
+        }
+      },
+      {
+        "subject": "Ciara",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 1817,
+        "top_diff": [
+          "her",
+          "DJ",
+          "singing",
+          "songs",
+          "singer"
+        ],
+        "rank_lre": 2224,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2224,
+          "0.5": 2284,
+          "1.5": 2160,
+          "2.0": 2100,
+          "3.0": 2006,
+          "5.0": 1858
+        }
+      },
+      {
+        "subject": "Femi Jacobs",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "star",
+          "Soul",
+          "Netflix",
+          "drama",
+          "comedy"
+        ],
+        "rank_lre": 1765,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1765,
+          "0.5": 2036,
+          "1.5": 1516,
+          "2.0": 1298,
+          "3.0": 985,
+          "5.0": 546
+        }
+      },
+      {
+        "subject": "Alberto Prebisch",
+        "model_top1_id": 4388,
+        "model_top1": "econom",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "economics",
+          "economic",
+          "Econom",
+          "econom",
+          "Economic"
+        ],
+        "rank_lre": 3699,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3699,
+          "0.5": 4399,
+          "1.5": 3098,
+          "2.0": 2555,
+          "3.0": 1751,
+          "5.0": 771
+        }
+      },
+      {
+        "subject": "George Thalben-Ball",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "jazz",
+          "piano",
+          "compos",
+          "Jazz",
+          "musical"
+        ],
+        "rank_lre": 3814,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3814,
+          "0.5": 4709,
+          "1.5": 3085,
+          "2.0": 2451,
+          "3.0": 1492,
+          "5.0": 537
+        }
+      },
+      {
+        "subject": "Giannina Braschi",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "literary",
+          "poet",
+          "poetry",
+          "poems",
+          "Language"
+        ],
+        "rank_lre": 855,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 855,
+          "0.5": 1113,
+          "1.5": 639,
+          "2.0": 457,
+          "3.0": 230,
+          "5.0": 64
+        }
+      },
+      {
+        "subject": "Sahir Ali Bagga",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "singing",
+          "songs",
+          "music",
+          "song",
+          "Music"
+        ],
+        "rank_lre": 4135,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4135,
+          "0.5": 4889,
+          "1.5": 3478,
+          "2.0": 2958,
+          "3.0": 2055,
+          "5.0": 964
+        }
+      },
+      {
+        "subject": "Simon Dallow",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 3702,
+        "top_diff": [
+          "interview",
+          "reporting",
+          "Australia",
+          "blog",
+          "journal"
+        ],
+        "rank_lre": 2321,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2321,
+          "0.5": 2340,
+          "1.5": 2304,
+          "2.0": 2284,
+          "3.0": 2279,
+          "5.0": 2271
+        }
+      },
+      {
+        "subject": "Juan Rulfo",
+        "model_top1_id": 7721,
+        "model_top1": "writer",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "literary",
+          "poet",
+          "literature",
+          "novels",
+          "poetry"
+        ],
+        "rank_lre": 3753,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3753,
+          "0.5": 4289,
+          "1.5": 3275,
+          "2.0": 2852,
+          "3.0": 2103,
+          "5.0": 1129
+        }
+      },
+      {
+        "subject": "Shibdas Ghosh",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 2214,
+        "top_diff": [
+          "Beng",
+          "India",
+          "Indian",
+          "Hindu",
+          "Delhi"
+        ],
+        "rank_lre": 11185,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11185,
+          "0.5": 11343,
+          "1.5": 11036,
+          "2.0": 10897,
+          "3.0": 10586,
+          "5.0": 10002
+        }
+      },
+      {
+        "subject": "Suzanne Crouch",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 41,
+        "top_diff": [
+          "governor",
+          "govern",
+          "minister",
+          "policy",
+          "Minister"
+        ],
+        "rank_lre": 10503,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10503,
+          "0.5": 11013,
+          "1.5": 10022,
+          "2.0": 9469,
+          "3.0": 8254,
+          "5.0": 5957
+        }
+      },
+      {
+        "subject": "Frits Helmuth",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4925,
+        "top_diff": [
+          "photography",
+          "Dutch",
+          "Holland",
+          "Denmark",
+          "German"
+        ],
+        "rank_lre": 2332,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2332,
+          "0.5": 2345,
+          "1.5": 2324,
+          "2.0": 2329,
+          "3.0": 2309,
+          "5.0": 2328
+        }
+      },
+      {
+        "subject": "Tracey Ross",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2777,
+        "top_diff": [
+          "her",
+          "African",
+          "photography",
+          "Africa",
+          "jazz"
+        ],
+        "rank_lre": 2285,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2285,
+          "0.5": 2314,
+          "1.5": 2246,
+          "2.0": 2225,
+          "3.0": 2182,
+          "5.0": 2083
+        }
+      },
+      {
+        "subject": "William Averell Harriman",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "diplom",
+          "Secretary",
+          "presidential",
+          "Roosevelt",
+          "financing"
+        ],
+        "rank_lre": 10299,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10299,
+          "0.5": 10909,
+          "1.5": 9701,
+          "2.0": 8974,
+          "3.0": 7431,
+          "5.0": 4702
+        }
+      },
+      {
+        "subject": "Yanis Varoufakis",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "political",
+          "politics",
+          "Democr",
+          "Politics",
+          "parliament"
+        ],
+        "rank_lre": 10216,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10216,
+          "0.5": 10840,
+          "1.5": 9528,
+          "2.0": 8756,
+          "3.0": 7225,
+          "5.0": 4642
+        }
+      },
+      {
+        "subject": "Edmond Leung",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 202,
+        "top_diff": [
+          "Hong",
+          "Taiwan",
+          "Chinese",
+          "Shanghai",
+          "China"
+        ],
+        "rank_lre": 2043,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2043,
+          "0.5": 2200,
+          "1.5": 1917,
+          "2.0": 1799,
+          "3.0": 1544,
+          "5.0": 1193
+        }
+      },
+      {
+        "subject": "Harshika Poonacha",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 4134,
+        "top_diff": [
+          "her",
+          "tennis",
+          "photography",
+          "DJ",
+          "golf"
+        ],
+        "rank_lre": 2322,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2322,
+          "0.5": 2343,
+          "1.5": 2304,
+          "2.0": 2302,
+          "3.0": 2308,
+          "5.0": 2321
+        }
+      },
+      {
+        "subject": "Menachem Mendel Schneerson",
+        "model_top1_id": 17247,
+        "model_top1": "rab",
+        "n_references": 8,
+        "rank_diff": 1756,
+        "top_diff": [
+          "spiritual",
+          "encour",
+          "encouraging",
+          "Jewish",
+          "counsel"
+        ],
+        "rank_lre": 3487,
+        "top_lre": [
+          "being",
+          "his",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3487,
+          "0.5": 3587,
+          "1.5": 3368,
+          "2.0": 3281,
+          "3.0": 3108,
+          "5.0": 2784
+        }
+      },
+      {
+        "subject": "Constand Viljoen",
+        "model_top1_id": 18355,
+        "model_top1": "politician",
+        "n_references": 8,
+        "rank_diff": 141,
+        "top_diff": [
+          "rugby",
+          "Agricult",
+          "farming",
+          "agricultural",
+          "cricket"
+        ],
+        "rank_lre": 10789,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10789,
+          "0.5": 11137,
+          "1.5": 10440,
+          "2.0": 10052,
+          "3.0": 9251,
+          "5.0": 7618
+        }
+      },
+      {
+        "subject": "George Bennard",
+        "model_top1_id": 25751,
+        "model_top1": "composer",
+        "n_references": 8,
+        "rank_diff": 18,
+        "top_diff": [
+          "songs",
+          "Christianity",
+          "Songs",
+          "song",
+          "Christian"
+        ],
+        "rank_lre": 4307,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4307,
+          "0.5": 5003,
+          "1.5": 3734,
+          "2.0": 3188,
+          "3.0": 2308,
+          "5.0": 1141
+        }
+      },
+      {
+        "subject": "Michael Kidd",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 379,
+        "top_diff": [
+          "Dance",
+          "dance",
+          "dancing",
+          "Jazz",
+          "jazz"
+        ],
+        "rank_lre": 2100,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2100,
+          "0.5": 2229,
+          "1.5": 1982,
+          "2.0": 1877,
+          "3.0": 1683,
+          "5.0": 1361
+        }
+      },
+      {
+        "subject": "John Gawsworth",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 33,
+        "top_diff": [
+          "Shakespeare",
+          "literary",
+          "writing",
+          "poetry",
+          "transl"
+        ],
+        "rank_lre": 1132,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "many",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1132,
+          "0.5": 1301,
+          "1.5": 989,
+          "2.0": 870,
+          "3.0": 693,
+          "5.0": 438
+        }
+      },
+      {
+        "subject": "Emily Barton",
+        "model_top1_id": 11732,
+        "model_top1": "actor",
+        "n_references": 8,
+        "rank_diff": 2268,
+        "top_diff": [
+          "literary",
+          "novels",
+          "writing",
+          "poetry",
+          "poet"
+        ],
+        "rank_lre": 2223,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2223,
+          "0.5": 2291,
+          "1.5": 2155,
+          "2.0": 2100,
+          "3.0": 2004,
+          "5.0": 1832
+        }
+      },
+      {
+        "subject": "Naomi Shihab Nye",
+        "model_top1_id": 9564,
+        "model_top1": "poet",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "poetry",
+          "poet",
+          "poems",
+          "literary",
+          "poem"
+        ],
+        "rank_lre": 768,
+        "top_lre": [
+          "his",
+          "being",
+          "the",
+          "her",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 768,
+          "0.5": 1058,
+          "1.5": 544,
+          "2.0": 378,
+          "3.0": 160,
+          "5.0": 30
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2368.0,
+          "median_lograng": 3.374565060722765,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2394.0,
+          "median_lograng": 3.3793054798938327,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2417.5,
+          "median_lograng": 3.383546008194041,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 2446.0,
+          "median_lograng": 3.3886338242921763,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 2314.5,
+          "median_lograng": 3.3646447752046855,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2244.5,
+          "median_lograng": 3.3512828146354945,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "3af986aae9f6",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "positions": {
+    "Willem de Sitter": 8,
+    "Nadja Tiller": 7,
+    "Humberto Lay": 6,
+    "Poojappura Ravi": 9,
+    "Paul Hedqvist": 8,
+    "Te Ata Fisher": 6,
+    "Lisa Ryder": 6,
+    "Stafford Cripps": 9,
+    "Daniel D. Tompkins": 9,
+    "Simon Gosejohann": 9,
+    "Masato Wada": 7,
+    "Steven Mercurio": 7,
+    "Paolo Soleri": 7,
+    "Graham Linehan": 6,
+    "Edward Gregson": 6,
+    "Rolf Thommessen": 7,
+    "Andrei Bely": 6,
+    "Paruyr Sevak": 7,
+    "Vanessa Ray": 6,
+    "Audrey Wise": 6,
+    "Michael William Balfe": 7,
+    "Vondell Darr": 7,
+    "Herb Greene": 6,
+    "Krister Henriksson": 8,
+    "Patricia Idlette": 7,
+    "William Hardy Wilson": 7,
+    "Ron Rash": 6,
+    "Leyla Saz": 7,
+    "Bibb Graves": 7,
+    "Mia Freedman": 7,
+    "Philip Warren Anderson": 6,
+    "Saskia Mulder": 7,
+    "Yuvraj Hans": 6,
+    "James Reese Europe": 7,
+    "Philip Wharton, 4th Baron Wharton": 15,
+    "Edward Dodsley Barrow": 9,
+    "Stephen Colbert": 6,
+    "Paul Abraham": 4,
+    "Daniel Showalter": 6,
+    "Yoo So-young": 8,
+    "William Shiels": 6,
+    "Alfonso Fontanelli": 8,
+    "John Fortune": 5,
+    "Esther Ralston": 7,
+    "Vic Chou": 6,
+    "Ian Hanomansing": 8,
+    "Jung Ryeo-won": 9,
+    "Samuel Fessenden": 7,
+    "Barry Sobel": 7,
+    "Taku Iwasaki": 7,
+    "Ernst Jaakson": 8,
+    "Susanna Haavisto": 8,
+    "David Gascoyne": 7,
+    "Claude Corea": 6,
+    "Mikey North": 6,
+    "Boethius": 5,
+    "Charles James Mathews": 8,
+    "Adam Carolla": 7,
+    "Robert Stout": 7,
+    "Michael McKell": 6,
+    "Maliha Lodhi": 8,
+    "Giuseppe Saracco": 7,
+    "Lim Chin Siong": 8,
+    "Juan Blanco": 6,
+    "Ben Joseph Green": 5,
+    "Maurice Nicoll": 7,
+    "Thomas Hailes Lacy": 9,
+    "Clive Granger": 6,
+    "John Horgan": 5,
+    "George Santayana": 7,
+    "Boris Tchaikovsky": 10,
+    "Beth Ostrosky Stern": 9,
+    "Bernard Vonnegut": 8,
+    "Margarete Schlegel": 9,
+    "Trevor Sargent": 8,
+    "Haim Corfu": 6,
+    "Theodor Rosetti": 7,
+    "Andrew Ross Sorkin": 8,
+    "Pearse Doherty": 8,
+    "Marion Post Wolcott": 7,
+    "Montserrat Lombard": 8,
+    "Agnes Miegel": 8,
+    "Conchita Montenegro": 9,
+    "Vauro Senesi": 7,
+    "Gordon Scott": 5,
+    "Ciara": 5,
+    "Femi Jacobs": 6,
+    "Alberto Prebisch": 8,
+    "George Thalben-Ball": 10,
+    "Giannina Braschi": 8,
+    "Sahir Ali Bagga": 8,
+    "Simon Dallow": 6,
+    "Juan Rulfo": 7,
+    "Shibdas Ghosh": 7,
+    "Suzanne Crouch": 8,
+    "Frits Helmuth": 8,
+    "Tracey Ross": 5,
+    "William Averell Harriman": 9,
+    "Yanis Varoufakis": 10,
+    "Edmond Leung": 6,
+    "Harshika Poonacha": 9,
+    "Menachem Mendel Schneerson": 10,
+    "Constand Viljoen": 7,
+    "George Bennard": 7,
+    "Michael Kidd": 6,
+    "John Gawsworth": 7,
+    "Emily Barton": 6,
+    "Naomi Shihab Nye": 9
+  },
+  "content_tokenization_changes": [
+    {
+      "subject": "Willem de Sitter",
+      "original_ids": [
+        1162,
+        3225,
+        29487,
+        1108,
+        1086,
+        5474,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29548,
+        3225,
+        29487,
+        1108,
+        1086,
+        5474,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Nadja Tiller",
+      "original_ids": [
+        19741,
+        3599,
+        1088,
+        9646,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29527,
+        1084,
+        3599,
+        1088,
+        9646,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Humberto Lay",
+      "original_ids": [
+        1150,
+        1799,
+        1300,
+        27039,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29537,
+        1799,
+        1300,
+        27039,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Poojappura Ravi",
+      "original_ids": [
+        1135,
+        4232,
+        29536,
+        1531,
+        3382,
+        1167,
+        17869,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        4232,
+        29536,
+        1531,
+        3382,
+        1167,
+        17869,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Paul Hedqvist",
+      "original_ids": [
+        4688,
+        1150,
+        1054,
+        29543,
+        29496,
+        1160,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        23009,
+        1150,
+        1054,
+        29543,
+        29496,
+        1160,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Te Ata Fisher",
+      "original_ids": [
+        3031,
+        1098,
+        1868,
+        22942,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        9714,
+        1098,
+        1868,
+        22942,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Lisa Ryder",
+      "original_ids": [
+        19767,
+        16739,
+        1594,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29526,
+        8450,
+        16739,
+        1594,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Stafford Cripps",
+      "original_ids": [
+        14362,
+        1324,
+        1102,
+        1141,
+        1355,
+        29481,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1486,
+        2914,
+        1324,
+        1102,
+        1141,
+        1355,
+        29481,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Daniel D. Tompkins",
+      "original_ids": [
+        8871,
+        1152,
+        29491,
+        5428,
+        29488,
+        9066,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        26082,
+        1523,
+        1152,
+        29491,
+        5428,
+        29488,
+        9066,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Simon Gosejohann",
+      "original_ids": [
+        11358,
+        1188,
+        1413,
+        29536,
+        2139,
+        1598,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        8322,
+        1034,
+        1188,
+        1413,
+        29536,
+        2139,
+        1598,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Masato Wada",
+      "original_ids": [
+        9951,
+        2595,
+        1162,
+        2308,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        1061,
+        2595,
+        1162,
+        2308,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Steven Mercurio",
+      "original_ids": [
+        21025,
+        6393,
+        2120,
+        1459,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        7500,
+        2202,
+        6393,
+        2120,
+        1459,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Paolo Soleri",
+      "original_ids": [
+        8912,
+        5821,
+        7617,
+        22112,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        29476,
+        5821,
+        7617,
+        22112,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Graham Linehan",
+      "original_ids": [
+        18731,
+        9895,
+        8413,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29545,
+        11930,
+        9895,
+        8413,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Edward Gregson",
+      "original_ids": [
+        11553,
+        11688,
+        2033,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4333,
+        1818,
+        11688,
+        2033,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Rolf Thommessen",
+      "original_ids": [
+        1167,
+        5977,
+        5722,
+        29487,
+        22719,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        5977,
+        5722,
+        29487,
+        22719,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Andrei Bely",
+      "original_ids": [
+        1783,
+        10909,
+        1133,
+        1491,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3235,
+        10909,
+        1133,
+        1491,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Paruyr Sevak",
+      "original_ids": [
+        3084,
+        29486,
+        5137,
+        27496,
+        1259,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4684,
+        29486,
+        5137,
+        27496,
+        1259,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Vanessa Ray",
+      "original_ids": [
+        8415,
+        12594,
+        9720,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29558,
+        1044,
+        12594,
+        9720,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Audrey Wise",
+      "original_ids": [
+        15189,
+        7207,
+        1162,
+        1632,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        25529,
+        7207,
+        1162,
+        1632,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Michael William Balfe",
+      "original_ids": [
+        6227,
+        5014,
+        10341,
+        2280,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        26858,
+        5014,
+        10341,
+        2280,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Vondell Darr",
+      "original_ids": [
+        1318,
+        1857,
+        1247,
+        1152,
+        3422,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29558,
+        1857,
+        1247,
+        1152,
+        3422,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Herb Greene",
+      "original_ids": [
+        3352,
+        29494,
+        10029,
+        2628,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        18846,
+        29494,
+        10029,
+        2628,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Krister Henriksson",
+      "original_ids": [
+        8555,
+        2098,
+        5698,
+        8897,
+        15310,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29564,
+        29480,
+        2098,
+        5698,
+        8897,
+        15310,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Patricia Idlette",
+      "original_ids": [
+        4954,
+        2259,
+        1283,
+        7086,
+        18829,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        9011,
+        2259,
+        1283,
+        7086,
+        18829,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "William Hardy Wilson",
+      "original_ids": [
+        5014,
+        10476,
+        29492,
+        12189,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        13463,
+        3411,
+        10476,
+        29492,
+        12189,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ron Rash",
+      "original_ids": [
+        10743,
+        1167,
+        1797,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        1034,
+        1167,
+        1797,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Leyla Saz",
+      "original_ids": [
+        2105,
+        29492,
+        2988,
+        1086,
+        1709,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29526,
+        2205,
+        2988,
+        1086,
+        1709,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Bibb Graves",
+      "original_ids": [
+        1133,
+        1361,
+        29494,
+        2546,
+        4178,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        1361,
+        29494,
+        2546,
+        4178,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Mia Freedman",
+      "original_ids": [
+        1119,
+        1283,
+        1169,
+        3584,
+        2062,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        1283,
+        1169,
+        3584,
+        2062,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Philip Warren Anderson",
+      "original_ids": [
+        8540,
+        19836,
+        16429,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        24654,
+        1276,
+        19836,
+        16429,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Saskia Mulder",
+      "original_ids": [
+        1086,
+        1920,
+        1283,
+        22459,
+        1594,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29503,
+        1920,
+        1283,
+        22459,
+        1594,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Yuvraj Hans",
+      "original_ids": [
+        1395,
+        6156,
+        16462,
+        11286,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29570,
+        6156,
+        16462,
+        11286,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "James Reese Europe",
+      "original_ids": [
+        5565,
+        2066,
+        4136,
+        4169,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        1913,
+        2066,
+        4136,
+        4169,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Philip Wharton, 4th Baron Wharton",
+      "original_ids": [
+        8540,
+        1711,
+        1212,
+        1034,
+        29493,
+        29473,
+        29549,
+        1130,
+        23920,
+        1711,
+        1212,
+        1034,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        24654,
+        1276,
+        1711,
+        1212,
+        1034,
+        29493,
+        29473,
+        29549,
+        1130,
+        23920,
+        1711,
+        1212,
+        1034,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Edward Dodsley Barrow",
+      "original_ids": [
+        11553,
+        23558,
+        29481,
+        2815,
+        3779,
+        1439,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4333,
+        1818,
+        23558,
+        29481,
+        2815,
+        3779,
+        1439,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Stephen Colbert",
+      "original_ids": [
+        13100,
+        2656,
+        5323,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        10745,
+        1308,
+        2656,
+        5323,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Paul Abraham",
+      "original_ids": [
+        4688,
+        23152,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        23009,
+        23152,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Daniel Showalter",
+      "original_ids": [
+        8871,
+        9378,
+        20599,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        26082,
+        1523,
+        9378,
+        20599,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Yoo So-young",
+      "original_ids": [
+        1395,
+        4232,
+        2305,
+        29501,
+        7788,
+        1585,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29570,
+        4232,
+        2305,
+        29501,
+        7788,
+        1585,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "William Shiels",
+      "original_ids": [
+        5014,
+        2063,
+        23797,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        13463,
+        3411,
+        2063,
+        23797,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Alfonso Fontanelli",
+      "original_ids": [
+        11818,
+        25059,
+        16232,
+        1044,
+        9531,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3475,
+        29490,
+        25059,
+        16232,
+        1044,
+        9531,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "John Fortune",
+      "original_ids": [
+        2983,
+        7731,
+        2570,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15732,
+        7731,
+        2570,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Esther Ralston",
+      "original_ids": [
+        4746,
+        1431,
+        1167,
+        1050,
+        7317,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15412,
+        1431,
+        1167,
+        1050,
+        7317,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Vic Chou",
+      "original_ids": [
+        18630,
+        1457,
+        1048,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29558,
+        1062,
+        1457,
+        1048,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ian Hanomansing",
+      "original_ids": [
+        18079,
+        8993,
+        1068,
+        1277,
+        1056,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29505,
+        1044,
+        8993,
+        1068,
+        1277,
+        1056,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Jung Ryeo-won",
+      "original_ids": [
+        29319,
+        1167,
+        7955,
+        29477,
+        29501,
+        18727,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        1737,
+        1167,
+        7955,
+        29477,
+        29501,
+        18727,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Samuel Fessenden",
+      "original_ids": [
+        17363,
+        1169,
+        1177,
+        9099,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        20545,
+        3777,
+        1169,
+        1177,
+        9099,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Barry Sobel",
+      "original_ids": [
+        21161,
+        1086,
+        1366,
+        1069,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6061,
+        1411,
+        1086,
+        1366,
+        1069,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Taku Iwasaki",
+      "original_ids": [
+        1088,
+        17871,
+        1083,
+        10148,
+        11038,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29506,
+        17871,
+        1083,
+        10148,
+        11038,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ernst Jaakson",
+      "original_ids": [
+        26781,
+        16557,
+        1259,
+        2033,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        18668,
+        29479,
+        1071,
+        16557,
+        1259,
+        2033,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Susanna Haavisto",
+      "original_ids": [
+        9935,
+        8859,
+        8505,
+        1262,
+        19842,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29503,
+        1149,
+        8859,
+        8505,
+        1262,
+        19842,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "David Gascoyne",
+      "original_ids": [
+        5185,
+        1188,
+        5254,
+        1672,
+        1253,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29164,
+        1188,
+        5254,
+        1672,
+        1253,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Claude Corea",
+      "original_ids": [
+        27604,
+        12965,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1967,
+        18956,
+        12965,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Mikey North",
+      "original_ids": [
+        14377,
+        2267,
+        4732,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        29478,
+        2267,
+        4732,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Boethius",
+      "original_ids": [
+        4036,
+        1529,
+        3938,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        7449,
+        1529,
+        3938,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Charles James Mathews",
+      "original_ids": [
+        7195,
+        5565,
+        6470,
+        1033,
+        7188,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6249,
+        1635,
+        5565,
+        6470,
+        1033,
+        7188,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Adam Carolla",
+      "original_ids": [
+        11302,
+        3132,
+        1561,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4029,
+        1082,
+        3132,
+        1561,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Robert Stout",
+      "original_ids": [
+        6374,
+        1430,
+        1174,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29522,
+        3278,
+        29475,
+        1430,
+        1174,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Michael McKell",
+      "original_ids": [
+        6227,
+        19114,
+        1247,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        26858,
+        19114,
+        1247,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Maliha Lodhi",
+      "original_ids": [
+        5148,
+        29478,
+        3567,
+        1161,
+        1118,
+        6133,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        5595,
+        3567,
+        1161,
+        1118,
+        6133,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Giuseppe Saracco",
+      "original_ids": [
+        7390,
+        29465,
+        8431,
+        17657,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29545,
+        29478,
+        29465,
+        8431,
+        17657,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Lim Chin Siong",
+      "original_ids": [
+        11377,
+        1457,
+        1030,
+        1086,
+        1064,
+        29489,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        25009,
+        1457,
+        1030,
+        1086,
+        1064,
+        29489,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Juan Blanco",
+      "original_ids": [
+        12797,
+        2793,
+        17094,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        7650,
+        2793,
+        17094,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ben Joseph Green",
+      "original_ids": [
+        4889,
+        8986,
+        7016,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        18881,
+        8986,
+        7016,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Maurice Nicoll",
+      "original_ids": [
+        26118,
+        12689,
+        1561,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        4275,
+        1303,
+        12689,
+        1561,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Thomas Hailes Lacy",
+      "original_ids": [
+        6851,
+        1150,
+        1382,
+        1042,
+        1161,
+        3194,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1995,
+        24624,
+        1150,
+        1382,
+        1042,
+        1161,
+        3194,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Clive Granger",
+      "original_ids": [
+        2134,
+        1263,
+        2546,
+        4457,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1967,
+        1263,
+        2546,
+        4457,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "John Horgan",
+      "original_ids": [
+        2983,
+        8989,
+        2030,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15732,
+        8989,
+        2030,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "George Santayana",
+      "original_ids": [
+        5931,
+        5863,
+        1107,
+        3006,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6677,
+        4584,
+        5863,
+        1107,
+        3006,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Boris Tchaikovsky",
+      "original_ids": [
+        10179,
+        1046,
+        1088,
+        8904,
+        1617,
+        1394,
+        11687,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        1039,
+        1046,
+        1088,
+        8904,
+        1617,
+        1394,
+        11687,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Beth Ostrosky Stern",
+      "original_ids": [
+        18590,
+        18988,
+        1079,
+        11687,
+        1086,
+        1742,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        1529,
+        18988,
+        1079,
+        11687,
+        1086,
+        1742,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Bernard Vonnegut",
+      "original_ids": [
+        17552,
+        15793,
+        13183,
+        1097,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29528,
+        1941,
+        1256,
+        15793,
+        13183,
+        1097,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Margarete Schlegel",
+      "original_ids": [
+        10917,
+        1260,
+        1192,
+        2377,
+        2714,
+        1069,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        1694,
+        1260,
+        1192,
+        2377,
+        2714,
+        1069,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Trevor Sargent",
+      "original_ids": [
+        1088,
+        6741,
+        1039,
+        1086,
+        1694,
+        1076,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29506,
+        6741,
+        1039,
+        1086,
+        1694,
+        1076,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Haim Corfu",
+      "original_ids": [
+        1150,
+        3139,
+        3966,
+        22046,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29537,
+        3139,
+        3966,
+        22046,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Theodor Rosetti",
+      "original_ids": [
+        23472,
+        1039,
+        9318,
+        16043,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1782,
+        1118,
+        1039,
+        9318,
+        16043,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Andrew Ross Sorkin",
+      "original_ids": [
+        11158,
+        12892,
+        1086,
+        1348,
+        1030,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3235,
+        3284,
+        12892,
+        1086,
+        1348,
+        1030,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Pearse Doherty",
+      "original_ids": [
+        17165,
+        1099,
+        3146,
+        1431,
+        1652,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29521,
+        1412,
+        1099,
+        3146,
+        1431,
+        1652,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Marion Post Wolcott",
+      "original_ids": [
+        2239,
+        1064,
+        5880,
+        13608,
+        27959,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        8076,
+        1064,
+        5880,
+        13608,
+        27959,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Montserrat Lombard",
+      "original_ids": [
+        6452,
+        1225,
+        6076,
+        1161,
+        4633,
+        1256,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        28422,
+        1225,
+        6076,
+        1161,
+        4633,
+        1256,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Agnes Miegel",
+      "original_ids": [
+        4554,
+        5279,
+        1119,
+        1180,
+        10049,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29509,
+        4974,
+        1042,
+        1119,
+        1180,
+        10049,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Conchita Montenegro",
+      "original_ids": [
+        2093,
+        1106,
+        3924,
+        6452,
+        1037,
+        1409,
+        1079,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1624,
+        1106,
+        3924,
+        6452,
+        1037,
+        1409,
+        1079,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Vauro Senesi",
+      "original_ids": [
+        1318,
+        1349,
+        1079,
+        6123,
+        18665,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29558,
+        1349,
+        1079,
+        6123,
+        18665,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Gordon Scott",
+      "original_ids": [
+        16705,
+        8404,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29545,
+        14267,
+        8404,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Ciara",
+      "original_ids": [
+        17664,
+        3691,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29511,
+        29478,
+        3691,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Femi Jacobs",
+      "original_ids": [
+        1169,
+        18725,
+        7897,
+        8849,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29533,
+        18725,
+        7897,
+        8849,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Alberto Prebisch",
+      "original_ids": [
+        27953,
+        5026,
+        29494,
+        3911,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        3475,
+        1305,
+        1300,
+        5026,
+        29494,
+        3911,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "George Thalben-Ball",
+      "original_ids": [
+        5931,
+        1310,
+        1050,
+        3941,
+        29501,
+        29528,
+        1223,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6677,
+        4584,
+        1310,
+        1050,
+        3941,
+        29501,
+        29528,
+        1223,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Giannina Braschi",
+      "original_ids": [
+        27858,
+        29479,
+        2148,
+        14249,
+        5184,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29545,
+        1521,
+        29479,
+        2148,
+        14249,
+        5184,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Sahir Ali Bagga",
+      "original_ids": [
+        1086,
+        1680,
+        1129,
+        16052,
+        18467,
+        3272,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29503,
+        1680,
+        1129,
+        16052,
+        18467,
+        3272,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Simon Dallow",
+      "original_ids": [
+        11358,
+        1152,
+        6386,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        8322,
+        1034,
+        1152,
+        6386,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Juan Rulfo",
+      "original_ids": [
+        12797,
+        1167,
+        1121,
+        1670,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29566,
+        7650,
+        1167,
+        1121,
+        1670,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Shibdas Ghosh",
+      "original_ids": [
+        2063,
+        1361,
+        26878,
+        16294,
+        7411,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        2749,
+        1361,
+        26878,
+        16294,
+        7411,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Suzanne Crouch",
+      "original_ids": [
+        26200,
+        13770,
+        1102,
+        1286,
+        1106,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29503,
+        4301,
+        13770,
+        1102,
+        1286,
+        1106,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Frits Helmuth",
+      "original_ids": [
+        1169,
+        1640,
+        29481,
+        6192,
+        29487,
+        3425,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29533,
+        1640,
+        29481,
+        6192,
+        29487,
+        3425,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Tracey Ross",
+      "original_ids": [
+        29394,
+        29492,
+        12892,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        10705,
+        29492,
+        12892,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "William Averell Harriman",
+      "original_ids": [
+        5014,
+        1098,
+        1111,
+        1247,
+        11940,
+        27921,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        13463,
+        3411,
+        1098,
+        1111,
+        1247,
+        11940,
+        27921,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Yanis Varoufakis",
+      "original_ids": [
+        19189,
+        1046,
+        13528,
+        1048,
+        29490,
+        1259,
+        1046,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29570,
+        1044,
+        1046,
+        13528,
+        1048,
+        29490,
+        1259,
+        1046,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Edmond Leung",
+      "original_ids": [
+        3458,
+        8793,
+        2105,
+        1737,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4333,
+        8793,
+        2105,
+        1737,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Harshika Poonacha",
+      "original_ids": [
+        4175,
+        1579,
+        6780,
+        1135,
+        5741,
+        1363,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        24421,
+        1579,
+        6780,
+        1135,
+        5741,
+        1363,
+        29476,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Menachem Mendel Schneerson",
+      "original_ids": [
+        8438,
+        2112,
+        29487,
+        29451,
+        1069,
+        2377,
+        1253,
+        1852,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        23731,
+        2112,
+        29487,
+        29451,
+        1069,
+        2377,
+        1253,
+        1852,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Constand Viljoen",
+      "original_ids": [
+        2093,
+        2561,
+        24183,
+        5649,
+        1037,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        1624,
+        2561,
+        24183,
+        5649,
+        1037,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "George Bennard",
+      "original_ids": [
+        5931,
+        1133,
+        2948,
+        1256,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        6677,
+        4584,
+        1133,
+        2948,
+        1256,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Michael Kidd",
+      "original_ids": [
+        6227,
+        1292,
+        3326,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        29523,
+        26858,
+        1292,
+        3326,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "John Gawsworth",
+      "original_ids": [
+        2983,
+        1188,
+        1835,
+        2384,
+        2985,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        15732,
+        1188,
+        1835,
+        2384,
+        2985,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Emily Barton",
+      "original_ids": [
+        17709,
+        15371,
+        1034,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        4497,
+        1874,
+        15371,
+        1034,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    },
+    {
+      "subject": "Naomi Shihab Nye",
+      "original_ids": [
+        7852,
+        17112,
+        2063,
+        5139,
+        1143,
+        1186,
+        7955,
+        1117,
+        3419,
+        1122
+      ],
+      "new_ids": [
+        29473,
+        781,
+        18320,
+        17112,
+        2063,
+        5139,
+        1143,
+        1186,
+        7955,
+        1117,
+        3419,
+        1122
+      ],
+      "newline_ids": [
+        29473,
+        781
+      ]
+    }
+  ],
+  "split_fingerprint": "3af986aae9f6",
+  "baseline_sha256": {
+    "results/five_model_sweep/mistral7b/shared_split/person_occupation.json": "fba0dd19bf5b9d524c13fe5ab9f2c7e3068daa5f5165744ad5dec59a0d51b202"
+  },
+  "data_sha256": "57e89f94c17ff0fd55d5e3ad3aa24ee5e118a3ff7447fff88457113a0e4ce7a7",
+  "elapsed_seconds": 24.58607292175293
+}

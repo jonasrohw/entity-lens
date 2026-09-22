@@ -9,6 +9,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from jlens.affine_beta import DEFAULT_BETAS
 from jlens.config import OUTPUT_DIR, ROOT, YEAR_RELATIONS
 from jlens.figure_data import build_figure_data
 from jlens.io import read_json, write_json
@@ -214,6 +215,31 @@ def measurement_plan(
             ],
         )
     )
+    # The beta sweep rescales the first-order term, so it needs its own pass
+    # per protocol. One corrected-year run covers all relations, because the
+    # trailing-space fix applies only to the two year relations.
+    for filename, extra in [
+        ("jacobian_lens_beta.json", ["--legacy-split", "--correct-year-targets"]),
+        ("shared_split/jacobian_lens_beta.json", ["--distinct-first-token"]),
+    ]:
+        path = results / filename
+        stages.append(
+            (
+                path,
+                "measure-jacobian-lens",
+                [
+                    "--data-dir",
+                    data_dir,
+                    "--rels",
+                    ",".join(relations),
+                    "--betas",
+                    DEFAULT_BETAS,
+                    "--out",
+                    str(path),
+                    *extra,
+                ],
+            )
+        )
     for relation in relations:
         stages.append(
             (

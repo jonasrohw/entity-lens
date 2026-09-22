@@ -1,0 +1,3200 @@
+{
+  "relation": "person_plays_pro_sport",
+  "protocol": "shared_split",
+  "prompt_name": "entity_known_for",
+  "lens": {
+    "n": 100,
+    "layer": 19,
+    "template": "{} plays the sport of",
+    "agg": {
+      "diff": {
+        "median_rank": 9.0,
+        "median_lograng": 1.0,
+        "agree_at1": 0.14,
+        "agree_at10": 0.52
+      },
+      "lre": {
+        "median_rank": 18.0,
+        "median_lograng": 1.2787536009528289,
+        "agree_at1": 0.0,
+        "agree_at10": 0.19
+      }
+    },
+    "rows": [
+      {
+        "subject": "Sergei Makarov",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 548,
+        "top_diff": [
+          "Pavel",
+          "goalt",
+          "Vladimir",
+          "Dmitry",
+          "Belarus"
+        ],
+        "rank_lre": 180,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 180,
+          "0.5": 278,
+          "1.5": 124,
+          "2.0": 90,
+          "3.0": 39,
+          "5.0": 19
+        }
+      },
+      {
+        "subject": "Sidney Crosby",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "hockey",
+          "Pittsburgh",
+          "NHL",
+          "Hockey",
+          "Canadiens"
+        ],
+        "rank_lre": 20,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20,
+          "0.5": 108,
+          "1.5": 9,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Cam Newton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 210,
+        "top_diff": [
+          "quarterbacks",
+          "QB",
+          "NFL",
+          "Clemson",
+          "quarterback"
+        ],
+        "rank_lre": 18,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18,
+          "0.5": 32,
+          "1.5": 13,
+          "2.0": 9,
+          "3.0": 5,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Terrell Owens",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 1943,
+        "top_diff": [
+          "interceptions",
+          "touchdowns",
+          "turnovers",
+          "NFL",
+          "intercepted"
+        ],
+        "rank_lre": 18,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18,
+          "0.5": 32,
+          "1.5": 17,
+          "2.0": 10,
+          "3.0": 9,
+          "5.0": 25
+        }
+      },
+      {
+        "subject": "Frank Gifford",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "touchdowns",
+          "NFL",
+          "\ud83c\udfc8",
+          "NFL",
+          "quarterbacks"
+        ],
+        "rank_lre": 13,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13,
+          "0.5": 23,
+          "1.5": 6,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Fr\u00e9d\u00e9ric Piquionne",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 6840,
+        "top_diff": [
+          "Quebec",
+          "\u6267\u5bfc",
+          "painting",
+          "Napoleon",
+          "paintings"
+        ],
+        "rank_lre": 261,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 261,
+          "0.5": 314,
+          "1.5": 219,
+          "2.0": 200,
+          "3.0": 175,
+          "5.0": 214
+        }
+      },
+      {
+        "subject": "Carlos Beltr\u00e1n",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Houston",
+          "Astros",
+          "Puerto",
+          "Venezuelan",
+          "Mets"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 31,
+          "1.5": 4,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Tim Horton",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Winnipeg",
+          "Canadian",
+          "Toronto",
+          "\u52a0\u62ff",
+          "Toronto"
+        ],
+        "rank_lre": 46,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 46,
+          "0.5": 141,
+          "1.5": 17,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jermain Defoe",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Tottenham",
+          "goals",
+          "Baltimore",
+          "Honduras",
+          "Toronto"
+        ],
+        "rank_lre": 49,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 49,
+          "0.5": 130,
+          "1.5": 16,
+          "2.0": 7,
+          "3.0": 3,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Steve Yzerman",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Detroit",
+          "NHL",
+          "hockey",
+          "Ottawa",
+          "Hockey"
+        ],
+        "rank_lre": 23,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 23,
+          "0.5": 113,
+          "1.5": 10,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Matteo Ferrari",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 861,
+        "top_diff": [
+          "Ferrari",
+          "Pixar",
+          "skate",
+          "Formula",
+          "Airbus"
+        ],
+        "rank_lre": 171,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 171,
+          "0.5": 253,
+          "1.5": 119,
+          "2.0": 93,
+          "3.0": 52,
+          "5.0": 34
+        }
+      },
+      {
+        "subject": "Jesse Hibbs",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 19585,
+        "top_diff": [
+          "Snowden",
+          "Boeing",
+          "\u6267\u5bfc",
+          "Bundy",
+          "aviation"
+        ],
+        "rank_lre": 51,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 51,
+          "0.5": 59,
+          "1.5": 46,
+          "2.0": 44,
+          "3.0": 51,
+          "5.0": 97
+        }
+      },
+      {
+        "subject": "Brett Hull",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "NHL",
+          "goals",
+          "scoring",
+          "Goal",
+          "goal"
+        ],
+        "rank_lre": 66,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 66,
+          "0.5": 156,
+          "1.5": 23,
+          "2.0": 13,
+          "3.0": 4,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Ollie Matson",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 28,
+        "top_diff": [
+          "touchdowns",
+          "NFL",
+          "tackles",
+          "NFL",
+          "rushing"
+        ],
+        "rank_lre": 15,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 15,
+          "0.5": 24,
+          "1.5": 7,
+          "2.0": 4,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Edgaras Jankauskas",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 761,
+        "top_diff": [
+          "Lithuania",
+          "Belarus",
+          "Kazakhstan",
+          "Slovakia",
+          "Latvia"
+        ],
+        "rank_lre": 22,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 22,
+          "0.5": 46,
+          "1.5": 17,
+          "2.0": 11,
+          "3.0": 7,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Brett Favre",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 2507,
+        "top_diff": [
+          "quarterbacks",
+          "Wisconsin",
+          "Minnesota",
+          "quarterback",
+          "Minnesota"
+        ],
+        "rank_lre": 25,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 25,
+          "0.5": 43,
+          "1.5": 21,
+          "2.0": 21,
+          "3.0": 22,
+          "5.0": 50
+        }
+      },
+      {
+        "subject": "Christy Mathewson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "pitchers",
+          "pitching",
+          "baseball",
+          "pitcher",
+          "Baseball"
+        ],
+        "rank_lre": 7,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7,
+          "0.5": 22,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Wayne Rooney",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 22,
+        "top_diff": [
+          "goals",
+          "Goals",
+          "Goals",
+          "\u8fdb\u7403",
+          "goal"
+        ],
+        "rank_lre": 65,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 65,
+          "0.5": 147,
+          "1.5": 20,
+          "2.0": 11,
+          "3.0": 5,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Obafemi Martins",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 37,
+        "top_diff": [
+          "Nigeria",
+          "MLS",
+          "Nigerian",
+          "UEFA",
+          "FIFA"
+        ],
+        "rank_lre": 78,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 78,
+          "0.5": 157,
+          "1.5": 27,
+          "2.0": 14,
+          "3.0": 5,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Casey Stengel",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Baseball",
+          "baseball",
+          "pitching",
+          "managerial",
+          "pitchers"
+        ],
+        "rank_lre": 6,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6,
+          "0.5": 23,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Patrick Roy",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "goalt",
+          "goalie",
+          "Canadiens",
+          "NHL",
+          "Montreal"
+        ],
+        "rank_lre": 30,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30,
+          "0.5": 124,
+          "1.5": 11,
+          "2.0": 5,
+          "3.0": 1,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Ken Dryden",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "goalt",
+          "Canadiens",
+          "goalie",
+          "NHL",
+          "hockey"
+        ],
+        "rank_lre": 42,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 42,
+          "0.5": 132,
+          "1.5": 14,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Allen Iverson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Basketball",
+          "NBA",
+          "drib",
+          "basketball",
+          "\u7bee\u7403"
+        ],
+        "rank_lre": 8,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8,
+          "0.5": 18,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Emanuel Pogatetz",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 441,
+        "top_diff": [
+          "Austria",
+          "Austrian",
+          "\u5965\u5730\u5229",
+          "\u00d6sterreich",
+          "Sloven"
+        ],
+        "rank_lre": 110,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 110,
+          "0.5": 208,
+          "1.5": 71,
+          "2.0": 37,
+          "3.0": 21,
+          "5.0": 37
+        }
+      },
+      {
+        "subject": "Ji\u0159\u00ed \u0160l\u00e9gr",
+        "model_top1_id": 9853,
+        "model_top1": "ice",
+        "n_references": 8,
+        "rank_diff": 160,
+        "top_diff": [
+          "Slovak",
+          "Slovakia",
+          "Sloven",
+          "Czech",
+          "goalt"
+        ],
+        "rank_lre": 455,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 455,
+          "0.5": 712,
+          "1.5": 276,
+          "2.0": 175,
+          "3.0": 88,
+          "5.0": 37
+        }
+      },
+      {
+        "subject": "Giovani dos Santos",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "\u897f\u73ed\u7259",
+          "M\u00e9xico",
+          "\u897f\u7532",
+          "\u58a8\u897f\u54e5",
+          "soccer"
+        ],
+        "rank_lre": 28,
+        "top_lre": [
+          "his",
+          "playing",
+          "being",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 28,
+          "0.5": 107,
+          "1.5": 9,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Clayton Kershaw",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 23,
+        "top_diff": [
+          "Dodgers",
+          "pitching",
+          "pitchers",
+          "Pitch",
+          "Pitch"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 41,
+          "1.5": 7,
+          "2.0": 6,
+          "3.0": 3,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Jarome Iginla",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Calgary",
+          "NHL",
+          "Edmonton",
+          "hockey",
+          "Winnipeg"
+        ],
+        "rank_lre": 32,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 32,
+          "0.5": 126,
+          "1.5": 10,
+          "2.0": 4,
+          "3.0": 2,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Lutz Pfannenstiel",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 3762,
+        "top_diff": [
+          "surgical",
+          "\u624b\u672f",
+          "Surgical",
+          "surgery",
+          "surgeries"
+        ],
+        "rank_lre": 204,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 204,
+          "0.5": 274,
+          "1.5": 164,
+          "2.0": 132,
+          "3.0": 96,
+          "5.0": 89
+        }
+      },
+      {
+        "subject": "Benny Feilhaber",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "soccer",
+          "midfielder",
+          "midfield",
+          "MLS",
+          "Soccer"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 94,
+          "1.5": 4,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Lawrence Taylor",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 83,
+        "top_diff": [
+          "linebacker",
+          "lineback",
+          "NFL",
+          "Defensive",
+          "interceptions"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 23,
+          "1.5": 4,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Bart Starr",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 328,
+        "top_diff": [
+          "quarterbacks",
+          "quarterback",
+          "\ud83c\udfc8",
+          "Redskins",
+          "QB"
+        ],
+        "rank_lre": 20,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 20,
+          "0.5": 35,
+          "1.5": 17,
+          "2.0": 12,
+          "3.0": 10,
+          "5.0": 16
+        }
+      },
+      {
+        "subject": "Kenny Lofton",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "outfield",
+          "steals",
+          "baseball",
+          "strikeouts",
+          "speedy"
+        ],
+        "rank_lre": 10,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "a",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10,
+          "0.5": 24,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Dennis Seidenberg",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 2638,
+        "top_diff": [
+          "defenseman",
+          "Defensive",
+          "defensive",
+          "NHL",
+          "\u9632\u5b88"
+        ],
+        "rank_lre": 22,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 22,
+          "0.5": 34,
+          "1.5": 17,
+          "2.0": 14,
+          "3.0": 16,
+          "5.0": 44
+        }
+      },
+      {
+        "subject": "Ernie Davis",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "Rutgers",
+          "Knoxville",
+          "Clemson",
+          "College",
+          "College"
+        ],
+        "rank_lre": 14,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14,
+          "0.5": 21,
+          "1.5": 5,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "David Robinson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 113,
+        "top_diff": [
+          "\u9a6c\u523a",
+          "\u9ca8",
+          "\u6d77\u519b",
+          "Spurs",
+          "Texans"
+        ],
+        "rank_lre": 16,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16,
+          "0.5": 25,
+          "1.5": 6,
+          "2.0": 3,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Blaise Matuidi",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "UEFA",
+          "FIFA",
+          "Juventus",
+          "midfield",
+          "soccer"
+        ],
+        "rank_lre": 27,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 27,
+          "0.5": 108,
+          "1.5": 9,
+          "2.0": 5,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Carlos Valderrama",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Colombian",
+          "Colombia",
+          "colomb",
+          "Venezuelan",
+          "Venezuela"
+        ],
+        "rank_lre": 32,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 32,
+          "0.5": 117,
+          "1.5": 11,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Pat Tillman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 534,
+        "top_diff": [
+          "Military",
+          "Taliban",
+          "\u519b\u4e8b",
+          "\u70c8\u58eb",
+          "\u7f8e\u519b"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 31,
+          "1.5": 11,
+          "2.0": 6,
+          "3.0": 3,
+          "5.0": 4
+        }
+      },
+      {
+        "subject": "Roger Maris",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "batting",
+          "records",
+          "Baseball",
+          "baseball",
+          "strikeouts"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 36,
+          "1.5": 6,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jermaine Jones",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Defensive",
+          "UEFA",
+          "soccer",
+          "defensive",
+          "FIFA"
+        ],
+        "rank_lre": 30,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30,
+          "0.5": 110,
+          "1.5": 9,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Alexander Ovechkin",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "goals",
+          "goal",
+          "Goals",
+          "goal",
+          "goals"
+        ],
+        "rank_lre": 77,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 77,
+          "0.5": 170,
+          "1.5": 24,
+          "2.0": 15,
+          "3.0": 4,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Tim Cahill",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "soccer",
+          "Soccer",
+          "FIFA",
+          "goals",
+          "Goals"
+        ],
+        "rank_lre": 23,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 23,
+          "0.5": 102,
+          "1.5": 7,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Rick Barry",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "basketball",
+          "Basketball",
+          "hoops",
+          "Celtics",
+          "NBA"
+        ],
+        "rank_lre": 12,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12,
+          "0.5": 20,
+          "1.5": 4,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Walter Zenga",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "goalkeeper",
+          "goalie",
+          "goalt",
+          "UEFA",
+          "FIFA"
+        ],
+        "rank_lre": 40,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 40,
+          "0.5": 127,
+          "1.5": 15,
+          "2.0": 5,
+          "3.0": 2,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Walter Payton",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 44,
+        "top_diff": [
+          "touchdowns",
+          "NFL",
+          "NFL",
+          "\ud83c\udfc8",
+          "Chicago"
+        ],
+        "rank_lre": 10,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10,
+          "0.5": 20,
+          "1.5": 5,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Joakim Noah",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Defensive",
+          "defensive",
+          "Knicks",
+          "\u9632\u5b88",
+          "\u7bee\u677f"
+        ],
+        "rank_lre": 7,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7,
+          "0.5": 18,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "David Beckham",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Beckham",
+          "MLS",
+          "\u5a5a\u7eb1",
+          "FIFA",
+          "soccer"
+        ],
+        "rank_lre": 39,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 39,
+          "0.5": 122,
+          "1.5": 14,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Alan Ball, Jr.",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 21538,
+        "top_diff": [
+          "\u6267\u5bfc",
+          "\u7f16\u5267",
+          "Presidency",
+          "ump",
+          "Murder"
+        ],
+        "rank_lre": 52,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 52,
+          "0.5": 57,
+          "1.5": 49,
+          "2.0": 43,
+          "3.0": 41,
+          "5.0": 56
+        }
+      },
+      {
+        "subject": "Hugo S\u00e1nchez",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 115,
+        "top_diff": [
+          "\u58a8\u897f\u54e5",
+          "Mexican",
+          "Mexicans",
+          "M\u00e9xico",
+          "Mexico"
+        ],
+        "rank_lre": 69,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 69,
+          "0.5": 152,
+          "1.5": 23,
+          "2.0": 12,
+          "3.0": 6,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Florent Sinama Pongolle",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "UEFA",
+          "barcelona",
+          "Arsenal",
+          "soccer",
+          "Messi"
+        ],
+        "rank_lre": 62,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 62,
+          "0.5": 137,
+          "1.5": 22,
+          "2.0": 9,
+          "3.0": 4,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Arvydas Sabonis",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "basketball",
+          "\u7bee\u677f",
+          "Lithuania",
+          "Basketball",
+          "NBA"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "basketball"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 15,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Patrick Ewing",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Knicks",
+          "basketball",
+          "Celtics",
+          "Basketball",
+          "\ufffd"
+        ],
+        "rank_lre": 3,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "basketball",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3,
+          "0.5": 15,
+          "1.5": 3,
+          "2.0": 0,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Nelson Valdez",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 23,
+        "top_diff": [
+          "Argentina",
+          "Uruguay",
+          "Chile",
+          "Ecuador",
+          "Argentine"
+        ],
+        "rank_lre": 45,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 45,
+          "0.5": 131,
+          "1.5": 15,
+          "2.0": 7,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Chuck Connors",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Baseball",
+          "Rifle",
+          "baseball",
+          "NRA",
+          "Hogan"
+        ],
+        "rank_lre": 15,
+        "top_lre": [
+          "his",
+          "playing",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 15,
+          "0.5": 38,
+          "1.5": 5,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Kevin Durant",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "\u675c\u5170\u7279",
+          "NBA",
+          "\u54c8\u767b",
+          "Basketball",
+          "\u573a\u5747"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 16,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "David Andersen",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "NBA",
+          "Basketball",
+          "basketball",
+          "Knicks",
+          "\u7bee\u7403"
+        ],
+        "rank_lre": 7,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7,
+          "0.5": 18,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Michael Uma\u00f1a",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 7772,
+        "top_diff": [
+          "Puerto",
+          "Guatemala",
+          "Honduras",
+          "Latino",
+          "Duterte"
+        ],
+        "rank_lre": 232,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 232,
+          "0.5": 301,
+          "1.5": 188,
+          "2.0": 150,
+          "3.0": 123,
+          "5.0": 196
+        }
+      },
+      {
+        "subject": "Ra\u00efs M'Bolhi",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 1215,
+        "top_diff": [
+          "Algeria",
+          "Angola",
+          "Albania",
+          "Niger",
+          "Alger"
+        ],
+        "rank_lre": 183,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 183,
+          "0.5": 258,
+          "1.5": 125,
+          "2.0": 98,
+          "3.0": 47,
+          "5.0": 38
+        }
+      },
+      {
+        "subject": "Carlos Arroyo",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Knicks",
+          "Miami",
+          "basketball",
+          "NBA",
+          "Basketball"
+        ],
+        "rank_lre": 3,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "basketball",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3,
+          "0.5": 14,
+          "1.5": 2,
+          "2.0": 0,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jos\u00e9 Canseco",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 8,
+        "top_diff": [
+          "steroid",
+          "Venezuelan",
+          "strikeouts",
+          "cocaine",
+          "Cuban"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 31,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Rick Fox",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Lakers",
+          "Celtics",
+          "Basketball",
+          "Raptors",
+          "basketball"
+        ],
+        "rank_lre": 8,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8,
+          "0.5": 19,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Gary Payton",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "\u9632\u5b88",
+          "Defensive",
+          "Lakers",
+          "Celtics",
+          "Seattle"
+        ],
+        "rank_lre": 8,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8,
+          "0.5": 18,
+          "1.5": 3,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Billy Sunday",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 675,
+        "top_diff": [
+          "preaching",
+          "preach",
+          "preached",
+          "evangel",
+          "baseball"
+        ],
+        "rank_lre": 30,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          ":"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30,
+          "0.5": 48,
+          "1.5": 24,
+          "2.0": 18,
+          "3.0": 14,
+          "5.0": 14
+        }
+      },
+      {
+        "subject": "Jim Bunning",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "Louisville",
+          "pitching",
+          "\u26be"
+        ],
+        "rank_lre": 12,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12,
+          "0.5": 29,
+          "1.5": 4,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Willie Stargell",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 19,
+        "top_diff": [
+          "Phillies",
+          "Pittsburgh",
+          "Louisville",
+          "Mets",
+          "Cincinnati"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 30,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Wilt Chamberlain",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "\u573a\u5747",
+          "basketball",
+          "averaging",
+          "averaged",
+          "Basketball"
+        ],
+        "rank_lre": 8,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8,
+          "0.5": 18,
+          "1.5": 4,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Sergei Fedorov",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "hockey",
+          "NHL",
+          "Detroit",
+          "Hockey",
+          "goalt"
+        ],
+        "rank_lre": 28,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 28,
+          "0.5": 114,
+          "1.5": 11,
+          "2.0": 4,
+          "3.0": 2,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Pavel Bure",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Canucks",
+          "Vancouver",
+          "hockey",
+          "NHL",
+          "Calgary"
+        ],
+        "rank_lre": 19,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19,
+          "0.5": 104,
+          "1.5": 7,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Tony Gwynn",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "batting",
+          "hitters",
+          "outfield",
+          "Padres",
+          "hitter"
+        ],
+        "rank_lre": 12,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12,
+          "0.5": 28,
+          "1.5": 5,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Yao Ming",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "\u59da\u660e",
+          "\u7bee\u7403",
+          "Houston",
+          "basketball",
+          "Basketball"
+        ],
+        "rank_lre": 3,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "basketball",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3,
+          "0.5": 15,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Stephen Curry",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "basketball",
+          "drib",
+          "Basketball",
+          "\u7bee\u7403",
+          "Kobe"
+        ],
+        "rank_lre": 7,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7,
+          "0.5": 17,
+          "1.5": 4,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Ashley Cole",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "UEFA",
+          "Arsenal",
+          "FIFA",
+          "\u963f\u68ee\u7eb3",
+          "MLS"
+        ],
+        "rank_lre": 48,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 48,
+          "0.5": 131,
+          "1.5": 17,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Ichiro Suzuki",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "batting",
+          "MLB",
+          "outfield"
+        ],
+        "rank_lre": 7,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7,
+          "0.5": 22,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Otto Graham",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 179,
+        "top_diff": [
+          "quarterbacks",
+          "Cleveland",
+          "quarterback",
+          "Baltimore",
+          "Kansas"
+        ],
+        "rank_lre": 19,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19,
+          "0.5": 34,
+          "1.5": 16,
+          "2.0": 11,
+          "3.0": 7,
+          "5.0": 12
+        }
+      },
+      {
+        "subject": "Tom Seaver",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Mets",
+          "pitchers",
+          "pitching",
+          "Cincinnati",
+          "\u26be"
+        ],
+        "rank_lre": 9,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9,
+          "0.5": 27,
+          "1.5": 3,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Gale Sayers",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 24,
+        "top_diff": [
+          "touchdowns",
+          "NFL",
+          "touchdown",
+          "Chicago",
+          "Kansas"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 19,
+          "1.5": 5,
+          "2.0": 3,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Moses Malone",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "basketball",
+          "Houston",
+          "\u7bee\u677f",
+          "Basketball",
+          "NBA"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 15,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Troy Aikman",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 130,
+        "top_diff": [
+          "Dallas",
+          "Dallas",
+          "quarterbacks",
+          "quarterback",
+          "Cowboys"
+        ],
+        "rank_lre": 16,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16,
+          "0.5": 25,
+          "1.5": 8,
+          "2.0": 4,
+          "3.0": 5,
+          "5.0": 5
+        }
+      },
+      {
+        "subject": "Leon Allen White",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 19897,
+        "top_diff": [
+          "presidency",
+          "Presidency",
+          "Baptist",
+          "Presbyterian",
+          "clergy"
+        ],
+        "rank_lre": 57,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 57,
+          "0.5": 62,
+          "1.5": 51,
+          "2.0": 51,
+          "3.0": 50,
+          "5.0": 82
+        }
+      },
+      {
+        "subject": "Fred Williamson",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 197,
+        "top_diff": [
+          "martial",
+          "movies",
+          "films",
+          "Raiders",
+          "boxing"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 27,
+          "1.5": 10,
+          "2.0": 8,
+          "3.0": 9,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "Ty Cobb",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "batting",
+          "strikeouts",
+          "Cobb"
+        ],
+        "rank_lre": 10,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10,
+          "0.5": 26,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Pavel Datsyuk",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Detroit",
+          "hockey",
+          "puck",
+          "NHL",
+          "Detroit"
+        ],
+        "rank_lre": 34,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 34,
+          "0.5": 124,
+          "1.5": 13,
+          "2.0": 4,
+          "3.0": 2,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Mark Messier",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "NHL",
+          "hockey",
+          "Hockey",
+          "Edmonton",
+          "Oilers"
+        ],
+        "rank_lre": 32,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 32,
+          "0.5": 124,
+          "1.5": 13,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Roberto Clemente",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 84,
+        "top_diff": [
+          "philanth",
+          "Haiti",
+          "humanitarian",
+          "charitable",
+          "\u6148\u5584"
+        ],
+        "rank_lre": 24,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 24,
+          "0.5": 53,
+          "1.5": 14,
+          "2.0": 6,
+          "3.0": 8,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Yogi Berra",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "catcher",
+          "Yankees",
+          "Baseball",
+          "catch",
+          "Yankee"
+        ],
+        "rank_lre": 13,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "a",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13,
+          "0.5": 32,
+          "1.5": 3,
+          "2.0": 2,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Jerry West",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "Lakers",
+          "NBA",
+          "\u6e56\u4eba",
+          "\u573a\u5747",
+          "\ud83c\udfc0"
+        ],
+        "rank_lre": 17,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17,
+          "0.5": 27,
+          "1.5": 7,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Stan Musial",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Cardinals",
+          "Baseball",
+          "baseball",
+          "batting",
+          "outfield"
+        ],
+        "rank_lre": 8,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "scoring"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8,
+          "0.5": 20,
+          "1.5": 3,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Warren Spahn",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 13,
+        "top_diff": [
+          "pitchers",
+          "pitching",
+          "Braves",
+          "pitcher",
+          "pitch"
+        ],
+        "rank_lre": 15,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 15,
+          "0.5": 34,
+          "1.5": 5,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Aleksandar \u0110or\u0111evi\u0107",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Basketball",
+          "Serbian",
+          "Serbia",
+          "Yugosl",
+          "Bosnia"
+        ],
+        "rank_lre": 10,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10,
+          "0.5": 19,
+          "1.5": 3,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Phil Jackson",
+        "model_top1_id": 19240,
+        "model_top1": "basketball",
+        "n_references": 8,
+        "rank_diff": 31,
+        "top_diff": [
+          "\u7985",
+          "coaching",
+          "Lakers",
+          "Knicks",
+          "\u6e56\u4eba"
+        ],
+        "rank_lre": 13,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13,
+          "0.5": 24,
+          "1.5": 6,
+          "2.0": 4,
+          "3.0": 1,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "Gonzalo Higua\u00edn",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 347,
+        "top_diff": [
+          "Juventus",
+          "goals",
+          "Messi",
+          "Ronaldo",
+          "Napoli"
+        ],
+        "rank_lre": 105,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 105,
+          "0.5": 199,
+          "1.5": 69,
+          "2.0": 40,
+          "3.0": 31,
+          "5.0": 39
+        }
+      },
+      {
+        "subject": "Jackie Robinson",
+        "model_top1_id": 19507,
+        "model_top1": "baseball",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "baseball",
+          "Baseball",
+          "Dodgers",
+          "\u26be",
+          "\u68d2"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "baseball"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 20,
+          "1.5": 2,
+          "2.0": 0,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Pavol Demitra",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "hockey",
+          "NHL",
+          "Hockey",
+          "goalt",
+          "Slovakia"
+        ],
+        "rank_lre": 16,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "scoring",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16,
+          "0.5": 91,
+          "1.5": 4,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Lionel Conacher",
+        "model_top1_id": 26953,
+        "model_top1": "hockey",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "hockey",
+          "Canadian",
+          "baseball",
+          "Ontario",
+          "lac"
+        ],
+        "rank_lre": 42,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 42,
+          "0.5": 134,
+          "1.5": 22,
+          "2.0": 7,
+          "3.0": 3,
+          "5.0": 1
+        }
+      },
+      {
+        "subject": "J\u00falio Baptista",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "Uruguay",
+          "Portuguese",
+          "\u8461\u8404\u7259",
+          "Portugal",
+          "Brazilian"
+        ],
+        "rank_lre": 57,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 57,
+          "0.5": 141,
+          "1.5": 19,
+          "2.0": 8,
+          "3.0": 3,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Freddie Ljungberg",
+        "model_top1_id": 22174,
+        "model_top1": "soccer",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Arsenal",
+          "\u963f\u68ee\u7eb3",
+          "UEFA",
+          "MLS",
+          "Tottenham"
+        ],
+        "rank_lre": 78,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 78,
+          "0.5": 160,
+          "1.5": 30,
+          "2.0": 17,
+          "3.0": 5,
+          "5.0": 2
+        }
+      },
+      {
+        "subject": "Tom Brady",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 221,
+        "top_diff": [
+          "quarterbacks",
+          "quarterback",
+          "NFL",
+          "QB",
+          "Patriots"
+        ],
+        "rank_lre": 18,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18,
+          "0.5": 34,
+          "1.5": 16,
+          "2.0": 10,
+          "3.0": 7,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "Jim Thorpe",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "track",
+          "Olympic",
+          "gymn",
+          "-track",
+          "gold"
+        ],
+        "rank_lre": 11,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "winning",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11,
+          "0.5": 21,
+          "1.5": 4,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Roman Reigns",
+        "model_top1_id": 8964,
+        "model_top1": "football",
+        "n_references": 8,
+        "rank_diff": 86495,
+        "top_diff": [
+          "WWE",
+          "Wrestle",
+          "wrestlers",
+          "wrestler",
+          "wrestling"
+        ],
+        "rank_lre": 83,
+        "top_lre": [
+          "his",
+          "being",
+          "playing",
+          "the",
+          "winning"
+        ],
+        "rank_lre_beta": {
+          "1.0": 83,
+          "0.5": 71,
+          "1.5": 93,
+          "2.0": 109,
+          "3.0": 217,
+          "5.0": 761
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 37.0,
+          "median_lograng": 1.579633165546747,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 18.0,
+          "median_lograng": 1.2787536009528289,
+          "agree_at1": 0.0,
+          "agree_at10": 0.19
+        },
+        "1.5": {
+          "median_rank": 9.0,
+          "median_lograng": 1.0,
+          "agree_at1": 0.0,
+          "agree_at10": 0.52
+        },
+        "2.0": {
+          "median_rank": 4.0,
+          "median_lograng": 0.6989700043360189,
+          "agree_at1": 0.03,
+          "agree_at10": 0.73
+        },
+        "3.0": {
+          "median_rank": 1.0,
+          "median_lograng": 0.3010299956639812,
+          "agree_at1": 0.36,
+          "agree_at10": 0.83
+        },
+        "5.0": {
+          "median_rank": 1.0,
+          "median_lograng": 0.3010299956639812,
+          "agree_at1": 0.47,
+          "agree_at10": 0.81
+        }
+      }
+    },
+    "split_fingerprint": "fdc72b07d56e",
+    "legacy_split": false,
+    "neutral_prompt": "Entity: {} is known for"
+  },
+  "positions": {
+    "Michael Jordan": 3,
+    "Nate Schierholtz": 7,
+    "Teemu S\u00e4l\u00e4nn\u00e4": 7,
+    "Tom Harmon": 3,
+    "Bob Hayes": 3,
+    "Julius Erving": 4,
+    "Stan Mikita": 4,
+    "Tim Tebow": 4,
+    "Sergei Makarov": 4,
+    "Sidney Crosby": 3,
+    "Cam Newton": 3,
+    "Terrell Owens": 4,
+    "Frank Gifford": 5,
+    "Fr\u00e9d\u00e9ric Piquionne": 8,
+    "Carlos Beltr\u00e1n": 5,
+    "Tim Horton": 3,
+    "Jermain Defoe": 5,
+    "Steve Yzerman": 5,
+    "Matteo Ferrari": 4,
+    "Jesse Hibbs": 4,
+    "Brett Hull": 3,
+    "Ollie Matson": 6,
+    "Edgaras Jankauskas": 7,
+    "Brett Favre": 4,
+    "Christy Mathewson": 6,
+    "Wayne Rooney": 3,
+    "Obafemi Martins": 5,
+    "Casey Stengel": 5,
+    "Patrick Roy": 3,
+    "Ken Dryden": 4,
+    "Allen Iverson": 4,
+    "Emanuel Pogatetz": 6,
+    "Ji\u0159\u00ed \u0160l\u00e9gr": 8,
+    "Giovani dos Santos": 5,
+    "Clayton Kershaw": 5,
+    "Jarome Iginla": 6,
+    "Lutz Pfannenstiel": 8,
+    "Benny Feilhaber": 6,
+    "Lawrence Taylor": 3,
+    "Bart Starr": 3,
+    "Kenny Lofton": 4,
+    "Dennis Seidenberg": 5,
+    "Ernie Davis": 4,
+    "David Robinson": 3,
+    "Blaise Matuidi": 6,
+    "Carlos Valderrama": 6,
+    "Pat Tillman": 4,
+    "Roger Maris": 4,
+    "Jermaine Jones": 5,
+    "Alexander Ovechkin": 6,
+    "Tim Cahill": 4,
+    "Rick Barry": 3,
+    "Walter Zenga": 4,
+    "Walter Payton": 4,
+    "Joakim Noah": 5,
+    "David Beckham": 3,
+    "Alan Ball, Jr.": 6,
+    "Hugo S\u00e1nchez": 4,
+    "Florent Sinama Pongolle": 8,
+    "Arvydas Sabonis": 6,
+    "Patrick Ewing": 4,
+    "Nelson Valdez": 4,
+    "Chuck Connors": 4,
+    "Kevin Durant": 3,
+    "David Andersen": 3,
+    "Michael Uma\u00f1a": 4,
+    "Ra\u00efs M'Bolhi": 8,
+    "Carlos Arroyo": 5,
+    "Jos\u00e9 Canseco": 5,
+    "Rick Fox": 3,
+    "Gary Payton": 4,
+    "Billy Sunday": 3,
+    "Jim Bunning": 4,
+    "Willie Stargell": 5,
+    "Wilt Chamberlain": 5,
+    "Sergei Fedorov": 5,
+    "Pavel Bure": 4,
+    "Tony Gwynn": 5,
+    "Yao Ming": 3,
+    "Stephen Curry": 3,
+    "Ashley Cole": 3,
+    "Ichiro Suzuki": 4,
+    "Otto Graham": 3,
+    "Tom Seaver": 4,
+    "Gale Sayers": 4,
+    "Moses Malone": 3,
+    "Troy Aikman": 5,
+    "Leon Allen White": 4,
+    "Fred Williamson": 3,
+    "Ty Cobb": 3,
+    "Pavel Datsyuk": 6,
+    "Mark Messier": 4,
+    "Roberto Clemente": 4,
+    "Yogi Berra": 5,
+    "Jerry West": 3,
+    "Stan Musial": 4,
+    "Warren Spahn": 4,
+    "Aleksandar \u0110or\u0111evi\u0107": 9,
+    "Phil Jackson": 3,
+    "Gonzalo Higua\u00edn": 6,
+    "Jackie Robinson": 3,
+    "Pavol Demitra": 5,
+    "Lionel Conacher": 4,
+    "J\u00falio Baptista": 6,
+    "Freddie Ljungberg": 6,
+    "Tom Brady": 3,
+    "Jim Thorpe": 4,
+    "Roman Reigns": 4
+  },
+  "faithfulness": 0.96,
+  "n_lre": 100,
+  "split_fingerprint": "fdc72b07d56e",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/shared_split/person_plays_pro_sport.json",
+  "retained_sha256": "37d5ff9daaca3c723b2a67201ad8e374dd39915a37c28c3758eeaeb523c99b0e",
+  "data_sha256": "adfea3a51c0315818a63ec0a421fba45818f3854212f9999910c80eac934165c",
+  "worker": 5,
+  "elapsed_seconds": 19.9389808177948
+}

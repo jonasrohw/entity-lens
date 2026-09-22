@@ -1,0 +1,651 @@
+{
+  "prompt": "\n{} is known for",
+  "workers": {
+    "0": {
+      "model_id": "Qwen/Qwen3-8B-Base",
+      "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+      "layer": 19,
+      "prompts": {
+        "newline_known_for": "\n{} is known for"
+      },
+      "dtype": "float32",
+      "torch": "2.14.0+cu130",
+      "host": "beta",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "batch_size": 8,
+      "verification": {
+        "logits_max_abs_error": 0.0,
+        "batched_scalar_max_abs_error": 0.0009765625,
+        "finite_difference_relative_error": 0.00013679452240467072
+      },
+      "source_sha256": {
+        "scripts/run_qwen_prompt_sensitivity.py": "8c9d5094dca6ca19080dc84a1783b3b3a6bd1a7e638ab304b0db589093876855",
+        "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+        "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+        "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40"
+      }
+    },
+    "1": {
+      "model_id": "Qwen/Qwen3-8B-Base",
+      "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+      "layer": 19,
+      "prompts": {
+        "newline_known_for": "\n{} is known for"
+      },
+      "dtype": "float32",
+      "torch": "2.14.0+cu130",
+      "host": "beta",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "batch_size": 8,
+      "verification": {
+        "logits_max_abs_error": 0.0,
+        "batched_scalar_max_abs_error": 0.0009765625,
+        "finite_difference_relative_error": 0.00013679452240467072
+      },
+      "source_sha256": {
+        "scripts/run_qwen_prompt_sensitivity.py": "8c9d5094dca6ca19080dc84a1783b3b3a6bd1a7e638ab304b0db589093876855",
+        "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+        "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+        "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40"
+      }
+    },
+    "3": {
+      "model_id": "Qwen/Qwen3-8B-Base",
+      "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+      "layer": 19,
+      "prompts": {
+        "newline_known_for": "\n{} is known for"
+      },
+      "dtype": "float32",
+      "torch": "2.14.0+cu130",
+      "host": "beta",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "batch_size": 8,
+      "verification": {
+        "logits_max_abs_error": 0.0,
+        "batched_scalar_max_abs_error": 0.0009765625,
+        "finite_difference_relative_error": 0.00013679452240467072
+      },
+      "source_sha256": {
+        "scripts/run_qwen_prompt_sensitivity.py": "8c9d5094dca6ca19080dc84a1783b3b3a6bd1a7e638ab304b0db589093876855",
+        "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+        "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+        "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40"
+      }
+    },
+    "2": {
+      "model_id": "Qwen/Qwen3-8B-Base",
+      "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+      "layer": 19,
+      "prompts": {
+        "newline_known_for": "\n{} is known for"
+      },
+      "dtype": "float32",
+      "torch": "2.14.0+cu130",
+      "host": "beta",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "batch_size": 8,
+      "verification": {
+        "logits_max_abs_error": 0.0,
+        "batched_scalar_max_abs_error": 0.0009765625,
+        "finite_difference_relative_error": 0.00013679452240467072
+      },
+      "source_sha256": {
+        "scripts/run_qwen_prompt_sensitivity.py": "8c9d5094dca6ca19080dc84a1783b3b3a6bd1a7e638ab304b0db589093876855",
+        "jlens/model_sweep.py": "78273527c29f30daebf51e3c575ea2356504ccadecc438f2b666d68c97c4ab67",
+        "jlens/model.py": "8cc11fc9c5695f05397b74ddf0e098809ef96365d473ee901b32190f429e076c",
+        "jlens/splits.py": "d67ce1d1af823e4acad36d503104016302df905c6a5e02ef41eed046fdea8a40"
+      }
+    }
+  },
+  "audit": {
+    "main": {
+      "n_relations": 28,
+      "n_subject_rows": 513,
+      "excluded_relations": [],
+      "minimum_subject_position": 1,
+      "completed_relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ]
+    },
+    "shared_split": {
+      "n_relations": 25,
+      "n_subject_rows": 1544,
+      "excluded_relations": [
+        "person_band_lead_singer",
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "minimum_subject_position": 1,
+      "completed_relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ]
+    }
+  },
+  "correlations": [
+    {
+      "protocol": "main",
+      "kind": "diff",
+      "cohort": "all",
+      "version": "original",
+      "n_relations": 28,
+      "rho": 0.06039006393402829,
+      "p": 0.7601653308182746,
+      "pearson_r": 0.15899472970371106,
+      "pearson_p": 0.4190196128137319,
+      "delta_rho": 0.15536716448481827,
+      "delta_rho_ci95": [
+        -0.06194293327875701,
+        0.4016718152977339
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "diff",
+      "cohort": "all",
+      "version": "newline",
+      "n_relations": 28,
+      "rho": 0.21575722841884656,
+      "p": 0.2701665512112332,
+      "pearson_r": 0.32580319034587213,
+      "pearson_p": 0.09066367410071974,
+      "delta_rho": 0.15536716448481827,
+      "delta_rho_ci95": [
+        -0.06194293327875701,
+        0.4016718152977339
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "diff",
+      "cohort": "at_least_4_lre_tests",
+      "version": "original",
+      "n_relations": 25,
+      "rho": 0.4483356529164469,
+      "p": 0.024592578955410685,
+      "pearson_r": 0.43317499923664504,
+      "pearson_p": 0.030538343502173722,
+      "delta_rho": 0.1958822723901042,
+      "delta_rho_ci95": [
+        -0.09589341156770345,
+        0.5195032047249127
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "diff",
+      "cohort": "at_least_4_lre_tests",
+      "version": "newline",
+      "n_relations": 25,
+      "rho": 0.6442179253065511,
+      "p": 0.0005099924611354171,
+      "pearson_r": 0.6351720958867163,
+      "pearson_p": 0.0006465208947246038,
+      "delta_rho": 0.1958822723901042,
+      "delta_rho_ci95": [
+        -0.09589341156770345,
+        0.5195032047249127
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "lre",
+      "cohort": "all",
+      "version": "original",
+      "n_relations": 28,
+      "rho": -0.06368406742133892,
+      "p": 0.7474924371833956,
+      "pearson_r": 0.051317163256940884,
+      "pearson_p": 0.7953765586826784,
+      "delta_rho": 0.14109314937313883,
+      "delta_rho_ci95": [
+        -0.0791897026762903,
+        0.40440923130302225
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "lre",
+      "cohort": "all",
+      "version": "newline",
+      "n_relations": 28,
+      "rho": 0.07740908195179991,
+      "p": 0.695410169979525,
+      "pearson_r": 0.11273562687922214,
+      "pearson_p": 0.5678849613577012,
+      "delta_rho": 0.14109314937313883,
+      "delta_rho_ci95": [
+        -0.0791897026762903,
+        0.40440923130302225
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "lre",
+      "cohort": "at_least_4_lre_tests",
+      "version": "original",
+      "n_relations": 25,
+      "rho": 0.2543775678779153,
+      "p": 0.21979219842573366,
+      "pearson_r": 0.2957207377363765,
+      "pearson_p": 0.1512196968255118,
+      "delta_rho": 0.04502598402680191,
+      "delta_rho_ci95": [
+        -0.1492630981546472,
+        0.22623568914757355
+      ]
+    },
+    {
+      "protocol": "main",
+      "kind": "lre",
+      "cohort": "at_least_4_lre_tests",
+      "version": "newline",
+      "n_relations": 25,
+      "rho": 0.29940355190471724,
+      "p": 0.14595348593210591,
+      "pearson_r": 0.35390827624231136,
+      "pearson_p": 0.08262981103770714,
+      "delta_rho": 0.04502598402680191,
+      "delta_rho_ci95": [
+        -0.1492630981546472,
+        0.22623568914757355
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "diff",
+      "cohort": "all",
+      "version": "original",
+      "n_relations": 25,
+      "rho": 0.2679784780356726,
+      "p": 0.1952732171564911,
+      "pearson_r": 0.32626495986371434,
+      "pearson_p": 0.11144821275151258,
+      "delta_rho": 0.46110176149822896,
+      "delta_rho_ci95": [
+        0.0968614699104335,
+        0.8491649750500244
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "diff",
+      "cohort": "all",
+      "version": "newline",
+      "n_relations": 25,
+      "rho": 0.7290802395339016,
+      "p": 3.563625212018843e-05,
+      "pearson_r": 0.7402937528074953,
+      "pearson_p": 2.3296152411992995e-05,
+      "delta_rho": 0.46110176149822896,
+      "delta_rho_ci95": [
+        0.0968614699104335,
+        0.8491649750500244
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "diff",
+      "cohort": "at_least_4_lre_tests",
+      "version": "original",
+      "n_relations": 24,
+      "rho": 0.2698942602793103,
+      "p": 0.2021502424154091,
+      "pearson_r": 0.3508897762134346,
+      "pearson_p": 0.09272885947855818,
+      "delta_rho": 0.4891576187223897,
+      "delta_rho_ci95": [
+        0.09843104732587461,
+        0.9066724370892172
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "diff",
+      "cohort": "at_least_4_lre_tests",
+      "version": "newline",
+      "n_relations": 24,
+      "rho": 0.7590518790017,
+      "p": 1.7071084504687478e-05,
+      "pearson_r": 0.7853781413274681,
+      "pearson_p": 5.464104198940737e-06,
+      "delta_rho": 0.4891576187223897,
+      "delta_rho_ci95": [
+        0.09843104732587461,
+        0.9066724370892172
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "lre",
+      "cohort": "all",
+      "version": "original",
+      "n_relations": 25,
+      "rho": 0.18777772489693892,
+      "p": 0.36873046852731145,
+      "pearson_r": 0.248345827125159,
+      "pearson_p": 0.2312977687032389,
+      "delta_rho": 0.1125895188293761,
+      "delta_rho_ci95": [
+        -0.21804809878645626,
+        0.43348042650836466
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "lre",
+      "cohort": "all",
+      "version": "newline",
+      "n_relations": 25,
+      "rho": 0.300367243726315,
+      "p": 0.14459735227523193,
+      "pearson_r": 0.407989185575155,
+      "pearson_p": 0.04291074659630238,
+      "delta_rho": 0.1125895188293761,
+      "delta_rho_ci95": [
+        -0.21804809878645626,
+        0.43348042650836466
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "lre",
+      "cohort": "at_least_4_lre_tests",
+      "version": "original",
+      "n_relations": 24,
+      "rho": 0.18705111092055593,
+      "p": 0.381463799598396,
+      "pearson_r": 0.31107514369467104,
+      "pearson_p": 0.13898180379456454,
+      "delta_rho": 0.10987617704424268,
+      "delta_rho_ci95": [
+        -0.23007698896227025,
+        0.4310192157504289
+      ]
+    },
+    {
+      "protocol": "shared_split",
+      "kind": "lre",
+      "cohort": "at_least_4_lre_tests",
+      "version": "newline",
+      "n_relations": 24,
+      "rho": 0.2969272879647986,
+      "p": 0.15883542741434384,
+      "pearson_r": 0.40677058490225965,
+      "pearson_p": 0.048537571633681435,
+      "delta_rho": 0.10987617704424268,
+      "delta_rho_ci95": [
+        -0.23007698896227025,
+        0.4310192157504289
+      ]
+    }
+  ],
+  "country_predictions": [
+    {
+      "subject": "Australia",
+      "target": "Canberra",
+      "original_rank": 22182,
+      "new_rank": 18,
+      "top_diff": [
+        "\u6fb3\u6d32",
+        "Aussie",
+        "Australian",
+        "\u6fb3\u5927\u5229\u4e9a",
+        "Australians"
+      ]
+    },
+    {
+      "subject": "Argentina",
+      "target": "Buenos",
+      "original_rank": 55413,
+      "new_rank": 3,
+      "top_diff": [
+        "\u963f\u6839\u5ef7",
+        "Argentine",
+        "Argentina",
+        "Buenos",
+        "Argentina"
+      ]
+    },
+    {
+      "subject": "Egypt",
+      "target": "Cairo",
+      "original_rank": 14475,
+      "new_rank": 6,
+      "top_diff": [
+        "\u57c3\u53ca",
+        "Egyptian",
+        "Egypt",
+        "Egyptians",
+        "Egypt"
+      ]
+    },
+    {
+      "subject": "Peru",
+      "target": "Lima",
+      "original_rank": 11,
+      "new_rank": 3,
+      "top_diff": [
+        "Peru",
+        "Ecuador",
+        "peru",
+        "Lima",
+        "Bolivia"
+      ]
+    },
+    {
+      "subject": "Japan",
+      "target": "Tokyo",
+      "original_rank": 97274,
+      "new_rank": 1,
+      "top_diff": [
+        "Japanese",
+        "Tokyo",
+        "Japanese",
+        "Japan",
+        "japon"
+      ]
+    },
+    {
+      "subject": "United States",
+      "target": "Washington",
+      "original_rank": 43,
+      "new_rank": 317,
+      "top_diff": [
+        "NAFTA",
+        "\u7f8e\u519b",
+        "Guantanamo",
+        "Americans",
+        "\u829d\u52a0\u54e5"
+      ]
+    },
+    {
+      "subject": "China",
+      "target": "Beijing",
+      "original_rank": 77252,
+      "new_rank": 12,
+      "top_diff": [
+        "Mandarin",
+        "Alibaba",
+        "Chinese",
+        "China",
+        "\u5bf9\u4e2d\u56fd"
+      ]
+    },
+    {
+      "subject": "Brazil",
+      "target": "Bras",
+      "original_rank": 147047,
+      "new_rank": 51,
+      "top_diff": [
+        "\u5df4\u897f",
+        "Brazilian",
+        "Brazil",
+        "Brazil",
+        "brazil"
+      ]
+    },
+    {
+      "subject": "Venezuela",
+      "target": "Car",
+      "original_rank": 11086,
+      "new_rank": 9397,
+      "top_diff": [
+        "Venezuelan",
+        "Venezuela",
+        "Maduro",
+        "Venezuel",
+        "venez"
+      ]
+    },
+    {
+      "subject": "India",
+      "target": "New",
+      "original_rank": 134784,
+      "new_rank": 94538,
+      "top_diff": [
+        "Bollywood",
+        "Hindu",
+        "Hindus",
+        "Indian",
+        "Indians"
+      ]
+    },
+    {
+      "subject": "Chile",
+      "target": "Santiago",
+      "original_rank": 10,
+      "new_rank": 10,
+      "top_diff": [
+        "Chile",
+        "Chili",
+        "Oregon",
+        "copper",
+        "salmon"
+      ]
+    },
+    {
+      "subject": "Saudi Arabia",
+      "target": "Riyadh",
+      "original_rank": 1,
+      "new_rank": 7,
+      "top_diff": [
+        "Saudi",
+        "\u6c99\u7279",
+        "Saudi",
+        "\u6c99\u6f20",
+        "Saudis"
+      ]
+    },
+    {
+      "subject": "Germany",
+      "target": "Berlin",
+      "original_rank": 123010,
+      "new_rank": 11,
+      "top_diff": [
+        "Germany",
+        "Germans",
+        "\u5fb7\u56fd",
+        "Germany",
+        "\u30c9\u30a4\u30c4"
+      ]
+    },
+    {
+      "subject": "Spain",
+      "target": "Madrid",
+      "original_rank": 92610,
+      "new_rank": 7,
+      "top_diff": [
+        "Spain",
+        "\u897f\u73ed\u7259",
+        "Catalonia",
+        "Barcelona",
+        "Sevilla"
+      ]
+    },
+    {
+      "subject": "Russia",
+      "target": "Moscow",
+      "original_rank": 9270,
+      "new_rank": 8,
+      "top_diff": [
+        "Putin",
+        "Kremlin",
+        "Russians",
+        "\u4e2d\u4fc4",
+        "\u666e\u4eac"
+      ]
+    },
+    {
+      "subject": "South Korea",
+      "target": "Seoul",
+      "original_rank": 1,
+      "new_rank": 3,
+      "top_diff": [
+        "\u662f\u97e9\u56fd",
+        "Korean",
+        "Samsung",
+        "Seoul",
+        "Koreans"
+      ]
+    }
+  ],
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20260921,
+    "unit": "relation",
+    "paired": true
+  },
+  "report_sha256": "70fbb1b4cb04d792e08c0a1871305c0893474d053e310bd1c6ce30d20281dd58"
+}

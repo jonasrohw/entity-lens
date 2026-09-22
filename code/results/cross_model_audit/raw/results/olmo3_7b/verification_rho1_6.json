@@ -1,0 +1,39 @@
+{
+  "model_id": "allenai/Olmo-3-1025-7B",
+  "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.6093254089355469e-06,
+    "finite_difference_relative_error": 0.00043441884918138385
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 16,
+  "convolution_check": null,
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 17,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 8.140868317241257e-07,
+      "full_seconds": 0.14502787590026855,
+      "cached_seconds": 0.17013072967529297
+    },
+    {
+      "length": 61,
+      "prefix_length": 59,
+      "layer": 10,
+      "state_relative_error": 8.020613222470274e-07,
+      "jvp_relative_error": 2.527888227632502e-06,
+      "full_seconds": 0.8107826709747314,
+      "cached_seconds": 0.26709961891174316
+    }
+  ],
+  "device_map": {
+    "observed_parameter_device_0": "cuda:0"
+  }
+}

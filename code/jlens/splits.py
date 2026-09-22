@@ -59,7 +59,17 @@ def first_object_token(obj, tokenizer, trailing_space=False):
     input_ids = tokenizer.encode(
         ("" if trailing_space else " ") + obj, add_special_tokens=False
     )
-    return input_ids[0]
+    # SentencePiece can insert an empty/whitespace dummy-prefix token even
+    # when encoding a bare number. A query that already ends in a space has
+    # supplied that token; its next gold token is the first content token.
+    index = 0
+    if trailing_space:
+        while (
+            index + 1 < len(input_ids)
+            and not tokenizer.decode([input_ids[index]]).strip()
+        ):
+            index += 1
+    return input_ids[index]
 
 
 def split_model_correct_samples(

@@ -1,3 +1,5 @@
+> Historical configuration: the numerical comparisons below predate the current matched newline/shared-split appendix. Use [the current baseline tables](../results/shared_baselines/README.md) and [curation guide](shared-baseline-appendix.md) for up-to-date results. Original measurements are preserved for provenance.
+
 The raw Jacobian-lens baseline measures how well the Jacobian readout predicts
 LRE faithfulness when applied directly to a subject's hidden representation.
 For subject \(e\), its readout is

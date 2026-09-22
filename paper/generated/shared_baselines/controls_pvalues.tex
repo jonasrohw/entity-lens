@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Two-sided, unadjusted Spearman $p$-values for the controls comparisons (25 relations). These are exploratory tests, not multiplicity-adjusted claims.}
+\label{tab:shared-controls-pvalues}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Predictor & OLMo & GPT-J & Mistral & Gemma & Qwen 8B & Qwen 27B & Pythia \\
+\midrule
+Model answer-token prior & 0.515 & 0.749 & 0.705 & 0.17 & 0.997 & 0.415 & 0.284 \\
+Gold answer-token prior & 0.898 & 0.402 & 0.791 & 0.0793 & 0.424 & 0.224 & 0.964 \\
+Full-data samples/objects & 0.139 & 0.212 & 2.14e-05 & 0.000282 & 0.0755 & 0.0114 & 0.23 \\
+Filtered samples/objects & 0.141 & 0.2 & 2.14e-05 & 0.000295 & 0.0766 & 0.0111 & 0.218 \\
+Test samples/objects & 0.158 & 0.548 & 0.000101 & 0.000285 & 0.0984 & 0.0113 & 0.343 \\
+Relation-prompt intercept-only agreement & 0.155 & 0.411 & 0.000172 & 0.00152 & 0.0901 & 0.00639 & 0.171 \\
+Modal-target fraction (oracle) & 0.0022 & 0.0121 & 1.32e-06 & 7.33e-06 & 0.0045 & 7.22e-05 & 0.0404 \\
+Target entropy & 1.43e-05 & 0.000103 & 4.83e-06 & 1.64e-05 & 2.75e-05 & 9.45e-06 & 8.69e-06 \\
+Model gold-token accuracy & 0.000169 & 4.15e-06 & 0.101 & 0.0689 & 0.00452 & 0.0252 & 5.28e-06 \\
+\bottomrule
+\end{tabular}}
+\end{table}

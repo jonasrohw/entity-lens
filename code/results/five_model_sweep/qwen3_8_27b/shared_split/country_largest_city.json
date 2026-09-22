@@ -1,0 +1,610 @@
+{
+  "relation": "country_largest_city",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "10": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.0,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "28": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.125,
+          0.0
+        ],
+        "5.0": [
+          0.75,
+          0.0
+        ]
+      },
+      "34": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "40": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.125,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "46": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.125,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.625,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 34,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 8,
+    "requested_n_test": 100,
+    "lm_correct": 8,
+    "per_subject": {
+      "France": 1,
+      "Pakistan": 1,
+      "Spain": 1,
+      "Argentina": 1,
+      "United Kingdom": 1,
+      "China": 1,
+      "South Korea": 1,
+      "Mexico": 1
+    },
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 8,
+    "layer": 34,
+    "template": "The largest city in {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 4.0,
+        "median_lograng": 0.690105620855803,
+        "agree_at1": 0.125,
+        "agree_at10": 0.625
+      },
+      "lre": {
+        "median_rank": 16997.5,
+        "median_lograng": 4.230156334462134,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "France",
+        "model_top1_id": 11751,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "Bordeaux",
+          "French",
+          "France",
+          "Citro",
+          "Peugeot"
+        ],
+        "rank_lre": 12199,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12199,
+          "0.5": 13429,
+          "1.5": 11066,
+          "2.0": 10038,
+          "3.0": 8148,
+          "5.0": 5259
+        }
+      },
+      {
+        "subject": "Pakistan",
+        "model_top1_id": 85558,
+        "model_top1": "Karachi",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Pakistani",
+          "Pakistan",
+          "\u5df4\u57fa\u65af\u5766",
+          "Karachi",
+          "Islamabad"
+        ],
+        "rank_lre": 56044,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 56044,
+          "0.5": 70745,
+          "1.5": 44779,
+          "2.0": 36419,
+          "3.0": 25400,
+          "5.0": 13475
+        }
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 23327,
+        "model_top1": "Madrid",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "Spanish",
+          "Spain",
+          "Catalonia",
+          "Catalan",
+          "Mediterranean"
+        ],
+        "rank_lre": 24372,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 24372,
+          "0.5": 27282,
+          "1.5": 21887,
+          "2.0": 19645,
+          "3.0": 15904,
+          "5.0": 10146
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 65775,
+        "model_top1": "Buenos",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Argentine",
+          "Argentina",
+          "\u963f\u6839\u5ef7",
+          "Buenos",
+          "Boliv"
+        ],
+        "rank_lre": 37464,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 37464,
+          "0.5": 43707,
+          "1.5": 32509,
+          "2.0": 28518,
+          "3.0": 22421,
+          "5.0": 14142
+        }
+      },
+      {
+        "subject": "United Kingdom",
+        "model_top1_id": 6924,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 30,
+        "top_diff": [
+          "British",
+          "\u82f1\u9551",
+          "British",
+          "british",
+          "Westminster"
+        ],
+        "rank_lre": 4876,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4876,
+          "0.5": 6568,
+          "1.5": 3582,
+          "2.0": 2613,
+          "3.0": 1376,
+          "5.0": 343
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 35817,
+        "model_top1": "Shanghai",
+        "n_references": 8,
+        "rank_diff": 135,
+        "top_diff": [
+          "Bangladesh",
+          "Sri",
+          "Mong",
+          "Bollywood",
+          "Mongolia"
+        ],
+        "rank_lre": 16416,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16416,
+          "0.5": 17508,
+          "1.5": 15376,
+          "2.0": 14344,
+          "3.0": 12637,
+          "5.0": 9727
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 48502,
+        "model_top1": "Seoul",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Seoul",
+          "Korean",
+          "\u20a9",
+          "Samsung",
+          "Hyundai"
+        ],
+        "rank_lre": 17579,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17579,
+          "0.5": 24606,
+          "1.5": 12248,
+          "2.0": 8274,
+          "3.0": 3476,
+          "5.0": 488
+        }
+      },
+      {
+        "subject": "Mexico",
+        "model_top1_id": 11920,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "Mexican",
+          "\u58a8\u897f\u54e5",
+          "Mexico",
+          "Mex",
+          "Spanish"
+        ],
+        "rank_lre": 14261,
+        "top_lre": [
+          "its",
+          "the",
+          "having",
+          "being",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14261,
+          "0.5": 16556,
+          "1.5": 12400,
+          "2.0": 10729,
+          "3.0": 7886,
+          "5.0": 4008
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 21057.0,
+          "median_lograng": 4.31716000598772,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 16997.5,
+          "median_lograng": 4.230156334462134,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 13888.0,
+          "median_lograng": 4.140164160931569,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 12536.5,
+          "median_lograng": 4.093650137273984,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 10392.5,
+          "median_lograng": 4.006391334416002,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 7493.0,
+          "median_lograng": 3.8545046530411993,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 68.29885292053223,
+  "model_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "10,22,28,34,40,46",
+  "lens_layer": 34,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.33514404296875e-05,
+    "finite_difference_relative_error": 0.0008246813085861504
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 8,
+  "convolution_check": {
+    "logits_max_abs_error": 6.67572021484375e-06,
+    "jvp_relative_error": 1.0528084430916351e-06
+  },
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 34,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 0.0,
+      "full_seconds": 0.7301359176635742,
+      "cached_seconds": 0.7448954582214355
+    },
+    {
+      "length": 69,
+      "prefix_length": 67,
+      "layer": 10,
+      "state_relative_error": 1.0854059837583918e-06,
+      "jvp_relative_error": 4.885464477411006e-06,
+      "full_seconds": 3.2256360054016113,
+      "cached_seconds": 1.5285232067108154
+    }
+  ],
+  "device_map": {
+    "model.embed_tokens": "0",
+    "model.layers.0": "0",
+    "model.layers.1": "0",
+    "model.layers.2": "0",
+    "model.layers.3": "0",
+    "model.layers.4": "0",
+    "model.layers.5": "0",
+    "model.layers.6": "0",
+    "model.layers.7": "0",
+    "model.layers.8": "0",
+    "model.layers.9": "0",
+    "model.layers.10": "0",
+    "model.layers.11": "0",
+    "model.layers.12": "0",
+    "model.layers.13": "0",
+    "model.layers.14": "0",
+    "model.layers.15": "0",
+    "model.layers.16": "0",
+    "model.layers.17": "0",
+    "model.layers.18": "1",
+    "model.layers.19": "1",
+    "model.layers.20": "1",
+    "model.layers.21": "1",
+    "model.layers.22": "1",
+    "model.layers.23": "1",
+    "model.layers.24": "1",
+    "model.layers.25": "1",
+    "model.layers.26": "1",
+    "model.layers.27": "1",
+    "model.layers.28": "1",
+    "model.layers.29": "1",
+    "model.layers.30": "1",
+    "model.layers.31": "1",
+    "model.layers.32": "1",
+    "model.layers.33": "1",
+    "model.layers.34": "1",
+    "model.layers.35": "1",
+    "model.layers.36": "1",
+    "model.layers.37": "1",
+    "model.layers.38": "1",
+    "model.layers.39": "1",
+    "model.layers.40": "1",
+    "model.layers.41": "1",
+    "model.layers.42": "2",
+    "model.layers.43": "2",
+    "model.layers.44": "2",
+    "model.layers.45": "2",
+    "model.layers.46": "2",
+    "model.layers.47": "2",
+    "model.layers.48": "2",
+    "model.layers.49": "2",
+    "model.layers.50": "2",
+    "model.layers.51": "2",
+    "model.layers.52": "2",
+    "model.layers.53": "2",
+    "model.layers.54": "2",
+    "model.layers.55": "2",
+    "model.layers.56": "2",
+    "model.layers.57": "2",
+    "model.layers.58": "2",
+    "model.layers.59": "2",
+    "model.layers.60": "2",
+    "model.layers.61": "2",
+    "model.layers.62": "2",
+    "model.layers.63": "2",
+    "model.norm": "2",
+    "model.rotary_emb": "2",
+    "lm_head": "2"
+  }
+}

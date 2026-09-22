@@ -1,0 +1,896 @@
+{
+  "relation": "pokemon_evolutions",
+  "protocol": "main",
+  "faithfulness": {
+    "grid": {
+      "7": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.03571428571428571,
+          0.0
+        ],
+        "2.0": [
+          0.10714285714285714,
+          0.0
+        ],
+        "3.0": [
+          0.10714285714285714,
+          0.0
+        ],
+        "5.0": [
+          0.14285714285714285,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.21428571428571427,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.35714285714285715,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.07142857142857142,
+          0.0
+        ],
+        "2.0": [
+          0.17857142857142858,
+          0.0
+        ],
+        "3.0": [
+          0.32142857142857145,
+          0.0
+        ],
+        "5.0": [
+          0.42857142857142855,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.03571428571428571,
+          0.0
+        ],
+        "2.0": [
+          0.17857142857142858,
+          0.0
+        ],
+        "3.0": [
+          0.2857142857142857,
+          0.0
+        ],
+        "5.0": [
+          0.35714285714285715,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.10714285714285714,
+          0.0
+        ],
+        "5.0": [
+          0.32142857142857145,
+          0.0
+        ]
+      },
+      "30": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.07142857142857142,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 18,
+    "best_beta": 5.0,
+    "best_faith": 0.42857142857142855,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 28,
+    "requested_n_test": 100,
+    "lm_correct": 28,
+    "per_subject": {
+      "Charmander": 1,
+      "Grimer": 1,
+      "Seel": 0,
+      "Goldeen": 1,
+      "Poliwag": 0,
+      "Sandshrew": 0,
+      "Cubone": 0,
+      "Meowth": 0,
+      "Mankey": 0,
+      "Krabby": 1,
+      "Tentacool": 1,
+      "Squirtle": 1,
+      "Psyduck": 0,
+      "Horsea": 0,
+      "Diglett": 0,
+      "Weedle": 1,
+      "Slowpoke": 1,
+      "Spearow": 0,
+      "Bellsprout": 0,
+      "Nidoran\u2642": 0,
+      "Abra": 0,
+      "Oddish": 0,
+      "Zubat": 1,
+      "Gastly": 0,
+      "Voltorb": 1,
+      "Caterpie": 1,
+      "Geodude": 1,
+      "Pikachu": 0
+    },
+    "split_fingerprint": "fca1a16c5c80",
+    "legacy_split": true,
+    "distinct_first_token": false
+  },
+  "lens": {
+    "n": 20,
+    "layer": 22,
+    "template": "{} evolves into a",
+    "agg": {
+      "diff": {
+        "median_rank": 4168.0,
+        "median_lograng": 3.6196401272999195,
+        "agree_at1": 0.05,
+        "agree_at10": 0.1
+      },
+      "lre": {
+        "median_rank": 2253.5,
+        "median_lograng": 3.3530356174696783,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Slowpoke",
+        "model_top1_id": 33936,
+        "model_top1": "Slow",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Slow",
+          "slow",
+          "Slow",
+          "naps",
+          "slow"
+        ],
+        "rank_lre": 553,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 553,
+          "0.5": 1076,
+          "1.5": 287,
+          "2.0": 161,
+          "3.0": 48,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "Nidoran\u2642",
+        "model_top1_id": 646,
+        "model_top1": "N",
+        "n_references": 7,
+        "rank_diff": 14998,
+        "top_diff": [
+          "masculinos",
+          "Mascul",
+          "\u2642",
+          "masculinity",
+          "masculine"
+        ],
+        "rank_lre": 736,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 736,
+          "0.5": 792,
+          "1.5": 678,
+          "2.0": 645,
+          "3.0": 630,
+          "5.0": 694
+        }
+      },
+      {
+        "subject": "Seel",
+        "model_top1_id": 39680,
+        "model_top1": "Dew",
+        "n_references": 7,
+        "rank_diff": 21670,
+        "top_diff": [
+          "Swimming",
+          "Waterproof",
+          "swimming",
+          "ghost",
+          "Swim"
+        ],
+        "rank_lre": 5902,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5902,
+          "0.5": 6308,
+          "1.5": 5572,
+          "2.0": 5267,
+          "3.0": 4899,
+          "5.0": 4459
+        }
+      },
+      {
+        "subject": "Exeggcute",
+        "model_top1_id": 1511,
+        "model_top1": "Ex",
+        "n_references": 7,
+        "rank_diff": 112504,
+        "top_diff": [
+          "eggs",
+          "egg",
+          "\u00e4gg",
+          "Eggs",
+          "Egg"
+        ],
+        "rank_lre": 2235,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2235,
+          "0.5": 2098,
+          "1.5": 2382,
+          "2.0": 2569,
+          "3.0": 3076,
+          "5.0": 4650
+        }
+      },
+      {
+        "subject": "Rhyhorn",
+        "model_top1_id": 86948,
+        "model_top1": "Rhy",
+        "n_references": 7,
+        "rank_diff": 4345,
+        "top_diff": [
+          "digging",
+          "exca",
+          "Fossil",
+          "fossils",
+          "dug"
+        ],
+        "rank_lre": 6178,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6178,
+          "0.5": 7748,
+          "1.5": 5075,
+          "2.0": 4276,
+          "3.0": 3328,
+          "5.0": 2638
+        }
+      },
+      {
+        "subject": "Doduo",
+        "model_top1_id": 39753,
+        "model_top1": "Dod",
+        "n_references": 7,
+        "rank_diff": 469,
+        "top_diff": [
+          "ostrich",
+          "flock",
+          "migratory",
+          "bird",
+          "Flock"
+        ],
+        "rank_lre": 1357,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "it"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1357,
+          "0.5": 1818,
+          "1.5": 1006,
+          "2.0": 791,
+          "3.0": 500,
+          "5.0": 284
+        }
+      },
+      {
+        "subject": "Venonat",
+        "model_top1_id": 12883,
+        "model_top1": "Ven",
+        "n_references": 7,
+        "rank_diff": 3689,
+        "top_diff": [
+          "evolving",
+          "Poison",
+          "evolves",
+          "evolve",
+          "evolucion"
+        ],
+        "rank_lre": 8930,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8930,
+          "0.5": 11084,
+          "1.5": 7374,
+          "2.0": 6249,
+          "3.0": 4717,
+          "5.0": 3275
+        }
+      },
+      {
+        "subject": "Magnemite",
+        "model_top1_id": 68006,
+        "model_top1": "Magne",
+        "n_references": 7,
+        "rank_diff": 10,
+        "top_diff": [
+          "electric",
+          "electrical",
+          "magne",
+          "s\u00e4hk\u00f6",
+          "Electric"
+        ],
+        "rank_lre": 888,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 888,
+          "0.5": 2288,
+          "1.5": 397,
+          "2.0": 182,
+          "3.0": 44,
+          "5.0": 12
+        }
+      },
+      {
+        "subject": "Cubone",
+        "model_top1_id": 1937,
+        "model_top1": "Mar",
+        "n_references": 8,
+        "rank_diff": 32700,
+        "top_diff": [
+          "burying",
+          "buried",
+          "digging",
+          "bury",
+          "buried"
+        ],
+        "rank_lre": 2613,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2613,
+          "0.5": 2906,
+          "1.5": 2400,
+          "2.0": 2277,
+          "3.0": 2189,
+          "5.0": 2387
+        }
+      },
+      {
+        "subject": "Diglett",
+        "model_top1_id": 67629,
+        "model_top1": "Dug",
+        "n_references": 8,
+        "rank_diff": 38,
+        "top_diff": [
+          "digging",
+          "underground",
+          "burrow",
+          "buried",
+          "underground"
+        ],
+        "rank_lre": 350,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 350,
+          "0.5": 1005,
+          "1.5": 157,
+          "2.0": 73,
+          "3.0": 29,
+          "5.0": 24
+        }
+      },
+      {
+        "subject": "Grimer",
+        "model_top1_id": 38146,
+        "model_top1": "Muk",
+        "n_references": 8,
+        "rank_diff": 135,
+        "top_diff": [
+          "poisoning",
+          "Poison",
+          "poison",
+          "poisons",
+          "poison"
+        ],
+        "rank_lre": 2272,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2272,
+          "0.5": 4013,
+          "1.5": 1373,
+          "2.0": 888,
+          "3.0": 421,
+          "5.0": 169
+        }
+      },
+      {
+        "subject": "Voltorb",
+        "model_top1_id": 185512,
+        "model_top1": "Electrode",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "rolling",
+          "Electrode",
+          "s\u00e4hk\u00f6",
+          "exploding",
+          "rolling"
+        ],
+        "rank_lre": 655,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 655,
+          "0.5": 1421,
+          "1.5": 310,
+          "2.0": 171,
+          "3.0": 45,
+          "5.0": 12
+        }
+      },
+      {
+        "subject": "Krabby",
+        "model_top1_id": 4616,
+        "model_top1": "King",
+        "n_references": 8,
+        "rank_diff": 13741,
+        "top_diff": [
+          "crabs",
+          "shellfish",
+          "Crab",
+          "crustace",
+          "krab"
+        ],
+        "rank_lre": 1772,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1772,
+          "0.5": 1890,
+          "1.5": 1709,
+          "2.0": 1658,
+          "3.0": 1633,
+          "5.0": 1753
+        }
+      },
+      {
+        "subject": "Oddish",
+        "model_top1_id": 21180,
+        "model_top1": "Glo",
+        "n_references": 8,
+        "rank_diff": 3991,
+        "top_diff": [
+          "plants",
+          "photosynthesis",
+          "seed",
+          "plant",
+          "flower"
+        ],
+        "rank_lre": 4343,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4343,
+          "0.5": 5251,
+          "1.5": 3637,
+          "2.0": 3153,
+          "3.0": 2564,
+          "5.0": 2060
+        }
+      },
+      {
+        "subject": "Abra",
+        "model_top1_id": 39863,
+        "model_top1": "Kad",
+        "n_references": 8,
+        "rank_diff": 13849,
+        "top_diff": [
+          "her",
+          "its",
+          "gl\u0119d",
+          "inventing",
+          "designing"
+        ],
+        "rank_lre": 1949,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1949,
+          "0.5": 2105,
+          "1.5": 1819,
+          "2.0": 1749,
+          "3.0": 1697,
+          "5.0": 1770
+        }
+      },
+      {
+        "subject": "Koffing",
+        "model_top1_id": 94780,
+        "model_top1": "Wee",
+        "n_references": 8,
+        "rank_diff": 31799,
+        "top_diff": [
+          "poisoning",
+          "poison",
+          "Poison",
+          "poison",
+          "toxic"
+        ],
+        "rank_lre": 4769,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4769,
+          "0.5": 5033,
+          "1.5": 4572,
+          "2.0": 4427,
+          "3.0": 4406,
+          "5.0": 4828
+        }
+      },
+      {
+        "subject": "Nidoran\u2640",
+        "model_top1_id": 646,
+        "model_top1": "N",
+        "n_references": 8,
+        "rank_diff": 9318,
+        "top_diff": [
+          "feminine",
+          "femininity",
+          "female",
+          "Female",
+          "femin"
+        ],
+        "rank_lre": 492,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 492,
+          "0.5": 555,
+          "1.5": 437,
+          "2.0": 410,
+          "3.0": 397,
+          "5.0": 487
+        }
+      },
+      {
+        "subject": "Sandshrew",
+        "model_top1_id": 75291,
+        "model_top1": "Sands",
+        "n_references": 8,
+        "rank_diff": 452,
+        "top_diff": [
+          "burrow",
+          "digging",
+          "burrows",
+          "burying",
+          "buried"
+        ],
+        "rank_lre": 7738,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7738,
+          "0.5": 12103,
+          "1.5": 5217,
+          "2.0": 3587,
+          "3.0": 2006,
+          "5.0": 971
+        }
+      },
+      {
+        "subject": "Growlithe",
+        "model_top1_id": 1375,
+        "model_top1": "Ar",
+        "n_references": 8,
+        "rank_diff": 61757,
+        "top_diff": [
+          "evolving",
+          "evolves",
+          "evolve",
+          "ev",
+          "evolution"
+        ],
+        "rank_lre": 2514,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2514,
+          "0.5": 2432,
+          "1.5": 2610,
+          "2.0": 2746,
+          "3.0": 3120,
+          "5.0": 4063
+        }
+      },
+      {
+        "subject": "Tentacool",
+        "model_top1_id": 222419,
+        "model_top1": "Tenta",
+        "n_references": 8,
+        "rank_diff": 16,
+        "top_diff": [
+          "poisoning",
+          "Poison",
+          "poison",
+          "poisonous",
+          "poison"
+        ],
+        "rank_lre": 2629,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "his",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2629,
+          "0.5": 4469,
+          "1.5": 1615,
+          "2.0": 1010,
+          "3.0": 444,
+          "5.0": 112
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2360.0,
+          "median_lograng": 3.3728939508026805,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2253.5,
+          "median_lograng": 3.3530356174696783,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1764.0,
+          "median_lograng": 3.246533749188614,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1703.5,
+          "median_lograng": 3.2314422173553274,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1665.0,
+          "median_lograng": 3.2215948690521654,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 1362.0,
+          "median_lograng": 3.115847926978148,
+          "agree_at1": 0.0,
+          "agree_at10": 0.05
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 98.63310241699219,
+  "model_id": "google/gemma-2-9b",
+  "revision": "33c193028431c2fde6c6e51f29e6f17b60cbfac6",
+  "dtype": "float32",
+  "host": "rho2",
+  "layers": "7,14,18,22,26,30",
+  "lens_layer": 22,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.811981201171875e-05,
+    "finite_difference_relative_error": 0.00045203283661976457
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

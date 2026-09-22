@@ -1,0 +1,711 @@
+{
+  "relation": "superhero_person",
+  "protocol": "main",
+  "prompt_name": "bare_subject",
+  "lens": {
+    "n": 20,
+    "layer": 19,
+    "template": "{}'s secret identity is",
+    "agg": {
+      "diff": {
+        "median_rank": 10624.0,
+        "median_lograng": 3.9983542939665,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 4841.5,
+        "median_lograng": 3.685059848204194,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Storm",
+        "model_top1_id": 2521,
+        "model_top1": "Or",
+        "n_references": 7,
+        "rank_diff": 138952,
+        "top_diff": [
+          "\u8d34\u8fd1",
+          "\u5927\u7eb2",
+          "\u4e32\u8054",
+          "\u6de6",
+          "\u67e5\u770b\u5168\u6587"
+        ],
+        "rank_lre": 130678,
+        "top_lre": [
+          "\u8d34\u8fd1",
+          "\u4e32\u8054",
+          "\u5927\u7eb2",
+          "<|endoftext|>",
+          "\u5df2\u7ecf\u6210\u4e3a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 130678,
+          "0.5": 117821,
+          "1.5": 133889,
+          "2.0": 135342,
+          "3.0": 136688,
+          "5.0": 137627
+        }
+      },
+      {
+        "subject": "Spoiler",
+        "model_top1_id": 71946,
+        "model_top1": "Helena",
+        "n_references": 7,
+        "rank_diff": 46103,
+        "top_diff": [
+          "\u8d34\u8fd1",
+          "\u67e5\u770b\u5168\u6587",
+          "\u5927\u7eb2",
+          "\u4e32\u8054",
+          "\u5cb7"
+        ],
+        "rank_lre": 30892,
+        "top_lre": [
+          "\u8d34\u8fd1",
+          "<|endoftext|>",
+          "\u5927\u7eb2",
+          "\u4e32\u8054",
+          "\u5df2\u7ecf\u6210\u4e3a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30892,
+          "0.5": 20741,
+          "1.5": 37512,
+          "2.0": 39663,
+          "3.0": 41844,
+          "5.0": 43537
+        }
+      },
+      {
+        "subject": "The Thing",
+        "model_top1_id": 7355,
+        "model_top1": "Ben",
+        "n_references": 7,
+        "rank_diff": 51189,
+        "top_diff": [
+          "ship",
+          "pike",
+          "pine",
+          "bite",
+          "lock"
+        ],
+        "rank_lre": 6927,
+        "top_lre": [
+          "(",
+          "is",
+          ":",
+          "and",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6927,
+          "0.5": 4313,
+          "1.5": 9977,
+          "2.0": 12985,
+          "3.0": 18251,
+          "5.0": 25914
+        }
+      },
+      {
+        "subject": "Shadowcat",
+        "model_top1_id": 66181,
+        "model_top1": "Kitty",
+        "n_references": 7,
+        "rank_diff": 2774,
+        "top_diff": [
+          "storm",
+          "fight",
+          "fax",
+          "min",
+          "stripe"
+        ],
+        "rank_lre": 1533,
+        "top_lre": [
+          "(",
+          "is",
+          "and",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1533,
+          "0.5": 2103,
+          "1.5": 1398,
+          "2.0": 1353,
+          "3.0": 1417,
+          "5.0": 1627
+        }
+      },
+      {
+        "subject": "Batwoman",
+        "model_top1_id": 29201,
+        "model_top1": "Kate",
+        "n_references": 7,
+        "rank_diff": 1401,
+        "top_diff": [
+          "pulse",
+          "alerts",
+          "alert",
+          "min",
+          "flood"
+        ],
+        "rank_lre": 1240,
+        "top_lre": [
+          "(",
+          "is",
+          "and",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1240,
+          "0.5": 1822,
+          "1.5": 1000,
+          "2.0": 889,
+          "3.0": 862,
+          "5.0": 918
+        }
+      },
+      {
+        "subject": "Captain Marvel",
+        "model_top1_id": 10252,
+        "model_top1": "Carol",
+        "n_references": 7,
+        "rank_diff": 3392,
+        "top_diff": [
+          "ll",
+          "ship",
+          "min",
+          "alerts",
+          "warnings"
+        ],
+        "rank_lre": 574,
+        "top_lre": [
+          "(",
+          "and",
+          "is",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 574,
+          "0.5": 656,
+          "1.5": 643,
+          "2.0": 749,
+          "3.0": 979,
+          "5.0": 1413
+        }
+      },
+      {
+        "subject": "Ghost Rider",
+        "model_top1_id": 31880,
+        "model_top1": "Johnny",
+        "n_references": 7,
+        "rank_diff": 34026,
+        "top_diff": [
+          "min",
+          "fight",
+          "pike",
+          "ll",
+          "flashlight"
+        ],
+        "rank_lre": 16533,
+        "top_lre": [
+          "(",
+          "is",
+          ":",
+          "and",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16533,
+          "0.5": 14808,
+          "1.5": 18213,
+          "2.0": 19664,
+          "3.0": 21952,
+          "5.0": 24976
+        }
+      },
+      {
+        "subject": "Groot",
+        "model_top1_id": 479,
+        "model_top1": "G",
+        "n_references": 7,
+        "rank_diff": 26738,
+        "top_diff": [
+          "onda",
+          "son",
+          "ship",
+          "pa",
+          "pike"
+        ],
+        "rank_lre": 214,
+        "top_lre": [
+          "is",
+          "(",
+          "and",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 214,
+          "0.5": 115,
+          "1.5": 493,
+          "2.0": 1062,
+          "3.0": 2725,
+          "5.0": 6555
+        }
+      },
+      {
+        "subject": "Captain America",
+        "model_top1_id": 13809,
+        "model_top1": "Steve",
+        "n_references": 8,
+        "rank_diff": 803,
+        "top_diff": [
+          "Behind",
+          "warnings",
+          "damaged",
+          "killed",
+          "alerts"
+        ],
+        "rank_lre": 754,
+        "top_lre": [
+          ":",
+          "and",
+          "is",
+          "(",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 754,
+          "0.5": 1157,
+          "1.5": 562,
+          "2.0": 495,
+          "3.0": 430,
+          "5.0": 449
+        }
+      },
+      {
+        "subject": "Wonder Girl",
+        "model_top1_id": 46763,
+        "model_top1": "Donna",
+        "n_references": 8,
+        "rank_diff": 6930,
+        "top_diff": [
+          "fight",
+          "isha",
+          "ship",
+          "min",
+          "mina"
+        ],
+        "rank_lre": 6932,
+        "top_lre": [
+          "(",
+          "is",
+          "and",
+          ":",
+          ","
+        ],
+        "rank_lre_beta": {
+          "1.0": 6932,
+          "0.5": 8232,
+          "1.5": 6213,
+          "2.0": 5877,
+          "3.0": 5673,
+          "5.0": 5739
+        }
+      },
+      {
+        "subject": "Cyclops",
+        "model_top1_id": 9815,
+        "model_top1": "Scott",
+        "n_references": 8,
+        "rank_diff": 47006,
+        "top_diff": [
+          "pine",
+          "mine",
+          "radar",
+          "pike",
+          "Clyde"
+        ],
+        "rank_lre": 7196,
+        "top_lre": [
+          "(",
+          "is",
+          "and",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7196,
+          "0.5": 4686,
+          "1.5": 9852,
+          "2.0": 12499,
+          "3.0": 17194,
+          "5.0": 23992
+        }
+      },
+      {
+        "subject": "Black Canary",
+        "model_top1_id": 44773,
+        "model_top1": "Din",
+        "n_references": 8,
+        "rank_diff": 14318,
+        "top_diff": [
+          "fight",
+          "duck",
+          "ll",
+          "min",
+          "stripe"
+        ],
+        "rank_lre": 5908,
+        "top_lre": [
+          "(",
+          "is",
+          "and",
+          ",",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5908,
+          "0.5": 5716,
+          "1.5": 6357,
+          "2.0": 6861,
+          "3.0": 7811,
+          "5.0": 9261
+        }
+      },
+      {
+        "subject": "Hawkeye",
+        "model_top1_id": 55029,
+        "model_top1": "Clint",
+        "n_references": 8,
+        "rank_diff": 23979,
+        "top_diff": [
+          "stripe",
+          "pike",
+          "alerts",
+          "flashlight",
+          "deer"
+        ],
+        "rank_lre": 12337,
+        "top_lre": [
+          "and",
+          "(",
+          "is",
+          ":",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12337,
+          "0.5": 12107,
+          "1.5": 12825,
+          "2.0": 13411,
+          "3.0": 14507,
+          "5.0": 16367
+        }
+      },
+      {
+        "subject": "Iron Man",
+        "model_top1_id": 18528,
+        "model_top1": "Tony",
+        "n_references": 8,
+        "rank_diff": 1964,
+        "top_diff": [
+          "pike",
+          "min",
+          "fight",
+          "flick",
+          "alerts"
+        ],
+        "rank_lre": 1355,
+        "top_lre": [
+          ":",
+          "and",
+          "is",
+          "(",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1355,
+          "0.5": 2080,
+          "1.5": 1118,
+          "2.0": 1027,
+          "3.0": 994,
+          "5.0": 1104
+        }
+      },
+      {
+        "subject": "The Flash",
+        "model_top1_id": 30758,
+        "model_top1": "Barry",
+        "n_references": 8,
+        "rank_diff": 6402,
+        "top_diff": [
+          "light",
+          "stripe",
+          "pike",
+          "wave",
+          "storm"
+        ],
+        "rank_lre": 4809,
+        "top_lre": [
+          "is",
+          "(",
+          ":",
+          "and",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4809,
+          "0.5": 5975,
+          "1.5": 4251,
+          "2.0": 4083,
+          "3.0": 4086,
+          "5.0": 4401
+        }
+      },
+      {
+        "subject": "Phoenix",
+        "model_top1_id": 19685,
+        "model_top1": "Jean",
+        "n_references": 8,
+        "rank_diff": 104574,
+        "top_diff": [
+          "\u8d34\u8fd1",
+          "\u4e32\u8054",
+          "\u5927\u7eb2",
+          "\u67e5\u770b\u5168\u6587",
+          "\u5c31\u8fde"
+        ],
+        "rank_lre": 87630,
+        "top_lre": [
+          "\u8d34\u8fd1",
+          "\u4e32\u8054",
+          "<|endoftext|>",
+          "\u5927\u7eb2",
+          "\u5df2\u7ecf\u6210\u4e3a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 87630,
+          "0.5": 67904,
+          "1.5": 93696,
+          "2.0": 96550,
+          "3.0": 99260,
+          "5.0": 101434
+        }
+      },
+      {
+        "subject": "Pixie",
+        "model_top1_id": 49466,
+        "model_top1": "Pix",
+        "n_references": 8,
+        "rank_diff": 3266,
+        "top_diff": [
+          "stripe",
+          "fax",
+          "pine",
+          "mina",
+          "pike"
+        ],
+        "rank_lre": 2017,
+        "top_lre": [
+          "is",
+          "and",
+          "(",
+          ":",
+          "'s"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2017,
+          "0.5": 2909,
+          "1.5": 1725,
+          "2.0": 1675,
+          "3.0": 1761,
+          "5.0": 2026
+        }
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1_id": 19851,
+        "model_top1": "Hal",
+        "n_references": 8,
+        "rank_diff": 4305,
+        "top_diff": [
+          "min",
+          "Cosmic",
+          "ship",
+          "Clyde",
+          "fight"
+        ],
+        "rank_lre": 1718,
+        "top_lre": [
+          "(",
+          ":",
+          "is",
+          "and",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1718,
+          "0.5": 1971,
+          "1.5": 1727,
+          "2.0": 1824,
+          "3.0": 2058,
+          "5.0": 2502
+        }
+      },
+      {
+        "subject": "Falcon",
+        "model_top1_id": 8224,
+        "model_top1": "Sam",
+        "n_references": 8,
+        "rank_diff": 79255,
+        "top_diff": [
+          "pike",
+          "stripe",
+          "bine",
+          "fax",
+          "lift"
+        ],
+        "rank_lre": 4874,
+        "top_lre": [
+          "and",
+          "is",
+          "(",
+          ":",
+          "'s"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4874,
+          "0.5": 2141,
+          "1.5": 8790,
+          "2.0": 13400,
+          "3.0": 22204,
+          "5.0": 36078
+        }
+      },
+      {
+        "subject": "The Flash",
+        "model_top1_id": 30758,
+        "model_top1": "Barry",
+        "n_references": 8,
+        "rank_diff": 6402,
+        "top_diff": [
+          "light",
+          "stripe",
+          "pike",
+          "wave",
+          "storm"
+        ],
+        "rank_lre": 4809,
+        "top_lre": [
+          "is",
+          "(",
+          ":",
+          "and",
+          "in"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4809,
+          "0.5": 5975,
+          "1.5": 4251,
+          "2.0": 4083,
+          "3.0": 4086,
+          "5.0": 4401
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 4499.5,
+          "median_lograng": 3.652887547143368,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4841.5,
+          "median_lograng": 3.685059848204194,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 5232.0,
+          "median_lograng": 3.7109822523851075,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 4980.0,
+          "median_lograng": 3.690157657575733,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 4879.5,
+          "median_lograng": 3.6826469845857135,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 6147.0,
+          "median_lograng": 3.7877754186482173,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "{}"
+  },
+  "positions": {
+    "Storm": 0,
+    "Spoiler": 0,
+    "The Thing": 1,
+    "Shadowcat": 1,
+    "Batwoman": 1,
+    "Captain Marvel": 1,
+    "Ghost Rider": 1,
+    "Groot": 1,
+    "Captain America": 1,
+    "Wonder Girl": 1,
+    "Cyclops": 2,
+    "Black Canary": 1,
+    "Hawkeye": 3,
+    "Iron Man": 1,
+    "The Flash": 1,
+    "Phoenix": 0,
+    "Pixie": 1,
+    "Green Lantern": 1,
+    "Falcon": 1
+  },
+  "faithfulness": 0.27380952380952384,
+  "n_lre": 84,
+  "split_fingerprint": "53f23244bb30",
+  "baseline_rank_differences": null,
+  "retained_source": "results/five_model_sweep/qwen3_8b_base/main/superhero_person.json",
+  "retained_sha256": "a142620ccdb3b0823d8b0ec50220b56e0e18f263c5b1b67d6c358b640c5d58e8",
+  "data_sha256": "3b3a3a03d4b5c0b91343d4e7d562a434a17ae85ef286ed151bafee65c19a7804",
+  "worker": 1,
+  "elapsed_seconds": 6.699118137359619
+}

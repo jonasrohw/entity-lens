@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{Pearson $r$ with shared-split LRE faithfulness across 25 relations per model. Document counts come from OLMo's published training split; they are an external corpus proxy for the other models.}
+\label{tab:shared-corpus-pearson}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Predictor & OLMo & GPT-J & Mistral & Gemma & Qwen 8B & Qwen 27B & Pythia \\
+\midrule
+Subject document frequency & +0.409 & +0.461 & +0.035 & -0.004 & +0.358 & +0.342 & +0.510 \\
+Object document frequency & +0.439 & +0.427 & +0.289 & +0.280 & +0.293 & +0.300 & +0.430 \\
+Joint document frequency & +0.470 & +0.449 & +0.105 & +0.190 & +0.378 & +0.370 & +0.532 \\
+Mean log(1+joint frequency) & +0.526 & +0.578 & +0.147 & +0.160 & +0.445 & +0.344 & +0.586 \\
+Log(1+mean joint frequency) & +0.558 & +0.606 & +0.220 & +0.224 & +0.486 & +0.404 & +0.623 \\
+P(object | subject) & +0.477 & +0.427 & +0.560 & +0.684 & +0.486 & +0.412 & +0.292 \\
+P(subject | object) & -0.481 & -0.481 & -0.737 & -0.729 & -0.535 & -0.596 & -0.388 \\
+Forward minus reverse conditional & +0.519 & +0.493 & +0.706 & +0.768 & +0.553 & +0.550 & +0.373 \\
+Micro P(object | subject) & +0.560 & +0.490 & +0.497 & +0.611 & +0.557 & +0.322 & +0.437 \\
+Micro P(subject | object) & +0.026 & -0.083 & -0.371 & -0.276 & -0.106 & -0.245 & -0.119 \\
+\bottomrule
+\end{tabular}}
+\end{table}

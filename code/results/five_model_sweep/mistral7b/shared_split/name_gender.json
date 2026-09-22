@@ -1,0 +1,361 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 5,
+    "best_beta": 0.5,
+    "best_faith": 0.6666666666666666,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 3,
+    "requested_n_test": 100,
+    "lm_correct": 3,
+    "per_subject": {
+      "Tom": 1,
+      "Emily": 0,
+      "Evan": 1
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 3,
+    "layer": 17,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 1054.0,
+        "median_lograng": 3.0232524596337114,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 918.0,
+        "median_lograng": 2.9633155113861114,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 1444,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 1054,
+        "top_diff": [
+          "brew",
+          "beer",
+          "manufacturing",
+          "his",
+          "Hockey"
+        ],
+        "rank_lre": 912,
+        "top_lre": [
+          "being",
+          "his",
+          "her",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 912,
+          "0.5": 931,
+          "1.5": 893,
+          "2.0": 883,
+          "3.0": 859,
+          "5.0": 806
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 3739,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 686,
+        "top_diff": [
+          "sail",
+          "document",
+          "Baltimore",
+          "posting",
+          "Portland"
+        ],
+        "rank_lre": 3140,
+        "top_lre": [
+          "being",
+          "his",
+          "her",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3140,
+          "0.5": 3225,
+          "1.5": 3035,
+          "2.0": 2959,
+          "3.0": 2797,
+          "5.0": 2483
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 1444,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 9196,
+        "top_diff": [
+          "Seattle",
+          "document",
+          "Madison",
+          "Jur",
+          "Sports"
+        ],
+        "rank_lre": 918,
+        "top_lre": [
+          "being",
+          "his",
+          "her",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 918,
+          "0.5": 927,
+          "1.5": 901,
+          "2.0": 888,
+          "3.0": 859,
+          "5.0": 810
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 931.0,
+          "median_lograng": 2.9694159123539814,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 918.0,
+          "median_lograng": 2.9633155113861114,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 901.0,
+          "median_lograng": 2.9552065375419416,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 888.0,
+          "median_lograng": 2.9489017609702137,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 859.0,
+          "median_lograng": 2.934498451243568,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 810.0,
+          "median_lograng": 2.909020854211156,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 23.215375185012817,
+  "model_id": "mistralai/Mistral-7B-v0.3",
+  "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.043081283569336e-07,
+    "finite_difference_relative_error": 0.0012369540054351091
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

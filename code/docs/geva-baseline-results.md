@@ -1,5 +1,7 @@
 # Wikipedia baseline results (2026-09-19)
 
+> Historical configuration: the numerical comparisons below predate the current matched newline/shared-split appendix. Use [the current baseline tables](../results/shared_baselines/README.md) and [curation guide](shared-baseline-appendix.md) for up-to-date results. Original measurements are preserved for provenance.
+
 The full-corpus OLMo run is complete. The **published Geva/Gerstner attribute-rate metric** has **Spearman ρ = −0.407697 (p = 0.031277)** against LRE faithfulness across the 28 retained relations. The **frequency-ranked Wikipedia extension** has **ρ = +0.239901 (p = 0.218841)**. These are distinct scores; frequency ranking is not the metric defined in the source papers.
 
 | Score correlated with LRE faithfulness | Spearman ρ | p (two-sided) | Pearson r | p (two-sided) |

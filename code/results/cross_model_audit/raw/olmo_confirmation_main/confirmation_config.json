@@ -1,0 +1,185 @@
+{
+  "seed": 1,
+  "protocol": "main",
+  "model": "allenai/Olmo-3-1025-7B",
+  "lens_configs": {
+    "baseline": {
+      "prompt": "known_for",
+      "layer": 17,
+      "references": 8,
+      "readout": "diff",
+      "beta": null,
+      "metric": "median_logrank"
+    }
+  },
+  "faith_configs": {
+    "city_in_country": {
+      "coarse": {
+        "layer": 14,
+        "beta": 3.0
+      }
+    },
+    "company_ceo": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0
+      }
+    },
+    "company_hq": {
+      "coarse": {
+        "layer": 20,
+        "beta": 5.0
+      }
+    },
+    "country_capital_city": {
+      "coarse": {
+        "layer": 5,
+        "beta": 5.0
+      }
+    },
+    "country_currency": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0
+      }
+    },
+    "country_language": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0
+      }
+    },
+    "country_largest_city": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0
+      }
+    },
+    "landmark_in_country": {
+      "coarse": {
+        "layer": 23,
+        "beta": 5.0
+      }
+    },
+    "landmark_on_continent": {
+      "coarse": {
+        "layer": 14,
+        "beta": 1.5
+      }
+    },
+    "name_birthplace": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0
+      }
+    },
+    "name_gender": {
+      "coarse": {
+        "layer": 5,
+        "beta": 0.5
+      }
+    },
+    "name_religion": {
+      "coarse": {
+        "layer": 11,
+        "beta": 1.5
+      }
+    },
+    "person_band_lead_singer": {
+      "coarse": {
+        "layer": 20,
+        "beta": 3.0
+      }
+    },
+    "person_father": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0
+      }
+    },
+    "person_mother": {
+      "coarse": {
+        "layer": 20,
+        "beta": 2.0
+      }
+    },
+    "person_native_language": {
+      "coarse": {
+        "layer": 17,
+        "beta": 2.0
+      }
+    },
+    "person_occupation": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0
+      }
+    },
+    "person_plays_instrument": {
+      "coarse": {
+        "layer": 14,
+        "beta": 2.0
+      }
+    },
+    "person_plays_position_in_sport": {
+      "coarse": {
+        "layer": 14,
+        "beta": 2.0
+      }
+    },
+    "person_plays_pro_sport": {
+      "coarse": {
+        "layer": 17,
+        "beta": 3.0
+      }
+    },
+    "person_university": {
+      "coarse": {
+        "layer": 5,
+        "beta": 0.5
+      }
+    },
+    "pokemon_evolutions": {
+      "coarse": {
+        "layer": 11,
+        "beta": 1.5
+      }
+    },
+    "presidents_birth_year": {
+      "coarse": {
+        "layer": 5,
+        "beta": 1.5
+      }
+    },
+    "presidents_election_year": {
+      "coarse": {
+        "layer": 11,
+        "beta": 5.0
+      }
+    },
+    "product_by_company": {
+      "coarse": {
+        "layer": 14,
+        "beta": 5.0
+      }
+    },
+    "star_constellation": {
+      "coarse": {
+        "layer": 14,
+        "beta": 5.0
+      }
+    },
+    "superhero_archnemesis": {
+      "coarse": {
+        "layer": 17,
+        "beta": 2.0
+      }
+    },
+    "superhero_person": {
+      "coarse": {
+        "layer": 17,
+        "beta": 5.0
+      }
+    }
+  }
+}

@@ -8,13 +8,17 @@ x (new)  per relation: how well the lens's ranked list agrees with the MODEL's
          itself be relation-specific).
 y (have) per relation: LRE faithfulness, already measured.
 
-Relation-specificity lives ONLY in the target: the model's top-1 is taken
-under the same 8-shot ICL prompt that the faithfulness runs used, so the two
-quantities are commensurable.
+For the fixed-beta readouts, relation-specificity lives in the target: the
+model's top-1 is taken under the same 8-shot ICL prompt that the faithfulness
+runs used, so the two quantities are commensurable.
 
 Two lens forms, same cost:
   diff : v = mean_i J_i (s_e - s_i)                  pure difference readout
   lre  : v = mean_i [ f(s_i) + J_i (s_e - s_i) ]     affine (+zeroth-order) baseline
+
+The beta sweep also scores mean_i[f(s_i) + beta J_i(s_e - s_i)]. Selecting
+beta per relation uses scored targets, so this tuned variant is an in-sample,
+relation-specific ablation. The fixed beta=1 fields remain available separately.
 """
 
 import argparse
@@ -24,8 +28,15 @@ from pathlib import Path
 
 import numpy as np
 
-from jlens import splits
-from jlens.config import LENS_LAYER, MODEL_ID, NEUTRAL_PROMPT, OUTPUT_DIR, ROOT
+from jlens import affine_beta, splits
+from jlens.config import (
+    LENS_LAYER,
+    MODEL_ID,
+    NEUTRAL_PROMPT,
+    OUTPUT_DIR,
+    ROOT,
+    YEAR_RELATIONS,
+)
 from jlens.io import read_json, write_json
 
 LAYER = LENS_LAYER
@@ -41,6 +52,28 @@ def parse_args():
     parser.add_argument("--out", default=str(OUTPUT_DIR / "jacobian_lens.json"))
     parser.add_argument("--rels", default="", help="comma-list; merges into --out")
     parser.add_argument("--n-test", type=int, default=splits.N_TEST)
+    parser.add_argument(
+        "--betas",
+        type=affine_beta.parse_betas,
+        default=affine_beta.DEFAULT_BETAS,
+        help="positive beta grid including 1; reuses the same Jacobian products",
+    )
+    parser.add_argument(
+        "--beta-selection",
+        choices=affine_beta.SELECTION_METRICS,
+        default="top1",
+        help="select beta per relation on scored subjects (in-sample)",
+    )
+    parser.add_argument(
+        "--correct-year-targets",
+        action="store_true",
+        help="use trailing-space targets for the two presidential year relations",
+    )
+    parser.add_argument(
+        "--vector-dir",
+        type=Path,
+        help="cache reference means and differential vectors for later beta sweeps",
+    )
     parser.add_argument(
         "--legacy-split",
         action="store_true",
@@ -82,7 +115,7 @@ def main():
     from jlens.model import (
         HiddenStateIntervention,
         final_logits,
-        forward_capturing_final_block,
+        forward_with_raw_hidden_states,
         resolve_blocks,
         resolve_final_norm,
     )
@@ -120,12 +153,15 @@ def main():
 
     results = read_json(args.out) if (args.rels and os.path.exists(args.out)) else {}
     for relation in rels:
+        trailing_space = args.trailing_space or (
+            args.correct_year_targets and relation in YEAR_RELATIONS
+        )
         relation_data = read_json(f"{args.data_dir}/{relation}.json")
         template = relation_data["prompt_templates"][0]
         samples = relation_data["samples"]
         if args.distinct_first_token:
             samples = splits.filter_identifying_objects(
-                samples, tokenizer, args.trailing_space
+                samples, tokenizer, trailing_space
             )
         if args.legacy_split:
             pool = list(samples)
@@ -177,7 +213,7 @@ def main():
         with torch.no_grad():
             for s in subjects:
                 input_ids = tokenizer(
-                    context + template.format(s) + (" " if args.trailing_space else ""),
+                    context + template.format(s) + (" " if trailing_space else ""),
                     return_tensors="pt",
                 ).to(args.device)["input_ids"]
                 target_tokens[s] = int(
@@ -195,23 +231,23 @@ def main():
                 subject_position = min(
                     len(tokenizer(p[:i]).input_ids) - 1, input_ids.shape[1] - 1
                 )
-                o, raw_final = forward_capturing_final_block(
-                    model, final_block, input_ids, output_hidden_states=True
-                )
+                _, hidden_states = forward_with_raw_hidden_states(model, input_ids)
                 cache[subject] = (
                     input_ids,
                     subject_position,
-                    o.hidden_states[layer][0, subject_position, :].detach().clone(),
-                    raw_final.detach().clone(),
+                    hidden_states[layer][0, subject_position, :].detach().clone(),
+                    hidden_states[-1][0, -1, :].detach().clone(),
                 )
         handle = resolve_blocks(model)[layer - 1].register_forward_hook(
             intervention.hook
         )
         anchors = anchor_names
         rows = []
+        saved_vectors = []
         for subject in subjects:
             difference_sum = None
             linear_sum = None
+            reference_sum = None
             n = 0
             for anchor in anchors:
                 if anchor == subject:
@@ -228,11 +264,40 @@ def main():
                 difference_sum = v if difference_sum is None else difference_sum + v
                 w = v + reference_output
                 linear_sum = w if linear_sum is None else linear_sum + w
+                reference_sum = (
+                    reference_output
+                    if reference_sum is None
+                    else reference_sum + reference_output
+                )
                 n += 1
             difference_rank, difference_top = rank_of(
                 difference_sum / n, target_tokens[subject]
             )
             linear_rank, linear_top = rank_of(linear_sum / n, target_tokens[subject])
+            # Only the target's rank is kept per beta. Retaining each beta's
+            # decoded top tokens as well would quadruple the result file, and
+            # nothing reads them; `top_lre` already covers beta 1.
+            beta_ranks = {}
+            for beta in args.betas:
+                if beta == 1.0:
+                    rank = linear_rank
+                else:
+                    rank, _ = rank_of(
+                        reference_sum / n + beta * (difference_sum / n),
+                        target_tokens[subject],
+                    )
+                beta_ranks[str(beta)] = rank
+            if args.vector_dir is not None:
+                saved_vectors.append(
+                    dict(
+                        subject=subject,
+                        target_token_id=target_tokens[subject],
+                        reference_mean=(reference_sum / n).cpu(),
+                        differential=(difference_sum / n).cpu(),
+                        affine_beta1=(linear_sum / n).cpu(),
+                        n_references=n,
+                    )
+                )
             rows.append(
                 dict(
                     subject=subject,
@@ -241,6 +306,9 @@ def main():
                     rank_lre=linear_rank,
                     top_diff=difference_top,
                     top_lre=linear_top,
+                    model_top1_id=target_tokens[subject],
+                    n_references=n,
+                    rank_lre_beta=beta_ranks,
                 )
             )
         handle.remove()
@@ -261,11 +329,36 @@ def main():
             rows=rows,
             split_fingerprint=split_fingerprint,
             legacy_split=bool(args.legacy_split),
+            model_id=MODEL_ID,
+            neutral_prompt=NEUTRAL_PROMPT,
+            year_trailing_space=trailing_space,
+            beta_sweep=affine_beta.summarize(rows, args.betas, args.beta_selection),
         )
+        if args.vector_dir is not None:
+            args.vector_dir.mkdir(parents=True, exist_ok=True)
+            torch.save(
+                dict(
+                    model_id=MODEL_ID,
+                    layer=layer,
+                    relation=relation,
+                    trailing_space=trailing_space,
+                    rows=saved_vectors,
+                ),
+                args.vector_dir / f"{relation}.pt",
+            )
+        write_json(args.out, results)
         print(
             f"{relation:26s} n={len(subjects):<3} diff: med_rank={aggregate['diff']['median_rank']:>9.0f} "
             f"a@1={aggregate['diff']['agree_at1']:.2f} | affine (+zeroth-order): med_rank={aggregate['lre']['median_rank']:>9.0f} "
             f"a@1={aggregate['lre']['agree_at1']:.2f}",
+            flush=True,
+        )
+        sweep = results[relation]["beta_sweep"]
+        best = sweep["agg"][str(sweep["best_beta"])]
+        print(
+            f"  affine beta sweep: best_beta={sweep['best_beta']:g} "
+            f"selection={args.beta_selection} (in-sample) "
+            f"med_logrank={best['median_lograng']:.3f} a@1={best['agree_at1']:.2f}",
             flush=True,
         )
     write_json(args.out, results)

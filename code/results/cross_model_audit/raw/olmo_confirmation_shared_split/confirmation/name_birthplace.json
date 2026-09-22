@@ -1,0 +1,129 @@
+{
+  "relation": "name_birthplace",
+  "protocol": "shared_split",
+  "subject_policy": "original_rows",
+  "input_samples": 31,
+  "cleaned_samples": 31,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 14,
+      "beta": 1.5,
+      "score": 0.8,
+      "hits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          1616,
+          26,
+          4,
+          6,
+          68,
+          15,
+          5,
+          59,
+          127,
+          1,
+          65,
+          4,
+          121,
+          111,
+          16
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 1.4313637641589874,
+        "mean_logrank": 1.471746272165938,
+        "top1": 0.0,
+        "top10": 0.3333333333333333,
+        "mrr": 0.09598343555625906,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 0.8666666666666667,
+  "prior_only_faith": 0.06666666666666667,
+  "n_faith": 15,
+  "n_lens": 15,
+  "faith_subjects": [
+    "Mei",
+    "Alejandro",
+    "Rohit",
+    "Jules",
+    "Xia",
+    "Antoine",
+    "Giovanni",
+    "Hila",
+    "Kazuki",
+    "Yitzhak",
+    "Pablo",
+    "Juan",
+    "Anong",
+    "Chang",
+    "Manish"
+  ],
+  "lens_subjects": [
+    "Mei",
+    "Alejandro",
+    "Rohit",
+    "Jules",
+    "Xia",
+    "Antoine",
+    "Giovanni",
+    "Hila",
+    "Kazuki",
+    "Yitzhak",
+    "Pablo",
+    "Juan",
+    "Anong",
+    "Chang",
+    "Manish"
+  ],
+  "faith_split_fingerprint": "efea30ca2559",
+  "lens_split_fingerprint": "efea30ca2559",
+  "worker": "olmo_shared_beta_0",
+  "elapsed_seconds": 7.525839328765869
+}

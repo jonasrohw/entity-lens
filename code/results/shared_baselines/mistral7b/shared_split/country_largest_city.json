@@ -1,0 +1,146 @@
+{
+  "relation": "country_largest_city",
+  "model": "mistral7b",
+  "worker": "rho2_3",
+  "protocol": "shared_split",
+  "prompt": "\n{} is known for",
+  "layer": 17,
+  "split_fingerprint": "fde7d372cb1f",
+  "source_sha256": "71d29f2657bb38168a675f6731c4f15a4b3f98049f08edf2a111080e64cc057b",
+  "data_sha256": "ffb5e18dc1f26a101786905db84f087370bb191067ff8d9f1294156b1d9bdccc",
+  "n": 8,
+  "rows": [
+    {
+      "subject": "France",
+      "object": "Paris",
+      "model_top1_id": 6233,
+      "gold_id": 6233,
+      "n_references": 8,
+      "target_prior": -10.18262004852295,
+      "gold_prior": -10.18262004852295,
+      "rank_raw_jacobian": 2,
+      "rank_logit_lens": 5,
+      "rank_differential_logit_lens": 2
+    },
+    {
+      "subject": "Pakistan",
+      "object": "Karachi",
+      "model_top1_id": 8543,
+      "gold_id": 8543,
+      "n_references": 8,
+      "target_prior": -11.201772689819336,
+      "gold_prior": -11.201772689819336,
+      "rank_raw_jacobian": 63,
+      "rank_logit_lens": 206,
+      "rank_differential_logit_lens": 75
+    },
+    {
+      "subject": "Spain",
+      "object": "Madrid",
+      "model_top1_id": 15102,
+      "gold_id": 15102,
+      "n_references": 8,
+      "target_prior": -12.426643371582031,
+      "gold_prior": -12.426643371582031,
+      "rank_raw_jacobian": 4,
+      "rank_logit_lens": 88,
+      "rank_differential_logit_lens": 4
+    },
+    {
+      "subject": "Argentina",
+      "object": "Buenos Aires",
+      "model_top1_id": 26630,
+      "gold_id": 26630,
+      "n_references": 8,
+      "target_prior": -13.412866592407227,
+      "gold_prior": -13.412866592407227,
+      "rank_raw_jacobian": 2,
+      "rank_logit_lens": 42,
+      "rank_differential_logit_lens": 1
+    },
+    {
+      "subject": "United Kingdom",
+      "object": "London",
+      "model_top1_id": 4990,
+      "gold_id": 4990,
+      "n_references": 8,
+      "target_prior": -9.134971618652344,
+      "gold_prior": -9.134971618652344,
+      "rank_raw_jacobian": 38,
+      "rank_logit_lens": 21,
+      "rank_differential_logit_lens": 3
+    },
+    {
+      "subject": "China",
+      "object": "Shanghai",
+      "model_top1_id": 29178,
+      "gold_id": 29178,
+      "n_references": 8,
+      "target_prior": -11.607977867126465,
+      "gold_prior": -11.607977867126465,
+      "rank_raw_jacobian": 3,
+      "rank_logit_lens": 14,
+      "rank_differential_logit_lens": 3
+    },
+    {
+      "subject": "South Korea",
+      "object": "Seoul",
+      "model_top1_id": 1859,
+      "gold_id": 1859,
+      "n_references": 8,
+      "target_prior": -9.685911178588867,
+      "gold_prior": -9.685911178588867,
+      "rank_raw_jacobian": 1315,
+      "rank_logit_lens": 820,
+      "rank_differential_logit_lens": 29
+    },
+    {
+      "subject": "Mexico",
+      "object": "Mexico City",
+      "model_top1_id": 11010,
+      "gold_id": 11010,
+      "n_references": 8,
+      "target_prior": -11.943831443786621,
+      "gold_prior": -11.943831443786621,
+      "rank_raw_jacobian": 4,
+      "rank_logit_lens": 0,
+      "rank_differential_logit_lens": 1
+    }
+  ],
+  "agg": {
+    "raw_jacobian": {
+      "median_rank": 4.0,
+      "median_lograng": 0.6989700043360189,
+      "agree_at1": 0.0,
+      "agree_at10": 0.625
+    },
+    "logit_lens": {
+      "median_rank": 31.5,
+      "median_lograng": 1.4879455682008964,
+      "agree_at1": 0.125,
+      "agree_at10": 0.25
+    },
+    "differential_logit_lens": {
+      "median_rank": 3.0,
+      "median_lograng": 0.6020599913279624,
+      "agree_at1": 0.0,
+      "agree_at10": 0.75
+    }
+  },
+  "answer_prior_contexts": [
+    "",
+    "The",
+    "In the",
+    "It was",
+    "She said the",
+    "Here is",
+    "One of the",
+    "According to the",
+    "There is a",
+    "Yesterday the"
+  ],
+  "cardinality_full": 1.0,
+  "cardinality_filtered": 1.0,
+  "cardinality_test": 1.0,
+  "elapsed_seconds": 1.3815536499023438
+}

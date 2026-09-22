@@ -1,10 +1,12 @@
 """Recompute the paper statistics from the retained CPU-readable result snapshots."""
 
 import json
+from collections import Counter
 
 import numpy as np
 from scipy import stats
 
+from jlens import affine_beta
 from jlens.config import ROOT, YEAR_RELATIONS
 
 
@@ -50,6 +52,39 @@ def report_affine_baseline(scores, faithfulness, differential_rho, *, prefix="")
         f"p={result.pvalue:.2e}, "
         f"delta_rho={result.statistic - differential_rho:+.3f}"
     )
+
+
+def beta_sweep_lens(directory):
+    """The separately measured beta sweep, if the protocol's run is retained.
+
+    The sweep needs one rescaled readout per beta, so it cannot be recovered
+    from the fixed-beta files; without it the report is simply skipped.
+    """
+    path = ROOT / directory / "jacobian_lens_beta.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def report_beta_baseline(lens, relations, faithfulness, differential_rho, *, prefix=""):
+    """Report both selection rules; the sweep retains every beta's aggregate."""
+    sweeps = [lens.get(relation, {}).get("beta_sweep") for relation in relations]
+    if not any(sweeps):
+        return
+    if not all(sweeps):
+        raise ValueError("affine beta sweep does not cover all scored relations")
+    for metric in affine_beta.SELECTION_METRICS:
+        selected = [affine_beta.tuned_score(sweep, metric) for sweep in sweeps]
+        result = stats.spearmanr([score for _, score in selected], faithfulness)
+        print(
+            f"{prefix}Beta-tuned affine Jacobian-lens baseline "
+            f"({len(relations)} relations; {metric}, in-sample): "
+            f"rho={result.statistic:.3f}, p={result.pvalue:.2e}, "
+            f"delta_rho={result.statistic - differential_rho:+.3f}"
+        )
+        counts = Counter(beta for beta, _ in selected)
+        print(
+            "  Selected beta counts: "
+            + ", ".join(f"{beta:g}: {count}" for beta, count in sorted(counts.items()))
+        )
 
 
 def fact_points(relation, lens, rank_dir):
@@ -102,6 +137,7 @@ def main():
 
     print(f"Main ({len(rels)} relations): rho={rho.statistic:.3f}, p={rho.pvalue:.2e}")
     report_affine_baseline(affine_lens_scores(rels), y, rho.statistic)
+    report_beta_baseline(beta_sweep_lens("results"), rels, y, rho.statistic)
     # The ablation baselines: the lens without its Jacobian, without its
     # difference, and without either. Each is reported only once measured.
     for label, filename in [
@@ -156,6 +192,13 @@ def main():
     )
     report_affine_baseline(
         [-lens[relation]["agg"]["lre"]["median_lograng"] for relation in alternative],
+        [faith[relation]["best_faith"] for relation in alternative],
+        alt.statistic,
+        prefix="Shared split, ",
+    )
+    report_beta_baseline(
+        beta_sweep_lens("results/shared_split"),
+        alternative,
         [faith[relation]["best_faith"] for relation in alternative],
         alt.statistic,
         prefix="Shared split, ",

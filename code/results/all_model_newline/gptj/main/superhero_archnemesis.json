@@ -1,0 +1,1391 @@
+{
+  "relation": "superhero_archnemesis",
+  "protocol": "main",
+  "model": "gptj",
+  "worker": "rho2_6",
+  "lens": {
+    "n": 20,
+    "layer": 15,
+    "template": "The superhero archnemesis of {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 6172.5,
+        "median_lograng": 3.786802852743424,
+        "agree_at1": 0.05,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 75.0,
+        "median_lograng": 1.4712520530840405,
+        "agree_at1": 0.0,
+        "agree_at10": 0.5
+      }
+    },
+    "rows": [
+      {
+        "subject": "Hawkeye",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 7,
+        "rank_diff": 7507,
+        "top_diff": [
+          "Haw",
+          "Hawk",
+          "Haw",
+          "Avenger",
+          "Avengers"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 4,
+          "1.5": 5,
+          "2.0": 5,
+          "3.0": 6,
+          "5.0": 8
+        }
+      },
+      {
+        "subject": "The Thing",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 2469,
+        "top_diff": [
+          "Lovecraft",
+          "Cthulhu",
+          "Cth",
+          "Thing",
+          "Creature"
+        ],
+        "rank_lre": 145,
+        "top_lre": [
+          "his",
+          "its",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 145,
+          "0.5": 185,
+          "1.5": 120,
+          "2.0": 104,
+          "3.0": 92,
+          "5.0": 135
+        }
+      },
+      {
+        "subject": "Wolverine",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 7,
+        "rank_diff": 12794,
+        "top_diff": [
+          "Wolverine",
+          "Logan",
+          "Wolver",
+          "Deadpool",
+          "Marvel"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 5,
+          "2.0": 6,
+          "3.0": 20,
+          "5.0": 85
+        }
+      },
+      {
+        "subject": "Red Hood",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 7,
+        "rank_diff": 6978,
+        "top_diff": [
+          "Hood",
+          "Batman",
+          "Gotham",
+          "Joker",
+          "hood"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 5,
+          "2.0": 5,
+          "3.0": 7,
+          "5.0": 26
+        }
+      },
+      {
+        "subject": "Rorschach",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 11474,
+        "top_diff": [
+          "Jung",
+          "Freud",
+          "Psycho",
+          "Oswald",
+          "psych"
+        ],
+        "rank_lre": 212,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 212,
+          "0.5": 211,
+          "1.5": 221,
+          "2.0": 222,
+          "3.0": 234,
+          "5.0": 342
+        }
+      },
+      {
+        "subject": "Punisher",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 3345,
+        "top_diff": [
+          "Daredevil",
+          "Wolverine",
+          "vigilante",
+          "Deadpool",
+          "Gunn"
+        ],
+        "rank_lre": 172,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 172,
+          "0.5": 197,
+          "1.5": 165,
+          "2.0": 163,
+          "3.0": 175,
+          "5.0": 251
+        }
+      },
+      {
+        "subject": "The Tick",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 3781,
+        "top_diff": [
+          "Tick",
+          "ticks",
+          "tick",
+          "tick",
+          "ticking"
+        ],
+        "rank_lre": 177,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 177,
+          "0.5": 203,
+          "1.5": 166,
+          "2.0": 155,
+          "3.0": 151,
+          "5.0": 195
+        }
+      },
+      {
+        "subject": "Usagi Yojimbo",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 7,
+        "rank_diff": 7276,
+        "top_diff": [
+          "comics",
+          "sword",
+          "samurai",
+          "Conan",
+          "swords"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 4,
+          "2.0": 4,
+          "3.0": 4,
+          "5.0": 7
+        }
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1_id": 10884,
+        "model_top1": "Sin",
+        "n_references": 8,
+        "rank_diff": 323,
+        "top_diff": [
+          "Lantern",
+          "Green",
+          "Guardians",
+          "Green",
+          "Superman"
+        ],
+        "rank_lre": 5476,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5476,
+          "0.5": 7271,
+          "1.5": 4136,
+          "2.0": 3105,
+          "3.0": 1758,
+          "5.0": 704
+        }
+      },
+      {
+        "subject": "RoboCop",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 16776,
+        "top_diff": [
+          "Robo",
+          "Detroit",
+          "policeman",
+          "Police",
+          "Detroit"
+        ],
+        "rank_lre": 248,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 248,
+          "0.5": 230,
+          "1.5": 282,
+          "2.0": 323,
+          "3.0": 454,
+          "5.0": 896
+        }
+      },
+      {
+        "subject": "Aquaman",
+        "model_top1_id": 10692,
+        "model_top1": "Ocean",
+        "n_references": 8,
+        "rank_diff": 78,
+        "top_diff": [
+          "Superman",
+          "Aqu",
+          "Atlantis",
+          "superhero",
+          "Batman"
+        ],
+        "rank_lre": 7653,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7653,
+          "0.5": 10754,
+          "1.5": 5322,
+          "2.0": 3670,
+          "3.0": 1642,
+          "5.0": 403
+        }
+      },
+      {
+        "subject": "Magneto",
+        "model_top1_id": 32079,
+        "model_top1": "Magnet",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Magnet",
+          "Ultron",
+          "Magnetic",
+          "magnet",
+          "Electro"
+        ],
+        "rank_lre": 1794,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1794,
+          "0.5": 4787,
+          "1.5": 544,
+          "2.0": 120,
+          "3.0": 10,
+          "5.0": 0
+        }
+      },
+      {
+        "subject": "Silver Surfer",
+        "model_top1_id": 5027,
+        "model_top1": "Gal",
+        "n_references": 8,
+        "rank_diff": 117,
+        "top_diff": [
+          "Marvel",
+          "cosmic",
+          "Cosmic",
+          "Marvel",
+          "Hulk"
+        ],
+        "rank_lre": 3093,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3093,
+          "0.5": 4580,
+          "1.5": 2007,
+          "2.0": 1310,
+          "3.0": 570,
+          "5.0": 178
+        }
+      },
+      {
+        "subject": "The Flash",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 9909,
+        "top_diff": [
+          "Flash",
+          "Flash",
+          "Barry",
+          "flash",
+          "Wally"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 4,
+          "2.0": 5,
+          "3.0": 13,
+          "5.0": 55
+        }
+      },
+      {
+        "subject": "Scarlet Witch",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 9472,
+        "top_diff": [
+          "Ultron",
+          "Marvel",
+          "Witch",
+          "Avengers",
+          "Marvel"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 5,
+          "1.5": 5,
+          "2.0": 5,
+          "3.0": 7,
+          "5.0": 38
+        }
+      },
+      {
+        "subject": "Starfire",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 5367,
+        "top_diff": [
+          "Firefly",
+          "Cyborg",
+          "Titans",
+          "Fire",
+          "Krypt"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 5,
+          "1.5": 5,
+          "2.0": 6,
+          "3.0": 6,
+          "5.0": 18
+        }
+      },
+      {
+        "subject": "Hellcat",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 8627,
+        "top_diff": [
+          "Mustang",
+          "automotive",
+          "Jaguar",
+          "engine",
+          "Chrysler"
+        ],
+        "rank_lre": 5,
+        "top_lre": [
+          "his",
+          "its",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5,
+          "0.5": 4,
+          "1.5": 5,
+          "2.0": 6,
+          "3.0": 6,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "Teenage Mutant Ninja Turtles",
+        "model_top1_id": 911,
+        "model_top1": "Sh",
+        "n_references": 8,
+        "rank_diff": 3775,
+        "top_diff": [
+          "Turtles",
+          "Turtle",
+          "turtles",
+          "turtle",
+          "Raphael"
+        ],
+        "rank_lre": 1681,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1681,
+          "0.5": 1878,
+          "1.5": 1525,
+          "2.0": 1421,
+          "3.0": 1276,
+          "5.0": 1234
+        }
+      },
+      {
+        "subject": "Hawkman",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 4440,
+        "top_diff": [
+          "Krypt",
+          "Superman",
+          "superhero",
+          "Hawk",
+          "Batman"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 4,
+          "2.0": 4,
+          "3.0": 4,
+          "5.0": 15
+        }
+      },
+      {
+        "subject": "Captain America",
+        "model_top1_id": 262,
+        "model_top1": "the",
+        "n_references": 8,
+        "rank_diff": 9893,
+        "top_diff": [
+          "Avengers",
+          "Ultron",
+          "Marvel",
+          "Avenger",
+          "Marvel"
+        ],
+        "rank_lre": 4,
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4,
+          "0.5": 4,
+          "1.5": 4,
+          "2.0": 4,
+          "3.0": 10,
+          "5.0": 51
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 95.0,
+          "median_lograng": 1.52383209730078,
+          "agree_at1": 0.0,
+          "agree_at10": 0.5
+        },
+        "1.0": {
+          "median_rank": 75.0,
+          "median_lograng": 1.4712520530840405,
+          "agree_at1": 0.0,
+          "agree_at10": 0.5
+        },
+        "1.5": {
+          "median_rank": 62.5,
+          "median_lograng": 1.4304683103500468,
+          "agree_at1": 0.0,
+          "agree_at10": 0.5
+        },
+        "2.0": {
+          "median_rank": 55.0,
+          "median_lograng": 1.4331436695420976,
+          "agree_at1": 0.0,
+          "agree_at10": 0.5
+        },
+        "3.0": {
+          "median_rank": 16.5,
+          "median_lograng": 1.2341736652060786,
+          "agree_at1": 0.0,
+          "agree_at10": 0.35
+        },
+        "5.0": {
+          "median_rank": 70.0,
+          "median_lograng": 1.841343239124884,
+          "agree_at1": 0.05,
+          "agree_at10": 0.2
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "superhero_archnemesis",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "4": {
+        "0.5": [
+          0.3625,
+          0.0
+        ],
+        "1.0": [
+          0.475,
+          0.0
+        ],
+        "1.5": [
+          0.3375,
+          0.0
+        ],
+        "2.0": [
+          0.175,
+          0.0
+        ],
+        "3.0": [
+          0.175,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "10": {
+        "0.5": [
+          0.4875,
+          0.0
+        ],
+        "1.0": [
+          0.525,
+          0.0
+        ],
+        "1.5": [
+          0.45,
+          0.0
+        ],
+        "2.0": [
+          0.35,
+          0.0
+        ],
+        "3.0": [
+          0.1875,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.4625,
+          0.0
+        ],
+        "1.0": [
+          0.575,
+          0.0
+        ],
+        "1.5": [
+          0.425,
+          0.0
+        ],
+        "2.0": [
+          0.3,
+          0.0
+        ],
+        "3.0": [
+          0.175,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "15": {
+        "0.5": [
+          0.4,
+          0.0
+        ],
+        "1.0": [
+          0.525,
+          0.0
+        ],
+        "1.5": [
+          0.425,
+          0.0
+        ],
+        "2.0": [
+          0.2375,
+          0.0
+        ],
+        "3.0": [
+          0.125,
+          0.0
+        ],
+        "5.0": [
+          0.1,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.3625,
+          0.0
+        ],
+        "1.0": [
+          0.4125,
+          0.0
+        ],
+        "1.5": [
+          0.425,
+          0.0
+        ],
+        "2.0": [
+          0.3875,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.3625,
+          0.0
+        ],
+        "1.0": [
+          0.3625,
+          0.0
+        ],
+        "1.5": [
+          0.35,
+          0.0
+        ],
+        "2.0": [
+          0.3375,
+          0.0
+        ],
+        "3.0": [
+          0.3125,
+          0.0
+        ],
+        "5.0": [
+          0.1625,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.575,
+    "best_sd": 0.0,
+    "best_layer": 12,
+    "best_beta": 1.0,
+    "lm_correct": 18,
+    "split_fingerprint": "db027ff54a32",
+    "legacy_split": true,
+    "distinct_first_token": false,
+    "per_subject": {
+      "Batman": 0,
+      "Batgirl": 1,
+      "Magneto": 0,
+      "Black Widow": 0,
+      "Red Hood": 1,
+      "Sailor Moon": 0,
+      "Hercules": 0,
+      "The Hulk": 1,
+      "Deadpool": 1,
+      "Zatanna": 1,
+      "Robin": 1,
+      "Kim Possible": 0,
+      "Invisible Woman": 1,
+      "Buffy the Vampire Slayer": 0,
+      "Wonder Woman": 1,
+      "Kick-Ass": 1,
+      "Blue Beetle": 1,
+      "The Wasp": 1,
+      "Jessica Jones": 0,
+      "Cyclops": 0,
+      "Groot": 1,
+      "Goku": 0,
+      "Venom": 0,
+      "The Powerpuff Girls": 1,
+      "Hellboy": 1,
+      "Elektra": 1,
+      "The Flash": 0,
+      "Nick Fury": 1,
+      "Power Girl": 0,
+      "Superman": 1,
+      "Green Lantern": 0,
+      "Hellcat": 1,
+      "Silver Surfer": 0,
+      "Green Arrow": 0,
+      "Star-Lord": 1,
+      "Scooby-Doo": 0,
+      "Moon Girl": 1,
+      "She-Hulk": 1,
+      "Catwoman": 1,
+      "John Constantine": 1,
+      "Thor": 1,
+      "Black Bolt": 1,
+      "Captain Marvel": 0,
+      "Raven": 0,
+      "Mr. Fantastic": 1,
+      "Black Panther": 0,
+      "Wolverine": 1,
+      "Shazam": 0,
+      "The Thing": 1,
+      "Starfire": 1,
+      "Punisher": 1,
+      "Ms. Marvel": 1,
+      "Shadowcat": 0,
+      "Aquaman": 0,
+      "The Tick": 1,
+      "Beast Boy": 1,
+      "Moon Knight": 1,
+      "Spawn": 0,
+      "Black Canary": 0,
+      "Daredevil": 1,
+      "Doctor Strange": 0,
+      "Judge Dredd": 0,
+      "Storm": 1,
+      "Ant-Man": 0,
+      "Luke Cage": 1,
+      "Spider-Man": 0,
+      "Ghost Rider": 1,
+      "Captain Planet": 0,
+      "RoboCop": 1,
+      "Swamp Thing": 1,
+      "Constantine": 1,
+      "Dr. Fate": 1,
+      "Captain America": 1,
+      "Martian Manhunter": 1,
+      "The Phantom": 0,
+      "Nightwing": 1,
+      "Teenage Mutant Ninja Turtles": 0,
+      "Hawkgirl": 0,
+      "Astro Boy": 0,
+      "Ben 10": 1
+    },
+    "biased_single_draw_mean": 0.575
+  },
+  "n_lre": 80,
+  "baseline_lens": {
+    "n": 20,
+    "layer": 15,
+    "template": "The superhero archnemesis of {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 6053.5,
+        "median_lograng": 3.782052085585101,
+        "agree_at1": 0.05,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 98.0,
+        "median_lograng": 1.5909217939723863,
+        "agree_at1": 0.0,
+        "agree_at10": 0.5
+      }
+    },
+    "rows": [
+      {
+        "subject": "Hawkeye",
+        "model_top1": "the",
+        "rank_diff": 11961,
+        "rank_lre": 6,
+        "top_diff": [
+          "Haw",
+          "Hawk",
+          "Haw",
+          "Hawkins",
+          "Avenger"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "The Thing",
+        "model_top1": "The",
+        "rank_diff": 2574,
+        "rank_lre": 189,
+        "top_diff": [
+          "Lovecraft",
+          "Cthulhu",
+          "Bigfoot",
+          "Thing",
+          "Carpenter"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "many"
+        ]
+      },
+      {
+        "subject": "Wolverine",
+        "model_top1": "the",
+        "rank_diff": 11688,
+        "rank_lre": 6,
+        "top_diff": [
+          "Wolverine",
+          "Logan",
+          "claws",
+          "mutant",
+          "Wolver"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Red Hood",
+        "model_top1": "the",
+        "rank_diff": 7759,
+        "rank_lre": 6,
+        "top_diff": [
+          "Hood",
+          "RED",
+          "Batman",
+          "Gotham",
+          "Joker"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Rorschach",
+        "model_top1": "The",
+        "rank_diff": 5987,
+        "rank_lre": 243,
+        "top_diff": [
+          "Jung",
+          "Oswald",
+          "Freud",
+          "Psycho",
+          "Psych"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Punisher",
+        "model_top1": "The",
+        "rank_diff": 6120,
+        "rank_lre": 256,
+        "top_diff": [
+          "vigilante",
+          "Daredevil",
+          "Wolverine",
+          "aven",
+          "Carnage"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "a",
+          "its",
+          "having"
+        ]
+      },
+      {
+        "subject": "The Tick",
+        "model_top1": "The",
+        "rank_diff": 4519,
+        "rank_lre": 217,
+        "top_diff": [
+          "Tick",
+          "ticks",
+          "tick",
+          "tick",
+          "ticking"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Usagi Yojimbo",
+        "model_top1": "the",
+        "rank_diff": 4858,
+        "rank_lre": 6,
+        "top_diff": [
+          "comics",
+          "sword",
+          "swords",
+          "samurai",
+          "Samurai"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Green Lantern",
+        "model_top1": "Sin",
+        "rank_diff": 508,
+        "rank_lre": 6045,
+        "top_diff": [
+          "Green",
+          "Lantern",
+          "Green",
+          "GREEN",
+          "GREEN"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "RoboCop",
+        "model_top1": "The",
+        "rank_diff": 18641,
+        "rank_lre": 311,
+        "top_diff": [
+          "Robo",
+          "Detroit",
+          "policeman",
+          "Detroit",
+          "Robot"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Aquaman",
+        "model_top1": "Ocean",
+        "rank_diff": 44,
+        "rank_lre": 6023,
+        "top_diff": [
+          "Aqu",
+          "Superman",
+          "aquatic",
+          "Atlantis",
+          "superhero"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Magneto",
+        "model_top1": "Magnet",
+        "rank_diff": 0,
+        "rank_lre": 1125,
+        "top_diff": [
+          "Magnet",
+          "Ultron",
+          "magnet",
+          "Magnetic",
+          "magnetic"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "its",
+          "a"
+        ]
+      },
+      {
+        "subject": "Silver Surfer",
+        "model_top1": "Gal",
+        "rank_diff": 286,
+        "rank_lre": 3958,
+        "top_diff": [
+          "cosmic",
+          "surfing",
+          "Surf",
+          "Cosmic",
+          "surf"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "The Flash",
+        "model_top1": "the",
+        "rank_diff": 8213,
+        "rank_lre": 6,
+        "top_diff": [
+          "Flash",
+          "Flash",
+          "Barry",
+          "flash",
+          "flash"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Scarlet Witch",
+        "model_top1": "the",
+        "rank_diff": 8140,
+        "rank_lre": 7,
+        "top_diff": [
+          "Witch",
+          "Ultron",
+          "Marvel",
+          "witch",
+          "Magnet"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Starfire",
+        "model_top1": "the",
+        "rank_diff": 8307,
+        "rank_lre": 7,
+        "top_diff": [
+          "Firefly",
+          "Star",
+          "blaster",
+          "lightsaber",
+          "Fire"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "her",
+          "a"
+        ]
+      },
+      {
+        "subject": "Hellcat",
+        "model_top1": "the",
+        "rank_diff": 11795,
+        "rank_lre": 7,
+        "top_diff": [
+          "Viper",
+          "CAT",
+          "Cobra",
+          "Cat",
+          "Cat"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Teenage Mutant Ninja Turtles",
+        "model_top1": "Sh",
+        "rank_diff": 2015,
+        "rank_lre": 1830,
+        "top_diff": [
+          "Turtles",
+          "Turtle",
+          "turtle",
+          "turtles",
+          "TM"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "many"
+        ]
+      },
+      {
+        "subject": "Hawkman",
+        "model_top1": "the",
+        "rank_diff": 4493,
+        "rank_lre": 6,
+        "top_diff": [
+          "Hawk",
+          "Krypt",
+          "Horus",
+          "Superman",
+          "superhero"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "its",
+          "a",
+          "having"
+        ]
+      },
+      {
+        "subject": "Captain America",
+        "model_top1": "the",
+        "rank_diff": 9604,
+        "rank_lre": 6,
+        "top_diff": [
+          "Avengers",
+          "Ultron",
+          "Marvel",
+          "Avenger",
+          "Marvel"
+        ],
+        "top_lre": [
+          "his",
+          "being",
+          "a",
+          "having",
+          "its"
+        ]
+      }
+    ],
+    "split_fingerprint": null,
+    "legacy_split": true
+  },
+  "trailing_space": false,
+  "positions": {
+    "Hawkeye": 2,
+    "The Thing": 2,
+    "Wolverine": 3,
+    "Red Hood": 2,
+    "Rorschach": 4,
+    "Punisher": 3,
+    "The Tick": 2,
+    "Usagi Yojimbo": 6,
+    "Green Lantern": 2,
+    "RoboCop": 3,
+    "Aquaman": 3,
+    "Magneto": 3,
+    "Silver Surfer": 3,
+    "The Flash": 2,
+    "Scarlet Witch": 3,
+    "Starfire": 2,
+    "Hellcat": 2,
+    "Teenage Mutant Ninja Turtles": 5,
+    "Hawkman": 3,
+    "Captain America": 2
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "365b9d051c75",
+  "baseline_sha256": {
+    "results/gptj/results/jacobian_lens.json": "4681c5662d2af7ab0f82579cae3f721ed10de577118fd2bb3b0d68b5bfe8d8bf",
+    "results/gptj/results/main/faithfulness_superhero_archnemesis.json": "23d8536813b5c630cd4eebc6763afa63d79436246d5956515ddc675b09aa1f7f"
+  },
+  "data_sha256": "bd335092e081782d7e49a4a3472c0aac54b14999a3b78e68f6d94fe7ed7dcb38",
+  "elapsed_seconds": 4.221691370010376
+}

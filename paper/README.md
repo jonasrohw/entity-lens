@@ -1,5 +1,28 @@
 # ICLR 2027 submission
 
+The current seven-model comparison is in
+[appendix_shared_baselines.tex](appendix_shared_baselines.tex), included as
+Appendix A. A separately readable [appendix PDF](shared_baselines.pdf) is built
+with `latexmk -pdf shared_baselines.tex`. Its tables cover the newline-prefixed
+shared split: the first compares differential Jacobian, raw Jacobian,
+logit lens, differential logit lens, and attribute rate across seven models;
+the second reports only OLMo corpus-frequency results.
+The third table has two panels: eight Qwen3 8B prompt templates (legacy and
+shared splits) and the newline comparison across all seven models (shared
+split). Generate it with
+`../code/.venv/bin/python ../code/scripts/format_prompt_variation_table.py`.
+Regenerate the first two presentation tables with
+`../code/.venv/bin/python ../code/scripts/format_shared_baseline_tables.py`
+from this directory. The full numerical report and sensitivity analyses
+remain in the result files. The previous expanded appendix source is
+preserved under `archive/appendix_shared_baselines_expanded_2026-09-21.tex`.
+The existing main-text analyses are explicitly labelled historical; their
+figures have not been relabelled as measurements from the new configuration.
+
+The [curation and reproduction guide](../code/docs/shared-baseline-appendix.md)
+and [complete result tables](../code/results/shared_baselines/README.md) record
+the exact protocol, reruns, reusable inputs and provenance.
+
 The submission manuscript is `lens.tex`; the compiled file is `lens.pdf`. The
 official anonymous review style is active. Build it directly:
 
@@ -35,9 +58,9 @@ The archive's example manuscript and its bibliography, along with the earlier
 ACL template files and superseded figures, were removed from this branch; they
 remain on the `acl` branch if they are ever needed again.
 
-## Verified properties
+## Historical template-conversion checks
 
-Recorded from the last mechanical check of the manuscript. The checker script
+Recorded from the template-conversion check before the new baseline appendix. The checker script
 itself has been removed; re-verify by inspection before uploading.
 
 - Nine pages of main text; statements and references follow, then appendices.

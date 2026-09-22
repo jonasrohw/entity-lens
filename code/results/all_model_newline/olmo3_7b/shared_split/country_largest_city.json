@@ -1,0 +1,715 @@
+{
+  "relation": "country_largest_city",
+  "protocol": "shared_split",
+  "model": "olmo3_7b",
+  "worker": "rho2_7",
+  "lens": {
+    "n": 8,
+    "layer": 17,
+    "template": "The largest city in {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 1.0,
+        "median_lograng": 0.3010299956639812,
+        "agree_at1": 0.25,
+        "agree_at10": 1.0
+      },
+      "lre": {
+        "median_rank": 4870.5,
+        "median_lograng": 3.6688464094786246,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "France",
+        "model_top1_id": 12366,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "French",
+          "Paris",
+          "France",
+          "Bordeaux",
+          "Marseille"
+        ],
+        "rank_lre": 2336,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2336,
+          "0.5": 5144,
+          "1.5": 974,
+          "2.0": 387,
+          "3.0": 73,
+          "5.0": 3
+        }
+      },
+      {
+        "subject": "Pakistan",
+        "model_top1_id": 89708,
+        "model_top1": "Karachi",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Karachi",
+          "Pakistan",
+          "Lahore",
+          "Islamabad",
+          "Urdu"
+        ],
+        "rank_lre": 8028,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8028,
+          "0.5": 15074,
+          "1.5": 3840,
+          "2.0": 1713,
+          "3.0": 264,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 25048,
+        "model_top1": "Madrid",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Spain",
+          "Madrid",
+          "Spanish",
+          "Barcelona",
+          "Spain"
+        ],
+        "rank_lre": 9580,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9580,
+          "0.5": 15998,
+          "1.5": 5300,
+          "2.0": 2816,
+          "3.0": 700,
+          "5.0": 50
+        }
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 69173,
+        "model_top1": "Buenos",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Buenos",
+          "Argentine",
+          "Argentina",
+          "soccer",
+          "Uruguay"
+        ],
+        "rank_lre": 8243,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8243,
+          "0.5": 13393,
+          "1.5": 4780,
+          "2.0": 2647,
+          "3.0": 778,
+          "5.0": 60
+        }
+      },
+      {
+        "subject": "United Kingdom",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 2,
+        "top_diff": [
+          "British",
+          "England",
+          "London",
+          "Brexit",
+          "Yorkshire"
+        ],
+        "rank_lre": 1626,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1626,
+          "0.5": 3369,
+          "1.5": 760,
+          "2.0": 309,
+          "3.0": 63,
+          "5.0": 9
+        }
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 38147,
+        "model_top1": "Shanghai",
+        "n_references": 8,
+        "rank_diff": 6,
+        "top_diff": [
+          "Chinese",
+          "China",
+          "Beijing",
+          "Tian",
+          "chinese"
+        ],
+        "rank_lre": 3467,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3467,
+          "0.5": 7819,
+          "1.5": 1432,
+          "2.0": 557,
+          "3.0": 84,
+          "5.0": 13
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 51289,
+        "model_top1": "Seoul",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Korean",
+          "Seoul",
+          "Koreans",
+          "Korea",
+          "Samsung"
+        ],
+        "rank_lre": 6274,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6274,
+          "0.5": 13237,
+          "1.5": 2692,
+          "2.0": 1050,
+          "3.0": 134,
+          "5.0": 6
+        }
+      },
+      {
+        "subject": "Mexico",
+        "model_top1_id": 12550,
+        "model_top1": "Mexico",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Mexican",
+          "Mexico",
+          "Mexicans",
+          "tacos",
+          "mex"
+        ],
+        "rank_lre": 2691,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2691,
+          "0.5": 5850,
+          "1.5": 1151,
+          "2.0": 440,
+          "3.0": 67,
+          "5.0": 2
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 10528.0,
+          "median_lograng": 4.007514564906017,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4870.5,
+          "median_lograng": 3.6688464094786246,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 2062.0,
+          "median_lograng": 3.2932412719044275,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 803.5,
+          "median_lograng": 2.88411845748291,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 109.0,
+          "median_lograng": 2.0298763471046497,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 11.0,
+          "median_lograng": 1.073064017839119,
+          "agree_at1": 0.0,
+          "agree_at10": 0.5
+        }
+      }
+    },
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "country_largest_city",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "5": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.125,
+          0.0
+        ],
+        "2.0": [
+          0.375,
+          0.0
+        ],
+        "3.0": [
+          0.5,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.375,
+          0.0
+        ],
+        "2.0": [
+          0.375,
+          0.0
+        ],
+        "3.0": [
+          0.875,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.125,
+          0.0
+        ],
+        "2.0": [
+          0.375,
+          0.0
+        ],
+        "3.0": [
+          0.75,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.25,
+          0.0
+        ],
+        "1.5": [
+          0.875,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.125,
+          0.0
+        ],
+        "1.5": [
+          0.375,
+          0.0
+        ],
+        "2.0": [
+          0.75,
+          0.0
+        ],
+        "3.0": [
+          0.875,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.25,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "best_layer": 11,
+    "best_beta": 5.0,
+    "lm_correct": 8,
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false,
+    "distinct_first_token": true,
+    "per_subject": {
+      "France": 1,
+      "Pakistan": 1,
+      "Spain": 1,
+      "Argentina": 1,
+      "United Kingdom": 1,
+      "China": 1,
+      "South Korea": 1,
+      "Mexico": 1
+    },
+    "biased_single_draw_mean": 1.0
+  },
+  "n_lre": 8,
+  "baseline_lens": {
+    "n": 8,
+    "layer": 17,
+    "template": "The largest city in {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 4.5,
+        "median_lograng": 0.7385606273598313,
+        "agree_at1": 0.0,
+        "agree_at10": 0.875
+      },
+      "lre": {
+        "median_rank": 6145.0,
+        "median_lograng": 3.7779844172304586,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "France",
+        "model_top1": "Paris",
+        "rank_diff": 6,
+        "rank_lre": 4803,
+        "top_diff": [
+          "French",
+          "France",
+          "french",
+          "Bordeaux",
+          "French"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      },
+      {
+        "subject": "Pakistan",
+        "model_top1": "Karachi",
+        "rank_diff": 5,
+        "rank_lre": 13566,
+        "top_diff": [
+          "Pakistani",
+          "Pakistan",
+          "Pakistan",
+          "Islamabad",
+          "pakistan"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      },
+      {
+        "subject": "Spain",
+        "model_top1": "Madrid",
+        "rank_diff": 4,
+        "rank_lre": 12279,
+        "top_diff": [
+          "Spain",
+          "Spanish",
+          "Spain",
+          "Spanish",
+          "Madrid"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      },
+      {
+        "subject": "Argentina",
+        "model_top1": "Buenos",
+        "rank_diff": 2,
+        "rank_lre": 7487,
+        "top_diff": [
+          "Argentine",
+          "Argentina",
+          "Buenos",
+          "Argentina",
+          "Chile"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      },
+      {
+        "subject": "United Kingdom",
+        "model_top1": "London",
+        "rank_diff": 9,
+        "rank_lre": 474,
+        "top_diff": [
+          "Britain",
+          "Britain",
+          "UK",
+          "Scotland",
+          "England"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ]
+      },
+      {
+        "subject": "China",
+        "model_top1": "Shanghai",
+        "rank_diff": 11,
+        "rank_lre": 8909,
+        "top_diff": [
+          "Chinese",
+          "China",
+          "chinese",
+          "china",
+          "Chinese"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      },
+      {
+        "subject": "South Korea",
+        "model_top1": "Seoul",
+        "rank_diff": 3,
+        "rank_lre": 1515,
+        "top_diff": [
+          "Korea",
+          "Korean",
+          "Koreans",
+          "Seoul",
+          "Leban"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "producing",
+          "being",
+          "the"
+        ]
+      },
+      {
+        "subject": "Mexico",
+        "model_top1": "Mexico",
+        "rank_diff": 1,
+        "rank_lre": 3345,
+        "top_diff": [
+          "Mexican",
+          "Mexico",
+          "Mexicans",
+          "mex",
+          "Mex"
+        ],
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "producing",
+          "the"
+        ]
+      }
+    ],
+    "split_fingerprint": "fde7d372cb1f",
+    "legacy_split": false
+  },
+  "trailing_space": false,
+  "positions": {
+    "Germany": 1,
+    "India": 1,
+    "Japan": 1,
+    "New Zealand": 2,
+    "Russia": 1,
+    "Nigeria": 2,
+    "Brazil": 1,
+    "Poland": 2,
+    "France": 1,
+    "Pakistan": 1,
+    "Spain": 1,
+    "Argentina": 1,
+    "United Kingdom": 2,
+    "China": 1,
+    "South Korea": 2,
+    "Mexico": 1
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "fde7d372cb1f",
+  "baseline_sha256": {
+    "results/olmo/results/shared_split/jacobian_lens.json": "af2cb0a83bfb04f73b4fb913d494f26fce80760faf589b998a5373f0a8427e16",
+    "results/olmo/results/shared_split/faithfulness_country_largest_city.json": "1ae362122934061de71a402dd34dc522153c5d2f5d51fea27e14300f1f7e40cd"
+  },
+  "data_sha256": "ffb5e18dc1f26a101786905db84f087370bb191067ff8d9f1294156b1d9bdccc",
+  "elapsed_seconds": 2.8035295009613037
+}

@@ -1,0 +1,3382 @@
+{
+  "protocol": "main",
+  "n_relations": 28,
+  "analyses": {
+    "coarse_refs8": {
+      "scenario": "coarse",
+      "lre_references": 8,
+      "metric": "median_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.32452424420977555,
+        "p": 0.09201177038693885,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6312475805093103,
+          "p": 0.0003157669897901808,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6306998602659182,
+          "p": 0.00032075428044921753,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6161852738160295,
+          "p": 0.0004807892463962588,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 10.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6055047290698851,
+          "p": 0.0006396134644583211,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.604683148704797,
+          "p": 0.000653539848633322,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5989320861491808,
+          "p": 0.000758662987617427,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5983843659057887,
+          "p": 0.0007694041888181082,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5857868003077721,
+          "p": 0.001055899170788401,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "diff",
+            "beta": null,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5822266187257239,
+          "p": 0.0011520450960298165,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.58113117823894,
+          "p": 0.0011831182854860338,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 3,
+          "references": 8,
+          "readout": "affine",
+          "beta": 20.0,
+          "metric": "median_logrank"
+        },
+        "selection": {
+          "rho": 0.585904505000135,
+          "p": 0.02768362384435284,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": 0.002197802197802198,
+          "p": 0.9940505286658997,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 11,
+          "beta": 5.0,
+          "score": 0.6363636363636364
+        },
+        "company_ceo": {
+          "layer": 5,
+          "beta": 0.5,
+          "score": 0.06
+        },
+        "company_hq": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.42
+        },
+        "country_capital_city": {
+          "layer": 17,
+          "beta": 5.0,
+          "score": 0.5
+        },
+        "country_currency": {
+          "layer": 5,
+          "beta": 0.5,
+          "score": 0.14285714285714285
+        },
+        "country_language": {
+          "layer": 11,
+          "beta": 5.0,
+          "score": 0.75
+        },
+        "country_largest_city": {
+          "layer": 5,
+          "beta": 5.0,
+          "score": 0.25
+        },
+        "landmark_in_country": {
+          "layer": 23,
+          "beta": 5.0,
+          "score": 0.81
+        },
+        "landmark_on_continent": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.89
+        },
+        "name_birthplace": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.9333333333333333
+        },
+        "name_gender": {
+          "layer": 11,
+          "beta": 3.0,
+          "score": 0.6666666666666666
+        },
+        "name_religion": {
+          "layer": 14,
+          "beta": 3.0,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 5,
+          "beta": 5.0,
+          "score": 0.4
+        },
+        "person_father": {
+          "layer": 5,
+          "beta": 5.0,
+          "score": 0.02
+        },
+        "person_mother": {
+          "layer": 5,
+          "beta": 0.5,
+          "score": 0.08
+        },
+        "person_native_language": {
+          "layer": 17,
+          "beta": 5.0,
+          "score": 0.9
+        },
+        "person_occupation": {
+          "layer": 14,
+          "beta": 2.0,
+          "score": 0.82
+        },
+        "person_plays_instrument": {
+          "layer": 17,
+          "beta": 5.0,
+          "score": 0.83
+        },
+        "person_plays_position_in_sport": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.71
+        },
+        "person_plays_pro_sport": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.98
+        },
+        "person_university": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.48
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.0,
+          "score": 0.25
+        },
+        "presidents_birth_year": {
+          "layer": 5,
+          "beta": 0.5,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 5,
+          "beta": 0.5,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 14,
+          "beta": 5.0,
+          "score": 0.61
+        },
+        "star_constellation": {
+          "layer": 17,
+          "beta": 5.0,
+          "score": 0.2
+        },
+        "superhero_archnemesis": {
+          "layer": 5,
+          "beta": 2.0,
+          "score": 0.125
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.0,
+          "score": 0.23809523809523808
+        }
+      },
+      "faithfulness_mean": 0.5607970006184291,
+      "maximum_permutation_test": {
+        "observed_max_rho": 0.6312475805093104,
+        "permutations": 2000,
+        "seed": 20260919,
+        "adjusted_p": 0.03248375812093953,
+        "null_95th_percentile": 0.6060524493132771,
+        "scope": "Maximum over this lens grid, conditional on this LRE target; not adjusted for prior model selection or all research decisions."
+      }
+    },
+    "dense_refs8": {
+      "scenario": "dense",
+      "lre_references": 8,
+      "metric": "median_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.3514894555877994,
+        "p": 0.0666340961289081,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5690388760650681,
+          "p": 0.0015775475272024465,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5522619928171371,
+          "p": 0.0023103220452912296,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5401606344087935,
+          "p": 0.003005847146711891,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5346600169504555,
+          "p": 0.0033770733354462905,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5255839981441978,
+          "p": 0.004075400949268088,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 10.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5228336894150287,
+          "p": 0.0043099299984666285,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5214585350504443,
+          "p": 0.004431444773174112,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5115574236254358,
+          "p": 0.005395607828599363,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.502481404819178,
+          "p": 0.006430391356117821,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5019313430733442,
+          "p": 0.00649815731806065,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 1,
+          "references": 8,
+          "readout": "diff",
+          "beta": null,
+          "metric": "median_logrank"
+        },
+        "selection": {
+          "rho": 0.5422556958292067,
+          "p": 0.045148795202255614,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": -0.1914192577460426,
+          "p": 0.5121111381568589,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 18,
+          "beta": 7.5,
+          "score": 0.54
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 20.0,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.75,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 16,
+          "beta": 6.5,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 30.0,
+          "score": 0.08
+        },
+        "person_mother": {
+          "layer": 3,
+          "beta": 3.5,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.5,
+          "score": 0.97
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.75,
+          "score": 0.87
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.75,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 16,
+          "beta": 10.0,
+          "score": 0.66
+        },
+        "star_constellation": {
+          "layer": 17,
+          "beta": 15.0,
+          "score": 0.28
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.75,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6657626004947435,
+      "maximum_permutation_test": null
+    },
+    "continuous_refs8": {
+      "scenario": "continuous",
+      "lre_references": 8,
+      "metric": "median_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.35708878452957965,
+        "p": 0.062121615440274815,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5782747496773317,
+          "p": 0.0012675898300869976,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5568164097749378,
+          "p": 0.0020871022281762383,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5447117052146131,
+          "p": 0.002725706426388261,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5405851013872296,
+          "p": 0.002978715580124284,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5372838183253229,
+          "p": 0.003195376950090618,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5301310383578582,
+          "p": 0.0037115318478952346,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 10.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5293057175923815,
+          "p": 0.003775433435097313,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5166507991884057,
+          "p": 0.004879487668249118,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5092229122991156,
+          "p": 0.005647225307804682,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.50894780537729,
+          "p": 0.005677521716741262,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 1,
+          "references": 8,
+          "readout": "diff",
+          "beta": null,
+          "metric": "median_logrank"
+        },
+        "selection": {
+          "rho": 0.5422556958292067,
+          "p": 0.045148795202255614,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": -0.2134214712800705,
+          "p": 0.4637995378995399,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 22,
+          "beta": 24.21368746616279,
+          "score": 0.55
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.667512698585398,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 1,
+          "beta": 35.32923509438609,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 25.621539490522245,
+          "score": 0.09
+        },
+        "person_mother": {
+          "layer": 1,
+          "beta": 3.953081833083351,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.646343142473455,
+          "score": 0.98
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.937239056937804,
+          "score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.6884307426324066,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.67
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.030079975314663,
+          "score": 0.29
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.7149646615704306,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6679054576376007,
+      "maximum_permutation_test": {
+        "observed_max_rho": 0.5782747496773317,
+        "permutations": 2000,
+        "seed": 20260919,
+        "adjusted_p": 0.08545727136431784,
+        "null_95th_percentile": 0.6075048601212978,
+        "scope": "Maximum over this lens grid, conditional on this LRE target; not adjusted for prior model selection or all research decisions."
+      }
+    },
+    "continuous_refs4": {
+      "scenario": "continuous",
+      "lre_references": 4,
+      "metric": "median_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.36281586523296083,
+        "p": 0.05775590950121209,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5721432901323417,
+          "p": 0.0014667573059809536,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5391350233939373,
+          "p": 0.003072279370119212,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5352840589411235,
+          "p": 0.003333076447744121,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5344588522726633,
+          "p": 0.0033913615878603193,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5270319922565224,
+          "p": 0.003956362623077034,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5262067855880622,
+          "p": 0.004023832902219742,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5234560966931953,
+          "p": 0.0042558719843385955,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5157541677875676,
+          "p": 0.004967171432699128,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 10.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5146538922296207,
+          "p": 0.005076597226845188,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.5091525144398867,
+          "p": 0.005654964855288123,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 1,
+          "references": 8,
+          "readout": "diff",
+          "beta": null,
+          "metric": "median_logrank"
+        },
+        "selection": {
+          "rho": 0.5378109770109346,
+          "p": 0.047294804161434056,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": -0.20902102857326493,
+          "p": 0.4732811189315494,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 9,
+          "beta": 13.358625526120335,
+          "score": 0.7272727272727273
+        },
+        "company_ceo": {
+          "layer": 29,
+          "beta": 30.0,
+          "score": 0.05
+        },
+        "company_hq": {
+          "layer": 23,
+          "beta": 19.218086561248864,
+          "score": 0.52
+        },
+        "country_capital_city": {
+          "layer": 16,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 4,
+          "beta": 30.0,
+          "score": 0.21428571428571427
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 4.5,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 5.25,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 20.0,
+          "score": 0.9
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 5.420047327128911,
+          "score": 0.91
+        },
+        "name_birthplace": {
+          "layer": 18,
+          "beta": 4.5,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 10,
+          "beta": 0.75,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 1.75,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 16,
+          "beta": 5.5,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 24,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "person_mother": {
+          "layer": 12,
+          "beta": 2.4908711699694406,
+          "score": 0.05
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 5.232759238508317,
+          "score": 0.96
+        },
+        "person_occupation": {
+          "layer": 21,
+          "beta": 6.0,
+          "score": 0.85
+        },
+        "person_plays_instrument": {
+          "layer": 17,
+          "beta": 3.1571843007727765,
+          "score": 0.83
+        },
+        "person_plays_position_in_sport": {
+          "layer": 13,
+          "beta": 6.25,
+          "score": 0.72
+        },
+        "person_plays_pro_sport": {
+          "layer": 14,
+          "beta": 5.725145199504077,
+          "score": 0.96
+        },
+        "person_university": {
+          "layer": 18,
+          "beta": 3.861966756816882,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 13,
+          "beta": 8.833448948664273,
+          "score": 0.17857142857142858
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 18,
+          "beta": 22.67090658162804,
+          "score": 0.63
+        },
+        "star_constellation": {
+          "layer": 19,
+          "beta": 38.805405855619625,
+          "score": 0.3
+        },
+        "superhero_archnemesis": {
+          "layer": 9,
+          "beta": 1.6740244342234682,
+          "score": 0.15
+        },
+        "superhero_person": {
+          "layer": 18,
+          "beta": 3.672470943747089,
+          "score": 0.20238095238095238
+        }
+      },
+      "faithfulness_mean": 0.6318158627087198,
+      "maximum_permutation_test": null
+    },
+    "calibrated_refs8": {
+      "scenario": "calibrated",
+      "lre_references": 8,
+      "metric": "median_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.5894131700139722,
+        "p": 0.0019320483988231184,
+        "n": 25
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "diff",
+            "beta": null,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6741100331119956,
+          "p": 0.00022004945317278006,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 14,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6602505464232282,
+          "p": 0.00032862057983996815,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 11,
+            "references": 8,
+            "readout": "diff",
+            "beta": null,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6517808601134257,
+          "p": 0.0004158018316019879,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6390763306487223,
+          "p": 0.0005841397052063846,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 11,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6375363876833037,
+          "p": 0.0006080913725379833,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 10,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6367664162005943,
+          "p": 0.0006203831345072992,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 16,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6317616015629839,
+          "p": 0.0007056547880191543,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 14,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6302216585975653,
+          "p": 0.0007338535666641815,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 19,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6275267584080827,
+          "p": 0.000785551229850886,
+          "n": 25
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 16,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "median_logrank"
+          },
+          "rho": 0.6267567869253735,
+          "p": 0.0008008881984340408,
+          "n": 25
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "known_for",
+          "layer": 9,
+          "references": 8,
+          "readout": "affine",
+          "beta": 50.0,
+          "metric": "median_logrank"
+        },
+        "selection": {
+          "rho": 0.7810870121972561,
+          "p": 0.0027052956461396886,
+          "n": 12
+        },
+        "evaluation": {
+          "rho": 0.42641030710756533,
+          "p": 0.14622598612857032,
+          "n": 13
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 8,
+          "beta": 10.0,
+          "score": 0.6666666666666666,
+          "selection_score": 0.8
+        },
+        "company_ceo": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 0.1,
+          "selection_score": 0.02
+        },
+        "company_hq": {
+          "layer": 18,
+          "beta": 7.5,
+          "score": 0.46,
+          "selection_score": 0.62
+        },
+        "country_capital_city": {
+          "layer": 11,
+          "beta": 3.6146590143037525,
+          "score": 0.0,
+          "selection_score": 0.75
+        },
+        "country_currency": {
+          "layer": 17,
+          "beta": 11.65397340230966,
+          "score": 0.42857142857142855,
+          "selection_score": 0.42857142857142855
+        },
+        "country_language": {
+          "layer": 15,
+          "beta": 14.55635374866525,
+          "score": 0.75,
+          "selection_score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.75,
+          "selection_score": 0.5
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.9,
+          "selection_score": 0.92
+        },
+        "landmark_on_continent": {
+          "layer": 14,
+          "beta": 3.25,
+          "score": 0.82,
+          "selection_score": 0.94
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0,
+          "selection_score": 1.0
+        },
+        "name_religion": {
+          "layer": 6,
+          "beta": 7.75,
+          "score": 0.75,
+          "selection_score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.3333333333333333,
+          "selection_score": 1.0
+        },
+        "person_father": {
+          "layer": 9,
+          "beta": 5.25,
+          "score": 0.0,
+          "selection_score": 0.08
+        },
+        "person_mother": {
+          "layer": 24,
+          "beta": 29.01767478250956,
+          "score": 0.02,
+          "selection_score": 0.14
+        },
+        "person_native_language": {
+          "layer": 16,
+          "beta": 9.47720966508281,
+          "score": 0.92,
+          "selection_score": 1.0
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.8,
+          "selection_score": 0.96
+        },
+        "person_plays_instrument": {
+          "layer": 21,
+          "beta": 33.684300895894545,
+          "score": 0.74,
+          "selection_score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 13,
+          "beta": 2.361628485214988,
+          "score": 0.68,
+          "selection_score": 0.78
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 4.0,
+          "score": 0.94,
+          "selection_score": 1.0
+        },
+        "person_university": {
+          "layer": 6,
+          "beta": 6.944604168415944,
+          "score": 0.47368421052631576,
+          "selection_score": 0.4864864864864865
+        },
+        "pokemon_evolutions": {
+          "layer": 19,
+          "beta": 20.0,
+          "score": 0.14285714285714285,
+          "selection_score": 0.2857142857142857
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.62,
+          "selection_score": 0.72
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.413881605221142,
+          "score": 0.22,
+          "selection_score": 0.36
+        },
+        "superhero_archnemesis": {
+          "layer": 7,
+          "beta": 2.75,
+          "score": 0.05,
+          "selection_score": 0.225
+        },
+        "superhero_person": {
+          "layer": 14,
+          "beta": 3.75,
+          "score": 0.2619047619047619,
+          "selection_score": 0.30952380952380953
+        }
+      },
+      "faithfulness_mean": 0.513080701754386,
+      "maximum_permutation_test": null
+    }
+  },
+  "metric_sensitivity": {
+    "mean_logrank": {
+      "scenario": "continuous",
+      "lre_references": 8,
+      "metric": "mean_logrank",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.3768964829010202,
+        "p": 0.048039689382493055,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.48143711319473376,
+          "p": 0.009490792271969523,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.4638302701978978,
+          "p": 0.01291327549504015,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.4583281317613866,
+          "p": 0.014172926633817683,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.4583281317613866,
+          "p": 0.014172926633817683,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 21,
+            "references": 4,
+            "readout": "affine",
+            "beta": 5.5,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.45282599332487533,
+          "p": 0.015532872996128372,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.44622342720106184,
+          "p": 0.01730556991367037,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 21,
+            "references": 4,
+            "readout": "affine",
+            "beta": 5.0,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.444847892591934,
+          "p": 0.017695114430547776,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 21,
+            "references": 4,
+            "readout": "affine",
+            "beta": 5.25,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.444847892591934,
+          "p": 0.017695114430547776,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 21,
+            "references": 4,
+            "readout": "affine",
+            "beta": 3.25,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.4426470372173295,
+          "p": 0.01833339808749006,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 21,
+            "references": 4,
+            "readout": "affine",
+            "beta": 6.75,
+            "metric": "mean_logrank"
+          },
+          "rho": 0.4426470372173295,
+          "p": 0.01833339808749006,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 20,
+          "references": 4,
+          "readout": "affine",
+          "beta": 3.0,
+          "metric": "mean_logrank"
+        },
+        "selection": {
+          "rho": 0.6111488375124255,
+          "p": 0.02023352203242815,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": 0.33883408842402946,
+          "p": 0.23599202908513403,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 22,
+          "beta": 24.21368746616279,
+          "score": 0.55
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.667512698585398,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 1,
+          "beta": 35.32923509438609,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 25.621539490522245,
+          "score": 0.09
+        },
+        "person_mother": {
+          "layer": 1,
+          "beta": 3.953081833083351,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.646343142473455,
+          "score": 0.98
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.937239056937804,
+          "score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.6884307426324066,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.67
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.030079975314663,
+          "score": 0.29
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.7149646615704306,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6679054576376007,
+      "maximum_permutation_test": null
+    },
+    "top1": {
+      "scenario": "continuous",
+      "lre_references": 8,
+      "metric": "top1",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.36032152420508573,
+        "p": 0.05962684856912628,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 10,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "top1"
+          },
+          "rho": 0.4676555627859914,
+          "p": 0.012093575432323655,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 8,
+            "readout": "diff",
+            "beta": null,
+            "metric": "top1"
+          },
+          "rho": 0.46290967247704223,
+          "p": 0.013117295814291706,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "diff",
+            "beta": null,
+            "metric": "top1"
+          },
+          "rho": 0.4429032413678834,
+          "p": 0.01825813400248439,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 23,
+            "references": 8,
+            "readout": "affine",
+            "beta": 5.25,
+            "metric": "top1"
+          },
+          "rho": 0.43962534603067455,
+          "p": 0.019240498385425346,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 15,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "top1"
+          },
+          "rho": 0.43879290309210933,
+          "p": 0.01949677325744652,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 11,
+            "references": 4,
+            "readout": "diff",
+            "beta": null,
+            "metric": "top1"
+          },
+          "rho": 0.4325143199927282,
+          "p": 0.02152140608367728,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 15,
+            "references": 4,
+            "readout": "diff",
+            "beta": null,
+            "metric": "top1"
+          },
+          "rho": 0.43073676856328824,
+          "p": 0.022124866405023955,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 11,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "top1"
+          },
+          "rho": 0.425612495737525,
+          "p": 0.023942372549579333,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 11,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "top1"
+          },
+          "rho": 0.425612495737525,
+          "p": 0.023942372549579333,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 23,
+            "references": 8,
+            "readout": "affine",
+            "beta": 4.25,
+            "metric": "top1"
+          },
+          "rho": 0.42438739058807545,
+          "p": 0.024394458591273288,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 31,
+          "references": 4,
+          "readout": "affine",
+          "beta": 0.75,
+          "metric": "top1"
+        },
+        "selection": {
+          "rho": 0.512027620977809,
+          "p": 0.06123416662233437,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": null,
+          "p": null,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 22,
+          "beta": 24.21368746616279,
+          "score": 0.55
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.667512698585398,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 1,
+          "beta": 35.32923509438609,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 25.621539490522245,
+          "score": 0.09
+        },
+        "person_mother": {
+          "layer": 1,
+          "beta": 3.953081833083351,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.646343142473455,
+          "score": 0.98
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.937239056937804,
+          "score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.6884307426324066,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.67
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.030079975314663,
+          "score": 0.29
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.7149646615704306,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6679054576376007,
+      "maximum_permutation_test": null
+    },
+    "top10": {
+      "scenario": "continuous",
+      "lre_references": 8,
+      "metric": "top10",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.33081048122774653,
+        "p": 0.08552907026824472,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "top10"
+          },
+          "rho": 0.48441446854025805,
+          "p": 0.008995138247213222,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "top10"
+          },
+          "rho": 0.48051185560586507,
+          "p": 0.009649410336362005,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "top10"
+          },
+          "rho": 0.4685087457385844,
+          "p": 0.011916794603939808,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "top10"
+          },
+          "rho": 0.4677339777110337,
+          "p": 0.01207723707608616,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "top10"
+          },
+          "rho": 0.4623997950528174,
+          "p": 0.013231441981982686,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 7,
+            "references": 8,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "top10"
+          },
+          "rho": 0.4566016508552083,
+          "p": 0.014588581551993805,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 8,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "top10"
+          },
+          "rho": 0.4563249191281272,
+          "p": 0.01465613571666043,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "top10"
+          },
+          "rho": 0.44802591778653666,
+          "p": 0.016805845366808465,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 15.0,
+            "metric": "top10"
+          },
+          "rho": 0.44423054998087486,
+          "p": 0.017872276955471066,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 7,
+            "references": 4,
+            "readout": "affine",
+            "beta": 10.0,
+            "metric": "top10"
+          },
+          "rho": 0.4436359811129847,
+          "p": 0.018044282839919757,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 30,
+          "references": 4,
+          "readout": "affine",
+          "beta": 1.75,
+          "metric": "top10"
+        },
+        "selection": {
+          "rho": 0.5362114462198692,
+          "p": 0.048084982066398115,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": -0.058601373235907715,
+          "p": 0.8422684761263797,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 22,
+          "beta": 24.21368746616279,
+          "score": 0.55
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.667512698585398,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 1,
+          "beta": 35.32923509438609,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 25.621539490522245,
+          "score": 0.09
+        },
+        "person_mother": {
+          "layer": 1,
+          "beta": 3.953081833083351,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.646343142473455,
+          "score": 0.98
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.937239056937804,
+          "score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.6884307426324066,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.67
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.030079975314663,
+          "score": 0.29
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.7149646615704306,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6679054576376007,
+      "maximum_permutation_test": null
+    },
+    "mrr": {
+      "scenario": "continuous",
+      "lre_references": 8,
+      "metric": "mrr",
+      "n_candidates": 5330,
+      "relations": [
+        "city_in_country",
+        "company_ceo",
+        "company_hq",
+        "country_capital_city",
+        "country_currency",
+        "country_language",
+        "country_largest_city",
+        "landmark_in_country",
+        "landmark_on_continent",
+        "name_birthplace",
+        "name_gender",
+        "name_religion",
+        "person_band_lead_singer",
+        "person_father",
+        "person_mother",
+        "person_native_language",
+        "person_occupation",
+        "person_plays_instrument",
+        "person_plays_position_in_sport",
+        "person_plays_pro_sport",
+        "person_university",
+        "pokemon_evolutions",
+        "presidents_birth_year",
+        "presidents_election_year",
+        "product_by_company",
+        "star_constellation",
+        "superhero_archnemesis",
+        "superhero_person"
+      ],
+      "baseline_lens": {
+        "rho": 0.3086699662882807,
+        "p": 0.11000589678630592,
+        "n": 28
+      },
+      "exploratory_top10": [
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "mrr"
+          },
+          "rho": 0.4434723579828062,
+          "p": 0.018091856695602707,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "mrr"
+          },
+          "rho": 0.42201401808041233,
+          "p": 0.025290069845641725,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "mrr"
+          },
+          "rho": 0.4195380557839823,
+          "p": 0.02625273154094104,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 8,
+            "readout": "affine",
+            "beta": 50.0,
+            "metric": "mrr"
+          },
+          "rho": 0.4077084581454831,
+          "p": 0.03127160619043593,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "diff",
+            "beta": null,
+            "metric": "mrr"
+          },
+          "rho": 0.39587886050698395,
+          "p": 0.03703764374512273,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 8,
+            "readout": "affine",
+            "beta": 100.0,
+            "metric": "mrr"
+          },
+          "rho": 0.39450332589785614,
+          "p": 0.037759995692493095,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 8,
+            "readout": "affine",
+            "beta": 30.0,
+            "metric": "mrr"
+          },
+          "rho": 0.3854247974776126,
+          "p": 0.042814744047272736,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 8,
+            "readout": "diff",
+            "beta": null,
+            "metric": "mrr"
+          },
+          "rho": 0.38432436979031037,
+          "p": 0.043462340572388986,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "known_for",
+            "layer": 18,
+            "references": 4,
+            "readout": "affine",
+            "beta": 20.0,
+            "metric": "mrr"
+          },
+          "rho": 0.3829488351811825,
+          "p": 0.044282753817645355,
+          "n": 28
+        },
+        {
+          "config": {
+            "prompt": "bare_subject",
+            "layer": 20,
+            "references": 8,
+            "readout": "affine",
+            "beta": 5.75,
+            "metric": "mrr"
+          },
+          "rho": 0.3760711621355435,
+          "p": 0.048570942615005754,
+          "n": 28
+        }
+      ],
+      "heldout_relations": {
+        "config": {
+          "prompt": "bare_subject",
+          "layer": 18,
+          "references": 4,
+          "readout": "affine",
+          "beta": 5.0,
+          "metric": "mrr"
+        },
+        "selection": {
+          "rho": 0.644484228649467,
+          "p": 0.012844206691375122,
+          "n": 14
+        },
+        "evaluation": {
+          "rho": 0.2618263410549319,
+          "p": 0.36586453614945935,
+          "n": 14
+        },
+        "selection_relations": [
+          "city_in_country",
+          "country_language",
+          "country_largest_city",
+          "landmark_in_country",
+          "name_birthplace",
+          "person_mother",
+          "person_native_language",
+          "person_occupation",
+          "person_plays_position_in_sport",
+          "pokemon_evolutions",
+          "presidents_birth_year",
+          "presidents_election_year",
+          "product_by_company",
+          "superhero_archnemesis"
+        ],
+        "evaluation_relations": [
+          "company_ceo",
+          "company_hq",
+          "country_capital_city",
+          "country_currency",
+          "landmark_on_continent",
+          "name_gender",
+          "name_religion",
+          "person_band_lead_singer",
+          "person_father",
+          "person_plays_instrument",
+          "person_plays_pro_sport",
+          "person_university",
+          "star_constellation",
+          "superhero_person"
+        ]
+      },
+      "selected_faith": {
+        "city_in_country": {
+          "layer": 10,
+          "beta": 10.0,
+          "score": 0.9090909090909091
+        },
+        "company_ceo": {
+          "layer": 25,
+          "beta": 15.0,
+          "score": 0.07
+        },
+        "company_hq": {
+          "layer": 22,
+          "beta": 24.21368746616279,
+          "score": 0.55
+        },
+        "country_capital_city": {
+          "layer": 14,
+          "beta": 10.0,
+          "score": 0.75
+        },
+        "country_currency": {
+          "layer": 18,
+          "beta": 5.75,
+          "score": 0.5
+        },
+        "country_language": {
+          "layer": 18,
+          "beta": 3.75,
+          "score": 1.0
+        },
+        "country_largest_city": {
+          "layer": 18,
+          "beta": 7.0,
+          "score": 0.625
+        },
+        "landmark_in_country": {
+          "layer": 22,
+          "beta": 19.988692768454346,
+          "score": 0.91
+        },
+        "landmark_on_continent": {
+          "layer": 15,
+          "beta": 4.667512698585398,
+          "score": 0.93
+        },
+        "name_birthplace": {
+          "layer": 16,
+          "beta": 15.0,
+          "score": 1.0
+        },
+        "name_gender": {
+          "layer": 1,
+          "beta": 35.32923509438609,
+          "score": 1.0
+        },
+        "name_religion": {
+          "layer": 7,
+          "beta": 2.25,
+          "score": 1.0
+        },
+        "person_band_lead_singer": {
+          "layer": 4,
+          "beta": 15.0,
+          "score": 0.6
+        },
+        "person_father": {
+          "layer": 22,
+          "beta": 25.621539490522245,
+          "score": 0.09
+        },
+        "person_mother": {
+          "layer": 1,
+          "beta": 3.953081833083351,
+          "score": 0.09
+        },
+        "person_native_language": {
+          "layer": 18,
+          "beta": 4.646343142473455,
+          "score": 0.98
+        },
+        "person_occupation": {
+          "layer": 19,
+          "beta": 4.5,
+          "score": 0.88
+        },
+        "person_plays_instrument": {
+          "layer": 16,
+          "beta": 3.937239056937804,
+          "score": 0.88
+        },
+        "person_plays_position_in_sport": {
+          "layer": 12,
+          "beta": 2.6884307426324066,
+          "score": 0.76
+        },
+        "person_plays_pro_sport": {
+          "layer": 12,
+          "beta": 7.75,
+          "score": 0.99
+        },
+        "person_university": {
+          "layer": 5,
+          "beta": 6.25,
+          "score": 0.49333333333333335
+        },
+        "pokemon_evolutions": {
+          "layer": 17,
+          "beta": 5.25,
+          "score": 0.2857142857142857
+        },
+        "presidents_birth_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "presidents_election_year": {
+          "layer": 0,
+          "beta": 0.0625,
+          "score": 1.0
+        },
+        "product_by_company": {
+          "layer": 19,
+          "beta": 15.881097125547507,
+          "score": 0.67
+        },
+        "star_constellation": {
+          "layer": 16,
+          "beta": 23.030079975314663,
+          "score": 0.29
+        },
+        "superhero_archnemesis": {
+          "layer": 8,
+          "beta": 2.7149646615704306,
+          "score": 0.1625
+        },
+        "superhero_person": {
+          "layer": 11,
+          "beta": 3.25,
+          "score": 0.2857142857142857
+        }
+      },
+      "faithfulness_mean": 0.6679054576376007,
+      "maximum_permutation_test": null
+    }
+  },
+  "controls": {
+    "matched_predictions": {
+      "rho": 0.8296031404907239,
+      "p": 4.8335635180243095e-08,
+      "n": 28,
+      "warning": "Same predictions and targets define both rank and top-1 faithfulness; this is a positive control, not independent lens evidence."
+    },
+    "zero_beta_neutral": {
+      "rho": 0.03548879291549752,
+      "p": 0.8577151145917737,
+      "n": 28
+    },
+    "mean_prior_only_faithfulness": 0.2656118583797155,
+    "mean_continuous_faithfulness": 0.6679054576376007,
+    "calibration_cohort": {
+      "n": 25,
+      "excluded": [
+        "name_gender",
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "original_lens_original_lre": {
+        "rho": 0.6366609081033218,
+        "p": 0.0006220841151298779,
+        "n": 25
+      },
+      "original_lens_continuous_lre": {
+        "rho": 0.7167347162481618,
+        "p": 5.5602776239495405e-05,
+        "n": 25
+      }
+    }
+  },
+  "unverified_interval_optima": [],
+  "caveat": "Exploratory maxima; nominal p-values at selected settings do not account for search. Model choice used earlier full-relation results."
+}

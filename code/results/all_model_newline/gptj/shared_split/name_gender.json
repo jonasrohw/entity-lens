@@ -1,0 +1,455 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "model": "gptj",
+  "worker": "rho2_6",
+  "lens": {
+    "n": 3,
+    "layer": 15,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 20830.0,
+        "median_lograng": 4.318710118918341,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 3099.0,
+        "median_lograng": 3.4913616938342726,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 30819,
+        "top_diff": [
+          "Tom",
+          "Tom",
+          "TOM",
+          "Tommy",
+          "Tomato"
+        ],
+        "rank_lre": 3099,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3099,
+          "0.5": 3007,
+          "1.5": 3196,
+          "2.0": 3304,
+          "3.0": 3555,
+          "5.0": 4110
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 317,
+        "top_diff": [
+          "Emily",
+          "Emily",
+          "Betsy",
+          "Cathy",
+          "Dickinson"
+        ],
+        "rank_lre": 4859,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4859,
+          "0.5": 5526,
+          "1.5": 4277,
+          "2.0": 3796,
+          "3.0": 2871,
+          "5.0": 1675
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 20830,
+        "top_diff": [
+          "Evan",
+          "Ethan",
+          "Evans",
+          "EV",
+          "Gavin"
+        ],
+        "rank_lre": 2969,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2969,
+          "0.5": 2942,
+          "1.5": 2994,
+          "2.0": 3031,
+          "3.0": 3126,
+          "5.0": 3414
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 3007.0,
+          "median_lograng": 3.4782778319196046,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 3099.0,
+          "median_lograng": 3.4913616938342726,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 3196.0,
+          "median_lograng": 3.504742636271688,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 3304.0,
+          "median_lograng": 3.519171463821659,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3126.0,
+          "median_lograng": 3.4951278812429334,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3414.0,
+          "median_lograng": 3.5333907080175515,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "name_gender",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "4": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "10": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          1.0,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          1.0,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "15": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          1.0,
+          0.0
+        ],
+        "1.5": [
+          1.0,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "18": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          1.0,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "best_layer": 10,
+    "best_beta": 1.5,
+    "lm_correct": 3,
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "distinct_first_token": true,
+    "per_subject": {
+      "Tom": 1,
+      "Emily": 1,
+      "Evan": 1
+    },
+    "biased_single_draw_mean": 1.0
+  },
+  "n_lre": 3,
+  "baseline_lens": {
+    "n": 3,
+    "layer": 15,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 29434.0,
+        "median_lograng": 4.468864040148188,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 8421.0,
+        "median_lograng": 3.925415237084246,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1": "man",
+        "rank_diff": 30399,
+        "rank_lre": 9216,
+        "top_diff": [
+          "Caleb",
+          "Natalie",
+          "Nathaniel",
+          "Benjamin",
+          "Oliver"
+        ],
+        "top_lre": [
+          "Caleb",
+          "Natalie",
+          "Benjamin",
+          "Nathaniel",
+          "Oliver"
+        ]
+      },
+      {
+        "subject": "Emily",
+        "model_top1": "woman",
+        "rank_diff": 29434,
+        "rank_lre": 8421,
+        "top_diff": [
+          "Caleb",
+          "Natalie",
+          "Nathaniel",
+          "Benjamin",
+          "Oliver"
+        ],
+        "top_lre": [
+          "Caleb",
+          "Natalie",
+          "Benjamin",
+          "Oliver",
+          "Nathaniel"
+        ]
+      },
+      {
+        "subject": "Evan",
+        "model_top1": "man",
+        "rank_diff": 15284,
+        "rank_lre": 1940,
+        "top_diff": [
+          "Evan",
+          "Ethan",
+          "EV",
+          "Evans",
+          "Eli"
+        ],
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ]
+      }
+    ],
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false
+  },
+  "trailing_space": false,
+  "positions": {
+    "Oliver": 2,
+    "William": 1,
+    "Caleb": 2,
+    "Natalie": 2,
+    "Benjamin": 2,
+    "Scarlett": 2,
+    "Connor": 1,
+    "Sofia": 3,
+    "Tom": 1,
+    "Emily": 1,
+    "Evan": 2
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "e768509b2ebf",
+  "baseline_sha256": {
+    "results/gptj/results/shared_split/jacobian_lens.json": "3b7ae3386a8b5acf6dd04457ac4fcec439e9bece3eb262cfa18cfd2877052780",
+    "results/gptj/results/shared_split/faithfulness_name_gender.json": "cb92e5f4aa5d32ba3368ef3be9a201c7e7beefbe15d5815575b6b3cf6a8d7a19"
+  },
+  "data_sha256": "cfeded39fc091fb548791cf588e9ab0d1613b2ab5f8e72645929b55a4583fcf2",
+  "elapsed_seconds": 1.3845922946929932
+}

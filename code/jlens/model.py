@@ -79,7 +79,12 @@ def final_logits(hidden, norm, unembedding, lm_bias=None, softcap=None):
 
 
 def forward_capturing_final_block(
-    model, final_block, input_ids, output_hidden_states=False
+    model,
+    final_block,
+    input_ids,
+    output_hidden_states=False,
+    *,
+    last_position_only=True,
 ):
     """Run one forward pass, returning ``(output, raw final-block hidden state)``.
 
@@ -90,12 +95,14 @@ def forward_capturing_final_block(
     block output. Downstream code (``final_logits``) expects a pre-norm
     vector and would otherwise normalize it a second time. Does not detach
     the captured tensor, so gradients still flow through it for the JVP.
+    Set ``last_position_only=False`` to capture every token, including the
+    subject position when the final block is also the intervention layer.
     """
     captured = {}
 
     def _capture(module, inputs, output):
         state = output[0] if isinstance(output, tuple) else output
-        captured["value"] = state[0, -1, :]
+        captured["value"] = state[0, -1, :] if last_position_only else state
 
     handle = final_block.register_forward_hook(_capture)
     try:
@@ -103,6 +110,25 @@ def forward_capturing_final_block(
     finally:
         handle.remove()
     return output, captured["value"]
+
+
+def forward_with_raw_hidden_states(model, input_ids):
+    """Return HF output plus states at consistent, pre-final-norm boundaries.
+
+    State 0 is the embedding; state k is the output of block k-1, including
+    the last block. HF's own final hidden-state entry is post-norm on GPT-J
+    and OLMo. Injecting that entry at a block-output hook changes even an
+    otherwise unmodified reference. Keep the original HF output intact and
+    return a separate tuple with the raw final block output substituted.
+    """
+    output, raw_final = forward_capturing_final_block(
+        model,
+        resolve_blocks(model)[-1],
+        input_ids,
+        output_hidden_states=True,
+        last_position_only=False,
+    )
+    return output, (*output.hidden_states[:-1], raw_final)
 
 
 class HiddenStateIntervention:

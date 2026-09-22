@@ -1,0 +1,385 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "5": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          1.0,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 11,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 3,
+    "requested_n_test": 100,
+    "lm_correct": 3,
+    "per_subject": {
+      "Tom": 1,
+      "Emily": 1,
+      "Evan": 1
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 3,
+    "layer": 17,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 94776.0,
+        "median_lograng": 4.976702957749479,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 1434.0,
+        "median_lograng": 3.156851901070011,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 893,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 98777,
+        "top_diff": [
+          "Their",
+          "Tom",
+          "reste",
+          "Yourself",
+          "myself"
+        ],
+        "rank_lre": 1432,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1432,
+          "0.5": 1411,
+          "1.5": 1453,
+          "2.0": 1491,
+          "3.0": 1546,
+          "5.0": 1720
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 5333,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 53764,
+        "top_diff": [
+          "Emily",
+          "Emily",
+          "Lily",
+          "Their",
+          "Hanna"
+        ],
+        "rank_lre": 6000,
+        "top_lre": [
+          "being",
+          "his",
+          "her",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6000,
+          "0.5": 6125,
+          "1.5": 5849,
+          "2.0": 5709,
+          "3.0": 5450,
+          "5.0": 5050
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 893,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 94776,
+        "top_diff": [
+          "Evan",
+          "Devin",
+          "Ethan",
+          "Gwen",
+          "Elena"
+        ],
+        "rank_lre": 1434,
+        "top_lre": [
+          "his",
+          "being",
+          "her",
+          "having",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1434,
+          "0.5": 1407,
+          "1.5": 1493,
+          "2.0": 1563,
+          "3.0": 1833,
+          "5.0": 3157
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 1411.0,
+          "median_lograng": 3.149834696715785,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 1434.0,
+          "median_lograng": 3.156851901070011,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1493.0,
+          "median_lograng": 3.17435059747938,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1563.0,
+          "median_lograng": 3.1942367487238292,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1833.0,
+          "median_lograng": 3.263399331334002,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3157.0,
+          "median_lograng": 3.499412125672275,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 15.76613998413086,
+  "model_id": "allenai/Olmo-3-1025-7B",
+  "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "5,11,14,17,20,23",
+  "lens_layer": 17,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.6093254089355469e-06,
+    "finite_difference_relative_error": 0.00043441884918138385
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 16,
+  "convolution_check": null,
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 17,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 8.140868317241257e-07,
+      "full_seconds": 0.1452338695526123,
+      "cached_seconds": 0.16101932525634766
+    },
+    {
+      "length": 61,
+      "prefix_length": 59,
+      "layer": 10,
+      "state_relative_error": 8.020613222470274e-07,
+      "jvp_relative_error": 2.527888227632502e-06,
+      "full_seconds": 0.8111550807952881,
+      "cached_seconds": 0.2487955093383789
+    }
+  ],
+  "device_map": {
+    "observed_parameter_device_0": "cuda:0"
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "relation": "country_capital_city",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "6": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.125,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.25,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "16": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.125,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          1.0,
+          0.0
+        ]
+      },
+      "19": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.625,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.75,
+          0.0
+        ],
+        "5.0": [
+          0.875,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.0,
+          0.0
+        ],
+        "1.0": [
+          0.0,
+          0.0
+        ],
+        "1.5": [
+          0.0,
+          0.0
+        ],
+        "2.0": [
+          0.0,
+          0.0
+        ],
+        "3.0": [
+          0.0,
+          0.0
+        ],
+        "5.0": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 16,
+    "best_beta": 5.0,
+    "best_faith": 1.0,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 8,
+    "requested_n_test": 100,
+    "lm_correct": 8,
+    "per_subject": {
+      "Spain": 1,
+      "Australia": 1,
+      "Japan": 1,
+      "South Korea": 1,
+      "Venezuela": 1,
+      "Canada": 1,
+      "Russia": 1,
+      "Italy": 1
+    },
+    "split_fingerprint": "99747761f2d7",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 8,
+    "layer": 19,
+    "template": "The capital city of {} is",
+    "agg": {
+      "diff": {
+        "median_rank": 5608.0,
+        "median_lograng": 3.7474072005615593,
+        "agree_at1": 0.125,
+        "agree_at10": 0.125
+      },
+      "lre": {
+        "median_rank": 3210.0,
+        "median_lograng": 3.5038781551125098,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Spain",
+        "model_top1_id": 24081,
+        "model_top1": "Madrid",
+        "n_references": 8,
+        "rank_diff": 68992,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 7321,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7321,
+          "0.5": 7470,
+          "1.5": 10399,
+          "2.0": 15574,
+          "3.0": 26402,
+          "5.0": 43334
+        }
+      },
+      {
+        "subject": "Australia",
+        "model_top1_id": 68790,
+        "model_top1": "Canberra",
+        "n_references": 8,
+        "rank_diff": 4101,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 2849,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2849,
+          "0.5": 14007,
+          "1.5": 1365,
+          "2.0": 1160,
+          "3.0": 1335,
+          "5.0": 1874
+        }
+      },
+      {
+        "subject": "Japan",
+        "model_top1_id": 26194,
+        "model_top1": "Tokyo",
+        "n_references": 8,
+        "rank_diff": 6070,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 400,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 400,
+          "0.5": 2246,
+          "1.5": 406,
+          "2.0": 550,
+          "3.0": 956,
+          "5.0": 1937
+        }
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 50189,
+        "model_top1": "Seoul",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Seoul",
+          "Samsung",
+          "\u662f\u97e9\u56fd",
+          "samsung",
+          "Koreans"
+        ],
+        "rank_lre": 18906,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18906,
+          "0.5": 22404,
+          "1.5": 15644,
+          "2.0": 12551,
+          "3.0": 7366,
+          "5.0": 1681
+        }
+      },
+      {
+        "subject": "Venezuela",
+        "model_top1_id": 3261,
+        "model_top1": "Car",
+        "n_references": 8,
+        "rank_diff": 1348,
+        "top_diff": [
+          "Venezuela",
+          "Venezuelan",
+          "Maduro",
+          "Venezuel",
+          "venez"
+        ],
+        "rank_lre": 1703,
+        "top_lre": [
+          "its",
+          "the",
+          "being",
+          "having",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1703,
+          "0.5": 1931,
+          "1.5": 1489,
+          "2.0": 1302,
+          "3.0": 980,
+          "5.0": 590
+        }
+      },
+      {
+        "subject": "Canada",
+        "model_top1_id": 32166,
+        "model_top1": "Ottawa",
+        "n_references": 8,
+        "rank_diff": 5146,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 3571,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3571,
+          "0.5": 15257,
+          "1.5": 1819,
+          "2.0": 1603,
+          "3.0": 1865,
+          "5.0": 2529
+        }
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 22415,
+        "model_top1": "Moscow",
+        "n_references": 8,
+        "rank_diff": 10507,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 1006,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1006,
+          "0.5": 3885,
+          "1.5": 916,
+          "2.0": 1157,
+          "3.0": 2018,
+          "5.0": 3828
+        }
+      },
+      {
+        "subject": "Italy",
+        "model_top1_id": 21718,
+        "model_top1": "Rome",
+        "n_references": 8,
+        "rank_diff": 79966,
+        "top_diff": [
+          "-Semit",
+          "Printable",
+          "\u6cd6",
+          "\u90ea",
+          "\u572c"
+        ],
+        "rank_lre": 12723,
+        "top_lre": [
+          "heroin",
+          "Marijuana",
+          "Cannabis",
+          "cotton",
+          "Tobacco"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12723,
+          "0.5": 12174,
+          "1.5": 17370,
+          "2.0": 24704,
+          "3.0": 38285,
+          "5.0": 56373
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 9822.0,
+          "median_lograng": 3.9794238531479067,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 3210.0,
+          "median_lograng": 3.5038781551125098,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 1654.0,
+          "median_lograng": 3.216628828198674,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 1452.5,
+          "median_lograng": 3.1600743898303647,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 1941.5,
+          "median_lograng": 3.2880239791770602,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2233.0,
+          "median_lograng": 3.345237146945282,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "99747761f2d7",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 39.11335873603821,
+  "model_id": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "6,12,16,19,22,26",
+  "lens_layer": 19,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0001398266904288903
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

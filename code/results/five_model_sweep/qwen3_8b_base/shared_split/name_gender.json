@@ -1,0 +1,361 @@
+{
+  "relation": "name_gender",
+  "protocol": "shared_split",
+  "faithfulness": {
+    "grid": {
+      "6": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "12": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "16": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "19": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "22": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      },
+      "26": {
+        "0.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "1.5": [
+          0.6666666666666666,
+          0.0
+        ],
+        "2.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "3.0": [
+          0.6666666666666666,
+          0.0
+        ],
+        "5.0": [
+          0.6666666666666666,
+          0.0
+        ]
+      }
+    },
+    "best_layer": 6,
+    "best_beta": 0.5,
+    "best_faith": 0.6666666666666666,
+    "best_sd": 0.0,
+    "trials": 1,
+    "n_test": 3,
+    "requested_n_test": 100,
+    "lm_correct": 3,
+    "per_subject": {
+      "Tom": 1,
+      "Emily": 0,
+      "Evan": 1
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "distinct_first_token": true
+  },
+  "lens": {
+    "n": 3,
+    "layer": 19,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 143702.0,
+        "median_lograng": 5.15746583473023,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "lre": {
+        "median_rank": 139323.0,
+        "median_lograng": 5.144025934584578,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tom",
+        "model_top1_id": 883,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 148994,
+        "top_diff": [
+          ".readFileSync",
+          ".getMonth",
+          "/Observable",
+          "RGBO",
+          "\u781d"
+        ],
+        "rank_lre": 145005,
+        "top_lre": [
+          "weighed",
+          ".readFileSync",
+          ".getMonth",
+          "\u781d",
+          "_fact"
+        ],
+        "rank_lre_beta": {
+          "1.0": 145005,
+          "0.5": 130495,
+          "1.5": 146864,
+          "2.0": 147550,
+          "3.0": 148125,
+          "5.0": 148508
+        }
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 5220,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 143702,
+        "top_diff": [
+          ".readFileSync",
+          ".getMonth",
+          "/Observable",
+          "RGBO",
+          "\u781d"
+        ],
+        "rank_lre": 139323,
+        "top_lre": [
+          ".readFileSync",
+          ".getMonth",
+          "weighed",
+          "\u781d",
+          "_fact"
+        ],
+        "rank_lre_beta": {
+          "1.0": 139323,
+          "0.5": 128563,
+          "1.5": 141236,
+          "2.0": 141994,
+          "3.0": 142692,
+          "5.0": 143113
+        }
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 883,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 128458,
+        "top_diff": [
+          "VF",
+          "Icelandic",
+          "neutr",
+          "Rudy",
+          "synth"
+        ],
+        "rank_lre": 3368,
+        "top_lre": [
+          "his",
+          "being",
+          "having",
+          "making",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3368,
+          "0.5": 3157,
+          "1.5": 3615,
+          "2.0": 3840,
+          "3.0": 4398,
+          "5.0": 5771
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 128563.0,
+          "median_lograng": 5.109119376130078,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 139323.0,
+          "median_lograng": 5.144025934584578,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 141236.0,
+          "median_lograng": 5.149948484186424,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 141994.0,
+          "median_lograng": 5.152273052054602,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 142692.0,
+          "median_lograng": 5.154402668728247,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 143113.0,
+          "median_lograng": 5.15568212031006,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "e768509b2ebf",
+    "legacy_split": false,
+    "neutral_prompt": "{} is known for"
+  },
+  "trailing_space": false,
+  "elapsed_seconds": 24.610095024108887,
+  "model_id": "Qwen/Qwen3-8B-Base",
+  "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+  "dtype": "float32",
+  "host": "rho1",
+  "layers": "6,12,16,19,22,26",
+  "lens_layer": 19,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.000244140625,
+    "finite_difference_relative_error": 0.0001398266904288903
+  },
+  "torch": "2.14.0+cu130",
+  "batch_size": 2
+}

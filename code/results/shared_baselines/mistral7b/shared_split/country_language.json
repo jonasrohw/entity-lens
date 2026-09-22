@@ -1,0 +1,146 @@
+{
+  "relation": "country_language",
+  "model": "mistral7b",
+  "worker": "rho2_7",
+  "protocol": "shared_split",
+  "prompt": "\n{} is known for",
+  "layer": 17,
+  "split_fingerprint": "99747761f2d7",
+  "source_sha256": "42ee91ac098c483cf60a95d34923efd2d81ac3051075b550bca713a56b439e77",
+  "data_sha256": "0996525735107934f0d2e467e6fac7d2c785c42e8300ccb41ae6e9b5dfde2b76",
+  "n": 8,
+  "rows": [
+    {
+      "subject": "Spain",
+      "object": "Spanish",
+      "model_top1_id": 10945,
+      "gold_id": 10945,
+      "n_references": 8,
+      "target_prior": -9.650779724121094,
+      "gold_prior": -9.650779724121094,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 19,
+      "rank_differential_logit_lens": 3
+    },
+    {
+      "subject": "Australia",
+      "object": "English",
+      "model_top1_id": 5068,
+      "gold_id": 5068,
+      "n_references": 8,
+      "target_prior": -9.591804504394531,
+      "gold_prior": -9.591804504394531,
+      "rank_raw_jacobian": 25,
+      "rank_logit_lens": 7078,
+      "rank_differential_logit_lens": 532
+    },
+    {
+      "subject": "Japan",
+      "object": "Japanese",
+      "model_top1_id": 8860,
+      "gold_id": 8860,
+      "n_references": 8,
+      "target_prior": -9.195951461791992,
+      "gold_prior": -9.195951461791992,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 6,
+      "rank_differential_logit_lens": 2
+    },
+    {
+      "subject": "South Korea",
+      "object": "Korean",
+      "model_top1_id": 18162,
+      "gold_id": 18162,
+      "n_references": 8,
+      "target_prior": -10.265826225280762,
+      "gold_prior": -10.265826225280762,
+      "rank_raw_jacobian": 1,
+      "rank_logit_lens": 0,
+      "rank_differential_logit_lens": 0
+    },
+    {
+      "subject": "Venezuela",
+      "object": "Spanish",
+      "model_top1_id": 10945,
+      "gold_id": 10945,
+      "n_references": 8,
+      "target_prior": -9.650779724121094,
+      "gold_prior": -9.650779724121094,
+      "rank_raw_jacobian": 856,
+      "rank_logit_lens": 3119,
+      "rank_differential_logit_lens": 1797
+    },
+    {
+      "subject": "Canada",
+      "object": "English",
+      "model_top1_id": 5068,
+      "gold_id": 5068,
+      "n_references": 8,
+      "target_prior": -9.591804504394531,
+      "gold_prior": -9.591804504394531,
+      "rank_raw_jacobian": 245,
+      "rank_logit_lens": 5051,
+      "rank_differential_logit_lens": 329
+    },
+    {
+      "subject": "Russia",
+      "object": "Russian",
+      "model_top1_id": 8866,
+      "gold_id": 8866,
+      "n_references": 8,
+      "target_prior": -9.074728965759277,
+      "gold_prior": -9.074728965759277,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 1,
+      "rank_differential_logit_lens": 1
+    },
+    {
+      "subject": "Italy",
+      "object": "Italian",
+      "model_top1_id": 10856,
+      "gold_id": 10856,
+      "n_references": 8,
+      "target_prior": -10.00831127166748,
+      "gold_prior": -10.00831127166748,
+      "rank_raw_jacobian": 0,
+      "rank_logit_lens": 1,
+      "rank_differential_logit_lens": 1
+    }
+  ],
+  "agg": {
+    "raw_jacobian": {
+      "median_rank": 0.5,
+      "median_lograng": 0.1505149978319906,
+      "agree_at1": 0.5,
+      "agree_at10": 0.625
+    },
+    "logit_lens": {
+      "median_rank": 12.5,
+      "median_lograng": 1.073064017839119,
+      "agree_at1": 0.125,
+      "agree_at10": 0.5
+    },
+    "differential_logit_lens": {
+      "median_rank": 2.5,
+      "median_lograng": 0.5395906230238124,
+      "agree_at1": 0.125,
+      "agree_at10": 0.625
+    }
+  },
+  "answer_prior_contexts": [
+    "",
+    "The",
+    "In the",
+    "It was",
+    "She said the",
+    "Here is",
+    "One of the",
+    "According to the",
+    "There is a",
+    "Yesterday the"
+  ],
+  "cardinality_full": 1.7142857142857142,
+  "cardinality_filtered": 1.7142857142857142,
+  "cardinality_test": 1.3333333333333333,
+  "elapsed_seconds": 1.982907772064209
+}

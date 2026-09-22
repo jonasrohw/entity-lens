@@ -1,0 +1,5499 @@
+{
+  "relation": "company_hq",
+  "protocol": "shared_split",
+  "model": "olmo3_7b",
+  "worker": "rho2_7",
+  "lens": {
+    "n": 100,
+    "layer": 17,
+    "template": "{} is headquartered in the city of",
+    "agg": {
+      "diff": {
+        "median_rank": 1358.0,
+        "median_lograng": 3.1320167484468437,
+        "agree_at1": 0.0,
+        "agree_at10": 0.05
+      },
+      "lre": {
+        "median_rank": 9091.0,
+        "median_lograng": 3.9586594270529334,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tatts Group",
+        "model_top1_id": 27535,
+        "model_top1": "Melbourne",
+        "n_references": 8,
+        "rank_diff": 211,
+        "top_diff": [
+          "Banking",
+          "banking",
+          "merg",
+          "casino",
+          "Financial"
+        ],
+        "rank_lre": 8259,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8259,
+          "0.5": 9569,
+          "1.5": 7102,
+          "2.0": 6167,
+          "3.0": 4685,
+          "5.0": 2791
+        }
+      },
+      {
+        "subject": "Sysco",
+        "model_top1_id": 10780,
+        "model_top1": "Chicago",
+        "n_references": 8,
+        "rank_diff": 1257,
+        "top_diff": [
+          "food",
+          "meal",
+          "culinary",
+          "meals",
+          "restaurant"
+        ],
+        "rank_lre": 7654,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7654,
+          "0.5": 8973,
+          "1.5": 6598,
+          "2.0": 5779,
+          "3.0": 4491,
+          "5.0": 2956
+        }
+      },
+      {
+        "subject": "HSH Nordbank",
+        "model_top1_id": 51562,
+        "model_top1": "Hamburg",
+        "n_references": 8,
+        "rank_diff": 280,
+        "top_diff": [
+          "banking",
+          "Banking",
+          "bank",
+          "bankers",
+          "banks"
+        ],
+        "rank_lre": 12081,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12081,
+          "0.5": 15281,
+          "1.5": 9543,
+          "2.0": 7505,
+          "3.0": 4866,
+          "5.0": 2252
+        }
+      },
+      {
+        "subject": "Vijaya Vauhini Studios",
+        "model_top1_id": 64921,
+        "model_top1": "Chennai",
+        "n_references": 8,
+        "rank_diff": 116,
+        "top_diff": [
+          "Bollywood",
+          "Hollywood",
+          "cinematic",
+          "film",
+          "films"
+        ],
+        "rank_lre": 17020,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 17020,
+          "0.5": 20454,
+          "1.5": 13940,
+          "2.0": 11296,
+          "3.0": 7280,
+          "5.0": 3047
+        }
+      },
+      {
+        "subject": "Union for the Mediterranean",
+        "model_top1_id": 28035,
+        "model_top1": "Barcelona",
+        "n_references": 8,
+        "rank_diff": 9,
+        "top_diff": [
+          "Mediterranean",
+          "Mediterr",
+          "maritime",
+          "sailing",
+          "seaside"
+        ],
+        "rank_lre": 8127,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8127,
+          "0.5": 11292,
+          "1.5": 5794,
+          "2.0": 4186,
+          "3.0": 2184,
+          "5.0": 549
+        }
+      },
+      {
+        "subject": "PACE Sports Management",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 1042,
+        "top_diff": [
+          "management",
+          "managing",
+          "Management",
+          "Managing",
+          "booking"
+        ],
+        "rank_lre": 3997,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3997,
+          "0.5": 4602,
+          "1.5": 3531,
+          "2.0": 3127,
+          "3.0": 2523,
+          "5.0": 1749
+        }
+      },
+      {
+        "subject": "Ontario Hydro",
+        "model_top1_id": 14974,
+        "model_top1": "Toronto",
+        "n_references": 8,
+        "rank_diff": 7574,
+        "top_diff": [
+          "electricity",
+          "Electricity",
+          "renewable",
+          "energy",
+          "Renewable"
+        ],
+        "rank_lre": 10179,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10179,
+          "0.5": 10736,
+          "1.5": 9667,
+          "2.0": 9270,
+          "3.0": 8600,
+          "5.0": 7611
+        }
+      },
+      {
+        "subject": "Keshavarz F.C.",
+        "model_top1_id": 53795,
+        "model_top1": "Tehran",
+        "n_references": 8,
+        "rank_diff": 1696,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "murder"
+        ],
+        "rank_lre": 30590,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30590,
+          "0.5": 31178,
+          "1.5": 30059,
+          "2.0": 29512,
+          "3.0": 28333,
+          "5.0": 26108
+        }
+      },
+      {
+        "subject": "Swordfish Studios",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 7623,
+        "top_diff": [
+          "games",
+          "game",
+          "studio",
+          "studios",
+          "gaming"
+        ],
+        "rank_lre": 4797,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4797,
+          "0.5": 5013,
+          "1.5": 4562,
+          "2.0": 4385,
+          "3.0": 4100,
+          "5.0": 3693
+        }
+      },
+      {
+        "subject": "Rank Organisation",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 102,
+        "top_diff": [
+          "Military",
+          "military",
+          "organis",
+          "Defence",
+          "NATO"
+        ],
+        "rank_lre": 3659,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3659,
+          "0.5": 4417,
+          "1.5": 3021,
+          "2.0": 2546,
+          "3.0": 1758,
+          "5.0": 851
+        }
+      },
+      {
+        "subject": "TransGaming Inc.",
+        "model_top1_id": 14974,
+        "model_top1": "Toronto",
+        "n_references": 8,
+        "rank_diff": 38624,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "murder",
+          "BBQ"
+        ],
+        "rank_lre": 11239,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11239,
+          "0.5": 11259,
+          "1.5": 11213,
+          "2.0": 11214,
+          "3.0": 11204,
+          "5.0": 11230
+        }
+      },
+      {
+        "subject": "Black Mark Productions",
+        "model_top1_id": 9853,
+        "model_top1": "Los",
+        "n_references": 8,
+        "rank_diff": 1521,
+        "top_diff": [
+          "productions",
+          "filming",
+          "theatrical",
+          "filmm",
+          "Productions"
+        ],
+        "rank_lre": 8173,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 8173,
+          "0.5": 9087,
+          "1.5": 7323,
+          "2.0": 6652,
+          "3.0": 5535,
+          "5.0": 3965
+        }
+      },
+      {
+        "subject": "DCD Media",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 42367,
+        "top_diff": [
+          "media",
+          "Media",
+          "multimedia",
+          "journalism",
+          "Multimedia"
+        ],
+        "rank_lre": 1707,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1707,
+          "0.5": 1640,
+          "1.5": 1800,
+          "2.0": 1893,
+          "3.0": 2124,
+          "5.0": 2632
+        }
+      },
+      {
+        "subject": "Nippon Cultural Broadcasting",
+        "model_top1_id": 27286,
+        "model_top1": "Tokyo",
+        "n_references": 8,
+        "rank_diff": 217,
+        "top_diff": [
+          "broadcasting",
+          "broadcasts",
+          "broadcast",
+          "Broadcasting",
+          "broadcasters"
+        ],
+        "rank_lre": 10609,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10609,
+          "0.5": 13176,
+          "1.5": 8496,
+          "2.0": 6784,
+          "3.0": 4463,
+          "5.0": 2056
+        }
+      },
+      {
+        "subject": "Csepel SC",
+        "model_top1_id": 70695,
+        "model_top1": "Budapest",
+        "n_references": 8,
+        "rank_diff": 1900,
+        "top_diff": [
+          "soccer",
+          "football",
+          "Soccer",
+          "Football",
+          "basketball"
+        ],
+        "rank_lre": 23922,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 23922,
+          "0.5": 25248,
+          "1.5": 22612,
+          "2.0": 21335,
+          "3.0": 18905,
+          "5.0": 14734
+        }
+      },
+      {
+        "subject": "Phoenix Group",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 2328,
+        "top_diff": [
+          "Recruitment",
+          "Finance",
+          "outsourcing",
+          "Recru",
+          "MBA"
+        ],
+        "rank_lre": 4563,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4563,
+          "0.5": 4898,
+          "1.5": 4273,
+          "2.0": 3991,
+          "3.0": 3498,
+          "5.0": 2807
+        }
+      },
+      {
+        "subject": "Black Sparrow Books",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 11855,
+        "top_diff": [
+          "books",
+          "Books",
+          "book",
+          "bookstore",
+          "Book"
+        ],
+        "rank_lre": 1460,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1460,
+          "0.5": 1504,
+          "1.5": 1438,
+          "2.0": 1417,
+          "3.0": 1435,
+          "5.0": 1498
+        }
+      },
+      {
+        "subject": "Co-operative Commonwealth Federation (Ontario Section)",
+        "model_top1_id": 14974,
+        "model_top1": "Toronto",
+        "n_references": 8,
+        "rank_diff": 43393,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "murder"
+        ],
+        "rank_lre": 11285,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11285,
+          "0.5": 11272,
+          "1.5": 11265,
+          "2.0": 11284,
+          "3.0": 11298,
+          "5.0": 11381
+        }
+      },
+      {
+        "subject": "Metroplex",
+        "model_top1_id": 19051,
+        "model_top1": "Dallas",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Houston",
+          "Dallas",
+          "Texas",
+          "stadium",
+          "stadiums"
+        ],
+        "rank_lre": 6609,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6609,
+          "0.5": 9582,
+          "1.5": 4641,
+          "2.0": 3174,
+          "3.0": 1448,
+          "5.0": 279
+        }
+      },
+      {
+        "subject": "Far East Organization",
+        "model_top1_id": 23223,
+        "model_top1": "Moscow",
+        "n_references": 8,
+        "rank_diff": 172,
+        "top_diff": [
+          "Karachi",
+          "Saudi",
+          "Corporate",
+          "Dubai",
+          "Pakistan"
+        ],
+        "rank_lre": 13491,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13491,
+          "0.5": 15662,
+          "1.5": 11528,
+          "2.0": 9852,
+          "3.0": 7183,
+          "5.0": 3892
+        }
+      },
+      {
+        "subject": "David McKay Publications",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 13904,
+        "top_diff": [
+          "publishing",
+          "books",
+          "Publishing",
+          "publications",
+          "publication"
+        ],
+        "rank_lre": 1492,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1492,
+          "0.5": 1526,
+          "1.5": 1490,
+          "2.0": 1488,
+          "3.0": 1535,
+          "5.0": 1638
+        }
+      },
+      {
+        "subject": "International Airlines Group",
+        "model_top1_id": 38841,
+        "model_top1": "Amsterdam",
+        "n_references": 8,
+        "rank_diff": 1040,
+        "top_diff": [
+          "airlines",
+          "Airbus",
+          "merg",
+          "acquisitions",
+          "airline"
+        ],
+        "rank_lre": 12466,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12466,
+          "0.5": 13794,
+          "1.5": 11234,
+          "2.0": 10155,
+          "3.0": 8331,
+          "5.0": 5810
+        }
+      },
+      {
+        "subject": "Gianni Versace S.p.A.",
+        "model_top1_id": 39855,
+        "model_top1": "Milan",
+        "n_references": 8,
+        "rank_diff": 23073,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "murder"
+        ],
+        "rank_lre": 16774,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16774,
+          "0.5": 16893,
+          "1.5": 16649,
+          "2.0": 16551,
+          "3.0": 16324,
+          "5.0": 15961
+        }
+      },
+      {
+        "subject": "Ross Stores",
+        "model_top1_id": 33977,
+        "model_top1": "Dublin",
+        "n_references": 8,
+        "rank_diff": 32709,
+        "top_diff": [
+          "retail",
+          "retailers",
+          "Retail",
+          "retailer",
+          "shopping"
+        ],
+        "rank_lre": 13788,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13788,
+          "0.5": 13873,
+          "1.5": 13718,
+          "2.0": 13679,
+          "3.0": 13554,
+          "5.0": 13503
+        }
+      },
+      {
+        "subject": "Umm Al-Qura University",
+        "model_top1_id": 386,
+        "model_top1": "M",
+        "n_references": 8,
+        "rank_diff": 7753,
+        "top_diff": [
+          "Academic",
+          "Universities",
+          "university",
+          "academic",
+          "universities"
+        ],
+        "rank_lre": 565,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 565,
+          "0.5": 591,
+          "1.5": 542,
+          "2.0": 509,
+          "3.0": 494,
+          "5.0": 505
+        }
+      },
+      {
+        "subject": "Syrian Arab Army",
+        "model_top1_id": 58123,
+        "model_top1": "Damascus",
+        "n_references": 8,
+        "rank_diff": 293,
+        "top_diff": [
+          "militar",
+          "Military",
+          "soldiers",
+          "military",
+          "Army"
+        ],
+        "rank_lre": 30744,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30744,
+          "0.5": 34239,
+          "1.5": 27512,
+          "2.0": 24278,
+          "3.0": 18435,
+          "5.0": 10044
+        }
+      },
+      {
+        "subject": "Pontifical Catholic University of Chile",
+        "model_top1_id": 55678,
+        "model_top1": "Santiago",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Chile",
+          "Santiago",
+          "Argentine",
+          "Lima",
+          "university"
+        ],
+        "rank_lre": 12479,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12479,
+          "0.5": 16687,
+          "1.5": 9093,
+          "2.0": 6536,
+          "3.0": 3350,
+          "5.0": 789
+        }
+      },
+      {
+        "subject": "Carnival Films",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 6375,
+        "top_diff": [
+          "films",
+          "film",
+          "filmm",
+          "Films",
+          "Film"
+        ],
+        "rank_lre": 4702,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4702,
+          "0.5": 4982,
+          "1.5": 4478,
+          "2.0": 4268,
+          "3.0": 3913,
+          "5.0": 3389
+        }
+      },
+      {
+        "subject": "Gray Television",
+        "model_top1_id": 96002,
+        "model_top1": "Knoxville",
+        "n_references": 8,
+        "rank_diff": 492,
+        "top_diff": [
+          "broadcasting",
+          "broadcast",
+          "Broadcasting",
+          "television",
+          "broadcaster"
+        ],
+        "rank_lre": 30677,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 30677,
+          "0.5": 33929,
+          "1.5": 27541,
+          "2.0": 24437,
+          "3.0": 18725,
+          "5.0": 10830
+        }
+      },
+      {
+        "subject": "Rogers TV",
+        "model_top1_id": 14974,
+        "model_top1": "Toronto",
+        "n_references": 8,
+        "rank_diff": 5619,
+        "top_diff": [
+          "broadcasting",
+          "television",
+          "TV",
+          "broadcast",
+          "televis"
+        ],
+        "rank_lre": 10064,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10064,
+          "0.5": 10651,
+          "1.5": 9474,
+          "2.0": 9014,
+          "3.0": 8165,
+          "5.0": 6859
+        }
+      },
+      {
+        "subject": "Christian Salvesen",
+        "model_top1_id": 58958,
+        "model_top1": "Oslo",
+        "n_references": 8,
+        "rank_diff": 43,
+        "top_diff": [
+          "sailing",
+          "ship",
+          "sail",
+          "yacht",
+          "maritime"
+        ],
+        "rank_lre": 12613,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12613,
+          "0.5": 15837,
+          "1.5": 9961,
+          "2.0": 7764,
+          "3.0": 4832,
+          "5.0": 1874
+        }
+      },
+      {
+        "subject": "Infogrames Entertainment",
+        "model_top1_id": 12366,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 17454,
+        "top_diff": [
+          "games",
+          "arcade",
+          "entertainment",
+          "Entertainment",
+          "videog"
+        ],
+        "rank_lre": 5608,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5608,
+          "0.5": 5739,
+          "1.5": 5516,
+          "2.0": 5402,
+          "3.0": 5299,
+          "5.0": 5255
+        }
+      },
+      {
+        "subject": "Videocon",
+        "model_top1_id": 35812,
+        "model_top1": "Mumbai",
+        "n_references": 8,
+        "rank_diff": 67,
+        "top_diff": [
+          "electronics",
+          "manufacturing",
+          "Electronics",
+          "manufacture",
+          "Manufacturing"
+        ],
+        "rank_lre": 16522,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16522,
+          "0.5": 19683,
+          "1.5": 13730,
+          "2.0": 11326,
+          "3.0": 7620,
+          "5.0": 3496
+        }
+      },
+      {
+        "subject": "Scottish Socialist Party",
+        "model_top1_id": 41406,
+        "model_top1": "Edinburgh",
+        "n_references": 8,
+        "rank_diff": 16868,
+        "top_diff": [
+          "lobbying",
+          "leftist",
+          "campaigning",
+          "activism",
+          "advocacy"
+        ],
+        "rank_lre": 11275,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11275,
+          "0.5": 11524,
+          "1.5": 11081,
+          "2.0": 10892,
+          "3.0": 10556,
+          "5.0": 10213
+        }
+      },
+      {
+        "subject": "SNK European Democrats",
+        "model_top1_id": 38269,
+        "model_top1": "Brussels",
+        "n_references": 8,
+        "rank_diff": 155,
+        "top_diff": [
+          "political",
+          "Political",
+          "parliamentary",
+          "politicians",
+          "lobbying"
+        ],
+        "rank_lre": 8621,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8621,
+          "0.5": 11063,
+          "1.5": 6729,
+          "2.0": 5292,
+          "3.0": 3286,
+          "5.0": 1366
+        }
+      },
+      {
+        "subject": "IMRB International",
+        "model_top1_id": 35812,
+        "model_top1": "Mumbai",
+        "n_references": 8,
+        "rank_diff": 558,
+        "top_diff": [
+          "publishing",
+          "reporting",
+          "Foreign",
+          "publications",
+          "surveys"
+        ],
+        "rank_lre": 18972,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 18972,
+          "0.5": 20991,
+          "1.5": 17093,
+          "2.0": 15367,
+          "3.0": 12404,
+          "5.0": 8284
+        }
+      },
+      {
+        "subject": "Iranian reform movement",
+        "model_top1_id": 53795,
+        "model_top1": "Tehran",
+        "n_references": 8,
+        "rank_diff": 1459,
+        "top_diff": [
+          "activists",
+          "lobbying",
+          "protesting",
+          "rallies",
+          "activist"
+        ],
+        "rank_lre": 27694,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 27694,
+          "0.5": 29730,
+          "1.5": 25729,
+          "2.0": 23863,
+          "3.0": 20291,
+          "5.0": 14653
+        }
+      },
+      {
+        "subject": "Samsung",
+        "model_top1_id": 51289,
+        "model_top1": "Seoul",
+        "n_references": 8,
+        "rank_diff": 50,
+        "top_diff": [
+          "Samsung",
+          "samsung",
+          "Samsung",
+          "electronics",
+          "Electronics"
+        ],
+        "rank_lre": 22032,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 22032,
+          "0.5": 26451,
+          "1.5": 17962,
+          "2.0": 14272,
+          "3.0": 8819,
+          "5.0": 3312
+        }
+      },
+      {
+        "subject": "Asprey",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 544,
+        "top_diff": [
+          "luxury",
+          "Luxury",
+          "luxurious",
+          "luxe",
+          "deluxe"
+        ],
+        "rank_lre": 4041,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4041,
+          "0.5": 4609,
+          "1.5": 3510,
+          "2.0": 3085,
+          "3.0": 2394,
+          "5.0": 1473
+        }
+      },
+      {
+        "subject": "Vertigo Films",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 3900,
+        "top_diff": [
+          "films",
+          "film",
+          "Films",
+          "filmm",
+          "Film"
+        ],
+        "rank_lre": 4578,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4578,
+          "0.5": 4894,
+          "1.5": 4315,
+          "2.0": 4044,
+          "3.0": 3613,
+          "5.0": 2979
+        }
+      },
+      {
+        "subject": "Sun Shipbuilding & Drydock Co.",
+        "model_top1_id": 53512,
+        "model_top1": "Chester",
+        "n_references": 8,
+        "rank_diff": 89639,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "murder"
+        ],
+        "rank_lre": 13603,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13603,
+          "0.5": 13331,
+          "1.5": 13850,
+          "2.0": 14127,
+          "3.0": 14666,
+          "5.0": 15854
+        }
+      },
+      {
+        "subject": "Uranium One",
+        "model_top1_id": 23223,
+        "model_top1": "Moscow",
+        "n_references": 8,
+        "rank_diff": 7,
+        "top_diff": [
+          "Russian",
+          "Russia",
+          "Putin",
+          "bribery",
+          "brib"
+        ],
+        "rank_lre": 10546,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10546,
+          "0.5": 13921,
+          "1.5": 7869,
+          "2.0": 5814,
+          "3.0": 3334,
+          "5.0": 1056
+        }
+      },
+      {
+        "subject": "Baja Fresh",
+        "model_top1_id": 5960,
+        "model_top1": "San",
+        "n_references": 8,
+        "rank_diff": 5256,
+        "top_diff": [
+          "restaurant",
+          "tasty",
+          "meals",
+          "gourmet",
+          "foods"
+        ],
+        "rank_lre": 3374,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3374,
+          "0.5": 3641,
+          "1.5": 3103,
+          "2.0": 2903,
+          "3.0": 2655,
+          "5.0": 2302
+        }
+      },
+      {
+        "subject": "Irish Citizen Army",
+        "model_top1_id": 33977,
+        "model_top1": "Dublin",
+        "n_references": 8,
+        "rank_diff": 261,
+        "top_diff": [
+          "militant",
+          "protesting",
+          "riots",
+          "fighting",
+          "riot"
+        ],
+        "rank_lre": 9637,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9637,
+          "0.5": 11681,
+          "1.5": 7980,
+          "2.0": 6663,
+          "3.0": 4637,
+          "5.0": 2390
+        }
+      },
+      {
+        "subject": "Lion Air",
+        "model_top1_id": 64133,
+        "model_top1": "Jakarta",
+        "n_references": 8,
+        "rank_diff": 99,
+        "top_diff": [
+          "airline",
+          "flying",
+          "airlines",
+          "Airlines",
+          "flights"
+        ],
+        "rank_lre": 21725,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 21725,
+          "0.5": 26253,
+          "1.5": 17513,
+          "2.0": 13955,
+          "3.0": 8741,
+          "5.0": 3528
+        }
+      },
+      {
+        "subject": "BBC Radio",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 361,
+        "top_diff": [
+          "radio",
+          "broadcasting",
+          "broadcasts",
+          "Radio",
+          "broadcast"
+        ],
+        "rank_lre": 3572,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3572,
+          "0.5": 4340,
+          "1.5": 2978,
+          "2.0": 2462,
+          "3.0": 1714,
+          "5.0": 880
+        }
+      },
+      {
+        "subject": "Polydor Records",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 5237,
+        "top_diff": [
+          "music",
+          "Music",
+          "musicians",
+          "musical",
+          "Music"
+        ],
+        "rank_lre": 4488,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4488,
+          "0.5": 4848,
+          "1.5": 4172,
+          "2.0": 3916,
+          "3.0": 3511,
+          "5.0": 2978
+        }
+      },
+      {
+        "subject": "Vision Research Phantom",
+        "model_top1_id": 468,
+        "model_top1": "W",
+        "n_references": 8,
+        "rank_diff": 51209,
+        "top_diff": [
+          "Phantom",
+          "phantom",
+          "holog",
+          "simulator",
+          "Oculus"
+        ],
+        "rank_lre": 773,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 773,
+          "0.5": 749,
+          "1.5": 798,
+          "2.0": 829,
+          "3.0": 924,
+          "5.0": 1161
+        }
+      },
+      {
+        "subject": "Jan De Nul",
+        "model_top1_id": 6898,
+        "model_top1": "Ant",
+        "n_references": 8,
+        "rank_diff": 13427,
+        "top_diff": [
+          "maritime",
+          "dred",
+          "seaw",
+          "offshore",
+          "marine"
+        ],
+        "rank_lre": 6249,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6249,
+          "0.5": 6414,
+          "1.5": 6127,
+          "2.0": 5995,
+          "3.0": 5843,
+          "5.0": 5640
+        }
+      },
+      {
+        "subject": "Crosley Broadcasting Corporation",
+        "model_top1_id": 36239,
+        "model_top1": "Cincinnati",
+        "n_references": 8,
+        "rank_diff": 2497,
+        "top_diff": [
+          "broadcasting",
+          "television",
+          "Television",
+          "televis",
+          "manufacturing"
+        ],
+        "rank_lre": 16468,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16468,
+          "0.5": 17500,
+          "1.5": 15540,
+          "2.0": 14629,
+          "3.0": 12971,
+          "5.0": 10260
+        }
+      },
+      {
+        "subject": "Boulton Paul Aircraft",
+        "model_top1_id": 468,
+        "model_top1": "W",
+        "n_references": 8,
+        "rank_diff": 42744,
+        "top_diff": [
+          "aircraft",
+          "Aircraft",
+          "flying",
+          "aviation",
+          "flight"
+        ],
+        "rank_lre": 738,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 738,
+          "0.5": 731,
+          "1.5": 754,
+          "2.0": 766,
+          "3.0": 821,
+          "5.0": 1015
+        }
+      },
+      {
+        "subject": "Minnesota Strikers",
+        "model_top1_id": 42958,
+        "model_top1": "Minneapolis",
+        "n_references": 8,
+        "rank_diff": 6154,
+        "top_diff": [
+          "football",
+          "soccer",
+          "volley",
+          "Soccer",
+          "Football"
+        ],
+        "rank_lre": 28458,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 28458,
+          "0.5": 29671,
+          "1.5": 27214,
+          "2.0": 26072,
+          "3.0": 23842,
+          "5.0": 19924
+        }
+      },
+      {
+        "subject": "Progressive Conservative Association of Alberta",
+        "model_top1_id": 38975,
+        "model_top1": "Calgary",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Alberta",
+          "Edmonton",
+          "Saskatchewan",
+          "ranch",
+          "Calgary"
+        ],
+        "rank_lre": 11249,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11249,
+          "0.5": 14266,
+          "1.5": 8732,
+          "2.0": 6792,
+          "3.0": 4098,
+          "5.0": 1468
+        }
+      },
+      {
+        "subject": "American Indian Center",
+        "model_top1_id": 6652,
+        "model_top1": "Washington",
+        "n_references": 8,
+        "rank_diff": 192,
+        "top_diff": [
+          "homeless",
+          "homelessness",
+          "fundra",
+          "fundraiser",
+          "fundraising"
+        ],
+        "rank_lre": 4781,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4781,
+          "0.5": 5822,
+          "1.5": 3903,
+          "2.0": 3239,
+          "3.0": 2183,
+          "5.0": 1051
+        }
+      },
+      {
+        "subject": "Annick Press",
+        "model_top1_id": 12366,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 5403,
+        "top_diff": [
+          "printing",
+          "books",
+          "publishing",
+          "print",
+          "publications"
+        ],
+        "rank_lre": 5449,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5449,
+          "0.5": 5655,
+          "1.5": 5284,
+          "2.0": 5140,
+          "3.0": 4835,
+          "5.0": 4406
+        }
+      },
+      {
+        "subject": "Lavalin",
+        "model_top1_id": 30613,
+        "model_top1": "Montreal",
+        "n_references": 8,
+        "rank_diff": 90,
+        "top_diff": [
+          "engineering",
+          "subcontract",
+          "Engineering",
+          "Engineers",
+          "Energy"
+        ],
+        "rank_lre": 9474,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9474,
+          "0.5": 11649,
+          "1.5": 7725,
+          "2.0": 6352,
+          "3.0": 4322,
+          "5.0": 2034
+        }
+      },
+      {
+        "subject": "Cummins",
+        "model_top1_id": 32917,
+        "model_top1": "Columbus",
+        "n_references": 8,
+        "rank_diff": 7023,
+        "top_diff": [
+          "diesel",
+          "engine",
+          "Diesel",
+          "engines",
+          "fuel"
+        ],
+        "rank_lre": 16817,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16817,
+          "0.5": 17624,
+          "1.5": 16040,
+          "2.0": 15400,
+          "3.0": 14064,
+          "5.0": 12081
+        }
+      },
+      {
+        "subject": "Amirkabir University of Technology",
+        "model_top1_id": 53795,
+        "model_top1": "Tehran",
+        "n_references": 8,
+        "rank_diff": 148,
+        "top_diff": [
+          "Engineering",
+          "engineering",
+          "engineers",
+          "Engineers",
+          "Engineer"
+        ],
+        "rank_lre": 22680,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 22680,
+          "0.5": 27179,
+          "1.5": 18380,
+          "2.0": 14589,
+          "3.0": 8835,
+          "5.0": 3257
+        }
+      },
+      {
+        "subject": "Epitome Pictures",
+        "model_top1_id": 9853,
+        "model_top1": "Los",
+        "n_references": 8,
+        "rank_diff": 804,
+        "top_diff": [
+          "films",
+          "filming",
+          "film",
+          "cinematic",
+          "filmm"
+        ],
+        "rank_lre": 7549,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 7549,
+          "0.5": 8756,
+          "1.5": 6538,
+          "2.0": 5726,
+          "3.0": 4472,
+          "5.0": 2785
+        }
+      },
+      {
+        "subject": "\u00c9cole des hautes \u00e9tudes commerciales du nord",
+        "model_top1_id": 3206,
+        "model_top1": "Mon",
+        "n_references": 8,
+        "rank_diff": 58599,
+        "top_diff": [
+          "Arctic",
+          "Alaska",
+          "Northern",
+          "northern",
+          "snowy"
+        ],
+        "rank_lre": 4299,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4299,
+          "0.5": 4195,
+          "1.5": 4428,
+          "2.0": 4547,
+          "3.0": 4873,
+          "5.0": 5693
+        }
+      },
+      {
+        "subject": "Disneyland Resort",
+        "model_top1_id": 72264,
+        "model_top1": "Anaheim",
+        "n_references": 8,
+        "rank_diff": 451,
+        "top_diff": [
+          "hotels",
+          "Hotel",
+          "hotel",
+          "Hotels",
+          "Resort"
+        ],
+        "rank_lre": 27425,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 27425,
+          "0.5": 30380,
+          "1.5": 24487,
+          "2.0": 21568,
+          "3.0": 16507,
+          "5.0": 9277
+        }
+      },
+      {
+        "subject": "Wiener AC",
+        "model_top1_id": 47387,
+        "model_top1": "Vienna",
+        "n_references": 8,
+        "rank_diff": 199,
+        "top_diff": [
+          "electr",
+          "voltage",
+          "acoustic",
+          "electrical",
+          "concerts"
+        ],
+        "rank_lre": 14745,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14745,
+          "0.5": 16274,
+          "1.5": 13304,
+          "2.0": 11999,
+          "3.0": 9746,
+          "5.0": 6522
+        }
+      },
+      {
+        "subject": "Canadian Jewish Congress",
+        "model_top1_id": 14974,
+        "model_top1": "Toronto",
+        "n_references": 8,
+        "rank_diff": 1773,
+        "top_diff": [
+          "lobbying",
+          "advocacy",
+          "fundraising",
+          "Advoc",
+          "philanth"
+        ],
+        "rank_lre": 9091,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9091,
+          "0.5": 10079,
+          "1.5": 8198,
+          "2.0": 7423,
+          "3.0": 6235,
+          "5.0": 4553
+        }
+      },
+      {
+        "subject": "Royal Dramatic Theatre",
+        "model_top1_id": 53182,
+        "model_top1": "Stockholm",
+        "n_references": 8,
+        "rank_diff": 153,
+        "top_diff": [
+          "theatre",
+          "theatrical",
+          "Theatre",
+          "theater",
+          "Theater"
+        ],
+        "rank_lre": 11732,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11732,
+          "0.5": 14663,
+          "1.5": 9198,
+          "2.0": 7282,
+          "3.0": 4531,
+          "5.0": 1819
+        }
+      },
+      {
+        "subject": "ISG Business School",
+        "model_top1_id": 73276,
+        "model_top1": "Warsaw",
+        "n_references": 8,
+        "rank_diff": 7032,
+        "top_diff": [
+          "Academic",
+          "tuition",
+          "education",
+          "academic",
+          "Education"
+        ],
+        "rank_lre": 16140,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16140,
+          "0.5": 17000,
+          "1.5": 15367,
+          "2.0": 14645,
+          "3.0": 13327,
+          "5.0": 11455
+        }
+      },
+      {
+        "subject": "CEDADE",
+        "model_top1_id": 12366,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 3694,
+        "top_diff": [
+          "academic",
+          "universities",
+          "university",
+          "education",
+          "teaching"
+        ],
+        "rank_lre": 5447,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5447,
+          "0.5": 5653,
+          "1.5": 5243,
+          "2.0": 5083,
+          "3.0": 4742,
+          "5.0": 4236
+        }
+      },
+      {
+        "subject": "Real Academia de Bellas Artes de San Fernando",
+        "model_top1_id": 25048,
+        "model_top1": "Madrid",
+        "n_references": 8,
+        "rank_diff": 66,
+        "top_diff": [
+          "paintings",
+          "artistic",
+          "painters",
+          "artists",
+          "museum"
+        ],
+        "rank_lre": 16818,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 16818,
+          "0.5": 20786,
+          "1.5": 13411,
+          "2.0": 10592,
+          "3.0": 6498,
+          "5.0": 2511
+        }
+      },
+      {
+        "subject": "Tata Steel Europe",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 234,
+        "top_diff": [
+          "Brussels",
+          "European",
+          "\u20ac",
+          "Europe",
+          "Euros"
+        ],
+        "rank_lre": 3868,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3868,
+          "0.5": 4527,
+          "1.5": 3281,
+          "2.0": 2833,
+          "3.0": 2135,
+          "5.0": 1268
+        }
+      },
+      {
+        "subject": "Hang Seng Bank",
+        "model_top1_id": 19730,
+        "model_top1": "Hong",
+        "n_references": 8,
+        "rank_diff": 429,
+        "top_diff": [
+          "banking",
+          "Banking",
+          "bank",
+          "Bank",
+          "banks"
+        ],
+        "rank_lre": 4966,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4966,
+          "0.5": 6057,
+          "1.5": 4079,
+          "2.0": 3365,
+          "3.0": 2283,
+          "5.0": 1212
+        }
+      },
+      {
+        "subject": "Burnham and Root",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 8813,
+        "top_diff": [
+          "botanical",
+          "planting",
+          "drilling",
+          "watering",
+          "architect"
+        ],
+        "rank_lre": 1498,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1498,
+          "0.5": 1534,
+          "1.5": 1442,
+          "2.0": 1396,
+          "3.0": 1343,
+          "5.0": 1245
+        }
+      },
+      {
+        "subject": "Seibu Kaihatsu",
+        "model_top1_id": 27286,
+        "model_top1": "Tokyo",
+        "n_references": 8,
+        "rank_diff": 375,
+        "top_diff": [
+          "manufacturing",
+          "ship",
+          "tanker",
+          "ships",
+          "submarine"
+        ],
+        "rank_lre": 12035,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12035,
+          "0.5": 14012,
+          "1.5": 10301,
+          "2.0": 8825,
+          "3.0": 6569,
+          "5.0": 3726
+        }
+      },
+      {
+        "subject": "Aer Arann",
+        "model_top1_id": 33977,
+        "model_top1": "Dublin",
+        "n_references": 8,
+        "rank_diff": 68,
+        "top_diff": [
+          "ferry",
+          "sailing",
+          "sail",
+          "maritime",
+          "sails"
+        ],
+        "rank_lre": 7993,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7993,
+          "0.5": 10671,
+          "1.5": 5940,
+          "2.0": 4470,
+          "3.0": 2516,
+          "5.0": 789
+        }
+      },
+      {
+        "subject": "Scott Free Productions",
+        "model_top1_id": 9853,
+        "model_top1": "Los",
+        "n_references": 8,
+        "rank_diff": 587,
+        "top_diff": [
+          "filming",
+          "films",
+          "filmm",
+          "film",
+          "cinematic"
+        ],
+        "rank_lre": 7135,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 7135,
+          "0.5": 8518,
+          "1.5": 6055,
+          "2.0": 5143,
+          "3.0": 3798,
+          "5.0": 2152
+        }
+      },
+      {
+        "subject": "FIDE",
+        "model_top1_id": 5034,
+        "model_top1": "La",
+        "n_references": 8,
+        "rank_diff": 24603,
+        "top_diff": [
+          "chess",
+          "Chess",
+          "Chess",
+          "tournaments",
+          "tournament"
+        ],
+        "rank_lre": 2953,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2953,
+          "0.5": 2891,
+          "1.5": 3019,
+          "2.0": 3114,
+          "3.0": 3323,
+          "5.0": 3850
+        }
+      },
+      {
+        "subject": "Minerva Press",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 3645,
+        "top_diff": [
+          "printing",
+          "publishing",
+          "books",
+          "reprint",
+          "print"
+        ],
+        "rank_lre": 4562,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "producing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 4562,
+          "0.5": 4885,
+          "1.5": 4249,
+          "2.0": 3989,
+          "3.0": 3540,
+          "5.0": 2948
+        }
+      },
+      {
+        "subject": "Shelbourne F.C.",
+        "model_top1_id": 33977,
+        "model_top1": "Dublin",
+        "n_references": 8,
+        "rank_diff": 38066,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "tattoo"
+        ],
+        "rank_lre": 13984,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13984,
+          "0.5": 14001,
+          "1.5": 13978,
+          "2.0": 13979,
+          "3.0": 13958,
+          "5.0": 13965
+        }
+      },
+      {
+        "subject": "Power Jets",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 4221,
+        "top_diff": [
+          "turbine",
+          "manufacturing",
+          "engines",
+          "rockets",
+          "engine"
+        ],
+        "rank_lre": 4359,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4359,
+          "0.5": 4787,
+          "1.5": 3956,
+          "2.0": 3613,
+          "3.0": 3046,
+          "5.0": 2388
+        }
+      },
+      {
+        "subject": "Crown Airways",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 652,
+        "top_diff": [
+          "airline",
+          "airlines",
+          "Airways",
+          "flights",
+          "flying"
+        ],
+        "rank_lre": 3604,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3604,
+          "0.5": 4376,
+          "1.5": 2998,
+          "2.0": 2525,
+          "3.0": 1815,
+          "5.0": 972
+        }
+      },
+      {
+        "subject": "Miracle Mart",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 15653,
+        "top_diff": [
+          "grocery",
+          "retail",
+          "supermarket",
+          "retailer",
+          "supermarkets"
+        ],
+        "rank_lre": 1441,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1441,
+          "0.5": 1504,
+          "1.5": 1413,
+          "2.0": 1385,
+          "3.0": 1353,
+          "5.0": 1504
+        }
+      },
+      {
+        "subject": "Robert Allan Ltd.",
+        "model_top1_id": 23393,
+        "model_top1": "Vancouver",
+        "n_references": 8,
+        "rank_diff": 62717,
+        "top_diff": [
+          "graffiti",
+          "grill",
+          "spicy",
+          "BBQ",
+          "murder"
+        ],
+        "rank_lre": 12398,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12398,
+          "0.5": 12310,
+          "1.5": 12465,
+          "2.0": 12575,
+          "3.0": 12769,
+          "5.0": 13194
+        }
+      },
+      {
+        "subject": "International Socialist Tendency",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 3474,
+        "top_diff": [
+          "Marxist",
+          "Trotsky",
+          "militant",
+          "anarchist",
+          "socialist"
+        ],
+        "rank_lre": 4579,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4579,
+          "0.5": 4907,
+          "1.5": 4296,
+          "2.0": 4030,
+          "3.0": 3624,
+          "5.0": 3081
+        }
+      },
+      {
+        "subject": "Renault Trucks",
+        "model_top1_id": 31054,
+        "model_top1": "Bou",
+        "n_references": 8,
+        "rank_diff": 60622,
+        "top_diff": [
+          "trucks",
+          "truck",
+          "tractor",
+          "diesel",
+          "Trucks"
+        ],
+        "rank_lre": 19842,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19842,
+          "0.5": 19413,
+          "1.5": 20289,
+          "2.0": 20685,
+          "3.0": 21491,
+          "5.0": 22838
+        }
+      },
+      {
+        "subject": "Nintendo",
+        "model_top1_id": 82122,
+        "model_top1": "Kyoto",
+        "n_references": 8,
+        "rank_diff": 516,
+        "top_diff": [
+          "Nintendo",
+          "games",
+          "Wii",
+          "Games",
+          "Pokemon"
+        ],
+        "rank_lre": 14235,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14235,
+          "0.5": 16673,
+          "1.5": 12137,
+          "2.0": 10358,
+          "3.0": 7631,
+          "5.0": 4373
+        }
+      },
+      {
+        "subject": "Alitalia-Linee Aeree Italiane",
+        "model_top1_id": 22463,
+        "model_top1": "Rome",
+        "n_references": 8,
+        "rank_diff": 776,
+        "top_diff": [
+          "airline",
+          "airlines",
+          "Airbus",
+          "Airlines",
+          "airl"
+        ],
+        "rank_lre": 9091,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9091,
+          "0.5": 9930,
+          "1.5": 8317,
+          "2.0": 7657,
+          "3.0": 6486,
+          "5.0": 4792
+        }
+      },
+      {
+        "subject": "Hamilton Bradshaw",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 250,
+        "top_diff": [
+          "writing",
+          "Writing",
+          "attorneys",
+          "coaching",
+          "consultancy"
+        ],
+        "rank_lre": 3992,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3992,
+          "0.5": 4606,
+          "1.5": 3467,
+          "2.0": 3058,
+          "3.0": 2359,
+          "5.0": 1411
+        }
+      },
+      {
+        "subject": "Crawford Composites",
+        "model_top1_id": 71726,
+        "model_top1": "Hunts",
+        "n_references": 8,
+        "rank_diff": 1578,
+        "top_diff": [
+          "manufacturing",
+          "manufacture",
+          "fiberglass",
+          "fabrication",
+          "Manufacturing"
+        ],
+        "rank_lre": 31473,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 31473,
+          "0.5": 34110,
+          "1.5": 28971,
+          "2.0": 26580,
+          "3.0": 21980,
+          "5.0": 14536
+        }
+      },
+      {
+        "subject": "American Licorice Company",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 23221,
+        "top_diff": [
+          "manufacturing",
+          "manufacture",
+          "Manufacturing",
+          "manufactures",
+          "manufacturer"
+        ],
+        "rank_lre": 1534,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1534,
+          "0.5": 1550,
+          "1.5": 1535,
+          "2.0": 1527,
+          "3.0": 1545,
+          "5.0": 1762
+        }
+      },
+      {
+        "subject": "Dresdner SC",
+        "model_top1_id": 423,
+        "model_top1": "D",
+        "n_references": 8,
+        "rank_diff": 25250,
+        "top_diff": [
+          "soccer",
+          "football",
+          "Soccer",
+          "sports",
+          "athletics"
+        ],
+        "rank_lre": 673,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 673,
+          "0.5": 684,
+          "1.5": 673,
+          "2.0": 670,
+          "3.0": 688,
+          "5.0": 760
+        }
+      },
+      {
+        "subject": "X5 Music Group",
+        "model_top1_id": 23223,
+        "model_top1": "Moscow",
+        "n_references": 8,
+        "rank_diff": 522,
+        "top_diff": [
+          "music",
+          "Music",
+          "acquisitions",
+          "concerts",
+          "DJs"
+        ],
+        "rank_lre": 14249,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 14249,
+          "0.5": 16109,
+          "1.5": 12675,
+          "2.0": 11210,
+          "3.0": 8910,
+          "5.0": 5786
+        }
+      },
+      {
+        "subject": "Square Enix Europe",
+        "model_top1_id": 7295,
+        "model_top1": "London",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "Brexit",
+          "Euros",
+          "European",
+          "\u20ac",
+          "Euro"
+        ],
+        "rank_lre": 2913,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2913,
+          "0.5": 3948,
+          "1.5": 2173,
+          "2.0": 1631,
+          "3.0": 930,
+          "5.0": 274
+        }
+      },
+      {
+        "subject": "Venoco",
+        "model_top1_id": 16386,
+        "model_top1": "Houston",
+        "n_references": 8,
+        "rank_diff": 263,
+        "top_diff": [
+          "oil",
+          "petroleum",
+          "fracking",
+          "Oil",
+          "Petroleum"
+        ],
+        "rank_lre": 12241,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12241,
+          "0.5": 14367,
+          "1.5": 10432,
+          "2.0": 8733,
+          "3.0": 6318,
+          "5.0": 3476
+        }
+      },
+      {
+        "subject": "Mitsubishi Corporation",
+        "model_top1_id": 27286,
+        "model_top1": "Tokyo",
+        "n_references": 8,
+        "rank_diff": 70,
+        "top_diff": [
+          "financing",
+          "Banking",
+          "Finance",
+          "finance",
+          "Corporate"
+        ],
+        "rank_lre": 9395,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9395,
+          "0.5": 12457,
+          "1.5": 7077,
+          "2.0": 5396,
+          "3.0": 3121,
+          "5.0": 1160
+        }
+      },
+      {
+        "subject": "Rolex",
+        "model_top1_id": 45345,
+        "model_top1": "Geneva",
+        "n_references": 8,
+        "rank_diff": 762,
+        "top_diff": [
+          "Rolex",
+          "luxury",
+          "Watches",
+          "watches",
+          "jewelry"
+        ],
+        "rank_lre": 13787,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 13787,
+          "0.5": 16052,
+          "1.5": 11772,
+          "2.0": 10046,
+          "3.0": 7377,
+          "5.0": 4366
+        }
+      },
+      {
+        "subject": "Starwood Capital Group",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 10262,
+        "top_diff": [
+          "financing",
+          "finance",
+          "investor",
+          "financial",
+          "investment"
+        ],
+        "rank_lre": 1519,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1519,
+          "0.5": 1543,
+          "1.5": 1496,
+          "2.0": 1492,
+          "3.0": 1513,
+          "5.0": 1573
+        }
+      },
+      {
+        "subject": "MAMA & Company",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 17234,
+        "top_diff": [
+          "concerts",
+          "theatrical",
+          "concert",
+          "dance",
+          "artists"
+        ],
+        "rank_lre": 1527,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1527,
+          "0.5": 1552,
+          "1.5": 1534,
+          "2.0": 1539,
+          "3.0": 1572,
+          "5.0": 1737
+        }
+      },
+      {
+        "subject": "RPG Group",
+        "model_top1_id": 12366,
+        "model_top1": "Paris",
+        "n_references": 8,
+        "rank_diff": 62718,
+        "top_diff": [
+          "tournaments",
+          "RPG",
+          "poker",
+          "Membership",
+          "Poker"
+        ],
+        "rank_lre": 6329,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6329,
+          "0.5": 6091,
+          "1.5": 6599,
+          "2.0": 6904,
+          "3.0": 7604,
+          "5.0": 9054
+        }
+      },
+      {
+        "subject": "South Side Elevated Railroad",
+        "model_top1_id": 10780,
+        "model_top1": "Chicago",
+        "n_references": 8,
+        "rank_diff": 65,
+        "top_diff": [
+          "railroad",
+          "subway",
+          "railway",
+          "transportation",
+          "rail"
+        ],
+        "rank_lre": 6418,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6418,
+          "0.5": 8250,
+          "1.5": 5052,
+          "2.0": 3964,
+          "3.0": 2405,
+          "5.0": 910
+        }
+      },
+      {
+        "subject": "Human Entertainment",
+        "model_top1_id": 27286,
+        "model_top1": "Tokyo",
+        "n_references": 8,
+        "rank_diff": 1152,
+        "top_diff": [
+          "entertainment",
+          "Entertainment",
+          "entertain",
+          "entertaining",
+          "amusement"
+        ],
+        "rank_lre": 12480,
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12480,
+          "0.5": 14238,
+          "1.5": 10896,
+          "2.0": 9629,
+          "3.0": 7474,
+          "5.0": 4800
+        }
+      },
+      {
+        "subject": "Tata Consultancy Services",
+        "model_top1_id": 35812,
+        "model_top1": "Mumbai",
+        "n_references": 8,
+        "rank_diff": 335,
+        "top_diff": [
+          "Recruitment",
+          "Hiring",
+          "outsourcing",
+          "Hire",
+          "hiring"
+        ],
+        "rank_lre": 16170,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "providing",
+          ""
+        ],
+        "rank_lre_beta": {
+          "1.0": 16170,
+          "0.5": 19478,
+          "1.5": 13225,
+          "2.0": 10728,
+          "3.0": 7251,
+          "5.0": 3419
+        }
+      },
+      {
+        "subject": "Slip-n-Slide Records",
+        "model_top1_id": 1561,
+        "model_top1": "New",
+        "n_references": 8,
+        "rank_diff": 7575,
+        "top_diff": [
+          "music",
+          "musicians",
+          "Music",
+          "musical",
+          "DJs"
+        ],
+        "rank_lre": 1400,
+        "top_lre": [
+          "its",
+          "their",
+          "being",
+          "",
+          "producing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1400,
+          "0.5": 1474,
+          "1.5": 1311,
+          "2.0": 1267,
+          "3.0": 1199,
+          "5.0": 1167
+        }
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 10703.5,
+          "median_lograng": 4.02956438484107,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 9091.0,
+          "median_lograng": 3.9586594270529334,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 7524.0,
+          "median_lograng": 3.87635151971923,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 6444.0,
+          "median_lograng": 3.80917867015059,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 4713.5,
+          "median_lograng": 3.6734277044564076,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 3064.0,
+          "median_lograng": 3.4864237985249815,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": "a4965ae7b095",
+    "legacy_split": false,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "faithfulness": {
+    "relation": "company_hq",
+    "n_test": 100,
+    "trials": 1,
+    "grid": {
+      "5": {
+        "0.5": [
+          0.17,
+          0.0
+        ],
+        "1.0": [
+          0.17,
+          0.0
+        ],
+        "1.5": [
+          0.14,
+          0.0
+        ],
+        "2.0": [
+          0.15,
+          0.0
+        ],
+        "3.0": [
+          0.16,
+          0.0
+        ],
+        "5.0": [
+          0.13,
+          0.0
+        ]
+      },
+      "11": {
+        "0.5": [
+          0.18,
+          0.0
+        ],
+        "1.0": [
+          0.16,
+          0.0
+        ],
+        "1.5": [
+          0.17,
+          0.0
+        ],
+        "2.0": [
+          0.26,
+          0.0
+        ],
+        "3.0": [
+          0.31,
+          0.0
+        ],
+        "5.0": [
+          0.34,
+          0.0
+        ]
+      },
+      "14": {
+        "0.5": [
+          0.18,
+          0.0
+        ],
+        "1.0": [
+          0.17,
+          0.0
+        ],
+        "1.5": [
+          0.21,
+          0.0
+        ],
+        "2.0": [
+          0.29,
+          0.0
+        ],
+        "3.0": [
+          0.37,
+          0.0
+        ],
+        "5.0": [
+          0.37,
+          0.0
+        ]
+      },
+      "17": {
+        "0.5": [
+          0.18,
+          0.0
+        ],
+        "1.0": [
+          0.18,
+          0.0
+        ],
+        "1.5": [
+          0.25,
+          0.0
+        ],
+        "2.0": [
+          0.31,
+          0.0
+        ],
+        "3.0": [
+          0.4,
+          0.0
+        ],
+        "5.0": [
+          0.39,
+          0.0
+        ]
+      },
+      "20": {
+        "0.5": [
+          0.18,
+          0.0
+        ],
+        "1.0": [
+          0.2,
+          0.0
+        ],
+        "1.5": [
+          0.2,
+          0.0
+        ],
+        "2.0": [
+          0.3,
+          0.0
+        ],
+        "3.0": [
+          0.35,
+          0.0
+        ],
+        "5.0": [
+          0.45,
+          0.0
+        ]
+      },
+      "23": {
+        "0.5": [
+          0.17,
+          0.0
+        ],
+        "1.0": [
+          0.18,
+          0.0
+        ],
+        "1.5": [
+          0.19,
+          0.0
+        ],
+        "2.0": [
+          0.19,
+          0.0
+        ],
+        "3.0": [
+          0.17,
+          0.0
+        ],
+        "5.0": [
+          0.26,
+          0.0
+        ]
+      }
+    },
+    "best_faith": 0.45,
+    "best_sd": 0.0,
+    "best_layer": 20,
+    "best_beta": 5.0,
+    "lm_correct": 50,
+    "split_fingerprint": "a4965ae7b095",
+    "legacy_split": false,
+    "distinct_first_token": true,
+    "per_subject": {
+      "Tatts Group": 0,
+      "Sysco": 0,
+      "HSH Nordbank": 0,
+      "Vijaya Vauhini Studios": 0,
+      "Union for the Mediterranean": 0,
+      "PACE Sports Management": 1,
+      "Ontario Hydro": 1,
+      "Keshavarz F.C.": 0,
+      "Swordfish Studios": 1,
+      "Rank Organisation": 1,
+      "TransGaming Inc.": 0,
+      "Black Mark Productions": 0,
+      "DCD Media": 0,
+      "Nippon Cultural Broadcasting": 1,
+      "Csepel SC": 1,
+      "Phoenix Group": 1,
+      "Black Sparrow Books": 0,
+      "Co-operative Commonwealth Federation (Ontario Section)": 0,
+      "Metroplex": 1,
+      "Far East Organization": 0,
+      "David McKay Publications": 0,
+      "International Airlines Group": 0,
+      "Gianni Versace S.p.A.": 0,
+      "Ross Stores": 0,
+      "Umm Al-Qura University": 0,
+      "Syrian Arab Army": 0,
+      "Pontifical Catholic University of Chile": 1,
+      "Carnival Films": 1,
+      "Gray Television": 0,
+      "Rogers TV": 0,
+      "Christian Salvesen": 1,
+      "Infogrames Entertainment": 1,
+      "Videocon": 1,
+      "Scottish Socialist Party": 0,
+      "SNK European Democrats": 0,
+      "IMRB International": 0,
+      "Iranian reform movement": 1,
+      "Samsung": 1,
+      "Asprey": 1,
+      "Vertigo Films": 1,
+      "Sun Shipbuilding & Drydock Co.": 0,
+      "Uranium One": 0,
+      "Baja Fresh": 0,
+      "Irish Citizen Army": 1,
+      "Lion Air": 0,
+      "BBC Radio": 1,
+      "Polydor Records": 1,
+      "Vision Research Phantom": 0,
+      "Jan De Nul": 0,
+      "Crosley Broadcasting Corporation": 0,
+      "Boulton Paul Aircraft": 0,
+      "Minnesota Strikers": 0,
+      "Progressive Conservative Association of Alberta": 1,
+      "American Indian Center": 0,
+      "Annick Press": 1,
+      "Lavalin": 1,
+      "Cummins": 0,
+      "Amirkabir University of Technology": 1,
+      "Epitome Pictures": 0,
+      "\u00c9cole des hautes \u00e9tudes commerciales du nord": 0,
+      "Disneyland Resort": 0,
+      "Wiener AC": 0,
+      "Canadian Jewish Congress": 0,
+      "Royal Dramatic Theatre": 1,
+      "ISG Business School": 0,
+      "CEDADE": 1,
+      "Real Academia de Bellas Artes de San Fernando": 1,
+      "Tata Steel Europe": 1,
+      "Hang Seng Bank": 1,
+      "Burnham and Root": 0,
+      "Seibu Kaihatsu": 1,
+      "Aer Arann": 1,
+      "Scott Free Productions": 0,
+      "FIDE": 0,
+      "Minerva Press": 1,
+      "Shelbourne F.C.": 0,
+      "Power Jets": 1,
+      "Crown Airways": 1,
+      "Miracle Mart": 0,
+      "Robert Allan Ltd.": 0,
+      "International Socialist Tendency": 1,
+      "Renault Trucks": 0,
+      "Nintendo": 0,
+      "Alitalia-Linee Aeree Italiane": 0,
+      "Hamilton Bradshaw": 1,
+      "Crawford Composites": 0,
+      "American Licorice Company": 1,
+      "Dresdner SC": 0,
+      "X5 Music Group": 1,
+      "Square Enix Europe": 1,
+      "Venoco": 0,
+      "Mitsubishi Corporation": 1,
+      "Rolex": 1,
+      "Starwood Capital Group": 0,
+      "MAMA & Company": 0,
+      "RPG Group": 1,
+      "South Side Elevated Railroad": 1,
+      "Human Entertainment": 1,
+      "Tata Consultancy Services": 1,
+      "Slip-n-Slide Records": 0
+    },
+    "biased_single_draw_mean": 0.45
+  },
+  "n_lre": 100,
+  "baseline_lens": {
+    "n": 100,
+    "layer": 17,
+    "template": "{} is headquartered in the city of",
+    "agg": {
+      "diff": {
+        "median_rank": 3834.5,
+        "median_lograng": 3.5834873932797695,
+        "agree_at1": 0.01,
+        "agree_at10": 0.03
+      },
+      "lre": {
+        "median_rank": 9495.5,
+        "median_lograng": 3.977563523818438,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Tatts Group",
+        "model_top1": "Melbourne",
+        "rank_diff": 216,
+        "rank_lre": 9491,
+        "top_diff": [
+          "Australia",
+          "casino",
+          "payroll",
+          "acquisitions",
+          "merg"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Sysco",
+        "model_top1": "Chicago",
+        "rank_diff": 1725,
+        "rank_lre": 8067,
+        "top_diff": [
+          "meal",
+          "food",
+          "meals",
+          "Meal",
+          "culinary"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "",
+          "their"
+        ]
+      },
+      {
+        "subject": "HSH Nordbank",
+        "model_top1": "Hamburg",
+        "rank_diff": 542,
+        "rank_lre": 14244,
+        "top_diff": [
+          "banking",
+          "Banking",
+          "bank",
+          "bankers",
+          "banks"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "",
+          "their"
+        ]
+      },
+      {
+        "subject": "Vijaya Vauhini Studios",
+        "model_top1": "Chennai",
+        "rank_diff": 279,
+        "rank_lre": 18225,
+        "top_diff": [
+          "film",
+          "films",
+          "Film",
+          "Bollywood",
+          "cinematic"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      },
+      {
+        "subject": "Union for the Mediterranean",
+        "model_top1": "Barcelona",
+        "rank_diff": 10,
+        "rank_lre": 11426,
+        "top_diff": [
+          "Mediterranean",
+          "Mediterr",
+          "maritime",
+          "sailing",
+          "diplomatic"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "PACE Sports Management",
+        "model_top1": "London",
+        "rank_diff": 4686,
+        "rank_lre": 4909,
+        "top_diff": [
+          "managing",
+          "management",
+          "Management",
+          "Managing",
+          "managerial"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Ontario Hydro",
+        "model_top1": "Toronto",
+        "rank_diff": 44161,
+        "rank_lre": 10049,
+        "top_diff": [
+          "electricity",
+          "Electricity",
+          "renewable",
+          "energy",
+          "electrical"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Keshavarz F.C.",
+        "model_top1": "Tehran",
+        "rank_diff": 2897,
+        "rank_lre": 26537,
+        "top_diff": [
+          "lyr",
+          "narr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Swordfish Studios",
+        "model_top1": "London",
+        "rank_diff": 32897,
+        "rank_lre": 5411,
+        "top_diff": [
+          "studios",
+          "Studios",
+          "studio",
+          "Studio",
+          "game"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      },
+      {
+        "subject": "Rank Organisation",
+        "model_top1": "London",
+        "rank_diff": 1133,
+        "rank_lre": 4672,
+        "top_diff": [
+          "militar",
+          "organising",
+          "Military",
+          "recruiting",
+          "military"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "TransGaming Inc.",
+        "model_top1": "Toronto",
+        "rank_diff": 77975,
+        "rank_lre": 10083,
+        "top_diff": [
+          "narr",
+          "lyr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Black Mark Productions",
+        "model_top1": "Los",
+        "rank_diff": 4684,
+        "rank_lre": 7892,
+        "top_diff": [
+          "productions",
+          "filming",
+          "Productions",
+          "filmm",
+          "Film"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "DCD Media",
+        "model_top1": "New",
+        "rank_diff": 67159,
+        "rank_lre": 2259,
+        "top_diff": [
+          "broadcasting",
+          "broadcast",
+          "Broadcasting",
+          "media",
+          "broadcasts"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Nippon Cultural Broadcasting",
+        "model_top1": "Tokyo",
+        "rank_diff": 459,
+        "rank_lre": 10376,
+        "top_diff": [
+          "broadcasting",
+          "broadcast",
+          "broadcasts",
+          "Broadcasting",
+          "broadcasters"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Csepel SC",
+        "model_top1": "Budapest",
+        "rank_diff": 2390,
+        "rank_lre": 25206,
+        "top_diff": [
+          "soccer",
+          "Soccer",
+          "football",
+          "Football",
+          "basketball"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "having"
+        ]
+      },
+      {
+        "subject": "Phoenix Group",
+        "model_top1": "London",
+        "rank_diff": 10353,
+        "rank_lre": 5274,
+        "top_diff": [
+          "manufacturing",
+          "Financial",
+          "Corporate",
+          "Recruitment",
+          "Manufacturing"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Black Sparrow Books",
+        "model_top1": "New",
+        "rank_diff": 32003,
+        "rank_lre": 2034,
+        "top_diff": [
+          "books",
+          "Books",
+          "bookstore",
+          "book",
+          "Book"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "providing",
+          ""
+        ]
+      },
+      {
+        "subject": "Co-operative Commonwealth Federation (Ontario Section)",
+        "model_top1": "Toronto",
+        "rank_diff": 79438,
+        "rank_lre": 10096,
+        "top_diff": [
+          "lyr",
+          "narr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Metroplex",
+        "model_top1": "Dallas",
+        "rank_diff": 0,
+        "rank_lre": 5462,
+        "top_diff": [
+          "Dallas",
+          "Texas",
+          "Houston",
+          "skys",
+          "tornado"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "having"
+        ]
+      },
+      {
+        "subject": "Far East Organization",
+        "model_top1": "Moscow",
+        "rank_diff": 669,
+        "rank_lre": 14629,
+        "top_diff": [
+          "Corporate",
+          "Recruitment",
+          "Pharmaceutical",
+          "Terrorism",
+          "Sponsor"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "David McKay Publications",
+        "model_top1": "New",
+        "rank_diff": 18469,
+        "rank_lre": 1960,
+        "top_diff": [
+          "publishing",
+          "Publishing",
+          "publications",
+          "books",
+          "Books"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "International Airlines Group",
+        "model_top1": "Amsterdam",
+        "rank_diff": 6123,
+        "rank_lre": 16833,
+        "top_diff": [
+          "merg",
+          "acquisitions",
+          "merger",
+          "airlines",
+          "restructuring"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Gianni Versace S.p.A.",
+        "model_top1": "Milan",
+        "rank_diff": 76190,
+        "rank_lre": 17123,
+        "top_diff": [
+          "lyr",
+          "narr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Ross Stores",
+        "model_top1": "Dublin",
+        "rank_diff": 53776,
+        "rank_lre": 14392,
+        "top_diff": [
+          "retail",
+          "retailers",
+          "stores",
+          "Retail",
+          "shopping"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Umm Al-Qura University",
+        "model_top1": "M",
+        "rank_diff": 5226,
+        "rank_lre": 671,
+        "top_diff": [
+          "Academic",
+          "Universities",
+          "Faculty",
+          "universities",
+          "academic"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "providing",
+          "their"
+        ]
+      },
+      {
+        "subject": "Syrian Arab Army",
+        "model_top1": "Damascus",
+        "rank_diff": 1264,
+        "rank_lre": 32641,
+        "top_diff": [
+          "militar",
+          "military",
+          "soldiers",
+          "Military",
+          "army"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Pontifical Catholic University of Chile",
+        "model_top1": "Santiago",
+        "rank_diff": 1,
+        "rank_lre": 13178,
+        "top_diff": [
+          "Chile",
+          "Santiago",
+          "Argentine",
+          "Peru",
+          "Bolivia"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "having"
+        ]
+      },
+      {
+        "subject": "Carnival Films",
+        "model_top1": "London",
+        "rank_diff": 3183,
+        "rank_lre": 4887,
+        "top_diff": [
+          "films",
+          "film",
+          "Films",
+          "filming",
+          "filmm"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "Gray Television",
+        "model_top1": "Knoxville",
+        "rank_diff": 656,
+        "rank_lre": 26827,
+        "top_diff": [
+          "broadcasting",
+          "broadcast",
+          "television",
+          "Broadcasting",
+          "TV"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Rogers TV",
+        "model_top1": "Toronto",
+        "rank_diff": 22499,
+        "rank_lre": 9687,
+        "top_diff": [
+          "TV",
+          "broadcasting",
+          "television",
+          "broadcast",
+          "tv"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Christian Salvesen",
+        "model_top1": "Oslo",
+        "rank_diff": 361,
+        "rank_lre": 14546,
+        "top_diff": [
+          "sailing",
+          "sail",
+          "sails",
+          "sailed",
+          "ship"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Infogrames Entertainment",
+        "model_top1": "Paris",
+        "rank_diff": 76536,
+        "rank_lre": 6660,
+        "top_diff": [
+          "games",
+          "arcade",
+          "Entertainment",
+          "entertainment",
+          "movies"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Videocon",
+        "model_top1": "Mumbai",
+        "rank_diff": 113,
+        "rank_lre": 17080,
+        "top_diff": [
+          "TVs",
+          "manufacturing",
+          "TV",
+          "Bollywood",
+          "television"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Scottish Socialist Party",
+        "model_top1": "Edinburgh",
+        "rank_diff": 60305,
+        "rank_lre": 13082,
+        "top_diff": [
+          "campaigning",
+          "advocacy",
+          "lobbying",
+          "advocating",
+          "leftist"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "SNK European Democrats",
+        "model_top1": "Brussels",
+        "rank_diff": 236,
+        "rank_lre": 9384,
+        "top_diff": [
+          "lobbying",
+          "voting",
+          "political",
+          "politic",
+          "Political"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "IMRB International",
+        "model_top1": "Mumbai",
+        "rank_diff": 3684,
+        "rank_lre": 19986,
+        "top_diff": [
+          "globalization",
+          "Foreign",
+          "international",
+          "global",
+          "International"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Iranian reform movement",
+        "model_top1": "Tehran",
+        "rank_diff": 2934,
+        "rank_lre": 24628,
+        "top_diff": [
+          "activists",
+          "lobbying",
+          "advocating",
+          "protesting",
+          "rallies"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Samsung",
+        "model_top1": "Seoul",
+        "rank_diff": 599,
+        "rank_lre": 26394,
+        "top_diff": [
+          "Samsung",
+          "Smartphone",
+          "Samsung",
+          "samsung",
+          "Manufacturers"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Asprey",
+        "model_top1": "London",
+        "rank_diff": 3985,
+        "rank_lre": 4903,
+        "top_diff": [
+          "luxury",
+          "manufacturing",
+          "premium",
+          "Luxury",
+          "luxurious"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Vertigo Films",
+        "model_top1": "London",
+        "rank_diff": 17703,
+        "rank_lre": 5250,
+        "top_diff": [
+          "films",
+          "Films",
+          "Film",
+          "film",
+          "filmm"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "Sun Shipbuilding & Drydock Co.",
+        "model_top1": "Chester",
+        "rank_diff": 95572,
+        "rank_lre": 12984,
+        "top_diff": [
+          "narr",
+          "lyr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Uranium One",
+        "model_top1": "Moscow",
+        "rank_diff": 472,
+        "rank_lre": 14279,
+        "top_diff": [
+          "bribery",
+          "brib",
+          "conspiracy",
+          "satellite",
+          "uranium"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Baja Fresh",
+        "model_top1": "San",
+        "rank_diff": 6888,
+        "rank_lre": 4008,
+        "top_diff": [
+          "grocery",
+          "snack",
+          "foods",
+          "snacks",
+          "tasty"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Irish Citizen Army",
+        "model_top1": "Dublin",
+        "rank_diff": 3327,
+        "rank_lre": 12092,
+        "top_diff": [
+          "militant",
+          "riot",
+          "protesting",
+          "milit",
+          "riots"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Lion Air",
+        "model_top1": "Jakarta",
+        "rank_diff": 309,
+        "rank_lre": 25594,
+        "top_diff": [
+          "flying",
+          "airline",
+          "airlines",
+          "flights",
+          "flight"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "BBC Radio",
+        "model_top1": "London",
+        "rank_diff": 320,
+        "rank_lre": 3939,
+        "top_diff": [
+          "broadcasting",
+          "broadcasts",
+          "broadcast",
+          "radio",
+          "Broadcasting"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Polydor Records",
+        "model_top1": "London",
+        "rank_diff": 12625,
+        "rank_lre": 5141,
+        "top_diff": [
+          "music",
+          "Music",
+          "musicians",
+          "musical",
+          "Music"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      },
+      {
+        "subject": "Vision Research Phantom",
+        "model_top1": "W",
+        "rank_diff": 37702,
+        "rank_lre": 924,
+        "top_diff": [
+          "Phantom",
+          "phantom",
+          "paranormal",
+          "holog",
+          "imaging"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Jan De Nul",
+        "model_top1": "Ant",
+        "rank_diff": 16553,
+        "rank_lre": 8485,
+        "top_diff": [
+          "underwater",
+          "dred",
+          "marine",
+          "seaw",
+          "ocean"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Crosley Broadcasting Corporation",
+        "model_top1": "Cincinnati",
+        "rank_diff": 8197,
+        "rank_lre": 14641,
+        "top_diff": [
+          "broadcasting",
+          "television",
+          "manufacturing",
+          "suing",
+          "Television"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Boulton Paul Aircraft",
+        "model_top1": "W",
+        "rank_diff": 31131,
+        "rank_lre": 887,
+        "top_diff": [
+          "aircraft",
+          "Aircraft",
+          "flying",
+          "flight",
+          "aviation"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Minnesota Strikers",
+        "model_top1": "Minneapolis",
+        "rank_diff": 11816,
+        "rank_lre": 27319,
+        "top_diff": [
+          "soccer",
+          "Soccer",
+          "football",
+          "eSports",
+          "NFL"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "having"
+        ]
+      },
+      {
+        "subject": "Progressive Conservative Association of Alberta",
+        "model_top1": "Calgary",
+        "rank_diff": 2,
+        "rank_lre": 11722,
+        "top_diff": [
+          "Alberta",
+          "Edmonton",
+          "Calgary",
+          "ranch",
+          "provinc"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "American Indian Center",
+        "model_top1": "Washington",
+        "rank_diff": 536,
+        "rank_lre": 4654,
+        "top_diff": [
+          "homeless",
+          "fundra",
+          "fundraiser",
+          "homelessness",
+          "donated"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "",
+          "their"
+        ]
+      },
+      {
+        "subject": "Annick Press",
+        "model_top1": "Paris",
+        "rank_diff": 50506,
+        "rank_lre": 6401,
+        "top_diff": [
+          "publishing",
+          "printing",
+          "books",
+          "print",
+          "publishers"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      },
+      {
+        "subject": "Lavalin",
+        "model_top1": "Montreal",
+        "rank_diff": 1322,
+        "rank_lre": 9534,
+        "top_diff": [
+          "Engineers",
+          "subcontract",
+          "Engineering",
+          "engineering",
+          "outsourcing"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Cummins",
+        "model_top1": "Columbus",
+        "rank_diff": 12410,
+        "rank_lre": 15886,
+        "top_diff": [
+          "diesel",
+          "engine",
+          "engines",
+          "Diesel",
+          "Engine"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Amirkabir University of Technology",
+        "model_top1": "Tehran",
+        "rank_diff": 356,
+        "rank_lre": 22034,
+        "top_diff": [
+          "engineering",
+          "Engineering",
+          "engineers",
+          "Engineers",
+          "Engineer"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "providing",
+          "their"
+        ]
+      },
+      {
+        "subject": "Epitome Pictures",
+        "model_top1": "Los",
+        "rank_diff": 1921,
+        "rank_lre": 7477,
+        "top_diff": [
+          "filming",
+          "films",
+          "film",
+          "cinemat",
+          "Film"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "\u00c9cole des hautes \u00e9tudes commerciales du nord",
+        "model_top1": "Mon",
+        "rank_diff": 98072,
+        "rank_lre": 5123,
+        "top_diff": [
+          "Arctic",
+          "Alaska",
+          "snowy",
+          "snow",
+          "northern"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Disneyland Resort",
+        "model_top1": "Anaheim",
+        "rank_diff": 237,
+        "rank_lre": 25367,
+        "top_diff": [
+          "Resorts",
+          "resorts",
+          "Resort",
+          "Disneyland",
+          "hotels"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Wiener AC",
+        "model_top1": "Vienna",
+        "rank_diff": 1758,
+        "rank_lre": 17206,
+        "top_diff": [
+          "acoustic",
+          "appliances",
+          "voltage",
+          "HVAC",
+          "wiring"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Canadian Jewish Congress",
+        "model_top1": "Toronto",
+        "rank_diff": 2177,
+        "rank_lre": 8495,
+        "top_diff": [
+          "lobbying",
+          "advocacy",
+          "Advoc",
+          "advocating",
+          "fundraising"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Royal Dramatic Theatre",
+        "model_top1": "Stockholm",
+        "rank_diff": 4832,
+        "rank_lre": 17799,
+        "top_diff": [
+          "theatre",
+          "theatrical",
+          "Theatre",
+          "theater",
+          "theat"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "ISG Business School",
+        "model_top1": "Warsaw",
+        "rank_diff": 8165,
+        "rank_lre": 17898,
+        "top_diff": [
+          "Academic",
+          "graduates",
+          "Graduate",
+          "Education",
+          "academic"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "",
+          "their"
+        ]
+      },
+      {
+        "subject": "CEDADE",
+        "model_top1": "Paris",
+        "rank_diff": 15282,
+        "rank_lre": 6150,
+        "top_diff": [
+          "academic",
+          "colleges",
+          "acad",
+          "Academic",
+          "rehab"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Real Academia de Bellas Artes de San Fernando",
+        "model_top1": "Madrid",
+        "rank_diff": 202,
+        "rank_lre": 20004,
+        "top_diff": [
+          "paintings",
+          "artistic",
+          "artworks",
+          "museum",
+          "sculpture"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "having"
+        ]
+      },
+      {
+        "subject": "Tata Steel Europe",
+        "model_top1": "London",
+        "rank_diff": 406,
+        "rank_lre": 4382,
+        "top_diff": [
+          "Europe",
+          "\u20ac",
+          "EU",
+          "European",
+          "Euros"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Hang Seng Bank",
+        "model_top1": "Hong",
+        "rank_diff": 701,
+        "rank_lre": 5220,
+        "top_diff": [
+          "banking",
+          "Banking",
+          "bank",
+          "Bank",
+          "banks"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "",
+          "their"
+        ]
+      },
+      {
+        "subject": "Burnham and Root",
+        "model_top1": "New",
+        "rank_diff": 13105,
+        "rank_lre": 1988,
+        "top_diff": [
+          "planting",
+          "botanical",
+          "plant",
+          "plants",
+          "planted"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Seibu Kaihatsu",
+        "model_top1": "Tokyo",
+        "rank_diff": 813,
+        "rank_lre": 11016,
+        "top_diff": [
+          "manufacturing",
+          "tanker",
+          "fleets",
+          "ships",
+          "vehicles"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Aer Arann",
+        "model_top1": "Dublin",
+        "rank_diff": 92,
+        "rank_lre": 9500,
+        "top_diff": [
+          "ferry",
+          "sailing",
+          "maritime",
+          "airlines",
+          "sail"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Scott Free Productions",
+        "model_top1": "Los",
+        "rank_diff": 3208,
+        "rank_lre": 7745,
+        "top_diff": [
+          "filming",
+          "productions",
+          "documentaries",
+          "films",
+          "filmm"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "FIDE",
+        "model_top1": "La",
+        "rank_diff": 16691,
+        "rank_lre": 3192,
+        "top_diff": [
+          "chess",
+          "Chess",
+          "Chess",
+          "tournaments",
+          "tournament"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Minerva Press",
+        "model_top1": "London",
+        "rank_diff": 23212,
+        "rank_lre": 5474,
+        "top_diff": [
+          "publishing",
+          "printing",
+          "reprint",
+          "print",
+          "books"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "producing",
+          "their",
+          ""
+        ]
+      },
+      {
+        "subject": "Shelbourne F.C.",
+        "model_top1": "Dublin",
+        "rank_diff": 59895,
+        "rank_lre": 13814,
+        "top_diff": [
+          "lyr",
+          "narr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Power Jets",
+        "model_top1": "London",
+        "rank_diff": 10853,
+        "rank_lre": 5071,
+        "top_diff": [
+          "rockets",
+          "rocket",
+          "inventions",
+          "Rockets",
+          "aircraft"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Crown Airways",
+        "model_top1": "London",
+        "rank_diff": 2198,
+        "rank_lre": 4539,
+        "top_diff": [
+          "airline",
+          "airlines",
+          "flying",
+          "Airways",
+          "flights"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "providing",
+          ""
+        ]
+      },
+      {
+        "subject": "Miracle Mart",
+        "model_top1": "New",
+        "rank_diff": 39009,
+        "rank_lre": 2082,
+        "top_diff": [
+          "grocery",
+          "retail",
+          "stocking",
+          "supermarket",
+          "selling"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "their",
+          ""
+        ]
+      },
+      {
+        "subject": "Robert Allan Ltd.",
+        "model_top1": "Vancouver",
+        "rank_diff": 64967,
+        "rank_lre": 12971,
+        "top_diff": [
+          "lyr",
+          "narr",
+          "murders",
+          "narratives",
+          "graffiti"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "International Socialist Tendency",
+        "model_top1": "London",
+        "rank_diff": 9010,
+        "rank_lre": 5144,
+        "top_diff": [
+          "Marxist",
+          "Trotsky",
+          "anarchist",
+          "socialist",
+          "ideological"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Renault Trucks",
+        "model_top1": "Bou",
+        "rank_diff": 78544,
+        "rank_lre": 20912,
+        "top_diff": [
+          "truck",
+          "trucks",
+          "Trucks",
+          "tractor",
+          "Truck"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Nintendo",
+        "model_top1": "Kyoto",
+        "rank_diff": 24325,
+        "rank_lre": 18879,
+        "top_diff": [
+          "Nintendo",
+          "Nintendo",
+          "/games",
+          "Games",
+          "Gamer"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Alitalia-Linee Aeree Italiane",
+        "model_top1": "Rome",
+        "rank_diff": 1091,
+        "rank_lre": 7941,
+        "top_diff": [
+          "airline",
+          "airlines",
+          "Airlines",
+          "Airbus",
+          "airl"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Hamilton Bradshaw",
+        "model_top1": "London",
+        "rank_diff": 663,
+        "rank_lre": 4576,
+        "top_diff": [
+          "Writing",
+          "writing",
+          "Lawyer",
+          "attorneys",
+          "Writers"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "providing",
+          ""
+        ]
+      },
+      {
+        "subject": "Crawford Composites",
+        "model_top1": "Hunts",
+        "rank_diff": 1240,
+        "rank_lre": 34150,
+        "top_diff": [
+          "manufacturing",
+          "manufacture",
+          "fiberglass",
+          "manufactures",
+          "fabrication"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "producing",
+          ""
+        ]
+      },
+      {
+        "subject": "American Licorice Company",
+        "model_top1": "New",
+        "rank_diff": 43197,
+        "rank_lre": 2087,
+        "top_diff": [
+          "manufacturing",
+          "manufactures",
+          "manufacturer",
+          "Manufacturing",
+          "manufacture"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      },
+      {
+        "subject": "Dresdner SC",
+        "model_top1": "D",
+        "rank_diff": 48302,
+        "rank_lre": 953,
+        "top_diff": [
+          "soccer",
+          "football",
+          "Soccer",
+          "sports",
+          "athletics"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "having"
+        ]
+      },
+      {
+        "subject": "X5 Music Group",
+        "model_top1": "Moscow",
+        "rank_diff": 4978,
+        "rank_lre": 16071,
+        "top_diff": [
+          "Music",
+          "music",
+          "acquisitions",
+          "DJs",
+          "Musical"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Square Enix Europe",
+        "model_top1": "London",
+        "rank_diff": 58,
+        "rank_lre": 3882,
+        "top_diff": [
+          "Euros",
+          "\u20ac",
+          "EU",
+          "European",
+          "Euro"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Venoco",
+        "model_top1": "Houston",
+        "rank_diff": 998,
+        "rank_lre": 10256,
+        "top_diff": [
+          "oil",
+          "drilling",
+          "petroleum",
+          "fracking",
+          "Oil"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Mitsubishi Corporation",
+        "model_top1": "Tokyo",
+        "rank_diff": 151,
+        "rank_lre": 9262,
+        "top_diff": [
+          "financing",
+          "Investment",
+          "Finance",
+          "Financial",
+          "Export"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "providing",
+          "their"
+        ]
+      },
+      {
+        "subject": "Rolex",
+        "model_top1": "Geneva",
+        "rank_diff": 713,
+        "rank_lre": 11988,
+        "top_diff": [
+          "Rolex",
+          "Watches",
+          "watches",
+          "jewellery",
+          "luxury"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "having"
+        ]
+      },
+      {
+        "subject": "Starwood Capital Group",
+        "model_top1": "New",
+        "rank_diff": 22165,
+        "rank_lre": 2066,
+        "top_diff": [
+          "investor",
+          "financing",
+          "investment",
+          "investing",
+          "Investment"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "MAMA & Company",
+        "model_top1": "New",
+        "rank_diff": 26590,
+        "rank_lre": 2053,
+        "top_diff": [
+          "Talent",
+          "Artist",
+          "Artists",
+          "chore",
+          "Hiring"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "RPG Group",
+        "model_top1": "Paris",
+        "rank_diff": 98032,
+        "rank_lre": 6988,
+        "top_diff": [
+          "manufacturing",
+          "Manufacturing",
+          "Aerospace",
+          "Membership",
+          "Racing"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "providing"
+        ]
+      },
+      {
+        "subject": "South Side Elevated Railroad",
+        "model_top1": "Chicago",
+        "rank_diff": 437,
+        "rank_lre": 7905,
+        "top_diff": [
+          "railroad",
+          "railway",
+          "transportation",
+          "transporting",
+          "railways"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Human Entertainment",
+        "model_top1": "Tokyo",
+        "rank_diff": 2201,
+        "rank_lre": 11673,
+        "top_diff": [
+          "entertainment",
+          "Entertainment",
+          "entertain",
+          "entertaining",
+          "entert"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "",
+          "their",
+          "providing"
+        ]
+      },
+      {
+        "subject": "Tata Consultancy Services",
+        "model_top1": "Mumbai",
+        "rank_diff": 493,
+        "rank_lre": 16727,
+        "top_diff": [
+          "Recruitment",
+          "Hiring",
+          "recruiters",
+          "hiring",
+          "Recru"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "providing",
+          "their",
+          ""
+        ]
+      },
+      {
+        "subject": "Slip-n-Slide Records",
+        "model_top1": "New",
+        "rank_diff": 21720,
+        "rank_lre": 1981,
+        "top_diff": [
+          "music",
+          "musicians",
+          "Music",
+          "musical",
+          "DJs"
+        ],
+        "top_lre": [
+          "its",
+          "being",
+          "their",
+          "",
+          "producing"
+        ]
+      }
+    ],
+    "split_fingerprint": "a4965ae7b095",
+    "legacy_split": false
+  },
+  "trailing_space": false,
+  "positions": {
+    "Digital Eel": 3,
+    "Club Med": 2,
+    "European Aviation Safety Agency": 4,
+    "Telfort": 3,
+    "Optomen": 2,
+    "Sharp, Stewart and Company": 5,
+    "French Academy of Sciences": 4,
+    "CHUM Limited": 3,
+    "Tatts Group": 3,
+    "Sysco": 2,
+    "HSH Nordbank": 4,
+    "Vijaya Vauhini Studios": 8,
+    "Union for the Mediterranean": 4,
+    "PACE Sports Management": 3,
+    "Ontario Hydro": 3,
+    "Keshavarz F.C.": 7,
+    "Swordfish Studios": 4,
+    "Rank Organisation": 2,
+    "TransGaming Inc.": 5,
+    "Black Mark Productions": 3,
+    "DCD Media": 3,
+    "Nippon Cultural Broadcasting": 5,
+    "Csepel SC": 4,
+    "Phoenix Group": 2,
+    "Black Sparrow Books": 4,
+    "Co-operative Commonwealth Federation (Ontario Section)": 9,
+    "Metroplex": 2,
+    "Far East Organization": 3,
+    "David McKay Publications": 3,
+    "International Airlines Group": 3,
+    "Gianni Versace S.p.A.": 8,
+    "Ross Stores": 2,
+    "Umm Al-Qura University": 6,
+    "Syrian Arab Army": 4,
+    "Pontifical Catholic University of Chile": 7,
+    "Carnival Films": 4,
+    "Gray Television": 2,
+    "Rogers TV": 4,
+    "Christian Salvesen": 4,
+    "Infogrames Entertainment": 4,
+    "Videocon": 2,
+    "Scottish Socialist Party": 4,
+    "SNK European Democrats": 4,
+    "IMRB International": 3,
+    "Iranian reform movement": 4,
+    "Samsung": 1,
+    "Asprey": 3,
+    "Vertigo Films": 3,
+    "Sun Shipbuilding & Drydock Co.": 8,
+    "Uranium One": 4,
+    "Baja Fresh": 3,
+    "Irish Citizen Army": 4,
+    "Lion Air": 3,
+    "BBC Radio": 2,
+    "Polydor Records": 4,
+    "Vision Research Phantom": 3,
+    "Jan De Nul": 4,
+    "Crosley Broadcasting Corporation": 5,
+    "Boulton Paul Aircraft": 5,
+    "Minnesota Strikers": 3,
+    "Progressive Conservative Association of Alberta": 6,
+    "American Indian Center": 3,
+    "Annick Press": 3,
+    "Lavalin": 3,
+    "Cummins": 2,
+    "Amirkabir University of Technology": 7,
+    "Epitome Pictures": 4,
+    "\u00c9cole des hautes \u00e9tudes commerciales du nord": 11,
+    "Disneyland Resort": 3,
+    "Wiener AC": 3,
+    "Canadian Jewish Congress": 3,
+    "Royal Dramatic Theatre": 4,
+    "ISG Business School": 4,
+    "CEDADE": 2,
+    "Real Academia de Bellas Artes de San Fernando": 11,
+    "Tata Steel Europe": 4,
+    "Hang Seng Bank": 4,
+    "Burnham and Root": 4,
+    "Seibu Kaihatsu": 5,
+    "Aer Arann": 4,
+    "Scott Free Productions": 3,
+    "FIDE": 2,
+    "Minerva Press": 3,
+    "Shelbourne F.C.": 6,
+    "Power Jets": 2,
+    "Crown Airways": 3,
+    "Miracle Mart": 3,
+    "Robert Allan Ltd.": 4,
+    "International Socialist Tendency": 4,
+    "Renault Trucks": 3,
+    "Nintendo": 1,
+    "Alitalia-Linee Aeree Italiane": 9,
+    "Hamilton Bradshaw": 3,
+    "Crawford Composites": 5,
+    "American Licorice Company": 5,
+    "Dresdner SC": 5,
+    "X5 Music Group": 4,
+    "Square Enix Europe": 4,
+    "Venoco": 2,
+    "Mitsubishi Corporation": 4,
+    "Rolex": 2,
+    "Starwood Capital Group": 4,
+    "MAMA & Company": 4,
+    "RPG Group": 3,
+    "South Side Elevated Railroad": 4,
+    "Human Entertainment": 2,
+    "Tata Consultancy Services": 5,
+    "Slip-n-Slide Records": 6
+  },
+  "content_tokenization_changes": [],
+  "split_fingerprint": "a4965ae7b095",
+  "baseline_sha256": {
+    "results/olmo/results/shared_split/jacobian_lens.json": "af2cb0a83bfb04f73b4fb913d494f26fce80760faf589b998a5373f0a8427e16",
+    "results/olmo/results/shared_split/faithfulness_company_hq.json": "25aac57fffd24d12310ad174f9818e868d4c62848be99e1c14793a8a0bf18005"
+  },
+  "data_sha256": "22c86cf64b908db86c73b17add31e59fd6022ac74e500840fcad35bd706a8e4e",
+  "elapsed_seconds": 23.752630472183228
+}

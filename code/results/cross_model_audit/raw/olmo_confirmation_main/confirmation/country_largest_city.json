@@ -1,0 +1,118 @@
+{
+  "relation": "country_largest_city",
+  "protocol": "main",
+  "subject_policy": "original_rows",
+  "input_samples": 24,
+  "cleaned_samples": 24,
+  "seed": 1,
+  "faith": {
+    "coarse": {
+      "layer": 11,
+      "beta": 5.0,
+      "score": 0.875,
+      "hits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ]
+    }
+  },
+  "lens": {
+    "baseline": {
+      "config": {
+        "prompt": "known_for",
+        "layer": 17,
+        "references": 8,
+        "readout": "diff",
+        "beta": null,
+        "metric": "median_logrank"
+      },
+      "result": {
+        "ranks": [
+          2,
+          3,
+          1,
+          3,
+          11,
+          2,
+          2,
+          3,
+          3,
+          25,
+          20,
+          7,
+          6,
+          6,
+          1,
+          8
+        ],
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "n_constant_outputs": 0,
+        "median_logrank": 0.6020599913279624,
+        "mean_logrank": 0.7378478866256839,
+        "top1": 0.0,
+        "top10": 0.8125,
+        "mrr": 0.23070245726495725,
+        "optimistic_top1": 0.0
+      }
+    }
+  },
+  "lm_accuracy": 0.875,
+  "prior_only_faith": 0.0,
+  "n_faith": 8,
+  "n_lens": 16,
+  "faith_subjects": [
+    "Canada",
+    "Nigeria",
+    "South Korea",
+    "China",
+    "Turkey",
+    "Pakistan",
+    "Brazil",
+    "Italy"
+  ],
+  "lens_subjects": [
+    "Nigeria",
+    "Netherlands",
+    "Mexico",
+    "South Korea",
+    "India",
+    "Poland",
+    "Japan",
+    "Argentina",
+    "Spain",
+    "Australia",
+    "Canada",
+    "Germany",
+    "Turkey",
+    "Switzerland",
+    "Russia",
+    "Brazil"
+  ],
+  "faith_split_fingerprint": "cd7f53169367",
+  "lens_split_fingerprint": "061c933fbb37",
+  "worker": "olmo_confirm_rho2_5",
+  "elapsed_seconds": 8.050985336303711
+}
