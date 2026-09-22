@@ -9,6 +9,22 @@ We now introduce the \emph{contrastive Jacobian lens}. It
 makes two changes: (i) we use a type-specific reference set and
 (ii) we drop the anchor.
 
+\paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
+second depends on which entity is being read. The anchor here is
+inherited from the LRE, not from the Jacobian lens: the latter has no
+such term, being $J_\ell$ applied directly to an activation
+\citep{gurnee2026workspace}. This change is therefore a departure from
+Eq.~\ref{eq:beta} rather than from prior lens work.
+
+Dropping the anchor is not a matter of discarding something
+uninformative: it is the readout the
+reference entities themselves receive, and in an operator it is what
+supplies the relation. On \textsc{country\_capital\_city}, removing it
+from the fitted operator turns \emph{Madrid} and \emph{Ottawa} into
+\emph{Spain} and \emph{Canada} -- the subject in place of the object,
+which is a failure for the operator and the goal for a readout meant to
+report what an entity evokes.
+
 
 
 \section{Discussion}
