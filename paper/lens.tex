@@ -395,8 +395,11 @@ described in Appendix~\ref{sec:numeric-objects}.}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho = 0.771$
-($p = 1.6\!\times\!10^{-6}$); a permutation test agrees
-(Appendix~\ref{sec:permutation}).
+($p = 1.6\!\times\!10^{-6}$).
+
+% RESTORE IF THERE'S TIME
+%; a permutation test agrees
+%(Appendix~\ref{sec:permutation}).
 
 \paragraph{The correlation is not carried by cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
@@ -886,7 +889,8 @@ intended to diagnose these limitations, not to support individual profiling.
 Section~\ref{sec:setup} describes the model, relation selection, prompts,
 data partitions, and hyperparameter grid. Equations~\ref{eq:wb}--\ref{eq:lens}
 define the estimators; Appendices~\ref{sec:jvp}, \ref{sec:layer17},
-\ref{sec:permutation}, and~\ref{sec:numeric-objects} document the
+%\ref{sec:permutation},
+and~\ref{sec:numeric-objects} document the
 Jacobian--vector products, layer choice, permutation test, and numeric-token
 correction. Table~\ref{tab:relations} reports the relation-level results.
 
@@ -924,17 +928,18 @@ relation, without per-relation tuning. However, this does not establish robustne
 the layer choice: changing the layer can affect relations differently.
 A systematic sensitivity analysis is left to future work.
 
+% RESTORE IF THERE IS TIME
 
-\section{Permutation test for the main correlation}
-\label{sec:permutation}
-
-The correlation in \S\ref{sec:results} rests on 28 points, and its
-parametric $p$-value assumes more than we would like. We therefore also
-test it by permutation: we shuffle the lens scores against the
-faithfulness values $10^4$ times, recompute $\rho$ each time, and count
-how often the shuffled $|\rho|$ matches or exceeds the observed one. It
-does so in $0.03\%$ of shuffles, so the association is not an artifact of
-the small sample.
+%\section{Permutation test for the main correlation}
+%\label{sec:permutation}
+%
+%The correlation in \S\ref{sec:results} rests on 28 points, and its
+%parametric $p$-value assumes more than we would like. We therefore also
+%test it by permutation: we shuffle the lens scores against the
+%faithfulness values $10^4$ times, recompute $\rho$ each time, and count
+%how often the shuffled $|\rho|$ matches or exceeds the observed one. It
+%does so in $0.03\%$ of shuffles, so the association is not an artifact of
+%the small sample.
 
 \section{Numeric-object tokenization correction}
 \label{sec:numeric-objects}
