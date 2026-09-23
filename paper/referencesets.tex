@@ -1,2 +1,62 @@
 
 \subsection{Reference sets}
+\label{sec:refsets}
+\S\ref{sec:lens} motivated NEL by the observation that CEL is sensitive
+to the reference set: if the reference entities $s_i$ share the answer
+with the subject $e$, the difference $s_e - s_i$ removes it. We now
+measure that effect.
+
+\textsc{person\_native\_language} is the right place to see it. Of its
+100 subjects, 69 are French speakers, and for 65 of those 69 the model's
+own answer $m_e$ is the single token ``French'', so the answer is one
+token and cancellation has somewhere visible to show up. We designate
+eight French and eight non-French reference entities in advance and
+remove them from the test set, so that all four reference sets are
+scored on the \emph{same} 61 French and 23 non-French subjects and
+composition is the only thing that varies.
+
+\input{table_refsets}
+
+Table~\ref{tab:refsets} shows the result. Under CEL, moving from
+non-French to French reference entities costs $1.10$ in median
+$\log_{10}$ rank, a factor of 13. Under NEL the same four reference sets
+span $1.71$ to $1.81$ and nothing happens. Tracking the answer token
+itself rather than each subject's own target makes the mechanism plain:
+the rank of ``French'' rises monotonically with the number of French
+reference entities, $47 \to 115 \to 665$ for zero, four and eight, and
+the effect is monotone for 52 of the 61 subjects individually. The
+control is the last column. \emph{The same eight French reference
+entities} leave ``French'' at rank $55$ under NEL --- its best value of
+any reference set --- so the collapse is a property of the subtraction,
+not of the reference entities.
+
+\paragraph{An example.} For Joseph Laniel, whose answer is ``French'',
+NEL ranks ``French'' first. CEL ranks it third with non-French reference
+entities, and $623$rd with French ones, where the top of the readout is
+``sculpt'', ``dancing'', ``singing'', ``dance'', ``chore'', ``piano''.
+The subject, the layer and the prompt are identical in the two cases;
+only the reference set differs.
+
+\paragraph{The effect reverses.} On the 23 non-French subjects the
+ordering is the other way round: the eight French reference entities are
+the \emph{best} set (median $\log_{10}$ rank $0.78$) and the eight
+non-French ones the worst ($1.97$). The same reference set helps or
+hurts depending on what is being asked, so reference quality is not a
+property of the set alone.
+
+\paragraph{What is subtracted.} CEL is
+$\operatorname{mean}_i[J_i s_e] - \operatorname{mean}_i[J_i s_i]$, and
+it is tempting to read the second term as the answer. It is not: decoded
+over the vocabulary it gives ``Cin'', ``La'', ``Une'', ``fils'' --- French
+vocabulary, not the token ``French''. This is expected, since
+$\operatorname{mean}_i[J_i s_i]$ is what the model has loaded about those
+people under \texttt{"\{\} is known for"}, which is French cultural
+material rather than an answer to a question about language. The answer
+is suppressed because the two terms share the French direction, not
+because the subtracted term is the answer.
+
+\paragraph{Consequence.} A reference set of the same type as the subject
+(\S\ref{sec:lens}) does not guarantee that the set is neutral with
+respect to the relation being read out, and no choice of reference
+entities can be neutral for every relation at once. This is why we
+report NEL alongside CEL throughout.

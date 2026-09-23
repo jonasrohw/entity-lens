@@ -44,7 +44,7 @@ In initial experiments, we found that the contrastive entity
 lens is quite sensitive to the reference set. For example,
 if $s_e$ is a French person and a Spanish person is the
 reference entity $s_i$, then the vector difference in 
-Eq.~\ref{cel} will enhance ``French''. But if $s_i$ is
+Eq.~\ref{eq:cel} will enhance ``French''. But if $s_i$ is
 another French person, then ``French'' will be demoted --
 which is bad for answering questions about $s_e$'s
 nationality and native language. We therefore also consider
@@ -77,7 +77,7 @@ etc.
 NEL applied to an input $s$ outputs anything the model is likely
 to say in a context in which an entity of the same type as $s$ occurs, including features
 it shares with other same-type entities.
-NEL is trained to output only what differentiates
+CEL outputs only what differentiates
 $s$ from other same-type entities.
 
 \paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
