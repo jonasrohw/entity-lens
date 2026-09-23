@@ -54,15 +54,16 @@ reference set differences:
 \mbox{NEL}(e) = \operatorname{mean}_i\!\left[\, J_i s_e \,\right]
 \label{eq:nel}
 \end{equation}
-In what follows, ``entity lens'' refers to NEL unless
+In what follows,
+EL refers to both NEL and CEL and
+``entity lens'' refers to NEL unless
 further specified.
 
-To instantiate the entity lens (both NEL and CEL) for factual
+To instantiate the entity lens (for both NEL and CEL) for factual
 relations, we need (i) a prompt that evokes factual associations
-and (ii) a reference set for computing 
-
-contrasts an entity with entities
-of the same type. 
+and (ii) a reference set of entities for computing the Jacobians $J_i$
+(both NEL and CEL) and for serving as the $s_i$ in the
+vector differences $s_e - s_i$ (for CEL).
 
 As the prompt we adopt 
 \texttt{"\{\} is known for"}. This a neutral prompt, i.e.,
@@ -73,12 +74,10 @@ As the reference set, we use entities of the same type as
 the subject, e.g., other countries if the subject is a
 country, other landmarks if the subject is a landmark
 etc.
-The non-contrastive
-standard Jacobian lens applied to an input $s$ outputs anything the model is likely
+NEL applied to an input $s$ outputs anything the model is likely
 to say in a context in which $s$ occurs, including features
 it shares with other same-type entities.
-The contrastive
-Jacobian lens is trained to output only what differentiates
+NEL is trained to output only what differentiates
 $s$ from other same-type type.
 
 \paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
@@ -88,22 +87,21 @@ number of forward and backward passes; this is what makes
 Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
 (Appendix~\ref{sec:jvp}).
 
-\paragraph{The relation score.} We decode $\mbox{CJP}(s)$ over the full vocabulary
+\paragraph{The relation score.} We decode $\mbox{EL}(e)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
-Writing $\mathrm{rk}_{\mbox{CJL}(e)}(m_e)$ for that rank, the diagnostic for a
+Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
 relation is
 \begin{equation}
-A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{CJL}(e)}(m_e),
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{EL}(e)}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
-\paragraph{What makes $A_r$ relation-agnostic.} Nothing on the lens side
-of Eq.~\ref{eq:lens} is specific to $r$: the prompt is neutral and shared,
+\paragraph{What makes $A_r$ relation-agnostic.} 
+Eq.~\ref{eq:lens} is not specific to $r$: the prompt is neutral and shared,
 the layer is fixed at 17 for all relations
-(Appendix~\ref{sec:layer17}), and the differences are
-subject-minus-subject -- \emph{France} minus \emph{Spain}, never
-\emph{France} minus \emph{Paris} -- so no (subject,~object) pair of the
+(Appendix~\ref{sec:layer17}) and
+no (subject,~object) pair of the
 relation is used in estimation. Relation-specificity enters in exactly
 one place, the \emph{target} $m_e$, the quantity
 faithfulness is defined against.
