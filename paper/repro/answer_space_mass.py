@@ -20,7 +20,7 @@ The prediction the decomposition makes: TYPICALITY should predict how
 good a subject is as a reference, for every subject; IDENTITY should
 predict only WHICH subjects it helps, through the same-language effect.
 """
-import json, sys
+import json, os, sys
 import numpy as np
 from pathlib import Path
 
