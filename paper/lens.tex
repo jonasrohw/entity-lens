@@ -56,16 +56,18 @@ LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
 Building on recent work by \citet{gurnee2026workspace},
-we  introduce the \emph{contrastive Jacobian lens}, which
-evaluates the Jacobian at individual reference entities and applies it to
-\emph{differences} between entity representations:
-\emph{France} minus \emph{Spain} rather than \emph{France} alone. What
-the subtraction leaves is what is specific to this entity among others
-of its kind, and the Jacobian carries that residual forward to the
-vocabulary. The construction changes what the readout is
-about: from a category to an individual. The question it
-answers -- \emph{what is this model ready to say about this entity, as
-against others of its kind?} -- is not specific to relations.
+we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
+is trained on subjects of type $t$ placed in the the neutral prompt
+\texttt{"\{\} is known for"} and
+evaluates the Jacobian at entities of type $t$.
+The construction changes what the readout is
+about: it is not about what a model might say in general
+about any concept, but about factual
+knowledge and, more specifically, about factual knowledge
+about an entity of a particular type.
+The question it
+answers -- \emph{what factual knowlege is this model ready to produce about this entity}
+ -- is specific to the entity type, but not specific to any relation.
 
 We estimate  the contrastive Jacobian lens under a single
 neutral prompt shared by every relation, at one layer fixed in advance,
