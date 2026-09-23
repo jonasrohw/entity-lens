@@ -80,6 +80,18 @@ def parse_args():
         help="reproduce the pre-alignment split: Random(17), anchors drawn "
         "from the scored subjects.  The paper's numbers used this.",
     )
+    parser.add_argument(
+        "--faith-legacy-split",
+        action="store_true",
+        help="reconstruct the split measure_faithfulness uses under "
+        "--legacy-split -- Random(0) over the samples, then "
+        "Random(1000 + trial) -- rather than this script's own "
+        "Random(17). Use it to score the lens on the SAME subjects as a "
+        "results/main faithfulness run, which --legacy-split does not: "
+        "the two shuffles agree on only about a tenth of subjects, so a "
+        "subject-level join across them is not meaningful.",
+    )
+    parser.add_argument("--faith-legacy-trial", type=int, default=0)
     parser.add_argument("--split-seed", type=int, default=0)
     parser.add_argument(
         "--distinct-first-token",
@@ -163,7 +175,21 @@ def main():
             samples = splits.filter_identifying_objects(
                 samples, tokenizer, trailing_space
             )
-        if args.legacy_split:
+        if args.faith_legacy_split:
+            legacy_pool = list(samples)
+            random.Random(0).shuffle(legacy_pool)
+            pool = list(legacy_pool)
+            random.Random(1000 + args.faith_legacy_trial).shuffle(pool)
+            demonstrations = pool[:N_ICL]
+            rest = pool[N_ICL:]
+            references = rest[:N_REFERENCES]
+            test_samples = rest[N_REFERENCES : N_REFERENCES + args.n_test]
+            subjects = [x["subject"] for x in test_samples]
+            anchor_names = [x["subject"] for x in references]
+            split_fingerprint = splits.split_fingerprint(
+                demonstrations, references, test_samples
+            )
+        elif args.legacy_split:
             pool = list(samples)
             random.Random(17).shuffle(pool)
             demonstrations = pool[:N_ICL]
@@ -191,7 +217,7 @@ def main():
                 n_ref=N_REFERENCES,
                 n_test=args.n_test,
             )
-        if not args.legacy_split:
+        if not args.legacy_split and not args.faith_legacy_split:
             subjects = [x["subject"] for x in test_samples]
             anchor_names = [x["subject"] for x in references]  # disjoint from `subs`
             split_fingerprint = splits.split_fingerprint(
