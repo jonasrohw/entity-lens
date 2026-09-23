@@ -77,7 +77,7 @@ neutral prompt shared by every relation, at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
-$\rho = 0.77$.
+$\rho = \headlinenumber $.
 
 We make four contributions. (i)~We introduce the contrastive Jacobian
 lens, a supervision-free readout of what a model is disposed to say about
@@ -265,7 +265,8 @@ described in Appendix~\ref{sec:numeric-objects}.}
   i think not: we need two labels pointing to two different points}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
-predicts LRE faithfulness at Spearman $\rho = 0.771$
+predicts LRE faithfulness at Spearman $\rho =
+\headlinenumber $
 ($p = 1.6\!\times\!10^{-6}$).
 
 % RESTORE IF THERE'S TIME
@@ -299,7 +300,7 @@ tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
 contexts. This predicts neither faithfulness ($\rho = -0.02$) nor the lens
 score ($\rho = -0.01$), and removing it leaves the correlation
-unchanged at $0.771$. The correlation is $0.841$ with both cardinality
+unchanged at $\headlinenumber $. The correlation is $0.841$ with both cardinality
 and answer frequency removed.
 
 \paragraph{Nor by one domain.} Eleven of the 28 relations have
