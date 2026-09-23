@@ -1,4 +1,4 @@
-"""Compare the differential Jacobian lens and the LRE as affine maps.
+"""Compare the contrastive Jacobian lens and the LRE as affine maps.
 
 HS's three questions, on `country_capital_city` vs `country_largest_city`
 -- two relations over the same countries.
