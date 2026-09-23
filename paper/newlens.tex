@@ -1,4 +1,4 @@
-\section{The contrastive Jacobian lens}
+\section{The entity lens}
 \label{sec:lens}
 \citet{gurnee2026workspace}'s Jacobian lens is broadly
 similar to LRE.  But
@@ -10,7 +10,7 @@ output positions. The Jacobian lens also does not use the
 ``anchor'', the zero-order term of the Taylor expansion; so it
 is simply $W = \operatorname{mean}_i J_i$.
 
-We derive our \emph{contrastive Jacobian lens} from
+We derive our \emph{contrastive entity lens} from
 Eq.~\ref{eq:beta}, restated as:
 \begin{equation}
   f(s) \approx
@@ -23,28 +23,45 @@ term $\operatorname{mean}_i\!\left[\,f(s_i)\right]$; see discussion in
 \S\ref{sec:swap}.
 This also means that we do not need $\beta$ since the
 scaling does not change the output distribution over
-tokens. The final form of the contrastive Jacobian lens is then:
+tokens. The final form of the contrastive entity lens is then:
 \begin{equation}
-\mbox{CJL}(s) = \operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
-\label{eq:cjl}
+\mbox{CEL}(e) = \operatorname{mean}_i\!\left[\, J_i (s_e - s_i)\,\right]
+\label{eq:cel}
 \end{equation}
-Note that CJL takes into account the difference between $s$ and
+CEL takes into account the difference between $s_e$ and
 the reference point $s_i$ -- as it should  if we want
-to approximate $f(s)$ using the first derivative. This
-difference formalization is
-also the main motivation for introducing our alternative
-lens. We are not interested in what the model associates
+to approximate $f(s_e)$ using the first derivative. 
+Our original motivation was that we are not interested in what the model associates
 with an entity like ``Russia'' in general (e.g.,
 ``Europe''). Instead we are interested in what the model
 associates with ``Russia'', but not with other reference
 entities like ``Spain'' and ``Italy''. Examples of such
-contrastive associations or ``Russia'' are ``vodka'' and ``Kremlin''.
-The basic idea we will investigate is that such top-ranked contrastive associations
+contrastive associations for ``Russia'' are ``vodka'' and ``Kremlin''.
+Our hypothesis was that such top-ranked contrastive associations
 give rise to linearity.
 
-To instantiate the contrastive Jacobian lens for factual
+In initial experiments, we found that the contrastive entity
+lens is quite sensitive to the reference set. For example,
+if $s_e$ is a French person and a Spanish person is the
+reference entity $s_i$, then the vector difference in 
+Eq.~\ref{cel} will enhance ``French''. But if $s_i$ is
+another French person, then ``French'' will be demoted --
+which is bad for answering questions about $s_e$'s
+nationality and native language. We therefore also consider
+the following noncontrastive entity lens, which drops the
+reference set differences:
+\begin{equation}
+\mbox{NEL}(e) = \operatorname{mean}_i\!\left[\, J_i s_e \,\right]
+\label{eq:nel}
+\end{equation}
+In what follows, ``entity lens'' refers to NEL unless
+further specified.
+
+To instantiate the entity lens (both NEL and CEL) for factual
 relations, we need (i) a prompt that evokes factual associations
-and (ii) a reference set that contrasts an entity with entities
+and (ii) a reference set for computing 
+
+contrasts an entity with entities
 of the same type. 
 
 As the prompt we adopt 
