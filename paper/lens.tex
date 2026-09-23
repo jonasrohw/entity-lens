@@ -396,23 +396,6 @@ drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
 
-\paragraph{Unchanged findings under an alternative scoring protocol.}
-We reran
-the analysis in Figure \ref{fig:main}
-under an alternative protocol:  a single shared
-split and objects restricted to those their first token identifies.
-A relation meets the restriction if, after discarding every object whose
-first token it shares with another object of the same relation, enough
-subjects remain to form a split: eight in-context examples, eight
-reference subjects and at least one test subject. Three relations fall
-below that threshold and are dropped -- the two with numeric objects,
-whose years collapse onto shared leading digits, and
-\textsc{person\_band\_lead\_singer}. Over the remaining 25 the alternative
-protocol gives $\rho = 0.624$ ($p = 0.0009$), against $0.771$ over 28
-here. We return to first-token collapse, and to why restricting the gold
-objects is only a partial remedy, in \S\ref{sec:subject}.
-
-
 \input{table_prominence}
 
 

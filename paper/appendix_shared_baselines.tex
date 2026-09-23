@@ -57,18 +57,6 @@ Table~\ref{tab:shared-prompt-variations} collects the prompt experiments for
 the differential Jacobian lens. For Qwen3 8B Base, we compare the original
 prompt with six alternatives and the subsequently measured newline control.
 The checkpoint, layer 19, reference and test rows, relation-prompt answer
-tokens, and LRE outcomes are fixed within each protocol. The legacy split
-contains 28 relations; the shared split contains 25. The lower panel reports
-the original-to-newline comparison for all seven models on the shared split,
-using each model's fixed layer.
+tokens, and LRE outcomes are fixed.
 
 \input{generated/shared_baselines/prompt_variations}
-
-\paragraph{Interpretation.}
-Qwen's shared-split correlation rises from $0.268$ under the original prompt
-to $0.729$ with a leading newline; \texttt{Facts about \{s\}:} gives $0.788$.
-These are exploratory sensitivity results, not held-out prompt selection.
-Prefix wording can change both context and subject position. The newline
-preserves Qwen's original content token IDs, while Mistral also retokenizes
-the initial content. The legacy and shared protocols are not independent
-replications, and no layer or LRE hyperparameter is retuned between prompts.
