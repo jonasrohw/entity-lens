@@ -81,52 +81,53 @@ of linear decodability and show that it predicts LRE faithfulness.
 (iii)~We show the prediction holds up
 under leave-one-domain-out and under controls for object
 cardinality and answer-token frequency.
-(iv)~After attempting to
-move
+(iv)~After attempting to 
+move 
 the unit of
 analysis from the relation to the individual fact,
 we provide an analysis of several
 problems in existing datasets -- most prominently
 semantically
 weak first tokens
-and subject ambiguity --
+and reference competition --
 that hinder further
-progress on understanding LREs in language models.
+progress on understanding LREs in language models. 
 
 \section{Related work}
 
-\citet{DBLP:conf/icml/PaccanaroH00} introduce linear
-relational embeddings (LREs)
-and \citet{hernandez2024linearity} show that LREs are part
-of the mechanism by which transformer models answer factual questions.
-
-
-\citet{merullo2025linear} show that the frequency
-of subject-object cooccurrence
-in the
-pretraining corpus is an important determinant of
-linearity. In our work, we put forward the hypothesis that
-relational linearity is primarily a property of how the model
-represents the subject, independent of the relation (or object). We also
-identify object cardinality as an additional important
-variable for linearity. Finally, we analyze limitations of
-LRE for understanding linearity and make suggestions for how
-future factual recall datasets should be constructed for
-relational linearity research.
-
-\citet{geva-etal-2023-dissecting} proposes subject
-enrichment as a key mechanism for factual recall. We can
-interpret our contrastive Jacobian lens as a probe of
-subject enrichment.
-Crucially, we connect in this paper two different lines of
-research on the representation of relations in transformer
-models: we hypothesize that the type of subject enrichment that the Jacobian
-lens diagnoses gives rise to the linearity of relations
-found by \citet{hernandez2024linearity}.
-
-DISCUSS \cite{10.1162/TACL.a.746}
-
-DISCUSS \cite{DBLP:journals/corr/abs-2605-12426}
+\input{related-work}
+%\citet{DBLP:conf/icml/PaccanaroH00} introduce linear
+%relational embeddings (LREs)
+%and \citet{hernandez2024linearity} show that LREs are part
+%of the mechanism by which transformer models answer factual questions.
+%
+%
+%\citet{merullo2025linear} show that the frequency
+%of subject-object cooccurrence
+%in the
+%pretraining corpus is an important determinant of
+%linearity. In our work, we put forward the hypothesis that
+%relational linearity is primarily a property of how the model
+%represents the subject, independent of the relation (or object). We also
+%identify object cardinality as an additional important
+%variable for linearity. Finally, we analyze limitations of
+%LRE for understanding linearity and make suggestions for how
+%future factual recall datasets should be constructed for
+%relational linearity research.
+%
+%\citet{geva-etal-2023-dissecting} proposes subject
+%enrichment as a key mechanism for factual recall. We can
+%interpret our contrastive Jacobian lens as a probe of
+%subject enrichment.
+%Crucially, we connect in this paper two different lines of
+%research on the representation of relations in transformer
+%models: we hypothesize that the type of subject enrichment that the Jacobian
+%lens diagnoses gives rise to the linearity of relations
+%found by \citet{hernandez2024linearity}.
+%
+%DISCUSS \cite{10.1162/TACL.a.746}
+%
+%DISCUSS \cite{DBLP:journals/corr/abs-2605-12426}
 
 \section{Background}
 \label{sec:background}
@@ -158,7 +159,6 @@ matters because the prediction decomposes into a subject-dependent term
 and a constant: expanding $b_\beta$ gives
 \begin{equation}
 \beta W s + b_\beta \;=\; \operatorname{mean}_i\!\left[\,f(s_i) + \beta J_i (s - s_i)\,\right],
-\label{eq:beta}
 \end{equation}
 in which only the second term depends on which subject is being decoded.
 Left unscaled, the shared anchor $\operatorname{mean}_i f(s_i)$ dominates
@@ -179,142 +179,86 @@ a measure of how well an affine map captures what the model
 does. Faithfulness defined this way is
 the quantity we predict.
 
-\section{A relation-agnostic Jacobian lens}
+\section{The contrastive Jacobian lens}
 \label{sec:lens}
 \citet{gurnee2026workspace}'s Jacobian lens is broadly
 similar to LRE.  But
 instead of a relation-specific prompt and a focused target
 position (the object),
-it computes the average
+it computes the average 
 $W = \operatorname{mean}_i J_i$ over many diverse prompts and many
 output positions. The Jacobian lens also does not use the
-``bias'', the zero-order term of the Taylor expansion; so it
+``anchor'', the zero-order term of the Taylor expansion; so it
 is simply $W = \operatorname{mean}_i J_i$.
 
-
-\paragraph{Setting.} Let $e$ be an entity and $s_e$ the model's hidden
-state at the final token of its name, taken at a fixed layer $\ell$ under a
-\emph{neutral prompt}
-that names
-no relation and is identical for every relation in the
-study.
-In this paper, we use $\ell=17$ and the prompt
-\texttt{"\{\} is known for"}.
-As before, $f$ is
-the model's own map from a state at layer $\ell$ to the final-layer state
-at the last position, and $J_i$ its Jacobian at a reference state $s_i$.
-
-A \emph{Jacobian lens} propagates a first-order approximation of $f$ to
-the output vocabulary. Given a set of references, the averaged
-first-order approximation of $f$ at $s_e$ is Eq.~\ref{eq:beta} with
-$\beta=1$: an anchor $\operatorname{mean}_i f(s_i)$ plus a remainder
-$\operatorname{mean}_i J_i (s_e - s_i)$.
-We now introduce the \emph{contrastive Jacobian lens}. It
-makes two changes: (i) we use a type-specific reference set and
-(ii) we drop the anchor.
-
-\paragraph{(i) A type-specific reference set.} We take
-$s_1,\dots,s_n$ to be the states of $n=8$ entities of the \emph{same type}
-as $e$ -- \emph{France} against \emph{Spain}, \emph{Italy}, \dots --
-obtained the same way as $s_e$, rather than a sample of whatever the
-model has seen.
-
-This is the substantive choice, and it is what separates the construction
-from a Jacobian lens that averages over a corpus and applies the result to
-a raw state \citep{gurnee2026workspace}. The difference is not that one
-construction takes derivatives and the other does not: a Jacobian is a
-derivative either way. It is what $e$ is compared against. A
-corpus-averaged lens compares $e$ with language at large, so a raw state
-is dominated by what every entity of its type shares -- the type itself,
-the syntactic role, the prompt -- and the entity is buried in its own
-category. Same-type references make the comparison class the entity's own
-kind.
-
-\paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
-second depends on which entity is being read. The anchor here is
-inherited from the LRE, not from the Jacobian lens: the latter has no
-such term, being $J_\ell$ applied directly to an activation
-\citep{gurnee2026workspace}. This change is therefore a departure from
-Eq.~\ref{eq:beta} rather than from prior lens work.
-
-Dropping the anchor is not a matter of discarding something
-uninformative: it is the readout the
-reference entities themselves receive, and in an operator it is what
-supplies the relation. On \textsc{country\_capital\_city}, removing it
-from the fitted operator turns \emph{Madrid} and \emph{Ottawa} into
-\emph{Spain} and \emph{Canada} -- the subject in place of the object,
-which is a failure for the operator and the goal for a readout meant to
-report what an entity evokes.
-
-Keeping it would instead mean choosing how to weigh it against the
-remainder, which is what $\beta$ does in Eq.~\ref{eq:beta}. A single
-$\beta$ shared by every relation would be a legitimate option, adding
-nothing relation-specific; it is simply not a profitable one. In sample
-such a $\beta$ slightly outperforms dropping the anchor, but the curve is
-flat across a wide range of $\beta$ and the advantage does not survive
-selection: choosing $\beta$ on 15 relations and evaluating on the
-remaining 10, across 2{,}000 random splits, beats the anchor-free readout
-in only $30\%$ of them. We therefore drop the anchor, which leaves a
-readout with no hyperparameter at all -- the decoder normalizes, so once
-the anchor is gone, scaling cannot change a ranking and $\beta$ has
-nothing left to do. This gives the
-\emph{contrastive Jacobian lens} of $e$,
+We derive our \emph{contrastive Jacobian lens} from
+Eq.~\ref{eq:beta}, restated as:
 \begin{equation}
-v_e \;=\; \operatorname{mean}_i J_i \,(s_e - s_i),
-\label{eq:lens}
+  f(s) \approx
+\beta W s + b_\beta \;=\;
+\operatorname{mean}_i\!\left[\,f(s_i)\right]
++ \beta\operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
 \end{equation}
-a vector in the final-layer residual stream, which we read out through
-the model's own output head as a ranking over the vocabulary.
-
-\paragraph{What Eq.~\ref{eq:lens} is.} Each $J_i$ is linear, so the lens
-is affine in $s_e$:
+Following \citet{gurnee2026workspace}, we also drop the anchor
+term $\operatorname{mean}_i\!\left[\,f(s_i)\right]$; see discussion in 
+\S\ref{sec:swap}.
+This also means that we do not need $\beta$ since the
+scaling does not change the output distribution over
+tokens. The final form of the contrastive Jacobian lens is then:
 \begin{equation}
-v_e \;=\; W s_e - c, \qquad
-W = \operatorname{mean}_i J_i, \quad c = \operatorname{mean}_i J_i s_i ,
-\label{eq:affine}
+\mbox{CJL}(s) = \operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
+\label{eq:cjl}
 \end{equation}
-where $c$ does not depend on $e$. The reference set therefore enters in
-two places: in $W$, the points at which the Jacobians are taken, and in
-$c$, the readout the average reference entity would receive. Subtracting
-$c$ is not vacuous -- decoding applies the model's output normalization
-and unembedding, so a translation changes the ranking -- but it is the
-same translation for every entity, and what varies with $e$ is $W s_e$.
-Differences between entities are free of it altogether:
-$v_e - v_{e'} = W(s_e - s_{e'})$.
+Note that CJL takes into account the difference between $s$ and
+the reference point $s_i$ -- as it should  if we want
+to approximate $f(s)$ using the first derivative. This
+difference formalization is
+also the main motivation for introducing our alternative
+lens. We are not interested in what the model associates
+with an entity like ``Russia'' in general (e.g.,
+``Europe''). Instead we are interested in what the model
+associates with ``Russia'', but not with other reference
+entities like ``Spain'' and ``Italy''. Examples of such
+contrastive associations or ``Russia'' are ``vodka'' and ``Kremlin''.
+The basic idea we will investigate is that such top-ranked contrastive associations
+give rise to linearity.
 
-Eq.~\ref{eq:affine} also states the net difference from a standard
-Jacobian lens, which is $J_\ell h_\ell$ with $J_\ell$ averaged over a
-corpus and no constant term. Ours differs in two respects, and neither is
-the removal of anything: the Jacobian is averaged over same-type
-references rather than a corpus, and the readout is offset by $-c$. Read
-against the LRE we drop a term; read against the Jacobian lens we add
-one.
+To instantiate the contrastive Jacobian lens for factual
+relations, we need (i) a prompt that evokes factual associations
+and (ii) a reference set that contrasts an entity with entities
+of the same type. 
 
-Eq.~\ref{eq:affine} also locates the lens inside the operator. Comparing
-with Eq.~\ref{eq:beta}, an LRE whose Jacobians are taken at the same
-points is exactly
-\begin{equation}
-\beta W s + b_\beta \;=\; \beta\, v_s + \operatorname{mean}_i f(s_i) ,
-\end{equation}
-so Eq.~\ref{eq:lens} is the subject-dependent factor of the operator
-itself. Our departure is to compute that factor under a neutral prompt
-rather than under the relation's own, which is what makes it available
-without the relation.
+As the prompt we adopt 
+\texttt{"\{\} is known for"}. This a neutral prompt, i.e.,
+it is not customized for any specific factual relations. We
+use it for all our  experiments unless otherwise stated.
 
-\paragraph{Computation.} We never form $J_i$ explicitly, but obtain each
-Jacobian--vector product $J_i u$ by the standard double-backward
+As the reference set, we use entities of the same type as
+the subject, e.g., other countries if the subject is a
+country, other landmarks if the subject is a landmark
+etc.
+The non-contrastive
+standard Jacobian lens applied to an input $s$ outputs anything the model is likely
+to say in a context in which $s$ occurs, including features
+it shares with other same-type entities.
+The contrastive
+Jacobian lens is trained to output only what differentiates
+$s$ from other same-type type.
+
+\paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
+Jacobian--vector product $J_i u$ by the double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
 number of forward and backward passes; this is what makes
 Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
 (Appendix~\ref{sec:jvp}).
 
-\paragraph{The relation score.} We decode $v_e$ over the full vocabulary
+\paragraph{The relation score.} We decode $\mbox{CJP}(s)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
-Writing $\mathrm{rk}_{v_e}(m_e)$ for that rank, the diagnostic for a
+Writing $\mathrm{rk}_{\mbox{CJL}(e)}(m_e)$ for that rank, the diagnostic for a
 relation is
 \begin{equation}
-A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{v_e}(m_e),
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{CJL}(e)}(m_e),
 \end{equation}
 so higher $A_r$ means the lens agrees with the model more.
 
@@ -325,8 +269,12 @@ the layer is fixed at 17 for all relations
 subject-minus-subject -- \emph{France} minus \emph{Spain}, never
 \emph{France} minus \emph{Paris} -- so no (subject,~object) pair of the
 relation is used in estimation. Relation-specificity enters in exactly
-one place, the \emph{target} $m_e$, which is also the quantity
-faithfulness is defined against; that is what makes the two commensurable.
+one place, the \emph{target} $m_e$, the quantity
+faithfulness is defined against.
+
+
+
+
 
 \section{Experimental setup}
 \label{sec:setup}
@@ -465,20 +413,6 @@ here. We return to first-token collapse, and to why restricting the gold
 objects is only a partial remedy, in \S\ref{sec:subject}.
 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
-\caption{
-In this  rank-rank analysis of individual facts for
- \textsc{product\_by\_company}, lens rank and LRE rank are
- moderately highly correlated: $\rho=.41$ for all points,
- $\rho=.58$ for misses.
-This is not the case in general: see Figure~\ref{fig:blacksheep}.
-Ranks are zero-based.
-}
-\label{fig:product}
-\end{figure}
-
 \input{table_prominence}
 
 
@@ -488,19 +422,18 @@ Ranks are zero-based.
 Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
 than tested. Readouts of this kind are normally taken to surface what a
 model is internally disposed to say \citep{gurnee2026workspace}, and we
-have read $v_e$ the same way: as what the subject's representation makes
+have read $\mbox{CJL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
 part of what the subject evokes -- to the extent, that is, that the
 object is \emph{salient} for the subject.
+This section performs a sanity check on that assumption.
 
-This section is a sanity check on that assumption rather than a further
-application of it.
 
-\paragraph{Salience, measured independently of the lens.} The check has
-to be external. Reading salience off the lens would be circular, since
-the lens is the readout under test. We therefore measure it by the
+\paragraph{Salience, measured independently of the lens.} As
+a check that
+is external to the lens, we measure salience by the
 model's own free generation. For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
@@ -524,16 +457,6 @@ $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
 The check passes: what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
 
-One relation is an outlier: \textsc{star\_constellation} has prominence $0.60$
-yet the lens surfaces the constellation for only $5\%$ of its stars. We
-suspected an artifact, since a Bayer designation contains the
-constellation in the Latin genitive (\emph{Eta Persei} for
-\emph{Perseus}), which our word filter does not remove; but prominence on
-the $19$ subjects without such overlap is $0.63$, slightly higher rather
-than lower, so this explanation fails. What the lens returns for these
-subjects is category vocabulary -- \emph{constellation}, \emph{brightness},
-\emph{stellar} -- rather than the particular constellation. Excluding the relation would raise the
-correlation to $0.725$.
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -569,8 +492,8 @@ Our account thus holds in the middle of the cardinality range and
 degrades at both ends, in opposite directions. Cardinality is the
 same variable whose removal raises the correlation to
 $0.744$ (\S\ref{sec:results}). Our analysis in this section
-gives that number an interpretation: $k$ is the
-principal source of deviation in the salience account rather than
+gives that number an interpretation: $k$ is a
+source of deviation in the salience account rather than
 merely a nuisance correlate.
 
 \section{Fact-level analysis}
@@ -585,117 +508,34 @@ the contrastive Jacobian lens predicts the degree to which
 they are
 integrated into the linear structure.
 
-We use the setup shown in Figure~\ref{fig:product} to
-investigate fact-level linearity. The figure shows that lens
-rank is a moderately good predictor of LRE rank for
-\textsc{product\_by\_company} ($\rho=.41$), especially if we
-only consider misses ($\rho=.58$). Points with an LRE rank
-of 0 (i.e., a hit, not a miss) are ``censored'': They give
-us no resolution because they fail to distinguish cases
-where the LRE predicts the correct object perfectly vs
-those where it barely avoids a miss. So
-misses may be a better diagnostic for assessing the size of
-the correlation.
+%panels_subject_scatter_mainprotocol.pdf
 
-Our original plan was to develop a fine-grained account of
-what contrastive Jacobian lens readouts
-predict about the
-linearity of individual facts. However, we found that
+To analyze relations at the fact level, we compute 
+$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
+rank for each relation.
+The values of $\rho$ are in the range [-0.57,0.87] with a
+median of
+0.295. 
+We found that
 several shortcomings of the experimental setup currently
-used for investigating relations in LMs make this hard. In
-this section, we analyze these shortcomings and give
+used for investigating relations in LMs
+that result in these low values.
+We now analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig_iclr_outliers.pdf}
-\caption{
-  Rank-rank analysis for the three relations with the worst
-  overall correlation between lens rank and LRE rank.
-Green solid regression lines over all points,
-orange dashed regression lines over the orange points, the subjects the
-LRE missed.  All three panels share both scales.
-}
-\label{fig:blacksheep}
-\end{figure}
-
-We conduct our analysis on the three relations that have the
-worst overall correlation in the rank-rank analysis: their
-correlations are close to zero or even negative. See
-Figure~\ref{fig:blacksheep}.
-
-\subsection{Semantically weak first tokens}
-
-\textsc{person\_university}
-and
-(\textsc{superhero\_archnemesis})
-exemplify the problem of
-\emph{semantically weak first tokens}. Many universities
-have names of the form ``University of''.
-Several archnemeses start with ``The'', ``Doctor'', ``King''
-and ``Lady''.
-So the LM learns
-to predict the common prefix as the target token for many
-persons.
-The standard setup is to count such a prediction as
-correct. But this is not an effective evaluation:
-The correct generation of ``University'' is not
-a reliable indicator of the factual competence of the LM.
 
 
-%Any two objects sharing a first token are indistinguishable to
-%a metric that scores only that token: \emph{University of Chicago} and
-%\emph{University of Michigan} both reduce to \textsc{University}.
-
-Measuring the collapse rate -- the fraction of a relation's distinct
-objects that share a first token with another -- \textbf{6 of 40
-relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
-\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
-29 of 69 objects begin with \textsc{University}).
-
-Restricting each relation to objects whose first token identifies them
-repairs this on the gold side.
-It is only a partial remedy, because faithfulness
-compares the LRE against the \emph{model's} top-1 (not gold), so
-what inflates it is the model's own answer being an easy token. In
-\textsc{person\_university}, after filtering, the model still answers
-\textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
-A complete fix would condition on the prediction being distinctive.
-
-The direction of the bias differs by relation. Where the collapse is on
-the gold side it makes faithfulness easier -- 41 distinct fathers all
-counting as \textsc{John} -- so our \textsc{person\_father} figure is an
-upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
-Where the model itself emits the shared token, the collapse manufactures
-agreement that is not retrieval at all.
-
-We flag all of this because the failure is silent: it produces a perfect
-or inflated score rather than an obvious error, and it will affect any
-first-token evaluation whose answers share prefixes -- numeric,
-titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
-(\emph{University of X}).
-
-
-
-Both LRE and the lens work on the token level, the residual
-stream vector at the last layer, which is focused on
-producing the correct next token and may not represent
-reliable information about the tokens to follow. This
-single-token regime is highly problematic for the standard
-setup because we are effectively investigating a relation in
-which all objects have been shortened to their first
-token. This might be a nonsensical relation even to humans
-and it is clearly different from the intended relations
-whose objects are full entity names.
-
-
-
-\subsection{Subject ambiguity}
-
-
-\textsc{person\_occupation} exemplifies the problem of
-\emph{subject ambiguity}. An example is Rolf Thommessen
+\subsection{Reference competition}
+\label{sec:competition}
+The three relations 
+\textsc{person\_university} ($\rho$=-0.57),
+\textsc{person\_occupation} ($\rho$=-0.55) and
+\textsc{person\_plays\_instrument} ($\rho$=-0.16) have the
+lowest correlations.
+They
+exemplify the problem of 
+\emph{reference competition}. An example is Rolf Thommessen
 who is listed as an actor
 in LRE. The highest ranked token given by the lens is
 ``whistlebl''. This indicates that the most prominent entity
@@ -715,10 +555,75 @@ Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
 top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
 simply uses the string ``Johann'' as the representation.
 While we did not conduct an extensive analysis, it is likely
-that subject ambiguity is a problem for many relations whose
+that reference competition is a problem for many relations whose
 subjects are persons. Many of those persons share the
 properties that result in Barry Sobel, Vondell Darr
 and Simon Gosejohann being misrepresented by the model.
+
+
+
+The relation \textsc{star\_constellation} also suffers from
+reference competition due to the complex unusual names of
+many stars. For example, the most prominent associations of
+the stars
+``rho01 Cnc'' and
+``Alnair'' (tokenized Al-n-air)
+are ``machining'', ``drilled'', ``CNC''
+(Computerized Numerical Control) and ``flying'', ``flown'',
+``Flight'', respectively.
+
+
+\subsection{Semantically weak first tokens}
+\textsc{person\_university} further
+exemplifies the problem of 
+\emph{semantically weak first tokens}. Many universities
+have names that start with ``University''.
+So the LM learns
+to predict this common prefix as the target token for many
+persons.
+The standard setup is to count such a prediction as
+correct. But this is not an effective evaluation:
+The correct generation of ``University'' is not
+a reliable indicator of the factual competence of the LM.
+
+Measuring the collapse rate -- the fraction of a relation's distinct
+objects that share a first token with another -- \textbf{6 of 40
+relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
+\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
+29 of 69 objects begin with \textsc{University}).
+
+Restricting each relation to objects whose first token identifies them
+repairs this on the gold side.
+It is only a partial remedy: faithfulness (which
+compares the LRE against the \emph{model's} top-1, not
+gold) is
+inflated by 
+counting the model's own answer as ``faithful''. In
+\textsc{person\_university}, after filtering, the model still answers
+\textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
+A complete fix would condition on the prediction being distinctive.
+
+The direction of the bias differs by relation. Where the collapse is on
+the gold side it makes faithfulness easier -- 41 distinct fathers all
+counting as \textsc{John} -- so our \textsc{person\_father} figure is an
+upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
+Where the model itself emits the shared token, the collapse manufactures
+agreement that is not retrieval at all.
+
+
+
+Both LRE and the lens work on the token level, the residual
+stream vector at the last layer, which is focused on
+producing the correct next token and may not represent
+reliable information about the tokens to follow. This
+single-token regime is highly problematic for the standard
+setup because we are effectively investigating a relation in
+which all objects have been shortened to their first
+token. This might be a nonsensical relation even to humans
+and it is clearly different from the intended relations
+whose objects are full entity names.
+
+
 
 \subsection{Towards better fact datasets}
 Our analysis motivates two requirements for future evaluations. First,
@@ -743,11 +648,20 @@ solutions evaluated in this study.
 \section{What the operator's two terms carry}
 \label{sec:swap}
 
-\S\ref{sec:lens} split an LRE into a subject-independent anchor
-$\operatorname{mean}_i f(s_i)$ and a subject-dependent remainder
-$T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$, and dropped the
-first. This section asks what each term actually carries, by recombining
-them across relations. It is an intervention rather than a correlation:
+An LRE affine map consists of
+an \emph{anchor}
+(the subject-independent anchor
+$\operatorname{mean}_i f(s_i)$) and
+a \emph{subject term}
+(the subject-dependent remainder
+$T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$); see
+(\S\ref{sec:lens}). We defined the contrastive Jacobian lens
+as analogous to the subject term:
+$T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$).
+ This section asks what information each term actually
+ carries, by recombining
+ anchors with different subject terms.
+It is an intervention rather than a correlation:
 if the anchor carries the relation, then pairing it with a \emph{foreign}
 subject term should still produce this relation's object.
 
@@ -778,7 +692,7 @@ nothing in common: a subject term estimated under \texttt{"The official
 currency of \{\} is the"} still yields capitals 9 times in 12 under the
 capital anchor.
 
-\paragraph{The lens can replace the subject term.} Substituting $v_e$ ---
+\paragraph{The lens can replace the subject term.} Substituting $\mbox{CJL}(s)$ ---
 estimated under the neutral prompt, with no relation anywhere --- for
 $T_r(e)$ recovers much of the operator (column~4). On the two person
 relations it matches it: 20 against 19 for position, 21 against 22 for
@@ -803,7 +717,7 @@ $7.6\times10^{-6}$).
 \toprule
 & & \multicolumn{2}{c}{subject term} & \multicolumn{2}{c}{controls} \\
 \cmidrule(lr){3-4}\cmidrule(lr){5-6}
-relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $n$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{country\_capital\_city} & 12 & 11 & 11 & 6 & 0 \\
 \textsc{country\_largest\_city} & 12 & 10 & 9 & 5 & 0 \\
@@ -814,7 +728,7 @@ relation & $n$ & own & foreign & lens $v_e$ & wrong donor \\
 \caption{Recombining an LRE's anchor with different subject terms, at
 $\beta = 3$. Counts are how often the decoded top-1 is the relation's
 gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
-the paired relation's subject term; \emph{lens} uses $v_e$, which never
+the paired relation's subject term; \emph{lens} uses $\mbox{CJL}(s)$, which never
 sees a relation. A foreign subject term, and often the relation-agnostic
 lens, does as well as the operator's own.}
 \label{tab:swap}
@@ -887,22 +801,8 @@ much either way.
 \section*{AI use statement}
 \input{ai_use}
 
-\section*{Ethics statement}
-This work studies model behavior using existing relation datasets. Model
-predictions and the associations reported in the subject-ambiguity analysis
-should not be interpreted as verified attributes of the named individuals.
-First-token collisions and mistaken entity identification illustrate risks of
-using such readouts to make factual claims about people. The experiments are
-intended to diagnose these limitations, not to support individual profiling.
-
 \section*{Reproducibility statement}
-Section~\ref{sec:setup} describes the model, relation selection, prompts,
-data partitions, and hyperparameter grid. Equations~\ref{eq:wb}--\ref{eq:lens}
-define the estimators; Appendices~\ref{sec:jvp}, \ref{sec:layer17},
-%\ref{sec:permutation},
-and~\ref{sec:numeric-objects} document the
-Jacobian--vector products, layer choice, permutation test, and numeric-token
-correction. Table~\ref{tab:relations} reports the relation-level results.
+We provide sufficient details to reproduce all experiments in the main text and appendix, including the datasets, model checkpoints, prompt templates, evaluation procedures, and hyperparameters used throughout. All experiments use publicly available model checkpoints and datasets. We report the procedures used to estimate linear relational embeddings and the contrastive Jacobian lens, as well as the definitions of all faithfulness and ranking metrics. Additional implementation details, robustness analyses, and per-relation results are provided in the appendix. Code for reproducing the experiments and figures will be released upon publication.
 
 \bibliographystyle{iclr2027_conference}
 \bibliography{custom}
@@ -910,8 +810,11 @@ correction. Table~\ref{tab:relations} reports the relation-level results.
 \clearpage
 \appendix
 
+
 \input{appendix_shared_baselines}
 \clearpage
+
+
 
 \section{Jacobian--vector products}
 \label{sec:jvp}
@@ -988,7 +891,7 @@ $\beta \in \{3, 5, 10\}$.
 \small
 \begin{tabular}{llrrrr}
 \toprule
-relation & $\beta$ & own & foreign & lens $v_e$ & wrong donor \\
+relation & $\beta$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
 \midrule
 \textsc{capital\_city} ($n=12$) & 3 & 11 & 11 & 6 & 0 \\
                                 & 5 & 11 & 10 & 8 & 0 \\
@@ -1058,6 +961,32 @@ and the lens's top-five hit rate for the 14 relations on which prominence
 can be measured (Section~\ref{sec:residuals}).
 
 \input{table_relations}
+
+
+\section{The anchored contrastive Jacobian lens}
+Here we report on an experiment with an ``anchored''
+contrastive Jacobian lens -- in contrast to the non-anchored
+Jacobian lens defined in Eq.~\ref{eq:cjl}.
+Keeping the anchor means
+that we have choose how to weight anchor and subject term --
+which is what $\beta$ does in Eq.~\ref{eq:beta}.
+
+In sample
+such a $\beta$ slightly outperforms dropping the anchor, but the curve is
+flat across a wide range of $\beta$ and the advantage does not survive
+selection: choosing $\beta$ on 15 relations and evaluating on the
+remaining 10, across 2{,}000 random splits, beats the anchor-free readout
+in only $30\%$ of them. We therefore drop the anchor, which leaves a
+readout with no hyperparameter at all -- the decoder normalizes, so once
+the anchor is gone, scaling cannot change a ranking and $\beta$ has
+nothing left to do. This gives the
+\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cjl}.
+
+In summary, a single
+$\beta$ shared by every relation would be a legitimate option, adding
+nothing relation-specific, but it turns out to have no
+advantage compared to the simpler form we adopted.
+
 
 
 \end{document}

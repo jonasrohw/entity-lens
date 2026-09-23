@@ -1,3 +1,118 @@
+We flag all of this because the failure is silent: it produces a perfect
+or inflated score rather than an obvious error, and it will affect any
+first-token evaluation whose answers share prefixes -- numeric,
+titled (\emph{Doctor Doom}, \emph{The Joker}) or generic
+(\emph{University of X}).
+
+
+
+
+We use this rank-rank setup to
+investigate fact-level linearity. The analysis shows that lens
+rank is a moderately good predictor of LRE rank for
+\textsc{product\_by\_company} ($\rho=.41$), especially if we
+only consider misses ($\rho=.58$). Points with an LRE rank
+of 0 (i.e., a hit, not a miss) are ``censored'': They give
+us no resolution because they fail to distinguish cases
+where the LRE predicts the correct object perfectly vs
+those where it barely avoids a miss. So
+misses may be a better diagnostic for assessing the size of
+the correlation.
+
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{fig_iclr_product.pdf}
+\caption{
+}
+\label{fig:product}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_iclr_outliers.pdf}
+\caption{
+  Rank-rank analysis for the three relations with the worst
+  overall correlation between lens rank and LRE rank.
+Green solid regression lines over all points,
+orange dashed regression lines over the orange points, the subjects the
+LRE missed.  All three panels share both scales.
+}
+\label{fig:blacksheep}
+\end{figure}
+
+
+STUFF FROM OLD VERSION OF RELATION-AGNOSTIC JACOBIAN LENS
+
+
+
+
+Eq.~\ref{eq:affine} also states the net difference from a standard
+Jacobian lens, which is $J_\ell h_\ell$ with $J_\ell$ averaged over a
+corpus and no constant term. Ours differs in two respects, and neither is
+the removal of anything: the Jacobian is averaged over same-type
+references rather than a corpus, and the readout is offset by $-c$. Read
+against the LRE we drop a term; read against the Jacobian lens we add
+one.
+
+
+Eq.~\ref{eq:affine} also locates the lens inside the operator. Comparing
+with Eq.~\ref{eq:beta}, an LRE whose Jacobians are taken at the same
+points is exactly
+\begin{equation}
+\beta W s + b_\beta \;=\; \beta\, v_s + \operatorname{mean}_i f(s_i) ,
+\end{equation}
+so Eq.~\ref{eq:lens} is the subject-dependent factor of the operator
+itself. Our departure is to compute that factor under a neutral prompt
+rather than under the relation's own, which is what makes it available
+without the relation.
+
+\paragraph{What Eq.~\ref{eq:lens} is.} Each $J_i$ is linear, so the lens
+is affine in $s_e$:
+\begin{equation}
+v_e \;=\; W s_e - c, \qquad
+W = \operatorname{mean}_i J_i, \quad c = \operatorname{mean}_i J_i s_i ,
+\label{eq:affine}
+\end{equation}
+where $c$ does not depend on $e$. The reference set therefore enters in
+two places: in $W$, the points at which the Jacobians are taken, and in
+$c$, the readout the average reference entity would receive. Subtracting
+$c$ is not vacuous -- decoding applies the model's output normalization
+and unembedding, so a translation changes the ranking -- but it is the
+same translation for every entity, and what varies with $e$ is $W s_e$.
+Differences between entities are free of it altogether:
+$v_e - v_{e'} = W(s_e - s_{e'})$.
+
+A \emph{Jacobian lens} propagates a first-order approximation of $f$ to
+the output vocabulary. Given a set of references, the averaged
+first-order approximation of $f$ at $s_e$ is Eq.~\ref{eq:beta} with
+$\beta=1$: an anchor $\operatorname{mean}_i f(s_i)$ plus a remainder
+$\operatorname{mean}_i J_i (s_e - s_i)$.
+We now introduce the \emph{contrastive Jacobian lens}. It
+makes two changes: (i) we use a type-specific reference set and
+(ii) we drop the anchor.
+
+\paragraph{(ii) Dropping the anchor.} Of the two terms above, only the
+second depends on which entity is being read. The anchor here is
+inherited from the LRE, not from the Jacobian lens: the latter has no
+such term, being $J_\ell$ applied directly to an activation
+\citep{gurnee2026workspace}. This change is therefore a departure from
+Eq.~\ref{eq:beta} rather than from prior lens work.
+
+Dropping the anchor is not a matter of discarding something
+uninformative: it is the readout the
+reference entities themselves receive, and in an operator it is what
+supplies the relation. On \textsc{country\_capital\_city}, removing it
+from the fitted operator turns \emph{Madrid} and \emph{Ottawa} into
+\emph{Spain} and \emph{Canada} -- the subject in place of the object,
+which is a failure for the operator and the goal for a readout meant to
+report what an entity evokes.
+
+
+
 \section{Discussion}
 
 \enote{hs}{this section is a collection of content pieces
