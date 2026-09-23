@@ -86,6 +86,54 @@ def load_rows(rel):
             {r["subject"]: r["model_top1"] for r in d["rows"]})
 
 
+def load_norms(rel):
+    """||J_e s_e|| per subject, from the stored self-Jacobian vectors."""
+    meta = json.load(open(f"{ROOT}/e2/selfjac_vectors_{rel}.json"))
+    V = np.load(f"{ROOT}/e2/selfjac_vectors_{rel}.npy")
+    return {s: float(np.linalg.norm(V[i])) for i, s in enumerate(meta["subjects"])}
+
+
+def restrict_band(pool, band, seed):
+    """Swap every member outside the target norm half for one inside it.
+
+    HS: *"can you modify the 24 set by replacing each top 50% norm vector
+    by a vector from its own relation set that is in the bottom 50%?"*
+
+    The replacement is always drawn from the member's OWN relation, so
+    pool size and per-relation composition are held exactly fixed and the
+    norm band is the only thing that changes.  That is what S3 could not
+    do: there the low-norm filter also changed which relation's subjects
+    were present, so "norm" and "composition" were confounded.
+
+    band 'lo' puts every reference in the bottom half of its relation's
+    norms, 'hi' in the top half.  'hi' is the mirror control -- without
+    it a change under 'lo' could just as well be the effect of swapping
+    members at all.
+    """
+    if band == "none":
+        return pool, []
+    rng = random.Random(seed + 7)
+    norms = {r: load_norms(r) for r in RELATIONS}
+    cut = {r: sorted(norms[r].values())[len(norms[r]) // 2] for r in RELATIONS}
+
+    def inband(s, r):
+        return norms[r][s] < cut[r] if band == "lo" else norms[r][s] >= cut[r]
+
+    used = {s for s, _ in pool}
+    out, swaps = [], []
+    for s, r in pool:
+        if inband(s, r):
+            out.append((s, r))
+            continue
+        cand = sorted(t for t in norms[r] if t not in used and inband(t, r))
+        assert cand, f"no {band}-band candidate left in {r}"
+        t = rng.choice(cand)
+        used.add(t)
+        swaps.append((s, t, r, norms[r][s], norms[r][t]))
+        out.append((t, r))
+    return out, swaps
+
+
 def build_sets(n_sets, n_ref, min_per, seed):
     """Disjoint sets from the pooled 300, each with >= min_per per relation.
 
@@ -129,11 +177,21 @@ def main():
     ap.add_argument("--n-sets", type=int, default=3)
     ap.add_argument("--min-per", type=int, default=2)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--union", action="store_true",
+                    help="score the UNION of the n_sets sets as one pool, "
+                         "instead of each set separately -- how much of the "
+                         "set-to-set spread is simply pool size")
+    ap.add_argument("--norm-band", default="none", choices=["none", "lo", "hi"],
+                    help="restrict every reference to the bottom ('lo') or "
+                         "top ('hi') half of its own relation's norms, "
+                         "holding size and composition fixed")
     ap.add_argument("--device", default=None)
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
     device = a.device or claim_gpu()
-    out = a.out or f"{ROOT}/e2/mixed_refs_{a.relation}.json"
+    tag = ("union_" if a.union else "") + (
+        "" if a.norm_band == "none" else f"{a.norm_band}_")
+    out = a.out or f"{ROOT}/e2/mixed_refs_{tag}{a.relation}.json"
 
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -142,13 +200,33 @@ def main():
                              resolve_final_norm)
 
     sets = build_sets(a.n_sets, a.n_ref, a.min_per, a.seed)
+    if a.union:
+        # Exactly the same references, pooled.  Any difference from the
+        # three separate arms is pool size and nothing else.
+        sets = [[x for st in sets for x in st]]
+        names = [f"union{len(sets[0])}"]
+    else:
+        names = [f"set{k}" for k in range(len(sets))]
+    allswaps = []
+    if a.norm_band != "none":
+        newsets = []
+        for st in sets:
+            st2, sw = restrict_band(st, a.norm_band, a.seed)
+            newsets.append(st2)
+            allswaps += sw
+        sets = newsets
+        names = [f"{n}_{a.norm_band}" for n in names]
+        print(f"norm band '{a.norm_band}': swapped {len(allswaps)} of "
+              f"{sum(len(s) for s in sets)} references", flush=True)
+        for s, t, r, ns, nt in allswaps:
+            print(f"    [{SHORT[r]}] {s} ({ns:.2f}) -> {t} ({nt:.2f})",
+                  flush=True)
     subs, target = load_rows(a.relation)
     print(f"device {device}; scoring {a.relation}", flush=True)
-    for k, st in enumerate(sets):
+    for nm, st in zip(names, sets):
         comp = {r: sum(1 for _, rr in st if rr == r) for r in RELATIONS}
-        print(f"  set {k}: " + " ".join(f"{SHORT[r]}={comp[r]}"
-                                        for r in RELATIONS)
-              + " | " + ", ".join(f"{s} [{SHORT[r]}]" for s, r in st),
+        print(f"  {nm} (n={len(st)}): "
+              + " ".join(f"{SHORT[r]}={comp[r]}" for r in RELATIONS),
               flush=True)
 
     tok = AutoTokenizer.from_pretrained(MODEL_ID)
@@ -183,7 +261,7 @@ def main():
 
     handle = blocks[L - 1].register_forward_hook(iv.hook)
     res = {}
-    for k, st in enumerate(sets):
+    for nm, st in zip(names, sets):
         refs = [s for s, _ in st]
         const = {}
         for r in refs:
@@ -202,22 +280,26 @@ def main():
             for acc, box in ((acc_raw, raw_r), (acc_con, con_r)):
                 lg = final_logits(acc / len(refs), norm, Wh, bias, cap)
                 box.append(np.log10(int((lg > lg[tgt[s]]).sum()) + 1))
-        res[f"set{k}"] = dict(
+        res[nm] = dict(
             references=[{"subject": s, "from": r} for s, r in st],
             composition={r: sum(1 for _, rr in st if rr == r)
                          for r in RELATIONS},
-            n=len(test),
+            n_ref=len(refs), n=len(test),
             raw=float(np.median(raw_r)), con=float(np.median(con_r)),
             raw_mean=float(np.mean(raw_r)), con_mean=float(np.mean(con_r)),
             const_norm=float(np.linalg.norm(
                 np.stack([const[r].cpu().numpy() for r in refs]).mean(0))))
-        v = res[f"set{k}"]
-        print(f"  set{k}  n={v['n']:3d}  contrastive {v['con']:.2f}"
+        v = res[nm]
+        print(f"  {nm}  n={v['n']:3d}  contrastive {v['con']:.2f}"
               f"  raw {v['raw']:.2f}  ||c||={v['const_norm']:.2f}", flush=True)
     handle.remove()
 
     res["config"] = dict(relation=a.relation, seed=a.seed, n_ref=a.n_ref,
-                         n_sets=a.n_sets, min_per=a.min_per, layer=L)
+                         n_sets=a.n_sets, min_per=a.min_per, layer=L,
+                         union=a.union, norm_band=a.norm_band,
+                         swaps=[{"out": s, "in": t, "relation": r,
+                                 "norm_out": ns, "norm_in": nt}
+                                for s, t, r, ns, nt in allswaps])
     json.dump(res, open(out, "w"), indent=1)
     print(f"\nwrote {out}")
 
