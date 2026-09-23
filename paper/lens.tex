@@ -72,22 +72,23 @@ The question it
 answers -- \emph{what factual knowlege is this model ready to produce about this entity}
  -- is specific to the entity type, but not specific to any relation.
 
-We estimate  the contrastive Jacobian lens under a single
-neutral prompt shared by every relation, at one layer fixed in advance,
+We estimate  the entity lens under the single
+neutral prompt
+\texttt{"\{\} is known for"} 
+(shared by every relation), at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
 
-We make four contributions. (i)~We introduce the contrastive Jacobian
+We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
-an individual entity. (ii)~We turn it into a relation-agnostic diagnostic
+an individual entity of a specific entity type. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
 (iii)~We show the prediction holds up
-under leave-one-domain-out and under controls for object
+under leave-one-type-out and under controls for object
 cardinality and answer-token frequency.
-(iv)~After attempting to 
-move 
+(iv)~Moving
 the unit of
 analysis from the relation to the individual fact,
 we provide an analysis of several
@@ -153,7 +154,7 @@ b_\beta = \operatorname{mean}_i\!\left[\, f(s_i) - \beta J_i s_i \,\right] ,
 \label{eq:wb}
 \end{equation}
 where $J_i$ is the Jacobian of $f$ at $s_i$. At $\beta=1$, this is the
-averaged first-order approximation
+averaged first-order Taylor approximation
 \citep{hernandez2024linearity}.
 
 The scalar $\beta$ corrects a systematic weakness of the first-order
