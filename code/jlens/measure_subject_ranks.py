@@ -32,6 +32,16 @@ def parse_args():
         "the filter on, the two year relations retain 10 and 8 "
         "samples against the 17 a split needs.",
     )
+    parser.add_argument(
+        "--legacy-split",
+        action="store_true",
+        help="reconstruct the per-trial legacy split that measure_faithfulness "
+        "uses under --legacy-split: Random(0) over the samples, then "
+        "Random(1000 + trial) over that. This is the split behind "
+        "results/main, and so behind the paper's Figure 1; the default "
+        "split_samples cannot reproduce those fingerprints.",
+    )
+    parser.add_argument("--legacy-trial", type=int, default=0)
     parser.add_argument("--split-seed", type=int, default=0)
     parser.add_argument("--n-icl", type=int, default=8)
     parser.add_argument("--n-ref", type=int, default=8)
@@ -75,13 +85,25 @@ def main():
         samples = splits.filter_identifying_objects(
             samples, tokenizer, args.trailing_space
         )
-    demonstrations, references, test_samples = splits.split_samples(
-        samples,
-        seed=args.split_seed,
-        n_icl=args.n_icl,
-        n_ref=args.n_ref,
-        n_test=args.n_test,
-    )
+    if args.legacy_split:
+        import random as _random
+
+        legacy_pool = list(samples)
+        _random.Random(0).shuffle(legacy_pool)
+        pool = list(legacy_pool)
+        _random.Random(1000 + args.legacy_trial).shuffle(pool)
+        demonstrations = pool[: args.n_icl]
+        rest = pool[args.n_icl :]
+        references = rest[: args.n_ref]
+        test_samples = rest[args.n_ref : args.n_ref + args.n_test]
+    else:
+        demonstrations, references, test_samples = splits.split_samples(
+            samples,
+            seed=args.split_seed,
+            n_icl=args.n_icl,
+            n_ref=args.n_ref,
+            n_test=args.n_test,
+        )
     split_fingerprint = splits.split_fingerprint(
         demonstrations, references, test_samples
     )
