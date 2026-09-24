@@ -74,6 +74,9 @@ def main():
     ap.add_argument("--layer", type=int, default=LENS_LAYER)
     ap.add_argument("--n-ref", type=int, default=8)
     ap.add_argument("--keep", type=int, default=20)
+    ap.add_argument("--n-random", type=int, default=0,
+                    help="extra random and survivor draws, to measure how "
+                         "much of any arm gap is draw-to-draw noise")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
@@ -122,6 +125,15 @@ def main():
     pool = list(data["samples"]); random.Random(0).shuffle(pool)
     p2 = list(pool); random.Random(1000).shuffle(p2)
     arms["original"] = [x["subject"] for x in p2[8:16]]
+
+    # Extra draws.  With one random arm per relation there is no way to tell
+    # a real gap from the luck of the draw, and on person_plays_instrument
+    # the single random arm beat the procedure.  Seeded separately so the
+    # four arms above keep their published values.
+    for k in range(a.n_random):
+        r2 = random.Random(100 + k)
+        arms[f"random{k}"] = [subs[i] for i in r2.sample(range(len(subs)), a.n_ref)]
+        arms[f"survivors{k}"] = [subs[i] for i in r2.sample(clean, a.n_ref)]
 
     tok = AutoTokenizer.from_pretrained(MODEL_ID)
     model = (AutoModelForCausalLM.from_pretrained(
@@ -184,10 +196,21 @@ def main():
     json.dump(res, open(out, "w"), indent=1)
     print(f"\nwrote {out}")
     print(f"\n{'arm':12s} {'n':>4} {'contrastive':>12} {'raw':>7} {'||c||':>7}")
-    for k in ("original", "random", "survivors", "selected"):
+    order = [k for k in ("original", "random", "survivors", "selected")
+             if k in res]
+    order += [k for k in res if k not in order]
+    for k in order:
         r = res[k]
         print(f"{k:12s} {r['n']:4d} {r['con']:12.2f} {r['raw']:7.2f} "
               f"{r['const_norm']:7.2f}")
+
+    for tag in ("random", "survivors"):
+        draws = [res[k]["con"] for k in res
+                 if k == tag or k.startswith(tag) and k[len(tag):].isdigit()]
+        if len(draws) > 1:
+            print(f"\n{tag} draws (n={len(draws)}): median contrastive "
+                  f"{np.median(draws):.2f}, range {min(draws):.2f}-{max(draws):.2f}")
+    print(f"selected: {res['selected']['con']:.2f}")
 
 
 if __name__ == "__main__":

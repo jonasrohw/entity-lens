@@ -1,3 +1,4 @@
+<!-- edited 2026-09-24 07:55 — todo 5: first-token scoring artifacts (São Paulo scored wrong, "New" ambiguous); deferred by HS -->
 <!-- edited 2026-09-20 14:37 — todo 4: the manuscript still reports pre-norm-fix numbers (rho 0.658 vs corrected 0.771) -->
 <!-- edited 2026-09-20 14:27 - todo 3 numbers updated to the norm-fixed run; conclusion unchanged -->
 <!-- edited 2026-09-18 15:52 — todo 3: the Discussion's rewriting motivates the lens algebraically, but cos(v,T)=0.17 -->
@@ -218,3 +219,61 @@ that need to change.
 `results/olmo`, then reread S5 and S7 for claims tied to specific
 relations. Doing this before the figure-labeling work of enote 3 avoids
 placing eleven labels against coordinates that then move.
+
+---
+
+## 5. First-token scoring artifacts: São Paulo and "New"
+
+**Status: open. Deferred by HS on 2026-09-24 --- no time now. Nothing
+has been rescored yet.**
+
+Every result in Section 10 and in its variation analyses scores a hit by
+comparing the decoded top-1 with the **first token** of the gold object.
+Two cases break that.
+
+### São Paulo is scored wrong when it is right
+
+The gold's first token is ` São`; the model writes the city as ` Sao`
+(no diacritic). These are different tokens, so a correct answer counts
+as a miss. The LRE for `country_largest_city` produces `Sao` for Brazil
+at every beta tried, so:
+
+- the published Table 3 (`tab:swap`) reports largest-city own at 10/12,
+  which is really **11/12**;
+- the replication in `e2/nel_term_swap.json` reports 7/9, really **8/9**.
+
+This only ever *undercounts*. The lens's misses on Brazil are genuine
+(it outputs "the"), so the lens arm is unaffected.
+
+### "New" is ambiguous
+
+` New` is the first token of New York City (US largest city) and of New
+Delhi (India's capital), as well as New Zealand, New Orleans and so on.
+Any output starting with ` New` is scored as a hit for either gold. This
+can *overcount*, and within the country pair it means the capital and
+largest-city answers for India and the US share a first token, so those
+cells cannot tell the two relations apart.
+
+### Where it bites
+
+Every `first_tok` comparison: `analysis/nel_term_swap.py`,
+`anchor_refset_variation.py`, `lens_refset_variation.py`,
+`country_anchor_lens.py`, `anchor_subject_swap.py`, and Table 3.
+
+It is probably not confined to these relations. Any gold with a
+diacritic, or with a generic first token ("New", "San", "The"), is
+exposed. A sweep of all 28 relations is worth doing before the numbers
+are final.
+
+### Possible fixes, cheapest first
+
+1. **Fold diacritics** (NFKD, strip combining marks) before comparing
+   first tokens. Fixes São Paulo; does nothing for "New".
+2. **Accept a set of first tokens per gold**, listing the variant
+   spellings. Fixes São Paulo, still leaves "New" ambiguous.
+3. **Score the greedy continuation, not the first token**, for
+   multi-token golds. Fixes both, at the cost of a few extra forward
+   passes per subject.
+
+Option 3 is the one that actually removes the ambiguity. Options 1--2
+are quick patches for the undercount alone.

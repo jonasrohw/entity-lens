@@ -17,7 +17,7 @@ The payoff would be a selection rule: if cluster membership predicts a
 reference's column mean in the contrastive matrix, references can be
 chosen structurally rather than by trying them.
 """
-import argparse, json, sys
+import argparse, json, os, sys
 import numpy as np
 from pathlib import Path
 

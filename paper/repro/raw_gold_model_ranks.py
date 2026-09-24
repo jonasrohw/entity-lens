@@ -9,7 +9,7 @@ Random(1000 + trial)), so the subjects and references match
 e2/mainlens and e2/mainrank.  Gold is reported here only as a column; it
 is not used to select anything.
 """
-import argparse, glob, json, random, sys
+import argparse, glob, json, os, random, sys
 import numpy as np
 from pathlib import Path
 

@@ -3,37 +3,32 @@ Linear relational embeddings (LREs) approximate a language
 model's subject-to-object mapping with an affine
 function. Their faithfulness varies enormously across
 relations -- near zero for \textsc{person\_father}, at
-ceiling for \textsc{country\_capital\_city}. We investigate the factors that contribute to this variation and demonstrate that it can be significantly predicted from a readout that is not aware of the underlying relationship. To do so,
-we propose a
-novel form of the Jacobian lens, the \emph{contrastive Jacobian lens}:
-instead of model outputs for
-``France'', we instead
-contrastively predict outputs for ``France''
-that are not also outputs for ``Spain''.
-After estimating
-this contrastive Jacobian lens,
-we measure how highly it ranks the model's answer
-for a
-relation 
--- without using any relation-specific
-information in estimation and prediction.
-Across
-28 relations of the LRE dataset on Olmo-3-7B this
-relation-agnostic score correlates with LRE faithfulness at
-$\rho = 0.77$ ($p < 10^{-5}$).  This suggests that linear
-decodability is largely a property of what a subject's
-representation already carries, rather than of the relation
-being decoded.
-After attempting to 
-move 
-the unit of
-analysis from the relation to the individual fact,
-we conclude that new relation
-datasets and analysis methods are needed to address several
-problems in existing datasets, most prominently semantically
-weak first tokens
-(e.g., most predicted universities' first token
-is ``University'') and reference competition (e.g., the LLM
-associates obscure actor names with competing non-actor entities that
-have the same last name).
+ceiling for \textsc{country\_capital\_city}. We investigate
+the factors that contribute to this variation and
+demonstrate that it can be significantly predicted from a
+readout that is not aware of the underlying relationship. To
+do so, we propose a novel form of the Jacobian lens, the
+\emph{entity lens}. Whereas the Jacobian lens is estimated
+across all tokens and concepts, the entity lens
+$\mbox{EL}_t$
+is trained
+to predict what the model will output for an entity of
+type $t$; e.g., we train ELs for countries and for persons.
+After estimating an entity lens, we measure how
+highly it ranks the model's answer for a relation -- without
+using any relation-specific information in estimation and
+prediction.  Across 28 relations of the LRE dataset on
+Olmo-3-7B this relation-agnostic score correlates with LRE
+faithfulness at $\rho = \headlinenumber$  ($p < .01$).  This
+suggests that linear decodability is largely a property of
+what a subject's representation already carries, rather than
+of the relation being decoded.  Moving the
+unit of analysis from the relation to the individual fact,
+we conclude that new relation datasets and analysis methods
+are needed to address several problems in existing datasets,
+most prominently semantically weak first tokens (e.g., most
+predicted universities' first token is ``University'') and
+reference competition (e.g., the LLM associates obscure
+actor names with competing non-actor entities that have the
+same last name).
 \end{abstract}
