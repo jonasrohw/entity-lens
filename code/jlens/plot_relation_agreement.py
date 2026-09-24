@@ -27,9 +27,9 @@ def sci(value, digits=1):
     return rf"{mantissa} \times 10^{{{int(exponent)}}}"
 
 
-def main(*, data=None, labels=None):
+def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    d = data if data is not None else read_json(f"{ROOT}/results/paper_figure_data.json")
+    d = read_json(f"{ROOT}/results/paper_figure_data.json")
     rels = d["rels"]
     y = np.array(d["faith"])
     lens = np.array(d["lens"])
@@ -41,8 +41,6 @@ def main(*, data=None, labels=None):
         "person_father": ("person_father /\nperson_mother", -3.15, 0.235, "left"),
         "country_capital_city": ("country_capital", -1.45, 0.34, "left"),
     }
-    if labels is not None:
-        LABEL = labels
     style.use_paper_style()
     fig, ax = plt.subplots(figsize=FIGSIZE, layout="constrained")
 
@@ -118,7 +116,6 @@ def main(*, data=None, labels=None):
         f"rho={rho.statistic:+.3f} p={rho.pvalue:.2e}  "
         f"x range {x.min():.2f}..{x.max():.2f}"
     )
-    return fig
 
 
 if __name__ == "__main__":
