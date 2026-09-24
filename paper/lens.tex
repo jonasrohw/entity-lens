@@ -561,19 +561,17 @@ We provide sufficient details to reproduce all experiments in the main text and 
 \section{Jacobian--vector products}
 \label{sec:jvp}
 
-Neither the operator nor the lens ever needs $J_i$ itself, only products
-$J_i u$: for the lens this is explicit in Eq.~\ref{eq:cel}, and for the
-LRE it is what the expansion in Eq.~\ref{eq:beta} buys, since it turns
-$W = \operatorname{mean}_i J_i$ into a sum of such products. We obtain
-each one by the standard
-double-backward construction \citep{pearlmutter1994fast}: differentiate
-$\langle u', f(h)\rangle$ with respect to $h$ with $u'$ held as a free
-variable, then differentiate the result with respect to $u'$ in the
-direction $u$. Each product therefore costs a constant number of forward
-and backward passes rather than the $d_{\text{model}}$ passes a
-materialized Jacobian would need. The construction requires
-\texttt{float32} and eager attention, as the fused attention kernels are
-not twice differentiable.
+Both the operator and the lens access $J_i$ only through
+Jacobian--vector products $J_i u$. This is explicit for the lens in
+Eq.~\ref{eq:cel}; for the LRE, the expansion in Eq.~\ref{eq:beta}
+expresses $W = \operatorname{mean}_i J_i$ as a sum of these products. We
+compute each product using the standard double-backward construction
+\citep{pearlmutter1994fast}: differentiate $\langle u', f(h)\rangle$
+with respect to $h$, treating $u'$ as free, and then differentiate with
+respect to $u'$ in direction $u$. This takes a constant number of forward
+and backward passes, while materializing the Jacobian takes
+$d_{\text{model}}$ passes. We use \texttt{float32} and eager attention
+because fused attention kernels do not support second derivatives.
 
 \section{Layer selection}
 \label{sec:layer17}
