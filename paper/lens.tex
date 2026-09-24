@@ -42,9 +42,11 @@ $>>>$\hspace{1cm}}}}}
 
 \section{Introduction}
 
+\enote{sg}{Here and/or in related work, we could mention Yuetian's paper on the relationship between relational linearity and hallucinations. I think this could be helpful to convince readers that the LRE topic is interesting.}
+
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
-affine function of the subject's hidden state -- a \emph{linear relational
+affine function of the subject's hidden state, a \emph{linear relational
 embedding} (LRE). They also showed that this works far better for some
 relations than others. On Olmo-3-7B, we reproduce the same spread: an LRE
 fitted on \textsc{country\_capital\_city} agrees with the model's own
@@ -52,7 +54,7 @@ prediction 87.5\% of the time while one fitted on \textsc{person\_father}
 agrees 7.5\% of the time.
 
 Why? The natural reading is that some relations are ``more linear'' than
-others -- that linearity is a property of the relation. We report evidence
+others: linearity is a property of the relation. We report evidence
 that it is better understood as a property of the \emph{subject's
 representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
@@ -62,24 +64,19 @@ Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
 is trained on subjects of type $t$ placed in the the neutral prompt
 \texttt{"\{\} is known for"} and
-evaluates the Jacobian at entities of type $t$.
-The construction changes what the readout is
-about: it is not about what a model might say in general
-about any concept, but about factual
+evaluates the Jacobian at entities of type $t$. This readout is about factual
 knowledge and, more specifically, about factual knowledge
 about an entity of a particular type.
 The question it
-answers -- \emph{what factual knowlege is this model ready to produce about this entity}
- -- is specific to the entity type, but not specific to any relation.
+answers, \emph{what factual knowledge is this model ready to produce about this entity?},
+is specific to the entity type, but not specific to any relation.
 
-We estimate  the entity lens under the single
-neutral prompt
-\texttt{"\{\} is known for"} 
-(shared by every relation), at one layer fixed in advance,
+We estimate  the entity lens under the single neutral prompt (shared by every relation), at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
+\enote{sg}{We should avoid repeating ourselves, so maybe merge this paragraph with the previous one?}
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
@@ -92,12 +89,11 @@ cardinality and answer-token frequency.
 the unit of
 analysis from the relation to the individual fact,
 we provide an analysis of several
-problems in existing datasets -- most prominently
+problems in existing datasets that hinder further
+progress on understanding LREs in language models, most prominently
 semantically
 weak first tokens
-and reference competition --
-that hinder further
-progress on understanding LREs in language models. 
+and reference competition. 
 
 
 \section{Background}
@@ -130,7 +126,7 @@ and a constant: expanding $b_\beta$ gives
   s_i)\,\right],
 \label{eq:beta}
 \end{equation}
-in which only the second term depends on which subject is being decoded.
+in which only the second term depends on which subject $s$ is being decoded.
 Left unscaled, the shared anchor $\operatorname{mean}_i f(s_i)$ dominates
 and the operator returns much the same object for every subject.
 Setting $\beta > 1$ amplifies the subject-specific contribution relative
@@ -156,9 +152,7 @@ the quantity we predict.
 \section{Experimental setup}
 \label{sec:setup}
 
-\paragraph{Model.} Olmo-3-7B, in \texttt{float32} with eager attention,
-as the Jacobian--vector products require both
-(Appendix~\ref{sec:jvp}).
+\paragraph{Models.} Our primary analysis is conducted on OLMo-3-7B because it combines performance with full replication resources for detailed analysis. Results for six additional models appear in Appendix~\ref{sec:shared-baselines}. Inference details are in Appendix~\ref{sec:jvp}.
 
 \paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
 contains 47 relations. Our prompt presupposes an entity subject, so we
@@ -186,9 +180,10 @@ eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
 are estimated, and the remainder as scored test subjects.
 
 Faithfulness is then recomputed for all 28 relations under this protocol.
-Layer and $\beta$ are chosen on a $6\times6$ grid -- six candidate layers
-for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values of
-$\beta$ ($0.5, 1, 1.5, 2, 3, 5$) -- by the mean over the test subjects.
+Layer and $\beta$ are chosen on a $6\times6$ grid consisting of six candidate
+layers for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values
+of $\beta$ ($0.5, 1, 1.5, 2, 3, 5$). Selection is based on the mean over the
+test subjects.
 \citet{hernandez2024linearity} likewise fit both per relation; the six
 layers span the network at roughly even spacing and the $\beta$ range
 brackets the values they report.
@@ -280,15 +275,14 @@ $\rho \in [0.570, 0.700]$, median $0.656$.
 \section{Analysis of the entity lens}
 \subsection{Salience}
 \label{sec:salience}
-Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
-than tested. Readouts of this kind are normally taken to surface what a
+We test the interpretation of Eq.~\ref{eq:cel} used by our analysis. Readouts of this kind are normally taken to surface what a
 model is internally disposed to say \citep{gurnee2026workspace}, and we
 have read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
-part of what the subject evokes -- to the extent, that is, that the
-object is \emph{salient} for the subject.
+part of what the subject evokes; that is, the object should be
+\emph{salient} for the subject.
 This section performs a sanity check
 (a check that is external to the lens)
 on that assumption by
@@ -332,8 +326,8 @@ fit in Figure~\ref{fig:main}; this residual
 is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
 
-The largest positive residuals -- faithful despite a low
-lens score --  with their cardinality are
+The largest positive residuals, faithful despite a low
+lens score, with their cardinality are
 \textsc{landmark\_on\_continent} ($+0.242$, $k = 189$),
 \textsc{name\_gender} ($-0.374$, $k = 9.5$) and
 \textsc{person\_native\_language} ($+0.118$, $k = 30.6$). In each, the LRE
@@ -342,8 +336,8 @@ the answer being salient for any particular subject: no name is
 chiefly ``known for'' its gender, but there are only two answers to pick
 between.
 
-The largest negative residuals -- unfaithful despite the
-lens -- are \textsc{person\_father} ($-0.403$),
+The largest negative residuals, unfaithful despite the
+lens, are \textsc{person\_father} ($-0.403$),
 \textsc{person\_mother} ($-0.330$) and \textsc{company\_ceo}
 ($-0.297$), all with $k \approx 1$ and answer spaces in the
 hundreds. For these relations, faithfulness is near its
@@ -361,7 +355,7 @@ merely a nuisance correlate.
 \section{Fact-level analysis}
 \label{sec:subject}
 Linearity emerges as a phenomenon at the relation level, not
-the fact level -- it would not make sense to investigate
+the fact level; it would not make sense to investigate
 linearity for the facts of a relation that is not
 represented linearly. But
 once there is evidence for at least partial linearity of a
@@ -448,8 +442,8 @@ correct. But this is not an effective evaluation:
 The correct generation of ``University'' is not
 a reliable indicator of the factual competence of the LM.
 
-Measuring the collapse rate -- the fraction of a relation's distinct
-objects that share a first token with another -- \textbf{6 of 40
+The collapse rate is the fraction of a relation's distinct
+objects that share a first token with another. \textbf{6 of 40
 relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 \textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
 29 of 69 objects begin with \textsc{University}).
@@ -466,8 +460,8 @@ counting the model's own answer as ``faithful''. In
 A complete fix would condition on the prediction being distinctive.
 
 The direction of the bias differs by relation. Where the collapse is on
-the gold side it makes faithfulness easier -- 41 distinct fathers all
-counting as \textsc{John} -- so our \textsc{person\_father} figure is an
+the gold side it makes faithfulness easier: 41 distinct fathers all
+count as \textsc{John}. Our \textsc{person\_father} figure is therefore an
 upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not an accurate response at all.
@@ -490,7 +484,7 @@ whose objects are full entity names.
 \section{Limitations}
 \label{sec:limitations}
 
-The study covers one model and 28 relations. The relationship is
+The study covers only 28 relations with partially small sample size. The relationship is
 correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
@@ -534,8 +528,8 @@ confound: a relation admits a faithful linear operator to the extent that
 its answer is already part of what the subject's representation makes the
 model disposed to say. On that view the wide spread of LRE faithfulness
 across relations is less a fact about the relations than about the
-entities they are asked about -- and the exceptions are informative,
-falling at the two ends of the answer-space range where faithfulness can
+entities they are asked about. The exceptions are informative: they fall
+at the two ends of the answer-space range where faithfulness can
 be achieved, or prevented, without the subject's representation mattering
 much either way.
 
@@ -570,7 +564,7 @@ We provide sufficient details to reproduce all experiments in the main text and 
 \label{sec:jvp}
 
 Neither the operator nor the lens ever needs $J_i$ itself, only products
-$J_i u$: for the lens this is explicit in Eq.~\ref{eq:lens}, and for the
+$J_i u$: for the lens this is explicit in Eq.~\ref{eq:cel}, and for the
 LRE it is what the expansion in Eq.~\ref{eq:beta} buys, since it turns
 $W = \operatorname{mean}_i J_i$ into a sum of such products. We obtain
 each one by the standard
@@ -661,9 +655,9 @@ relations, but its own operator recovers the currency for only 6 of 12
 countries at $\beta = 3$, 2 at $\beta = 5$ and none at $\beta = 10$;
 where an operator is this weak there is nothing for a substitute to
 reproduce. \textsc{person\_father} and \textsc{person\_mother} would be
-the strongest test --- 748 shared subjects, and answers of the same kind,
-so the two relations cannot be told apart by the kind of answer --- but
-their faithfulness is $0.06$ and $0.12$, and the operators essentially
+the strongest test: they share 748 subjects and have answers of the same
+kind, so the two relations cannot be told apart by the kind of answer.
+But their faithfulness is $0.06$ and $0.12$, and the operators essentially
 never produce the gold object.
 
 \paragraph{Country subjects.} A country tests the swap only if its
@@ -685,11 +679,11 @@ Australia, Belize, Benin, Brazil, Cameroon, Canada, China, India, Ivory
 Coast, Kazakhstan, Morocco, Myanmar, New Zealand, Nigeria, Pakistan,
 Palau, Switzerland, Tanzania, Turkey, the United Arab Emirates, the
 United States and Vietnam. Every rejected country is one for which the
-model gives the \emph{same} city for both questions --- the capital for
+model gives the \emph{same} city for both questions: the capital for
 the largest city (Ecuador, Gambia, Liechtenstein, Malta, Micronesia, the
 Philippines, San Marino, Trinidad and Tobago), or the largest city for
-the capital (Burundi) --- so the filter removes exactly the countries on
-which the model does not distinguish the two relations.
+the capital (Burundi). The filter therefore removes exactly the countries
+on which the model does not distinguish the two relations.
 
 \paragraph{Protocol.} All states are read at layer 17. Each relation's
 prompt is its first template with eight in-context demonstrations drawn
@@ -810,11 +804,10 @@ can be measured (Section~\ref{sec:residuals}).
 
 \section{The anchored contrastive Jacobian lens}
 Here we report on an experiment with an ``anchored''
-contrastive Jacobian lens -- in contrast to the non-anchored
-Jacobian lens defined in Eq.~\ref{eq:cjl}.
-Keeping the anchor means
-that we have choose how to weight anchor and subject term --
-which is what $\beta$ does in Eq.~\ref{eq:beta}.
+contrastive Jacobian lens rather than the non-anchored
+Jacobian lens defined in Eq.~\ref{eq:cel}.
+Keeping the anchor requires choosing how to weight the anchor and subject
+term, which is what $\beta$ does in Eq.~\ref{eq:beta}.
 
 In sample
 such a $\beta$ slightly outperforms dropping the anchor, but the curve is
@@ -822,10 +815,10 @@ flat across a wide range of $\beta$ and the advantage does not survive
 selection: choosing $\beta$ on 15 relations and evaluating on the
 remaining 10, across 2{,}000 random splits, beats the anchor-free readout
 in only $30\%$ of them. We therefore drop the anchor, which leaves a
-readout with no hyperparameter at all -- the decoder normalizes, so once
+readout with no hyperparameter at all. The decoder normalizes, so once
 the anchor is gone, scaling cannot change a ranking and $\beta$ has
 nothing left to do. This gives the
-\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cjl}.
+\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cel}.
 
 In summary, a single
 $\beta$ shared by every relation would be a legitimate option, adding
