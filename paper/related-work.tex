@@ -6,7 +6,12 @@ language models \citep{vaswani2017attention}. Rather than
 training such maps, they estimate them from a trained model by
 approximating the mapping from a subject's hidden state to the model's
 output with an affine function derived from the model's Jacobian. The
-approximation is faithful for some relations and poor for others.
+approximation is faithful for some relations and poor for
+others.
+\enote{hs}{above: very nice writeup! can you please check to
+what extent it's redundant with section 1? we have space
+issues, so this nice content should perhaps only occur in
+section 1 or here}
 \citet{merullo2025linear} trace part of this
 variation to pretraining data: LREs are more faithful when subjects and
 objects frequently co-occur in the corpus (we compare against such
@@ -62,6 +67,9 @@ close in spirit to our hypothesis. If an entity's attributes are already
 superposed in its representation, a relation only needs to select among
 them, and selection should succeed to the extent that the attribute is
 prominently encoded.
+\enote{hs}{i'm not sure i understand the interpretation
+above. the idea seems to be that all relevant information is
+already stored in the subject embedding}
 
 \paragraph{Lenses.} Lenses read out intermediate hidden states in terms of
 the output vocabulary and differ mainly in the map they apply: the
