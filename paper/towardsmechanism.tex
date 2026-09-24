@@ -21,95 +21,69 @@ solutions evaluated in this study.
 \section{What the operator's two terms carry}
 \label{sec:swap}
 
-An LRE affine map consists of
-an \emph{anchor}
-(the subject-independent anchor
-$\operatorname{mean}_i f(s_i)$) and
-a \emph{subject term}
-(the subject-dependent remainder
-$T_r(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$); see
-(\S\ref{sec:lens}). We derived CEL from this and get an
-analogous 
-subject term:
-$\mbox{CEL}(e) = \operatorname{mean}_i J_i^{\,r}(s_e - s_i)$).
- This section asks what information each term actually
- carries, by recombining
- anchors with different subject terms.
-It is an intervention rather than a correlation:
-if the anchor carries the relation, then pairing it with a \emph{foreign}
-subject term should still produce this relation's object.
+The LRE of Eq.~\ref{eq:wb} is the sum of an \emph{anchor} $b_\beta$,
+which does not depend on the subject, and a \emph{subject term}
+$\beta W s$. The subject term has the form of NEL
+(Eq.~\ref{eq:nel}), except that its Jacobians are taken under the
+relation's own prompt. We ask what each term carries by recombining
+them. If the anchor carries the relation, pairing it with a
+\emph{foreign} subject term --- another relation's --- should still
+produce this relation's object; and if NEL captures the subject, it
+should be able to stand in for the subject term.
 
-\paragraph{Setup.} The analysis needs relation pairs meeting two
-conditions, and only two pairs in the benchmark meet both. The relations
-must \emph{share subjects}, so that a term can be swapped with nothing
-else changing; and each must have a \emph{strong operator}, since a term
-cannot substitute for one that does not produce the answer in the first
-place. This selects \textsc{country\_capital\_city} and
-\textsc{country\_largest\_city} over 12 countries (faithfulness $1.00$
-and $1.00$), and \textsc{person\_plays\_position\_in\_sport} and
-\textsc{person\_plays\_pro\_sport} over 24 athletes ($0.86$ and $0.91$).
-Two further candidate pairs fail the second condition and are discussed
-in Appendix~\ref{sec:swapdetail}. Each subject is read
-with the remaining subjects as references, and in-context demonstrations
-are drawn from outside the shared set, so no reference or test subject
-appears in any prompt. We set $\beta = 3$ throughout and report how often
-the decoded top-1 is the relation's gold object; Appendix~\ref{sec:swapdetail}
-gives the sensitivity to $\beta$.
-
-\paragraph{The subject term is interchangeable.} Giving an anchor the
-\emph{other} relation's subject term barely changes the answer
-(Table~\ref{tab:swap}, column~3): the capital anchor still names capitals
-11 times in 12 with the largest-city subject term, and the position
-anchor still names positions 20 times in 24 with the sport subject term.
-The anchor decides, not the subject term. This holds across prompts with
-nothing in common: a subject term estimated under \texttt{"The official
-currency of \{\} is the"} still yields capitals 9 times in 12 under the
-capital anchor.
-
-\paragraph{The lens can replace the subject term.} Substituting $\mbox{CEL}(s)$ ---
-estimated under the neutral prompt, with no relation anywhere --- for
-$T_r(e)$ recovers much of the operator (column~4). On the two person
-relations it matches it: 20 against 19 for position, 21 against 22 for
-sport. The lens alone never names a sport at all, so what it supplies is
-the subject and what the anchor supplies is the relation.
-
-\enote{hs}{i think ``anchor alone'' needs to be added to the table?}
-
-\paragraph{Controls.} Two nulls establish that something is composed
-rather than read off the anchor. The \emph{anchor alone} is the $\beta
-\to 0$ limit; the \emph{wrong donor} pairs an anchor with a different
-subject's lens vector. For the two city relations both score
-\textbf{zero} at every $\beta$ we tried, so every hit is attributable to
-the correct subject's vector. For the person relations the anchor alone
-is not negligible --- 7 and 8, roughly the majority class --- but the
-wrong donor scores \emph{below} it, and the correct lens gains 15 and 18
-subjects while losing none (McNemar $p = 6.1\times10^{-5}$ and
-$7.6\times10^{-6}$).
+We use two relation pairs that share their subjects:
+\textsc{country\_capital\_city} and \textsc{country\_largest\_city} over
+22 countries whose capital is not their largest city and for which the
+model answers both relations correctly, and
+\textsc{person\_plays\_position\_in\_sport} and
+\textsc{person\_plays\_pro\_sport} over 24 athletes. Each subject is read
+with the others as references, at $\beta = 3$.
+Appendix~\ref{sec:swapdetail} describes the experiments in full.
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lrrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-& & \multicolumn{2}{c}{subject term} & \multicolumn{2}{c}{controls} \\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}
-relation & $n$ & own & foreign & lens $\mbox{CJL}(s)$ & wrong donor \\
+& & \multicolumn{3}{c}{subject term} & \multicolumn{2}{c}{controls} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+relation & $n$ & own & foreign & NEL & anchor alone & wrong donor \\
 \midrule
-\textsc{country\_capital\_city} & 12 & 11 & 11 & 6 & 0 \\
-\textsc{country\_largest\_city} & 12 & 10 & 9 & 5 & 0 \\
-\textsc{person\_plays\_position} & 24 & 19 & 20 & 20 & 5 \\
-\textsc{person\_plays\_pro\_sport} & 24 & 22 & 18 & 21 & 3 \\
+\textsc{country\_capital\_city} & 22 & 12 & 12 & 7 & 0 & 0 \\
+\textsc{country\_largest\_city} & 22 & 12 & 8 & 4 & 0 & 0 \\
+\textsc{person\_plays\_position} & 24 & 19 & 21 & 18 & 7 & 6 \\
+\textsc{person\_plays\_pro\_sport} & 24 & 22 & 21 & 21 & 6 & 3 \\
 \bottomrule
 \end{tabular}
-\caption{Recombining an LRE's anchor with different subject terms, at
+\caption{Recombining an LRE's anchor with different subject terms,
 $\beta = 3$. Counts are how often the decoded top-1 is the relation's
 gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
-the paired relation's subject term; \emph{lens} uses $\mbox{CJL}(s)$, which never
-sees a relation. A foreign subject term, and often the relation-agnostic
-lens, does as well as the operator's own.}
+the paired relation's subject term; \emph{NEL} is the noncontrastive
+entity lens, which never sees a relation; \emph{anchor alone} drops the
+subject term; \emph{wrong donor} uses another subject's NEL. The model
+answers all 22 countries correctly, but the operator itself reproduces
+only 12 (Appendix~\ref{sec:swapdetail}).}
 \label{tab:swap}
 \end{table}
 
+\paragraph{The anchor carries the relation.} A foreign subject term
+leaves the answer largely intact (Table~\ref{tab:swap}): with the
+largest-city subject term the capital anchor still names 12 capitals, as
+many as with its own, and each person anchor keeps 21 of 24 subjects with
+the other relation's subject term. The anchor alone names no country's
+capital or largest city, so these hits are composed rather than read off
+the anchor. Nor do they depend on the particular references: over 500
+anchors estimated from references disjoint from the test subjects, the
+foreign subject term stays on average within one to two subjects of the
+operator's own on all four relations.
 
-
-
+\paragraph{The lens stands in for the subject term, but only
+moderately.} NEL, computed under the neutral prompt with no relation
+anywhere, recovers the operator for sport (21 against 22) and largely for
+position (18 against 19), but for only 7 of the 12 capitals and 4 of the
+12 largest cities that the operator itself gets right. What it supplies
+is subject-specific --- another subject's NEL falls to or below the
+anchor alone --- but it is also less stable than the foreign subject
+term. Over the same 500 anchors it ranges from 7 to 20 of 24 for
+position, and for the country pair neither the anchor's references nor
+NEL's own references dominate its variance.
