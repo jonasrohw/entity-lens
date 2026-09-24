@@ -48,7 +48,7 @@ $>>>$\hspace{1cm}}}}}
 a subject to the object of a relation is often well approximated by an
 affine function of the subject's hidden state, a \emph{linear relational
 embedding} (LRE). They also showed that this works far better for some
-relations than others. On Olmo-3-7B, we reproduce the same spread: an LRE
+relations than others. On OLMo-3-7B \citep{olmo3}, we reproduce the same spread: an LRE
 fitted on \textsc{country\_capital\_city} agrees with the model's own
 prediction 87.5\% of the time while one fitted on \textsc{person\_father}
 agrees 7.5\% of the time.
@@ -62,7 +62,7 @@ all.
 
 Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
-is trained on subjects of type $t$ placed in the the neutral prompt
+is trained on subjects of type $t$ placed in the neutral prompt
 \texttt{"\{\} is known for"} and
 evaluates the Jacobian at entities of type $t$. This readout is about factual
 knowledge and, more specifically, about factual knowledge
@@ -209,9 +209,7 @@ the lens itself is always computed under the neutral prompt of
 \includegraphics[width=0.8\linewidth]{fig_iclr_agreement.pdf}
 \caption{LRE faithfulness against the relation-agnostic lens score, 28
 relations. The lens sees no relation template, no objects, and no
-(subject, object) pairs, and uses one fixed layer throughout.
-Triangles mark the two relations with numeric objects, rescored as
-described in Appendix~\ref{sec:numeric-objects}.}
+(subject, object) pairs, and uses one fixed layer throughout.}
 \label{fig:main}
 \end{figure}
 
@@ -325,6 +323,7 @@ Concretely, we order the relations by their residual from the least-squares
 fit in Figure~\ref{fig:main}; this residual
 is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
+% Issue here, we need to investigate.
 
 The largest positive residuals, faithful despite a low
 lens score, with their cardinality are
@@ -372,10 +371,7 @@ rank for each relation.
 The values of $\rho$ are in the range [-0.401,0.664] with a
 median of
 0.235. 
-We found that
-several shortcomings of the experimental setup currently
-used for investigating relations in LMs
-that result in these low values.
+We found several shortcomings in the experimental setup currently used to investigate relations in LMs that result in these low values.
 We now analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
@@ -398,7 +394,7 @@ in LRE. The highest ranked token given by the lens is
 associated with the last name Thommessen
 by Olmo-3-7B
 is Advokatfirmaet
-Thommessen, a law firm known for their digital whistleblowing
+Thommessen, a law firm known for its digital whistleblowing
 tool. One might hope that the first name ``Rolf''
 disambiguates which subject is intended, but apparently this
 is not the case. In general, the last few tokens seem to
@@ -484,7 +480,7 @@ whose objects are full entity names.
 \section{Limitations}
 \label{sec:limitations}
 
-The study covers only 28 relations with partially small sample size. The relationship is
+The study only covers 28 relationships, some of which have small sample sizes. The relationship is
 correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
@@ -499,7 +495,7 @@ floor regardless. We show that these are the two tails of a single
 variable, but we do not have a principled account of where the boundaries
 lie, and with 28 relations we cannot fit one.
 
-We also probe salience through a limited set a neutral prompts. That phrasing asks what an entity is \emph{noted} for, which need not coincide with everything its
+We also probe salience through a limited set of neutral prompts. That phrasing asks what an entity is \emph{noted} for, which need not coincide with everything its
 representation carries; attributes such as gender may be well encoded
 without being something a name is ``known for''. A different neutral
 prompt, or an average over several, might track salience more broadly.
