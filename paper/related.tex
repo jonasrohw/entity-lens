@@ -1,59 +1,59 @@
 \section{Related work}
-\paragraph{Linear relational embeddings.}
-\citet{hernandez2024linearity} brought the idea of
-modeling relations as linear maps between concept representations
-\citep{DBLP:conf/icml/PaccanaroH00} to transformer
-language models \citep{vaswani2017attention}. Rather than
-training such maps, they estimate them from a trained model by
-approximating the mapping from a subject's hidden state to the model's
-output with an affine function derived from the model's Jacobian. The
-approximation is faithful for some relations and poor for
-others.
-\enote{hs}{above: very nice writeup! can you please check to
-what extent it's redundant with section 1? we have space
-issues, so this nice content should perhaps only occur in
-section 1 or here}
+
+\paragraph{Linear relational embeddings.} Treating relations as linear maps
+between concept representations goes back to
+\citet{DBLP:conf/icml/PaccanaroH00};
+\citet{hernandez2024linearity} carried the idea over
+to transformer language models \citep{vaswani2017attention}, and
+subsequent work has asked why the resulting LREs are faithful for some
+relations and not others.
 \citet{merullo2025linear} trace part of this
 variation to pretraining data: LREs are more faithful when subjects and
 objects frequently co-occur in the corpus (we compare against such
-frequency measures in Appendix \ref{sec:corpus-freq-baselines}). A more fundamental question is
-whether linear structure reflects what a model has learned at all, since
-many parametrizations induce the same next-token distribution.
-\citet{marconato2024all} refine the notion of
-relational linearity and show that, under suitable conditions, it holds
-either in all models that induce the same next-token distribution or in
-none. \citet{valer2026relational} build on this
-formulation with an empirical probe based on the Kullback--Leibler
-divergence and find that relational linearity varies across models and
-layers and with how the relation is phrased. These works evaluate and
-explain linearity at the level of the relation. We ask instead how much
-of it can be predicted from how the model represents the subject, using
-a readout estimated without the relation or any of its objects. We also
-identify object cardinality as a second factor that shapes LRE
-faithfulness (§\ref{sec:residuals}).
+frequency measures in Appendix~\ref{sec:corpus-freq-baselines}). A further question is whether such
+structure reflects what a model has learned or only the particular
+parametrization that realizes it, since many parametrizations induce the
+same next-token distribution. Existing results point to the former,
+since under suitable conditions, relational linearity holds either in
+all distribution-equivalent models or in none, and it has been shown
+empirically, through a probe based on the Kullback--Leibler divergence,
+to vary across models, layers and phrasings of the relation
+\citep{marconato2024all, valer2026relational}.
+These works evaluate and explain linearity at the level of the relation.
+We ask instead how much of it can be predicted from how the model
+represents the subject, using a readout estimated without the relation
+or any of its objects.
 \enote{sg}{I'm unhappy with the term "object cardinality", at least before we define it. I would take this to mean the number of possible objects, which is not what we mean here.}
 
 \paragraph{Subject representations in factual recall.} Mechanistic studies
 converge on the view that much factual knowledge is attached to the
 subject before the relation is processed.
-\citet{geva2022transformer} interpret feed-forward layers as
-key-value memories whose keys respond to patterns in the input and
-whose values induce distributions over the output vocabulary.
-Causal tracing
-localizes factual associations in middle-layer MLPs at the last subject
-token, where targeted edits can change individual facts
-\citep{meng2022locating}. Building on these findings,
-factual recall has been decomposed into stages: MLP layers enrich the
-subject representation with many of its attributes, the relation is
-propagated to the final position, and attention heads extract the
-requested attribute
+According to \citet{geva2021transformer,meng2022locating},
+feed-forward layers operate as
+key--value memories whose keys respond to patterns in the input and
+whose values induce distributions over the output vocabulary, and in
+middle layers at the last subject token they are where causal tracing
+localizes factual associations and where targeted edits change
+individual facts.
+Building on these findings, factual recall has been decomposed into
+stages: MLP layers enrich the subject representation with many of its
+attributes, a lookup that depends largely on the subject's name rather
+than on the preceding context; the relation is propagated to the final
+position; and attention heads extract the requested attribute
 \citep{geva-etal-2023-dissecting, nanda2024fact}.
-\citet{nanda2024fact} further report that the lookup
-performed by early MLPs depends largely on the tokens of the subject's
-name rather than on the preceding context.
 \citet{10.1162/TACL.a.746} show that knowledge
 acquisition tracks how often subject and answer co-occur, though
-frequency alone does not fully explain learning.
+frequency alone does not fully explain learning, which is why we treat
+the corpus-frequency baselines in Appendix~\ref{sec:corpus-freq-baselines} as a comparison rather
+than an explanation. Our approach can be read as a probe of this
+enrichment, since it reports what the model is prepared to say about a
+subject before any relation is given. This allows us to connect two
+lines of work: We hypothesize that the enrichment the lens diagnoses
+contributes to the relational linearity found by
+\citet{hernandez2024linearity}. The lens predicts LRE
+faithfulness across relations in all seven models we test, and the
+association persists when controlling for object cardinality and
+answer-token frequency (§\ref{sec:results}).
 \enote{sg}{I think the Gottesman TACL paper is indeed relevant to ours, but it doesn't fit in this paragraph. Or maybe we should change the title of the paragraph to something more vague like "explaining factual recall" (which would likely mean merging this paragraph with the one below).}
 
 \paragraph{How facts are stored.} Theoretical work offers two accounts of
@@ -62,25 +62,16 @@ how transformers store facts.
 weights as associative memories and prove that a one-layer transformer
 can store a number of facts that scales linearly with its parameter
 count, with storage traded off between self-attention and MLP
-parameters. \citet{DBLP:journals/corr/abs-2605-12426} propose a
-geometric alternative: in a controlled one-layer setting, subject
+parameters. \citet{DBLP:journals/corr/abs-2605-12426} study a
+geometric form of storage: in a controlled one-layer setting, subject
 embeddings encode linear superpositions of their associated attributes,
-and a small MLP acts as a relation-conditioned selector through ReLU
-gating rather than as a key--value lookup. The geometric account is
-close in spirit to our hypothesis. If an entity's attributes are already
-superposed in its representation, a relation only needs to select among
-them, and selection should succeed to the extent that the attribute is
-prominently encoded.
-\enote{hs}{i'm not sure i understand the interpretation
-above. the idea seems to be that all relevant information is
-already stored in the subject embedding and then all that
-needs to be done is selection. but that is unlikely to be
-true for real data. so my intuition is that both enrichment
-and selection play a role for real data. in any case,
-``rather than as a key--value lookup'' (and in general
-building up a contrat between enrichment and selectino) does
-not seem correct to me}
-\enote{sg}{Ravfogel et al. explicitly contrast their view to a "key-value" view, already in their abstract. Of course we could argue this is a false dichotomy, but I'm not sure that would belong in the related work section.}
+and a small MLP selects among them conditioned on the relation. In
+pretrained models the two need not compete: lookup-like computation can
+enrich the subject representation over the early and middle layers, and
+the geometric picture then describes the enriched state from which a
+relation selects. Our hypothesis concerns this enriched state: a
+relation should be linearly decodable to the extent that its attribute
+is prominently encoded in the subject representation after enrichment.
 
 \paragraph{Lenses.} Lenses read out intermediate hidden states in terms of
 the output vocabulary and differ mainly in the map they apply: the
@@ -90,18 +81,13 @@ learned per layer \citep{belrose2023eliciting}, or
 the model's input--output Jacobian averaged over a large corpus and
 applied to raw activations, with the aim of identifying representations
 the model is poised to verbalize
-\citep{gurnee2026workspace}.
-Our contrastive variant evaluates the Jacobian at reference entities of
-the same type and applies it to differences between entity
-representations. This subtracts what the reference entities share, so
-that the top-ranked tokens describe an individual entity rather than its
-category. As a predictor of LRE faithfulness, the non-contrastive
-Jacobian lens performs comparably (Appendix \ref{sec:shared-baselines}).
-\enote{hs}{the above needs to be rewritten because i changed
-our main story last night! can you please have a look and
-then rewirte it?}
-
-\enote{sg}{An important work that is missing here is Patchscopes, which unifies all "lenses" in a common framework. I will add it later.}
+\citep{gurnee2026workspace}. Our entity lens instead evaluates the Jacobian at reference entities of
+the subject's type under a single neutral factual prompt, so that the
+readout concerns what the model is prepared to say about entities of
+that type rather than about any concept. Its contrastive variant further
+applies the Jacobian to differences between entity representations,
+subtracting what the references share.
+\enote{sg}{An important work that is missing here is Patchscopes (Ghandeharioun et al., ICML 2024 I think), which unifies all "lenses" in a common framework.}
 
 
 %\citet{DBLP:conf/icml/PaccanaroH00} introduce linear
