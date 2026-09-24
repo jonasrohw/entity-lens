@@ -42,6 +42,8 @@ $>>>$\hspace{1cm}}}}}
 
 \section{Introduction}
 
+\enote{sg}{Here and/or in related work, we could mention Yuetian's paper on the relationship between relational linearity and hallucinations. I think this could be helpful to convince readers that the LRE topic is interesting.}
+
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
 affine function of the subject's hidden state -- a \emph{linear relational
@@ -51,7 +53,7 @@ fitted on \textsc{country\_capital\_city} agrees with the model's own
 prediction 87.5\% of the time while one fitted on \textsc{person\_father}
 agrees 7.5\% of the time.
 
-Why? The natural reading is that some relations are ``more linear'' than
+Why? A natural reading is that some relations are ``more linear'' than
 others -- that linearity is a property of the relation. We report evidence
 that it is better understood as a property of the \emph{subject's
 representation}. Concretely, we show that one can predict how faithful an
@@ -63,7 +65,7 @@ we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
 is trained on subjects of type $t$ placed in the the neutral prompt
 \texttt{"\{\} is known for"} and
 evaluates the Jacobian at entities of type $t$.
-The construction changes what the readout is
+This construction changes what the readout is
 about: it is not about what a model might say in general
 about any concept, but about factual
 knowledge and, more specifically, about factual knowledge
@@ -76,10 +78,12 @@ We estimate  the entity lens under the single
 neutral prompt
 \texttt{"\{\} is known for"} 
 (shared by every relation), at one layer fixed in advance,
-and ask how highly it ranks the model's own answer. The lens sees no
+and ask how highly it ranks the model's own answer.
+The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
+\enote{sg}{We should avoid repeating ourselves, so maybe merge this paragraph with the previous one?}
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
@@ -130,7 +134,7 @@ and a constant: expanding $b_\beta$ gives
   s_i)\,\right],
 \label{eq:beta}
 \end{equation}
-in which only the second term depends on which subject is being decoded.
+in which only the second term depends on which subject $s$ is being decoded.
 Left unscaled, the shared anchor $\operatorname{mean}_i f(s_i)$ dominates
 and the operator returns much the same object for every subject.
 Setting $\beta > 1$ amplifies the subject-specific contribution relative

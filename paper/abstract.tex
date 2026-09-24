@@ -14,6 +14,7 @@ $\mbox{EL}_t$
 is trained
 to predict what the model will output for an entity of
 type $t$; e.g., we train ELs for countries and for persons.
+\enote{sg}{I don't understand the above sentence: "what the mdoel will output" is too vague. Is it about next-token predictions or about any future token? (Edit after reading the intro: I think we should mention that it's under the neutral prompt "is known for".)}
 After estimating an entity lens, we measure how
 highly it ranks the model's answer for a relation -- without
 using any relation-specific information in estimation and
@@ -22,7 +23,9 @@ Olmo-3-7B this relation-agnostic score correlates with LRE
 faithfulness at $\rho = \headlinenumber$  ($p < .01$).  This
 suggests that linear decodability is largely a property of
 what a subject's representation already carries, rather than
-of the relation being decoded.  Moving the
+of the relation being decoded.
+\enote{sg}{I don't completely agree with the above sentence: the entity lens also depends on the set of subjects, in other words the entity type}
+Moving the
 unit of analysis from the relation to the individual fact,
 we conclude that new relation datasets and analysis methods
 are needed to address several problems in existing datasets,
@@ -31,4 +34,5 @@ predicted universities' first token is ``University'') and
 reference competition (e.g., the LLM associates obscure
 actor names with competing non-actor entities that have the
 same last name).
+\enote{sg}{In this example, do we have to mention the actor/non-actor contrast or can we just say it's about persons with the same last name? I think this would help the reader focus on the essential aspect.}
 \end{abstract}
