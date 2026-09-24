@@ -2,8 +2,8 @@
 Linear relational embeddings (LREs) approximate a language
 model's subject-to-object mapping with an affine
 function. Their faithfulness varies enormously across
-relations -- near zero for \textsc{person\_father}, at
-ceiling for \textsc{country\_capital\_city}. We investigate
+relations, from near zero for \textsc{person\_father} to
+the ceiling for \textsc{country\_capital\_city}. We investigate
 the factors that contribute to this variation and
 demonstrate that it can be significantly predicted from a
 readout that is not aware of the underlying relationship. To
@@ -16,7 +16,7 @@ to predict what the model will output for an entity of
 type $t$; e.g., we train ELs for countries and for persons.
 \enote{sg}{I don't understand the above sentence: "what the mdoel will output" is too vague. Is it about next-token predictions or about any future token? (Edit after reading the intro: I think we should mention that it's under the neutral prompt "is known for".)}
 After estimating an entity lens, we measure how
-highly it ranks the model's answer for a relation -- without
+highly it ranks the model's answer for a relation without
 using any relation-specific information in estimation and
 prediction.  Across 28 relations of the LRE dataset on
 Olmo-3-7B this relation-agnostic score correlates with LRE

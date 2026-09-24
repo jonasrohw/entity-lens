@@ -29,7 +29,7 @@ tokens. The final form of the contrastive entity lens is then:
 \label{eq:cel}
 \end{equation}
 CEL takes into account the difference between $s_e$ and
-the reference point $s_i$ -- as it should  if we want
+the reference point $s_i$, as it should if we want
 to approximate $f(s_e)$ using the first derivative. 
 Our original motivation was that we are not interested in what the model associates
 with an entity like ``Russia'' in general (e.g.,
@@ -45,8 +45,8 @@ lens is quite sensitive to the reference set. For example,
 if $s_e$ is a French person and a Spanish person is the
 reference entity $s_i$, then the vector difference in 
 Eq.~\ref{eq:cel} will enhance ``French''. But if $s_i$ is
-another French person, then ``French'' will be demoted --
-which is bad for answering questions about $s_e$'s
+another French person, then ``French'' will be demoted.
+This is bad for answering questions about $s_e$'s
 nationality and native language. We therefore also consider
 the following noncontrastive entity lens, which drops the
 reference set differences:
@@ -105,5 +105,4 @@ no (subject,~object) pair of the
 relation is used in estimation. Relation-specificity enters in exactly
 one place, the \emph{target} $m_e$, the quantity
 faithfulness is defined against.
-
 
