@@ -12,17 +12,17 @@
 Model & \shortstack[r]{Contrastive\\entity lens} & \shortstack[r]{Noncontrastive\\entity lens} & Logit lens & \shortstack[r]{Differential\\logit lens} & \shortstack[r]{Attribute\\rate} \\
 \midrule
 OLMo 3 7B & $\phantom{-}0.7355$ & $\phantom{-}\mathbf{0.7650}$ & $\phantom{-}0.2056$ & $\phantom{-}0.4390$ & $-0.4016$ \\
-GPT-J 6B & $\phantom{-}0.4346$ & $\phantom{-}0.4196$ & $\phantom{-}\mathbf{0.4669}$ & $\phantom{-}0.2020$ & $-0.1035$ \\
+GPT-J 6B$^{*}$ & $\phantom{-}0.4346$ & $\phantom{-}0.4196$ & $\phantom{-}\mathbf{0.4669}$ & $\phantom{-}0.2020$ & $-0.1035$ \\
 Mistral 7B & $\phantom{-}0.6561$ & $\phantom{-}\mathbf{0.6711}$ & $\phantom{-}0.6581$ & $\phantom{-}0.5186$ & $-0.2202$ \\
 Gemma 2 9B & $\phantom{-}\mathbf{0.6889}$ & $\phantom{-}0.6868$ & $\phantom{-}0.4728$ & $\phantom{-}0.3436$ & $-0.5515$ \\
-Qwen3 8B Base & $\phantom{-}0.6647$ & $\phantom{-}0.6232$ & $\phantom{-}\mathbf{0.7908}$ & $\phantom{-}0.5952$ & $-0.0557$ \\
-Qwen3.8 27B & $\phantom{-}0.5539$ & $\phantom{-}\mathbf{0.5717}$ & $\phantom{-}0.3404$ & $\phantom{-}0.4492$ & $-0.0099$ \\
-Pythia 6.9B$^{\dagger}$ & $\phantom{-}0.5027$ & $\phantom{-}\mathbf{0.5063}$ & $-0.2047$ & $\phantom{-}0.1845$ & $\phantom{-}0.0041$ \\
+Qwen3 8B Base$^{*}$ & $\phantom{-}0.6647$ & $\phantom{-}0.6232$ & $\phantom{-}\mathbf{0.7908}$ & $\phantom{-}0.5952$ & $-0.0557$ \\
+Qwen3.8 27B$^{*}$ & $\phantom{-}0.5539$ & $\phantom{-}\mathbf{0.5717}$ & $\phantom{-}0.3404$ & $\phantom{-}0.4492$ & $-0.0099$ \\
+Pythia 6.9B$^{*,\dagger}$ & $\phantom{-}0.5027$ & $\phantom{-}\mathbf{0.5063}$ & $-0.2047$ & $\phantom{-}0.1845$ & $\phantom{-}0.0041$ \\
 \bottomrule
 \end{tabular*}
 \endgroup
 \par\vspace{5pt}
 \begin{minipage}{\linewidth}\footnotesize
-Bold marks the largest point estimate within each model, not a significant difference. All columns use the contrastive entity lens's same evaluation rows, including demonstrations and references, and the same model-specific year exclusions. $^{\dagger}$Pythia has 2,663 empty filtered prediction sets; Gemma has one. Their attribute rates are assigned zero, retaining every evaluation row.
+Bold marks the largest point estimate within each model, not a significant difference. All columns use the contrastive entity lens's same evaluation rows, including demonstrations and references, and the same model-specific year exclusions. $^{*}$GPT-J, Pythia, Qwen3 8B Base, and Qwen3.8 27B use one leading newline in the neutral prompt (\texttt{\textbackslash n\{s\} is known for}) to reduce excessive activation norms. The other models use the prompt without this prefix. $^{\dagger}$Pythia has 2,663 empty filtered prediction sets; Gemma has one. Their attribute rates are assigned zero, retaining every evaluation row.
 \end{minipage}
 \end{table}
