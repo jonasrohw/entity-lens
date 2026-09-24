@@ -1,17 +1,21 @@
 
 \subsection{Reference sets}
 \label{sec:refsets}
+\enote{sg}{We should move this section to the appendix. It is only relevant for the CEL-NEL contrast, and it is way too detailed and AI-y.}
+
 \S\ref{sec:lens} motivated NEL by the observation that CEL is sensitive
 to the reference set: if the reference entities $s_i$ share the answer
 with the subject $e$, the difference $s_e - s_i$ removes it. We now
 measure that effect.
 
-\textsc{person\_native\_language} is the right place to see it. Of its
+A good place to see the effect is \textsc{person\_native\_language}.
+Of its
 100 subjects, 69 are French speakers, and for 65 of those 69 the model's
 own answer $m_e$ is the single token ``French'', so the answer is one
-token and cancellation has somewhere visible to show up. We designate
+token and cancellation should be visible. We designate
 eight French and eight non-French reference entities in advance and
-remove them from the test set, so that all four reference sets are
+remove them from the test set, so that all four reference sets \enote{sg}{What four reference sets? I don't understand this whole sentence.}
+are
 scored on the \emph{same} 61 French and 23 non-French subjects and
 composition is the only thing that varies.
 

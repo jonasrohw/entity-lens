@@ -59,6 +59,7 @@ that it is better understood as a property of the \emph{subject's
 representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
+\enote{sg}{This is very nitpicky, but I would prefer saying "A natural reading" rather than "The natural reading", as different observers may have different intuitions of naturalness.}
 
 Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
@@ -168,7 +169,7 @@ error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
 
-\paragraph{Measurement.} Both quantities are read off the same prompt, so
+\paragraph{Measurement.} Both quantities \enote{sg}{Which two quantities?} are read off the same prompt, so
 that they are comparable. Following
 \citet{hernandez2024linearity}, a relation is presented to the model
 \emph{in context}: eight (subject, object) examples of that relation are
@@ -200,6 +201,7 @@ do not establish performance on a separate held-out evaluation set.
 Crucially, the in-context prompt is used only to obtain the \emph{target};
 the lens itself is always computed under the neutral prompt of
 \S\ref{sec:lens}.
+\enote{sg}{I think this should be moved further up the measurement paragraph to make things clear from the beginning.}
 
 \section{Results}
 \label{sec:results}
@@ -238,8 +240,10 @@ of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
 faithfulness easier, and $k$ is indeed associated with faithfulness on
 its own, though only weakly
 ($\rho = 0.355$, $p = 0.064$). But $k$ is essentially uncorrelated with the
+\enote{sg}{Is the correlation (of $k$ with lens score) significantly different from zero? If not, state it. If it is, change "essentially uncorrelated" to "only weakly correlated" or similar.}
 lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
+approximately \enote{sg}{technically, uncorrelated does not imply independent}
 independent predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
 signal.\footnote{All variables here are ordinal, so we work throughout with
@@ -257,7 +261,8 @@ about either variable has been removed.}
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability across ten neutral
-contexts. This predicts neither faithfulness ($\rho = -0.111$) nor the lens
+contexts. \enote{sg}{Do you say somehwere what these ten neutral contexts are?}
+This predicts neither faithfulness ($\rho = -0.111$) nor the lens
 score ($\rho = 0.098$), and removing it leaves the correlation
 unchanged at $0.755$. The correlation is $0.784$ with both cardinality
 and answer frequency removed.
@@ -295,10 +300,12 @@ facts about \{\}. First,"}, and record whether any distinctive word of the
 gold object appears in either continuation.\footnote{Titles, particles and
 words shared with the subject's own name are excluded, so that
 \emph{The}~Joker is not matched by any occurrence of ``the'' and
-\emph{Johann Georg Kant} is not matched by a passage about Immanuel Kant.
+\emph{Johann Georg Kant} (Immanuel Kant's father) is not matched by a passage about Immanuel Kant.
 The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
 makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
-object is never named.} This is a forward pass under different prompts,
+object is never named.}
+\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
+This is a forward pass under different prompts,
 and involves no Jacobian.
 
 We refer to this rate as the object's \emph{prominence}. Across the 14 relations
@@ -309,8 +316,10 @@ down to $0.13$ (\textsc{person\_father}), $0.05$
 (\textsc{person\_mother}). It predicts how often the lens surfaces the
 gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
 $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
-The check passes: what the lens surfaces is predicted by a measurement of
+Thus, what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
+
+\enote{sg}{Now an obvious question is: If object salience predicts entity lens, and entity lens predicts LRE faithfulness, then how well does object salience predict LRE faithfulness?}
 
 \input{referencesets}
 
@@ -320,7 +329,13 @@ The correlation in Figure~\ref{fig:main} is highly
 significant, but many relations deviate from the trend.
 We investigate the tails of this distribution, the relations
 with the largest positive and negative deviations, and find
-that extreme object cardinality $k$ can partially explain these tails.
+that these tails are partially explained by
+extreme \textbf{object cardinality} $k$,
+which we define as the mean number of subjects per object
+(the
+same variable whose removal raises the correlation to
+$0.757$ in \S\ref{sec:results}.).
+
 Concretely, we order the relations by their residual from the least-squares
 fit in Figure~\ref{fig:main}; this residual
 is in units of faithfulness, so $+0.30$ means thirty points more faithful
