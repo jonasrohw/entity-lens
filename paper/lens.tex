@@ -64,22 +64,15 @@ Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
 is trained on subjects of type $t$ placed in the the neutral prompt
 \texttt{"\{\} is known for"} and
-evaluates the Jacobian at entities of type $t$.
-This construction changes what the readout is
-about: it is not about what a model might say in general
-about any concept, but about factual
+evaluates the Jacobian at entities of type $t$. This readout is about factual
 knowledge and, more specifically, about factual knowledge
 about an entity of a particular type.
 The question it
 answers -- \emph{what factual knowlege is this model ready to produce about this entity}
  -- is specific to the entity type, but not specific to any relation.
 
-We estimate  the entity lens under the single
-neutral prompt
-\texttt{"\{\} is known for"} 
-(shared by every relation), at one layer fixed in advance,
-and ask how highly it ranks the model's own answer.
-The lens sees no
+We estimate  the entity lens under the single neutral prompt (shared by every relation), at one layer fixed in advance,
+and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
@@ -160,9 +153,7 @@ the quantity we predict.
 \section{Experimental setup}
 \label{sec:setup}
 
-\paragraph{Model.} Olmo-3-7B, in \texttt{float32} with eager attention,
-as the Jacobian--vector products require both
-(Appendix~\ref{sec:jvp}).
+\paragraph{Models.} Our primary analysis is conducted on OLMo-3-7B because it combines performance with full replication resources for detailed analysis. Results for six additional models appear in Appendix~\ref{sec:shared-baselines}. Inference details are in Appendix~\ref{sec:jvp}.
 
 \paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
 contains 47 relations. Our prompt presupposes an entity subject, so we
@@ -284,8 +275,7 @@ $\rho \in [0.570, 0.700]$, median $0.656$.
 \section{Analysis of the entity lens}
 \subsection{Salience}
 \label{sec:salience}
-Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
-than tested. Readouts of this kind are normally taken to surface what a
+We test the interpretation of Eq.~\ref{eq:cel} used by our analysis. Readouts of this kind are normally taken to surface what a
 model is internally disposed to say \citep{gurnee2026workspace}, and we
 have read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
@@ -574,7 +564,7 @@ We provide sufficient details to reproduce all experiments in the main text and 
 \label{sec:jvp}
 
 Neither the operator nor the lens ever needs $J_i$ itself, only products
-$J_i u$: for the lens this is explicit in Eq.~\ref{eq:lens}, and for the
+$J_i u$: for the lens this is explicit in Eq.~\ref{eq:cel}, and for the
 LRE it is what the expansion in Eq.~\ref{eq:beta} buys, since it turns
 $W = \operatorname{mean}_i J_i$ into a sum of such products. We obtain
 each one by the standard
@@ -815,7 +805,7 @@ can be measured (Section~\ref{sec:residuals}).
 \section{The anchored contrastive Jacobian lens}
 Here we report on an experiment with an ``anchored''
 contrastive Jacobian lens -- in contrast to the non-anchored
-Jacobian lens defined in Eq.~\ref{eq:cjl}.
+Jacobian lens defined in Eq.~\ref{eq:cel}.
 Keeping the anchor means
 that we have choose how to weight anchor and subject term --
 which is what $\beta$ does in Eq.~\ref{eq:beta}.
@@ -829,7 +819,7 @@ in only $30\%$ of them. We therefore drop the anchor, which leaves a
 readout with no hyperparameter at all -- the decoder normalizes, so once
 the anchor is gone, scaling cannot change a ranking and $\beta$ has
 nothing left to do. This gives the
-\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cjl}.
+\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cel}.
 
 In summary, a single
 $\beta$ shared by every relation would be a legitimate option, adding
