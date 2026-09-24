@@ -26,7 +26,7 @@ def split_samples(samples, seed=0, n_icl=N_ICL, n_ref=N_REF, n_test=N_TEST):
     demonstrations = pool[:n_icl]
     rest = pool[n_icl:]
     references = rest[:n_ref]
-    test_samples = rest[n_ref : n_ref + n_test]
+    test_samples = rest[n_ref : None if n_test is None else n_ref + n_test]
     return demonstrations, references, test_samples
 
 

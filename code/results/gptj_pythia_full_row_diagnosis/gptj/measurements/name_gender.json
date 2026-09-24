@@ -1,0 +1,1872 @@
+{
+  "relation": "name_gender",
+  "worker": "gptj_gpu1_b32",
+  "n_original": 19,
+  "data_sha256": "cfeded39fc091fb548791cf588e9ab0d1613b2ab5f8e72645929b55a4583fcf2",
+  "baseline_path": "results/all_models_gender_original_continents/gptj/measurements/name_gender.json",
+  "baseline_sha256": "2b84931fa22321284ee3cf9ad352825eca322edbd895e219fa55b414c5ae6773",
+  "lens": {
+    "n": 19,
+    "layer": 15,
+    "template": "{} is usually a name for a",
+    "agg": {
+      "diff": {
+        "median_rank": 281.0,
+        "median_lograng": 2.450249108319361,
+        "agree_at1": 0.0,
+        "agree_at10": 0.10526315789473684
+      },
+      "lre": {
+        "median_rank": 2958.0,
+        "median_lograng": 3.471144965160633,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      },
+      "diff_original": {
+        "median_rank": 9220.0,
+        "median_lograng": 3.964778022022376,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Scarlett",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 74,
+        "top_diff": [
+          "Scarlett",
+          "Scarlet",
+          "Savannah",
+          "Scar",
+          "Juliet"
+        ],
+        "rank_lre": 4288,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4288,
+          "0.5": 4844,
+          "1.5": 3806,
+          "2.0": 3362,
+          "3.0": 2656,
+          "5.0": 1743
+        },
+        "rank_diff_original": 1116,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 1116
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 75
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 74
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 359
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 218
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 1492
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 182
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Benjamin",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 1280,
+        "top_diff": [
+          "Benjamin",
+          "Ben",
+          "Israel",
+          "Netanyahu",
+          "Hebrew"
+        ],
+        "rank_lre": 2737,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2737,
+          "0.5": 2734,
+          "1.5": 2749,
+          "2.0": 2750,
+          "3.0": 2826,
+          "5.0": 3050
+        },
+        "rank_diff_original": 16854,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 16854
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 4332
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 4022
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 5642
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 1280
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 11716
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 12724
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Lucas",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 535,
+        "top_diff": [
+          "Lucas",
+          "Luke",
+          "Luc",
+          "Skywalker",
+          "Luke"
+        ],
+        "rank_lre": 2699,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2699,
+          "0.5": 2704,
+          "1.5": 2688,
+          "2.0": 2668,
+          "3.0": 2697,
+          "5.0": 2830
+        },
+        "rank_diff_original": 14883,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 14883
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 1987
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 1257
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 2680
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 535
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 6840
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 5402
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Caleb",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 281,
+        "top_diff": [
+          "Caleb",
+          "Ezra",
+          "Jonah",
+          "Ezekiel",
+          "Joshua"
+        ],
+        "rank_lre": 2525,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2525,
+          "0.5": 2617,
+          "1.5": 2429,
+          "2.0": 2348,
+          "3.0": 2214,
+          "5.0": 2063
+        },
+        "rank_diff_original": 5831,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 5831
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 1210
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 776
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 2425
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 281
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 6849
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 1921
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "William",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 882,
+        "top_diff": [
+          "William",
+          "William",
+          "Williamson",
+          "Williams",
+          "Williams"
+        ],
+        "rank_lre": 2958,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2958,
+          "0.5": 2839,
+          "1.5": 3082,
+          "2.0": 3232,
+          "3.0": 3599,
+          "5.0": 4629
+        },
+        "rank_diff_original": 39043,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 39043
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 4273
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 2381
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 5314
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 882
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 17619
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 27422
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Oliver",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 981,
+        "top_diff": [
+          "Oliver",
+          "Owen",
+          "Olivier",
+          "Owens",
+          "Ol"
+        ],
+        "rank_lre": 3150,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3150,
+          "0.5": 2931,
+          "1.5": 3366,
+          "2.0": 3634,
+          "3.0": 4219,
+          "5.0": 5867
+        },
+        "rank_diff_original": 46412,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 46412
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 3645
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 2464
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 12630
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 981
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 30254
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 13802
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Hannah",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 91,
+        "top_diff": [
+          "Hannah",
+          "Hanna",
+          "Rachel",
+          "Hebrew",
+          "Naomi"
+        ],
+        "rank_lre": 4547,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4547,
+          "0.5": 4986,
+          "1.5": 4214,
+          "2.0": 3888,
+          "3.0": 3279,
+          "5.0": 2450
+        },
+        "rank_diff_original": 1775,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 1775
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 96
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 91
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 437
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 223
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 4761
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 503
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Lisa",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 80,
+        "top_diff": [
+          "Lisa",
+          "Lisa",
+          "Lis",
+          "Simpsons",
+          "Simpson"
+        ],
+        "rank_lre": 4721,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4721,
+          "0.5": 5099,
+          "1.5": 4442,
+          "2.0": 4127,
+          "3.0": 3596,
+          "5.0": 2772
+        },
+        "rank_diff_original": 2109,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 2109
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 80
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 186
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 712
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 312
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 2749
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 903
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Tom",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 7,
+        "rank_diff": 102,
+        "top_diff": [
+          "Tom",
+          "Tom",
+          "TOM",
+          "Tommy",
+          "Thomas"
+        ],
+        "rank_lre": 2845,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2845,
+          "0.5": 2756,
+          "1.5": 2947,
+          "2.0": 3061,
+          "3.0": 3324,
+          "5.0": 4021
+        },
+        "rank_diff_original": 29165,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 29165
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 837
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 766
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 4671
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 102
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 13940
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 15513
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Mia",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 7,
+        "rank_diff": 11,
+        "top_diff": [
+          "Mia",
+          "MIA",
+          "mia",
+          "Mew",
+          "Dia"
+        ],
+        "rank_lre": 4463,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4463,
+          "0.5": 5023,
+          "1.5": 3994,
+          "2.0": 3542,
+          "3.0": 2794,
+          "5.0": 1721
+        },
+        "rank_diff_original": 634,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 634
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 11
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 15
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 161
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 32
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 344
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 187
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Sofia",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 6,
+        "rank_diff": 3,
+        "top_diff": [
+          "Sophia",
+          "Sof",
+          "Bulgarian",
+          "her",
+          "Bulgaria"
+        ],
+        "rank_lre": 5418,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5418,
+          "0.5": 6192,
+          "1.5": 4715,
+          "2.0": 4130,
+          "3.0": 3064,
+          "5.0": 1676
+        },
+        "rank_diff_original": 108,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 108
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 3
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 9
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 40
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 25
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 60
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 56
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Connor",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 7,
+        "rank_diff": 1165,
+        "top_diff": [
+          "Connor",
+          "Connor",
+          "Conor",
+          "Irish",
+          "Ireland"
+        ],
+        "rank_lre": 2446,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2446,
+          "0.5": 2520,
+          "1.5": 2371,
+          "2.0": 2311,
+          "3.0": 2232,
+          "5.0": 2234
+        },
+        "rank_diff_original": 9220,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 9220
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 2374
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 1867
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 6577
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 1165
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 6057
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 1642
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Evan",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 7,
+        "rank_diff": 529,
+        "top_diff": [
+          "Evan",
+          "Ethan",
+          "Travis",
+          "Evans",
+          "EV"
+        ],
+        "rank_lre": 2694,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2694,
+          "0.5": 2700,
+          "1.5": 2662,
+          "2.0": 2659,
+          "3.0": 2738,
+          "5.0": 2972
+        },
+        "rank_diff_original": 15325,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 15325
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 1417
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 1254
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 3201
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 529
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 24056
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 3496
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Sofia",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 6,
+        "rank_diff": 3,
+        "top_diff": [
+          "Sophia",
+          "Sof",
+          "Bulgarian",
+          "her",
+          "Bulgaria"
+        ],
+        "rank_lre": 5418,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5418,
+          "0.5": 6192,
+          "1.5": 4715,
+          "2.0": 4130,
+          "3.0": 3064,
+          "5.0": 1676
+        },
+        "rank_diff_original": 108,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 108
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 3
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 9
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 40
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 25
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 60
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 56
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Natalie",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 7,
+        "rank_diff": 32,
+        "top_diff": [
+          "Natalie",
+          "Natasha",
+          "Nancy",
+          "Nina",
+          "Nat"
+        ],
+        "rank_lre": 4393,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4393,
+          "0.5": 4950,
+          "1.5": 3887,
+          "2.0": 3449,
+          "3.0": 2679,
+          "5.0": 1667
+        },
+        "rank_diff_original": 701,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 701
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 32
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 47
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 201
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 113
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 767
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 423
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "David",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 7,
+        "rank_diff": 568,
+        "top_diff": [
+          "David",
+          "David",
+          "david",
+          "DAV",
+          "Davidson"
+        ],
+        "rank_lre": 2757,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "its"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2757,
+          "0.5": 2666,
+          "1.5": 2849,
+          "2.0": 2967,
+          "3.0": 3196,
+          "5.0": 3853
+        },
+        "rank_diff_original": 28627,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 28627
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 2806
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 1134
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 7116
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 568
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 12258
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 14551
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Dylan",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 1234,
+        "top_diff": [
+          "Dylan",
+          "dyl",
+          "ylan",
+          "Welsh",
+          "Duncan"
+        ],
+        "rank_lre": 2749,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2749,
+          "0.5": 2748,
+          "1.5": 2788,
+          "2.0": 2818,
+          "3.0": 2923,
+          "5.0": 3347
+        },
+        "rank_diff_original": 18530,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 18530
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 2934
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 2318
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 7558
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 1234
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 15756
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 1735
+          }
+        },
+        "object": "man"
+      },
+      {
+        "subject": "Emily",
+        "model_top1_id": 2415,
+        "model_top1": "woman",
+        "n_references": 8,
+        "rank_diff": 48,
+        "top_diff": [
+          "Emily",
+          "Emily",
+          "Betsy",
+          "Cathy",
+          "Dickinson"
+        ],
+        "rank_lre": 4249,
+        "top_lre": [
+          "her",
+          "his",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4249,
+          "0.5": 4811,
+          "1.5": 3772,
+          "2.0": 3301,
+          "3.0": 2534,
+          "5.0": 1531
+        },
+        "rank_diff_original": 637,
+        "gender_target_terms": [
+          "woman",
+          "her",
+          "herself",
+          "she",
+          "hers",
+          "female",
+          "girl"
+        ],
+        "gender_term_ranks": {
+          "woman": {
+            "token_id": 2415,
+            "rank": 637
+          },
+          "her": {
+            "token_id": 607,
+            "rank": 48
+          },
+          "herself": {
+            "token_id": 5223,
+            "rank": 117
+          },
+          "she": {
+            "token_id": 673,
+            "rank": 210
+          },
+          "hers": {
+            "token_id": 25144,
+            "rank": 158
+          },
+          "female": {
+            "token_id": 4048,
+            "rank": 882
+          },
+          "girl": {
+            "token_id": 2576,
+            "rank": 331
+          }
+        },
+        "object": "woman"
+      },
+      {
+        "subject": "Michael",
+        "model_top1_id": 582,
+        "model_top1": "man",
+        "n_references": 8,
+        "rank_diff": 295,
+        "top_diff": [
+          "Michael",
+          "Michael",
+          "Michaels",
+          "Mike",
+          "Michigan"
+        ],
+        "rank_lre": 2887,
+        "top_lre": [
+          "his",
+          "her",
+          "being",
+          "the",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2887,
+          "0.5": 2804,
+          "1.5": 2976,
+          "2.0": 3052,
+          "3.0": 3262,
+          "5.0": 3820
+        },
+        "rank_diff_original": 31828,
+        "gender_target_terms": [
+          "man",
+          "him",
+          "himself",
+          "he",
+          "his",
+          "male",
+          "boy"
+        ],
+        "gender_term_ranks": {
+          "man": {
+            "token_id": 582,
+            "rank": 31828
+          },
+          "him": {
+            "token_id": 683,
+            "rank": 902
+          },
+          "himself": {
+            "token_id": 2241,
+            "rank": 703
+          },
+          "he": {
+            "token_id": 339,
+            "rank": 3755
+          },
+          "his": {
+            "token_id": 465,
+            "rank": 295
+          },
+          "male": {
+            "token_id": 4257,
+            "rank": 8886
+          },
+          "boy": {
+            "token_id": 2933,
+            "rank": 8998
+          }
+        },
+        "object": "man"
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 2839.0,
+          "median_lograng": 3.4533183400470375,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 2958.0,
+          "median_lograng": 3.471144965160633,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 3082.0,
+          "median_lograng": 3.488973524726508,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 3232.0,
+          "median_lograng": 3.5096057046115563,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 2923.0,
+          "median_lograng": 3.465977368285823,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2772.0,
+          "median_lograng": 3.4429498695778618,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for",
+    "gender_policy": "Best rank among single-token, leading-space, lowercase terms matching the model target gender; other model targets unchanged. LRE axis retains exact model-top-1 faithfulness."
+  },
+  "neutral_prompt_diagnostics": {
+    "Tom": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4550.9052734375,
+      "newline_subject_norm": 115.40910339355469,
+      "original_final_norm": 386.0159912109375,
+      "newline_final_norm": 379.2312316894531,
+      "original_ids": [
+        13787,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        13787,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Mia": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 116.40155029296875,
+      "newline_subject_norm": 117.1167221069336,
+      "original_final_norm": 383.59130859375,
+      "newline_final_norm": 389.7514953613281,
+      "original_ids": [
+        44,
+        544,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        44,
+        544,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Sofia": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 107.71965026855469,
+      "newline_subject_norm": 106.23572540283203,
+      "original_final_norm": 346.52032470703125,
+      "newline_final_norm": 374.6937561035156,
+      "original_ids": [
+        50,
+        1659,
+        544,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        50,
+        1659,
+        544,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Connor": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4460.23583984375,
+      "newline_subject_norm": 116.9678726196289,
+      "original_final_norm": 380.4201965332031,
+      "newline_final_norm": 368.7088928222656,
+      "original_ids": [
+        27136,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        27136,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Evan": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 115.40528869628906,
+      "newline_subject_norm": 115.83311462402344,
+      "original_final_norm": 378.57958984375,
+      "newline_final_norm": 378.3531188964844,
+      "original_ids": [
+        36,
+        10438,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        36,
+        10438,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Natalie": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 110.60685729980469,
+      "newline_subject_norm": 113.43904876708984,
+      "original_final_norm": 381.88818359375,
+      "newline_final_norm": 381.28546142578125,
+      "original_ids": [
+        45,
+        30951,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45,
+        30951,
+        318,
+        1900,
+        329
+      ]
+    },
+    "David": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4520.79150390625,
+      "newline_subject_norm": 113.95669555664062,
+      "original_final_norm": 385.2442932128906,
+      "newline_final_norm": 383.345458984375,
+      "original_ids": [
+        11006,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        11006,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Scarlett": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 118.42529296875,
+      "newline_subject_norm": 115.75666809082031,
+      "original_final_norm": 375.93304443359375,
+      "newline_final_norm": 379.7976379394531,
+      "original_ids": [
+        44433,
+        15503,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        44433,
+        15503,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Benjamin": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 113.49382019042969,
+      "newline_subject_norm": 111.50173950195312,
+      "original_final_norm": 385.87347412109375,
+      "newline_final_norm": 385.0429992675781,
+      "original_ids": [
+        11696,
+        13337,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        11696,
+        13337,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Lucas": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 108.83544158935547,
+      "newline_subject_norm": 104.35113525390625,
+      "original_final_norm": 379.359130859375,
+      "newline_final_norm": 372.1791687011719,
+      "original_ids": [
+        22946,
+        292,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        22946,
+        292,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Caleb": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 113.89633178710938,
+      "newline_subject_norm": 116.71749877929688,
+      "original_final_norm": 393.55950927734375,
+      "newline_final_norm": 388.3255310058594,
+      "original_ids": [
+        34,
+        32100,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        34,
+        32100,
+        318,
+        1900,
+        329
+      ]
+    },
+    "William": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4242.40673828125,
+      "newline_subject_norm": 113.71153259277344,
+      "original_final_norm": 393.61859130859375,
+      "newline_final_norm": 384.63671875,
+      "original_ids": [
+        17121,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        17121,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Oliver": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 115.25778198242188,
+      "newline_subject_norm": 112.67049407958984,
+      "original_final_norm": 380.2115783691406,
+      "newline_final_norm": 374.6348571777344,
+      "original_ids": [
+        30098,
+        1428,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        30098,
+        1428,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Hannah": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 114.81263732910156,
+      "newline_subject_norm": 114.6000747680664,
+      "original_final_norm": 387.1911315917969,
+      "newline_final_norm": 378.4108581542969,
+      "original_ids": [
+        39,
+        25761,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        39,
+        25761,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Lisa": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4323.49365234375,
+      "newline_subject_norm": 108.1440200805664,
+      "original_final_norm": 388.33636474609375,
+      "newline_final_norm": 380.7107849121094,
+      "original_ids": [
+        44203,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        44203,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Dylan": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 113.35935974121094,
+      "newline_subject_norm": 112.58406829833984,
+      "original_final_norm": 361.31787109375,
+      "newline_final_norm": 377.5157775878906,
+      "original_ids": [
+        35,
+        18554,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        35,
+        18554,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Emily": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 3994.82470703125,
+      "newline_subject_norm": 112.30046844482422,
+      "original_final_norm": 384.5544738769531,
+      "newline_final_norm": 380.8031921386719,
+      "original_ids": [
+        48640,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        48640,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Michael": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4341.06640625,
+      "newline_subject_norm": 112.20150756835938,
+      "original_final_norm": 390.68572998046875,
+      "newline_final_norm": 385.12908935546875,
+      "original_ids": [
+        13256,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        13256,
+        318,
+        1900,
+        329
+      ]
+    }
+  },
+  "hidden_diagnostics": {
+    "diff_norms": [
+      19.260709762573242,
+      16.813499450683594,
+      15.637028694152832,
+      18.130733489990234,
+      15.724540710449219,
+      15.835201263427734,
+      17.59479522705078,
+      15.445897102355957,
+      17.579092025756836,
+      16.11872673034668,
+      11.641007423400879,
+      18.658639907836914,
+      18.884477615356445,
+      11.641007423400879,
+      16.544527053833008,
+      17.53356170654297,
+      17.268146514892578,
+      16.89814567565918,
+      14.711347579956055
+    ]
+  },
+  "elapsed_seconds": 2.117633581161499,
+  "lre_reused": true,
+  "targets_reused": true,
+  "gender_alternatives": true,
+  "diverse_continent_references": false
+}

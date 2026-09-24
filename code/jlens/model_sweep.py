@@ -342,29 +342,49 @@ def partitions(samples, protocol, *, lens=False, n_test=100):
 
 
 def measure_faith(
-    model, tokenizer, samples, template, protocol, layers, trailing, batch_size, n_test
+    model,
+    tokenizer,
+    samples,
+    template,
+    protocol,
+    layers,
+    trailing,
+    batch_size,
+    n_test,
+    *,
+    split_override=None,
 ):
     blocks, norm = layout(model)
-    demos, refs, tests = partitions(samples, protocol, n_test=n_test)
+    demos, refs, tests = (
+        split_override
+        if split_override is not None
+        else partitions(samples, protocol, n_test=n_test)
+    )
     context = "".join(
         template.format(x["subject"]) + " " + x["object"] + "\n" for x in demos
     )
-    cache = {
-        x["subject"]: cache_prompt(
+    if getattr(model, "_sweep_prompt_batch_size", 1) > 1 or getattr(model, "_sweep_prompt_prefix", False):
+        from jlens.batched_prompts import cache_prompts
+        subjects = list(dict.fromkeys(x["subject"] for x in refs + tests))
+        jobs = [(context + template.format(s) + (" " if trailing else ""), s) for s in subjects]
+        cache = dict(zip(subjects, cache_prompts(model, tokenizer, jobs, layers), strict=True))
+    else:
+        cache = {
+            x["subject"]: cache_prompt(
             model,
             tokenizer,
             context + template.format(x["subject"]) + (" " if trailing else ""),
             x["subject"],
             layers,
-        )
-        for x in refs + tests
-    }
+            )
+            for x in refs + tests
+        }
     targets = torch.tensor(
         [cache[x["subject"]]["target"] for x in tests],
         device=model.get_output_embeddings().weight.device,
     )
     base = torch.stack([cache[x["subject"]]["states"]["final"] for x in refs]).mean(0)
-    grid, cells = {}, {}
+    grid, cells, rank_cells = {}, {}, {}
     intervention = make_intervention(model, blocks[-1])
     for layer in layers:
         handle = blocks[layer - 1].register_forward_hook(intervention.hook)
@@ -390,11 +410,14 @@ def measure_faith(
         grid[str(layer)] = {}
         for beta in BETAS:
             with torch.no_grad():
-                pred = decode(model, norm, base[None] + beta * products).argmax(-1)
+                logits = decode(model, norm, base[None] + beta * products)
+                pred = logits.argmax(-1)
+                ranks = (logits > logits.gather(1, targets[:, None])).sum(-1).tolist()
             hits = (pred == targets).int().tolist()
             score = float(np.mean(hits))
             grid[str(layer)][str(beta)] = [score, 0.0]
             cells[layer, beta] = hits
+            rank_cells[layer, beta] = ranks
         print(
             "LAYER",
             protocol,
@@ -421,9 +444,26 @@ def measure_faith(
         per_subject={
             x["subject"]: h for x, h in zip(tests, cells[best_layer, best_beta])
         },
+        rows=[
+            dict(
+                subject=x["subject"],
+                object=x["object"],
+                hit=h,
+                rank=rank,
+                model_top1_id=cache[x["subject"]]["target"],
+                model_top1=tokenizer.decode([cache[x["subject"]]["target"]]).strip(),
+                gold_id=splits.first_object_token(x["object"], tokenizer, trailing),
+            )
+            for x, h, rank in zip(
+                tests,
+                cells[best_layer, best_beta],
+                rank_cells[best_layer, best_beta],
+                strict=True,
+            )
+        ],
         split_fingerprint=splits.split_fingerprint(demos, refs, tests),
         legacy_split=protocol == "main",
-        distinct_first_token=protocol != "main",
+        distinct_first_token=protocol == "shared_split",
     )
 
 
@@ -449,37 +489,66 @@ def measure_lens(
     n_test,
     *,
     neutral_prompt="{} is known for",
+    include_baselines=False,
+    split_override=None,
+    cached_targets=None,
 ):
     blocks, norm = layout(model)
-    demos, refs, tests = partitions(samples, protocol, lens=True, n_test=n_test)
+    demos, refs, tests = (
+        split_override
+        if split_override is not None
+        else partitions(samples, protocol, lens=True, n_test=n_test)
+    )
     if len(tests) < 2:
         return dict(skipped="fewer_than_two_lens_subjects", n=len(tests))
     context = "".join(
         template.format(x["subject"]) + " " + x["object"] + "\n" for x in demos
     )
-    targets = []
-    with torch.no_grad():
-        for x in tests:
-            ids = tokenizer(
-                context + template.format(x["subject"]) + (" " if trailing else ""),
-                return_tensors="pt",
-            ).input_ids.to(model.get_input_embeddings().weight.device)
-            targets.append(
-                int(
-                    model(input_ids=ids, use_cache=False, logits_to_keep=1)
-                    .logits[0, -1]
-                    .argmax()
+    if cached_targets is not None:
+        # Neutral-prompt variants leave relation-context target predictions
+        # unchanged. Callers must verify their source and evaluation ordering.
+        targets = list(cached_targets)
+        assert len(targets) == len(tests)
+        assert all(isinstance(t, int) and 0 <= t < model.config.vocab_size for t in targets)
+    elif getattr(model, "_sweep_prompt_batch_size", 1) > 1 or getattr(model, "_sweep_prompt_prefix", False):
+        from jlens.batched_prompts import prompt_targets
+        targets = prompt_targets(model, tokenizer, [context + template.format(x["subject"]) + (" " if trailing else "") for x in tests])
+    else:
+        targets = []
+        with torch.no_grad():
+            for x in tests:
+                ids = tokenizer(
+                    context + template.format(x["subject"]) + (" " if trailing else ""),
+                    return_tensors="pt",
+                ).input_ids.to(model.get_input_embeddings().weight.device)
+                targets.append(
+                    int(
+                        model(input_ids=ids, use_cache=False, logits_to_keep=1)
+                        .logits[0, -1]
+                        .argmax()
+                    )
                 )
-            )
     names = list(dict.fromkeys(x["subject"] for x in refs + tests))
-    cache = {
-        s: cache_prompt(model, tokenizer, neutral_prompt.format(s), s, [layer])
-        for s in names
-    }
+    if getattr(model, "_sweep_prompt_batch_size", 1) > 1 or getattr(model, "_sweep_prompt_prefix", False):
+        from jlens.batched_prompts import cache_prompts
+        cache = dict(zip(names, cache_prompts(model, tokenizer, [(neutral_prompt.format(s), s) for s in names], [layer]), strict=True))
+    else:
+        cache = {
+            s: cache_prompt(model, tokenizer, neutral_prompt.format(s), s, [layer])
+            for s in names
+        }
     output_device = model.get_output_embeddings().weight.device
     width = cache[names[0]]["states"]["final"].numel()
     diff = torch.zeros(len(tests), width, device=output_device)
     affine = torch.zeros_like(diff)
+    raw = torch.zeros_like(diff) if include_baselines else None
+    centers = (
+        torch.zeros(
+            len(tests), cache[names[0]]["states"][layer].numel(), device=output_device
+        )
+        if include_baselines
+        else None
+    )
     counts = torch.zeros(len(tests), device=output_device)
     intervention = make_intervention(model, blocks[-1])
     handle = blocks[layer - 1].register_forward_hook(intervention.hook)
@@ -491,19 +560,28 @@ def measure_lens(
             directions = torch.stack(
                 [cache[t["subject"]]["states"][layer] - ref for t in tests]
             )
+            if include_baselines:
+                directions = torch.cat([directions, ref[None]])
             v = jvps(
                 intervention, ref, directions, c["ids"], c["position"], batch_size
             ).to(output_device)
+            if include_baselines:
+                reference_product, v = v[-1], v[:-1]
             valid = torch.tensor(
                 [t["subject"] != s for t in tests], device=output_device
             )
             diff += v * valid[:, None]
             affine += (v + c["states"]["final"].to(output_device)) * valid[:, None]
+            if include_baselines:
+                raw += (v + reference_product) * valid[:, None]
+                centers += ref.to(output_device) * valid[:, None]
             counts += valid
     finally:
         handle.remove()
     diff /= counts[:, None]
     affine /= counts[:, None]
+    if not (counts > 0).all():
+        raise ValueError("No eligible reference for at least one test row")
     target_tensor = torch.tensor(targets, device=output_device)
     rows = [
         dict(
@@ -516,7 +594,17 @@ def measure_lens(
     ]
     agg = {}
     with torch.no_grad():
-        for kind, hidden in [("diff", diff), ("lre", affine)]:
+        readouts = [("diff", diff), ("lre", affine)]
+        if include_baselines:
+            states = torch.stack(
+                [cache[t["subject"]]["states"][layer] for t in tests]
+            ).to(output_device)
+            readouts += [
+                ("raw_jacobian", raw / counts[:, None]),
+                ("logit_lens", states),
+                ("differential_logit_lens", states - centers / counts[:, None]),
+            ]
+        for kind, hidden in readouts:
             logits = decode(model, norm, hidden)
             ranks = (logits > logits.gather(1, target_tensor[:, None])).sum(-1).tolist()
             tops = logits.topk(5).indices.tolist()

@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Pearson $r$ with shared-split LRE faithfulness across 25 relations per model. Each relation has equal weight; larger lens scores mean better target ranks.}
+\label{tab:shared-controls-pearson}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Predictor & OLMo & GPT-J & Mistral & Gemma & Qwen 8B & Qwen 27B & Pythia \\
+\midrule
+Model answer-token prior & +0.043 & +0.103 & -0.039 & +0.294 & +0.077 & +0.185 & -0.103 \\
+Gold answer-token prior & +0.184 & +0.264 & +0.054 & +0.331 & +0.230 & +0.322 & +0.084 \\
+Full-data samples/objects & +0.296 & +0.249 & +0.491 & +0.449 & +0.323 & +0.413 & +0.280 \\
+Filtered samples/objects & +0.296 & +0.249 & +0.491 & +0.449 & +0.322 & +0.412 & +0.278 \\
+Test samples/objects & +0.296 & +0.217 & +0.522 & +0.521 & +0.347 & +0.417 & +0.219 \\
+Relation-prompt intercept-only agreement & +0.377 & +0.307 & +0.568 & +0.491 & +0.313 & +0.488 & +0.421 \\
+Modal-target fraction (oracle) & +0.552 & +0.459 & +0.694 & +0.645 & +0.512 & +0.612 & +0.487 \\
+Target entropy & -0.806 & -0.805 & -0.767 & -0.787 & -0.800 & -0.804 & -0.788 \\
+Model gold-token accuracy & +0.683 & +0.721 & +0.505 & +0.548 & +0.603 & +0.475 & +0.660 \\
+\bottomrule
+\end{tabular}}
+\end{table}

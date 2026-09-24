@@ -1,0 +1,1393 @@
+{
+  "relation": "country_language",
+  "worker": "gptj_gpu1_b32",
+  "n_original": 24,
+  "data_sha256": "0996525735107934f0d2e467e6fac7d2c785c42e8300ccb41ae6e9b5dfde2b76",
+  "baseline_path": "results/all_models_gender_original_continents/gptj/measurements/country_language.json",
+  "baseline_sha256": "709966b93c34b79ffd5e470e0fcf9d06c0a1670fe712c65c818046279bae4179",
+  "lens": {
+    "n": 24,
+    "layer": 15,
+    "template": "People in {} speak",
+    "agg": {
+      "diff": {
+        "median_rank": 9.0,
+        "median_lograng": 0.9978175972987748,
+        "agree_at1": 0.16666666666666666,
+        "agree_at10": 0.5
+      },
+      "lre": {
+        "median_rank": 707.0,
+        "median_lograng": 2.849908026972596,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Nigeria",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 2441,
+        "top_diff": [
+          "Nigeria",
+          "Nigerian",
+          "Niger",
+          "Africa",
+          "Boko"
+        ],
+        "rank_lre": 866,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 866,
+          "0.5": 1042,
+          "1.5": 754,
+          "2.0": 665,
+          "3.0": 568,
+          "5.0": 584
+        },
+        "object": "English"
+      },
+      {
+        "subject": "Turkey",
+        "model_top1_id": 9663,
+        "model_top1": "Turkish",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Turkish",
+          "Turkey",
+          "Turkish",
+          "Ankara",
+          "Istanbul"
+        ],
+        "rank_lre": 343,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 343,
+          "0.5": 3577,
+          "1.5": 21,
+          "2.0": 4,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Turkish"
+      },
+      {
+        "subject": "Mexico",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "Mexican",
+          "Mexico",
+          "Mexico",
+          "Mex",
+          "Mexicans"
+        ],
+        "rank_lre": 690,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 690,
+          "0.5": 2464,
+          "1.5": 167,
+          "2.0": 46,
+          "3.0": 12,
+          "5.0": 9
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Canada",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 832,
+        "top_diff": [
+          "Canadian",
+          "Canada",
+          "Canadians",
+          "Quebec",
+          "Canada"
+        ],
+        "rank_lre": 617,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 617,
+          "0.5": 880,
+          "1.5": 447,
+          "2.0": 328,
+          "3.0": 207,
+          "5.0": 167
+        },
+        "object": "English"
+      },
+      {
+        "subject": "Italy",
+        "model_top1_id": 8200,
+        "model_top1": "Italian",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "Italy",
+          "Italian",
+          "Italians",
+          "Italy",
+          "Italian"
+        ],
+        "rank_lre": 77,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 77,
+          "0.5": 1072,
+          "1.5": 11,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Italian"
+      },
+      {
+        "subject": "France",
+        "model_top1_id": 4141,
+        "model_top1": "French",
+        "n_references": 8,
+        "rank_diff": 1,
+        "top_diff": [
+          "France",
+          "French",
+          "France",
+          "Paris",
+          "Marse"
+        ],
+        "rank_lre": 61,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 61,
+          "0.5": 623,
+          "1.5": 10,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "French"
+      },
+      {
+        "subject": "Colombia",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 14,
+        "top_diff": [
+          "Colombian",
+          "Colombia",
+          "Colomb",
+          "Venezuelan",
+          "Ecuador"
+        ],
+        "rank_lre": 1652,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1652,
+          "0.5": 3624,
+          "1.5": 697,
+          "2.0": 270,
+          "3.0": 52,
+          "5.0": 13
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Pakistan",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 8,
+        "rank_diff": 820,
+        "top_diff": [
+          "Pakistani",
+          "Pakistan",
+          "Pakistan",
+          "Islamabad",
+          "Karachi"
+        ],
+        "rank_lre": 549,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 549,
+          "0.5": 831,
+          "1.5": 367,
+          "2.0": 254,
+          "3.0": 186,
+          "5.0": 216
+        },
+        "object": "Urdu"
+      },
+      {
+        "subject": "Australia",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 962,
+        "top_diff": [
+          "Australia",
+          "Australians",
+          "Australian",
+          "Sydney",
+          "Australia"
+        ],
+        "rank_lre": 724,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 724,
+          "0.5": 994,
+          "1.5": 552,
+          "2.0": 414,
+          "3.0": 263,
+          "5.0": 179
+        },
+        "object": "English"
+      },
+      {
+        "subject": "Argentina",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 22,
+        "top_diff": [
+          "Argentine",
+          "Argentina",
+          "Buenos",
+          "Argent",
+          "Urug"
+        ],
+        "rank_lre": 2395,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2395,
+          "0.5": 5104,
+          "1.5": 1032,
+          "2.0": 377,
+          "3.0": 56,
+          "5.0": 14
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Egypt",
+        "model_top1_id": 17526,
+        "model_top1": "Arabic",
+        "n_references": 7,
+        "rank_diff": 13,
+        "top_diff": [
+          "Egypt",
+          "Egyptian",
+          "Cairo",
+          "Egypt",
+          "Egyptians"
+        ],
+        "rank_lre": 1456,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1456,
+          "0.5": 4935,
+          "1.5": 342,
+          "2.0": 71,
+          "3.0": 13,
+          "5.0": 8
+        },
+        "object": "Arabic"
+      },
+      {
+        "subject": "Peru",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 7,
+        "rank_diff": 8,
+        "top_diff": [
+          "Peru",
+          "Lima",
+          "Bolivia",
+          "Ecuador",
+          "Chile"
+        ],
+        "rank_lre": 2419,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2419,
+          "0.5": 5216,
+          "1.5": 1040,
+          "2.0": 406,
+          "3.0": 62,
+          "5.0": 11
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Japan",
+        "model_top1_id": 4960,
+        "model_top1": "Japanese",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Japan",
+          "Tokyo",
+          "Japanese",
+          "Japan",
+          "Okinawa"
+        ],
+        "rank_lre": 168,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 168,
+          "0.5": 1369,
+          "1.5": 20,
+          "2.0": 7,
+          "3.0": 0,
+          "5.0": 1
+        },
+        "object": "Japanese"
+      },
+      {
+        "subject": "United States",
+        "model_top1_id": 3594,
+        "model_top1": "English",
+        "n_references": 7,
+        "rank_diff": 8126,
+        "top_diff": [
+          "Guatem",
+          "Guatemala",
+          "Nicarag",
+          "California",
+          "Alaska"
+        ],
+        "rank_lre": 1335,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "many"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1335,
+          "0.5": 1370,
+          "1.5": 1292,
+          "2.0": 1270,
+          "3.0": 1235,
+          "5.0": 1291
+        },
+        "object": "English"
+      },
+      {
+        "subject": "China",
+        "model_top1_id": 3999,
+        "model_top1": "Chinese",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Chinese",
+          "Beijing",
+          "China",
+          "Shanghai",
+          "Chinese"
+        ],
+        "rank_lre": 35,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 35,
+          "0.5": 401,
+          "1.5": 9,
+          "2.0": 1,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Mandarin Chinese"
+      },
+      {
+        "subject": "Brazil",
+        "model_top1_id": 21813,
+        "model_top1": "Portuguese",
+        "n_references": 7,
+        "rank_diff": 5,
+        "top_diff": [
+          "Brazilian",
+          "Brazil",
+          "Brazil",
+          "Bras",
+          "Sao"
+        ],
+        "rank_lre": 2579,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2579,
+          "0.5": 7380,
+          "1.5": 711,
+          "2.0": 147,
+          "3.0": 16,
+          "5.0": 5
+        },
+        "object": "Portuguese"
+      },
+      {
+        "subject": "Venezuela",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 22,
+        "top_diff": [
+          "Venezuelan",
+          "Venezuela",
+          "Venezuel",
+          "Maduro",
+          "Colombian"
+        ],
+        "rank_lre": 2473,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2473,
+          "0.5": 4325,
+          "1.5": 1376,
+          "2.0": 709,
+          "3.0": 189,
+          "5.0": 29
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "India",
+        "model_top1_id": 43443,
+        "model_top1": "Hindi",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "India",
+          "India",
+          "Indian",
+          "Hindu",
+          "Hindi"
+        ],
+        "rank_lre": 1919,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1919,
+          "0.5": 9291,
+          "1.5": 214,
+          "2.0": 23,
+          "3.0": 5,
+          "5.0": 3
+        },
+        "object": "Hindi"
+      },
+      {
+        "subject": "Chile",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 12,
+        "top_diff": [
+          "Chilean",
+          "Chile",
+          "Santiago",
+          "Chili",
+          "Argentine"
+        ],
+        "rank_lre": 1731,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1731,
+          "0.5": 3704,
+          "1.5": 781,
+          "2.0": 310,
+          "3.0": 67,
+          "5.0": 17
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Saudi Arabia",
+        "model_top1_id": 17526,
+        "model_top1": "Arabic",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "Saudi",
+          "Riyadh",
+          "Saudi",
+          "Arabia",
+          "Saudis"
+        ],
+        "rank_lre": 1411,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "a"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1411,
+          "0.5": 3974,
+          "1.5": 413,
+          "2.0": 99,
+          "3.0": 12,
+          "5.0": 2
+        },
+        "object": "Arabic"
+      },
+      {
+        "subject": "Germany",
+        "model_top1_id": 2679,
+        "model_top1": "German",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "German",
+          "Germany",
+          "Bav",
+          "Germans",
+          "Berlin"
+        ],
+        "rank_lre": 263,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 263,
+          "0.5": 1626,
+          "1.5": 43,
+          "2.0": 9,
+          "3.0": 1,
+          "5.0": 0
+        },
+        "object": "German"
+      },
+      {
+        "subject": "Spain",
+        "model_top1_id": 7897,
+        "model_top1": "Spanish",
+        "n_references": 8,
+        "rank_diff": 4,
+        "top_diff": [
+          "Spain",
+          "Madrid",
+          "Spain",
+          "Spani",
+          "Spanish"
+        ],
+        "rank_lre": 351,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 351,
+          "0.5": 1909,
+          "1.5": 54,
+          "2.0": 10,
+          "3.0": 2,
+          "5.0": 1
+        },
+        "object": "Spanish"
+      },
+      {
+        "subject": "Russia",
+        "model_top1_id": 3394,
+        "model_top1": "Russian",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "Moscow",
+          "Putin",
+          "Russia",
+          "Russian",
+          "Kremlin"
+        ],
+        "rank_lre": 287,
+        "top_lre": [
+          "its",
+          "being",
+          "having",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 287,
+          "0.5": 2458,
+          "1.5": 22,
+          "2.0": 7,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Russian"
+      },
+      {
+        "subject": "South Korea",
+        "model_top1_id": 6983,
+        "model_top1": "Korean",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Korean",
+          "Seoul",
+          "Korea",
+          "Koreans",
+          "Pyongyang"
+        ],
+        "rank_lre": 219,
+        "top_lre": [
+          "its",
+          "having",
+          "being",
+          "the",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 219,
+          "0.5": 2556,
+          "1.5": 15,
+          "2.0": 3,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Korean"
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 3.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 2461.0,
+          "median_lograng": 3.391287726175983,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 707.0,
+          "median_lograng": 2.849908026972596,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 354.5,
+          "median_lograng": 2.550570969358144,
+          "agree_at1": 0.0,
+          "agree_at10": 0.041666666666666664
+        },
+        "2.0": {
+          "median_rank": 85.0,
+          "median_lograng": 1.9286662482156343,
+          "agree_at1": 0.0,
+          "agree_at10": 0.3333333333333333
+        },
+        "3.0": {
+          "median_rank": 12.5,
+          "median_lograng": 1.1300356939925373,
+          "agree_at1": 0.2916666666666667,
+          "agree_at10": 0.4166666666666667
+        },
+        "5.0": {
+          "median_rank": 6.5,
+          "median_lograng": 0.8661968799114843,
+          "agree_at1": 0.2916666666666667,
+          "agree_at10": 0.5833333333333334
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "neutral_prompt_diagnostics": {
+    "Australia": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4208.7451171875,
+      "newline_subject_norm": 128.75900268554688,
+      "original_final_norm": 301.9554138183594,
+      "newline_final_norm": 318.59686279296875,
+      "original_ids": [
+        27429,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        27429,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Argentina": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 121.012939453125,
+      "newline_subject_norm": 122.57447814941406,
+      "original_final_norm": 313.6445617675781,
+      "newline_final_norm": 327.7406311035156,
+      "original_ids": [
+        3163,
+        6783,
+        1437,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        3163,
+        6783,
+        1437,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Egypt": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4375.19921875,
+      "newline_subject_norm": 125.64639282226562,
+      "original_final_norm": 319.3845520019531,
+      "newline_final_norm": 331.75323486328125,
+      "original_ids": [
+        39299,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        39299,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Peru": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 124.43106842041016,
+      "newline_subject_norm": 125.91683197021484,
+      "original_final_norm": 314.3712463378906,
+      "newline_final_norm": 317.4410095214844,
+      "original_ids": [
+        5990,
+        84,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        5990,
+        84,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Japan": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4267.68798828125,
+      "newline_subject_norm": 120.31842803955078,
+      "original_final_norm": 322.2679748535156,
+      "newline_final_norm": 342.8286437988281,
+      "original_ids": [
+        16504,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        16504,
+        318,
+        1900,
+        329
+      ]
+    },
+    "United States": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 116.11449432373047,
+      "newline_subject_norm": 108.5703353881836,
+      "original_final_norm": 343.8129577636719,
+      "newline_final_norm": 355.20489501953125,
+      "original_ids": [
+        17013,
+        1829,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        17013,
+        1829,
+        318,
+        1900,
+        329
+      ]
+    },
+    "China": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4112.23681640625,
+      "newline_subject_norm": 124.76522827148438,
+      "original_final_norm": 334.3087463378906,
+      "newline_final_norm": 351.31671142578125,
+      "original_ids": [
+        14581,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        14581,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Brazil": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4253.71728515625,
+      "newline_subject_norm": 123.8535385131836,
+      "original_final_norm": 319.5722351074219,
+      "newline_final_norm": 334.3689880371094,
+      "original_ids": [
+        39190,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        39190,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Nigeria": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 124.01371765136719,
+      "newline_subject_norm": 124.29015350341797,
+      "original_final_norm": 304.1875915527344,
+      "newline_final_norm": 308.916748046875,
+      "original_ids": [
+        45,
+        328,
+        5142,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45,
+        328,
+        5142,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Turkey": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4479.54931640625,
+      "newline_subject_norm": 124.08507537841797,
+      "original_final_norm": 315.1899719238281,
+      "newline_final_norm": 326.92791748046875,
+      "original_ids": [
+        31632,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        31632,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Mexico": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4272.79541015625,
+      "newline_subject_norm": 126.7855224609375,
+      "original_final_norm": 303.0010681152344,
+      "newline_final_norm": 327.6496276855469,
+      "original_ids": [
+        33006,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        33006,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Canada": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4183.544921875,
+      "newline_subject_norm": 124.05408477783203,
+      "original_final_norm": 297.6347351074219,
+      "newline_final_norm": 317.60546875,
+      "original_ids": [
+        17940,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        17940,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Italy": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4041.599853515625,
+      "newline_subject_norm": 124.37638854980469,
+      "original_final_norm": 311.3846130371094,
+      "newline_final_norm": 333.2242126464844,
+      "original_ids": [
+        45001,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45001,
+        318,
+        1900,
+        329
+      ]
+    },
+    "France": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4019.12890625,
+      "newline_subject_norm": 124.50899505615234,
+      "original_final_norm": 315.4027404785156,
+      "newline_final_norm": 337.5834655761719,
+      "original_ids": [
+        28572,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        28572,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Colombia": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 118.7215347290039,
+      "newline_subject_norm": 116.57989501953125,
+      "original_final_norm": 304.74822998046875,
+      "newline_final_norm": 314.42926025390625,
+      "original_ids": [
+        5216,
+        2381,
+        544,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        5216,
+        2381,
+        544,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Pakistan": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 3915.166015625,
+      "newline_subject_norm": 125.08489227294922,
+      "original_final_norm": 315.13385009765625,
+      "newline_final_norm": 323.86968994140625,
+      "original_ids": [
+        38485,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        38485,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Venezuela": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 115.41421508789062,
+      "newline_subject_norm": 115.8677978515625,
+      "original_final_norm": 299.22705078125,
+      "newline_final_norm": 311.0761413574219,
+      "original_ids": [
+        53,
+        12596,
+        64,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        53,
+        12596,
+        64,
+        318,
+        1900,
+        329
+      ]
+    },
+    "India": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4118.88330078125,
+      "newline_subject_norm": 125.52540588378906,
+      "original_final_norm": 313.6449279785156,
+      "newline_final_norm": 332.534423828125,
+      "original_ids": [
+        21569,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        21569,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Chile": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 124.39688110351562,
+      "newline_subject_norm": 124.99978637695312,
+      "original_final_norm": 303.07501220703125,
+      "newline_final_norm": 310.28741455078125,
+      "original_ids": [
+        1925,
+        576,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        1925,
+        576,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Saudi Arabia": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 122.84259796142578,
+      "newline_subject_norm": 113.25628662109375,
+      "original_final_norm": 300.3540344238281,
+      "newline_final_norm": 312.9730224609375,
+      "original_ids": [
+        36939,
+        9671,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        36939,
+        9671,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Germany": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4174.92236328125,
+      "newline_subject_norm": 122.45404052734375,
+      "original_final_norm": 317.6061096191406,
+      "newline_final_norm": 333.022705078125,
+      "original_ids": [
+        27079,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        27079,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Spain": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 3784.01171875,
+      "newline_subject_norm": 123.26795196533203,
+      "original_final_norm": 313.07745361328125,
+      "newline_final_norm": 328.3798522949219,
+      "original_ids": [
+        45355,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45355,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Russia": {
+      "original_position": 0,
+      "newline_position": 1,
+      "original_subject_norm": 4276.1708984375,
+      "newline_subject_norm": 123.17550659179688,
+      "original_final_norm": 330.891845703125,
+      "newline_final_norm": 338.656005859375,
+      "original_ids": [
+        16347,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        16347,
+        318,
+        1900,
+        329
+      ]
+    },
+    "South Korea": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 123.48796081542969,
+      "newline_subject_norm": 123.54275512695312,
+      "original_final_norm": 315.5387268066406,
+      "newline_final_norm": 323.5127868652344,
+      "original_ids": [
+        14942,
+        4969,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        14942,
+        4969,
+        318,
+        1900,
+        329
+      ]
+    }
+  },
+  "hidden_diagnostics": {
+    "diff_norms": [
+      46.65830993652344,
+      44.40163803100586,
+      50.49171447753906,
+      44.49151611328125,
+      45.53658676147461,
+      46.39664077758789,
+      39.62997817993164,
+      44.682395935058594,
+      39.486289978027344,
+      41.49885559082031,
+      47.3052864074707,
+      44.92472457885742,
+      42.583919525146484,
+      31.684410095214844,
+      47.69522476196289,
+      40.6776237487793,
+      33.879173278808594,
+      47.021881103515625,
+      43.45001983642578,
+      34.72084426879883,
+      39.674720764160156,
+      41.45246124267578,
+      43.07289505004883,
+      44.31770706176758
+    ]
+  },
+  "elapsed_seconds": 2.492124319076538,
+  "lre_reused": true,
+  "targets_reused": true,
+  "gender_alternatives": true,
+  "diverse_continent_references": false
+}

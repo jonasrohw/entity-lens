@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "correlations": [
+    {
+      "model": "mistral7b",
+      "label": "Mistral 7B",
+      "cohort": "primary",
+      "n_relations": 26,
+      "n_rows": 9709,
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "rho_reselected": 0.6560683760683761,
+      "p_reselected": 0.00027352947103752073,
+      "rho_original": 0.5986324786324786,
+      "p_original": 0.0012343756434819045
+    },
+    {
+      "model": "mistral7b",
+      "label": "Mistral 7B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.36868756332672525,
+      "p_reselected": 0.053532825814524565,
+      "rho_original": 0.3227042592147061,
+      "p_original": 0.09395620250360776
+    }
+  ],
+  "progress": {
+    "completed": 28,
+    "expected": 28,
+    "evaluated_rows": 9747,
+    "expected_rows": 9747,
+    "missing": [],
+    "excluded_relations": [
+      "presidents_birth_year",
+      "presidents_election_year"
+    ]
+  }
+}

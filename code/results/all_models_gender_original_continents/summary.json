@@ -1,0 +1,306 @@
+{
+  "complete": true,
+  "progress": {
+    "olmo3_7b": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": []
+    },
+    "gptj": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": []
+    },
+    "pythia6_9b": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": []
+    },
+    "mistral7b": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ]
+    },
+    "gemma2_9b": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ]
+    },
+    "qwen3_8b_base": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ]
+    },
+    "qwen3_8_27b": {
+      "completed": 28,
+      "expected": 28,
+      "evaluated_rows": 9747,
+      "expected_rows": 9747,
+      "missing": [],
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ]
+    }
+  },
+  "correlations": [
+    {
+      "model": "olmo3_7b",
+      "label": "OLMo 3 7B",
+      "cohort": "primary",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.7354591556487831,
+      "p_reselected": 8.244504954641281e-06,
+      "rho_original": 0.704626360921131,
+      "p_original": 2.842791058645445e-05
+    },
+    {
+      "model": "olmo3_7b",
+      "label": "OLMo 3 7B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.7354591556487831,
+      "p_reselected": 8.244504954641281e-06,
+      "rho_original": 0.704626360921131,
+      "p_original": 2.842791058645445e-05
+    },
+    {
+      "model": "gptj",
+      "label": "GPT-J 6B",
+      "cohort": "primary",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.18828680897646416,
+      "p_reselected": 0.3372994150382246,
+      "rho_original": 0.19978106185002736,
+      "p_original": 0.30807637412568584
+    },
+    {
+      "model": "gptj",
+      "label": "GPT-J 6B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.18828680897646416,
+      "p_reselected": 0.3372994150382246,
+      "rho_original": 0.19978106185002736,
+      "p_original": 0.30807637412568584
+    },
+    {
+      "model": "pythia6_9b",
+      "label": "Pythia 6.9B",
+      "cohort": "primary",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.17460317460317462,
+      "p_reselected": 0.3741945166095799,
+      "rho_original": 0.1344100789480479,
+      "p_original": 0.49529639912318535
+    },
+    {
+      "model": "pythia6_9b",
+      "label": "Pythia 6.9B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.17460317460317462,
+      "p_reselected": 0.3741945166095799,
+      "rho_original": 0.1344100789480479,
+      "p_original": 0.49529639912318535
+    },
+    {
+      "model": "mistral7b",
+      "label": "Mistral 7B",
+      "cohort": "primary",
+      "n_relations": 26,
+      "n_rows": 9709,
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "rho_reselected": 0.6560683760683761,
+      "p_reselected": 0.00027352947103752073,
+      "rho_original": 0.5986324786324786,
+      "p_original": 0.0012343756434819045
+    },
+    {
+      "model": "mistral7b",
+      "label": "Mistral 7B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.36868756332672525,
+      "p_reselected": 0.053532825814524565,
+      "rho_original": 0.3227042592147061,
+      "p_original": 0.09395620250360776
+    },
+    {
+      "model": "gemma2_9b",
+      "label": "Gemma 2 9B",
+      "cohort": "primary",
+      "n_relations": 26,
+      "n_rows": 9709,
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "rho_reselected": 0.6888888888888889,
+      "p_reselected": 9.963379762569447e-05,
+      "rho_original": 0.6861538461538461,
+      "p_original": 0.00010890953539604852
+    },
+    {
+      "model": "gemma2_9b",
+      "label": "Gemma 2 9B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.4540851281061895,
+      "p_reselected": 0.015212500667303031,
+      "rho_original": 0.4329501915708812,
+      "p_original": 0.02137550841400881
+    },
+    {
+      "model": "qwen3_8b_base",
+      "label": "Qwen3 8B Base",
+      "cohort": "primary",
+      "n_relations": 26,
+      "n_rows": 9709,
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "rho_reselected": 0.6647290232217746,
+      "p_reselected": 0.00021203470466534072,
+      "rho_original": 0.6489998385159096,
+      "p_original": 0.00033476737495843873
+    },
+    {
+      "model": "qwen3_8b_base",
+      "label": "Qwen3 8B Base",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.41467086743874443,
+      "p_reselected": 0.028231916671507366,
+      "rho_original": 0.376898867632443,
+      "p_original": 0.048038161029091
+    },
+    {
+      "model": "qwen3_8_27b",
+      "label": "Qwen3.8 27B",
+      "cohort": "primary",
+      "n_relations": 26,
+      "n_rows": 9709,
+      "excluded_relations": [
+        "presidents_birth_year",
+        "presidents_election_year"
+      ],
+      "rho_reselected": 0.5538831265763542,
+      "p_reselected": 0.0033279654689204493,
+      "rho_original": 0.5295726495726496,
+      "p_original": 0.005398995662797429
+    },
+    {
+      "model": "qwen3_8_27b",
+      "label": "Qwen3.8 27B",
+      "cohort": "all_28_years_included",
+      "n_relations": 28,
+      "n_rows": 9747,
+      "excluded_relations": [],
+      "rho_reselected": 0.30371087496087856,
+      "p_reselected": 0.11613829618256746,
+      "rho_original": 0.2739838536674476,
+      "p_original": 0.15828795356990874
+    }
+  ],
+  "original_subset_grid_differences": {
+    "gptj": {
+      "landmark_in_country": [
+        {
+          "cell": "15/0.5",
+          "old": 0.45,
+          "replayed": 0.46
+        }
+      ]
+    },
+    "pythia6_9b": {
+      "company_hq": [
+        {
+          "cell": "20/0.5",
+          "old": 0.1,
+          "replayed": 0.11
+        }
+      ],
+      "landmark_in_country": [
+        {
+          "cell": "20/2.0",
+          "old": 0.24,
+          "replayed": 0.25
+        }
+      ],
+      "person_plays_position_in_sport": [
+        {
+          "cell": "23/5.0",
+          "old": 0.01,
+          "replayed": 0.0
+        }
+      ],
+      "star_constellation": [
+        {
+          "cell": "14/0.5",
+          "old": 0.14,
+          "replayed": 0.15
+        }
+      ]
+    },
+    "gemma2_9b": {
+      "person_plays_pro_sport": [
+        {
+          "cell": "30/2.0",
+          "old": 0.32,
+          "replayed": 0.33
+        }
+      ]
+    }
+  },
+  "protocol": "Gender alternatives yes; diverse continent references no; all original rows evaluated, eight references per method, unchanged demonstrations; Qwen newline retained; original year policy for primary result."
+}

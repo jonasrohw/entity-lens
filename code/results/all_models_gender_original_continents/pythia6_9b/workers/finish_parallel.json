@@ -1,0 +1,46 @@
+{
+  "worker": "finish_parallel",
+  "pid": 747643,
+  "batch_size": 8,
+  "prompt_batch_size": 1,
+  "manifest_sha256": "3f85df581a05247bca2975377385d365b33292b7766e6f43d90baa06fbab6d10",
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 0.0002460479736328125,
+    "finite_difference_relative_error": 0.0020362394861876965
+  },
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 17,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 0.0,
+      "full_seconds": 0.11632657051086426,
+      "cached_seconds": 0.11858010292053223
+    },
+    {
+      "length": 69,
+      "prefix_length": 67,
+      "layer": 10,
+      "state_relative_error": 1.2469329703890253e-05,
+      "jvp_relative_error": 4.454020017874427e-05,
+      "full_seconds": 0.570742130279541,
+      "cached_seconds": 0.25481462478637695
+    }
+  ],
+  "convolution_check": null,
+  "device_map": null,
+  "source_sha256": {
+    "scripts/run_all_models_full_rows.py": "34aafa5ec0f151c64ed4ed5580700724700632d14b6bdddabfe120e0b4671dbb",
+    "jlens/model_sweep.py": "e3060b52835089501d63eb7ca06c5d39a184a7c784923f084bc26d22d6239be0",
+    "jlens/model.py": "4a9b03931c6c50901b8fd28dfcee8db66d1317020500e17c2aded49be74158e6",
+    "jlens/splits.py": "67455ec9cd5f3db905cdf761f3dd3ba24ba3b580fb77a564e3b4586ba351047f",
+    "jlens/all_row_protocol.py": "2738d0f5e4adfd8b66099f1bd386d77f832f07a6f01b9ed884bee6686b380be8",
+    "jlens/prefix_intervention.py": "be9de46a2dc730f29a787a01611de923158bfcb4331349c1cb09d3dcd4d017df",
+    "scripts/run_targeted_corrections.py": "7ccb74cd8ba08a4cab5faa5cbf0b7aef9da73bd2ae69c9755039ab8ce462cc68"
+  },
+  "torch": "2.14.0+cu130",
+  "cuda_device": "NVIDIA A100-SXM4-80GB",
+  "prompt_prefix_cache": false
+}

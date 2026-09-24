@@ -1,0 +1,62 @@
+\section{Baseline comparisons}
+\label{sec:shared-baselines}
+% Mention and reference the exact Tables i.e Table X and Y show 
+The first two tables report Spearman correlations with LRE faithfulness across the LRE Dataset.
+
+
+\input{generated/shared_baselines/readout_comparison}
+
+\paragraph{Readout definitions.}
+For subject state $s_e$, reference states $s_i$, and reference Jacobians
+$J_i$, the differential and raw Jacobian readouts decode
+$\operatorname{mean}_i J_i(s_e-s_i)$ and
+$\operatorname{mean}_i J_i s_e$, respectively. Logit lens decodes $s_e$;
+differential logit lens decodes $s_e-\operatorname{mean}_i s_i$. Each relation's score is the negative median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
+
+\paragraph{Attribute rate.}
+Following \citet{geva-etal-2023-dissecting}, we measure overlap between filtered top-50
+logit-lens predictions and subject attributes retrieved from Wikipedia.
+The index uses the union of current test subjects; the source stopword,
+length, and retrieval filters are retained. Relation scores average the
+percentage overlap. Undefined rates are handled as noted in the table;
+matched-row sensitivity results remain in the accompanying data.
+
+Raw Jacobian has a larger point estimate than differential Jacobian in five
+models. All seven paired 95\% relation-bootstrap intervals for their
+difference include zero; these results do not establish a general advantage
+for either readout. LRE hyperparameter selection remains in sample.
+
+\clearpage
+\subsection{OLMo corpus-frequency baselines}
+\label{sec:corpus-freq-baselines}
+
+\input{generated/shared_baselines/olmo_frequencies}
+
+\paragraph{Counting and aggregation.}
+A document contributes at most one mention per subject/object string.
+Matching uses normalized literal names with Unicode word boundaries,
+without alias resolution or a proximity constraint. With subject, object,
+and joint counts $c_s$, $c_o$, and $c_{so}$, the conditionals are
+$P(o\mid s)=c_{so}/c_s$ and $P(s\mid o)=c_{so}/c_o$.
+Macro features average row-level quantities where both marginals are
+observed. Micro conditionals divide summed joint counts by summed
+marginals. The log of the mean joint count has the same Spearman correlation
+as the mean joint count because the transformation is monotonic.
+
+\paragraph{Interpretation and reproducibility.}
+These are exploratory associations. Relations can share subjects and
+objects, and the reported $p$-values are unadjusted. Conditional direction
+also reflects marginal frequency: when $c_{so}>0$, $P(o\mid s)/P(s\mid o)=c_o/c_s$.
+
+
+\clearpage
+\subsection{Neutral-prompt variations}
+\label{sec:prompt-variations}
+
+Table~\ref{tab:shared-prompt-variations} collects the prompt experiments for
+the differential Jacobian lens. For Qwen3 8B Base, we compare the original
+prompt with six alternatives and the subsequently measured newline control.
+The checkpoint, layer 19, reference and test rows, relation-prompt answer
+tokens, and LRE outcomes are fixed.
+
+\input{generated/shared_baselines/prompt_variations}

@@ -1,14 +1,30 @@
 # Jacobian lens and relational faithfulness
 
-Code and retained measurements for studying whether a relation-agnostic Jacobian
-lens predicts the faithfulness of linear relational embeddings (LREs) in
-`allenai/Olmo-3-1025-7B`.
+The current paper uses full evaluation of the original 28 relations. Every model evaluates all 9,747 original rows, including demonstrations, references and duplicates; four models exclude the two year relations from their primary correlation under the documented standalone-`1` rule.
 
-The repository includes 28 named-entity relation datasets and the small result
-snapshots needed to regenerate the paper's statistics, LaTeX tables, and figures.
-CPU reproduction does not download model weights or require PyTorch.
+| Model | Primary relations | Differential lens Spearman ρ | Leading newline |
+|---|---:|---:|:---:|
+| OLMo 3 7B | 28 | 0.7355 | No |
+| GPT-J 6B | 28 | 0.4346 | Yes |
+| Pythia 6.9B | 28 | 0.5027 | Yes |
+| Mistral 7B | 26 | 0.6561 | No |
+| Gemma 2 9B | 26 | 0.6889 | No |
+| Qwen3 8B Base | 26 | 0.6647 | Yes |
+| Qwen3.8 27B | 26 | 0.5539 | Yes |
 
-## Quick start
+Gender alternatives are enabled and continent reference sets use the original seeded selection. Newlines address high first-position activation norms. These are in-sample evaluations; LRE parameters are selected on the evaluated rows.
+
+See the [current paper guide](../paper/README.md), [full-evaluation outputs](results/paper_full_evaluation/), and [GPT-J/Pythia newline diagnosis](results/gptj_pythia_full_row_diagnosis/README.md). Regenerate the paper's numerical inputs and figure with:
+
+```sh
+.venv/bin/python scripts/build_full_evaluation_paper.py
+```
+
+## Historical reproduction and experiments
+
+The commands and experiments below retain their original measurements for provenance. They use older protocols and do not generate the current paper's numerical inputs. Their correlations must not be substituted for the full-evaluation results above.
+
+### Historical quick start
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run
 from this checkout:
@@ -33,7 +49,7 @@ Artifacts are written to `generated/`:
 | `product_fact_ranks.png` | Product relation's subject ranks |
 | `outlier_fact_ranks.png` | Three outlier relations' subject ranks |
 
-Expected headline results are Spearman **ρ = 0.658** across 28 relations,
+The archived reproduction reports Spearman **ρ = 0.658** across 28 relations,
 **ρ = 0.143** for the matched logit-lens baseline, and **ρ = 0.644** across
 25 relations under the shared-split, identifying-first-token protocol.
 

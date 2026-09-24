@@ -1,0 +1,2601 @@
+{
+  "relation": "pokemon_evolutions",
+  "worker": "gptj_gpu0_b32",
+  "n_original": 44,
+  "data_sha256": "254e3982935571cfd4311ea774da0d2a4b2a577c6c86e0f74508a9651efc6494",
+  "baseline_path": "results/all_models_gender_original_continents/gptj/measurements/pokemon_evolutions.json",
+  "baseline_sha256": "e3d05e776b160f9dab2ac544e4835c1f692edbd61091ed7f98cd48218e496b7d",
+  "lens": {
+    "n": 44,
+    "layer": 15,
+    "template": "{} evolves into a",
+    "agg": {
+      "diff": {
+        "median_rank": 2077.5,
+        "median_lograng": 3.317730915237785,
+        "agree_at1": 0.0,
+        "agree_at10": 0.022727272727272728
+      },
+      "lre": {
+        "median_rank": 4535.0,
+        "median_lograng": 3.6564094212472433,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Drowzee",
+        "model_top1_id": 21209,
+        "model_top1": "Hyp",
+        "n_references": 8,
+        "rank_diff": 525,
+        "top_diff": [
+          "Pok\u00e9mon",
+          "Pok\u00e9",
+          "Pikachu",
+          "Pok\u00e9",
+          "Pokemon"
+        ],
+        "rank_lre": 2844,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2844,
+          "0.5": 3297,
+          "1.5": 2460,
+          "2.0": 2122,
+          "3.0": 1616,
+          "5.0": 1032
+        },
+        "object": "Hypno"
+      },
+      {
+        "subject": "Caterpie",
+        "model_top1_id": 3395,
+        "model_top1": "Met",
+        "n_references": 8,
+        "rank_diff": 2524,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pikachu",
+          "Poke",
+          "Pok\u00e9",
+          "Pokemon"
+        ],
+        "rank_lre": 3557,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3557,
+          "0.5": 3868,
+          "1.5": 3295,
+          "2.0": 3109,
+          "3.0": 2728,
+          "5.0": 2290
+        },
+        "object": "Metapod"
+      },
+      {
+        "subject": "Squirtle",
+        "model_top1_id": 370,
+        "model_top1": "W",
+        "n_references": 8,
+        "rank_diff": 17022,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Pokemon",
+          "Pokemon",
+          "Pok\u00e9"
+        ],
+        "rank_lre": 1095,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1095,
+          "0.5": 1042,
+          "1.5": 1157,
+          "2.0": 1246,
+          "3.0": 1506,
+          "5.0": 2171
+        },
+        "object": "Wartortle"
+      },
+      {
+        "subject": "Mankey",
+        "model_top1_id": 7080,
+        "model_top1": "Mach",
+        "n_references": 8,
+        "rank_diff": 2053,
+        "top_diff": [
+          "monkey",
+          "Monkey",
+          "mouse",
+          "monkeys",
+          "Mouse"
+        ],
+        "rank_lre": 4306,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "her",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4306,
+          "0.5": 4592,
+          "1.5": 4078,
+          "2.0": 3842,
+          "3.0": 3435,
+          "5.0": 2892
+        },
+        "object": "Primeape"
+      },
+      {
+        "subject": "Pikachu",
+        "model_top1_id": 7567,
+        "model_top1": "Ra",
+        "n_references": 8,
+        "rank_diff": 2421,
+        "top_diff": [
+          "Pikachu",
+          "Pok\u00e9",
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Pokemon"
+        ],
+        "rank_lre": 3867,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3867,
+          "0.5": 4352,
+          "1.5": 3458,
+          "2.0": 3129,
+          "3.0": 2590,
+          "5.0": 1888
+        },
+        "object": "Raichu"
+      },
+      {
+        "subject": "Machop",
+        "model_top1_id": 7080,
+        "model_top1": "Mach",
+        "n_references": 8,
+        "rank_diff": 5,
+        "top_diff": [
+          "samurai",
+          "Shogun",
+          "Godzilla",
+          "Crab",
+          "Ryu"
+        ],
+        "rank_lre": 2973,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2973,
+          "0.5": 3852,
+          "1.5": 2273,
+          "2.0": 1733,
+          "3.0": 1009,
+          "5.0": 334
+        },
+        "object": "Machoke"
+      },
+      {
+        "subject": "Bulbasaur",
+        "model_top1_id": 21094,
+        "model_top1": "Venus",
+        "n_references": 8,
+        "rank_diff": 544,
+        "top_diff": [
+          "Weed",
+          "Grass",
+          "Leaf",
+          "Pokemon",
+          "Pikachu"
+        ],
+        "rank_lre": 6940,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6940,
+          "0.5": 8306,
+          "1.5": 5871,
+          "2.0": 4916,
+          "3.0": 3488,
+          "5.0": 1802
+        },
+        "object": "Ivysaur"
+      },
+      {
+        "subject": "Goldeen",
+        "model_top1_id": 1001,
+        "model_top1": "Se",
+        "n_references": 8,
+        "rank_diff": 854,
+        "top_diff": [
+          "fish",
+          "Fish",
+          "swim",
+          "fishes",
+          "Fish"
+        ],
+        "rank_lre": 1905,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1905,
+          "0.5": 2189,
+          "1.5": 1687,
+          "2.0": 1497,
+          "3.0": 1195,
+          "5.0": 844
+        },
+        "object": "Seaking"
+      },
+      {
+        "subject": "Slowpoke",
+        "model_top1_id": 47854,
+        "model_top1": "Thro",
+        "n_references": 7,
+        "rank_diff": 107,
+        "top_diff": [
+          "Pok\u00e9",
+          "Poke",
+          "Pok\u00e9mon",
+          "Pokemon",
+          "Pok\u00e9"
+        ],
+        "rank_lre": 12725,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 12725,
+          "0.5": 14621,
+          "1.5": 10992,
+          "2.0": 9523,
+          "3.0": 7137,
+          "5.0": 4154
+        },
+        "object": "Slowbro"
+      },
+      {
+        "subject": "Nidoran\u2642",
+        "model_top1_id": 46798,
+        "model_top1": "Nid",
+        "n_references": 7,
+        "rank_diff": 581,
+        "top_diff": [
+          "mating",
+          "Males",
+          "Sex",
+          "Females",
+          "Male"
+        ],
+        "rank_lre": 10294,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10294,
+          "0.5": 11640,
+          "1.5": 9082,
+          "2.0": 8061,
+          "3.0": 6320,
+          "5.0": 3882
+        },
+        "object": "Nidorino"
+      },
+      {
+        "subject": "Seel",
+        "model_top1_id": 25075,
+        "model_top1": "Dew",
+        "n_references": 7,
+        "rank_diff": 47816,
+        "top_diff": [
+          "her",
+          "sewing",
+          "German",
+          "Sith",
+          "Seal"
+        ],
+        "rank_lre": 11066,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11066,
+          "0.5": 10103,
+          "1.5": 12031,
+          "2.0": 13127,
+          "3.0": 15292,
+          "5.0": 19597
+        },
+        "object": "Dewgong"
+      },
+      {
+        "subject": "Exeggcute",
+        "model_top1_id": 1475,
+        "model_top1": "Ex",
+        "n_references": 7,
+        "rank_diff": 1090,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "berries",
+          "Pok\u00e9",
+          "eggs"
+        ],
+        "rank_lre": 1851,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1851,
+          "0.5": 2059,
+          "1.5": 1683,
+          "2.0": 1523,
+          "3.0": 1250,
+          "5.0": 891
+        },
+        "object": "Exeggutor"
+      },
+      {
+        "subject": "Rhyhorn",
+        "model_top1_id": 10323,
+        "model_top1": "Rh",
+        "n_references": 7,
+        "rank_diff": 230,
+        "top_diff": [
+          "horn",
+          "horns",
+          "horn",
+          "Horn",
+          "horse"
+        ],
+        "rank_lre": 3711,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3711,
+          "0.5": 4393,
+          "1.5": 3119,
+          "2.0": 2610,
+          "3.0": 1863,
+          "5.0": 1007
+        },
+        "object": "Rhydon"
+      },
+      {
+        "subject": "Doduo",
+        "model_top1_id": 15990,
+        "model_top1": "Dod",
+        "n_references": 7,
+        "rank_diff": 89,
+        "top_diff": [
+          "paws",
+          "dogs",
+          "Dogs",
+          "Dog",
+          "Meow"
+        ],
+        "rank_lre": 6738,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6738,
+          "0.5": 7894,
+          "1.5": 5762,
+          "2.0": 4907,
+          "3.0": 3510,
+          "5.0": 1791
+        },
+        "object": "Dodrio"
+      },
+      {
+        "subject": "Venonat",
+        "model_top1_id": 33284,
+        "model_top1": "Venom",
+        "n_references": 7,
+        "rank_diff": 2597,
+        "top_diff": [
+          "her",
+          "she",
+          "Tibetan",
+          "she",
+          "orc"
+        ],
+        "rank_lre": 5676,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5676,
+          "0.5": 6125,
+          "1.5": 5248,
+          "2.0": 4856,
+          "3.0": 4217,
+          "5.0": 3317
+        },
+        "object": "Venomoth"
+      },
+      {
+        "subject": "Magnemite",
+        "model_top1_id": 32079,
+        "model_top1": "Magnet",
+        "n_references": 7,
+        "rank_diff": 17,
+        "top_diff": [
+          "Pikachu",
+          "Pok\u00e9mon",
+          "Pok\u00e9",
+          "Pokemon",
+          "Pok\u00e9"
+        ],
+        "rank_lre": 8353,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 8353,
+          "0.5": 11623,
+          "1.5": 5961,
+          "2.0": 4201,
+          "3.0": 1991,
+          "5.0": 473
+        },
+        "object": "Magneton"
+      },
+      {
+        "subject": "Cubone",
+        "model_top1_id": 1526,
+        "model_top1": "Mar",
+        "n_references": 8,
+        "rank_diff": 17114,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Pok\u00e9mon",
+          "Pokemon"
+        ],
+        "rank_lre": 4958,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4958,
+          "0.5": 4904,
+          "1.5": 5023,
+          "2.0": 5087,
+          "3.0": 5302,
+          "5.0": 5815
+        },
+        "object": "Marowak"
+      },
+      {
+        "subject": "Diglett",
+        "model_top1_id": 27436,
+        "model_top1": "Dug",
+        "n_references": 8,
+        "rank_diff": 11,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Pok\u00e9",
+          "Pikachu",
+          "Pokemon"
+        ],
+        "rank_lre": 10014,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 10014,
+          "0.5": 13053,
+          "1.5": 7661,
+          "2.0": 5819,
+          "3.0": 3257,
+          "5.0": 981
+        },
+        "object": "Dugtrio"
+      },
+      {
+        "subject": "Grimer",
+        "model_top1_id": 31509,
+        "model_top1": "Muk",
+        "n_references": 8,
+        "rank_diff": 45332,
+        "top_diff": [
+          "goblin",
+          "goblins",
+          "ogre",
+          "orcs",
+          "orc"
+        ],
+        "rank_lre": 17103,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17103,
+          "0.5": 16025,
+          "1.5": 18137,
+          "2.0": 19077,
+          "3.0": 20875,
+          "5.0": 23992
+        },
+        "object": "Muk"
+      },
+      {
+        "subject": "Voltorb",
+        "model_top1_id": 38781,
+        "model_top1": "Electro",
+        "n_references": 8,
+        "rank_diff": 34,
+        "top_diff": [
+          "orb",
+          "Orb",
+          "orbs",
+          "orb",
+          "orbit"
+        ],
+        "rank_lre": 6181,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6181,
+          "0.5": 7394,
+          "1.5": 5124,
+          "2.0": 4217,
+          "3.0": 2879,
+          "5.0": 1253
+        },
+        "object": "Electrode"
+      },
+      {
+        "subject": "Krabby",
+        "model_top1_id": 2677,
+        "model_top1": "King",
+        "n_references": 8,
+        "rank_diff": 3719,
+        "top_diff": [
+          "seafood",
+          "meat",
+          "Meat",
+          "fish",
+          "Meat"
+        ],
+        "rank_lre": 3533,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 3533,
+          "0.5": 3823,
+          "1.5": 3303,
+          "2.0": 3099,
+          "3.0": 2763,
+          "5.0": 2328
+        },
+        "object": "Kingler"
+      },
+      {
+        "subject": "Oddish",
+        "model_top1_id": 2671,
+        "model_top1": "Gl",
+        "n_references": 8,
+        "rank_diff": 21193,
+        "top_diff": [
+          "her",
+          "herbs",
+          "herb",
+          "herself",
+          "hers"
+        ],
+        "rank_lre": 2638,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2638,
+          "0.5": 2577,
+          "1.5": 2715,
+          "2.0": 2827,
+          "3.0": 3127,
+          "5.0": 3812
+        },
+        "object": "Gloom"
+      },
+      {
+        "subject": "Abra",
+        "model_top1_id": 31996,
+        "model_top1": "Kad",
+        "n_references": 8,
+        "rank_diff": 119,
+        "top_diff": [
+          "her",
+          "Ara",
+          "herself",
+          "jewelry",
+          "Rabb"
+        ],
+        "rank_lre": 11921,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11921,
+          "0.5": 13442,
+          "1.5": 10577,
+          "2.0": 9346,
+          "3.0": 7411,
+          "5.0": 4623
+        },
+        "object": "Kadabra"
+      },
+      {
+        "subject": "Koffing",
+        "model_top1_id": 5489,
+        "model_top1": "Sn",
+        "n_references": 8,
+        "rank_diff": 359,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Poison",
+          "Poke"
+        ],
+        "rank_lre": 2182,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2182,
+          "0.5": 2646,
+          "1.5": 1839,
+          "2.0": 1545,
+          "3.0": 1133,
+          "5.0": 684
+        },
+        "object": "Weezing"
+      },
+      {
+        "subject": "Nidoran\u2640",
+        "model_top1_id": 46798,
+        "model_top1": "Nid",
+        "n_references": 8,
+        "rank_diff": 2097,
+        "top_diff": [
+          "her",
+          "Femin",
+          "Female",
+          "femin",
+          "Female"
+        ],
+        "rank_lre": 7565,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7565,
+          "0.5": 8204,
+          "1.5": 6968,
+          "2.0": 6405,
+          "3.0": 5438,
+          "5.0": 4103
+        },
+        "object": "Nidorina"
+      },
+      {
+        "subject": "Sandshrew",
+        "model_top1_id": 35359,
+        "model_top1": "Sands",
+        "n_references": 8,
+        "rank_diff": 1605,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pikachu",
+          "Pok\u00e9",
+          "Mew",
+          "Pokemon"
+        ],
+        "rank_lre": 19890,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 19890,
+          "0.5": 21537,
+          "1.5": 18287,
+          "2.0": 16758,
+          "3.0": 14116,
+          "5.0": 10200
+        },
+        "object": "Sandslash"
+      },
+      {
+        "subject": "Growlithe",
+        "model_top1_id": 943,
+        "model_top1": "Ar",
+        "n_references": 8,
+        "rank_diff": 10354,
+        "top_diff": [
+          "Hound",
+          "Meow",
+          "Pok\u00e9",
+          "Train",
+          "Trainer"
+        ],
+        "rank_lre": 1485,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1485,
+          "0.5": 1514,
+          "1.5": 1499,
+          "2.0": 1511,
+          "3.0": 1610,
+          "5.0": 1935
+        },
+        "object": "Arcanine"
+      },
+      {
+        "subject": "Tentacool",
+        "model_top1_id": 30765,
+        "model_top1": "Tent",
+        "n_references": 8,
+        "rank_diff": 2058,
+        "top_diff": [
+          "underwater",
+          "swim",
+          "aquatic",
+          "aquarium",
+          "swimming"
+        ],
+        "rank_lre": 17096,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 17096,
+          "0.5": 18320,
+          "1.5": 15960,
+          "2.0": 14936,
+          "3.0": 12978,
+          "5.0": 9939
+        },
+        "object": "Tentacruel"
+      },
+      {
+        "subject": "Pidgey",
+        "model_top1_id": 350,
+        "model_top1": "P",
+        "n_references": 8,
+        "rank_diff": 304,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pikachu",
+          "Pok\u00e9",
+          "Pokemon",
+          "Mew"
+        ],
+        "rank_lre": 349,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 349,
+          "0.5": 423,
+          "1.5": 281,
+          "2.0": 232,
+          "3.0": 165,
+          "5.0": 102
+        },
+        "object": "Pidgeotto"
+      },
+      {
+        "subject": "Ponyta",
+        "model_top1_id": 26430,
+        "model_top1": "Rapid",
+        "n_references": 8,
+        "rank_diff": 17852,
+        "top_diff": [
+          "her",
+          "deer",
+          "orcs",
+          "wolves",
+          "orc"
+        ],
+        "rank_lre": 4693,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4693,
+          "0.5": 4651,
+          "1.5": 4753,
+          "2.0": 4795,
+          "3.0": 4970,
+          "5.0": 5428
+        },
+        "object": "Rapidash"
+      },
+      {
+        "subject": "Psyduck",
+        "model_top1_id": 3561,
+        "model_top1": "Gold",
+        "n_references": 8,
+        "rank_diff": 2277,
+        "top_diff": [
+          "Duck",
+          "duck",
+          "ducks",
+          "Ducks",
+          "Feather"
+        ],
+        "rank_lre": 4377,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4377,
+          "0.5": 4694,
+          "1.5": 3996,
+          "2.0": 3680,
+          "3.0": 3190,
+          "5.0": 2516
+        },
+        "object": "Golduck"
+      },
+      {
+        "subject": "Horsea",
+        "model_top1_id": 10323,
+        "model_top1": "Rh",
+        "n_references": 8,
+        "rank_diff": 21201,
+        "top_diff": [
+          "Mermaid",
+          "sea",
+          "her",
+          "tentacles",
+          "underwater"
+        ],
+        "rank_lre": 4230,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "her",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4230,
+          "0.5": 4122,
+          "1.5": 4358,
+          "2.0": 4473,
+          "3.0": 4783,
+          "5.0": 5530
+        },
+        "object": "Seadra"
+      },
+      {
+        "subject": "Bellsprout",
+        "model_top1_id": 775,
+        "model_top1": "We",
+        "n_references": 8,
+        "rank_diff": 3917,
+        "top_diff": [
+          "his",
+          "Parents",
+          "Parents",
+          "his",
+          "parents"
+        ],
+        "rank_lre": 2970,
+        "top_lre": [
+          "his",
+          "its",
+          "being",
+          "having",
+          "her"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2970,
+          "0.5": 3075,
+          "1.5": 2862,
+          "2.0": 2771,
+          "3.0": 2617,
+          "5.0": 2417
+        },
+        "object": "Weepinbell"
+      },
+      {
+        "subject": "Weedle",
+        "model_top1_id": 31250,
+        "model_top1": "Kak",
+        "n_references": 8,
+        "rank_diff": 1528,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Poke",
+          "Pikachu"
+        ],
+        "rank_lre": 7123,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7123,
+          "0.5": 7848,
+          "1.5": 6515,
+          "2.0": 5933,
+          "3.0": 5033,
+          "5.0": 3669
+        },
+        "object": "Kakuna"
+      },
+      {
+        "subject": "Charmander",
+        "model_top1_id": 3178,
+        "model_top1": "Char",
+        "n_references": 8,
+        "rank_diff": 68,
+        "top_diff": [
+          "Pok\u00e9",
+          "flames",
+          "Pikachu",
+          "flame",
+          "Pok\u00e9"
+        ],
+        "rank_lre": 1928,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1928,
+          "0.5": 2827,
+          "1.5": 1312,
+          "2.0": 889,
+          "3.0": 430,
+          "5.0": 126
+        },
+        "object": "Charmeleon"
+      },
+      {
+        "subject": "Meowth",
+        "model_top1_id": 22035,
+        "model_top1": "Persian",
+        "n_references": 8,
+        "rank_diff": 2947,
+        "top_diff": [
+          "Meow",
+          "Pok\u00e9",
+          "Pok\u00e9mon",
+          "Pok\u00e9",
+          "Pikachu"
+        ],
+        "rank_lre": 11802,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11802,
+          "0.5": 12919,
+          "1.5": 10853,
+          "2.0": 10033,
+          "3.0": 8639,
+          "5.0": 6729
+        },
+        "object": "Persian"
+      },
+      {
+        "subject": "Rattata",
+        "model_top1_id": 371,
+        "model_top1": "R",
+        "n_references": 8,
+        "rank_diff": 6302,
+        "top_diff": [
+          "Pok\u00e9",
+          "Ratt",
+          "hatch",
+          "Hatch",
+          "Pikachu"
+        ],
+        "rank_lre": 1113,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1113,
+          "0.5": 1128,
+          "1.5": 1104,
+          "2.0": 1103,
+          "3.0": 1138,
+          "5.0": 1257
+        },
+        "object": "Raticate"
+      },
+      {
+        "subject": "Gastly",
+        "model_top1_id": 367,
+        "model_top1": "H",
+        "n_references": 8,
+        "rank_diff": 6984,
+        "top_diff": [
+          "undead",
+          "goblin",
+          "goblins",
+          "Goblin",
+          "Undead"
+        ],
+        "rank_lre": 703,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 703,
+          "0.5": 719,
+          "1.5": 701,
+          "2.0": 700,
+          "3.0": 711,
+          "5.0": 800
+        },
+        "object": "Haunter"
+      },
+      {
+        "subject": "Poliwag",
+        "model_top1_id": 2165,
+        "model_top1": "Pol",
+        "n_references": 8,
+        "rank_diff": 1071,
+        "top_diff": [
+          "Wag",
+          "paw",
+          "pup",
+          "canine",
+          "dogs"
+        ],
+        "rank_lre": 5024,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "their",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 5024,
+          "0.5": 5453,
+          "1.5": 4646,
+          "2.0": 4310,
+          "3.0": 3705,
+          "5.0": 2852
+        },
+        "object": "Poliwhirl"
+      },
+      {
+        "subject": "Spearow",
+        "model_top1_id": 16132,
+        "model_top1": "Fear",
+        "n_references": 8,
+        "rank_diff": 837,
+        "top_diff": [
+          "Meow",
+          "Pikachu",
+          "Mew",
+          "paws",
+          "paw"
+        ],
+        "rank_lre": 7024,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 7024,
+          "0.5": 7885,
+          "1.5": 6276,
+          "2.0": 5645,
+          "3.0": 4540,
+          "5.0": 3011
+        },
+        "object": "Fearow"
+      },
+      {
+        "subject": "Zubat",
+        "model_top1_id": 26849,
+        "model_top1": "Gol",
+        "n_references": 8,
+        "rank_diff": 6979,
+        "top_diff": [
+          "flying",
+          "flight",
+          "flight",
+          "Chocobo",
+          "bats"
+        ],
+        "rank_lre": 9657,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 9657,
+          "0.5": 9938,
+          "1.5": 9403,
+          "2.0": 9184,
+          "3.0": 8776,
+          "5.0": 8092
+        },
+        "object": "Golbat"
+      },
+      {
+        "subject": "Ekans",
+        "model_top1_id": 520,
+        "model_top1": "St",
+        "n_references": 8,
+        "rank_diff": 32875,
+        "top_diff": [
+          "Bengal",
+          "Ek",
+          "Indian",
+          "tigers",
+          "Tamil"
+        ],
+        "rank_lre": 1205,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "their"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1205,
+          "0.5": 1130,
+          "1.5": 1303,
+          "2.0": 1403,
+          "3.0": 1628,
+          "5.0": 2178
+        },
+        "object": "Arbok"
+      },
+      {
+        "subject": "Geodude",
+        "model_top1_id": 7037,
+        "model_top1": "Gra",
+        "n_references": 8,
+        "rank_diff": 5186,
+        "top_diff": [
+          "Pok\u00e9",
+          "Pok\u00e9",
+          "Poke",
+          "Pikachu",
+          "Pok\u00e9mon"
+        ],
+        "rank_lre": 6496,
+        "top_lre": [
+          "its",
+          "being",
+          "his",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 6496,
+          "0.5": 6914,
+          "1.5": 6200,
+          "2.0": 5883,
+          "3.0": 5372,
+          "5.0": 4688
+        },
+        "object": "Graveler"
+      },
+      {
+        "subject": "Shellder",
+        "model_top1_id": 1012,
+        "model_top1": "Cl",
+        "n_references": 8,
+        "rank_diff": 11839,
+        "top_diff": [
+          "Venom",
+          "Shell",
+          "venom",
+          "Shell",
+          "Tackle"
+        ],
+        "rank_lre": 2550,
+        "top_lre": [
+          "its",
+          "his",
+          "being",
+          "having",
+          "the"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2550,
+          "0.5": 2570,
+          "1.5": 2532,
+          "2.0": 2503,
+          "3.0": 2554,
+          "5.0": 2725
+        },
+        "object": "Cloyster"
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 0.5,
+      "agg": {
+        "0.5": {
+          "median_rank": 4672.5,
+          "median_lograng": 3.6696376513292703,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 4535.0,
+          "median_lograng": 3.6564094212472433,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 4502.0,
+          "median_lograng": 3.6532797707482763,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 4209.0,
+          "median_lograng": 3.6242813117367008,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "3.0": {
+          "median_rank": 3223.5,
+          "median_lograng": 3.5084389420830004,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "5.0": {
+          "median_rank": 2466.5,
+          "median_lograng": 3.392169756036558,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "neutral_prompt_diagnostics": {
+    "Slowpoke": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 121.37383270263672,
+      "newline_subject_norm": 116.35000610351562,
+      "original_final_norm": 397.9920349121094,
+      "newline_final_norm": 394.28533935546875,
+      "original_ids": [
+        36423,
+        35924,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        36423,
+        35924,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Nidoran\u2642": {
+      "original_position": 4,
+      "newline_position": 5,
+      "original_subject_norm": 102.83221435546875,
+      "newline_subject_norm": 102.8287582397461,
+      "original_final_norm": 351.9876708984375,
+      "newline_final_norm": 349.7809143066406,
+      "original_ids": [
+        45,
+        312,
+        31884,
+        17992,
+        224,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45,
+        312,
+        31884,
+        17992,
+        224,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Seel": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 104.10362243652344,
+      "newline_subject_norm": 103.24512481689453,
+      "original_final_norm": 387.6580810546875,
+      "newline_final_norm": 382.2768859863281,
+      "original_ids": [
+        4653,
+        417,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        4653,
+        417,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Exeggcute": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 105.01876068115234,
+      "newline_subject_norm": 107.51475524902344,
+      "original_final_norm": 368.5540771484375,
+      "newline_final_norm": 380.67950439453125,
+      "original_ids": [
+        3109,
+        33856,
+        66,
+        1133,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        3109,
+        33856,
+        66,
+        1133,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Rhyhorn": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 105.02628326416016,
+      "newline_subject_norm": 102.81339263916016,
+      "original_final_norm": 372.75146484375,
+      "newline_final_norm": 381.6741027832031,
+      "original_ids": [
+        49,
+        12114,
+        25311,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        49,
+        12114,
+        25311,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Doduo": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 112.01519012451172,
+      "newline_subject_norm": 113.26129913330078,
+      "original_final_norm": 356.82958984375,
+      "newline_final_norm": 372.220458984375,
+      "original_ids": [
+        35,
+        375,
+        20895,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        35,
+        375,
+        20895,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Venonat": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 100.95418548583984,
+      "newline_subject_norm": 101.82759857177734,
+      "original_final_norm": 370.56207275390625,
+      "newline_final_norm": 354.0010986328125,
+      "original_ids": [
+        37522,
+        261,
+        265,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        37522,
+        261,
+        265,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Magnemite": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 110.22673034667969,
+      "newline_subject_norm": 119.62474060058594,
+      "original_final_norm": 367.7795715332031,
+      "newline_final_norm": 372.861083984375,
+      "original_ids": [
+        48017,
+        368,
+        578,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        48017,
+        368,
+        578,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Drowzee": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 105.84625244140625,
+      "newline_subject_norm": 110.21927642822266,
+      "original_final_norm": 362.2850341796875,
+      "newline_final_norm": 375.6632080078125,
+      "original_ids": [
+        35,
+        808,
+        42871,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        35,
+        808,
+        42871,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Caterpie": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 117.20269012451172,
+      "newline_subject_norm": 121.16706085205078,
+      "original_final_norm": 372.1969299316406,
+      "newline_final_norm": 362.88671875,
+      "original_ids": [
+        34,
+        729,
+        21749,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        34,
+        729,
+        21749,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Squirtle": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 115.0676040649414,
+      "newline_subject_norm": 119.70875549316406,
+      "original_final_norm": 357.2582702636719,
+      "newline_final_norm": 368.87799072265625,
+      "original_ids": [
+        22266,
+        2265,
+        293,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        22266,
+        2265,
+        293,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Mankey": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 118.16839599609375,
+      "newline_subject_norm": 114.41873931884766,
+      "original_final_norm": 379.16729736328125,
+      "newline_final_norm": 376.9549255371094,
+      "original_ids": [
+        5124,
+        2539,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        5124,
+        2539,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Pikachu": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 119.45037078857422,
+      "newline_subject_norm": 123.0376205444336,
+      "original_final_norm": 332.4303283691406,
+      "newline_final_norm": 365.2005920410156,
+      "original_ids": [
+        47,
+        1134,
+        32323,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        47,
+        1134,
+        32323,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Machop": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 113.61380004882812,
+      "newline_subject_norm": 106.99480438232422,
+      "original_final_norm": 349.86688232421875,
+      "newline_final_norm": 384.9094543457031,
+      "original_ids": [
+        49999,
+        404,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        49999,
+        404,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Bulbasaur": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 108.67341613769531,
+      "newline_subject_norm": 121.3819580078125,
+      "original_final_norm": 357.2718505859375,
+      "newline_final_norm": 351.681640625,
+      "original_ids": [
+        33481,
+        12093,
+        2899,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        33481,
+        12093,
+        2899,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Goldeen": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 108.50824737548828,
+      "newline_subject_norm": 110.76241302490234,
+      "original_final_norm": 369.3691711425781,
+      "newline_final_norm": 379.01995849609375,
+      "original_ids": [
+        13306,
+        6429,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        13306,
+        6429,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Cubone": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 113.40869903564453,
+      "newline_subject_norm": 115.5340576171875,
+      "original_final_norm": 379.670654296875,
+      "newline_final_norm": 373.39898681640625,
+      "original_ids": [
+        43632,
+        505,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        43632,
+        505,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Diglett": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 115.68626403808594,
+      "newline_subject_norm": 119.7918472290039,
+      "original_final_norm": 364.8313293457031,
+      "newline_final_norm": 376.32586669921875,
+      "original_ids": [
+        19511,
+        15503,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        19511,
+        15503,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Grimer": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 104.93284606933594,
+      "newline_subject_norm": 113.13885498046875,
+      "original_final_norm": 378.3885192871094,
+      "newline_final_norm": 388.0662536621094,
+      "original_ids": [
+        38,
+        3036,
+        263,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        38,
+        3036,
+        263,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Voltorb": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 103.27935791015625,
+      "newline_subject_norm": 107.40756225585938,
+      "original_final_norm": 340.8345947265625,
+      "newline_final_norm": 362.95050048828125,
+      "original_ids": [
+        53,
+        5978,
+        27688,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        53,
+        5978,
+        27688,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Krabby": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 104.46074676513672,
+      "newline_subject_norm": 109.19906616210938,
+      "original_final_norm": 348.6808166503906,
+      "newline_final_norm": 360.73919677734375,
+      "original_ids": [
+        42,
+        25619,
+        1525,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        42,
+        25619,
+        1525,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Oddish": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 107.16468048095703,
+      "newline_subject_norm": 106.71802520751953,
+      "original_final_norm": 375.0199890136719,
+      "newline_final_norm": 319.38043212890625,
+      "original_ids": [
+        46,
+        1860,
+        680,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        46,
+        1860,
+        680,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Abra": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 106.69803619384766,
+      "newline_subject_norm": 104.71865844726562,
+      "original_final_norm": 341.4161682128906,
+      "newline_final_norm": 373.326904296875,
+      "original_ids": [
+        4826,
+        430,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        4826,
+        430,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Koffing": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 114.57652282714844,
+      "newline_subject_norm": 116.3973617553711,
+      "original_final_norm": 355.5029602050781,
+      "newline_final_norm": 358.5400085449219,
+      "original_ids": [
+        42,
+        2364,
+        278,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        42,
+        2364,
+        278,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Nidoran\u2640": {
+      "original_position": 4,
+      "newline_position": 5,
+      "original_subject_norm": 98.44747161865234,
+      "newline_subject_norm": 97.02259063720703,
+      "original_final_norm": 346.19512939453125,
+      "newline_final_norm": 313.0896301269531,
+      "original_ids": [
+        45,
+        312,
+        31884,
+        17992,
+        222,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        45,
+        312,
+        31884,
+        17992,
+        222,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Sandshrew": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 108.43363952636719,
+      "newline_subject_norm": 106.25183868408203,
+      "original_final_norm": 367.3541564941406,
+      "newline_final_norm": 365.1353759765625,
+      "original_ids": [
+        18471,
+        1477,
+        1809,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        18471,
+        1477,
+        1809,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Growlithe": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 111.23603820800781,
+      "newline_subject_norm": 120.17884826660156,
+      "original_final_norm": 370.4169616699219,
+      "newline_final_norm": 379.3085021972656,
+      "original_ids": [
+        38,
+        808,
+        18250,
+        258,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        38,
+        808,
+        18250,
+        258,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Tentacool": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 101.82752227783203,
+      "newline_subject_norm": 104.43748474121094,
+      "original_final_norm": 358.9462585449219,
+      "newline_final_norm": 351.2816162109375,
+      "original_ids": [
+        51,
+        298,
+        330,
+        970,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        51,
+        298,
+        330,
+        970,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Pidgey": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 114.32103729248047,
+      "newline_subject_norm": 116.61050415039062,
+      "original_final_norm": 374.71405029296875,
+      "newline_final_norm": 384.6718444824219,
+      "original_ids": [
+        47,
+        3130,
+        88,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        47,
+        3130,
+        88,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Ponyta": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 100.00647735595703,
+      "newline_subject_norm": 99.4725341796875,
+      "original_final_norm": 371.49456787109375,
+      "newline_final_norm": 369.16485595703125,
+      "original_ids": [
+        47,
+        1647,
+        8326,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        47,
+        1647,
+        8326,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Psyduck": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 112.91962432861328,
+      "newline_subject_norm": 107.22355651855469,
+      "original_final_norm": 367.621826171875,
+      "newline_final_norm": 370.6711730957031,
+      "original_ids": [
+        25918,
+        646,
+        694,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        25918,
+        646,
+        694,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Horsea": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 102.67485809326172,
+      "newline_subject_norm": 109.58800506591797,
+      "original_final_norm": 371.6009521484375,
+      "newline_final_norm": 362.5548095703125,
+      "original_ids": [
+        39,
+        7615,
+        64,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        39,
+        7615,
+        64,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Bellsprout": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 107.1491928100586,
+      "newline_subject_norm": 111.44048309326172,
+      "original_final_norm": 372.19732666015625,
+      "newline_final_norm": 377.945068359375,
+      "original_ids": [
+        33,
+        19187,
+        1050,
+        448,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        33,
+        19187,
+        1050,
+        448,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Weedle": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 110.40898132324219,
+      "newline_subject_norm": 109.72754669189453,
+      "original_final_norm": 337.4166564941406,
+      "newline_final_norm": 359.06365966796875,
+      "original_ids": [
+        1135,
+        276,
+        293,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        1135,
+        276,
+        293,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Charmander": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 112.73965454101562,
+      "newline_subject_norm": 123.29375457763672,
+      "original_final_norm": 372.8000793457031,
+      "newline_final_norm": 382.27392578125,
+      "original_ids": [
+        1925,
+        1670,
+        4066,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        1925,
+        1670,
+        4066,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Meowth": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 113.09579467773438,
+      "newline_subject_norm": 113.48322296142578,
+      "original_final_norm": 358.3432312011719,
+      "newline_final_norm": 366.85888671875,
+      "original_ids": [
+        5308,
+        322,
+        400,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        5308,
+        322,
+        400,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Rattata": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 105.29520416259766,
+      "newline_subject_norm": 111.69577026367188,
+      "original_final_norm": 355.3171691894531,
+      "newline_final_norm": 374.4057922363281,
+      "original_ids": [
+        49,
+        1078,
+        1045,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        49,
+        1078,
+        1045,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Gastly": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 108.28325653076172,
+      "newline_subject_norm": 108.57772064208984,
+      "original_final_norm": 331.4368591308594,
+      "newline_final_norm": 359.8306579589844,
+      "original_ids": [
+        38,
+        459,
+        306,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        38,
+        459,
+        306,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Poliwag": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 94.77336120605469,
+      "newline_subject_norm": 99.21611785888672,
+      "original_final_norm": 377.348876953125,
+      "newline_final_norm": 373.2106628417969,
+      "original_ids": [
+        8017,
+        14246,
+        363,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        8017,
+        14246,
+        363,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Spearow": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 108.90042877197266,
+      "newline_subject_norm": 110.81173706054688,
+      "original_final_norm": 385.3912353515625,
+      "newline_final_norm": 370.8554992675781,
+      "original_ids": [
+        5248,
+        283,
+        322,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        5248,
+        283,
+        322,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Zubat": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 103.32010650634766,
+      "newline_subject_norm": 107.36143493652344,
+      "original_final_norm": 369.0512390136719,
+      "newline_final_norm": 375.441162109375,
+      "original_ids": [
+        57,
+        549,
+        265,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        57,
+        549,
+        265,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Ekans": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 103.07655334472656,
+      "newline_subject_norm": 104.73130798339844,
+      "original_final_norm": 383.7578430175781,
+      "newline_final_norm": 379.658935546875,
+      "original_ids": [
+        36,
+        74,
+        504,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        36,
+        74,
+        504,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Geodude": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 101.28297424316406,
+      "newline_subject_norm": 109.02176666259766,
+      "original_final_norm": 353.352294921875,
+      "newline_final_norm": 366.5726318359375,
+      "original_ids": [
+        10082,
+        375,
+        2507,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        10082,
+        375,
+        2507,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Shellder": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 115.27288818359375,
+      "newline_subject_norm": 107.4557113647461,
+      "original_final_norm": 373.96002197265625,
+      "newline_final_norm": 374.61175537109375,
+      "original_ids": [
+        23248,
+        1082,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        23248,
+        1082,
+        318,
+        1900,
+        329
+      ]
+    }
+  },
+  "hidden_diagnostics": {
+    "diff_norms": [
+      24.747682571411133,
+      30.598785400390625,
+      34.8794059753418,
+      21.306560516357422,
+      34.092857360839844,
+      19.921215057373047,
+      31.237165451049805,
+      25.821081161499023,
+      21.682025909423828,
+      22.4969425201416,
+      25.683429718017578,
+      20.52288055419922,
+      23.790298461914062,
+      20.38850212097168,
+      22.50343894958496,
+      30.11528968811035,
+      25.08466148376465,
+      24.924476623535156,
+      24.240175247192383,
+      19.067686080932617,
+      23.477346420288086,
+      23.564207077026367,
+      20.890588760375977,
+      28.746482849121094,
+      20.03226661682129,
+      27.483657836914062,
+      32.470951080322266,
+      21.877912521362305,
+      30.183441162109375,
+      19.270206451416016,
+      22.55716896057129,
+      20.79891586303711,
+      22.536605834960938,
+      24.582632064819336,
+      32.95418167114258,
+      32.41223907470703,
+      25.89244270324707,
+      21.78351593017578,
+      18.791345596313477,
+      24.371042251586914,
+      21.328947067260742,
+      20.005399703979492,
+      28.712120056152344,
+      22.2070369720459
+    ]
+  },
+  "elapsed_seconds": 4.126909255981445,
+  "lre_reused": true,
+  "targets_reused": true,
+  "gender_alternatives": true,
+  "diverse_continent_references": false
+}

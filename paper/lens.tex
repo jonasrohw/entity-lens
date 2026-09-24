@@ -27,10 +27,10 @@
 \hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
 $>>>$\hspace{1cm}}}}}
 
-\enoteson
-%\enotesoff
+%\enoteson
+\enotesoff
 
-\def\headlinenumber{0.77}
+\input{generated/full_evaluation/macros}
 
 
 \begin{document}
@@ -48,8 +48,8 @@ affine function of the subject's hidden state -- a \emph{linear relational
 embedding} (LRE). They also showed that this works far better for some
 relations than others. On Olmo-3-7B, we reproduce the same spread: an LRE
 fitted on \textsc{country\_capital\_city} agrees with the model's own
-prediction 75\% of the time while one fitted on \textsc{person\_father}
-agrees 9\% of the time.
+prediction \capitalfaith{} of the time while one fitted on \textsc{person\_father}
+agrees \fatherfaith{} of the time in our full evaluation.
 
 Why? The natural reading is that some relations are ``more linear'' than
 others -- that linearity is a property of the relation. We report evidence
@@ -59,8 +59,8 @@ LRE will be \emph{before fitting it}, and without using the relation at
 all.
 
 Building on recent work by \citet{gurnee2026workspace},
-we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
-is trained on subjects of type $t$ placed in the the neutral prompt
+we introduce the \emph{contrastive entity lens} $\mbox{EL}_t$, which
+is trained on subjects of type $t$ placed in the neutral prompt
 \texttt{"\{\} is known for"} and
 evaluates the Jacobian at entities of type $t$.
 The construction changes what the readout is
@@ -69,13 +69,13 @@ about any concept, but about factual
 knowledge and, more specifically, about factual knowledge
 about an entity of a particular type.
 The question it
-answers -- \emph{what factual knowlege is this model ready to produce about this entity}
+answers -- \emph{what factual knowledge is this model ready to produce about this entity}
  -- is specific to the entity type, but not specific to any relation.
 
 We estimate  the entity lens under the single
 neutral prompt
 \texttt{"\{\} is known for"} 
-(shared by every relation), at one layer fixed in advance,
+(shared by every relation), at one layer fixed across relations,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
@@ -85,9 +85,7 @@ We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
 an individual entity of a specific entity type. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
-(iii)~We show the prediction holds up
-under leave-one-type-out and under controls for object
-cardinality and answer-token frequency.
+(iii)~We evaluate seven models on complete relation datasets, compare readout baselines under the same protocol, and examine controls for object cardinality and answer-token frequency.
 (iv)~Moving
 the unit of
 analysis from the relation to the individual fact,
@@ -156,394 +154,172 @@ the quantity we predict.
 \section{Experimental setup}
 \label{sec:setup}
 
-\paragraph{Model.} Olmo-3-7B, in \texttt{float32} with eager attention,
-as the Jacobian--vector products require both
-(Appendix~\ref{sec:jvp}).
+\paragraph{Models and relations.} We evaluate OLMo 3 7B, GPT-J 6B,
+Pythia 6.9B, Mistral 7B, Gemma 2 9B, Qwen3 8B Base and Qwen3.8 27B,
+using pinned checkpoints in \texttt{float32} with eager attention.
+OLMo is the main worked example. We retain the original 28 named-entity
+relations from the LRE dataset \citep{hernandez2024linearity}, comprising
+9,747 rows, including duplicates. We do not expand to the other 19
+relations or filter rows by correctness or first-token uniqueness.
+The model-specific year exception is documented in
+Appendix~\ref{sec:full-protocol}.
 
-\paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
-contains 47 relations. Our prompt presupposes an entity subject, so we
-fixed a subject-type filter in advance using the dataset's declared
-\texttt{domain\_name} field: the 28 relations with named-entity subjects
-(\textit{person}, \textit{country}, \textit{name}, \textit{company},
-\textit{landmark}, \textit{superhero}, \textit{city}, \textit{pokemon},
-\textit{product}, \textit{star}). Excluded are relations over words as
-words (\textit{verb}, \textit{adjective}, \textit{word}) and over abstracts
-(\textit{occupation}, \textit{task}, \textit{characteristic},
-\textit{degree}), for which \texttt{"\{\} is known for"} is a category
-error. No other relation was excluded.
+\paragraph{Full evaluation.} Each method retains its original reproducible
+selection of eight in-context demonstrations and eight reference rows.
+Every original row is evaluated, including demonstrations and references.
+The two methods use different seeded demonstration/reference selections;
+their evaluation multisets are identical, but their relation-context
+answer tokens can differ. The in-context prompt contains eight
+(subject, object) examples and a query subject without its answer.
+The lens uses this context only to obtain its target token; its hidden
+states and Jacobians always come from the neutral prompt.
 
-%No relation was dropped after seeing a result.
+For LRE, a six-layer by six-scaling grid selects the most faithful
+operator on the full evaluation. The scaling candidates are
+$\{0.5,1,1.5,2,3,5\}$; the model-specific layer grids and fixed lens layers
+are listed in Appendix~\ref{sec:layer17}. The lens omits self-reference
+comparisons for a query subject, but retains the query row in scoring.
+These are explicitly \emph{in-sample} results: both reference/example
+reuse and LRE parameter selection involve evaluated rows. They do not
+estimate generalization to an independent held-out set.
 
-\paragraph{Measurement.} Both quantities are read off the same prompt, so
-that they are comparable. Following
-\citet{hernandez2024linearity}, a relation is presented to the model
-\emph{in context}: eight (subject, object) examples of that relation are
-concatenated, one per line, and the query subject is appended without its
-object, so that the model's next token is its answer. This is what
-defines ``the model's own prediction'' for both measures. The subjects of
-a relation are shuffled once and partitioned into three disjoint sets:
-eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
-are estimated, and the remainder as scored test subjects.
-
-Faithfulness is then recomputed for all 28 relations under this protocol.
-Layer and $\beta$ are chosen on a $6\times6$ grid -- six candidate layers
-for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values of
-$\beta$ ($0.5, 1, 1.5, 2, 3, 5$) -- by the mean over the test subjects.
-\citet{hernandez2024linearity} likewise fit both per relation; the six
-layers span the network at roughly even spacing and the $\beta$ range
-brackets the values they report.
-
-The lens scores 11--20 subjects per relation, depending on how many remain
-once the in-context and reference sets are removed. For the
-results in \S\ref{sec:results}, the lens and the LRE sample their splits
-independently, so the particular subjects entering each set differ between
-the two measurements. Independent splits introduce sampling variation into
-this comparison. Because the LRE hyperparameters are selected on the scored
-subjects, its reported faithfulness is an in-sample estimate; these results
-do not establish performance on a separate held-out evaluation set.
-
-Crucially, the in-context prompt is used only to obtain the \emph{target};
-the lens itself is always computed under the neutral prompt of
-\S\ref{sec:lens}.
+\paragraph{Scoring corrections.} Gender answers use the established
+same-gender alternative wording sets for lens ranks. LRE faithfulness
+remains exact agreement with the model's top-1 token. Continent references
+use the original seeded selection, without rebalancing. For GPT-J,
+Pythia and the two Qwen models, the neutral prompt starts with a newline:
+\texttt{\textbackslash n\{\} is known for}. This avoids the large
+subject-state norms observed at the first token. The model names are
+marked in Table~\ref{tab:full-models}; Appendix~\ref{sec:full-protocol}
+records all corrections and their scope.
 
 \section{Results}
 \label{sec:results}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\linewidth]{fig_iclr_agreement.pdf}
-\caption{LRE faithfulness against the relation-agnostic lens score, 28
-relations. The lens sees no relation template, no objects, and no
-(subject, object) pairs, and uses one fixed layer throughout.
-Triangles mark the two relations with numeric objects, rescored as
-described in Appendix~\ref{sec:numeric-objects}.}
+\includegraphics[width=\linewidth]{fig_full_evaluation.pdf}
+\caption{OLMo contrastive entity lens score against full-evaluation LRE
+faithfulness for all 28 relations and 9,747 rows. Every original row is
+included, with gender alternatives enabled and original continent
+references. Triangles mark the two year relations, retained after
+checking their token boundaries. Labels identify the residual extremes
+and relations discussed in the text.}
 \label{fig:main}
 \end{figure}
 
-\enote{hs}{fig:main: ideally, all relation points that are
-  part of the discussion (e.g., second half of section6)
-  should be labeled, the same way that country capital and
-  personmother/father are}
+Figure~\ref{fig:main} gives Spearman $\rho=\headlinenumber$
+($p=\headlinep$) for OLMo. Table~\ref{tab:full-models} reports the same
+contrastive/differential readout for every model. The correlation is
+positive across the models but varies in magnitude. This is evidence
+that the relation-agnostic readout carries information about LRE
+faithfulness; it does not show that all models use an identical mechanism.
 
-\enote{hs}{is the labeling of person mother/father correct?
-  i think not: we need two labels pointing to two different points}
+\input{generated/full_evaluation/models}
 
-Figure~\ref{fig:main} shows the result. The relation-agnostic score
-predicts LRE faithfulness at Spearman $\rho =
-\headlinenumber $
-($p = 1.6\!\times\!10^{-6}$).
+\paragraph{Controls.}
+\input{generated/full_evaluation/controls}
+For partial correlations, we rank-transform both scores and each
+covariate, regress each score on the covariates with an intercept, and
+correlate the residuals. All controls use the complete 28-relation OLMo
+evaluation; no small-test-size cohort is selected.
 
-% RESTORE IF THERE'S TIME
-%; a permutation test agrees
-%(Appendix~\ref{sec:permutation}).
-
-\paragraph{The correlation is not carried by cardinality.} Relations
-differ greatly in how many distinct objects they have; $k$, the mean number
-of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
-faithfulness easier, and $k$ is indeed associated with faithfulness on
-its own, though only weakly
-($\rho = 0.36$, $p = 0.06$). But $k$ is essentially uncorrelated with the
-lens score ($\rho = -0.03$). Removing $k$  \emph{raises} the
-correlation to $\rho = 0.840$ ($p = 2\!\times\!10^{-8}$): $k$ and the lens are
-independent predictors of faithfulness, so removing the variance
-attributable to $k$ sharpens rather than weakens the lens
-signal.\footnote{All variables here are ordinal, so we work throughout with
-ranks. To remove the effects of a set of covariates, we
-rank-transform the lens score, faithfulness, and each
-covariate; regress the ranked lens score and ranked
-faithfulness separately on the ranked covariates using
-ordinary least squares with an intercept; and report the
-Pearson correlation between the resulting residual vectors.
-This is the standard partial
-Spearman correlation, and it asks how much of the lens--faithfulness
-association remains once everything the covariates can linearly explain
-about either variable has been removed.}
-
-\paragraph{Nor by answer frequency.} A relation whose answers are frequent
-tokens might be easy for both measures. We estimate the model's prior over
-each answer token by averaging its log-probability across ten neutral
-contexts. This predicts neither faithfulness ($\rho = -0.02$) nor the lens
-score ($\rho = -0.01$), and removing it leaves the correlation
-unchanged at $\headlinenumber $. The correlation is $0.841$ with both cardinality
-and answer frequency removed.
-
-\paragraph{Nor by one domain.} Eleven of the 28 relations have
-\textit{person} subjects, raising the worry that one domain
-(i.e., one subject type)
-drives the
-result. Holding out each subject domain in turn leaves
-$\rho \in [0.570, 0.700]$, median $0.656$.
-
-\input{table_prominence}
-
+\paragraph{Readout and frequency baselines.} Appendix~\ref{sec:shared-baselines}
+compares the contrastive lens with the noncontrastive Jacobian lens,
+logit lens, differential logit lens and a Wikipedia attribute measure.
+Each comparison uses the same model-specific full evaluation and
+corrections. The contrastive lens does not uniformly outperform these
+baselines: the noncontrastive lens is stronger for several models, and
+ordinary logit lens has the largest point correlation among the
+vocabulary-rank readouts for GPT-J and Qwen3 8B Base. These comparisons
+do not establish statistically significant differences between readouts.
+OLMo corpus-frequency features are reaggregated over all
+original rows before correlation with the current faithfulness values.
 
 \section{Analysis of the entity lens}
-\subsection{Salience}
+\subsection{Neutral prompts and reference composition}
 \label{sec:salience}
-Our interpretation of Eq.~\ref{eq:lens} has so far been assumed rather
-than tested. Readouts of this kind are normally taken to surface what a
-model is internally disposed to say \citep{gurnee2026workspace}, and we
-have read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
-available, before any relation has been named. The account of
-Figure~\ref{fig:main} rests on that reading. If it is right, a relation
-should be linearly decodable to the extent that its answer is already
-part of what the subject evokes -- to the extent, that is, that the
-object is \emph{salient} for the subject.
-This section performs a sanity check
-(a check that is external to the lens)
-on that assumption by
-measuring salience by the
-model's own free generation.
-
-For each test subject we greedily generate 90 tokens
-from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
-facts about \{\}. First,"}, and record whether any distinctive word of the
-gold object appears in either continuation.\footnote{Titles, particles and
-words shared with the subject's own name are excluded, so that
-\emph{The}~Joker is not matched by any occurrence of ``the'' and
-\emph{Johann Georg Kant} is not matched by a passage about Immanuel Kant.
-The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
-makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
-object is never named.} This is a forward pass under different prompts,
-and involves no Jacobian.
-
-We refer to this rate as the object's \emph{prominence}. Across the 14 relations
-for which it can be measured it ranges from $1.00$
-(\textsc{city\_in\_country}) and $0.50$ (\textsc{country\_capital\_city})
-down to $0.13$ (\textsc{person\_father}), $0.05$
-(\textsc{superhero\_archnemesis}) and $0.03$
-(\textsc{person\_mother}). It predicts how often the lens surfaces the
-gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
-$n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
-The check passes: what the lens surfaces is predicted by a measurement of
-salience that never consults the lens.
+The neutral prompt asks what an entity is known for. Its readout may
+therefore emphasize identity, profession or cultural associations while
+ranking gender, family members or university names poorly. We interpret
+this as a possible limitation of the probe, not proof that those facts
+are absent from the representation. The present results do not establish
+that salience is the causal mechanism behind LRE faithfulness.
 
 \input{referencesets}
 
-\section{Object cardinality}
+\section{Relation-level outliers}
 \label{sec:residuals}
-The correlation in Figure~\ref{fig:main} is highly
-significant, but many relations deviate from the trend.
-We investigate the tails of this distribution, the relations
-with the largest positive and negative deviations, and find
-that extreme object cardinality $k$ can partially explain these tails.
-Concretely, we order the relations by their residual from the least-squares
-fit in Figure~\ref{fig:main}; this residual
-is in units of faithfulness, so $+0.30$ means thirty points more faithful
-than the lens score predicts.
-
-The largest positive residuals -- faithful despite a low
-lens score --  with their cardinality are
-\textsc{landmark\_on\_continent} ($+0.30$, $k = 189$),
-\textsc{name\_gender} ($+0.29$, $k = 9.5$) and
-\textsc{person\_native\_language} ($+0.26$, $k = 30.6$). In each, the LRE
-chooses among a handful of possible answers, and can be faithful without
-the answer being salient for any particular subject: no name is
-chiefly ``known for'' its gender, but there are only two answers to pick
-between.
-
-The largest negative residuals -- unfaithful despite the
-lens -- are \textsc{person\_father} ($-0.43$),
-\textsc{person\_mother} ($-0.41$) and \textsc{company\_ceo}
-($-0.32$), all with $k \approx 1$ and answer spaces in the
-hundreds. For these relations, faithfulness is near its
-floor due to the difficulty of the task and the details of
-the representation apparently do not change that.
-
-Our account thus holds in the middle of the cardinality range and
-degrades at both ends, in opposite directions. Cardinality is the
-same variable whose removal raises the correlation to
-$0.744$ (\S\ref{sec:results}). Our analysis in this section
-gives that number an interpretation: $k$ is a
-source of deviation in the salience account rather than
-merely a nuisance correlate.
+We fit a least-squares line to the OLMo points in Figure~\ref{fig:main}
+and inspect residuals in units of faithfulness.
+\input{generated/full_evaluation/residuals}
+These examples show why cardinality and lens agreement need not have the
+same association with faithfulness. Repeated answer tokens can make an
+operator faithful without fine-grained subject discrimination, whereas a
+large answer space makes exact top-1 agreement difficult. The residuals
+are descriptive; the full-data controls in Section~\ref{sec:results}
+do not establish a causal explanation for either tail.
 
 \section{Fact-level analysis}
 \label{sec:subject}
-Linearity emerges as a phenomenon at the relation level, not
-the fact level -- it would not make sense to investigate
-linearity for the facts of a relation that is not
-represented linearly. But
-once there is evidence for at least partial linearity of a
-relation, we can ask for individual facts how well
-the entity lens predicts the degree to which
-they are
-integrated into the linear structure.
+\input{generated/full_evaluation/fact_summary}
+Appendix~\ref{sec:full-facts} lists every relation, including undefined
+correlations caused by constant ranks.
 
-%panels_subject_scatter_mainprotocol.pdf
-
-To analyze relations at the fact level, we compute 
-$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
-rank for each relation.
-The values of $\rho$ are in the range [-0.57,0.87] with a
-median of
-0.295. 
-We found that
-several shortcomings of the experimental setup currently
-used for investigating relations in LMs
-that result in these low values.
-We now analyze these shortcomings and give
-guidance for future relation datasets that may better support
-research on how LMs represent facts.
-
-
-
-\subsection{Reference competition}
+\subsection{Context and entity ambiguity}
 \label{sec:competition}
-The three relations 
-\textsc{person\_university} ($\rho$=-0.57),
-\textsc{person\_occupation} ($\rho$=-0.55) and
-\textsc{person\_plays\_instrument} ($\rho$=-0.16) have the
-lowest correlations.
-They
-exemplify the problem of 
-\emph{reference competition}. An example is Rolf Thommessen
-who is listed as an actor
-in LRE. The highest ranked token given by the lens is
-``whistlebl''. This indicates that the most prominent entity
-associated with the last name Thommessen
-by Olmo-3-7B
-is Advokatfirmaet
-Thommessen, a law firm known for their digital whistleblowing
-tool. One might hope that the first name ``Rolf''
-disambiguates which subject is intended, but apparently this
-is not the case. In general, the last few tokens seem to
-dominate which entity is represented and used by the LM. For the actor Barry Sobel, the lens top-ranks
-``kosher'', ``Jewish'', ``Rabbi'', correct associations for
-the Brazilian Rabbi Henry Sobel. For the actress Vondell
-Darr, the lens top-ranks ``criminal'', ``murders'',
-``felon'', plausible associations for the wrongfully convicted
-Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
-top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
-simply uses the string ``Johann'' as the representation.
-While we did not conduct an extensive analysis, it is likely
-that reference competition is a problem for many relations whose
-subjects are persons. Many of those persons share the
-properties that result in Barry Sobel, Vondell Darr
-and Simon Gosejohann being misrepresented by the model.
-
-
-
-The relation \textsc{star\_constellation} also suffers from
-reference competition due to the complex names of
-many stars. For example, the most prominent associations of
-the stars
-``rho01 Cnc'' and
-``Alnair'' (tokenized Al-n-air)
-are ``machining'', ``drilled'', ``CNC''
-(Computerized Numerical Control) and ``flying'', ``flown'',
-``Flight'', respectively.
-
+A subject string can evoke more than one entity, and the neutral prompt
+can emphasize associations other than the requested relation. Different
+in-context examples can also change the model's answer. Both issues
+complicate an interpretation of rank disagreement as evidence that a
+fact is missing from a linear representation. A future matched-context
+experiment should separate these effects while retaining the complete
+evaluation; the current protocol preserves the original contexts.
 
 \subsection{Semantically weak first tokens}
-\textsc{person\_university} further
-exemplifies the problem of 
-\emph{semantically weak first tokens}. Many universities
-have names that start with ``University''.
-So the LM learns
-to predict this common prefix as the target token for many
-persons.
-The standard setup is to count such a prediction as
-correct. But this is not an effective evaluation:
-The correct generation of ``University'' is not
-a reliable indicator of the factual competence of the LM.
-
-Measuring the collapse rate -- the fraction of a relation's distinct
-objects that share a first token with another -- \textbf{6 of 40
-relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
-\textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
-29 of 69 objects begin with \textsc{University}).
-
-Restricting each relation to objects whose first token identifies them
-repairs this on the gold side.
-It is only a partial remedy: faithfulness (which
-compares the LRE against the \emph{model's} top-1, not
-gold) is
-inflated by 
-counting the model's own answer as ``faithful''. In
-\textsc{person\_university}, after filtering, the model still answers
-\textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
-A complete fix would condition on the prediction being distinctive.
-
-The direction of the bias differs by relation. Where the collapse is on
-the gold side it makes faithfulness easier -- 41 distinct fathers all
-counting as \textsc{John} -- so our \textsc{person\_father} figure is an
-upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
-Where the model itself emits the shared token, the collapse manufactures
-agreement that is not an accurate response at all.
-
-
-
-Both LRE and the lens work on the token level, the residual
-stream vector at the last layer, which is focused on
-producing the correct next token and may not represent
-reliable information about the tokens to follow. This
-single-token regime is highly problematic for the standard
-setup because we are effectively investigating a relation in
-which all objects have been shortened to their first
-token. This might be a nonsensical relation even to humans
-and it is clearly different from the intended relations
-whose objects are full entity names.
+The first token of a multi-token answer can be shared by many distinct
+objects. University names provide a concrete full-evaluation example:
+the selected GPT-J LRE predicts ``University'' for every one of the 91
+rows and obtains 79.1\% faithfulness; Pythia does the same and obtains
+85.7\%. These scores exactly match their constant majority-token
+baselines. Thus high faithfulness can reflect agreement on a generic
+prefix rather than recovery of a university's identity.
+This issue persists after the newline correction. We retain these rows
+and report the limitation instead of filtering away inconvenient
+objects or model predictions.
 
 \input{towardsmechanism}
 
 \section{Limitations}
 \label{sec:limitations}
+The benchmark covers seven models and 28 original relations, with two
+model-specific year exclusions in four models. It remains a small
+relation-level sample, and related datasets can share subjects and
+objects. Correlations and unadjusted $p$-values are descriptive evidence
+rather than an identification of causal mechanisms.
 
-The study covers one model and 28 relations. The relationship is
-correlational: we show that a relation-agnostic readout predicts LRE
-faithfulness, not that the representation it reads is what the LRE
-exploits.
+The evaluation includes demonstration and reference rows and selects
+LRE layer/scaling on the scored data. This improves coverage of small
+relations but creates in-sample dependence; the reported correlations
+must not be read as independent held-out performance. Gender has only
+19 rows, including a duplicate, even under complete evaluation.
 
-
-The account has a scope condition we can state but not yet explain
-(\S\ref{sec:residuals}). It is weakest where the answer space is very
-small, since an LRE can then be faithful by elimination rather than by
-reading anything from the subject, and where the answer space is very
-large and each answer near-unique, since faithfulness is then close to its
-floor regardless. We show that these are the two tails of a single
-variable, but we do not have a principled account of where the boundaries
-lie, and with 28 relations we cannot fit one.
-
-We also probe salience through a single neutral prompt,
-\texttt{"\{\} is known for"}. That phrasing asks what an entity is
-\emph{noted} for, which need not coincide with everything its
-representation carries; attributes such as gender may be well encoded
-without being something a name is ``known for''. A different neutral
-prompt, or an average over several, might track salience more broadly.
-
-Seven of the 28 relations have fewer than ten test items after the
-in-context and reference subjects are removed, so their faithfulness
-estimates are coarse (for three of them, quantized to thirds); a
-rotating-split protocol would sharpen these.
-
-Finally, the diagnostic is
-defined only for relations whose subjects are entities, which excludes 19
-of the dataset's 47 relations.
+The neutral prompt, reference composition and fixed lens layer all
+influence the readout. Newline corrections were motivated by activation
+norm diagnostics and evaluated on these same relations. We do not claim
+an independent validation of their effect or robustness across arbitrary
+neutral prompts. First-token scoring can still reward generic prefixes,
+and different demonstration contexts can change the two methods' target
+tokens. Complete-answer and matched-context evaluation remain open work.
 
 \section{Conclusion}
-
-Whether a relation is linearly decodable from a language model is
-substantially predictable without the relation. A Jacobian lens estimated
-from subject differences under a neutral prompt, at a fixed layer, ranks
-the model's own answer highly for exactly those relations whose LREs turn
-out to be faithful.
-
-The reading we favor is that salience is the mechanism rather than a
-confound: a relation admits a faithful linear operator to the extent that
-its answer is already part of what the subject's representation makes the
-model disposed to say. On that view the wide spread of LRE faithfulness
-across relations is less a fact about the relations than about the
-entities they are asked about -- and the exceptions are informative,
-falling at the two ends of the answer-space range where faithfulness can
-be achieved, or prevented, without the subject's representation mattering
-much either way.
-
-\enote{hs}{do we explain how the subset of facts was
-  selected that the experiments are done for? for example, i
-  think we're only using 100 from person-occupration? if
-  not: add an appendix section on this and refer to it in
-  the text}
+A contrastive Jacobian readout computed under a neutral prompt predicts
+variation in LRE faithfulness across complete relation evaluations.
+The association holds across seven models, with the largest first-token
+norm artifacts reduced by a leading newline where needed. Its magnitude
+and its outliers depend on the model and scoring protocol. Full-row
+coverage, explicit tokenization corrections and aligned baseline
+protocols are necessary for interpreting this evidence.
 
 \label{sec:main-end}
 \clearpage
@@ -570,7 +346,7 @@ We provide sufficient details to reproduce all experiments in the main text and 
 \label{sec:jvp}
 
 Neither the operator nor the lens ever needs $J_i$ itself, only products
-$J_i u$: for the lens this is explicit in Eq.~\ref{eq:lens}, and for the
+$J_i u$: for the lens this is explicit in Eq.~\ref{eq:cel}, and for the
 LRE it is what the expansion in Eq.~\ref{eq:beta} buys, since it turns
 $W = \operatorname{mean}_i J_i$ into a sum of such products. We obtain
 each one by the standard
@@ -585,253 +361,20 @@ not twice differentiable.
 
 \section{Layer selection}
 \label{sec:layer17}
-Layer 17 is roughly half-way through the network,
-the region in which such lenses are usable at all
-\citep{gurnee2026workspace}, and is the modal best layer for the LRE
-itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
-20 and 23). A single layer is used for \emph{every}
-relation, without per-relation tuning. However, this does not establish robustness to
-the layer choice: changing the layer can affect relations differently.
-A systematic sensitivity analysis is left to future work.
+The lens uses one fixed intermediate layer per model, with no
+per-relation layer tuning. The LRE sweeps the candidate layers shown in
+Table~\ref{tab:full-parameters}. This does not establish robustness to
+layer choice; a systematic layer-sensitivity study is left to future work.
+\input{generated/full_evaluation/parameters}
 
-% RESTORE IF THERE IS TIME
+\section{All OLMo relations}
+\input{generated/full_evaluation/relations_olmo}
 
-%\section{Permutation test for the main correlation}
-%\label{sec:permutation}
-%
-%The correlation in \S\ref{sec:results} rests on 28 points, and its
-%parametric $p$-value assumes more than we would like. We therefore also
-%test it by permutation: we shuffle the lens scores against the
-%faithfulness values $10^4$ times, recompute $\rho$ each time, and count
-%how often the shuffled $|\rho|$ matches or exceeds the observed one. It
-%does so in $0.03\%$ of shuffles, so the association is not an artifact of
-%the small sample.
-
-\section{Numeric-object tokenization correction}
-\label{sec:numeric-objects}
-
-Both relations with numeric objects
-(\textsc{presidents\_birth\_year}, \textsc{presidents\_election\_year})
-initially scored faithfulness $1.000$. This was spurious. In this
-tokenizer \texttt{" 1743"} segments as \texttt{[\,' ', '174', '3'\,]}:
-digits never merge with a preceding space. First-token scoring therefore
-compared the model's top-1 against a bare space token on both sides, and
-faithfulness $1.000$ meant only that the LRE and the model both emit a
-space.
-
-The fix is to place the space in the prompt, so that the query ends with
-it and the next token is content. Rescored, the two relations give
-faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
-predict the year correctly once the space is consumed. Including the
-uncorrected values would have depressed the reported correlation from
-$0.658$ to $0.427$.
-
-\section{Recombining anchors and subject terms}
-\label{sec:swapdetail}
-
-This appendix describes the experiments of \S\ref{sec:swap} in full.
-
-\paragraph{The decomposition.} We write the LRE in the form of
-Eq.~\ref{eq:wb}, $\beta W s + b_\beta$, and call $b_\beta$ the
-\emph{anchor} and $\beta W s = \beta \operatorname{mean}_i J_i s$ the
-\emph{subject term}. The anchor is fixed by the reference subjects
-alone; the subject term is NEL (Eq.~\ref{eq:nel}) with the Jacobians
-taken under the relation's prompt. Their sum is the operator exactly, so
-the \emph{own} arm is the unmodified LRE. The \emph{foreign} arm replaces
-$\beta W_r s$ by $\beta W_{r'} s$, the paired relation's subject term,
-and keeps $b_\beta^r$. Because the constant
-$\operatorname{mean}_i J_i s_i$ stays inside the anchor $b_\beta$, a
-foreign subject term imports the other relation's $W$ and nothing else.
-The \emph{NEL} arm replaces the subject term by $\beta\,\mbox{NEL}(e)$
-under the neutral prompt; \emph{anchor alone} is $b_\beta$; the
-\emph{wrong donor} is $b_\beta + \beta\,\mbox{NEL}(e')$ for a different
-subject $e'$.
-
-\paragraph{Choice of relation pairs.} A term can be swapped with nothing
-else changing only if the two relations share their subjects, and a
-substitute can only be measured against an operator that produces the
-answer in the first place. In the benchmark two pairs meet both
-conditions: \textsc{country\_capital\_city} with
-\textsc{country\_largest\_city}, and
-\textsc{person\_plays\_position\_in\_sport} with
-\textsc{person\_plays\_pro\_sport}, over the 24 athletes the two share.
-Two further pairs fail the second condition.
-\textsc{country\_currency} shares its countries with the other country
-relations, but its own operator recovers the currency for only 6 of 12
-countries at $\beta = 3$, 2 at $\beta = 5$ and none at $\beta = 10$;
-where an operator is this weak there is nothing for a substitute to
-reproduce. \textsc{person\_father} and \textsc{person\_mother} would be
-the strongest test --- 748 shared subjects, and answers of the same kind,
-so the two relations cannot be told apart by the kind of answer --- but
-their faithfulness is $0.06$ and $0.12$, and the operators essentially
-never produce the gold object.
-
-\paragraph{Country subjects.} A country tests the swap only if its
-capital differs from its largest city; otherwise one answer satisfies
-both relations and a hit cannot say which relation won. The benchmark
-has 9 such countries among the 18 that the two relations share. We
-extended the set from the list of sovereign states whose capital is not
-their largest city.\footnote{\url{https://en.wikipedia.org/wiki/List_of_countries_whose_capital_is_not_their_largest_city},
-retrieved 2026-09-24.} Of its 37 states we excluded seven whose capital
-or largest city the list marks as contested: Israel and Palestine
-(limited recognition), Taiwan (sovereignty), Nauru (de facto capital
-only), Bolivia (La Paz is the seat of government), South Africa (three
-capitals) and Equatorial Guinea (capital in transition). Of the 31
-remaining we kept those the model answers correctly for \emph{both}
-relations under the prompts used here, scoring the model's greedy
-continuation rather than its first token, with diacritics folded. All 9
-benchmark countries and 13 of the 22 added ones pass, giving 22:
-Australia, Belize, Benin, Brazil, Cameroon, Canada, China, India, Ivory
-Coast, Kazakhstan, Morocco, Myanmar, New Zealand, Nigeria, Pakistan,
-Palau, Switzerland, Tanzania, Turkey, the United Arab Emirates, the
-United States and Vietnam. Every rejected country is one for which the
-model gives the \emph{same} city for both questions --- the capital for
-the largest city (Ecuador, Gambia, Liechtenstein, Malta, Micronesia, the
-Philippines, San Marino, Trinidad and Tobago), or the largest city for
-the capital (Burundi) --- so the filter removes exactly the countries on
-which the model does not distinguish the two relations.
-
-\paragraph{Protocol.} All states are read at layer 17. Each relation's
-prompt is its first template with eight in-context demonstrations drawn
-from its own samples outside the candidate set, so no test subject
-appears in any prompt. Each test subject is read with the remaining test
-subjects as references, for the operators and for NEL alike. We fix
-$\beta = 3$. It was chosen by inspecting an earlier version of this
-analysis on the same 24 athletes and on 12 countries, 7 of which are
-among the 22, so it is not independent of the evaluation; it is not
-re-tuned here. At this value the subject term is
-smaller than the anchor, $\beta\lVert W s\rVert / \lVert b_\beta\rVert
-\approx 0.8$ for the country relations and $0.4$--$0.6$ for the person
-relations. A hit is a decoded top-1 equal to the first token of the gold
-object; since the model answers every test country correctly, gold and
-model answer coincide for the country pair.
-
-\enote{claude}{Sensitivity to $\beta$ has not yet been re-run for this
-form of the decomposition.}
-
-\paragraph{Full results.} Table~\ref{tab:swapfull} adds one arm to
-Table~\ref{tab:swap}: a subject term estimated under the prompt
-\texttt{"The official currency of \{\} is the"}, which shares nothing
-with either country relation. Conditional on the operator being right,
-the foreign subject term preserves the answer for 11 of 12 capitals and
-8 of 12 largest cities, NEL for 7 of 12 and 4 of 12, and the currency
-subject term for 6 of 12 and 5 of 12.
-
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{lrrrrrrr}
-\toprule
-relation & $n$ & own & foreign & NEL & currency & anchor alone & wrong donor \\
-\midrule
-\textsc{country\_capital\_city} & 22 & 12 & 12 & 7 & 6 & 0 & 0 \\
-\textsc{country\_largest\_city} & 22 & 12 & 8 & 4 & 5 & 0 & 0 \\
-\textsc{person\_plays\_position} & 24 & 19 & 21 & 18 & -- & 7 & 6 \\
-\textsc{person\_plays\_pro\_sport} & 24 & 22 & 21 & 21 & -- & 6 & 3 \\
-\bottomrule
-\end{tabular}
-\caption{All arms, $\beta = 3$, each subject read with the others as
-references. \emph{Currency}: a subject term estimated under the
-official-currency prompt, which shares nothing with either country
-relation.}
-\label{tab:swapfull}
-\end{table}
-
-\paragraph{Where the operator fails.} Although the model answers all 22
-countries correctly, the operator reproduces only 12 per relation. It
-does much better on the benchmark's nine (7 capitals, 8 largest cities)
-than on the 13 added countries (5 and 5), which are rarer in text. On
-those it fails in recognizable ways: it echoes the country's own name
-(Kazakhstan, Tanzania, Vietnam), names a famous associated city (Paris
-for Ivory Coast and Morocco, Geneva for Switzerland), or produces a
-degenerate token. This is consistent with linear structure weakening for
-entities that are rarer in pretraining \citep{merullo2025linear}.
-
-\paragraph{Dependence on the reference sets.} In the leave-one-out
-design above the references are the other test subjects, so they barely
-vary. To measure how much the results depend on them we held every
-subject term fixed and drew the \emph{anchor's} eight references at
-random, 500 times, from subjects outside the test set and outside every
-demonstration: 16 countries, and a fixed random 150 of the 1{,}206
-eligible athletes in the two sport relations. Table~\ref{tab:swapanchor} gives
-the result. The operator and the foreign subject term barely move; NEL
-is the arm that depends on the anchor, most for position, whose worst
-anchor brings it down to the anchor-alone level.
-
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{lrrrr}
-\toprule
-arm & capital (22) & largest (22) & position (24) & sport (24) \\
-\midrule
-own & 10.7 (10--14) & 11.4 (10--12) & 18.3 (17--20) & 22.0 (21--23) \\
-foreign & 9.7 (9--11) & 9.3 (8--10) & 17.3 (15--21) & 20.4 (16--23) \\
-NEL & 5.2 (1--8) & 4.7 (4--5) & 14.7 (7--20) & 21.5 (16--24) \\
-anchor alone & 0.0 (0--1) & 0.0 (0--0) & 7.0 (7--7) & 4.5 (1--7) \\
-\bottomrule
-\end{tabular}
-\caption{Mean (range) hits over 500 anchors, each estimated from eight
-references drawn from outside the test set; subject terms fixed.}
-\label{tab:swapanchor}
-\end{table}
-
-Part of the spread for position is composition. The athlete pool has
-fewer baseball players and more hockey players than the test set, and an
-anchor with more soccer players gives fewer position hits (Spearman
-$\rho = -0.31$ across anchors), plausibly because the anchor's typical
-position leans toward soccer's.
-
-For the country pair we also varied the two reference sets jointly: 40
-anchors crossed with 40 sets of references for NEL, drawn from the 30
-countries outside the test set. Of the variance in NEL's hits, the
-anchor's references account for $36\%$ (capital) and $26\%$ (largest
-city), NEL's references for $38\%$ and $42\%$, and their interaction for
-the rest. Neither source dominates.
-
-\paragraph{Scoring.} Hits compare the first token of the decoded output
-with the first token of the gold object. Three cases in the country pair
-are affected: the model writes S\~{a}o Paulo as ``Sao'', a different
-first token, and the gold ``New Delhi'' begins with ``New'', so the
-answer ``Delhi'' scores as a miss; conversely the first token of
-Ngerulmud, Palau's capital, is the single letter ``N'', so a bare ``N''
-scores as a hit. In the own column these roughly cancel. Scoring the full
-continuation would remove all three.
-
-\section{All relations}
-
-Table~\ref{tab:relations} gives faithfulness and the lens score for every
-relation in the study. Table~\ref{tab:prominence} gives object prominence
-and the lens's top-five hit rate for the 14 relations on which prominence
-can be measured (Section~\ref{sec:residuals}).
-
-\input{table_relations}
-
-
-\section{The anchored contrastive Jacobian lens}
-Here we report on an experiment with an ``anchored''
-contrastive Jacobian lens -- in contrast to the non-anchored
-Jacobian lens defined in Eq.~\ref{eq:cjl}.
-Keeping the anchor means
-that we have choose how to weight anchor and subject term --
-which is what $\beta$ does in Eq.~\ref{eq:beta}.
-
-In sample
-such a $\beta$ slightly outperforms dropping the anchor, but the curve is
-flat across a wide range of $\beta$ and the advantage does not survive
-selection: choosing $\beta$ on 15 relations and evaluating on the
-remaining 10, across 2{,}000 random splits, beats the anchor-free readout
-in only $30\%$ of them. We therefore drop the anchor, which leaves a
-readout with no hyperparameter at all -- the decoder normalizes, so once
-the anchor is gone, scaling cannot change a ranking and $\beta$ has
-nothing left to do. This gives the
-\emph{contrastive Jacobian lens} that we defined  in Eq.~\ref{eq:cjl}.
-
-In summary, a single
-$\beta$ shared by every relation would be a legitimate option, adding
-nothing relation-specific, but it turns out to have no
-advantage compared to the simpler form we adopted.
-
-
+\section{Full-row fact correlations}
+\label{sec:full-facts}
+The ranks are paired by subject, object and duplicate occurrence. Each
+rank is relative to that method's own relation-context target; the last
+column reports how often those targets differ.
+\input{generated/full_evaluation/fact_table}
 
 \end{document}

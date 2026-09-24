@@ -1,0 +1,42 @@
+{
+  "model": "EleutherAI/gpt-j-6b",
+  "revision": "47e169305d2e8376be1d31e765533382721b2cc1",
+  "worker": "gptj_gpu1_b32",
+  "batch_size": 32,
+  "pid": 892464,
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 1.9788742065429688e-05,
+    "finite_difference_relative_error": 6.0514237702591345e-05
+  },
+  "prefix_cache_check": [
+    {
+      "length": 4,
+      "prefix_length": 0,
+      "layer": 15,
+      "state_relative_error": 0.0,
+      "jvp_relative_error": 3.5663512676364917e-07,
+      "full_seconds": 0.1379714012145996,
+      "cached_seconds": 0.14014577865600586
+    },
+    {
+      "length": 69,
+      "prefix_length": 67,
+      "layer": 10,
+      "state_relative_error": 1.3693544360648957e-06,
+      "jvp_relative_error": 3.552021098585101e-06,
+      "full_seconds": 1.2052419185638428,
+      "cached_seconds": 0.2554328441619873
+    }
+  ],
+  "source_sha256": {
+    "scripts/investigate_gptj_pythia.py": "ec85ca061bc17351a6d0891d4ac859ba9a14043721e726e47a59c8258d6dd7b3",
+    "jlens/model_sweep.py": "a8e26c23b04bee6bd0bde5e6f7117ccaafa772c761109a6905f2cc0a1e847eb9",
+    "scripts/run_targeted_corrections.py": "7ccb74cd8ba08a4cab5faa5cbf0b7aef9da73bd2ae69c9755039ab8ce462cc68",
+    "jlens/model.py": "4a9b03931c6c50901b8fd28dfcee8db66d1317020500e17c2aded49be74158e6",
+    "jlens/prefix_intervention.py": "be9de46a2dc730f29a787a01611de923158bfcb4331349c1cb09d3dcd4d017df"
+  },
+  "manifest_sha256": "5327f8e2589c170639ed8262bd537c232b0ee3c75efad50bdd97e0d6955fc4f3",
+  "dtype": "float32",
+  "attention": "eager"
+}

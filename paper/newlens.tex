@@ -18,12 +18,10 @@ Eq.~\ref{eq:beta}, restated as:
 \operatorname{mean}_i\!\left[\,f(s_i)\right]
 + \beta\operatorname{mean}_i\!\left[\, J_i (s - s_i)\,\right]
 \end{equation}
-Following \citet{gurnee2026workspace}, we also drop the anchor
-term $\operatorname{mean}_i\!\left[\,f(s_i)\right]$; see discussion in 
-\S\ref{sec:swap}.
-This also means that we do not need $\beta$ since the
-scaling does not change the output distribution over
-tokens. The final form of the contrastive entity lens is then:
+Following \citet{gurnee2026workspace}, we drop the anchor
+term $\operatorname{mean}_i\!\left[\,f(s_i)\right]$.
+We fix unit scaling for this readout and decode it with the model's
+final normalization and output head, each applied once. The final form of the contrastive entity lens is then:
 \begin{equation}
 \mbox{CEL}(e) = \operatorname{mean}_i\!\left[\, J_i (s_e - s_i)\,\right]
 \label{eq:cel}
@@ -40,14 +38,16 @@ contrastive associations for ``Russia'' are ``vodka'' and ``Kremlin''.
 Our hypothesis was that such top-ranked contrastive associations
 give rise to linearity.
 
-In initial experiments, we found that the contrastive entity
-lens is quite sensitive to the reference set. For example,
+The subtraction makes the contrastive entity lens dependent on
+the reference set. For example,
 if $s_e$ is a French person and a Spanish person is the
 reference entity $s_i$, then the vector difference in 
-Eq.~\ref{eq:cel} will enhance ``French''. But if $s_i$ is
-another French person, then ``French'' will be demoted --
-which is bad for answering questions about $s_e$'s
-nationality and native language. We therefore also consider
+Eq.~\ref{eq:cel} can emphasize a direction associated with ``French''.
+If $s_i$ is another French person, subtraction can instead suppress
+that shared direction, potentially affecting nationality and native-language
+readouts. This is a motivation for testing reference sensitivity,
+not a measured effect established by the present correlations.
+We therefore also consider
 the following noncontrastive entity lens, which drops the
 reference set differences:
 \begin{equation}
@@ -56,8 +56,9 @@ reference set differences:
 \end{equation}
 In what follows,
 EL refers to both NEL and CEL and
-``entity lens'' refers to NEL unless
-further specified.
+``entity lens'' refers to CEL unless
+further specified. The headline and cross-model results concern CEL;
+NEL is a separately measured baseline.
 
 To instantiate the entity lens (for both NEL and CEL) for factual
 relations, we need (i) a prompt that evokes factual associations
@@ -68,7 +69,8 @@ vector differences $s_e - s_i$ (for CEL).
 As the prompt we adopt 
 \texttt{"\{\} is known for"}. This a neutral prompt, i.e.,
 it is not customized for any specific factual relations. We
-use it for all our  experiments unless otherwise stated.
+use it for all relations, adding a leading newline for the models
+marked in Table~\ref{tab:full-models}.
 
 As the reference set, we use entities of the same type as
 the subject, e.g., other countries if the subject is a
@@ -84,13 +86,14 @@ $s$ from other same-type entities.
 Jacobian--vector product $J_i u$ by the double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
 number of forward and backward passes; this is what makes
-Eq.~\ref{eq:lens} affordable at $d_{\text{model}}=4096$
+Eq.~\ref{eq:cel} affordable at $d_{\text{model}}=4096$
 (Appendix~\ref{sec:jvp}).
 
 \paragraph{The relation score.} We decode $\mbox{EL}(e)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
-Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
+Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that one-based rank
+(the saved zero-based rank plus one), the diagnostic for a
 relation is
 \begin{equation}
 A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{EL}(e)}(m_e),
@@ -98,13 +101,12 @@ A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{EL}(e)}(m_e),
 so higher $A_r$ means the lens agrees with the model more.
 
 \paragraph{What makes $A_r$ relation-agnostic.} 
-Eq.~\ref{eq:lens} is not specific to $r$: the prompt is neutral and shared,
-the layer is fixed at 17 for all relations
-(Appendix~\ref{sec:layer17}) and
+Eq.~\ref{eq:cel} is not specific to $r$: the prompt is neutral and shared,
+the layer is fixed within each model (17 for OLMo;
+Appendix~\ref{sec:layer17}) and
 no (subject,~object) pair of the
 relation is used in estimation. Relation-specificity enters in exactly
 one place, the \emph{target} $m_e$, the quantity
 faithfulness is defined against.
-
 
 

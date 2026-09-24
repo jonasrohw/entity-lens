@@ -51,17 +51,42 @@ def count(job):
 
 
 def main():
+    global OUT
     import bm25s
     from bm25s.tokenization import Tokenizer
 
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workers", type=int, default=48)
-    a = p.parse_args()
-    OUT.mkdir(parents=True, exist_ok=True)
-    sources = sorted((ROOT / "results/all_model_newline").glob("*/shared_split/*.json"))
-    subjects = sorted(
-        {r["subject"] for f in sources for r in read_json(f)["lens"]["rows"]}
+    p.add_argument("--out", type=Path, default=OUT)
+    p.add_argument("--all-rows", action="store_true", help="Include demonstrations and references in the evaluation subject union")
+    p.add_argument(
+        "--relations-data",
+        type=Path,
+        help="Build queries from every uncapped test row in this dataset",
     )
+    a = p.parse_args()
+    OUT = a.out
+    OUT.mkdir(parents=True, exist_ok=True)
+    if a.relations_data:
+        from jlens.full_dataset import partitions
+
+        sources = sorted(a.relations_data.glob("*.json"))
+        subjects = sorted(
+            {
+                r["subject"]
+                for f in sources
+                for r in (read_json(f)["samples"] if a.all_rows else partitions(read_json(f)["samples"])[2])
+            }
+        )
+        query_scope = "all_original_rows_including_demonstrations_and_references" if a.all_rows else "all_uncapped_unfiltered_test_subjects"
+    else:
+        sources = sorted(
+            (ROOT / "results/all_model_newline").glob("*/shared_split/*.json")
+        )
+        subjects = sorted(
+            {r["subject"] for f in sources for r in read_json(f)["lens"]["rows"]}
+        )
+        query_scope = "union_of_seven_models_shared_split_test_subjects"
     tok = Tokenizer()
     queries = tok.tokenize(subjects, show_progress=False)
     vocab = tok.word_to_id
@@ -69,9 +94,11 @@ def main():
         subjects=subjects,
         queries=queries,
         vocab=vocab,
-        query_scope="union_of_seven_models_shared_split_test_subjects",
+        query_scope=query_scope,
         source_sha256={
-            str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest()
+            str(f.resolve().relative_to(ROOT)): hashlib.sha256(
+                f.read_bytes()
+            ).hexdigest()
             for f in sources
         },
         corpus=str(CORPUS),

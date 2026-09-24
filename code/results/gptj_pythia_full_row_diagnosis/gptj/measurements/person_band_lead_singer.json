@@ -1,0 +1,1298 @@
+{
+  "relation": "person_band_lead_singer",
+  "worker": "gptj_gpu0_b32",
+  "n_original": 21,
+  "data_sha256": "ad4943c8bc14d649577dafce7acb8d81b2a56ea1f39ca806cdba20880dcd6742",
+  "baseline_path": "results/all_models_gender_original_continents/gptj/measurements/person_band_lead_singer.json",
+  "baseline_sha256": "20615c53ec5b22fbe2cf7c90a243af6623738a145c309ac50d7941421a4507cb",
+  "lens": {
+    "n": 21,
+    "layer": 15,
+    "template": "{} is the lead singer of",
+    "agg": {
+      "diff": {
+        "median_rank": 38.0,
+        "median_lograng": 1.591064607026499,
+        "agree_at1": 0.2857142857142857,
+        "agree_at10": 0.42857142857142855
+      },
+      "lre": {
+        "median_rank": 935.0,
+        "median_lograng": 2.971275848738105,
+        "agree_at1": 0.0,
+        "agree_at10": 0.0
+      }
+    },
+    "rows": [
+      {
+        "subject": "Kurt Cobain",
+        "model_top1_id": 49923,
+        "model_top1": "Nirvana",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Nirvana",
+          "Kurt",
+          "Seattle",
+          "Seattle",
+          "grun"
+        ],
+        "rank_lre": 276,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 276,
+          "0.5": 1438,
+          "1.5": 42,
+          "2.0": 7,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Nirvana"
+      },
+      {
+        "subject": "James Hetfield",
+        "model_top1_id": 35616,
+        "model_top1": "Metall",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Metall",
+          "Metal",
+          "Metal",
+          "metal",
+          "Slayer"
+        ],
+        "rank_lre": 303,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "wearing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 303,
+          "0.5": 1394,
+          "1.5": 65,
+          "2.0": 12,
+          "3.0": 0,
+          "5.0": 0
+        },
+        "object": "Metallica"
+      },
+      {
+        "subject": "Serj Tankian",
+        "model_top1_id": 4482,
+        "model_top1": "System",
+        "n_references": 8,
+        "rank_diff": 278,
+        "top_diff": [
+          "Armenian",
+          "Kurdish",
+          "Anarch",
+          "Protest",
+          "Rage"
+        ],
+        "rank_lre": 11408,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 11408,
+          "0.5": 14541,
+          "1.5": 8895,
+          "2.0": 6833,
+          "3.0": 4103,
+          "5.0": 1615
+        },
+        "object": "System of a Down"
+      },
+      {
+        "subject": "Chris Martin",
+        "model_top1_id": 10250,
+        "model_top1": "Cold",
+        "n_references": 8,
+        "rank_diff": 3,
+        "top_diff": [
+          "McCartney",
+          "Martin",
+          "Marvin",
+          "Cold",
+          "Rih"
+        ],
+        "rank_lre": 1283,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1283,
+          "0.5": 2490,
+          "1.5": 617,
+          "2.0": 289,
+          "3.0": 79,
+          "5.0": 13
+        },
+        "object": "Coldplay"
+      },
+      {
+        "subject": "Billie Joe Armstrong",
+        "model_top1_id": 3469,
+        "model_top1": "Green",
+        "n_references": 8,
+        "rank_diff": 104,
+        "top_diff": [
+          "punk",
+          "Nirvana",
+          "Punk",
+          "Foo",
+          "Armstrong"
+        ],
+        "rank_lre": 2639,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2639,
+          "0.5": 3860,
+          "1.5": 1798,
+          "2.0": 1258,
+          "3.0": 609,
+          "5.0": 217
+        },
+        "object": "Green Day"
+      },
+      {
+        "subject": "Dave Grohl",
+        "model_top1_id": 36080,
+        "model_top1": "Foo",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Foo",
+          "Nirvana",
+          "Metall",
+          "metal",
+          "Metal"
+        ],
+        "rank_lre": 1582,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1582,
+          "0.5": 4013,
+          "1.5": 526,
+          "2.0": 175,
+          "3.0": 26,
+          "5.0": 1
+        },
+        "object": "Foo Fighters"
+      },
+      {
+        "subject": "Ozzy Osbourne",
+        "model_top1_id": 2619,
+        "model_top1": "Black",
+        "n_references": 8,
+        "rank_diff": 10,
+        "top_diff": [
+          "metal",
+          "Venom",
+          "Metal",
+          "metal",
+          "Metal"
+        ],
+        "rank_lre": 690,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 690,
+          "0.5": 1222,
+          "1.5": 380,
+          "2.0": 213,
+          "3.0": 75,
+          "5.0": 12
+        },
+        "object": "Black Sabbath"
+      },
+      {
+        "subject": "Brian Johnson",
+        "model_top1_id": 7125,
+        "model_top1": "AC",
+        "n_references": 8,
+        "rank_diff": 587,
+        "top_diff": [
+          "Johnson",
+          "Johnson",
+          "Johnston",
+          "Sunderland",
+          "Johns"
+        ],
+        "rank_lre": 4980,
+        "top_lre": [
+          "his",
+          "being",
+          "a",
+          "many",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 4980,
+          "0.5": 6008,
+          "1.5": 4056,
+          "2.0": 3323,
+          "3.0": 2281,
+          "5.0": 1158
+        },
+        "object": "AC/DC"
+      },
+      {
+        "subject": "Steven Tyler",
+        "model_top1_id": 15781,
+        "model_top1": "Aer",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Tyler",
+          "Tyler",
+          "Aer",
+          "Tina",
+          "Christina"
+        ],
+        "rank_lre": 1610,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 1610,
+          "0.5": 3194,
+          "1.5": 721,
+          "2.0": 307,
+          "3.0": 68,
+          "5.0": 4
+        },
+        "object": "Aerosmith"
+      },
+      {
+        "subject": "Axl Rose",
+        "model_top1_id": 20423,
+        "model_top1": "Guns",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Guns",
+          "Manson",
+          "Venom",
+          "Ax",
+          "Slash"
+        ],
+        "rank_lre": 2153,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2153,
+          "0.5": 4614,
+          "1.5": 908,
+          "2.0": 365,
+          "3.0": 53,
+          "5.0": 2
+        },
+        "object": "Guns N' Roses"
+      },
+      {
+        "subject": "Mick Jagger",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 3852,
+        "top_diff": [
+          "Mick",
+          "Stones",
+          "Rolling",
+          "Richards",
+          "Keith"
+        ],
+        "rank_lre": 169,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 169,
+          "0.5": 169,
+          "1.5": 180,
+          "2.0": 183,
+          "3.0": 202,
+          "5.0": 258
+        },
+        "object": "The Rolling Stones"
+      },
+      {
+        "subject": "Freddie Mercury",
+        "model_top1_id": 7542,
+        "model_top1": "Queen",
+        "n_references": 7,
+        "rank_diff": 2,
+        "top_diff": [
+          "Mercury",
+          "Queen",
+          "Queen",
+          "Freddie",
+          "mercury"
+        ],
+        "rank_lre": 402,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "singing"
+        ],
+        "rank_lre_beta": {
+          "1.0": 402,
+          "0.5": 1654,
+          "1.5": 91,
+          "2.0": 20,
+          "3.0": 3,
+          "5.0": 1
+        },
+        "object": "Queen"
+      },
+      {
+        "subject": "Liam Gallagher",
+        "model_top1_id": 440,
+        "model_top1": "O",
+        "n_references": 7,
+        "rank_diff": 94,
+        "top_diff": [
+          "Gallagher",
+          "Liam",
+          "Liverpool",
+          "Manchester",
+          "Liverpool"
+        ],
+        "rank_lre": 950,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 950,
+          "0.5": 1439,
+          "1.5": 657,
+          "2.0": 467,
+          "3.0": 254,
+          "5.0": 109
+        },
+        "object": "Oasis"
+      },
+      {
+        "subject": "Jon Bon Jovi",
+        "model_top1_id": 7979,
+        "model_top1": "Bon",
+        "n_references": 7,
+        "rank_diff": 84,
+        "top_diff": [
+          "Jersey",
+          "arena",
+          "stadium",
+          "arenas",
+          "rock"
+        ],
+        "rank_lre": 2876,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2876,
+          "0.5": 3856,
+          "1.5": 2098,
+          "2.0": 1567,
+          "3.0": 841,
+          "5.0": 321
+        },
+        "object": "Bon Jovi "
+      },
+      {
+        "subject": "Jim Morrison",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 7,
+        "rank_diff": 1170,
+        "top_diff": [
+          "Morrison",
+          "Doors",
+          "psychedelic",
+          "psychedel",
+          "Manson"
+        ],
+        "rank_lre": 141,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 141,
+          "0.5": 174,
+          "1.5": 113,
+          "2.0": 97,
+          "3.0": 87,
+          "5.0": 89
+        },
+        "object": "The Doors"
+      },
+      {
+        "subject": "Robert Plant",
+        "model_top1_id": 22964,
+        "model_top1": "Led",
+        "n_references": 7,
+        "rank_diff": 0,
+        "top_diff": [
+          "Led",
+          "Plant",
+          "Led",
+          "blues",
+          "Byrd"
+        ],
+        "rank_lre": 231,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 231,
+          "0.5": 890,
+          "1.5": 63,
+          "2.0": 17,
+          "3.0": 1,
+          "5.0": 0
+        },
+        "object": "Led Zeppelin"
+      },
+      {
+        "subject": "Don Henley",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 2313,
+        "top_diff": [
+          "Marvin",
+          "Crosby",
+          "Hits",
+          "belts",
+          "country"
+        ],
+        "rank_lre": 139,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 139,
+          "0.5": 155,
+          "1.5": 114,
+          "2.0": 109,
+          "3.0": 103,
+          "5.0": 104
+        },
+        "object": "The Eagles"
+      },
+      {
+        "subject": "John Lennon",
+        "model_top1_id": 383,
+        "model_top1": "The",
+        "n_references": 8,
+        "rank_diff": 1064,
+        "top_diff": [
+          "Lennon",
+          "Beatles",
+          "McCartney",
+          "John",
+          "John"
+        ],
+        "rank_lre": 118,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 118,
+          "0.5": 154,
+          "1.5": 99,
+          "2.0": 83,
+          "3.0": 69,
+          "5.0": 84
+        },
+        "object": "The Beatles"
+      },
+      {
+        "subject": "Anthony Kiedis",
+        "model_top1_id": 2297,
+        "model_top1": "Red",
+        "n_references": 8,
+        "rank_diff": 2560,
+        "top_diff": [
+          "Manson",
+          "Kendrick",
+          "Nirvana",
+          "Foo",
+          "front"
+        ],
+        "rank_lre": 2926,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 2926,
+          "0.5": 3279,
+          "1.5": 2638,
+          "2.0": 2426,
+          "3.0": 2063,
+          "5.0": 1679
+        },
+        "object": "Red Hot Chili Peppers"
+      },
+      {
+        "subject": "Bono",
+        "model_top1_id": 471,
+        "model_top1": "U",
+        "n_references": 8,
+        "rank_diff": 38,
+        "top_diff": [
+          "Dublin",
+          "Mandela",
+          "Bon",
+          "Irish",
+          "Ireland"
+        ],
+        "rank_lre": 935,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 935,
+          "0.5": 1514,
+          "1.5": 572,
+          "2.0": 359,
+          "3.0": 151,
+          "5.0": 40
+        },
+        "object": "U2"
+      },
+      {
+        "subject": "Eddie Vedder",
+        "model_top1_id": 18482,
+        "model_top1": "Pearl",
+        "n_references": 8,
+        "rank_diff": 0,
+        "top_diff": [
+          "Pearl",
+          "Nirvana",
+          "Foo",
+          "Seattle",
+          "Crosby"
+        ],
+        "rank_lre": 396,
+        "top_lre": [
+          "his",
+          "being",
+          "many",
+          "a",
+          "having"
+        ],
+        "rank_lre_beta": {
+          "1.0": 396,
+          "0.5": 1360,
+          "1.5": 123,
+          "2.0": 36,
+          "3.0": 3,
+          "5.0": 0
+        },
+        "object": "Pearl Jam"
+      }
+    ],
+    "beta_sweep": {
+      "betas": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "selection_metric": "top1",
+      "selection_split": "scored_subjects",
+      "tie_break": "smallest_beta",
+      "best_beta": 5.0,
+      "agg": {
+        "0.5": {
+          "median_rank": 1514.0,
+          "median_lograng": 3.180412632838324,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.0": {
+          "median_rank": 935.0,
+          "median_lograng": 2.971275848738105,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "1.5": {
+          "median_rank": 526.0,
+          "median_lograng": 2.7218106152125467,
+          "agree_at1": 0.0,
+          "agree_at10": 0.0
+        },
+        "2.0": {
+          "median_rank": 213.0,
+          "median_lograng": 2.330413773349191,
+          "agree_at1": 0.0,
+          "agree_at10": 0.047619047619047616
+        },
+        "3.0": {
+          "median_rank": 79.0,
+          "median_lograng": 1.9030899869919435,
+          "agree_at1": 0.09523809523809523,
+          "agree_at10": 0.23809523809523808
+        },
+        "5.0": {
+          "median_rank": 40.0,
+          "median_lograng": 1.6127838567197355,
+          "agree_at1": 0.19047619047619047,
+          "agree_at10": 0.38095238095238093
+        }
+      }
+    },
+    "split_fingerprint": null,
+    "legacy_split": true,
+    "neutral_prompt": "\n{} is known for"
+  },
+  "neutral_prompt_diagnostics": {
+    "Steven Tyler": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 105.44322204589844,
+      "newline_subject_norm": 114.02035522460938,
+      "original_final_norm": 333.6156005859375,
+      "newline_final_norm": 342.8815002441406,
+      "original_ids": [
+        28292,
+        14886,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        28292,
+        14886,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Axl Rose": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 105.39434051513672,
+      "newline_subject_norm": 109.16332244873047,
+      "original_final_norm": 351.8022155761719,
+      "newline_final_norm": 368.0774230957031,
+      "original_ids": [
+        31554,
+        75,
+        8049,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        31554,
+        75,
+        8049,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Mick Jagger": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 115.660888671875,
+      "newline_subject_norm": 119.56523132324219,
+      "original_final_norm": 326.07086181640625,
+      "newline_final_norm": 350.0326232910156,
+      "original_ids": [
+        44,
+        624,
+        449,
+        7928,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        44,
+        624,
+        449,
+        7928,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Freddie Mercury": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 120.46711730957031,
+      "newline_subject_norm": 121.81814575195312,
+      "original_final_norm": 315.83880615234375,
+      "newline_final_norm": 328.9149169921875,
+      "original_ids": [
+        30847,
+        11979,
+        21673,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        30847,
+        11979,
+        21673,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Liam Gallagher": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 112.16702270507812,
+      "newline_subject_norm": 115.06127166748047,
+      "original_final_norm": 343.75238037109375,
+      "newline_final_norm": 366.78857421875,
+      "original_ids": [
+        43,
+        1789,
+        38580,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        43,
+        1789,
+        38580,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Jon Bon Jovi": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 107.75457000732422,
+      "newline_subject_norm": 112.53785705566406,
+      "original_final_norm": 320.456298828125,
+      "newline_final_norm": 335.8322448730469,
+      "original_ids": [
+        18219,
+        7979,
+        449,
+        47297,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        18219,
+        7979,
+        449,
+        47297,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Jim Morrison": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 114.35442352294922,
+      "newline_subject_norm": 118.69784545898438,
+      "original_final_norm": 311.51776123046875,
+      "newline_final_norm": 336.33599853515625,
+      "original_ids": [
+        18050,
+        24454,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        18050,
+        24454,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Robert Plant": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 116.73929595947266,
+      "newline_subject_norm": 117.99250793457031,
+      "original_final_norm": 334.6378173828125,
+      "newline_final_norm": 348.7795715332031,
+      "original_ids": [
+        19156,
+        16561,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        19156,
+        16561,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Kurt Cobain": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 121.18541717529297,
+      "newline_subject_norm": 124.21527099609375,
+      "original_final_norm": 315.307861328125,
+      "newline_final_norm": 331.7787780761719,
+      "original_ids": [
+        42,
+        3325,
+        14828,
+        391,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        42,
+        3325,
+        14828,
+        391,
+        318,
+        1900,
+        329
+      ]
+    },
+    "James Hetfield": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 116.13948822021484,
+      "newline_subject_norm": 120.55010223388672,
+      "original_final_norm": 328.7704772949219,
+      "newline_final_norm": 357.93963623046875,
+      "original_ids": [
+        14731,
+        367,
+        316,
+        3245,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        14731,
+        367,
+        316,
+        3245,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Serj Tankian": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 108.52725219726562,
+      "newline_subject_norm": 113.58602905273438,
+      "original_final_norm": 314.84228515625,
+      "newline_final_norm": 326.766357421875,
+      "original_ids": [
+        7089,
+        73,
+        15447,
+        666,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        7089,
+        73,
+        15447,
+        666,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Chris Martin": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 105.60196685791016,
+      "newline_subject_norm": 105.21097564697266,
+      "original_final_norm": 345.006591796875,
+      "newline_final_norm": 364.7541809082031,
+      "original_ids": [
+        15645,
+        5780,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        15645,
+        5780,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Billie Joe Armstrong": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 113.02911376953125,
+      "newline_subject_norm": 117.25839233398438,
+      "original_final_norm": 339.4646301269531,
+      "newline_final_norm": 347.45574951171875,
+      "original_ids": [
+        17798,
+        494,
+        5689,
+        21166,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        17798,
+        494,
+        5689,
+        21166,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Dave Grohl": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 117.11613464355469,
+      "newline_subject_norm": 120.4465560913086,
+      "original_final_norm": 331.80499267578125,
+      "newline_final_norm": 348.1314697265625,
+      "original_ids": [
+        27984,
+        10299,
+        18519,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        27984,
+        10299,
+        18519,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Ozzy Osbourne": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 109.80821990966797,
+      "newline_subject_norm": 109.24095916748047,
+      "original_final_norm": 320.2574768066406,
+      "newline_final_norm": 331.0122375488281,
+      "original_ids": [
+        46,
+        31570,
+        8834,
+        12544,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        46,
+        31570,
+        8834,
+        12544,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Brian Johnson": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 103.95259857177734,
+      "newline_subject_norm": 105.2000961303711,
+      "original_final_norm": 347.90692138671875,
+      "newline_final_norm": 378.38128662109375,
+      "original_ids": [
+        24761,
+        5030,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        24761,
+        5030,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Don Henley": {
+      "original_position": 2,
+      "newline_position": 3,
+      "original_subject_norm": 105.82096099853516,
+      "newline_subject_norm": 117.13348388671875,
+      "original_final_norm": 322.0808410644531,
+      "newline_final_norm": 328.34600830078125,
+      "original_ids": [
+        3987,
+        6752,
+        1636,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        3987,
+        6752,
+        1636,
+        318,
+        1900,
+        329
+      ]
+    },
+    "John Lennon": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 118.96563720703125,
+      "newline_subject_norm": 121.40200805664062,
+      "original_final_norm": 313.1661071777344,
+      "newline_final_norm": 329.26776123046875,
+      "original_ids": [
+        7554,
+        37470,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        7554,
+        37470,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Anthony Kiedis": {
+      "original_position": 3,
+      "newline_position": 4,
+      "original_subject_norm": 112.7396240234375,
+      "newline_subject_norm": 119.3179931640625,
+      "original_final_norm": 334.9056701660156,
+      "newline_final_norm": 348.4347839355469,
+      "original_ids": [
+        32697,
+        509,
+        798,
+        271,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        32697,
+        509,
+        798,
+        271,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Bono": {
+      "original_position": 1,
+      "newline_position": 2,
+      "original_subject_norm": 112.4590835571289,
+      "newline_subject_norm": 115.16768646240234,
+      "original_final_norm": 354.1614990234375,
+      "newline_final_norm": 357.9772033691406,
+      "original_ids": [
+        20682,
+        78,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        20682,
+        78,
+        318,
+        1900,
+        329
+      ]
+    },
+    "Eddie Vedder": {
+      "original_position": 4,
+      "newline_position": 5,
+      "original_subject_norm": 116.26287078857422,
+      "newline_subject_norm": 119.7078857421875,
+      "original_final_norm": 344.38934326171875,
+      "newline_final_norm": 354.5109558105469,
+      "original_ids": [
+        36,
+        1860,
+        494,
+        36101,
+        1082,
+        318,
+        1900,
+        329
+      ],
+      "newline_ids": [
+        198,
+        36,
+        1860,
+        494,
+        36101,
+        1082,
+        318,
+        1900,
+        329
+      ]
+    }
+  },
+  "hidden_diagnostics": {
+    "diff_norms": [
+      55.28782653808594,
+      51.584014892578125,
+      51.682125091552734,
+      51.83708190917969,
+      56.23161315917969,
+      50.55083465576172,
+      43.74644088745117,
+      45.23779296875,
+      47.774169921875,
+      49.16360855102539,
+      47.41134262084961,
+      63.75929260253906,
+      61.56507873535156,
+      44.657901763916016,
+      57.66313171386719,
+      59.15167236328125,
+      46.69538116455078,
+      59.569068908691406,
+      45.641483306884766,
+      45.924678802490234,
+      56.37085723876953
+    ]
+  },
+  "elapsed_seconds": 2.349660634994507,
+  "lre_reused": true,
+  "targets_reused": true,
+  "gender_alternatives": true,
+  "diverse_continent_references": false
+}

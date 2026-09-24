@@ -1,0 +1,43 @@
+{
+  "worker": "gemma2_9b_full_baselines",
+  "pid": 949680,
+  "model": "google/gemma-2-9b",
+  "revision": "33c193028431c2fde6c6e51f29e6f17b60cbfac6",
+  "prompt": "{} is known for",
+  "batch_size": 32,
+  "manifest_sha256": "7fc4b890a0d84b2d674f3a44daaacd8369ccd23008d44f56aa49ea87ee15d52c",
+  "verification": {
+    "logits_max_abs_error": 0.0,
+    "batched_scalar_max_abs_error": 3.218650817871094e-05,
+    "finite_difference_relative_error": 0.00045892116031609476
+  },
+  "convolution_check": null,
+  "prefix_cache_check": [
+    {
+      "length": 5,
+      "prefix_length": 1,
+      "layer": 22,
+      "state_relative_error": 5.1596293815237e-07,
+      "jvp_relative_error": 2.127478410329786e-06,
+      "full_seconds": 0.24353766441345215,
+      "cached_seconds": 0.310899019241333
+    },
+    {
+      "length": 70,
+      "prefix_length": 68,
+      "layer": 10,
+      "state_relative_error": 2.6335023903811816e-06,
+      "jvp_relative_error": 1.1822270607808605e-05,
+      "full_seconds": 2.0913889408111572,
+      "cached_seconds": 0.4237363338470459
+    }
+  ],
+  "source_sha256": {
+    "scripts/run_paper_full_baselines.py": "6efae943bc8545d902848e3f0a8d99df94e08156d74ff5f840f090b00bcd6526",
+    "jlens/model_sweep.py": "a8e26c23b04bee6bd0bde5e6f7117ccaafa772c761109a6905f2cc0a1e847eb9",
+    "jlens/model.py": "4a9b03931c6c50901b8fd28dfcee8db66d1317020500e17c2aded49be74158e6",
+    "jlens/prefix_intervention.py": "be9de46a2dc730f29a787a01611de923158bfcb4331349c1cb09d3dcd4d017df",
+    "scripts/run_targeted_corrections.py": "7ccb74cd8ba08a4cab5faa5cbf0b7aef9da73bd2ae69c9755039ab8ce462cc68",
+    "jlens/measure_answer_prior.py": "f58b269b48e0966907d491afdd359ac081ab2d93fd039bbdf2deff47acb682b1"
+  }
+}

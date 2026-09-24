@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\caption{GPT-J 6B: all shared-split relation measurements. Lens columns are negative median log-ranks; Geva is mean attribute overlap in percent. D: differential Jacobian; J: raw Jacobian; LL: logit lens; DLL: differential logit lens; A: affine (beta=1); W: Wikipedia token-frequency rank.}
+\label{tab:shared-relations-gptj}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Relation & $n$ & Faith & D & J & LL & DLL & A & Geva & W \\
+\midrule
+city\_in\_country & 6 & 1.000 & -0.151 & -0.151 & -1.230 & -0.690 & -2.779 & 39.064 & -1.247 \\
+company\_ceo & 100 & 0.090 & -3.569 & -3.587 & -4.122 & -4.070 & -3.903 & 35.761 & -4.401 \\
+company\_hq & 100 & 0.390 & -2.221 & -2.322 & -3.135 & -3.420 & -3.813 & 24.930 & -4.401 \\
+country\_capital\_city & 8 & 1.000 & -0.759 & -0.671 & -2.816 & -1.278 & -3.228 & 46.464 & -1.746 \\
+country\_currency & 14 & 0.714 & -2.437 & -2.425 & -3.216 & -2.789 & -3.739 & 38.107 & -4.415 \\
+country\_language & 8 & 0.875 & -0.841 & -0.778 & -3.016 & -2.052 & -2.196 & 46.464 & -1.674 \\
+country\_largest\_city & 8 & 1.000 & -0.477 & -0.477 & -2.370 & -1.280 & -3.188 & 39.038 & -2.557 \\
+landmark\_in\_country & 100 & 0.710 & -0.977 & -0.874 & -2.273 & -2.434 & -3.404 & 22.628 & -1.917 \\
+landmark\_on\_continent & 100 & 0.890 & -1.877 & -1.880 & -3.308 & -4.449 & -3.238 & 15.712 & -1.915 \\
+name\_birthplace & 15 & 0.867 & -1.204 & -1.342 & -2.947 & -2.838 & -3.715 & 33.773 & -2.734 \\
+name\_gender & 3 & 1.000 & -4.319 & -4.393 & -3.952 & -4.529 & -3.491 & 20.841 & -2.502 \\
+name\_religion & 15 & 0.867 & -1.944 & -1.732 & -3.730 & -3.796 & -3.766 & 32.355 & -3.002 \\
+person\_father & 100 & 0.120 & -2.499 & -2.412 & -3.851 & -3.812 & -3.563 & 42.576 & -1.130 \\
+person\_mother & 100 & 0.070 & -2.893 & -2.886 & -3.811 & -3.752 & -3.814 & 47.381 & -3.182 \\
+person\_native\_language & 100 & 0.930 & -0.477 & -0.301 & -2.796 & -3.022 & -2.307 & 23.644 & -1.525 \\
+person\_occupation & 100 & 0.650 & -3.869 & -3.980 & -4.074 & -4.068 & -4.174 & 16.758 & -4.403 \\
+person\_plays\_instrument & 100 & 0.620 & -2.958 & -2.982 & -3.815 & -4.485 & -2.637 & 21.312 & -2.444 \\
+person\_plays\_position\_in\_sport & 100 & 0.800 & -1.982 & -2.085 & -3.770 & -4.240 & -4.168 & 19.665 & -2.564 \\
+person\_plays\_pro\_sport & 100 & 0.860 & -1.041 & -1.021 & -0.998 & -2.204 & -1.987 & 36.576 & -2.063 \\
+person\_university & 25 & 0.520 & -3.913 & -3.817 & -3.228 & -3.702 & -3.829 & 48.173 & -2.310 \\
+pokemon\_evolutions & 20 & 0.200 & -3.318 & -3.264 & -4.021 & -4.517 & -3.675 & 16.509 & -2.106 \\
+product\_by\_company & 100 & 0.590 & -1.483 & -1.537 & -2.124 & -2.083 & -2.948 & 33.021 & -1.394 \\
+star\_constellation & 100 & 0.550 & -3.323 & -2.781 & -3.698 & -4.363 & -3.735 & 8.931 & -1.728 \\
+superhero\_archnemesis & 57 & 0.544 & -3.775 & -3.786 & -3.450 & -4.024 & -0.778 & 30.437 & -0.845 \\
+superhero\_person & 63 & 0.492 & -1.415 & -1.431 & -3.999 & -4.332 & -3.434 & 30.047 & -1.892 \\
+\bottomrule
+\end{tabular}}
+\end{table}
