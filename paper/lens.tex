@@ -332,13 +332,20 @@ extreme \textbf{object cardinality} $k$,
 which we define as the mean number of subjects per object
 (the
 same variable whose removal raises the correlation to
-$0.757$ in \S\ref{sec:results}.).
+$0.757$ in \S\ref{sec:results}).
 
 Concretely, we order the relations by their residual from the least-squares
 fit in Figure~\ref{fig:main}; this residual
 is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
 % Issue here, we need to investigate.
+
+\enote{sg}{
+	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
+	TODO:
+	(1) I think we should also investigate this "number of objects" quantity.
+	(2) I don't like the term "object cardinality", in particular because it leads to confusion with "number of objects". Can't we just say "subjects per object" or similar?
+}
 
 The largest positive residuals, faithful despite a low
 lens score, with their cardinality are
@@ -359,12 +366,17 @@ floor due to the difficulty of the task and the details of
 the representation apparently do not change that.
 
 Our account thus holds in the middle of the cardinality range and
-degrades at both ends, in opposite directions. Cardinality is the
-same variable whose removal raises the correlation to
-$0.757$ (\S\ref{sec:results}). Our analysis in this section
-gives that number an interpretation: $k$ is a
+degrades at both ends, in opposite directions.
+%Removed the following sentence because it's now at the top of the section where it belongs.
+%Cardinality is the
+%same variable whose removal raises the correlation to
+%$0.757$ (\S\ref{sec:results}).
+Our analysis in this section
+helps us interpret the result from \S\ref{sec:results}:
+$k$ is a
 source of deviation in the salience account rather than
 merely a nuisance correlate.
+\enote{sg}{Is "nuisance correlate" standard or is it AI slang? Anyway, what does it mean?}
 
 \section{Fact-level analysis}
 \label{sec:subject}
@@ -381,7 +393,7 @@ integrated into the linear structure.
 %panels_subject_scatter_mainprotocol.pdf
 
 To analyze relations at the fact level, we compute 
-$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
+$\rho$ between lens EL $\log_{10}$ rank and LRE $\log_{10}$
 rank for each relation.
 The values of $\rho$ are in the range [-0.401,0.664] with a
 median of
@@ -391,7 +403,7 @@ We now analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-
+\enote{sg}{Is it correct to say that "reference competition" is about multi-token \textit{subjects}, while "semantically weak first tokens" is about multi-token \textit{objects}? If yes, it would be really helpful to say it. If not, why not?}
 
 \subsection{Reference competition}
 \label{sec:competition}
@@ -441,7 +453,7 @@ are ``machining'', ``drilled'', ``CNC''
 
 
 \subsection{Semantically weak first tokens}
-\textsc{person\_university} further
+\textsc{person\_university}
 exemplifies the problem of 
 \emph{semantically weak first tokens}. Many universities
 have names that start with ``University''.
@@ -474,6 +486,7 @@ The direction of the bias differs by relation. Where the collapse is on
 the gold side it makes faithfulness easier: 41 distinct fathers all
 count as \textsc{John}. Our \textsc{person\_father} figure is therefore an
 upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
+\enote{sg}{Which corrected value? How did you compute it?}
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not an accurate response at all.
 
