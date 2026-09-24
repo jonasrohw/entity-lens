@@ -1,33 +1,128 @@
-# Full-evaluation manuscript
+# ICLR 2027 submission
 
-The submission source is `lens.tex`; build `lens.pdf` with:
+The retained seven-model comparison is in
+[appendix_shared_baselines.tex](appendix_shared_baselines.tex), included as
+Appendix A. A separately readable [appendix PDF](shared_baselines.pdf) is built
+with `latexmk -pdf shared_baselines.tex`. Its tables cover the newline-prefixed
+shared split: the first compares differential Jacobian, raw Jacobian,
+logit lens, differential logit lens, and attribute rate across seven models;
+the second reports only OLMo corpus-frequency results.
+The third table has two panels: eight Qwen3 8B prompt templates (legacy and
+shared splits) and the newline comparison across all seven models (shared
+split). Generate it with
+`../code/.venv/bin/python ../code/scripts/format_prompt_variation_table.py`.
+Regenerate the first two presentation tables with
+`../code/.venv/bin/python ../code/scripts/format_shared_baseline_tables.py`
+from this directory. The full numerical report and sensitivity analyses
+remain in the result files. The previous expanded appendix source is
+preserved under `archive/appendix_shared_baselines_expanded_2026-09-21.tex`.
+The main text incorporates collaborator revisions, including the updated headline
+figure. The appendix experiments predate the final-normalization correction merged
+on 22 September 2026; Gemma2 readouts require a corrected rerun. Their exact
+measurement implementation is archived in the result provenance directory.
+The appendix explicitly records this limitation rather than presenting these
+measurements as validation of the merged implementation.
+
+The [curation and reproduction guide](../code/docs/shared-baseline-appendix.md)
+and [complete result tables](../code/results/shared_baselines/README.md) record
+the exact protocol, reruns, reusable inputs and provenance.
+
+The submission manuscript is `lens.tex`; the compiled file is `lens.pdf`. The
+official anonymous review style is active. Build it directly:
 
 ```sh
 cd paper
-latexmk -pdf -interaction=nonstopmode -halt-on-error lens.tex
-latexmk -pdf -interaction=nonstopmode -halt-on-error shared_baselines.tex
+latexmk -pdf lens.tex
 ```
 
-The paper reports the differential/contrastive entity lens (CEL) as its primary readout. The raw/noncontrastive lens (NEL) is a separate baseline. The latest GitLab prose had defaulted to NEL while the verified headline measurements were CEL; the distinction is now explicit.
-
-All benchmark results use the original 28 relations and all 9,747 rows per model, including demonstrations, references and duplicate rows. Gender alternatives are enabled; original continent reference sets are retained. Mistral, Gemma and both Qwen models exclude the two standalone-`1` year relations from the primary correlation, leaving 26 relations and 9,709 scored rows. The appendix also reports the all-28 sensitivity. GPT-J, Pythia and both Qwen models use a leading newline and carry a dagger in the model tables.
-
-The canonical inputs are:
-
-- `../code/results/all_models_gender_original_continents/`: full-row LRE and original approved lens measurements.
-- `../code/results/gptj_pythia_full_row_diagnosis/`: full-row newline lens replacements for GPT-J and Pythia.
-- `../code/results/paper_full_evaluation/`: matching baseline readouts, full-subject Wikipedia retrieval, corpus reaggregation, generated statistics and validation.
-
-Regenerate the numerical TeX and main figure from the code directory:
+Requires a TeX Live installation with `latexmk`, pdfLaTeX and BibTeX. The
+figure PDFs are committed, so a normal LaTeX build does not need Python or any
+scientific packages. To regenerate the three vector figures without loading a
+model, use the locked environment in `../code/`:
 
 ```sh
-.venv/bin/python scripts/build_full_evaluation_paper.py
+cd ../code && uv sync --locked && uv run python ../paper/repro/make_iclr_figures.py
 ```
 
-Active generated tables live in `generated/full_evaluation/`. The paper does not import `generated/shared_baselines/` or historical capped/shared-split figures. The standalone appendix builds from the same new inputs as the main manuscript.
+`rawmaterial.tex` is a scratch file of unused draft material, not part of the
+manuscript; `lens.tex` does not input it.
 
-The pre-update manuscript and tables are preserved in `archive/pre_full_evaluation_2026-09-24/`, with source hashes and the merged GitLab revision. Its prominence, reference-composition, anchor-swap, held-out/shared-split and capped numerical sections are historical material, not current full-evaluation evidence. Corresponding numerical claims were removed from the compiled paper; their code and archived text remain available for a separate compatible rerun.
+## Official template provenance
 
-The evaluation is explicitly in sample: demonstration/reference rows are evaluated and LRE parameters are selected on those rows. PDF checks do not constitute author approval or a submission.
+The style files (`iclr2027_conference.sty`, `iclr2027_conference.bst`, plus the
+bundled `fancyhdr.sty` and `natbib.sty`) were downloaded unchanged on 2026-09-16
+from the archive linked by the
+[ICLR 2027 author guidelines](https://iclr.cc/Conferences/2027/AuthorGuidelines):
+[official style archive](https://media.iclr.cc/Conferences/ICLR2027/iclr-2027-style-files.zip).
 
-Git retains the per-row measurements, statistics, code snapshots, generated tables and PDFs. The multi-gigabyte Wikipedia retrieval/index cache remains local; its configuration and hashes are retained. Rebuilding attribute retrieval requires the source Wikipedia corpus and `scripts/retrieve_shared_wikipedia.py --all-rows`. Regenerating corpus-frequency statistics also requires the saved scans under `code/generated/corpus_conditionals/`, which are local generated artifacts. The committed tables and PDFs can be compiled without these caches.
+Archive SHA-256:
+`0d940dfa9398ae99a18f24a85a8a683f367204b6af6d17d2899e60a67102529e`.
+
+The archive's example manuscript and its bibliography, along with the earlier
+ACL template files and superseded figures, were removed from this branch; they
+remain on the `acl` branch if they are ever needed again.
+
+## Historical template-conversion checks
+
+Recorded from the template-conversion check before the new baseline appendix. The checker script
+itself has been removed; re-verify by inspection before uploading.
+
+- Nine pages of main text; statements and references follow, then appendices.
+- Official ICLR 2027 review header, line numbers, and anonymous title block.
+- US Letter pages, embedded fonts, and empty PDF author metadata.
+- No missing citations/references, duplicate labels, overfull boxes, or visible
+  draft placeholders. Figure labels were visually inspected.
+- The official bibliography style is used. Table captions appear above tables.
+- All 33 tests in `code/tests/test_reproduction.py` passed. The main, partial,
+  shared-split, and fact-level correlations agree with the retained results.
+  The reported regression residuals were also reproduced. This verifies the
+  retained CPU analyses; it is not a rerun of the original GPU measurements.
+
+That check covered mechanical properties, not scientific correctness or every
+possible way an author could be identified. Harmless underfull-page
+diagnostics may occur with the official layout; no geometry or font-size
+overrides were introduced to force the page count.
+
+## Changes beyond the template
+
+The wide ACL table was converted to one column without changing its numbers.
+The missing numeric-token appendix was restored from the draft's existing
+editorial note and linked from the figure and table. Visible unfinished prose
+was completed using the draft's stated methodological directions; no new
+experimental results were added.
+
+The bias is now written as `b_beta = mean_i[f(s_i) - beta J_i s_i]`, matching
+the implemented estimator `mean_i[f(s_i) + beta J_i(s - s_i)]`. The previous
+equations were inconsistent for beta other than one. The text now acknowledges
+in-sample hyperparameter selection and the lack of a layer-sensitivity study,
+instead of asserting unbiasedness or invariance of correlations to layer choice.
+The relation identifier and rank-axis notation were corrected. The clipped
+fact-level figures were reconstructed from the retained matched measurements.
+
+## Items requiring the authors before submission
+
+**This is a mechanically checked manuscript, not certification of a completed
+or fully compliant OpenReview submission.**
+
+1. Complete `ai_use.tex` with the full history of AI assistance and the authors'
+   actual verification practices. It currently describes only the assistance
+   known from this conversion. The same disclosure must be provided in
+   OpenReview; see the [2027 AI policy](https://iclr.cc/Conferences/2027/AIPolicyForAuthors).
+   No assertion that the authors reviewed all AI-assisted work has been invented.
+2. Review and approve the scientific claims, revised equation, methodological
+   qualifications, ethics statement, and editorial changes. Author-only notes
+   remain disabled in the TeX source and do not appear in the PDF.
+3. Complete OpenReview author information, conflicts, reciprocal-reviewer
+   registration or applicable exemptions, submission quotas, and required
+   policy acknowledgments. Confirm originality and absence of a prohibited
+   simultaneous submission. These cannot be established from this repository.
+4. Register the genuine abstract and complete author list by **September 18,
+   2026, 23:59 AoE**, and upload the paper by **September 25, 2026, 23:59 AoE**.
+   The [official dates](https://iclr.cc/Conferences/2027/Dates) and author guide
+   control; recheck for updates before uploading.
+5. Upload `lens.pdf` as the paper. If code is supplied separately, prepare an
+   anonymous supplement: the full repository contains identifying provenance
+   paths, editorial material, and Git history. Do not upload the repository
+   verbatim as an anonymous supplement.
+
+No submission has been uploaded to OpenReview.

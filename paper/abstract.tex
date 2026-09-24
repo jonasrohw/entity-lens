@@ -2,13 +2,13 @@
 Linear relational embeddings (LREs) approximate a language
 model's subject-to-object mapping with an affine
 function. Their faithfulness varies enormously across
-relations, including weak performance on \textsc{person\_father}
-and stronger performance on \textsc{country\_capital\_city}. We investigate
+relations -- near zero for \textsc{person\_father}, at
+ceiling for \textsc{country\_capital\_city}. We investigate
 the factors that contribute to this variation and
 demonstrate that it can be significantly predicted from a
 readout that is not aware of the underlying relationship. To
 do so, we propose a novel form of the Jacobian lens, the
-\emph{contrastive entity lens}. Whereas the Jacobian lens is estimated
+\emph{entity lens}. Whereas the Jacobian lens is estimated
 across all tokens and concepts, the entity lens
 $\mbox{EL}_t$
 is trained
@@ -19,11 +19,16 @@ highly it ranks the model's answer for a relation -- without
 using any relation-specific information in estimation and
 prediction.  Across 28 relations of the LRE dataset on
 Olmo-3-7B this relation-agnostic score correlates with LRE
-faithfulness at $\rho = \headlinenumber$ ($p=\headlinep$),
-using all 9,747 original rows, including demonstrations and references.
-We report the same full-evaluation comparison for six additional models.  This association supports a role for information already carried by
-the subject representation, while leaving the causal mechanism open.  At the fact level, generic first tokens and changes in the model's
-answer across demonstration contexts complicate interpretation. We
-report these limitations, the model-specific tokenization and prompt
-corrections, and readout baselines under the same full evaluation.
+faithfulness at $\rho = \headlinenumber$  ($p < .01$).  This
+suggests that linear decodability is largely a property of
+what a subject's representation already carries, rather than
+of the relation being decoded.  Moving the
+unit of analysis from the relation to the individual fact,
+we conclude that new relation datasets and analysis methods
+are needed to address several problems in existing datasets,
+most prominently semantically weak first tokens (e.g., most
+predicted universities' first token is ``University'') and
+reference competition (e.g., the LLM associates obscure
+actor names with competing non-actor entities that have the
+same last name).
 \end{abstract}

@@ -1,0 +1,27 @@
+I was referring mainly to **Section 3, “The J-space acts as a Global Workspace,”** especially two subsections. I compressed several distinct experiments into one sentence, so it is worth separating them.
+
+First, **§3.1 “The J-space supports verbal report.”** They ask the model to think of an item and then name it. The item that is high in the J-lens shortly before the report tends to be the item actually produced. More importantly, they perform a **causal swap**: e.g. replace the *Soccer* J-lens coordinate with *Rugby*, after which the model reports *Rugby*. That is the basis for my phrase “can be read out before verbal reports” and part of “causally swapped to change later behavior.” ([Transformer Circuits][1])
+
+Second, **§3.3 “The J-space mediates internal reasoning.”** This is the much stronger evidence for the “used as intermediates in reasoning” part. They use tasks with an **unspoken intermediate concept**. For example:
+
+> “The number of legs on the animal that spins webs is …”
+
+The J-lens surfaces *spider* at intermediate layers, although *spider* occurs neither in the prompt nor the output. They then swap the *spider* J-space coordinate for *ant*, and the eventual answer changes from **8 to 6**. They run this systematically on 50 two-hop prompts; the intervention often changes the final answer to the one appropriate to the substituted intermediate. ([Transformer Circuits][1])
+
+There is an especially nice control immediately afterward. They worry that the *ant* vector might simply contain some “6-ness,” so that the intervention is effectively smuggling in the answer. They compare interventions on the **intermediate concept** with interventions on the **answer** and find that the intermediate intervention becomes effective substantially earlier in the network. Their interpretation is that the intermediate is genuinely represented and subsequently used to compute the answer, rather than merely being correlated with it. ([Transformer Circuits][2])
+
+The phrase **“deliberately activated by instructions”** referred to the preceding subsection, **“The J-space is subject to directed modulation.”** This is where they tell Claude to think about citrus fruit or compute \(3^2-2\) while copying unrelated text. The J-lens then surfaces *orange*, or *nine* followed by *seven*, even though none of those words occurs in the copied output. ([Transformer Circuits][2])
+
+So my sentence bundled together three pieces of evidence:
+
+1. **Verbal report:** J-lens contents predict what the model subsequently says, and swapping them changes the report.
+2. **Directed modulation:** instructions cause the corresponding J-space representations to become active even when they are irrelevant to the overt output.
+3. **Internal reasoning:** swapping an unspoken intermediate such as *spider → ant* changes the downstream answer *8 → 6*.
+
+The third is the most relevant to the issue we were discussing, because it provides evidence that a high J-lens readout is more than merely “this activation happens to align with a direction that would promote this token under an average context.” They actually intervene on that direction and show that a downstream computation behaves **as though the intermediate concept itself had been replaced**. ([Transformer Circuits][1])
+
+That said, this does **not** resolve your zeroth-order-term objection to the *readout procedure itself*. It validates that some of the resulting J-space directions are functionally meaningful. It does not mathematically establish that ranking tokens by \(W_UJ h\), without an affine term, is the uniquely or generally correct way to decode an activation. I think keeping those two questions separate is important.
+
+[1]: https://www.transformer-circuits.pub/2026/workspace/index.html?utm_source=chatgpt.com "Verbalizable Representations Form a Global Workspace in Language Models"
+[2]: https://transformer-circuits.pub/2026/workspace/?utm_source=chatgpt.com "Verbalizable Representations Form a Global Workspace in Language Models"
+

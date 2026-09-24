@@ -1,134 +1,62 @@
-\section{Full-evaluation protocol and corrections}
-\label{sec:full-protocol}
-\label{sec:numeric-objects}
-
-All benchmark tables and figures in this paper use the original 28
-relations, comprising 9,747 rows per model before the stated year-scoring
-exception. Original strings, labels, row order within the recorded
-selections, and duplicates are preserved. There is no correctness filter,
-identifying-first-token filter, row cap or minimum-test-size cohort.
-
-\paragraph{Demonstrations, references and evaluation.}
-Each method uses eight demonstration rows and eight reference rows.
-The LRE selection reproduces the original sequential shuffles with
-seeds 0 and 1000; the lens selection uses seed 17. Every original row
-is then evaluated, including both selections. For the lens, reference
-comparisons sharing the query's subject string are omitted from its
-average; the query is still scored, and duplicates remain in aggregate
-statistics. LRE retains its original reference estimator. The different
-demonstration contexts can produce different target tokens, which is
-recorded rather than silently treated as a matched-context evaluation.
-
-\paragraph{LRE selection.}
-The primary outcome chooses a layer and scaling from the original
-six-by-six grid on the full evaluation. Table~\ref{tab:full-sensitivity}
-also reports the original fixed layer/scaling evaluated on every row.
-Neither version is an independent held-out estimate. Full-data LRE
-measurements and target tokens are reused for neutral-prompt changes;
-only affected lens readouts are recomputed.
-
-\paragraph{Gender wording.}
-For a target in the female wording set, the accepted single-token,
-leading-space terms are \texttt{woman, her, herself, she, hers, female,
-girl}; for the male set they are \texttt{man, him, himself, he, his,
-male, boy}. A lens rank is the best rank in the matching set; other
-model targets remain unchanged. This rule is applied to every
-vocabulary-rank readout in the baseline comparison. Dataset labels are
-not rewritten. LRE faithfulness still requires its exact top-1 token to
-match the model's top-1; the alternative wordings modify the lens axis.
-
-\paragraph{Year tokenization.}
-The answer boundary is checked with each actual tokenizer and the
-joint prompt--answer string. Where necessary, a trailing space is
-consumed in the relation prompt so that the next token is content.
-A standalone first answer token \texttt{1} is distinguished from
-multi-digit tokens such as \texttt{178}. Under the relation-level rule
-used for the primary comparison, \textsc{presidents\_birth\_year} and
-\textsc{presidents\_election\_year} are excluded for Mistral, Gemma and
-both Qwen models, leaving 26 scored relations and 9,709 rows each.
-The artifact occurs on all 19 birth-year rows and 16 of the 19
-election-year rows in each affected model. The relation-level rule removes
-both complete year relations, including the other three election-year
-rows, from the primary correlation. The rule does not depend on measured
-faithfulness. OLMo, GPT-J and
-Pythia retain both year relations and all 9,747 rows. All original rows
-and measurements remain available; the all-28 column in
-Table~\ref{tab:full-sensitivity} shows the year-inclusive sensitivity.
-
-\paragraph{Continent references.}
-We retain the original seeded references for
-\textsc{landmark\_on\_continent}; there is no diversity correction in
-these reported values. Their selection and category counts are stored
-with each measurement. This setting is applied consistently to both
-methods and all models.
-
-\paragraph{Leading newline and high norms.}
-GPT-J 6B, Pythia 6.9B, Qwen3 8B Base and Qwen3.8 27B use
-\texttt{\textbackslash n\{\} is known for}. A dagger marks these models
-in the result tables. OLMo, Mistral and Gemma use
-\texttt{\{\} is known for}. The newline addresses unusually large
-subject-state norms when content occupies the first token position.
-Table~\ref{tab:full-newline} reports the additional full-row GPT-J and
-Pythia ablations. Qwen's previously adopted correction is retained.
-The ablations change neither the LRE outcome nor its target tokens.
-
-\input{generated/full_evaluation/newline}
-\input{generated/full_evaluation/sensitivity}
-
-\paragraph{Numerical checks and provenance.}
-Measurements use pinned checkpoint revisions, \texttt{float32}, eager
-attention, and the architecture's actual final normalization and output
-head. Scalar and batched Jacobian--vector products, finite differences,
-and cached computations are numerically checked. The report validates
-complete row multisets, duplicate counts, target IDs, reference counts,
-and source hashes, and recomputes aggregates from per-row ranks.
-Current numbers are generated from these records rather than copied from
-historical tables. Earlier shared-split, capped, correctness-filtered,
-and separate small-cohort numerical analyses are archived outside the
-compiled paper and are not used to substantiate its current claims.
-
 \section{Baseline comparisons}
 \label{sec:shared-baselines}
-\input{generated/full_evaluation/baselines}
+% Mention and reference the exact Tables i.e Table X and Y show 
+The first two tables report Spearman correlations with LRE faithfulness across the LRE Dataset.
+
+
+\input{generated/shared_baselines/readout_comparison}
 
 \paragraph{Readout definitions.}
-The contrastive/differential Jacobian lens (CEL) decodes
-$\operatorname{mean}_i J_i(s_e-s_i)$; the noncontrastive/raw Jacobian
-lens (NEL) decodes $\operatorname{mean}_i J_i s_e$. Logit lens decodes
-$s_e$, and differential logit lens decodes
-$s_e-\operatorname{mean}_i s_i$. Every readout applies the same final
-normalization and output head. Scores are the negative median of
-$\log_{10}(\mathrm{rank}+1)$ for zero-based ranks, with the gender rule
-above. Every eligible relation uses every original row.
+For subject state $s_e$, reference states $s_i$, and reference Jacobians
+$J_i$, the differential and raw Jacobian readouts decode
+$\operatorname{mean}_i J_i(s_e-s_i)$ and
+$\operatorname{mean}_i J_i s_e$, respectively. Logit lens decodes $s_e$;
+differential logit lens decodes $s_e-\operatorname{mean}_i s_i$. Each relation's score is the negative median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
 
 \paragraph{Attribute rate.}
-Following \citet{geva-etal-2023-dissecting}, we compare filtered top-50
-logit-lens predictions with attributes retrieved from Wikipedia.
-The retrieval queries cover every original subject, including
-those used as demonstrations or references. The source length,
-stopword and retrieval filters are retained. If no prediction survives
-the filter, the original overlap fraction is undefined; for this
-full-row comparison we explicitly extend it to zero and retain the row.
-The accompanying measurements record every such case. This convention
-changes the metric for those cases and avoids a model-specific filtered
-cohort.
-\input{generated/full_evaluation/attribute_coverage}
+Following \citet{geva-etal-2023-dissecting}, we measure overlap between filtered top-50
+logit-lens predictions and subject attributes retrieved from Wikipedia.
+The index uses the union of current test subjects; the source stopword,
+length, and retrieval filters are retained. Relation scores average the
+percentage overlap. Undefined rates are handled as noted in the table;
+matched-row sensitivity results remain in the accompanying data.
 
-\input{generated/full_evaluation/affine}
+Raw Jacobian has a larger point estimate than differential Jacobian in five
+models. All seven paired 95\% relation-bootstrap intervals for their
+difference include zero; these results do not establish a general advantage
+for either readout. LRE hyperparameter selection remains in sample.
 
+\clearpage
 \subsection{OLMo corpus-frequency baselines}
 \label{sec:corpus-freq-baselines}
-\input{generated/full_evaluation/corpus}
+
+\input{generated/shared_baselines/olmo_frequencies}
+
+\paragraph{Counting and aggregation.}
 A document contributes at most one mention per subject/object string.
 Matching uses normalized literal names with Unicode word boundaries,
-without alias resolution or a proximity constraint. The saved subject,
-object and joint counts cover every original fact string. We restore
-original duplicate multiplicities and recompute relation aggregates
-before correlating them with the current LRE outcomes. Unobserved
-conditioning marginals receive the explicit zero convention noted in
-the table, and no row is dropped.
+without alias resolution or a proximity constraint. With subject, object,
+and joint counts $c_s$, $c_o$, and $c_{so}$, the conditionals are
+$P(o\mid s)=c_{so}/c_s$ and $P(s\mid o)=c_{so}/c_o$.
+Macro features average row-level quantities where both marginals are
+observed. Micro conditionals divide summed joint counts by summed
+marginals. The log of the mean joint count has the same Spearman correlation
+as the mean joint count because the transformation is monotonic.
 
-These associations remain exploratory: relations can share subjects
-and objects, the counts do not resolve aliases, and $p$-values are
-unadjusted. They are not evidence that training frequency causes the
-observed readout or LRE performance.
+\paragraph{Interpretation and reproducibility.}
+These are exploratory associations. Relations can share subjects and
+objects, and the reported $p$-values are unadjusted. Conditional direction
+also reflects marginal frequency: when $c_{so}>0$, $P(o\mid s)/P(s\mid o)=c_o/c_s$.
+
+
+\clearpage
+\subsection{Neutral-prompt variations}
+\label{sec:prompt-variations}
+
+Table~\ref{tab:shared-prompt-variations} collects the prompt experiments for
+the differential Jacobian lens. For Qwen3 8B Base, we compare the original
+prompt with six alternatives and the subsequently measured newline control.
+The checkpoint, layer 19, reference and test rows, relation-prompt answer
+tokens, and LRE outcomes are fixed.
+
+\input{generated/shared_baselines/prompt_variations}
