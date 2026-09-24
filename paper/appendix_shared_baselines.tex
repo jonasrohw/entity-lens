@@ -54,11 +54,18 @@ also reflects marginal frequency: when $c_{so}>0$, $P(o\mid s)/P(s\mid o)=c_o/c_
 \label{sec:prompt-variations}
 
 Table~\ref{tab:shared-prompt-variations} reports prompt variations for the
-Qwen3 8B Base contrastive entity lens. All prompts use the same checkpoint,
+Qwen3 8B Base contrastive entity lens. We tested these variations because
+initial correlations were low with the neutral prompt used for OLMo,
+\texttt{\{s\} is known for}. All prompts use the same checkpoint,
 layer 19, demonstrations, reference sets, 9,747 evaluation rows, gender scoring,
 relation-prompt answer tokens, and LRE outcomes as
 Table~\ref{tab:shared-lenses-spearman}. Correlations use the same 26 relations
 after the model's two year-relation exclusions. Only the displayed neutral
 prompt varies; \texttt{\textbackslash n} denotes one leading newline.
+
+After observing unusually large subject-state norms at position zero, we
+added a leading newline (\texttt{\textbackslash n}) to the original prompt.
+This moves every subject past position zero while preserving Qwen's original
+token sequence. The table marks this control with $\dagger$.
 
 \input{generated/shared_baselines/prompt_variations}
