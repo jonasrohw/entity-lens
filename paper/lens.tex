@@ -662,8 +662,7 @@ entities they are asked about.
 \input{ai_use}
 
 \section*{Reproducibility statement}
-We provide sufficient details to reproduce all experiments in the main text and appendix, including the datasets, model checkpoints, prompt templates, evaluation procedures, and hyperparameters used throughout. All experiments use publicly available model checkpoints and datasets. We report the procedures used to estimate linear relational embeddings and the contrastive Jacobian lens, as well as the definitions of all faithfulness and ranking metrics. Additional implementation details, robustness analyses, and per-relation results are provided in the appendix. Code for reproducing the experiments and figures will be released upon publication.
-
+ We release the complete pipeline, and one command reproduces every number, table and figure in the paper from scratch: it downloads the LRE dataset and all model checkpoints at pinned revisions, runs every measurement, and builds the tables and figures. To confirm this, we ran the full pipeline in a fresh Docker container and compared every reported value against the paper. The pipeline pins the datasets, checkpoints, prompt templates, random seeds and hyperparameters in configuration files, and saves every intermediate measurement with checksums, so each statistic can also be recomputed on a CPU from the saved outputs. Reproducing everything takes roughly 35 A100 (80 GB) GPU-hours for the seven models, plus about 1,200 CPU core-hours and 3.6 TB of disk for the OLMo training-corpus counts. All models and datasets are publicly available.
 \bibliographystyle{iclr2027_conference}
 \bibliography{custom}
 
