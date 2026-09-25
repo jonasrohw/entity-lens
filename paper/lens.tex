@@ -74,7 +74,7 @@ $\rho = \headlinenumber $.
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
-an individual entity of a entity type. (ii)~We turn it into a relation-agnostic diagnostic
+an individual entity of an entity type. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
 (iii)~We show the prediction holds up
 under leave-one-type-out and under controls for object
@@ -251,6 +251,20 @@ association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 }
 
+\enote{sg}{I moved the object cardinality paragraph here because the next paragraph (answer frequency) assumes the reader knows what "cardinality" is.}
+\textbf{Object cardinality.} Relations
+differ greatly in how many distinct objects they have; $k$, the mean number
+of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
+faithfulness easier, and $k$ is indeed associated with faithfulness on
+its own, though only weakly
+($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
+lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
+correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
+complementary predictors of faithfulness, so removing the variance
+attributable to $k$ sharpens rather than weakens the lens
+signal. Since object cardinality is a complementary
+predictor, we will analyze it in more detail in \S\ref{sec:residuals} below.
+
 \textbf{Answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability over ten short
@@ -273,20 +287,6 @@ the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
 drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.696, 0.799]$, median $0.728$.
-
-\textbf{Object cardinality.} Relations
-differ greatly in how many distinct objects they have; $k$, the mean number
-of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
-faithfulness easier, and $k$ is indeed associated with faithfulness on
-its own, though only weakly
-($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
-lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
-correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
-complementary predictors of faithfulness, so removing the variance
-attributable to $k$ sharpens rather than weakens the lens
-signal. Since object cardinality is a complementary
-predictor, we now analyze it in more detail.
-
 
 \subsection{Object cardinality}
 \label{sec:residuals}
@@ -329,7 +329,7 @@ hundreds. For these relations, faithfulness is near its
 floor due to the difficulty of the task and the details of
 the representation apparently do not change that.
 
-Our account thus holds in the middle of the cardinality range and
+The relationship between our NEL-based score and LRE faithfulness thus holds in the middle of the cardinality range and
 degrades at both ends, in opposite directions.
 %Removed the following sentence because it's now at the top of the section where it belongs.
 %Cardinality is the
@@ -337,9 +337,9 @@ degrades at both ends, in opposite directions.
 %$0.757$ (\S\ref{sec:results}).
 Our analysis in this section
 helps us interpret the result from \S\ref{sec:results}:
-$k$ is a true source of deviation in the salience account,
+$k$ is a true source of deviation,
 not merely a confound.
-\enote{sg}{I don't like "salience account"}
+%\enote{sg}{I don't like "salience account"}
 \enote{sg}{In general I think we should avoid using the word "account" too much, it's a sign of AI slang}
 
 
@@ -355,7 +355,7 @@ Readouts of this kind
 are normally taken to surface what a
 model is internally disposed to say
 \citep{gurnee2026workspace}. We read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
-available, before any relation has been named. The account of
+available, before any relation has been named. Our interpretation of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
 part of what the subject evokes; that is, the object should be
@@ -592,7 +592,7 @@ faithfulness, not that the representation it reads is what the LRE
 exploits.
 
 
-Our account only holds in the middle of the object cardinality range
+Our NEL-based score is only a good predictor of LRE faithfulness in the middle of the object cardinality range
 (\S\ref{sec:residuals}).
 %\enote{sg}{The above sentence is AI slang}
 It is weakest where the answer space is very
@@ -600,7 +600,7 @@ small, since an LRE can then be faithful by elimination rather than by
 reading anything from the subject, and where the answer space is very
 large and each answer near-unique, since faithfulness is then close to its
 floor regardless. We show that these are the two tails of a single
-variable, but we do not have a principled account of where the boundaries
+variable, but we do not have a principled description of where the boundaries
 lie.
 
 %, and with 28 relations we cannot fit one.
