@@ -26,7 +26,7 @@ non-French to French reference entities costs $1.10$ in median
 $\log_{10}$ rank, a factor of 13.
 In contrast, NEL is robust to reference set composition:
 results are in a small range, 
-4[1.71,1.81]$. Tracking the answer token
+$[1.71,1.81]$. Tracking the answer token
 itself rather than each subject's own target makes the mechanism plain:
 the rank of ``French'' rises monotonically with the number of French
 reference entities, $47 \to 115 \to 665$ for zero, four and eight, and
@@ -37,7 +37,7 @@ any reference set. The collapse is therefore a property of the subtraction,
 not of the reference entities.
 
 \enote{hs}{i think we can cut this?
-\paragraph{An example.} For Joseph Laniel, whose answer is ``French'',
+paragraph{An example.} For Joseph Laniel, whose answer is ``French'',
 NEL ranks ``French'' first. CEL ranks it third with non-French reference
 entities, and $623$rd with French ones, where the top of the readout is
 ``sculpt'', ``dancing'', ``singing'', ``dance'', ``chore'', ``piano''.
