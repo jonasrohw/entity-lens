@@ -249,7 +249,10 @@ lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
 complementary predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
-signal.\footnote{All variables here are ordinal, so we work throughout with
+signal.
+
+\enote{hs}{pleaes move this footnote to the appendix
+footnote{All variables here are ordinal, so we work throughout with
 ranks. To remove the effects of a set of covariates, we
 rank-transform the lens score, faithfulness, and each
 covariate; regress the ranked lens score and ranked
@@ -260,6 +263,7 @@ This is the standard partial
 Spearman correlation, and it asks how much of the lens--faithfulness
 association remains once everything the covariates can linearly explain
 about either variable has been removed.}
+}
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
@@ -306,15 +310,19 @@ model's own free generation.
 For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
-gold object appears in either continuation.\footnote{Titles, particles and
+gold object appears in either continuation.
+This is a forward pass under different prompts,
+and involves no Jacobian.
+
+\enote{hs}{please move this footnote to the appendix
+footnote{Titles, particles and
 words shared with the subject's own name are excluded, so that
 \emph{The}~Joker is not matched by any occurrence of ``the'' and
 \emph{Johann Georg Kant} (Immanuel Kant's father) is not matched by a passage about Immanuel Kant.
 The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
 makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
 object is never named.}
-This is a forward pass under different prompts,
-and involves no Jacobian.
+}
 
 %\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
 % maybe, but no time
