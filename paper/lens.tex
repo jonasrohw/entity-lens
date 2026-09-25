@@ -234,12 +234,13 @@ Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho =
 \headlinenumber $
 ($p = 8.24\!\times\!10^{-6}$).
+We now test three other variables as possible predictors of faithfulness.
 
 % RESTORE IF THERE'S TIME
 %; a permutation test agrees
 %(Appendix~\ref{sec:permutation}).
 
-\paragraph{The correlation is not carried by cardinality.} Relations
+\textbf{Object cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
 of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
 faithfulness easier, and $k$ is indeed associated with faithfulness on
@@ -265,7 +266,7 @@ association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 }
 
-\paragraph{Nor by answer frequency.} A relation whose answers are frequent
+\textbf{Answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability over ten short
 generic prefixes.\footnote{The beginning-of-sequence token alone,
@@ -276,7 +277,7 @@ score ($\rho = 0.098$), and removing it leaves the correlation
 unchanged at $0.755$. The correlation is $0.784$ with both cardinality
 and answer frequency removed.
 
-\paragraph{Nor by one domain.} Eleven of the 28 relations have
+\textbf{Entity type.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain
 (i.e., one subject type)
 drives the
