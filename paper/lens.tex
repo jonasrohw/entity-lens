@@ -269,13 +269,18 @@ about either variable has been removed.}
 \textbf{Answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability over ten short
-generic prefixes.\footnote{The beginning-of-sequence token alone,
-``The'', ``In the'', ``It was'', ``She said the'', ``Here is'', ``One of
-the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
+generic prefixes.
 This predicts neither faithfulness ($\rho = -0.111$) nor the lens
 score ($\rho = 0.098$), and removing it leaves the correlation
 unchanged at $0.755$. The correlation is $0.784$ with both cardinality
 and answer frequency removed.
+
+\enote{hs}{
+  please move to appendix
+footnote{The beginning-of-sequence token alone,
+``The'', ``In the'', ``It was'', ``She said the'', ``Here is'', ``One of
+the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
+}
 
 \textbf{Entity type.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain
@@ -475,12 +480,14 @@ prominence, low gold$\in$lens)
 also suffers from
 reference competition due to the complex names of
 many stars. For example, the most prominent associations of
-the stars
-``rho01 Cnc'' and
-``Alnair'' (tokenized Al-n-air)
+the star
+``rho01 Cnc''
+%and
+%``Alnair'' (tokenized Al-n-air)
 are ``machining'', ``drilled'', ``CNC''
-(Cnc = Computerized Numerical Control) and ``flying'', ``flown'',
-``Flight'', respectively.
+(Cnc = Computerized Numerical Control).
+%and ``flying'', ``flown'',
+%``Flight'', respectively.
 
 \enote{hs}{cut for space
 For the actress Vondell
@@ -542,20 +549,23 @@ agreement that is not an accurate response at all.
 Both LRE and the lens work on the token level, the residual
 stream vector at the last layer, which is focused on
 producing the correct next token and may not represent
-reliable information about the tokens to follow. This
+information about the tokens to follow. This
 single-token regime is problematic for the standard
 setup because we are effectively investigating a relation in
 which all objects have been shortened to their first
-token. This might be a nonsensical relation even to humans
-and it is clearly different from the intended relations
+token. This 
+is clearly different from the intended relations
 whose objects are full entity names.
 
 \subsection{Towards better fact datasets}
 Our analysis motivates two requirements for future evaluations. (i)
 Answer scoring should distinguish complete objects rather than credit a 
-semantically weak first token. Filtering for identifying first tokens provides
+semantically weak first token.
+\enote{hs}{restore if there is more space
+Filtering for identifying first tokens provides
 one diagnostic, but excludes some relations and does not ensure that the model's
-own prediction is distinctive. Evaluation methods that score complete answers
+own prediction is distinctive.}
+Evaluation methods that score complete answers
 are therefore needed for relations with unavoidable prefix overlap.
 (ii) A subject name should refer to the intended entity for the model under
 study. Dataset construction alone may not ensure this, because different models
@@ -607,12 +617,14 @@ estimates are coarse (for three of them, quantized to thirds); a
 rotating-split protocol would sharpen these.
 
 Finally, the diagnostic is
-defined only for relations whose subjects are entities, which excludes 19
-of the dataset's 47 relations.
+defined only for relations.
+whose subjects are entities.
+%, which excludes 19
+%of the dataset's 47 relations.
 
 \section{Conclusion}
 
-Whether a relation is linearly decodable from a language model is
+Whether a relation is linearly decodable from an LM  is
 substantially predictable without the relation. A Jacobian lens estimated
 from subject differences under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
