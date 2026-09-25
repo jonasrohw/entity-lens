@@ -60,6 +60,7 @@ reference set differences:
 \end{equation}
 In what follows,
 EL refers to both NEL and CEL.
+\enote{sg}{should we refer to \S\ref{sec:refsets} for more info about the CEL-NEL contrast?}
 
 % and
 %``entity lens'' refers to NEL unless
@@ -85,6 +86,8 @@ it shares with other same-type entities.
 CEL outputs only what differentiates
 $s$ from other same-type entities.
 
+\enote{sg}{Idea for a future iteration: what if we train just one NEL for all subject types together?}
+
 \paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
 Jacobian--vector product $J_i u$ by the double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
@@ -103,5 +106,6 @@ no (subject,~object) pair of the
 relation is used in estimation.
 }
 
-
-
+\enote{sg}{I think we need to briefly mention layer 17 somewhere. (Btw. it is probably not the same layer for all models?)
+The rest is clear enough in my opinion.
+}
