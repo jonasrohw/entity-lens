@@ -251,6 +251,20 @@ association remains once everything the covariates can linearly explain
 about either variable has been removed.}
 }
 
+\enote{sg}{I moved the object cardinality paragraph here because the next paragraph (answer frequency) assumes the reader knows what "cardinality" is.}
+\textbf{Object cardinality.} Relations
+differ greatly in how many distinct objects they have; $k$, the mean number
+of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
+faithfulness easier, and $k$ is indeed associated with faithfulness on
+its own, though only weakly
+($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
+lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
+correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
+complementary predictors of faithfulness, so removing the variance
+attributable to $k$ sharpens rather than weakens the lens
+signal. Since object cardinality is a complementary
+predictor, we will analyze it in more detail in \S\ref{sec:residuals} below.
+
 \textbf{Answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
 each answer token by averaging its log-probability over ten short
@@ -273,20 +287,6 @@ the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
 drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.696, 0.799]$, median $0.728$.
-
-\textbf{Object cardinality.} Relations
-differ greatly in how many distinct objects they have; $k$, the mean number
-of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
-faithfulness easier, and $k$ is indeed associated with faithfulness on
-its own, though only weakly
-($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
-lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
-correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
-complementary predictors of faithfulness, so removing the variance
-attributable to $k$ sharpens rather than weakens the lens
-signal. Since object cardinality is a complementary
-predictor, we now analyze it in more detail.
-
 
 \subsection{Object cardinality}
 \label{sec:residuals}
