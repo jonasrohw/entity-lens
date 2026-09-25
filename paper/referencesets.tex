@@ -23,8 +23,10 @@ only thing that varies.
 
 Table~\ref{tab:refsets} shows the result. Under CEL, moving from
 non-French to French reference entities costs $1.10$ in median
-$\log_{10}$ rank, a factor of 13. Under NEL the same four reference sets
-span $1.71$ to $1.81$ and nothing happens. Tracking the answer token
+$\log_{10}$ rank, a factor of 13.
+In contrast, NEL is robust to reference set composition:
+results are in a small range, 
+4[1.71,1.81]$. Tracking the answer token
 itself rather than each subject's own target makes the mechanism plain:
 the rank of ``French'' rises monotonically with the number of French
 reference entities, $47 \to 115 \to 665$ for zero, four and eight, and
@@ -34,12 +36,13 @@ entities} leave ``French'' at rank $55$ under NEL, its best value for
 any reference set. The collapse is therefore a property of the subtraction,
 not of the reference entities.
 
+\enote{hs}{i think we can cut this?
 \paragraph{An example.} For Joseph Laniel, whose answer is ``French'',
 NEL ranks ``French'' first. CEL ranks it third with non-French reference
 entities, and $623$rd with French ones, where the top of the readout is
 ``sculpt'', ``dancing'', ``singing'', ``dance'', ``chore'', ``piano''.
 The subject, the layer and the prompt are identical in the two cases;
-only the reference set differs.
+only the reference set differs.}
 
 \paragraph{The effect reverses.} On the 23 non-French subjects the
 ordering is the other way round: the eight French reference entities are
@@ -62,5 +65,5 @@ because the subtracted term is the answer.
 \paragraph{Consequence.} A reference set of the same type as the subject
 (\S\ref{sec:lens}) does not guarantee that the set is neutral with
 respect to the relation being read out, and no choice of reference
-entities can be neutral for every relation at once. This is why we
-report NEL alongside CEL throughout.
+entities can be neutral for every relation at once. This is why
+NEL is preferred to CEL.
