@@ -599,6 +599,7 @@ exploits.
 
 The account has a scope condition we can state but not yet explain
 (\S\ref{sec:residuals}).
+\enote{sg}{The above sentence is AI slang}
 It is weakest where the answer space is very
 small, since an LRE can then be faithful by elimination rather than by
 reading anything from the subject, and where the answer space is very
@@ -615,13 +616,19 @@ without being something a name is ``known for''. A different neutral
 prompt, or an average over several, might track salience more broadly.
 
 Seven of the 28 relations have fewer than ten test items after the
-in-context and reference subjects are removed, so their faithfulness
-estimates are coarse (for three of them, quantized to thirds); a
-rotating-split protocol would sharpen these.
+in-context and reference subjects are removed,
+\enote{sg}{"after the in-context and reference subjects are removed": which part of the paper does this refer to?}
+so their faithfulness
+estimates are coarse (for three of them, quantized to thirds).
+\enote{sg}{Removed sentence: "a
+rotating-split protocol would sharpen these."
+Whatever this means and however right this may be, I don't think this is helpful in a limitations section.
+}
 
 Finally, the diagnostic is
-defined only for relations.
-whose subjects are entities.
+defined only for relations
+whose subjects are entities
+(and not words).
 %, which excludes 19
 %of the dataset's 47 relations.
 
@@ -629,12 +636,16 @@ whose subjects are entities.
 
 Whether a relation is linearly decodable from an LM  is
 substantially predictable without the relation. A Jacobian lens estimated
-from subject differences under a neutral prompt, at a fixed layer, ranks
+from subjects
+\enote{sg}{changed "subject differences" to "subjects"}
+under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
 out to be faithful.
 
-The reading we favor is that salience is the mechanism rather than a
-confound: a relation admits a faithful linear operator to the extent that
+The reading we favor is that salience is the mechanism:
+%rather than a
+%confound:
+a relation admits a faithful linear operator to the extent that
 its answer is already part of what the subject's representation makes the
 model disposed to say. On that view the wide spread of LRE faithfulness
 across relations is less a fact about the relations than about the
