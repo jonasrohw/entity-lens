@@ -178,8 +178,8 @@ object, so that the model's next token is its answer.
 This is what
 defines the $m_e$, the model's \textbf{top-1 answer}. The subjects of
 a relation are shuffled once and partitioned into three disjoint sets:
-eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
-are estimated, and the remainder as scored test subjects.
+eight in-context examples and eight reference subjects from which $W$ and $b_\beta$
+are estimated; every row of the relation, including these, is scored.
 
 Faithfulness is then recomputed for all 28 relations under this protocol.
 Layer and $\beta$ are chosen on a $6\times6$ grid consisting of six candidate
@@ -202,8 +202,8 @@ so higher $A_r$ means the lens agrees with the model more.
 
 
 
-The lens scores 11--20 subjects for a relation, depending on how many remain
-once the in-context examples and the reference set are removed. For the
+The lens and the LRE score every row of a relation (19--994 rows), including
+the in-context examples and the reference set. For the
 results in \S\ref{sec:results}, the lens and the LRE sample their splits
 independently, so the particular subjects entering each set differ between
 the two measurements. Independent splits introduce sampling variation into
@@ -486,7 +486,7 @@ the star
 ``rho01 Cnc''
 %and
 %``Alnair'' (tokenized Al-n-air)
-are ``machining'', ``drilled'', ``CNC''
+are ``machining'', ``CNC'', ``manufacturing''
 (Cnc = Computerized Numerical Control).
 %and ``flying'', ``flown'',
 %``Flight'', respectively.
@@ -519,7 +519,7 @@ The correct generation of ``University'' is not
 a reliable indicator of the factual competence of the LM.
 
 The collapse rate is the fraction of a relation's distinct
-objects that share a first token with another. \textbf{6 of 40
+objects that share a first token with another. \textbf{6 of 47
 relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 \textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
 29 of 69 objects begin with \textsc{University}).
@@ -615,11 +615,8 @@ representation carries; attributes such as gender may be well encoded
 without being something a name is ``known for''. A different neutral
 prompt, or an average over several, might track salience more broadly.
 
-Seven of the 28 relations have fewer than ten test items after the
-in-context and reference subjects are removed,
-\enote{sg}{"after the in-context and reference subjects are removed": which part of the paper does this refer to?}
-so their faithfulness
-estimates are coarse (for three of them, quantized to thirds).
+The smallest relations have only 19--24 rows, so their faithfulness
+estimates remain coarse.
 \enote{sg}{Removed sentence: "a
 rotating-split protocol would sharpen these."
 Whatever this means and however right this may be, I don't think this is helpful in a limitations section.
@@ -737,10 +734,10 @@ space.
 
 The fix is to place the space in the prompt, so that the query ends with
 it and the next token is content. Rescored, the two relations give
-faithfulness $0.67$ and lens scores of $-4.24$ and $-4.17$; the model does
+faithfulness $0.74$ and $0.79$ and lens scores of $-4.44$ and $-3.45$; the model does
 predict the year correctly once the space is consumed. Including the
 uncorrected values would have depressed the reported correlation from
-$0.658$ to $0.427$.
+$\headlinenumber$ to $0.416$.
 
 \section{Recombining anchors and subject terms}
 \label{sec:swapdetail}
@@ -855,7 +852,7 @@ relation.}
 
 \paragraph{Where the operator fails.} Although the model answers all 22
 countries correctly, the operator reproduces only 12 per relation. It
-does much better on the benchmark's nine (7 capitals, 8 largest cities)
+does much better on the benchmark's nine (7 capitals, 7 largest cities)
 than on the 13 added countries (5 and 5), which are rarer in text. On
 those it fails in recognizable ways: it echoes the country's own name
 (Kazakhstan, Tanzania, Vietnam), names a famous associated city (Paris
@@ -881,9 +878,9 @@ anchor brings it down to the anchor-alone level.
 \toprule
 arm & capital (22) & largest (22) & position (24) & sport (24) \\
 \midrule
-own & 10.7 (10--14) & 11.4 (10--12) & 18.3 (17--20) & 22.0 (21--23) \\
+own & 10.7 (10--14) & 11.3 (10--12) & 18.3 (17--20) & 22.0 (21--23) \\
 foreign & 9.7 (9--11) & 9.3 (8--10) & 17.3 (15--21) & 20.4 (16--23) \\
-NEL & 5.2 (1--8) & 4.7 (4--5) & 14.7 (7--20) & 21.5 (16--24) \\
+NEL & 5.2 (1--8) & 4.6 (4--5) & 14.7 (7--20) & 21.5 (16--24) \\
 anchor alone & 0.0 (0--1) & 0.0 (0--0) & 7.0 (7--7) & 4.5 (1--7) \\
 \bottomrule
 \end{tabular}
@@ -901,7 +898,7 @@ position leans toward soccer's.
 For the country pair we also varied the two reference sets jointly: 40
 anchors crossed with 40 sets of references for NEL, drawn from the 30
 countries outside the test set. Of the variance in NEL's hits, the
-anchor's references account for $36\%$ (capital) and $26\%$ (largest
+anchor's references account for $36\%$ (capital) and $25\%$ (largest
 city), NEL's references for $38\%$ and $42\%$, and their interaction for
 the rest. Neither source dominates.
 
