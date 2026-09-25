@@ -169,7 +169,28 @@ error. No other relation was excluded.
 
 
 \paragraph{Measurement.}
-We decode $\mbox{EL}(e)$ over the full vocabulary
+For LRE faithfulness,
+we follow
+\citet{hernandez2024linearity}. A relation is presented to the model
+\emph{in context}: eight (subject, object) examples of the relation are
+concatenated, one per line, and the query subject is appended without its
+object, so that the model's next token is its answer. This is what
+defines ``the model's own prediction''. The subjects of
+a relation are shuffled once and partitioned into three disjoint sets:
+eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
+are estimated, and the remainder as scored test subjects.
+
+Faithfulness is then recomputed for all 28 relations under this protocol.
+Layer and $\beta$ are chosen on a $6\times6$ grid consisting of six candidate
+layers for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values
+of $\beta$ ($0.5, 1, 1.5, 2, 3, 5$). Selection is based on the mean over the
+test subjects.
+\citet{hernandez2024linearity} likewise fit both per relation; the six
+layers span the network at roughly even spacing and the $\beta$ range
+brackets the values they report.
+
+To measure the accuracy of the predictions of the entity lens,
+we decode $\mbox{EL}(e)$ over the full vocabulary
 and record the rank of $m_e$, the model's own top-1 answer for relation
 $r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
 Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
@@ -193,26 +214,6 @@ do not establish performance on a separate held-out evaluation set.
 Crucially, the in-context prompt is used only to obtain the \emph{target};
 the lens itself is always computed under the neutral prompt of
 \S\ref{sec:lens}.
-
-For LRE faithfulness,
-we follow
-\citet{hernandez2024linearity}. A relation is presented to the model
-\emph{in context}: eight (subject, object) examples of that relation are
-concatenated, one per line, and the query subject is appended without its
-object, so that the model's next token is its answer. This is what
-defines ``the model's own prediction'' for both measures. The subjects of
-a relation are shuffled once and partitioned into three disjoint sets:
-eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
-are estimated, and the remainder as scored test subjects.
-
-Faithfulness is then recomputed for all 28 relations under this protocol.
-Layer and $\beta$ are chosen on a $6\times6$ grid consisting of six candidate
-layers for the subject state ($5, 11, 14, 17, 20, 23$) crossed with six values
-of $\beta$ ($0.5, 1, 1.5, 2, 3, 5$). Selection is based on the mean over the
-test subjects.
-\citet{hernandez2024linearity} likewise fit both per relation; the six
-layers span the network at roughly even spacing and the $\beta$ range
-brackets the values they report.
 
 \section{Results}
 \label{sec:results}
