@@ -28,7 +28,7 @@
 $>>>$\hspace{1cm}}}}}
 
 \enoteson
-%\enotesoff
+\enotesoff
 
 \def\headlinenumber{0.7355}
 
@@ -42,7 +42,6 @@ $>>>$\hspace{1cm}}}}}
 
 \section{Introduction}
 
-\enote{sg}{Here and/or in related work, we could mention Yuetian's paper on the relationship between relational linearity and hallucinations. I think this could be helpful to convince readers that the LRE topic is interesting.}
 
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
@@ -59,7 +58,7 @@ that it is better understood as a property of the \emph{subject's
 representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
-\enote{sg}{This is very nitpicky, but I would prefer saying "A natural reading" rather than "The natural reading", as different observers may have different intuitions of naturalness.}
+
 
 Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
@@ -310,9 +309,11 @@ words shared with the subject's own name are excluded, so that
 The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
 makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
 object is never named.}
-\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
 This is a forward pass under different prompts,
 and involves no Jacobian.
+
+%\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
+% maybe, but no time
 
 We refer to this rate as the object's \emph{prominence}. Across the 14 relations
 for which it can be measured it ranges from $1.00$
@@ -325,9 +326,89 @@ $n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
 Thus, what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
 
-\enote{sg}{Now an obvious question is: If object salience predicts entity lens, and entity lens predicts LRE faithfulness, then how well does object salience predict LRE faithfulness?}
+%\enote{sg}{Now an obvious question is: If object salience predicts entity lens, and entity lens predicts LRE faithfulness, then how well does object salience predict LRE faithfulness?}
+% yes, ideally we would make these additional expriments
+% on the other hand, one could ask thes ame question about
+% the jacobian lens: what's so interesting about the
+% jacobian lens if we can compute prominence directly from the
+% precictions of the model?
 
 \input{referencesets}
+
+\subsection{An interventional analysis}
+\label{sec:swap}
+\enote{sg}{
+	This section title is awfully AI-y and completely meaningless! Which operator? Which two terms? What does "carry" mean here? 
+	"the operator's two terms" becomes clear with the first paragraph.
+	"carry" seems to be equivalent to "capture", which I find slightly better but still not completely clear.
+}
+
+The LRE of Eq.~\ref{eq:wb} is the sum of an \emph{anchor} $b_\beta$,
+which does not depend on the subject, and a \emph{subject term}
+$\beta W s$. The subject term has the form of NEL
+(Eq.~\ref{eq:nel}), except that its Jacobians are taken under the
+relation's own prompt. We ask what each term carries by recombining
+them. If the anchor carries the relation, pairing it with a
+\emph{foreign} subject term from another relation should still
+produce this relation's object; and if NEL captures the subject, it
+should be able to stand in for the subject term.
+
+We use two relation pairs that share their subjects:
+\textsc{country\_capital\_city} and \textsc{country\_largest\_city} over
+22 countries whose capital is not their largest city and for which the
+model answers both relations correctly, and
+\textsc{person\_plays\_position\_in\_sport} and
+\textsc{person\_plays\_pro\_sport} over 24 athletes. Each subject is read
+with the others as references, at $\beta = 3$.
+Appendix~\ref{sec:swapdetail} describes the experiments in full.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+& & \multicolumn{3}{c}{subject term} & \multicolumn{2}{c}{controls} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+relation & $n$ & own & foreign & NEL & anchor alone & wrong donor \\
+\midrule
+\textsc{country\_capital\_city} & 22 & 12 & 12 & 7 & 0 & 0 \\
+\textsc{country\_largest\_city} & 22 & 12 & 8 & 4 & 0 & 0 \\
+\textsc{person\_plays\_position} & 24 & 19 & 21 & 18 & 7 & 6 \\
+\textsc{person\_plays\_pro\_sport} & 24 & 22 & 21 & 21 & 6 & 3 \\
+\bottomrule
+\end{tabular}
+\caption{Recombining an LRE's anchor with different subject terms,
+$\beta = 3$. Counts are how often the decoded top-1 is the relation's
+gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
+the paired relation's subject term; \emph{NEL} is the noncontrastive
+entity lens, which never sees a relation; \emph{anchor alone} drops the
+subject term; \emph{wrong donor} uses another subject's NEL. The model
+answers all 22 countries correctly, but the operator itself reproduces
+only 12 (Appendix~\ref{sec:swapdetail}).}
+\label{tab:swap}
+\end{table}
+
+\paragraph{The anchor carries the relation.} A foreign subject term
+leaves the answer largely intact (Table~\ref{tab:swap}): with the
+largest-city subject term the capital anchor still names 12 capitals, as
+many as with its own, and each person anchor keeps 21 of 24 subjects with
+the other relation's subject term. The anchor alone names no country's
+capital or largest city, so these hits are composed rather than read off
+the anchor. Nor do they depend on the particular references: over 500
+anchors estimated from references disjoint from the test subjects, the
+foreign subject term stays on average within one to two subjects of the
+operator's own on all four relations.
+
+\paragraph{The lens stands in for the subject term, but only
+moderately.} NEL, computed under the neutral prompt with no relation
+anywhere, recovers the operator for sport (21 against 22) and largely for
+position (18 against 19), but for only 7 of the 12 capitals and 4 of the
+12 largest cities that the operator itself gets right. What it supplies
+is subject-specific: another subject's NEL falls to or below the
+anchor alone. It is also less stable than the foreign subject
+term. Over the same 500 anchors it ranges from 7 to 20 of 24 for
+position, and for the country pair neither the anchor's references nor
+NEL's own references dominate its variance.
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -348,12 +429,13 @@ is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
 % Issue here, we need to investigate.
 
-\enote{sg}{
-	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
-	TODO:
-	(1) I think we should also investigate this "number of objects" quantity.
-	(2) I don't like the term "object cardinality", in particular because it leads to confusion with "number of objects". Can't we just say "subjects per object" or similar?
-}
+%\enote{sg}{
+%%%	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
+%	TODO:
+%	(1) I think we should also investigate this "number of objects" quantity.
+%%	(2) I don't like the term "object cardinality", in particular because it leads to %confusion with "number of objects". Can't we just say "subjects per object" or similar?
+%}
+% AGREED, BUT NO TIME FOR THIS ITERATION
 
 The largest positive residuals, faithful despite a low
 lens score, with their cardinality are
@@ -381,10 +463,10 @@ degrades at both ends, in opposite directions.
 %$0.757$ (\S\ref{sec:results}).
 Our analysis in this section
 helps us interpret the result from \S\ref{sec:results}:
-$k$ is a
-source of deviation in the salience account rather than
-merely a nuisance correlate.
-\enote{sg}{Is "nuisance correlate" standard or is it AI slang? Anyway, what does it mean?}
+$k$ is a true source of deviation in the salience account,
+not merely a confound.
+
+
 
 \section{Fact-level analysis}
 \label{sec:subject}
@@ -411,7 +493,11 @@ We now analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\enote{sg}{Is it correct to say that "reference competition" is about multi-token \textit{subjects}, while "semantically weak first tokens" is about multi-token \textit{objects}? If yes, it would be really helpful to say it. If not, why not?}
+%\enote{sg}{Is it correct to say that "reference competition" is about multi-token \textit{subjects}, while "semantically weak first tokens" is about multi-token \textit{objects}? If yes, it would be really helpful to say it. If not, why not?}
+% a single-toekn subject can also suffer from reference
+% competitoin
+% the token of a single-token object can also be
+% semantically weak
 
 \subsection{Reference competition}
 \label{sec:competition}
@@ -495,12 +581,13 @@ A complete fix would condition on the prediction being distinctive.
 
 The direction of the bias differs by relation. Where the collapse is on
 the gold side it makes faithfulness easier: 41 distinct fathers all
-count as \textsc{John}. Our \textsc{person\_father} figure is therefore an
-upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
-\enote{sg}{Which corrected value? How did you compute it?}
+count as \textsc{John}.
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not an accurate response at all.
 
+%Our \textsc{person\_father} figure is therefore an
+%upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
+%\enote{sg}{Which corrected value? How did you compute it?}
 
 
 Both LRE and the lens work on the token level, the residual
@@ -514,7 +601,23 @@ token. This might be a nonsensical relation even to humans
 and it is clearly different from the intended relations
 whose objects are full entity names.
 
-\input{towardsmechanism}
+\subsection{Towards better fact datasets}
+Our analysis motivates two requirements for future evaluations. First,
+answer scoring should distinguish complete objects rather than credit a shared,
+semantically weak first token. Filtering for identifying first tokens provides
+one diagnostic, but excludes some relations and does not ensure that the model's
+own prediction is distinctive. Evaluation methods that score complete answers
+are therefore needed for relations with unavoidable prefix overlap.
+
+Second, a subject name should refer to the intended entity for the model under
+study. Dataset construction alone may not ensure this, because different models
+can resolve the same name differently. Evaluations should examine the entity
+that a model associates with each subject, document ambiguity, and distinguish
+errors of subject identification from errors in relational decoding. These are
+methodological directions motivated by the observed failures, rather than
+solutions evaluated in this study.
+
+%\input{towardsmechanism}
 
 \section{Limitations}
 \label{sec:limitations}
