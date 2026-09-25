@@ -662,7 +662,7 @@ entities they are asked about.
 \input{ai_use}
 
 \section*{Reproducibility statement}
- We release the complete pipeline, and one command reproduces every number, table and figure in the paper from scratch: it downloads the LRE dataset and all model checkpoints at pinned revisions, runs every measurement, and builds the tables and figures. To confirm this, we ran the full pipeline in a fresh Docker container and compared every reported value against the paper. The pipeline pins the datasets, checkpoints, prompt templates, random seeds and hyperparameters in configuration files, and saves every intermediate measurement with checksums, so each statistic can also be recomputed on a CPU from the saved outputs. Reproducing everything takes roughly 35 A100 (80 GB) GPU-hours for the seven models, plus about 1,200 CPU core-hours and 3.6 TB of disk for the OLMo training-corpus counts. All models and datasets are publicly available.
+ We release the complete pipeline, and one command reproduces every number, table and figure in the paper from scratch: it downloads the LRE dataset and all model checkpoints, runs every measurement, and builds the tables and figures. To confirm this, we ran the full pipeline in a fresh Docker container and compared every reported value against the paper. The pipeline pins the datasets, checkpoints, prompt templates, random seeds and hyperparameters in configuration files. Reproducing everything takes roughly 35 A100 (80 GB) GPU-hours for the seven models, plus about 1,200 CPU core-hours and 3.6 TB of disk for the OLMo training-corpus counts. All models and datasets are publicly available.
 \bibliographystyle{iclr2027_conference}
 \bibliography{custom}
 
