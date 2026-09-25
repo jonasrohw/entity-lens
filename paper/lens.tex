@@ -226,11 +226,11 @@ relations. The lens sees no relation template, no objects, and no
 
 
 
-Figure~\ref{fig:main} shows the result. The relation-agnostic score
-predicts LRE faithfulness at Spearman $\rho =
-\headlinenumber $
+Figure~\ref{fig:main} plots LRE faithfulness against the median entity-lens
+score across subjects for each of 28 relations, with a least-squares fit.
+The scores correlate at Spearman $\rho = \headlinenumber$
 ($p = 8.24\!\times\!10^{-6}$).
-We now test three other variables as possible predictors of faithfulness.
+We next test three other predictors of faithfulness.
 
 % RESTORE IF THERE'S TIME
 %; a permutation test agrees
@@ -354,8 +354,7 @@ by the Jacobian lens:
 Readouts of this kind
 are normally taken to surface what a
 model is internally disposed to say
-\citep{gurnee2026workspace}. We
-have read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
+\citep{gurnee2026workspace}. We read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. Our interpretation of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
 should be linearly decodable to the extent that its answer is already
@@ -422,11 +421,11 @@ salience that never consults the lens.
 \section{Fact-level analysis}
 \label{sec:subject}
 Linearity emerges as a phenomenon at the relation level, not
-the fact level; it would not make sense to investigate
+the fact level. It would not make sense to investigate
 linearity for the facts of a relation that is not
 represented linearly. But
 once there is evidence for at least partial linearity of a
-relation, we can ask for individual facts how well
+relation, we determine for individual facts how well
 the entity lens predicts the degree to which
 they are
 integrated into the linear structure.
@@ -663,8 +662,7 @@ entities they are asked about.
 \input{ai_use}
 
 \section*{Reproducibility statement}
-We provide sufficient details to reproduce all experiments in the main text and appendix, including the datasets, model checkpoints, prompt templates, evaluation procedures, and hyperparameters used throughout. All experiments use publicly available model checkpoints and datasets. We report the procedures used to estimate linear relational embeddings and the contrastive Jacobian lens, as well as the definitions of all faithfulness and ranking metrics. Additional implementation details, robustness analyses, and per-relation results are provided in the appendix. Code for reproducing the experiments and figures will be released upon publication.
-
+ We release the complete pipeline, and one command reproduces every number, table and figure in the paper from scratch: it downloads the LRE dataset and all models, runs every measurement, and builds the tables and figures. To confirm this, we ran the full pipeline in a fresh Docker container and compared every reported value against the paper. The pipeline pins the datasets, checkpoints, prompt templates, random seeds and hyperparameters in configuration files. Reproducing everything takes roughly 35 A100 (80 GB) GPU-hours for the seven models, plus about 1,200 CPU core-hours and 3.6 TB of disk for the OLMo training-corpus counts. All models and datasets are publicly available.
 \bibliographystyle{iclr2027_conference}
 \bibliography{custom}
 

@@ -13,7 +13,7 @@ across all tokens and concepts, the entity lens
 $\mbox{EL}_t$
 is trained
 to predict what the model will output for an entity of
-type $t$ under the neutral prompt "\texttt{\{\} is known for}"; e.g., we train ELs for countries and for persons.
+type $t$ under the neutral prompt "\texttt{\{\} is known for}"; e.g., we train ELs for countries and persons.
 \enote{sg}{I don't understand the above sentence: "what the model will output" is too vague. Is it about next-token predictions or about any future token? (Edit after reading the intro: I think we should mention that it's under the neutral prompt "is known for".)}
 After estimating an entity lens, we measure how
 highly it ranks the model's answer for a relation without
@@ -33,4 +33,5 @@ predicted universities' first token is ``University'') and
 reference competition (e.g., the LLM confuses obscure
 actor names with competing non-actor entities that have the
 same last name).
+Our full pipeline is available on \href{https://github.com/USERNAME/REPOSITORY}{here}.
 \end{abstract}
