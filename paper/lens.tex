@@ -317,8 +317,10 @@ For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
 gold object appears in either continuation.
-This is a forward pass under different prompts,
-and involves no Jacobian.
+
+% restore if we have more space
+%This is a forward pass under different prompts,
+%and involves no Jacobian.
 
 \enote{hs}{please move this footnote to the appendix
 footnote{Titles, particles and
@@ -465,12 +467,11 @@ who is listed as an actor
 in LRE. The highest ranked token given by the lens is
 ``whistlebl''. This indicates that the most prominent entity
 associated with the last name Thommessen
-by Olmo-3-7B
 is Advokatfirmaet
-Thommessen, a law firm known for its digital whistleblowing
-tool. One might hope that the first name ``Rolf''
-disambiguates which subject is intended, but apparently this
-is not the case. In general, the last few tokens seem to
+Thommessen, a law firm known for digital whistleblowing.
+Apparently,  the first name ``Rolf''
+does not disambiguate which subject is intended.
+In general, the last few tokens seem to
 dominate which entity is represented and used by the LM. For the actor Barry Sobel, the lens top-ranks
 ``kosher'', ``Jewish'', ``Rabbi'', correct associations for
 the Brazilian Rabbi Henry Sobel. 
