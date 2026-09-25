@@ -298,7 +298,10 @@ with the largest positive and negative deviations
 in Figure~\ref{fig:main}.
 
 Concretely, we order the relations by their residual from the least-squares
-fit in Figure~\ref{fig:main}; this residual
+fit in Figure~\ref{fig:main}, leaving out the two rescored year
+relations (Appendix~\ref{sec:numeric-objects}) and scoring
+\textsc{name\_gender} against the model's literal answer token, as
+faithfulness does, rather than against all gender-matched alternatives; this residual
 is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
 % Issue here, we need to investigate.
@@ -313,24 +316,26 @@ than the lens score predicts.
 
 The largest positive residuals, faithful despite a low
 lens score, with their cardinality are
-\textsc{landmark\_on\_continent} ($+0.242$, $k = 189$),
-\textsc{name\_gender} ($-0.374$, $k = 9.5$) and
-\textsc{person\_native\_language} ($+0.118$, $k = 30.6$). In each, the LRE
-chooses among a handful of possible answers, and can be faithful without
+\textsc{name\_gender} ($+0.289$, $k = 9.5$),
+\textsc{person\_university} ($+0.258$) and
+\textsc{landmark\_on\_continent} ($+0.239$, $k = 189$). In each, the LRE
+chooses among a handful of possible answers (for \textsc{person\_university},
+the model answers ``University'' for 54 of 91 subjects; \S\ref{sec:subject}), and can be faithful without
 the answer being salient for any particular subject: no name is
 chiefly ``known for'' its gender, but there are only two answers to pick
 between.
 
 The largest negative residuals, unfaithful despite the
-lens, are \textsc{person\_father} ($-0.403$),
-\textsc{person\_mother} ($-0.330$) and \textsc{company\_ceo}
-($-0.297$), all with $k \approx 1$ and answer spaces in the
+lens, are \textsc{person\_father} ($-0.381$),
+\textsc{person\_mother} ($-0.299$) and \textsc{company\_ceo}
+($-0.260$), all with $k \approx 1$ and answer spaces in the
 hundreds. For these relations, faithfulness is near its
 floor due to the difficulty of the task and the details of
 the representation apparently do not change that.
 
 The relationship between our NEL-based score and LRE faithfulness thus holds in the middle of the cardinality range and
-degrades at both ends, in opposite directions.
+degrades at both ends, in opposite directions; across relations,
+residuals increase with $k$ (Spearman $\rho = 0.60$, $p = 0.001$).
 %Removed the following sentence because it's now at the top of the section where it belongs.
 %Cardinality is the
 %same variable whose removal raises the correlation to
