@@ -18,23 +18,30 @@ solutions evaluated in this study.
 
 
 
-\section{What the operator's two terms carry}
+\section{Analyzing the two terms of the LRE operator}
 \label{sec:swap}
-\enote{sg}{
-	This section title is awfully AI-y and completely meaningless! Which operator? Which two terms? What does "carry" mean here? 
-	"the operator's two terms" becomes clear with the first paragraph.
-	"carry" seems to be equivalent to "capture", which I find slightly better but still not completely clear.
-}
+%\enote{sg}{
+%	This section title is awfully AI-y and completely meaningless! Which operator? Which two terms? What does "carry" mean here? 
+%	"the operator's two terms" becomes clear with the first paragraph.
+%	"carry" seems to be equivalent to "capture", which I find slightly better but still not completely clear.
+%}
+\enote{sg}{I think this section is another good candidate for the appendix.}
 
 The LRE of Eq.~\ref{eq:wb} is the sum of an \emph{anchor} $b_\beta$,
 which does not depend on the subject, and a \emph{subject term}
-$\beta W s$. The subject term has the form of NEL
+$\beta W s$.
+The subject term has the form of NEL
 (Eq.~\ref{eq:nel}), except that its Jacobians are taken under the
-relation's own prompt. We ask what each term carries by recombining
-them. If the anchor carries the relation, pairing it with a
+relation's own prompt.
+\enote{sg}{Doesn't the subject term have the form of CEL? (Btw "has the form of" seems like another AI-ism.)}
+We ask what each term captures by recombining
+them.
+If the anchor captures the relation, pairing it with a
 \emph{foreign} subject term from another relation should still
-produce this relation's object; and if NEL captures the subject, it
+produce this relation's object;
+and if NEL \enote{sg}{or CEL? (see previous enote)} captures the subject, it
 should be able to stand in for the subject term.
+\enote{sg}{The contrast "if the anchor captures the relation" vs. "if NEL/CEL captures the subject" doesn't seem clean: shouldn't we vary one parameter at a time?}
 
 We use two relation pairs that share their subjects:
 \textsc{country\_capital\_city} and \textsc{country\_largest\_city} over
@@ -71,7 +78,7 @@ only 12 (Appendix~\ref{sec:swapdetail}).}
 \label{tab:swap}
 \end{table}
 
-\paragraph{The anchor carries the relation.} A foreign subject term
+\paragraph{The anchor captures the relation.} A foreign subject term
 leaves the answer largely intact (Table~\ref{tab:swap}): with the
 largest-city subject term the capital anchor still names 12 capitals, as
 many as with its own, and each person anchor keeps 21 of 24 subjects with
