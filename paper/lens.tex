@@ -264,8 +264,10 @@ about either variable has been removed.}
 
 \paragraph{Nor by answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
-each answer token by averaging its log-probability across ten neutral
-contexts. \enote{sg}{Do you say somehwere what these ten neutral contexts are?}
+each answer token by averaging its log-probability over ten short
+generic prefixes.\footnote{The beginning-of-sequence token alone,
+``The'', ``In the'', ``It was'', ``She said the'', ``Here is'', ``One of
+the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
 This predicts neither faithfulness ($\rho = -0.111$) nor the lens
 score ($\rho = 0.098$), and removing it leaves the correlation
 unchanged at $0.755$. The correlation is $0.784$ with both cardinality
