@@ -211,9 +211,10 @@ this comparison. Because the LRE hyperparameters are selected on the scored
 subjects, its reported faithfulness is an in-sample estimate; these results
 do not establish performance on a separate held-out evaluation set.
 
-Crucially, the in-context prompt is used only to obtain the \emph{target};
-the lens itself is always computed under the neutral prompt of
-\S\ref{sec:lens}.
+Note that the in-context prompt serves only to define the target
+$m_e$; the lens itself is always
+computed under the neutral prompt of \S\ref{sec:lens}.
+
 
 \section{Results}
 \label{sec:results}
@@ -221,19 +222,13 @@ the lens itself is always computed under the neutral prompt of
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\linewidth]{fig_iclr_agreement.pdf}
-\caption{LRE faithfulness against the relation-agnostic lens score, 28
+\caption{LRE faithfulness against the relation-agnostic NEL lens score, 28
 relations. The lens sees no relation template, no objects, and no
 (subject, object) pairs, and uses one fixed layer throughout.}
 \label{fig:main}
 \end{figure}
 
-\enote{hs}{fig:main: ideally, all relation points that are
-  part of the discussion (e.g., second half of section6)
-  should be labeled, the same way that country capital and
-  personmother/father are}
 
-\enote{hs}{is the labeling of person mother/father correct?
-  i think not: we need two labels pointing to two different points}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho =
@@ -253,8 +248,7 @@ its own, though only weakly
 \enote{sg}{Is the correlation (of $k$ with lens score) significantly different from zero? If not, state it. If it is, change "essentially uncorrelated" to "only weakly correlated" or similar.}
 lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
-approximately \enote{sg}{technically, uncorrelated does not imply independent}
-independent predictors of faithfulness, so removing the variance
+complementary predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
 signal.\footnote{All variables here are ordinal, so we work throughout with
 ranks. To remove the effects of a set of covariates, we
