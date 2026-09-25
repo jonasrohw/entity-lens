@@ -276,7 +276,7 @@ the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
 (i.e., one subject type)
 drives the
 result. Holding out each subject domain in turn leaves
-$\rho \in [0.570, 0.700]$, median $0.656$.
+$\rho \in [0.696, 0.799]$, median $0.728$.
 
 \textbf{Object cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
@@ -704,7 +704,7 @@ because fused attention kernels do not support second derivatives.
 Layer 17 is roughly half-way through the network,
 the region in which such lenses are usable at all
 \citep{gurnee2026workspace}, and is the modal best layer for the LRE
-itself in our sweep (10 of 28 relations; the rest spread over 5, 11, 14,
+itself in our sweep (15 of 28 relations; the rest spread over 5, 11, 14,
 20 and 23). A single layer is used for \emph{every}
 relation, without per-relation tuning. However, this does not establish robustness to
 the layer choice: changing the layer can affect relations differently.
@@ -773,8 +773,8 @@ conditions: \textsc{country\_capital\_city} with
 \textsc{person\_plays\_pro\_sport}, over the 24 athletes the two share.
 Two further pairs fail the second condition.
 \textsc{country\_currency} shares its countries with the other country
-relations, but its own operator recovers the currency for only 6 of 12
-countries at $\beta = 3$, 2 at $\beta = 5$ and none at $\beta = 10$;
+relations, but its own operator recovers the currency for only 1 of 10
+countries at $\beta = 3$, 0 at $\beta = 5$ and none at $\beta = 10$;
 where an operator is this weak there is nothing for a substitute to
 reproduce. \textsc{person\_father} and \textsc{person\_mother} would be
 the strongest test: they share 748 subjects and have answers of the same
@@ -932,11 +932,11 @@ Keeping the anchor requires choosing how to weight the anchor and subject
 term, which is what $\beta$ does in Eq.~\ref{eq:beta}.
 
 In sample
-such a $\beta$ slightly outperforms dropping the anchor, but the curve is
-flat across a wide range of $\beta$ and the advantage does not survive
-selection: choosing $\beta$ on 15 relations and evaluating on the
-remaining 10, across 2{,}000 random splits, beats the anchor-free readout
-in only $30\%$ of them. We therefore drop the anchor, which leaves a
+no such $\beta$ outperforms dropping the anchor: the correlation rises
+towards the anchor-free value as $\beta$ grows, and selection does not
+help either: choosing $\beta$ on 15 relations and evaluating on the
+remaining 13, across 2{,}000 random splits, beats the anchor-free readout
+in only $1\%$ of them. We therefore drop the anchor, which leaves a
 readout with no hyperparameter at all. The decoder normalizes, so once
 the anchor is gone, scaling cannot change a ranking and $\beta$ has
 nothing left to do. This gives the
