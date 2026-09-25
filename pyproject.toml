@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "entity-lens"
+version = "1.0.0"
+description = "Reproducible experiments for linear relational decoding and entity readouts"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "accelerate==1.15.0",
+    "bm25s==0.3.11",
+    "defusedxml>=0.7,<1",
+    "httpx>=0.28,<1",
+    "huggingface-hub>=1.0,<2",
+    "matplotlib>=3.10,<4",
+    "nltk==3.10.3",
+    "numba==0.67.0",
+    "orjson>=3.10,<4",
+    "numpy==2.5.3",
+    "pyahocorasick>=2.1,<3",
+    "pydantic>=2.11,<3",
+    "pydantic-settings>=2.10,<3",
+    "scipy==1.18.1",
+    "torch==2.14.0",
+    "transformers==5.17.0",
+    "typer>=0.16,<1",
+    "wikiextractor==3.1.0",
+    "zstandard>=0.23,<1",
+]
+
+[project.scripts]
+entity-lens = "entity_lens.cli:app"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17,<2",
+    "pytest>=8.4,<10",
+    "pytest-cov>=6,<8",
+    "ruff>=0.12,<1",
+    "shellcheck-py>=0.10,<1",
+    "vulture>=2.14,<3",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/entity_lens"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["ANN401", "ARG001", "ARG002", "COM812", "CPY001", "D", "ERA001", "FIX", "ISC001", "PLC0415", "PLR0913", "PLR2004", "S101", "S310", "S311", "TC001", "TC002", "TC003", "TD", "T201"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["ANN", "ARG", "INP001", "PLR2004", "S", "SLF001"]
+"src/entity_lens/scheduler.py" = ["S603", "S607"]
+
+[tool.ruff.lint.pylint]
+max-args = 8
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+mypy_path = "src"
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["ahocorasick", "bm25s", "bm25s.*", "defusedxml", "defusedxml.*", "nltk", "nltk.*", "scipy", "scipy.*", "wikiextractor", "wikiextractor.*", "zstandard", "accelerate", "matplotlib", "matplotlib.*"]
+ignore_missing_imports = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["gpu: requires a CUDA device and downloaded model weights"]
+
+[tool.coverage.run]
+source = ["entity_lens"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 90
+
+[tool.vulture]
+paths = ["src"]
+min_confidence = 80
+ignore_names = ["cls", "args", "kwargs", "original_node"]

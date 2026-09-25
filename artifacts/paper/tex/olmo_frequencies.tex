@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{\textbf{Frequency baselines for OLMo 3 7B.} Correlations with LRE faithfulness using document counts from OLMo's three published training mixes combined.}
+\label{tab:shared-corpus-spearman}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Frequency measure & Spearman $\rho$ & $p$-value \\
+\midrule
+Subject frequency, $c_s$ & $\phantom{-}0.1380$ & 0.484 \\
+Object frequency, $c_o$ & $\phantom{-}0.5712$ & 0.001 \\
+Joint frequency, $c_{so}$ & $\phantom{-}0.4568$ & 0.015 \\
+Mean of $\log(1+c_{so})$ & $\phantom{-}0.4191$ & 0.026 \\
+$\log(1+\mathrm{mean}(c_{so}))$ & $\phantom{-}0.4568$ & 0.015 \\
+Forward conditional, $P(o\mid s)$ & $\phantom{-}0.4486$ & 0.017 \\
+Reverse conditional, $P(s\mid o)$ & $-0.4149$ & 0.028 \\
+Directional difference, $P(o\mid s)-P(s\mid o)$ & $\phantom{-}0.4826$ & 0.009 \\
+Micro-averaged $P(o\mid s)$ & $\phantom{-}0.5504$ & 0.002 \\
+Micro-averaged $P(s\mid o)$ & $-0.1453$ & 0.461 \\
+\bottomrule
+\end{tabular}
+\end{table}

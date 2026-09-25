@@ -1,0 +1,46 @@
+[dump]
+base_url = "https://archive.org/download/enwiki-20211020"
+dump = "enwiki-20211020-pages-articles-multistream.xml.bz2"
+index = "enwiki-20211020-pages-articles-multistream-index.txt.bz2"
+dump_sha1 = "64714517eae47fcce24803feb90b4a440e963fe0"
+index_sha1 = "7acba6cb378de9fd0a71b8a2a31f81573d03b02e"
+partial_suffix = ".part"
+chunk_bytes = 8388608
+timeout_seconds = 60
+retries = 20
+
+[extraction]
+directory = "olmo-main"
+streams_per_shard = 50
+shard_name = "paragraphs-{:07d}.jsonl.gz"
+shard_glob = "paragraphs-*.jsonl.gz"
+stats_suffix = ".json"
+manifest = "manifest.json"
+compression_level = 1
+paragraph_separator = "\n\n"
+excluded_title_marker = ":"
+title_separator = ". "
+untitled = "[UNK]"
+
+[retrieval]
+k = 100
+k1 = 1.5
+b = 0.75
+query_batch_size = 32
+threads = 16
+artifact_dir = "wikipedia"
+artifact = "retrieval.json.gz"
+cache_dir = "wikipedia"
+counts_dir = "counts"
+paragraphs_cache = "paragraphs.json.gz"
+cache_compression_level = 1
+
+[attributes]
+top_k = 50
+min_token_length = 3
+encode_batch_size = 256
+nltk_dir = "nltk"
+stopwords_package = "stopwords"
+stopwords_language = "english"
+stopwords_sha256 = "f6d005956f407dbc6ea32e5ff0c7e8e6f71488d3239b9023efdc7fc139d6375b"
+artifact_dir = "attribute_rates"

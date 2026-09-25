@@ -1,0 +1,50 @@
+{
+ "model": "qwen3_8_27b",
+ "hf_id": "Qwen/Qwen3.8-27B",
+ "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+ "torch": "2.14.0+cu130",
+ "transformers": "5.17.0",
+ "device": "NVIDIA A100-SXM4-80GB",
+ "checks": {
+  "convolution": {
+   "logits_max_abs_error": 5.245208740234375e-6,
+   "jvp_relative_error": 7.355803290920448e-7
+  },
+  "derivative": {
+   "decode_max_abs_error": 0.0,
+   "batched_scalar_max_abs_error": 0.000034332275390625,
+   "finite_difference_relative_error": 0.0003875870315823704
+  },
+  "prefix": [
+   {
+    "n_tokens": 4,
+    "prefix_length": 0,
+    "layer": 34,
+    "state_relative_error": 0.0,
+    "jvp_relative_error": 0.0
+   },
+   {
+    "n_tokens": 69,
+    "prefix_length": 67,
+    "layer": 10,
+    "state_relative_error": 2.2047775019018445e-6,
+    "jvp_relative_error": 9.19805643206928e-6
+   }
+  ]
+ },
+ "source_sha256": {
+  "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "__main__.py": "47404972f1cc381ee79e16595edb573c916d93a09ca67811e97c0acf08e4e24a",
+  "checks.py": "2e7d4076772459f5784a3a67db9a7787f15a9832002782f4920fcaf70a905031",
+  "cli.py": "9a7c438df8a1d93154cc6b33c2b0a2df35d3a8ea74767b2a8e0f5535c3e4611d",
+  "config.py": "f5b83b8797d36e6127280e88e572412353751ba719e21d85f2cd73f6efd6c7b5",
+  "data.py": "5fcbbcab41f0b66ee9159e592f5de2935ad22bf3f5e43b77b3cad33fbdf69e61",
+  "measure.py": "88cfdd76c6146532d4d739a6a31779cb81bf267fc6f065fdbd2f5d014db5fac6",
+  "modeling.py": "a963393d495817a9c72bca255ce34b0ce03097716bb901a159a702c6157dabe3",
+  "pipeline.py": "49c2b4108413abee46f3d08fe6bebfe288c67dc6e34138705c11d25521f325d1",
+  "records.py": "8b39f4b1fee5081b88575bc6053f25702a10a55fb4ca61d6b5f1142ee99d1b2f",
+  "scheduler.py": "01279e33a347f3224e8f1ac1d9a6dd56c4908ad72c8ff4b7dc6516235ad5e406",
+  "splits.py": "79f0e37b4a74ab5ae94b05a93d9b103efc90a0a4803a80c5aaa21698071cf649",
+  "tokens.py": "d2388a6d385dd344f6b3a252029bedf402667ffa252f47d09b15b941c2f92ac4"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "model": "mistral7b",
+ "hf_id": "mistralai/Mistral-7B-v0.3",
+ "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+ "torch": "2.14.0+cu130",
+ "transformers": "5.17.0",
+ "device": "NVIDIA A100-SXM4-80GB",
+ "checks": {
+  "convolution": null,
+  "derivative": {
+   "decode_max_abs_error": 2.384185791015625e-6,
+   "batched_scalar_relative_error": 1.8884699102272862e-6,
+   "finite_difference_relative_error": 0.001303266384638846
+  },
+  "prefix": [
+   {
+    "n_tokens": 5,
+    "prefix_length": 1,
+    "layer": 17,
+    "state_relative_error": 5.33694048954203e-7,
+    "jvp_relative_error": 2.0341026356618386e-6
+   },
+   {
+    "n_tokens": 70,
+    "prefix_length": 68,
+    "layer": 10,
+    "state_relative_error": 1.424406605110562e-6,
+    "jvp_relative_error": 4.7345088205474894e-6
+   }
+  ]
+ },
+ "source_sha256": {
+  "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "__main__.py": "47404972f1cc381ee79e16595edb573c916d93a09ca67811e97c0acf08e4e24a",
+  "checks.py": "696ec524f6dda07fcc76a65d8ef58f17ae53b38387f074896fa2afe1cf48ec89",
+  "cli.py": "2c3e2433a88807163f69a21997a66f06782fd7fd2c473eae46a415dd3dea0869",
+  "config.py": "c40b0683f5d671d3ad423b79cb7603fe37622bb2a5207585eddcdcf6d7597599",
+  "data.py": "5fcbbcab41f0b66ee9159e592f5de2935ad22bf3f5e43b77b3cad33fbdf69e61",
+  "measure.py": "88cfdd76c6146532d4d739a6a31779cb81bf267fc6f065fdbd2f5d014db5fac6",
+  "modeling.py": "a963393d495817a9c72bca255ce34b0ce03097716bb901a159a702c6157dabe3",
+  "pipeline.py": "49c2b4108413abee46f3d08fe6bebfe288c67dc6e34138705c11d25521f325d1",
+  "records.py": "8b39f4b1fee5081b88575bc6053f25702a10a55fb4ca61d6b5f1142ee99d1b2f",
+  "scheduler.py": "5b96e6bc99b26316456e913bfb2587746109a145cc4216586b2474e4f9cd6c0a",
+  "splits.py": "79f0e37b4a74ab5ae94b05a93d9b103efc90a0a4803a80c5aaa21698071cf649",
+  "tokens.py": "d2388a6d385dd344f6b3a252029bedf402667ffa252f47d09b15b941c2f92ac4"
+ }
+}

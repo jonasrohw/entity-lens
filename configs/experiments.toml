@@ -1,0 +1,143 @@
+[primary]
+model = "olmo3_7b"
+
+[prompt_variants]
+model = "qwen3_8b_base"
+prompts = [
+    "{} is known for",
+    "{}",
+    "{} is",
+    "{} can be described as",
+    "Information about {}:",
+    "Facts about {}:",
+    "Entity: {} is known for",
+    "\n{} is known for",
+]
+
+[prominence]
+model = "olmo3_7b"
+dtype = "bfloat16"
+attention = "sdpa"
+max_new_tokens = 90
+prompts = ["{} is best known for", "Here are some facts about {}. First,"]
+relations = [
+    "city_in_country",
+    "country_largest_city",
+    "country_capital_city",
+    "person_plays_pro_sport",
+    "product_by_company",
+    "landmark_in_country",
+    "person_occupation",
+    "person_father",
+    "person_mother",
+    "superhero_archnemesis",
+    "company_hq",
+    "star_constellation",
+    "country_currency",
+    "person_university",
+]
+word_pattern = "[A-Za-z]+"
+min_word_length = 3
+min_lens_token_length = 3
+shards = 4
+stop_words = [
+    "a", "an", "and", "aunt", "baron", "bin", "captain", "colonel", "count", "da", "dame", "de", "del", "den",
+    "der", "di", "doctor", "dr", "duke", "el", "father", "general", "ibn", "ii", "iii", "iv", "jr", "king", "la",
+    "lady", "le", "lord", "madame", "major", "master", "miss", "mister", "mother", "mr", "mrs", "ms", "of",
+    "president", "prof", "professor", "queen", "saint", "sir", "sr", "st", "the", "uncle", "van", "von",
+]
+
+[reference_sets]
+model = "olmo3_7b"
+relation = "person_native_language"
+answer = "French"
+cross_relations = ["person_occupation", "person_plays_instrument"]
+n_references = 8
+seed = 0
+example_subject = "Joseph Laniel"
+top_k = 10
+subset_size = 100
+
+[swap]
+model = "olmo3_7b"
+beta = 3.0
+anchor_draws = 500
+anchor_references = 8
+athlete_anchor_pool = 150
+variance_grid = 40
+seed = 0
+currency_betas = [3.0, 5.0, 10.0]
+country_relations = ["country_capital_city", "country_largest_city", "country_currency", "country_language"]
+person_pair = ["person_plays_position_in_sport", "person_plays_pro_sport"]
+country_pair = ["country_capital_city", "country_largest_city"]
+currency_relation = "country_currency"
+composition_relation = "person_plays_pro_sport"
+composition_object = "soccer"
+athlete_stream_after_benchmark = true
+wikipedia_list = "https://en.wikipedia.org/w/index.php?title=List_of_countries_whose_capital_is_not_their_largest_city&oldid=1369500149&action=raw"
+wikipedia_sha256 = "9994540de9cc8f25a4c1dcf036fce1f9d68da8bdbf2b92e0fbd0bf07ae071282"
+shared_subject_relations = ["person_father", "person_mother"]
+excluded_countries = ["Israel", "Palestine", "Taiwan", "Nauru", "Bolivia", "South Africa", "Equatorial Guinea"]
+
+[swap.position_sports]
+midfielder = "soccer"
+defender = "soccer"
+forward = "basketball"
+goaltender = "hockey"
+quarterback = "football"
+linebacker = "football"
+outfielder = "baseball"
+catcher = "baseball"
+pitcher = "baseball"
+closer = "baseball"
+
+[swap.filter]
+dtype = "bfloat16"
+attention = "sdpa"
+max_new_tokens = 8
+match_words = 2
+
+[swap.filter.aliases]
+"Washington D.C." = ["Washington"]
+"Washington, D.C." = ["Washington"]
+Naypyidaw = ["Naypyitaw", "Nay Pyi Taw"]
+Serrekunda = ["Serekunda"]
+"Ho Chi Minh City" = ["Saigon"]
+Yangon = ["Rangoon"]
+Astana = ["Nur-Sultan"]
+Mumbai = ["Bombay"]
+
+[residuals]
+exclude_year_relations = true
+literal_scoring = ["name_gender"]
+
+[collapse]
+threshold = 0.25
+weak_token_relation = "person_university"
+weak_token = "University"
+filtered_relations = ["person_university", "person_father"]
+
+[numeric_objects]
+model = "olmo3_7b"
+example_object = "1743"
+
+[anchored]
+train_relations = 15
+splits = 2000
+seed = 0
+min_distinct = 3
+
+[bootstrap]
+seed = 20260921
+resamples = 10000
+level = 0.95
+
+[competition]
+examples = [
+    ["person_occupation", "Rolf Thommessen"],
+    ["person_occupation", "Barry Sobel"],
+    ["person_occupation", "Vondell Darr"],
+    ["person_occupation", "Simon Gosejohann"],
+    ["star_constellation", "rho01 Cnc"],
+    ["star_constellation", "Alnair"],
+]

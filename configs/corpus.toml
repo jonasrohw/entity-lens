@@ -1,0 +1,31 @@
+text_field = "text"
+casefold = true
+data_directory = "data"
+duplicate_suffix_pattern = "[0-9]+"
+checkpoint_seconds = 60
+progress_seconds = 60
+tasks_per_worker = 2
+read_buffer_bytes = 1048576
+hash_block_bytes = 8388608
+download_workers = 8
+download_attempts = 20
+retry_base_seconds = 5
+retry_max_seconds = 300
+
+[formats]
+".jsonl.zst" = "zstd"
+".jsonl.gz" = "gzip"
+".jsonl" = "plain"
+
+[[repos]]
+repo_id = "allenai/dolma3_mix-6T-1025-7B"
+revision = "2ca900fbe14e86c5c83d064d9f0882f1c0b8c05b"
+split_suffixes = [".jsonl.zst"]
+
+[[repos]]
+repo_id = "allenai/dolma3_dolmino_mix-100B-1025"
+revision = "f23942ae8a8114af6e992efe8188ce8c531acd16"
+
+[[repos]]
+repo_id = "allenai/dolma3_longmino_mix-50B-1025"
+revision = "8c0b3b265f95514c0f1b643c95da518e261a32a7"

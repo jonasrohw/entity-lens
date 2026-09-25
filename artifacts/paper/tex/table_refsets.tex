@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{The reference set's effect on the two lenses, on \textsc{person\_native\_language}. Left: median $\log_{10}$ rank of the model's own answer $m_e$. Right: median rank of the answer token itself.}
+\label{tab:refsets}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+& \multicolumn{2}{c}{median $\log_{10}$ rank of $m_e$} & \multicolumn{2}{c}{median rank of the answer} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+reference set & CEL & NEL & CEL & NEL \\
+\midrule
+8 other answers & 1.62 & 1.81 & 47 & 64 \\
+8 from other relations & 1.88 & 1.72 & 102 & 70 \\
+4 answer, 4 other & 1.93 & 1.79 & 115 & 82 \\
+8 sharing the answer & 2.72 & 1.71 & 665 & 55 \\
+\bottomrule
+\end{tabular}
+\end{table}

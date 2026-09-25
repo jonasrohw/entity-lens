@@ -1,0 +1,61 @@
+{
+ "model": "olmo3_7b",
+ "hf_id": "allenai/Olmo-3-1025-7B",
+ "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+ "torch": "2.14.0+cu130",
+ "transformers": "5.17.0",
+ "device": "NVIDIA A100-SXM4-80GB",
+ "checks": {
+  "convolution": null,
+  "derivative": {
+   "decode_max_abs_error": 0.0,
+   "batched_scalar_relative_error": 1.4947041790946969e-6,
+   "finite_difference_relative_error": 0.0007221294799819589
+  },
+  "prefix": [
+   {
+    "n_tokens": 4,
+    "prefix_length": 0,
+    "layer": 17,
+    "state_relative_error": 0.0,
+    "jvp_relative_error": 8.53205563089432e-7
+   },
+   {
+    "n_tokens": 61,
+    "prefix_length": 59,
+    "layer": 10,
+    "state_relative_error": 5.910590630264778e-7,
+    "jvp_relative_error": 3.778148766286904e-6
+   }
+  ]
+ },
+ "source_sha256": {
+  "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "__main__.py": "47404972f1cc381ee79e16595edb573c916d93a09ca67811e97c0acf08e4e24a",
+  "artifacts.py": "d96f3994d62772ba1685ad07e6cece93ed63c10a873842b64665e1d8bfa15981",
+  "checks.py": "fab562c95eb14d640fa8f73e0be710d29b79a10fc9d70ef6901f09852c2ac1f8",
+  "cli.py": "9e31277509b2541e02bd8b4a103a9e659ed60a514dc9b9279ddcdb9eee84b59d",
+  "config.py": "8eb84144bcd2e4b7583747910579a4ee6cb62a5ca12e2b353f2d5949667e05b6",
+  "corpus.py": "f59c60b1f5bcfcf6659940e20ad609bf186a7e137047a6b4d2a494d6b29a86fb",
+  "data.py": "25297f160453211319a157e411814907601bf0cbcf2042e420b05b6086d6623b",
+  "figures.py": "e98b35209e1ce5a018f7b50ff3a3d8c9f021e14946e7fdaeb4d2379e21143c3e",
+  "latex.py": "5588f7b924b1d5102b029f3b160716d7477df3ee694db0192216cc0061122d68",
+  "measure.py": "3da3cbd866c8aff930328ef06fbc2e9568da64edaabff08fab366780b05d154d",
+  "modeling.py": "9ef09b20b60d53819b987603c1b10d302c09600d46ce8c6a411d73d51a4e6cce",
+  "paper_values.py": "6b380c7b9df8e593abe7680d5631c2aa9087a4188ff72547d50babbef6ceaa73",
+  "pipeline.py": "bdf5e2302d5f49d193dcf872252dfd94c2a4055d052b147c2746cea34a77194d",
+  "prominence.py": "2e0f811a5feb36d379cc4e1dc05d851fe6d4db2a8ee68c80c252b97e24e727eb",
+  "prompt_variants.py": "2764c3cb140fce094bede18ccc776a97ab9c2f231977afc7b82f4d875da248b1",
+  "records.py": "9665270b6d9240eb9d0adf041ff6bf85211734d135b9b7d25b0fc6cafc3d4870",
+  "reference_sets.py": "cdc6a381562bab67fcf455d3b15af9a2133e32c334c132922f96b2f71c2bce98",
+  "report.py": "04ad938f2aa53d22d4b46d5dff26c58e1b442e07f2066a991503240845258814",
+  "scheduler.py": "5b96e6bc99b26316456e913bfb2587746109a145cc4216586b2474e4f9cd6c0a",
+  "splits.py": "79f0e37b4a74ab5ae94b05a93d9b103efc90a0a4803a80c5aaa21698071cf649",
+  "statistics.py": "7efddb06d244c7dbf447043b1653b76c040a7631d32e574c45dc6f820001848d",
+  "storage.py": "315334669586d86f57a869ae5585c43dd57c78fa0920168c1da773ed0821b6d3",
+  "summary.py": "ce4c3994717268fdfe158116f699182e35686e4ce27cc13fc6c1c216d57b5ac7",
+  "swap.py": "02864c9560301ad0d5d29952b3613580bffcf34b383fc3e4e24bcba6ecc3ef2f",
+  "tokens.py": "47ece8b76faaec88d6bd3e95818f55cc689dd230e0738b461b1f8894748e31c7",
+  "wikipedia.py": "fc3248b18497b8f38d058e07a4de37b2d93d593ac345134310a26ab6c7ff3924"
+ }
+}

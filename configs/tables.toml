@@ -1,0 +1,75 @@
+[relations]
+label = "tab:relations"
+caption = "All 28 relations, sorted by LRE faithfulness. $k$ is the mean number of subjects per distinct object; $A_r$ is the relation-agnostic lens score, higher meaning closer agreement with the model."
+columns = "@{}lrrr@{}"
+header = "relation & $k$ & faith. & $A_r$"
+
+[prominence]
+label = "tab:prominence"
+caption = "Object prominence, measured by the model's own free generation and therefore independently of the lens, against how often the lens surfaces the gold object in its top five."
+columns = "@{}lrrrr@{}"
+header = "relation & prom. & $n$ & gold$\\in$lens & $n$"
+
+[reference_sets]
+label = "tab:refsets"
+caption = "The reference set's effect on the two lenses, on \\textsc{person\\_native\\_language}. Left: median $\\log_{10}$ rank of the model's own answer $m_e$. Right: median rank of the answer token itself."
+columns = "@{}lrrrr@{}"
+header = "& \\multicolumn{2}{c}{median $\\log_{10}$ rank of $m_e$} & \\multicolumn{2}{c}{median rank of the answer} \\\\\n\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\nreference set & CEL & NEL & CEL & NEL"
+arms = ["other", "cross", "mixed", "answer"]
+
+[reference_sets.labels]
+other = "8 other answers"
+cross = "8 from other relations"
+mixed = "4 answer, 4 other"
+answer = "8 sharing the answer"
+
+[swap]
+label = "tab:swap"
+caption = "Recombining an LRE's anchor with different subject terms. Counts are how often the decoded top-1 is the relation's gold object."
+columns = "lrrrrrr"
+header = "relation & $n$ & own & foreign & NEL & anchor alone & wrong donor"
+arms = ["own", "foreign", "nel", "anchor_alone", "wrong_donor"]
+
+[swap_full]
+label = "tab:swapfull"
+caption = "All arms, each subject read with the others as references."
+columns = "lrrrrrrr"
+header = "relation & $n$ & own & foreign & NEL & currency & anchor alone & wrong donor"
+arms = ["own", "foreign", "nel", "currency", "anchor_alone", "wrong_donor"]
+
+[swap_anchor]
+label = "tab:swapanchor"
+caption = "Mean (range) hits over random anchors, each estimated from references drawn from outside the test set; subject terms fixed."
+columns = "lrrrr"
+header = "arm"
+arms = ["own", "foreign", "nel", "anchor_alone"]
+
+[readouts]
+label = "tab:shared-lenses-spearman"
+caption = "\\textbf{Entity lenses and readout baselines across seven models.} Spearman correlation $\\rho$ with LRE faithfulness."
+columns = "@{}lrrrrr@{}"
+header = "Model & \\shortstack[r]{Contrastive\\\\entity lens} & \\shortstack[r]{Noncontrastive\\\\entity lens} & Logit lens & \\shortstack[r]{Differential\\\\logit lens} & \\shortstack[r]{Attribute\\\\rate}"
+
+[corpus]
+label = "tab:shared-corpus-spearman"
+caption = "\\textbf{Frequency baselines for OLMo 3 7B.} Correlations with LRE faithfulness using document counts from OLMo's three published training mixes combined."
+columns = "@{}lrr@{}"
+header = "Frequency measure & Spearman $\\rho$ & $p$-value"
+
+[corpus.labels]
+subject = "Subject frequency, $c_s$"
+object = "Object frequency, $c_o$"
+joint = "Joint frequency, $c_{so}$"
+mean_log_joint = "Mean of $\\log(1+c_{so})$"
+log_mean_joint = "$\\log(1+\\mathrm{mean}(c_{so}))$"
+forward = "Forward conditional, $P(o\\mid s)$"
+reverse = "Reverse conditional, $P(s\\mid o)$"
+direction = "Directional difference, $P(o\\mid s)-P(s\\mid o)$"
+micro_forward = "Micro-averaged $P(o\\mid s)$"
+micro_reverse = "Micro-averaged $P(s\\mid o)$"
+
+[prompt_variants]
+label = "tab:shared-prompt-variations"
+caption = "\\textbf{Neutral-prompt variations.} Spearman $\\rho$ between contrastive entity lens scores and LRE faithfulness, using the evaluation setup of Table~\\ref{tab:shared-lenses-spearman}."
+columns = "@{}lr@{}"
+header = "Neutral prompt & $\\rho$"
