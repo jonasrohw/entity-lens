@@ -240,17 +240,6 @@ We now test three other variables as possible predictors of faithfulness.
 %; a permutation test agrees
 %(Appendix~\ref{sec:permutation}).
 
-\textbf{Object cardinality.} Relations
-differ greatly in how many distinct objects they have; $k$, the mean number
-of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
-faithfulness easier, and $k$ is indeed associated with faithfulness on
-its own, though only weakly
-($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
-lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
-correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
-complementary predictors of faithfulness, so removing the variance
-attributable to $k$ sharpens rather than weakens the lens
-signal.
 
 \enote{hs}{pleaes move this footnote to the appendix
 footnote{All variables here are ordinal, so we work throughout with
@@ -288,6 +277,75 @@ the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
 drives the
 result. Holding out each subject domain in turn leaves
 $\rho \in [0.570, 0.700]$, median $0.656$.
+
+\textbf{Object cardinality.} Relations
+differ greatly in how many distinct objects they have; $k$, the mean number
+of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
+faithfulness easier, and $k$ is indeed associated with faithfulness on
+its own, though only weakly
+($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
+lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
+correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
+complementary predictors of faithfulness, so removing the variance
+attributable to $k$ sharpens rather than weakens the lens
+signal. Since object cardinality is a complementary
+predictor, we now analyze it in more detail.
+
+
+\subsection{Object cardinality}
+\label{sec:residuals}
+It turns out that object cardinality partially explains the
+tails of the distribution 
+in Figure~\ref{fig:main}.
+We now investigate  the two tails, i.e., those relations
+with the largest positive and negative deviations
+in Figure~\ref{fig:main}.
+
+Concretely, we order the relations by their residual from the least-squares
+fit in Figure~\ref{fig:main}; this residual
+is in units of faithfulness, so $+0.30$ means thirty points more faithful
+than the lens score predicts.
+% Issue here, we need to investigate.
+
+%\enote{sg}{
+%%%	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
+%	TODO:
+%	(1) I think we should also investigate this "number of objects" quantity.
+%%	(2) I don't like the term "object cardinality", in particular because it leads to %confusion with "number of objects". Can't we just say "subjects per object" or similar?
+%}
+% AGREED, BUT NO TIME FOR THIS ITERATION
+
+The largest positive residuals, faithful despite a low
+lens score, with their cardinality are
+\textsc{landmark\_on\_continent} ($+0.242$, $k = 189$),
+\textsc{name\_gender} ($-0.374$, $k = 9.5$) and
+\textsc{person\_native\_language} ($+0.118$, $k = 30.6$). In each, the LRE
+chooses among a handful of possible answers, and can be faithful without
+the answer being salient for any particular subject: no name is
+chiefly ``known for'' its gender, but there are only two answers to pick
+between.
+
+The largest negative residuals, unfaithful despite the
+lens, are \textsc{person\_father} ($-0.403$),
+\textsc{person\_mother} ($-0.330$) and \textsc{company\_ceo}
+($-0.297$), all with $k \approx 1$ and answer spaces in the
+hundreds. For these relations, faithfulness is near its
+floor due to the difficulty of the task and the details of
+the representation apparently do not change that.
+
+Our account thus holds in the middle of the cardinality range and
+degrades at both ends, in opposite directions.
+%Removed the following sentence because it's now at the top of the section where it belongs.
+%Cardinality is the
+%same variable whose removal raises the correlation to
+%$0.757$ (\S\ref{sec:results}).
+Our analysis in this section
+helps us interpret the result from \S\ref{sec:results}:
+$k$ is a true source of deviation in the salience account,
+not merely a confound.
+
+
+
 
 \input{table_prominence}
 
@@ -362,63 +420,6 @@ salience that never consults the lens.
 \input{referencesets}
 
 \input{towardsmechanism}
-
-
-\section{Object cardinality}
-\label{sec:residuals}
-The correlation in Figure~\ref{fig:main} is highly
-significant, but many relations deviate from the trend.
-We investigate the tails of this distribution, the relations
-with the largest positive and negative deviations, and find
-that these tails are partially explained by
-extreme \textbf{object cardinality} $k$,
-(defined as the  number of subjects per object,
-the
-variable whose removal raises the correlation to
-$0.757$ in \S\ref{sec:results})).
-
-Concretely, we order the relations by their residual from the least-squares
-fit in Figure~\ref{fig:main}; this residual
-is in units of faithfulness, so $+0.30$ means thirty points more faithful
-than the lens score predicts.
-% Issue here, we need to investigate.
-
-%\enote{sg}{
-%%%	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
-%	TODO:
-%	(1) I think we should also investigate this "number of objects" quantity.
-%%	(2) I don't like the term "object cardinality", in particular because it leads to %confusion with "number of objects". Can't we just say "subjects per object" or similar?
-%}
-% AGREED, BUT NO TIME FOR THIS ITERATION
-
-The largest positive residuals, faithful despite a low
-lens score, with their cardinality are
-\textsc{landmark\_on\_continent} ($+0.242$, $k = 189$),
-\textsc{name\_gender} ($-0.374$, $k = 9.5$) and
-\textsc{person\_native\_language} ($+0.118$, $k = 30.6$). In each, the LRE
-chooses among a handful of possible answers, and can be faithful without
-the answer being salient for any particular subject: no name is
-chiefly ``known for'' its gender, but there are only two answers to pick
-between.
-
-The largest negative residuals, unfaithful despite the
-lens, are \textsc{person\_father} ($-0.403$),
-\textsc{person\_mother} ($-0.330$) and \textsc{company\_ceo}
-($-0.297$), all with $k \approx 1$ and answer spaces in the
-hundreds. For these relations, faithfulness is near its
-floor due to the difficulty of the task and the details of
-the representation apparently do not change that.
-
-Our account thus holds in the middle of the cardinality range and
-degrades at both ends, in opposite directions.
-%Removed the following sentence because it's now at the top of the section where it belongs.
-%Cardinality is the
-%same variable whose removal raises the correlation to
-%$0.757$ (\S\ref{sec:results}).
-Our analysis in this section
-helps us interpret the result from \S\ref{sec:results}:
-$k$ is a true source of deviation in the salience account,
-not merely a confound.
 
 
 
