@@ -27,8 +27,8 @@
 \hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
 $>>>$\hspace{1cm}}}}}
 
-% \enoteson
-\enotesoff
+\enoteson
+%\enotesoff
 
 \def\headlinenumber{0.7355}
 
@@ -71,13 +71,11 @@ about an entity of a particular type.
 The question it
 answers, \emph{what factual knowledge is this model ready to produce about this entity?},
 is specific to the entity type, but not specific to any relation.
-
-We estimate  the entity lens under the single neutral prompt (shared by every relation), at one layer fixed in advance,
+We estimate  this lens at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
-\enote{sg}{We should avoid repeating ourselves, so maybe merge this paragraph with the previous one?}
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
@@ -169,9 +167,36 @@ error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
 
-\paragraph{Measurement.} Both quantities \enote{sg}{Which two quantities?} are read off the same prompt, so
-that they are comparable. Following
-\citet{hernandez2024linearity}, a relation is presented to the model
+
+\paragraph{Measurement.}
+We decode $\mbox{EL}(e)$ over the full vocabulary
+and record the rank of $m_e$, the model's own top-1 answer for relation
+$r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
+Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
+relation is
+\begin{equation}
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{EL}(e)}(m_e),
+\end{equation}
+so higher $A_r$ means the lens agrees with the model more.
+
+
+
+The lens scores 11--20 subjects per relation, depending on how many remain
+once the in-context and reference sets are removed. For the
+results in \S\ref{sec:results}, the lens and the LRE sample their splits
+independently, so the particular subjects entering each set differ between
+the two measurements. Independent splits introduce sampling variation into
+this comparison. Because the LRE hyperparameters are selected on the scored
+subjects, its reported faithfulness is an in-sample estimate; these results
+do not establish performance on a separate held-out evaluation set.
+
+Crucially, the in-context prompt is used only to obtain the \emph{target};
+the lens itself is always computed under the neutral prompt of
+\S\ref{sec:lens}.
+
+For LRE faithfulness,
+we follow
+\citet{hernandez2024linearity}. A relation is presented to the model
 \emph{in context}: eight (subject, object) examples of that relation are
 concatenated, one per line, and the query subject is appended without its
 object, so that the model's next token is its answer. This is what
@@ -188,20 +213,6 @@ test subjects.
 \citet{hernandez2024linearity} likewise fit both per relation; the six
 layers span the network at roughly even spacing and the $\beta$ range
 brackets the values they report.
-
-The lens scores 11--20 subjects per relation, depending on how many remain
-once the in-context and reference sets are removed. For the
-results in \S\ref{sec:results}, the lens and the LRE sample their splits
-independently, so the particular subjects entering each set differ between
-the two measurements. Independent splits introduce sampling variation into
-this comparison. Because the LRE hyperparameters are selected on the scored
-subjects, its reported faithfulness is an in-sample estimate; these results
-do not establish performance on a separate held-out evaluation set.
-
-Crucially, the in-context prompt is used only to obtain the \emph{target};
-the lens itself is always computed under the neutral prompt of
-\S\ref{sec:lens}.
-\enote{sg}{I think this should be moved further up the measurement paragraph to make things clear from the beginning.}
 
 \section{Results}
 \label{sec:results}
