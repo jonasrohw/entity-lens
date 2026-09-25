@@ -8,7 +8,7 @@ The first two tables report Spearman correlations with LRE faithfulness across t
 
 \paragraph{Readout definitions.}
 For subject state $s_e$, reference states $s_i$, and reference Jacobians
-$J_i$, the differential and raw Jacobian readouts decode
+$J_i$, the contrastive and noncontrastive entity lenses decode
 $\operatorname{mean}_i J_i(s_e-s_i)$ and
 $\operatorname{mean}_i J_i s_e$, respectively. Logit lens decodes $s_e$;
 differential logit lens decodes $s_e-\operatorname{mean}_i s_i$. Each relation's score is the negative median $\log_{10}(\mathrm{rank}+1)$ of the model's answer token.
@@ -21,8 +21,7 @@ length, and retrieval filters are retained. Relation scores average the
 percentage overlap. Undefined rates are handled as noted in the table;
 matched-row sensitivity results remain in the accompanying data.
 
-Raw Jacobian has a larger point estimate than differential Jacobian in four
-models. All seven paired 95\% relation-bootstrap intervals for their
+NEL has a larger point estimate than CEL in four models. All seven paired 95\% relation-bootstrap intervals for their
 difference include zero; these results do not establish a general advantage
 for either readout. LRE hyperparameter selection remains in sample.
 
