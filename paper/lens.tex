@@ -297,13 +297,12 @@ We now investigate  the two tails, i.e., those relations
 with the largest positive and negative deviations
 in Figure~\ref{fig:main}.
 
-Concretely, we order the relations by their residual from the least-squares
-fit in Figure~\ref{fig:main}, leaving out the two rescored year
-relations (Appendix~\ref{sec:numeric-objects}) and scoring
-\textsc{name\_gender} against the model's literal answer token, as
-faithfulness does, rather than against all gender-matched alternatives; this residual
-is in units of faithfulness, so $+0.30$ means thirty points more faithful
-than the lens score predicts.
+We rank relations by their residuals from the least-squares fit in
+Figure~\ref{fig:main}, excluding the two rescored year relations
+(Appendix~\ref{sec:numeric-objects}). For \textsc{name\_gender}, we use
+the model's literal answer token, matching faithfulness, rather than all
+gender-matched alternatives. A residual of $+0.30$ means faithfulness
+is thirty percentage points above the lens prediction.
 % Issue here, we need to investigate.
 
 %\enote{sg}{
@@ -639,14 +638,9 @@ under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
 out to be faithful.
 
-The reading we favor is that salience is the mechanism:
-%rather than a
-%confound:
-a relation admits a faithful linear operator to the extent that
-its answer is already part of what the subject's representation makes the
-model disposed to say. On that view the wide spread of LRE faithfulness
-across relations is less a fact about the relations than about the
-entities they are asked about.
+We favor salience as the mechanism: LRE faithfulness depends on how readily
+the subject's representation evokes the answer. On this view, variation
+across relations largely reflects the entities they concern.
 
 % cut for space
 %The exceptions are informative: they fall

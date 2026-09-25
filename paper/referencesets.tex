@@ -8,16 +8,12 @@ to the reference set: if the reference entities $s_i$ share the answer
 with $s_e$, the difference $s_e - s_i$ removes it. We now
 measure that effect.
 
-A good place to see the effect is
-\textsc{person\_native\_language} (Table~\ref{tab:refsets}). We use a fixed subset of 100 of its 919
-subjects; of these, 69 are French speakers, and for 65 of those 69 the model's own
-answer $m_e$ is the single token ``French'', so the answer
-is one token and cancellation should be visible. We
-designate eight French and eight non-French reference
-entities in advance and remove them from the test set, so
-that all four reference sets are scored on the \emph{same}
-61 French and 23 non-French subjects and only composition 
-varies.
+We test \textsc{person\_native\_language} on a fixed subset of 100 subjects
+(Table~\ref{tab:refsets}): 69 are French speakers, and the model answers
+``French'' for 65 of them, allowing us to observe cancellation of a
+single-token answer. We preselect eight French and eight non-French
+reference entities and exclude them from testing. All four reference sets
+are evaluated on the same 61 French and 23 non-French subjects.
 
 \input{table_refsets}
 
