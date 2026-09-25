@@ -105,7 +105,7 @@ where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
 sends the subject's hidden state at an intermediate layer $\ell$ to the
 final-layer state at the last position. We average local
-first-order approximations of $f$ over a small set $\{s_i\}$ of reference
+first-order approximations of $f$ over a \textbf{reference set} $\{s_i\}$ of reference
 subjects and scale their subject-dependent terms by $\beta$:
 \begin{equation}
 W = \operatorname{mean}_i J_i , \qquad
@@ -173,8 +173,9 @@ we follow
 \citet{hernandez2024linearity}. A relation is presented to the model
 \emph{in context}: eight (subject, object) examples of the relation are
 concatenated, one per line, and the query subject is appended without its
-object, so that the model's next token is its answer. This is what
-defines ``the model's own prediction''. The subjects of
+object, so that the model's next token is its answer.
+This is what
+defines the $m_e$, the model's \textbf{top-1 answer}. The subjects of
 a relation are shuffled once and partitioned into three disjoint sets:
 eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
 are estimated, and the remainder as scored test subjects.
@@ -190,8 +191,7 @@ brackets the values they report.
 
 To measure the accuracy of the predictions of the entity lens,
 we decode $\mbox{EL}(e)$ over the full vocabulary
-and record the rank of $m_e$, the model's own top-1 answer for relation
-$r$, obtained under the relation's in-context prompt (\S\ref{sec:setup}).
+and record the rank of $m_e$, the model's top-1 answer.
 Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
 relation is
 \begin{equation}
@@ -201,8 +201,8 @@ so higher $A_r$ means the lens agrees with the model more.
 
 
 
-The lens scores 11--20 subjects per relation, depending on how many remain
-once the in-context and reference sets are removed. For the
+The lens scores 11--20 subjects for a relation, depending on how many remain
+once the in-context examples and the reference set are removed. For the
 results in \S\ref{sec:results}, the lens and the LRE sample their splits
 independently, so the particular subjects entering each set differ between
 the two measurements. Independent splits introduce sampling variation into

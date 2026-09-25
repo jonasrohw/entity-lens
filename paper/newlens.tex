@@ -58,18 +58,20 @@ reference set differences:
 \label{eq:nel}
 \end{equation}
 In what follows,
-EL refers to both NEL and CEL and
-``entity lens'' refers to NEL unless
-further specified.
+EL refers to both NEL and CEL.
 
-To instantiate the entity lens (for both NEL and CEL) for factual
+% and
+%``entity lens'' refers to NEL unless
+%further specified.
+
+To instantiate EL for factual
 relations, we need (i) a prompt that evokes factual associations
 and (ii) a reference set of entities for computing the Jacobians $J_i$
 (both NEL and CEL) and for serving as the $s_i$ in the
 vector differences $s_e - s_i$ (for CEL).
 
 As the prompt we adopt \texttt{"\{\} is known for"}. This is a neutral prompt, i.e.,
-it is not customized for any specific factual relations. We
+it is not customized for any specific factual relation. We
 use it for all our  experiments unless otherwise stated.
 
 As the reference set, we use entities of the same type as
@@ -85,9 +87,11 @@ $s$ from other same-type entities.
 \paragraph{Computation.} We do not compute $J_i$ explicitly, but obtain each
 Jacobian--vector product $J_i u$ by the double-backward
 construction \citep{pearlmutter1994fast}, at the cost of a constant
-number of forward and backward passes; this is what makes
-Eq.~\ref{eq:cel} affordable at $d_{\text{model}}=4096$
-(Appendix~\ref{sec:jvp}).
+number of forward and backward passes (Appendix~\ref{sec:jvp}).
+
+
+%; this is what makes
+%Eq.~\ref{eq:cel} affordable at $d_{\text{model}}=4096$
 
 \enote{hs}{is this clearly stated in this section? or do we
   need to repeat it here?
