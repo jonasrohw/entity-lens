@@ -27,8 +27,8 @@
 \hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
 $>>>$\hspace{1cm}}}}}
 
-\enoteson
-%\enotesoff
+% \enoteson
+\enotesoff
 
 \def\headlinenumber{0.7355}
 
@@ -47,7 +47,7 @@ $>>>$\hspace{1cm}}}}}
 a subject to the object of a relation is often well approximated by an
 affine function of the subject's hidden state, a \emph{linear relational
 embedding} (LRE). They also showed that this works far better for some
-relations than others. On OLMo-3-7B \citep{olmo3}, we reproduce the same spread: an LRE
+relations than others. On OLMo-3-7B \citep{olmo2025olmo3}, we reproduce the same spread: an LRE
 fitted on \textsc{country\_capital\_city} agrees with the model's own
 prediction 87.5\% of the time while one fitted on \textsc{person\_father}
 agrees 7.5\% of the time.
@@ -64,13 +64,9 @@ Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
 is trained on subjects of type $t$ placed in the neutral prompt
 \texttt{"\{\} is known for"} and
-evaluates the Jacobian at entities of type $t$. This readout is about factual
-knowledge and, more specifically, about factual knowledge
-about an entity of a particular type.
-The question it
-answers, \emph{what factual knowledge is this model ready to produce about this entity?},
-is specific to the entity type, but not specific to any relation.
-We estimate  this lens at one layer fixed in advance,
+evaluates the Jacobian at entities of type $t$. This readout provides factual knowledge about entities of a given type.
+The question it answers, \emph{what factual knowledge is this model ready to produce about this specific entity?}, depends on the entity type, but not on the relation.
+We estimate this lens at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
@@ -78,7 +74,7 @@ $\rho = \headlinenumber $.
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
-an individual entity of a specific entity type. (ii)~We turn it into a relation-agnostic diagnostic
+an individual entity of an entity type. (ii)~We turn it into a relation-agnostic diagnostic
 of linear decodability and show that it predicts LRE faithfulness.
 (iii)~We show the prediction holds up
 under leave-one-type-out and under controls for object
@@ -151,7 +147,7 @@ the quantity we predict.
 \section{Experimental setup}
 \label{sec:setup}
 
-\paragraph{Models.} Our primary analysis is conducted on OLMo-3-7B because it combines performance with full replication resources for detailed analysis. Results for six additional models appear in Appendix~\ref{sec:shared-baselines}. Inference details are in Appendix~\ref{sec:jvp}.
+\paragraph{Models.} Our primary analysis is conducted on OLMo-3-7B because it combines performance with full replication resources for analysis. Results for six additional models appear in Appendix~\ref{sec:shared-baselines}. Inference details are in Appendix~\ref{sec:jvp}.
 
 \paragraph{Relations.} The LRE dataset \citep{hernandez2024linearity}
 contains 47 relations. Our prompt presupposes an entity subject, so we
