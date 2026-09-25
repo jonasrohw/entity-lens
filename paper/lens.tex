@@ -99,7 +99,8 @@ and reference competition.
 
 An LRE for relation $r$ approximates the model's computation as
 \begin{equation}
-o \;\approx\; \beta\, W s + b_\beta ,
+  o \;\approx\; \beta\, W s + b_\beta ,
+  \label{eq:basiclre}
 \end{equation}
 where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
@@ -344,80 +345,8 @@ salience that never consults the lens.
 
 \input{referencesets}
 
-\subsection{An interventional analysis}
-\label{sec:swap}
-\enote{sg}{
-	This section title is awfully AI-y and completely meaningless! Which operator? Which two terms? What does "carry" mean here? 
-	"the operator's two terms" becomes clear with the first paragraph.
-	"carry" seems to be equivalent to "capture", which I find slightly better but still not completely clear.
-}
+\input{towardsmechanism}
 
-The LRE of Eq.~\ref{eq:wb} is the sum of an \emph{anchor} $b_\beta$,
-which does not depend on the subject, and a \emph{subject term}
-$\beta W s$. The subject term has the form of NEL
-(Eq.~\ref{eq:nel}), except that its Jacobians are taken under the
-relation's own prompt. We ask what each term carries by recombining
-them. If the anchor carries the relation, pairing it with a
-\emph{foreign} subject term from another relation should still
-produce this relation's object; and if NEL captures the subject, it
-should be able to stand in for the subject term.
-
-We use two relation pairs that share their subjects:
-\textsc{country\_capital\_city} and \textsc{country\_largest\_city} over
-22 countries whose capital is not their largest city and for which the
-model answers both relations correctly, and
-\textsc{person\_plays\_position\_in\_sport} and
-\textsc{person\_plays\_pro\_sport} over 24 athletes. Each subject is read
-with the others as references, at $\beta = 3$.
-Appendix~\ref{sec:swapdetail} describes the experiments in full.
-
-\begin{table}[t]
-\centering
-\small
-\begin{tabular}{lrrrrrr}
-\toprule
-& & \multicolumn{3}{c}{subject term} & \multicolumn{2}{c}{controls} \\
-\cmidrule(lr){3-5}\cmidrule(lr){6-7}
-relation & $n$ & own & foreign & NEL & anchor alone & wrong donor \\
-\midrule
-\textsc{country\_capital\_city} & 22 & 12 & 12 & 7 & 0 & 0 \\
-\textsc{country\_largest\_city} & 22 & 12 & 8 & 4 & 0 & 0 \\
-\textsc{person\_plays\_position} & 24 & 19 & 21 & 18 & 7 & 6 \\
-\textsc{person\_plays\_pro\_sport} & 24 & 22 & 21 & 21 & 6 & 3 \\
-\bottomrule
-\end{tabular}
-\caption{Recombining an LRE's anchor with different subject terms,
-$\beta = 3$. Counts are how often the decoded top-1 is the relation's
-gold object. \emph{Own} is the unmodified operator; \emph{foreign} uses
-the paired relation's subject term; \emph{NEL} is the noncontrastive
-entity lens, which never sees a relation; \emph{anchor alone} drops the
-subject term; \emph{wrong donor} uses another subject's NEL. The model
-answers all 22 countries correctly, but the operator itself reproduces
-only 12 (Appendix~\ref{sec:swapdetail}).}
-\label{tab:swap}
-\end{table}
-
-\paragraph{The anchor carries the relation.} A foreign subject term
-leaves the answer largely intact (Table~\ref{tab:swap}): with the
-largest-city subject term the capital anchor still names 12 capitals, as
-many as with its own, and each person anchor keeps 21 of 24 subjects with
-the other relation's subject term. The anchor alone names no country's
-capital or largest city, so these hits are composed rather than read off
-the anchor. Nor do they depend on the particular references: over 500
-anchors estimated from references disjoint from the test subjects, the
-foreign subject term stays on average within one to two subjects of the
-operator's own on all four relations.
-
-\paragraph{The lens stands in for the subject term, but only
-moderately.} NEL, computed under the neutral prompt with no relation
-anywhere, recovers the operator for sport (21 against 22) and largely for
-position (18 against 19), but for only 7 of the 12 capitals and 4 of the
-12 largest cities that the operator itself gets right. What it supplies
-is subject-specific: another subject's NEL falls to or below the
-anchor alone. It is also less stable than the foreign subject
-term. Over the same 500 anchors it ranges from 7 to 20 of 24 for
-position, and for the country pair neither the anchor's references nor
-NEL's own references dominate its variance.
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -427,10 +356,10 @@ We investigate the tails of this distribution, the relations
 with the largest positive and negative deviations, and find
 that these tails are partially explained by
 extreme \textbf{object cardinality} $k$,
-which we define as the mean number of subjects per object
-(the
-same variable whose removal raises the correlation to
-$0.757$ in \S\ref{sec:results}).
+(defined as the  number of subjects per object,
+the
+variable whose removal raises the correlation to
+$0.757$ in \S\ref{sec:results})).
 
 Concretely, we order the relations by their residual from the least-squares
 fit in Figure~\ref{fig:main}; this residual
@@ -492,7 +421,7 @@ integrated into the linear structure.
 %panels_subject_scatter_mainprotocol.pdf
 
 To analyze relations at the fact level, we compute 
-$\rho$ between lens EL $\log_{10}$ rank and LRE $\log_{10}$
+$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
 rank for each relation.
 The values of $\rho$ are in the range [-0.401,0.664] with a
 median of
@@ -530,20 +459,7 @@ disambiguates which subject is intended, but apparently this
 is not the case. In general, the last few tokens seem to
 dominate which entity is represented and used by the LM. For the actor Barry Sobel, the lens top-ranks
 ``kosher'', ``Jewish'', ``Rabbi'', correct associations for
-the Brazilian Rabbi Henry Sobel. For the actress Vondell
-Darr, the lens top-ranks ``criminal'', ``murders'',
-``felon'', plausible associations for the wrongfully convicted
-Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
-top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
-simply uses the string ``Johann'' as the representation.
-While we did not conduct an extensive analysis, it is likely
-that reference competition is a problem for many relations whose
-subjects are persons. Many of those persons share the
-properties that result in Barry Sobel, Vondell Darr
-and Simon Gosejohann being misrepresented by the model.
-
-
-
+the Brazilian Rabbi Henry Sobel. 
 The relation \textsc{star\_constellation}
 (which in Table~\ref{tab:prominence} was an outlier: high
 prominence, low gold$\in$lens)
@@ -554,9 +470,22 @@ the stars
 ``rho01 Cnc'' and
 ``Alnair'' (tokenized Al-n-air)
 are ``machining'', ``drilled'', ``CNC''
-(Computerized Numerical Control) and ``flying'', ``flown'',
+(Cnc = Computerized Numerical Control) and ``flying'', ``flown'',
 ``Flight'', respectively.
 
+\enote{hs}{cut for space
+For the actress Vondell
+Darr, the lens top-ranks ``criminal'', ``murders'',
+``felon'', plausible associations for the wrongfully convicted
+Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
+top-ranks ``Johann'', ``Hann'', ``German'', suggesting the LM
+simply uses the string ``Johann'' as the representation.
+While we did not conduct an extensive analysis, it is likely
+that reference competition is a problem for many relations whose
+subjects are persons. Many of those persons share the
+properties that result in Barry Sobel, Vondell Darr
+and Simon Gosejohann being misrepresented by the model.
+}
 
 \subsection{Semantically weak first tokens}
 \textsc{person\_university}
@@ -577,6 +506,8 @@ relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 \textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
 29 of 69 objects begin with \textsc{University}).
 
+
+\enote{hs}{cut for space
 Restricting each relation to objects whose first token identifies them
 repairs this on the gold side.
 It is only a partial remedy: faithfulness (which
@@ -587,12 +518,12 @@ counting the model's own answer as ``faithful''. In
 \textsc{person\_university}, after filtering, the model still answers
 \textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
 A complete fix would condition on the prediction being distinctive.
-
 The direction of the bias differs by relation. Where the collapse is on
 the gold side it makes faithfulness easier: 41 distinct fathers all
 count as \textsc{John}.
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not an accurate response at all.
+}
 
 %Our \textsc{person\_father} figure is therefore an
 %upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
@@ -603,7 +534,7 @@ Both LRE and the lens work on the token level, the residual
 stream vector at the last layer, which is focused on
 producing the correct next token and may not represent
 reliable information about the tokens to follow. This
-single-token regime is highly problematic for the standard
+single-token regime is problematic for the standard
 setup because we are effectively investigating a relation in
 which all objects have been shortened to their first
 token. This might be a nonsensical relation even to humans
@@ -611,14 +542,13 @@ and it is clearly different from the intended relations
 whose objects are full entity names.
 
 \subsection{Towards better fact datasets}
-Our analysis motivates two requirements for future evaluations. First,
-answer scoring should distinguish complete objects rather than credit a shared,
+Our analysis motivates two requirements for future evaluations. (i)
+Answer scoring should distinguish complete objects rather than credit a 
 semantically weak first token. Filtering for identifying first tokens provides
 one diagnostic, but excludes some relations and does not ensure that the model's
 own prediction is distinctive. Evaluation methods that score complete answers
 are therefore needed for relations with unavoidable prefix overlap.
-
-Second, a subject name should refer to the intended entity for the model under
+(ii) A subject name should refer to the intended entity for the model under
 study. Dataset construction alone may not ensure this, because different models
 can resolve the same name differently. Evaluations should examine the entity
 that a model associates with each subject, document ambiguity, and distinguish
@@ -626,12 +556,21 @@ errors of subject identification from errors in relational decoding. These are
 methodological directions motivated by the observed failures, rather than
 solutions evaluated in this study.
 
-%\input{towardsmechanism}
+%above
+% i removed shared: it's a problem both for shared and
+% nonshared semantically weak tokens?
+
+
+
+
 
 \section{Limitations}
 \label{sec:limitations}
 
-The study only covers 28 relationships, some of which have small sample sizes. The relationship is
+The study only covers 28 relationships, some of which have
+small sample sizes.
+Figure~\ref{fig:main} 
+is
 correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
@@ -644,7 +583,9 @@ reading anything from the subject, and where the answer space is very
 large and each answer near-unique, since faithfulness is then close to its
 floor regardless. We show that these are the two tails of a single
 variable, but we do not have a principled account of where the boundaries
-lie, and with 28 relations we cannot fit one.
+lie.
+
+%, and with 28 relations we cannot fit one.
 
 We also probe salience through a limited set of neutral prompts. That phrasing asks what an entity is \emph{noted} for, which need not coincide with everything its
 representation carries; attributes such as gender may be well encoded
@@ -673,10 +614,13 @@ confound: a relation admits a faithful linear operator to the extent that
 its answer is already part of what the subject's representation makes the
 model disposed to say. On that view the wide spread of LRE faithfulness
 across relations is less a fact about the relations than about the
-entities they are asked about. The exceptions are informative: they fall
-at the two ends of the answer-space range where faithfulness can
-be achieved, or prevented, without the subject's representation mattering
-much either way.
+entities they are asked about.
+
+% cut for space
+%The exceptions are informative: they fall
+%at the two ends of the answer-space range where faithfulness can
+%be achieved, or prevented, without the subject's representation mattering
+%much either way.
 
 \enote{hs}{do we explain how the subset of facts was
   selected that the experiments are done for? for example, i
