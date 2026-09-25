@@ -27,8 +27,8 @@
 \hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
 $>>>$\hspace{1cm}}}}}
 
-% \enoteson
-\enotesoff
+\enoteson
+%\enotesoff
 
 \def\headlinenumber{0.7355}
 
@@ -42,7 +42,6 @@ $>>>$\hspace{1cm}}}}}
 
 \section{Introduction}
 
-\enote{sg}{Here and/or in related work, we could mention Yuetian's paper on the relationship between relational linearity and hallucinations. I think this could be helpful to convince readers that the LRE topic is interesting.}
 
 \citet{hernandez2024linearity} showed that a language model's mapping from
 a subject to the object of a relation is often well approximated by an
@@ -59,7 +58,7 @@ that it is better understood as a property of the \emph{subject's
 representation}. Concretely, we show that one can predict how faithful an
 LRE will be \emph{before fitting it}, and without using the relation at
 all.
-\enote{sg}{This is very nitpicky, but I would prefer saying "A natural reading" rather than "The natural reading", as different observers may have different intuitions of naturalness.}
+
 
 Building on recent work by \citet{gurnee2026workspace},
 we  introduce the \emph{entity lens} $\mbox{EL}_t$, which
@@ -71,13 +70,11 @@ about an entity of a particular type.
 The question it
 answers, \emph{what factual knowledge is this model ready to produce about this entity?},
 is specific to the entity type, but not specific to any relation.
-
-We estimate  the entity lens under the single neutral prompt (shared by every relation), at one layer fixed in advance,
+We estimate  this lens at one layer fixed in advance,
 and ask how highly it ranks the model's own answer. The lens sees no
 relation template, no objects and no (subject,~object) pairs, yet its
 score correlates with LRE faithfulness across 28 relations at
 $\rho = \headlinenumber $.
-\enote{sg}{We should avoid repeating ourselves, so maybe merge this paragraph with the previous one?}
 
 We make four contributions. (i)~We introduce the entity
 lens, a supervision-free readout of what a model is disposed to say about
@@ -102,13 +99,14 @@ and reference competition.
 
 An LRE for relation $r$ approximates the model's computation as
 \begin{equation}
-o \;\approx\; \beta\, W s + b_\beta ,
+  o \;\approx\; \beta\, W s + b_\beta ,
+  \label{eq:basiclre}
 \end{equation}
 where $s$ is the hidden state at the subject's final token and $o$ the
 output state. Write $f$ for the model's own map between the two: $f$
 sends the subject's hidden state at an intermediate layer $\ell$ to the
 final-layer state at the last position. We average local
-first-order approximations of $f$ over a small set $\{s_i\}$ of reference
+first-order approximations of $f$ over a \textbf{reference set} $\{s_i\}$ of reference
 subjects and scale their subject-dependent terms by $\beta$:
 \begin{equation}
 W = \operatorname{mean}_i J_i , \qquad
@@ -169,13 +167,16 @@ error. No other relation was excluded.
 
 %No relation was dropped after seeing a result.
 
-\paragraph{Measurement.} Both quantities \enote{sg}{Which two quantities?} are read off the same prompt, so
-that they are comparable. Following
-\citet{hernandez2024linearity}, a relation is presented to the model
-\emph{in context}: eight (subject, object) examples of that relation are
+
+\paragraph{Measurement.}
+For LRE faithfulness,
+we follow
+\citet{hernandez2024linearity}. A relation is presented to the model
+\emph{in context}: eight (subject, object) examples of the relation are
 concatenated, one per line, and the query subject is appended without its
-object, so that the model's next token is its answer. This is what
-defines ``the model's own prediction'' for both measures. The subjects of
+object, so that the model's next token is its answer.
+This is what
+defines the $m_e$, the model's \textbf{top-1 answer}. The subjects of
 a relation are shuffled once and partitioned into three disjoint sets:
 eight in-context examples, eight reference subjects from which $W$ and $b_\beta$
 are estimated, and the remainder as scored test subjects.
@@ -189,8 +190,20 @@ test subjects.
 layers span the network at roughly even spacing and the $\beta$ range
 brackets the values they report.
 
-The lens scores 11--20 subjects per relation, depending on how many remain
-once the in-context and reference sets are removed. For the
+To measure the accuracy of the predictions of the entity lens,
+we decode $\mbox{EL}(e)$ over the full vocabulary
+and record the rank of $m_e$, the model's top-1 answer.
+Writing $\mathrm{rk}_{\mbox{EL}(e)}(m_e)$ for that rank, the diagnostic for a
+relation is
+\begin{equation}
+A_r \;=\; -\operatorname{median}_{e}\,\log_{10}\mathrm{rk}_{\mbox{EL}(e)}(m_e),
+\end{equation}
+so higher $A_r$ means the lens agrees with the model more.
+
+
+
+The lens scores 11--20 subjects for a relation, depending on how many remain
+once the in-context examples and the reference set are removed. For the
 results in \S\ref{sec:results}, the lens and the LRE sample their splits
 independently, so the particular subjects entering each set differ between
 the two measurements. Independent splits introduce sampling variation into
@@ -198,10 +211,10 @@ this comparison. Because the LRE hyperparameters are selected on the scored
 subjects, its reported faithfulness is an in-sample estimate; these results
 do not establish performance on a separate held-out evaluation set.
 
-Crucially, the in-context prompt is used only to obtain the \emph{target};
-the lens itself is always computed under the neutral prompt of
-\S\ref{sec:lens}.
-\enote{sg}{I think this should be moved further up the measurement paragraph to make things clear from the beginning.}
+Note that the in-context prompt serves only to define the target
+$m_e$; the lens itself is always
+computed under the neutral prompt of \S\ref{sec:lens}.
+
 
 \section{Results}
 \label{sec:results}
@@ -209,42 +222,38 @@ the lens itself is always computed under the neutral prompt of
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\linewidth]{fig_iclr_agreement.pdf}
-\caption{LRE faithfulness against the relation-agnostic lens score, 28
+\caption{LRE faithfulness against the relation-agnostic NEL lens score, 28
 relations. The lens sees no relation template, no objects, and no
 (subject, object) pairs, and uses one fixed layer throughout.}
 \label{fig:main}
 \end{figure}
 
-\enote{hs}{fig:main: ideally, all relation points that are
-  part of the discussion (e.g., second half of section6)
-  should be labeled, the same way that country capital and
-  personmother/father are}
 
-\enote{hs}{is the labeling of person mother/father correct?
-  i think not: we need two labels pointing to two different points}
 
 Figure~\ref{fig:main} shows the result. The relation-agnostic score
 predicts LRE faithfulness at Spearman $\rho =
 \headlinenumber $
 ($p = 8.24\!\times\!10^{-6}$).
+We now test three other variables as possible predictors of faithfulness.
 
 % RESTORE IF THERE'S TIME
 %; a permutation test agrees
 %(Appendix~\ref{sec:permutation}).
 
-\paragraph{The correlation is not carried by cardinality.} Relations
+\textbf{Object cardinality.} Relations
 differ greatly in how many distinct objects they have; $k$, the mean number
 of subjects per object, ranges from $1.0$ to $189$. High $k$ should make
 faithfulness easier, and $k$ is indeed associated with faithfulness on
 its own, though only weakly
-($\rho = 0.355$, $p = 0.064$). But $k$ is essentially uncorrelated with the
-\enote{sg}{Is the correlation (of $k$ with lens score) significantly different from zero? If not, state it. If it is, change "essentially uncorrelated" to "only weakly correlated" or similar.}
+($\rho = 0.355$, $p = 0.064$). But $k$ is weakly correlated with the
 lens score ($\rho = 0.086$). Removing $k$  \emph{raises} the
 correlation to $\rho = 0.757$ ($p = 4.90\!\times\!10^{-6}$): $k$ and the lens are
-approximately \enote{sg}{technically, uncorrelated does not imply independent}
-independent predictors of faithfulness, so removing the variance
+complementary predictors of faithfulness, so removing the variance
 attributable to $k$ sharpens rather than weakens the lens
-signal.\footnote{All variables here are ordinal, so we work throughout with
+signal.
+
+\enote{hs}{pleaes move this footnote to the appendix
+footnote{All variables here are ordinal, so we work throughout with
 ranks. To remove the effects of a set of covariates, we
 rank-transform the lens score, faithfulness, and each
 covariate; regress the ranked lens score and ranked
@@ -255,17 +264,25 @@ This is the standard partial
 Spearman correlation, and it asks how much of the lens--faithfulness
 association remains once everything the covariates can linearly explain
 about either variable has been removed.}
+}
 
-\paragraph{Nor by answer frequency.} A relation whose answers are frequent
+\textbf{Answer frequency.} A relation whose answers are frequent
 tokens might be easy for both measures. We estimate the model's prior over
-each answer token by averaging its log-probability across ten neutral
-contexts. \enote{sg}{Do you say somehwere what these ten neutral contexts are?}
+each answer token by averaging its log-probability over ten short
+generic prefixes.
 This predicts neither faithfulness ($\rho = -0.111$) nor the lens
 score ($\rho = 0.098$), and removing it leaves the correlation
 unchanged at $0.755$. The correlation is $0.784$ with both cardinality
 and answer frequency removed.
 
-\paragraph{Nor by one domain.} Eleven of the 28 relations have
+\enote{hs}{
+  please move to appendix
+footnote{The beginning-of-sequence token alone,
+``The'', ``In the'', ``It was'', ``She said the'', ``Here is'', ``One of
+the'', ``According to the'', ``There is a'', and ``Yesterday the''.}
+}
+
+\textbf{Entity type.} Eleven of the 28 relations have
 \textit{person} subjects, raising the worry that one domain
 (i.e., one subject type)
 drives the
@@ -278,8 +295,12 @@ $\rho \in [0.570, 0.700]$, median $0.656$.
 \section{Analysis of the entity lens}
 \subsection{Salience}
 \label{sec:salience}
-We test the interpretation of Eq.~\ref{eq:cel} used by our analysis. Readouts of this kind are normally taken to surface what a
-model is internally disposed to say \citep{gurnee2026workspace}, and we
+Our approach is based on an assumption that is also shared
+by the Jacobian lens:
+Readouts of this kind
+are normally taken to surface what a
+model is internally disposed to say
+\citep{gurnee2026workspace}. We
 have read $\mbox{EL}(s)$ the same way: as what the subject's representation makes
 available, before any relation has been named. The account of
 Figure~\ref{fig:main} rests on that reading. If it is right, a relation
@@ -295,31 +316,53 @@ model's own free generation.
 For each test subject we greedily generate 90 tokens
 from each of \texttt{"\{\} is best known for"} and \texttt{"Here are some
 facts about \{\}. First,"}, and record whether any distinctive word of the
-gold object appears in either continuation.\footnote{Titles, particles and
+gold object appears in either continuation.
+
+% restore if we have more space
+%This is a forward pass under different prompts,
+%and involves no Jacobian.
+
+\enote{hs}{please move this footnote to the appendix
+footnote{Titles, particles and
 words shared with the subject's own name are excluded, so that
 \emph{The}~Joker is not matched by any occurrence of ``the'' and
 \emph{Johann Georg Kant} (Immanuel Kant's father) is not matched by a passage about Immanuel Kant.
 The lens's own prompt cannot be used here: \texttt{"\{\} is known for"}
 makes Olmo-3-7B emit a multiple-choice quiz rather than prose, so the
 object is never named.}
-\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
-This is a forward pass under different prompts,
-and involves no Jacobian.
+}
 
-We refer to this rate as the object's \emph{prominence}. Across the 14 relations
-for which it can be measured it ranges from $1.00$
+%\enote{sg}{Comment on footnote: Why do we then use "is known for" in the entity lens? Wouldn't it be better to use "is best known for"?}
+% maybe, but no time
+
+We refer to this rate as the object's \emph{prominence}.
+Table~\ref{tab:prominence} gives both prominence and
+gold$\in$lens
+(how often the lens surfaces the
+gold object in its top five)
+for 14 relations.
+Prominence
+ranges from $1.00$
 (\textsc{city\_in\_country}) and $0.50$ (\textsc{country\_capital\_city})
 down to $0.13$ (\textsc{person\_father}), $0.05$
 (\textsc{superhero\_archnemesis}) and $0.03$
 (\textsc{person\_mother}). It predicts how often the lens surfaces the
 gold object in its top five: Spearman $\rho = 0.614$ ($p = 0.019$,
-$n = 14$). Table~\ref{tab:prominence} gives both quantities per relation.
+$n = 14$).
 Thus, what the lens surfaces is predicted by a measurement of
 salience that never consults the lens.
 
-\enote{sg}{Now an obvious question is: If object salience predicts entity lens, and entity lens predicts LRE faithfulness, then how well does object salience predict LRE faithfulness?}
+%\enote{sg}{Now an obvious question is: If object salience predicts entity lens, and entity lens predicts LRE faithfulness, then how well does object salience predict LRE faithfulness?}
+% yes, ideally we would make these additional expriments
+% on the other hand, one could ask thes ame question about
+% the jacobian lens: what's so interesting about the
+% jacobian lens if we can compute prominence directly from the
+% precictions of the model?
 
 \input{referencesets}
+
+\input{towardsmechanism}
+
 
 \section{Object cardinality}
 \label{sec:residuals}
@@ -329,10 +372,10 @@ We investigate the tails of this distribution, the relations
 with the largest positive and negative deviations, and find
 that these tails are partially explained by
 extreme \textbf{object cardinality} $k$,
-which we define as the mean number of subjects per object
-(the
-same variable whose removal raises the correlation to
-$0.757$ in \S\ref{sec:results}).
+(defined as the  number of subjects per object,
+the
+variable whose removal raises the correlation to
+$0.757$ in \S\ref{sec:results})).
 
 Concretely, we order the relations by their residual from the least-squares
 fit in Figure~\ref{fig:main}; this residual
@@ -340,12 +383,13 @@ is in units of faithfulness, so $+0.30$ means thirty points more faithful
 than the lens score predicts.
 % Issue here, we need to investigate.
 
-\enote{sg}{
-	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
-	TODO:
-	(1) I think we should also investigate this "number of objects" quantity.
-	(2) I don't like the term "object cardinality", in particular because it leads to confusion with "number of objects". Can't we just say "subjects per object" or similar?
-}
+%\enote{sg}{
+%%%	Given the examples below and their description, another quantity may be just as helpful: number of objects. Specifically, high "object cardinality" (many subjects per object) <-> few objects.
+%	TODO:
+%	(1) I think we should also investigate this "number of objects" quantity.
+%%	(2) I don't like the term "object cardinality", in particular because it leads to %confusion with "number of objects". Can't we just say "subjects per object" or similar?
+%}
+% AGREED, BUT NO TIME FOR THIS ITERATION
 
 The largest positive residuals, faithful despite a low
 lens score, with their cardinality are
@@ -373,10 +417,10 @@ degrades at both ends, in opposite directions.
 %$0.757$ (\S\ref{sec:results}).
 Our analysis in this section
 helps us interpret the result from \S\ref{sec:results}:
-$k$ is a
-source of deviation in the salience account rather than
-merely a nuisance correlate.
-\enote{sg}{Is "nuisance correlate" standard or is it AI slang? Anyway, what does it mean?}
+$k$ is a true source of deviation in the salience account,
+not merely a confound.
+
+
 
 \section{Fact-level analysis}
 \label{sec:subject}
@@ -393,7 +437,7 @@ integrated into the linear structure.
 %panels_subject_scatter_mainprotocol.pdf
 
 To analyze relations at the fact level, we compute 
-$\rho$ between lens EL $\log_{10}$ rank and LRE $\log_{10}$
+$\rho$ between lens $\log_{10}$ rank and LRE $\log_{10}$
 rank for each relation.
 The values of $\rho$ are in the range [-0.401,0.664] with a
 median of
@@ -403,7 +447,11 @@ We now analyze these shortcomings and give
 guidance for future relation datasets that may better support
 research on how LMs represent facts.
 
-\enote{sg}{Is it correct to say that "reference competition" is about multi-token \textit{subjects}, while "semantically weak first tokens" is about multi-token \textit{objects}? If yes, it would be really helpful to say it. If not, why not?}
+%\enote{sg}{Is it correct to say that "reference competition" is about multi-token \textit{subjects}, while "semantically weak first tokens" is about multi-token \textit{objects}? If yes, it would be really helpful to say it. If not, why not?}
+% a single-toekn subject can also suffer from reference
+% competitoin
+% the token of a single-token object can also be
+% semantically weak
 
 \subsection{Reference competition}
 \label{sec:competition}
@@ -419,15 +467,31 @@ who is listed as an actor
 in LRE. The highest ranked token given by the lens is
 ``whistlebl''. This indicates that the most prominent entity
 associated with the last name Thommessen
-by Olmo-3-7B
 is Advokatfirmaet
-Thommessen, a law firm known for its digital whistleblowing
-tool. One might hope that the first name ``Rolf''
-disambiguates which subject is intended, but apparently this
-is not the case. In general, the last few tokens seem to
+Thommessen, a law firm known for digital whistleblowing.
+Apparently,  the first name ``Rolf''
+does not disambiguate which subject is intended.
+In general, the last few tokens seem to
 dominate which entity is represented and used by the LM. For the actor Barry Sobel, the lens top-ranks
 ``kosher'', ``Jewish'', ``Rabbi'', correct associations for
-the Brazilian Rabbi Henry Sobel. For the actress Vondell
+the Brazilian Rabbi Henry Sobel. 
+The relation \textsc{star\_constellation}
+(which in Table~\ref{tab:prominence} was an outlier: high
+prominence, low gold$\in$lens)
+also suffers from
+reference competition due to the complex names of
+many stars. For example, the most prominent associations of
+the star
+``rho01 Cnc''
+%and
+%``Alnair'' (tokenized Al-n-air)
+are ``machining'', ``drilled'', ``CNC''
+(Cnc = Computerized Numerical Control).
+%and ``flying'', ``flown'',
+%``Flight'', respectively.
+
+\enote{hs}{cut for space
+For the actress Vondell
 Darr, the lens top-ranks ``criminal'', ``murders'',
 ``felon'', plausible associations for the wrongfully convicted
 Acacia Lyn-Darr.  For the actor Simon Gosejohann, the lens
@@ -438,19 +502,7 @@ that reference competition is a problem for many relations whose
 subjects are persons. Many of those persons share the
 properties that result in Barry Sobel, Vondell Darr
 and Simon Gosejohann being misrepresented by the model.
-
-
-
-The relation \textsc{star\_constellation} also suffers from
-reference competition due to the complex names of
-many stars. For example, the most prominent associations of
-the stars
-``rho01 Cnc'' and
-``Alnair'' (tokenized Al-n-air)
-are ``machining'', ``drilled'', ``CNC''
-(Computerized Numerical Control) and ``flying'', ``flown'',
-``Flight'', respectively.
-
+}
 
 \subsection{Semantically weak first tokens}
 \textsc{person\_university}
@@ -471,6 +523,8 @@ relations exceed 25\%}, led by \textsc{person\_mother} (61\%),
 \textsc{person\_father} (58\%) and \textsc{person\_university} (45\%:
 29 of 69 objects begin with \textsc{University}).
 
+
+\enote{hs}{cut for space
 Restricting each relation to objects whose first token identifies them
 repairs this on the gold side.
 It is only a partial remedy: faithfulness (which
@@ -481,38 +535,63 @@ counting the model's own answer as ``faithful''. In
 \textsc{person\_university}, after filtering, the model still answers
 \textsc{University} for 7 of 29 subjects and the LRE agrees on every one.
 A complete fix would condition on the prediction being distinctive.
-
 The direction of the bias differs by relation. Where the collapse is on
 the gold side it makes faithfulness easier: 41 distinct fathers all
-count as \textsc{John}. Our \textsc{person\_father} figure is therefore an
-upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
-\enote{sg}{Which corrected value? How did you compute it?}
+count as \textsc{John}.
 Where the model itself emits the shared token, the collapse manufactures
 agreement that is not an accurate response at all.
+}
 
+%Our \textsc{person\_father} figure is therefore an
+%upper bound, and the corrected value is lower still ($0.07 \to 0.05$).
+%\enote{sg}{Which corrected value? How did you compute it?}
 
 
 Both LRE and the lens work on the token level, the residual
 stream vector at the last layer, which is focused on
 producing the correct next token and may not represent
-reliable information about the tokens to follow. This
-single-token regime is highly problematic for the standard
+information about the tokens to follow. This
+single-token regime is problematic for the standard
 setup because we are effectively investigating a relation in
 which all objects have been shortened to their first
-token. This might be a nonsensical relation even to humans
-and it is clearly different from the intended relations
+token. This 
+is clearly different from the intended relations
 whose objects are full entity names.
 
-\input{towardsmechanism}
+\subsection{Towards better fact datasets}
+Our analysis motivates two requirements for future evaluations. (i)
+Answer scoring should distinguish complete objects rather than credit a 
+semantically weak first token.
+\enote{hs}{restore if there is more space
+Filtering for identifying first tokens provides
+one diagnostic, but excludes some relations and does not ensure that the model's
+own prediction is distinctive.}
+Evaluation methods that score complete answers
+are therefore needed for relations with unavoidable prefix overlap.
+(ii) A subject name should refer to the intended entity for the model under
+study. Dataset construction alone may not ensure this, because different models
+can resolve the same name differently. Evaluations should examine the entity
+that a model associates with each subject, document ambiguity, and distinguish
+errors of subject identification from errors in relational decoding. These are
+methodological directions motivated by the observed failures, rather than
+solutions evaluated in this study.
+
+%above
+% i removed shared: it's a problem both for shared and
+% nonshared semantically weak tokens?
+
+
+
+
 
 \section{Limitations}
 \label{sec:limitations}
 
 The study only covers 28 relations,\enote{sg}{I think we should consistently say "relations", not "relationships" (for things like country-capital).}
 some of which have small sample sizes.
-
-We only find correlation, not causation:
-we show that a relation-agnostic readout predicts LRE
+Figure~\ref{fig:main}
+is
+correlational: we show that a relation-agnostic readout predicts LRE
 faithfulness, not that the representation it reads is what the LRE
 exploits.
 
@@ -525,7 +604,9 @@ reading anything from the subject, and where the answer space is very
 large and each answer near-unique, since faithfulness is then close to its
 floor regardless. We show that these are the two tails of a single
 variable, but we do not have a principled account of where the boundaries
-lie, and with 28 relations we cannot fit one.
+lie.
+
+%, and with 28 relations we cannot fit one.
 
 We also probe salience through a limited set of neutral prompts. That phrasing asks what an entity is \emph{noted} for, which need not coincide with everything its
 representation carries; attributes such as gender may be well encoded
@@ -538,12 +619,14 @@ estimates are coarse (for three of them, quantized to thirds); a
 rotating-split protocol would sharpen these.
 
 Finally, the diagnostic is
-defined only for relations whose subjects are entities, which excludes 19
-of the dataset's 47 relations.
+defined only for relations.
+whose subjects are entities.
+%, which excludes 19
+%of the dataset's 47 relations.
 
 \section{Conclusion}
 
-Whether a relation is linearly decodable from a language model is
+Whether a relation is linearly decodable from an LM  is
 substantially predictable without the relation. A Jacobian lens estimated
 from subject differences under a neutral prompt, at a fixed layer, ranks
 the model's own answer highly for exactly those relations whose LREs turn
@@ -554,10 +637,13 @@ confound: a relation admits a faithful linear operator to the extent that
 its answer is already part of what the subject's representation makes the
 model disposed to say. On that view the wide spread of LRE faithfulness
 across relations is less a fact about the relations than about the
-entities they are asked about. The exceptions are informative: they fall
-at the two ends of the answer-space range where faithfulness can
-be achieved, or prevented, without the subject's representation mattering
-much either way.
+entities they are asked about.
+
+% cut for space
+%The exceptions are informative: they fall
+%at the two ends of the answer-space range where faithfulness can
+%be achieved, or prevented, without the subject's representation mattering
+%much either way.
 
 \enote{hs}{do we explain how the subset of facts was
   selected that the experiments are done for? for example, i
