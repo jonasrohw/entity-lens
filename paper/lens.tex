@@ -27,7 +27,7 @@
 \hspace{0cm}\arabic{notecounter} $<<<$ ##1: ##2
 $>>>$\hspace{1cm}}}}}
 
-% \enoteson
+\enoteson
 \enotesoff
 
 \def\headlinenumber{0.7355}
@@ -175,7 +175,8 @@ This is what
 defines the $m_e$, the model's \textbf{top-1 answer}. The subjects of
 a relation are shuffled once and partitioned into three disjoint sets:
 eight in-context examples and eight reference subjects from which $W$ and $b_\beta$
-are estimated; every row of the relation, including these, is scored.
+are estimated.
+%; every row of the relation, including these, is scored.
 
 Faithfulness is then recomputed for all 28 relations under this protocol.
 Layer and $\beta$ are chosen on a $6\times6$ grid consisting of six candidate
@@ -332,17 +333,20 @@ hundreds. For these relations, faithfulness is near its
 floor due to the difficulty of the task and the details of
 the representation apparently do not change that.
 
-The relationship between our NEL-based score and LRE faithfulness thus holds in the middle of the cardinality range and
-degrades at both ends, in opposite directions; across relations,
-residuals increase with $k$ (Spearman $\rho = 0.60$, $p = 0.001$).
+The relationship between our NEL-based score and LRE
+faithfulness thus holds in the middle of the cardinality
+range and degrades at both ends, in opposite directions;
+across relations, residuals increase with $k$ (Spearman
+$\rho = 0.60$, $p = 0.001$).
+Our analysis in this subsection helps us interpret the
+result from the beginning of this section: $k$ is a true
+source of deviation, not merely a confound.
+
+
 %Removed the following sentence because it's now at the top of the section where it belongs.
 %Cardinality is the
 %same variable whose removal raises the correlation to
 %$0.757$ (\S\ref{sec:results}).
-Our analysis in this section
-helps us interpret the result from \S\ref{sec:results}:
-$k$ is a true source of deviation,
-not merely a confound.
 %\enote{sg}{I don't like "salience account"}
 \enote{sg}{In general I think we should avoid using the word "account" too much, it's a sign of AI slang}
 
