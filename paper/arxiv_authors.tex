@@ -1,0 +1,24 @@
+% Follow the title/author pattern in Vision Transformers Need Registers:
+% https://arxiv.org/src/2309.16588 (0_main.tex).
+\title{\centering Predicting Linear Relational\\Decodability Without the Relation}
+% Match the second row's name gap to the spacing produced by \And above.
+\newlength{\arxivauthorsep}
+\settowidth{\arxivauthorsep}{\bfseries
+Jonas Rohweder\textsuperscript{1,2,3}%
+Adrian M{\"u}lthaler\textsuperscript{1,3}%
+Faridoun Mehri\textsuperscript{1,3}}
+\setlength{\arxivauthorsep}{\dimexpr(\textwidth-2\tabcolsep-\arxivauthorsep)/2\relax}
+\author{%
+Jonas Rohweder\textsuperscript{1,2,3} \And
+Adrian M{\"u}lthaler\textsuperscript{1,3} \And
+Faridoun Mehri\textsuperscript{1,3} \AND
+\makebox[\dimexpr\textwidth-2\tabcolsep\relax][c]{%
+Sebastian Gerstner\textsuperscript{1,3}\hspace{\arxivauthorsep}%
+Hinrich Sch{\"u}tze\textsuperscript{1,3}} \AND
+\normalfont
+\textsuperscript{1}Center for Information and Language Processing (CIS), LMU Munich\\
+\textsuperscript{2}Ubiquitous Knowledge Processing Lab (UKP Lab), TU Darmstadt\\
+\textsuperscript{3}Munich Center for Machine Learning (MCML)%
+}
+\hypersetup{pdfauthor={Jonas Rohweder, Adrian Mülthaler, Faridoun Mehri,
+  Sebastian Gerstner, Hinrich Schütze}}

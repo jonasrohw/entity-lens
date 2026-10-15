@@ -1,4 +1,45 @@
-# ICLR 2027 submission
+# ICLR manuscript and arXiv preprint
+
+## arXiv version
+
+`arxiv.tex` builds the same manuscript in the ICLR 2027 author-visible layout,
+without review line numbers or a conference-publication header. Author details
+and PDF author metadata are set in `arxiv_authors.tex`. All five authors are
+affiliated with CIS, LMU Munich, and MCML; Jonas Rohweder is additionally
+affiliated with the UKP Lab, Technical University of Darmstadt.
+
+The preprint title/author layout follows the downloaded LaTeX source of
+[Vision Transformers Need Registers](https://arxiv.org/src/2309.16588)
+(`0_main.tex`, ICLR 2024 Outstanding Paper): a centered small-caps title,
+names separated with the ICLR `\And`/`\AND` commands, and numbered shared
+affiliations below at the normal font size. The source of
+[AlphaEdit](https://arxiv.org/src/2410.02355)
+(`iclr2024_conference.tex`, using the ICLR 2025 style, Outstanding Paper)
+also uses numbered shared affiliations. The ICLR 2027 style file is unchanged.
+
+Build the PDF and a self-contained source archive from this directory:
+
+```sh
+python3 repro/build_arxiv.py
+```
+
+Outputs are `build/arxiv/arxiv.pdf` and `build/arxiv/arxiv-source.tar.gz`.
+The archive contains one main file (`arxiv.tex`), the inputs used by the paper,
+the ICLR style, bibliography source/style, and the generated `.bbl`. It excludes
+the compiled manuscript PDF and build logs, following the
+[arXiv TeX submission guidance](https://info.arxiv.org/help/submit_tex.html).
+Select pdfLaTeX and `arxiv.tex` when uploading. No upload is performed by the
+build helper. The existing `lens.pdf` is not overwritten.
+
+To build only the preprint PDF, use `latexmk -pdf arxiv.tex`.
+
+The preprint build was checked by extracting the archive into a fresh
+directory and compiling it with pdfLaTeX/BibTeX via `latexmk`. It has 19 pages,
+embedded fonts, and no undefined references/citations or overfull boxes. Poppler
+reports a font-type mismatch in the existing `fig_iclr_agreement.pdf`; the figure
+renders, but this inherited warning remains.
+
+## ICLR review version
 
 The retained seven-model comparison is in
 [appendix_shared_baselines.tex](appendix_shared_baselines.tex), included as

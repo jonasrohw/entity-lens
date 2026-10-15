@@ -15,9 +15,14 @@
 \hypersetup{hidelinks,pdftitle={Predicting Linear Relational Decodability Without the Relation},
   pdfauthor={},pdfsubject={},pdfkeywords={}}
 
-\title{Predicting Linear Relational Decodability\\Without the Relation}
+\title{Predicting Linear Relational\\Decodability Without the Relation}
 
 \author{Anonymous authors}
+
+\ifdefined\arxivversion
+  \iclrfinalcopy
+  \input{arxiv_authors}
+\fi
 
 \newcounter{notecounter}
 \newcommand{\enotesoff}{\long\gdef\enote##1##2{}}
@@ -35,6 +40,11 @@ $>>>$\hspace{1cm}}}}}
 
 \begin{document}
 \maketitle
+\ifdefined\arxivversion
+  % The official final style otherwise asserts publication at ICLR.
+  \lhead{}
+  \renewcommand{\headrulewidth}{0pt}
+\fi
 
 
 \input{abstract}
@@ -660,6 +670,14 @@ across relations largely reflects the entities they concern.
 
 \label{sec:main-end}
 \clearpage
+
+\ifdefined\arxivversion
+\section*{Acknowledgements}
+% Grant identifiers from Relational Linearity is a Predictor of Hallucinations,
+% arXiv:2601.11429v3, Acknowledgments; restricted to the two requested DFG grants.
+This work was supported by the German Research Foundation (DFG) under
+grants SCHU~2246/14-1 and GU~798/29-1 (UKP-SQuARE project).
+\fi
 
 \section*{AI use statement}
 \input{ai_use}
